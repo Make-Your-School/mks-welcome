@@ -30,7 +30,7 @@ es gibt diese in sehr vielen verschiedenen Ausführungen.
 
 ## Kurz-Datenblatt
 
-siehe einzelnes bauteile.
+siehe bauteile
 
 ## Siehe Auch
 

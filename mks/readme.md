@@ -2,7 +2,7 @@
 
 hier findet ihr eine Liste aller MYS Materialien:
 
-TODO: ARCHITECTURE search & filter mask
+<!-- TODO: ARCHITECTURE search & filter mask -->
 
-TODO: ARCHITECTURE list all subfolder readmes in `./funktionen`
+<!-- TODO: ARCHITECTURE list all subfolder readmes in `./funktionen` -->
 
