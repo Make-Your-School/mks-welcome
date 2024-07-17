@@ -8,8 +8,8 @@
 Der Taster / Schalter ist ein *Input*.
 
 Der Unterschied zwischen Taster und Schalter:
-- Taster: solange *an* wie er Betätigt (z.B: gedrückt) wird
-- Schalter: Betätigung wechselt den Zustand zwischen an und aus
+- Taster: nur solange *an* wie er Betätigt (z.B: gedrückt) wird
+- Schalter: Betätigung/Aktion wechselt den Zustand zwischen an und aus
 
 wenn ein Taster/Schalter **an** ist sind die Kontakte verbunden.
 wenn er **aus** ist sind die kontakte unverbunden.
