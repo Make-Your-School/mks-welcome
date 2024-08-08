@@ -1,3 +1,7 @@
+---
+tags: "motor, motortreiber"
+---
+
 # Motortreiber
 
 ![Motortreiber allgemein](https://makeyourschool.de/wp-content/uploads/2018/10/70_motortreiber-1024x1024.jpg)
