@@ -23,7 +23,14 @@ const embedCode = async (tokens, idx, options, env, self) => {
             let codeContent = undefined;
             try {
                 codeContent = await fetch(filePath).then(async (response) => {
-                    return await response.text();
+                    console.log(`response: `, response);
+                    if (response.status == 200) {
+                        return await response.text();
+                    } else if (response.status == 404) {
+                        throw new Error(`embed failed: file '${filePath}' not found.`, response);
+                    } else {
+                        throw new Error(`embed failed.`, response);
+                    }
                 });
                 // console.log(`codeContent: `, codeContent);
             } catch (error) {
