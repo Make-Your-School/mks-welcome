@@ -1,24 +1,24 @@
 [submodule "mks/funktionen/Entfernung/bauteile/mks-GroveUltraschall"]
-	path = mks/funktionen/Entfernung/bauteile/mks-GroveUltraschall
+	path = public/mks/funktionen/Entfernung/bauteile/mks-GroveUltraschall
 	url = https://github.com/s-light/mks-GroveUltraschall.git
 [submodule "mks/funktionen/Motortreiber/bauteile/mks-GroveMotortreiberI2C"]
-	path = mks/funktionen/Motortreiber/bauteile/mks-GroveMotortreiberI2C
+	path = public/mks/funktionen/Motortreiber/bauteile/mks-GroveMotortreiberI2C
 	url = https://github.com/s-light/mks-GroveMotortreiberI2C.git
 [submodule "mks/funktionen/Schalter/bauteile/mks-GroveMagnetschalter"]
-	path = mks/funktionen/Schalter/bauteile/mks-GroveMagnetschalter
+	path = public/mks/funktionen/Schalter/bauteile/mks-GroveMagnetschalter
 	url = https://github.com/s-light/mks-GroveMagnetschalter.git
 [submodule "mks/funktionen/Schalter/bauteile/mks-GroveKippschalter"]
-	path = mks/funktionen/Schalter/bauteile/mks-GroveKippschalter
+	path = public/mks/funktionen/Schalter/bauteile/mks-GroveKippschalter
 	url = https://github.com/s-light/mks-GroveKippschalter.git
 [submodule "mks/funktionen/Schalter/bauteile/mks-GroveTaster"]
-	path = mks/funktionen/Schalter/bauteile/mks-GroveTaster
+	path = public/mks/funktionen/Schalter/bauteile/mks-GroveTaster
 	url = https://github.com/s-light/mks-GroveTaster.git
 [submodule "mks/funktionen/Schalter/bauteile/mks-GroveSchalter"]
-	path = mks/funktionen/Schalter/bauteile/mks-GroveSchalter
+	path = public/mks/funktionen/Schalter/bauteile/mks-GroveSchalter
 	url = https://github.com/s-light/mks-GroveSchalter.git
 [submodule "mks/funktionen/Schalter/bauteile/mks-Endschalter"]
-	path = mks/funktionen/Schalter/bauteile/mks-Endschalter
+	path = public/mks/funktionen/Schalter/bauteile/mks-Endschalter
 	url = https://github.com/s-light/mks-Endschalter.git
 [submodule "mks/funktionen/Schalter/bauteile/mks-Taster"]
-	path = mks/funktionen/Schalter/bauteile/mks-Taster
+	path = public/mks/funktionen/Schalter/bauteile/mks-Taster
 	url = https://github.com/s-light/mks-Taster.git
