@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+     width="420mm"
+     height="520mm"
+     viewBox="0 0 420 520"
+     version="1.1"
+     id="svg5"
+     inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+     sodipodi:docname="layout_concept.svg"
+     inkscape:export-filename="layout_concept.png"
+     inkscape:export-xdpi="127"
+     inkscape:export-ydpi="127"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:svg="http://www.w3.org/2000/svg"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <title
+         id="title9159">Site Layout concept</title>
+    <sodipodi:namedview
+         id="namedview7"
+         pagecolor="#1a1a1a"
+         bordercolor="#eeeeee"
+         borderopacity="1"
+         inkscape:showpageshadow="0"
+         inkscape:pageopacity="0"
+         inkscape:pagecheckerboard="0"
+         inkscape:deskcolor="#0d0d0d"
+         inkscape:document-units="mm"
+         showgrid="false"
+         inkscape:zoom="0.80574749"
+         inkscape:cx="758.92262"
+         inkscape:cy="1051.1978"
+         inkscape:window-width="3840"
+         inkscape:window-height="2088"
+         inkscape:window-x="0"
+         inkscape:window-y="0"
+         inkscape:window-maximized="1"
+         inkscape:current-layer="g13941">
+        <inkscape:grid
+             type="xygrid"
+             id="grid9155"
+             originx="0"
+             originy="0"
+             spacingx="9.9999999"
+             spacingy="9.9999999"
+             empspacing="10"
+             color="#3f3fff"
+             opacity="0.34117647"
+             empcolor="#3f3fff"
+             empopacity="0.65882353"
+             dotted="false" />
+    </sodipodi:namedview>
+    <defs
+         id="defs2" />
+    <g
+         inkscape:label="Layer 1"
+         inkscape:groupmode="layer"
+         id="layer1">
+        <rect
+             style="opacity:0.994161;fill:#9000ff;fill-opacity:0.0465024;fill-rule:evenodd;stroke:#ffa600;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers;stop-color:#000000"
+             id="rect2553"
+             width="401.53955"
+             height="496.97253"
+             x="10"
+             y="10"
+             rx="5" />
+        <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:100%;font-family:Overlock;-inkscape-font-specification:Overlock;letter-spacing:0px;word-spacing:0px;fill:#ffaa00;fill-opacity:1;stroke:none;stroke-width:0.264583"
+             x="20"
+             y="69.900002"
+             id="text12343-1"><tspan
+                 sodipodi:role="line"
+                 id="tspan12341-8"
+                 style="font-size:10px;fill:#ffaa00;fill-opacity:1;stroke-width:0.264583"
+                 x="20"
+                 y="69.900002">search &amp; filter functions are displayed here</tspan></text>
+        <g
+             id="g13593"
+             transform="translate(-2.0000001e-7,19.999999)">
+            <rect
+                 style="opacity:0.994161;fill:#000bff;fill-opacity:0.2;fill-rule:evenodd;stroke:#ffa600;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers;stop-color:#000000"
+                 id="rect2553-3"
+                 width="120"
+                 height="200"
+                 x="20"
+                 y="70"
+                 rx="5" />
+            <g
+                 id="g13941">
+                <rect
+                     style="opacity:0.994161;fill:#001666;fill-opacity:0.60000002;fill-rule:evenodd;stroke:#ffa600;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers;stop-color:#000000"
+                     id="rect2553-3-3"
+                     width="100"
+                     height="40"
+                     x="30"
+                     y="120"
+                     rx="5" />
+                <text
+                     xml:space="preserve"
+                     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:100%;font-family:Overlock;-inkscape-font-specification:Overlock;letter-spacing:0px;word-spacing:0px;fill:#ffaa00;fill-opacity:1;stroke:none;stroke-width:0.264583"
+                     x="40"
+                     y="140"
+                     id="text10746-6-0"><tspan
+                         sodipodi:role="line"
+                         id="tspan10744-7-6"
+                         style="font-size:16px;fill:#ffaa00;fill-opacity:1;stroke-width:0.264583"
+                         x="40"
+                         y="140">h1 l-t</tspan></text>
+                <text
+                     xml:space="preserve"
+                     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:100%;font-family:Overlock;-inkscape-font-specification:Overlock;letter-spacing:0px;word-spacing:0px;fill:#ffaa00;fill-opacity:1;stroke:none;stroke-width:0.264583"
+                     x="40"
+                     y="150"
+                     id="text12343-0-2"><tspan
+                         sodipodi:role="line"
+                         id="tspan12341-9-6"
+                         style="font-size:10px;fill:#ffaa00;fill-opacity:1;stroke-width:0.264583"
+                         x="40"
+                         y="150">text text text text</tspan></text>
+            </g>
+            <text
+                 xml:space="preserve"
+                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;line-height:100%;font-family:Overlock;-inkscape-font-specification:Overlock;letter-spacing:0px;word-spacing:0px;fill:#ffaa00;fill-opacity:1;stroke:none;stroke-width:0.264583"
+                 x="30"
+                 y="90"
+                 id="text10746-6"><tspan
+                     sodipodi:role="line"
+                     id="tspan10744-7"
+                     style="font-size:16px;fill:#ffaa00;fill-opacity:1;stroke-width:0.264583"
+                     x="30"
+                     y="90">h1 link-target</tspan></text>
+            <text
+                 xml:space="preserve"
+                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:100%;font-family:Overlock;-inkscape-font-specification:Overlock;letter-spacing:0px;word-spacing:0px;fill:#ffaa00;fill-opacity:1;stroke:none;stroke-width:0.264583"
+                 x="30"
+                 y="110"
+                 id="text12343-0"><tspan
+                     sodipodi:role="line"
+                     id="tspan12341-9"
+                     style="font-size:10px;fill:#ffaa00;fill-opacity:1;stroke-width:0.264583"
+                     x="30"
+                     y="110">text text text text</tspan></text>
+            <use
+                 x="0"
+                 y="0"
+                 xlink:href="#g13941"
+                 id="use13943"
+                 transform="translate(-9.9998553e-8,49.999999)" />
+            <use
+                 x="0"
+                 y="0"
+                 xlink:href="#g13941"
+                 id="use13943-7"
+                 transform="translate(-9.9998552e-8,99.999999)" />
+        </g>
+        <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:100%;font-family:Overlock;-inkscape-font-specification:Overlock;letter-spacing:0px;word-spacing:0px;fill:#ffaa00;fill-opacity:1;stroke:none;stroke-width:0.264583"
+             x="19.199999"
+             y="29.799999"
+             id="text10746"><tspan
+                 sodipodi:role="line"
+                 id="tspan10744"
+                 style="fill:#ffaa00;fill-opacity:1;stroke-width:0.264583"
+                 x="19.199999"
+                 y="29.799999">some welcome</tspan></text>
+        <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:100%;font-family:Overlock;-inkscape-font-specification:Overlock;letter-spacing:0px;word-spacing:0px;fill:#ffaa00;fill-opacity:1;stroke:none;stroke-width:0.264583"
+             x="20"
+             y="48.200031"
+             id="text12343"><tspan
+                 sodipodi:role="line"
+                 id="tspan12341"
+                 style="font-size:10px;fill:#ffaa00;fill-opacity:1;stroke-width:0.264583"
+                 x="20"
+                 y="48.200031">text text text text</tspan></text>
+        <use
+             x="0"
+             y="0"
+             xlink:href="#g13593"
+             id="use13595"
+             transform="translate(130)" />
+        <use
+             x="0"
+             y="0"
+             xlink:href="#g13593"
+             id="use13595-9"
+             transform="translate(258.97184,-0.0774239)" />
+        <use
+             x="0"
+             y="0"
+             xlink:href="#g13593"
+             id="use13595-1"
+             transform="translate(0,210)" />
+        <use
+             x="0"
+             y="0"
+             xlink:href="#g13593"
+             id="use13595-9-2"
+             transform="translate(128.97184,209.92258)" />
+        <use
+             x="0"
+             y="0"
+             xlink:href="#g13593"
+             id="use13595-9-2-7"
+             transform="translate(260,210)" />
+    </g>
+    <metadata
+         id="metadata9157">
+        <rdf:RDF>
+            <cc:Work
+                 rdf:about="">
+                <dc:date>27.05.2024</dc:date>
+                <dc:creator>
+                    <cc:Agent>
+                        <dc:title>Stefan Krüger</dc:title>
+                    </cc:Agent>
+                </dc:creator>
+                <dc:rights>
+                    <cc:Agent>
+                        <dc:title>Stefan Krüger</dc:title>
+                    </cc:Agent>
+                </dc:rights>
+                <dc:publisher>
+                    <cc:Agent>
+                        <dc:title>Stefan Krüger</dc:title>
+                    </cc:Agent>
+                </dc:publisher>
+                <dc:language>EN / DE</dc:language>
+                <cc:license
+                     rdf:resource="http://creativecommons.org/licenses/by/4.0/" />
+                <dc:title>Site Layout concept</dc:title>
+            </cc:Work>
+            <cc:License
+                 rdf:about="http://creativecommons.org/licenses/by/4.0/">
+                <cc:permits
+                     rdf:resource="http://creativecommons.org/ns#Reproduction" />
+                <cc:permits
+                     rdf:resource="http://creativecommons.org/ns#Distribution" />
+                <cc:requires
+                     rdf:resource="http://creativecommons.org/ns#Notice" />
+                <cc:requires
+                     rdf:resource="http://creativecommons.org/ns#Attribution" />
+                <cc:permits
+                     rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+            </cc:License>
+        </rdf:RDF>
+    </metadata>
+</svg>
