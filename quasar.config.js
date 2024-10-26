@@ -62,7 +62,7 @@ module.exports = configure(function (/* ctx */) {
 
             // publicPath: '/',
             // publicPath: "/quasar_lightpaint/dist/spa/",
-            publicPath: "mks-welcome-quasar",
+            publicPath: "mks-welcome",
             // analyze: true,
             env: {
                 //https://forum.quasar-framework.org/topic/6853/auto-generate-a-build-number-in-spa/15?_=1653270667151
@@ -234,7 +234,7 @@ module.exports = configure(function (/* ctx */) {
             builder: {
                 // https://www.electron.build/configuration/configuration
 
-                appId: "mks-welcome-quasar",
+                appId: "mks-welcome",
             },
         },
 
