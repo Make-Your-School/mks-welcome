@@ -1,0 +1,45 @@
+.my-markdown h1 {
+  font-size: 4rem;
+}
+.my-markdown h2 {
+  font-size: 3rem;
+}
+.my-markdown h3 {
+  font-size: 2rem;
+}
+.my-markdown h4 {
+  font-size: 1rem;
+}
+.my-markdown h5 {
+  font-size: 1rem;
+}
+.my-markdown h6 {
+  font-size: 1rem;
+}
+.my-markdown img {
+  max-width: 10vw;
+}
+.my-card .my-markdown h1:nth-child(1) {
+  position: sticky;
+  top: 1rem;
+  text-shadow: 0 0 2px black, 0 0 5px black, 0 0 10px black, 0 0 10px black, 0 0 10px black, 0 0 10px black, 0 0 10px black, 0 0 10px black;
+  background-color: inherit;
+}
+.body--light .my-card .my-markdown h1:nth-child(1) {
+  text-shadow: 0 0 2px white, 0 0 5px white, 0 0 10px white, 0 0 10px white, 0 0 10px white, 0 0 10px white, 0 0 10px white, 0 0 10px white;
+}.card-wrapper[data-v-5dbaa90f] {
+  list-style: none;
+  padding: 0;
+}
+.card-wrapper li[data-v-5dbaa90f] {
+  margin: 0;
+}
+.my-card[data-v-5dbaa90f] {
+  width: 100%;
+  max-width: 31vw;
+  max-height: 80vh;
+  overflow: scroll;
+}.my-card img {
+  max-width: 100%;
+  max-height: 20vh;
+}
