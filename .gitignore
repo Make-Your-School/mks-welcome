@@ -9,7 +9,8 @@ node_modules
 
 # allow build for preview on github pages
 dist/*
-!dist/spa
+# !dist/spa
+# try if our build process is also working with the ignore here..
 
 # Cordova related directories and files
 /src-cordova/node_modules
