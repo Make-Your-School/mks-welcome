@@ -1,6 +1,6 @@
-import { u as useDarkProps, a as useDark, b as useQuasar, _ as _export_sfc } from "./plugin-vue_export-helper.8c647d46.js";
-import { l as createComponent, c as computed, h, m as hSlot, a as getCurrentInstance, n as createBaseVNode, d as defineComponent, p as openBlock, q as createElementBlock, t as mergeProps, u as createCommentVNode, v as mergeDefaults, x as useSlots, i as inject, r as ref, y as toRefs, z as unref, w as watch, B as onBeforeMount, o as onMounted, C as normalizeStyle, D as renderSlot, E as normalizeProps, F as Fragment, G as createTextVNode, H as toDisplayString, I as normalizeClass, J as createBlock, _ as __vitePreload, s as shallowRef, K as watchEffect, L as renderList, j as createVNode, M as withCtx } from "./index.ed5ee3f5.js";
-import { Q as QPage } from "./QPage.d3516e8c.js";
+import { u as useDarkProps, a as useDark, b as useQuasar, _ as _export_sfc } from "./plugin-vue_export-helper.423afb5a.js";
+import { l as createComponent, c as computed, h, m as hSlot, a as getCurrentInstance, n as createBaseVNode, d as defineComponent, p as openBlock, q as createElementBlock, t as mergeProps, u as createCommentVNode, v as mergeDefaults, x as useSlots, i as inject, r as ref, y as toRefs, z as unref, w as watch, B as onBeforeMount, o as onMounted, C as normalizeStyle, D as renderSlot, E as normalizeProps, F as Fragment, G as createTextVNode, H as toDisplayString, I as normalizeClass, J as createBlock, _ as __vitePreload, s as shallowRef, K as watchEffect, L as renderList, j as createVNode, M as withCtx } from "./index.2a7ffaae.js";
+import { Q as QPage } from "./QPage.1aae14b0.js";
 var QCard = createComponent({
   name: "QCard",
   props: {
@@ -1254,11 +1254,11 @@ const Fn = { class: "v-code-block--button-copy" }, In = { class: "v-code-block--
         const a2 = e2.value.code.toString();
         x.value = JSON.stringify(JSON.parse(a2), null, e2.value.indent);
       }
-    })(), e2.value.highlightjs && __vitePreload(() => import("./index.85b191d0.js"), true ? ["assets/index.85b191d0.js","assets/plugin-vue_export-helper.8c647d46.js","assets/index.ed5ee3f5.js","assets/index.89f95bc7.css","assets/QPage.d3516e8c.js"] : void 0).then((a2) => {
+    })(), e2.value.highlightjs && __vitePreload(() => import("./index.9dff3470.js"), true ? ["assets/index.9dff3470.js","assets/plugin-vue_export-helper.423afb5a.js","assets/index.2a7ffaae.js","assets/index.89f95bc7.css","assets/QPage.1aae14b0.js"] : void 0).then((a2) => {
       L = a2.default, L.registerLanguage("plain", An), M.value = L.highlight(x.value, { language: e2.value.lang }).value;
     }).catch((a2) => {
       console.error("Highlight.js import:", { err: a2 });
-    }), e2.value.prismjs && __vitePreload(() => import("./prism.53c30294.js").then(function(n2) {
+    }), e2.value.prismjs && __vitePreload(() => import("./prism.a1db468e.js").then(function(n2) {
       return n2.p;
     }), true ? [] : void 0).then((a2) => {
       A = a2.default, M.value = A.highlight(x.value, A.languages[e2.value.lang], e2.value.lang);
@@ -6615,7 +6615,14 @@ const embedCode = async (tokens, idx, options2, env, self2) => {
       let codeContent = void 0;
       try {
         codeContent = await fetch(filePath).then(async (response) => {
-          return await response.text();
+          console.log(`response: `, response);
+          if (response.status == 200) {
+            return await response.text();
+          } else if (response.status == 404) {
+            throw new Error(`embed failed: file '${filePath}' not found.`, response);
+          } else {
+            throw new Error(`embed failed.`, response);
+          }
         });
       } catch (error2) {
         console.log(error2);

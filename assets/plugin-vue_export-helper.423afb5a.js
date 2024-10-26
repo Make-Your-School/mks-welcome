@@ -1,4 +1,4 @@
-import { c as computed, i as inject, Q as quasarKey } from "./index.ed5ee3f5.js";
+import { c as computed, i as inject, Q as quasarKey } from "./index.2a7ffaae.js";
 const useDarkProps = {
   dark: {
     type: Boolean,
