@@ -1,3 +1,7 @@
+---
+tags: "input"
+---
+
 # Taster & Schalter
 
 ![Taster allgemein](https://makeyourschool.de/wp-content/uploads/2018/10/59_taster_knopf-1024x1024.jpg)

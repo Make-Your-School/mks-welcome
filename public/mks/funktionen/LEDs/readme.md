@@ -4,8 +4,7 @@ tags: "output, led, licht, Farbe"
 
 # LEDs
 
-![Motortreiber allgemein]()
-TODO: CONTENT change image to general
+![LED](./led-lamp-green-on.svg)
 
 ## Funktionen
 
@@ -34,7 +33,7 @@ siehe einzelnes bauteile.
 
 ## Siehe Auch
 
--   [Motoren](./motor/)
+-   x
 
 ## Bauteile
 
