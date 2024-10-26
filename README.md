@@ -1,43 +1,40 @@
-# MYS MKS (mks-welcome)
+# Make Your School - Material
 
-evulution of the material-website
+dieses repository beinhaltet die Dokumentation zu allen Make Your School Materialien.
 
-## Install the dependencies
+es gibt eine suchbare gerenderte version unter:
+https://s-light.github.io/mks-welcome/
 
-```bash
-yarn
-# or
-npm install
-```
+ansonsten stöbere gerne in den verschiedenen Unterordnern.
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+## Struktur
 
-```bash
-quasar dev
-```
+-   [`public/`](./public/)
+    -   [`mks/`](./public/mks/)
+        -   [`readme.md`](./public/mks/readme.md)
+        -   [`funktionen/`](./public/mks/funktionen/)
+            -   [`Entfernung/`](./public/mks/funktionen/Entfernung)
+                -   [`readme.md`](./public/mks/funktionen/Entfernung/readme.md)
+                -   [`bauteile/`](./public/mks/funktionen/Entfernung/bauteile/)
+                    -   [`mks-GroveUltraschall`](./public/mks/funktionen/Entfernung/bauteile/mks-GroveUltraschall/)
+                        -   [`readme.md`](./public/mks/funktionen/Entfernung/bauteile/mks-GroveUltraschall/readme.md)
+            -   [`Schalter/`](./public/mks/funktionen/Schalter)
+                -   [`readme.md`](./public/mks/funktionen/Schalter/readme.md)
+                -   [`bauteile/`](./public/mks/funktionen/Schalter/bauteile/)
+                    -   [`mks-Endschalter`](./public/mks/funktionen/Schalter/bauteile/mks-Endschalter/)
+                        -   [`readme.md`](./public/mks/funktionen/Schalter/bauteile/mks-Endschalter/readme.md)
+                    -   [`mks-Taster`](./public/mks/funktionen/Schalter/bauteile/mks-Taster/)
+                        -   [`readme.md`](./public/mks/funktionen/Schalter/bauteile/mks-Taster/readme.md)
+            -   ...
 
-### Lint the files
+die Übersichts-seite liegt im Ordner [`public/mks/`](./public/mks/readme.md)
+Darunter findest du die verschiedenen _Funktionen_ im Ordner [`public/mks/funktionen/`](./public/mks/funktionen/).
+je Funktion gibt es weitere Unterordner für jedes Bauteil.
+Jedes Bauteil liegt in einem eigenen Repository welches hier als git submodule eingebunden ist.
 
-```bash
-yarn lint
-# or
-npm run lint
-```
+die Website folgt in etwa diesem layout
+![website layout](./layout_concept.svg)
 
-### Format the files
+## DEV
 
-```bash
-yarn format
-# or
-npm run format
-```
-
-### Build the app for production
-
-```bash
-quasar build
-```
-
-### Customize the configuration
-
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+für development siehe [./dev.md](./dev.md)
