@@ -34,6 +34,7 @@ import MarkdownIt from "markdown-it";
 
 // https://github.com/valeriangalliat/markdown-it-anchor/tree/master
 import anchor from "markdown-it-anchor";
+import { full } from "markdown-it-emoji";
 
 // https://github.com/nagaozen/markdown-it-toc-done-right
 // import * as mdi_toc from "markdown-it-toc-done-right";
@@ -94,6 +95,7 @@ md.value.use(anchor, {
 // sadly plugins can not be async.
 // so we have to do the rendering steps manually - see below.
 
+md.value.use(full);
 md.value.use(markdownItPluginImgSrcAbs);
 
 // function setupPlugins(plugins){
