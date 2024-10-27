@@ -1,41 +1,544 @@
-import { u as useDarkProps, a as useDark, b as useQuasar, _ as _export_sfc } from "./plugin-vue_export-helper.a1f24b34.js";
-import { l as createComponent, c as computed, h, m as hSlot, a as getCurrentInstance, n as createBaseVNode, d as defineComponent, p as openBlock, q as createElementBlock, t as mergeProps, u as createCommentVNode, v as mergeDefaults, x as useSlots, i as inject, r as ref, y as toRefs, z as unref, w as watch, B as onBeforeMount, o as onMounted, C as normalizeStyle, D as renderSlot, E as normalizeProps, F as Fragment, G as createTextVNode, H as toDisplayString, I as normalizeClass, J as createBlock, _ as __vitePreload, s as shallowRef, K as watchEffect, L as renderList, j as createVNode, M as withCtx } from "./index.14bd400a.js";
-import { Q as QPage } from "./QPage.39696ad9.js";
-var QCard = createComponent({
-  name: "QCard",
-  props: {
-    ...useDarkProps,
-    tag: {
-      type: String,
-      default: "div"
-    },
-    square: Boolean,
-    flat: Boolean,
-    bordered: Boolean
+import { l as onDeactivated, m as onBeforeUnmount, n as nextTick, v as vmIsDestroyed, a as getCurrentInstance, c as computed, p as getParentProxy, q as createComponent, r as ref, b as onUnmounted, t as injectProp, h, u as Teleport, x as createGlobalNode, y as removeGlobalNode, z as client, B as isKeyCode, w as watch, C as Transition, D as hSlot, E as childHasFocus, G as createBaseVNode, d as defineComponent, H as openBlock, I as createElementBlock, J as mergeProps, K as createCommentVNode, L as mergeDefaults, M as useSlots, i as inject, N as toRefs, O as unref, P as onBeforeMount, o as onMounted, Q as normalizeStyle, R as renderSlot, S as normalizeProps, F as Fragment, U as createTextVNode, V as toDisplayString, W as normalizeClass, X as createBlock, _ as __vitePreload, s as shallowRef, Y as watchEffect, Z as renderList, j as createVNode, $ as withCtx, a0 as createDirective, a1 as withDirectives, a2 as QBtn } from "./index.7fcedf38.js";
+import { u as useModelToggleProps, a as useModelToggleEmits, b as useTimeout, c as useModelToggle, d as useHistory, e as usePreventScroll, f as useQuasar, g as useDarkProps, h as useDark, _ as _export_sfc } from "./plugin-vue_export-helper.59bb07ac.js";
+import { Q as QPage } from "./QPage.a7190671.js";
+function useTick() {
+  let tickFn;
+  const vm = getCurrentInstance();
+  function removeTick() {
+    tickFn = void 0;
+  }
+  onDeactivated(removeTick);
+  onBeforeUnmount(removeTick);
+  return {
+    removeTick,
+    registerTick(fn) {
+      tickFn = fn;
+      nextTick(() => {
+        if (tickFn === fn) {
+          vmIsDestroyed(vm) === false && tickFn();
+          tickFn = void 0;
+        }
+      });
+    }
+  };
+}
+const useTransitionProps = {
+  transitionShow: {
+    type: String,
+    default: "fade"
   },
-  setup(props, { slots }) {
-    const { proxy: { $q } } = getCurrentInstance();
-    const isDark = useDark(props, $q);
-    const classes = computed(
-      () => "q-card" + (isDark.value === true ? " q-card--dark q-dark" : "") + (props.bordered === true ? " q-card--bordered" : "") + (props.square === true ? " q-card--square no-border-radius" : "") + (props.flat === true ? " q-card--flat no-shadow" : "")
-    );
-    return () => h(props.tag, { class: classes.value }, hSlot(slots.default));
+  transitionHide: {
+    type: String,
+    default: "fade"
+  },
+  transitionDuration: {
+    type: [String, Number],
+    default: 300
+  }
+};
+function useTransition(props, defaultShowFn = () => {
+}, defaultHideFn = () => {
+}) {
+  return {
+    transitionProps: computed(() => {
+      const show = `q-transition--${props.transitionShow || defaultShowFn()}`;
+      const hide = `q-transition--${props.transitionHide || defaultHideFn()}`;
+      return {
+        appear: true,
+        enterFromClass: `${show}-enter-from`,
+        enterActiveClass: `${show}-enter-active`,
+        enterToClass: `${show}-enter-to`,
+        leaveFromClass: `${hide}-leave-from`,
+        leaveActiveClass: `${hide}-leave-active`,
+        leaveToClass: `${hide}-leave-to`
+      };
+    }),
+    transitionStyle: computed(() => `--q-transition-duration: ${props.transitionDuration}ms`)
+  };
+}
+let queue$1 = [];
+let waitFlags = [];
+function clearFlag(flag) {
+  waitFlags = waitFlags.filter((entry) => entry !== flag);
+}
+function addFocusWaitFlag(flag) {
+  clearFlag(flag);
+  waitFlags.push(flag);
+}
+function removeFocusWaitFlag(flag) {
+  clearFlag(flag);
+  if (waitFlags.length === 0 && queue$1.length !== 0) {
+    queue$1[queue$1.length - 1]();
+    queue$1 = [];
+  }
+}
+function addFocusFn(fn) {
+  if (waitFlags.length === 0) {
+    fn();
+  } else {
+    queue$1.push(fn);
+  }
+}
+const portalProxyList = [];
+function getPortalProxy(el) {
+  return portalProxyList.find(
+    (proxy) => proxy.contentEl !== null && proxy.contentEl.contains(el)
+  );
+}
+function closePortalMenus(proxy, evt) {
+  do {
+    if (proxy.$options.name === "QMenu") {
+      proxy.hide(evt);
+      if (proxy.$props.separateClosePopup === true) {
+        return getParentProxy(proxy);
+      }
+    } else if (proxy.__qPortal === true) {
+      const parent = getParentProxy(proxy);
+      if (parent !== void 0 && parent.$options.name === "QPopupProxy") {
+        proxy.hide(evt);
+        return parent;
+      } else {
+        return proxy;
+      }
+    }
+    proxy = getParentProxy(proxy);
+  } while (proxy !== void 0 && proxy !== null);
+}
+function closePortals(proxy, evt, depth) {
+  while (depth !== 0 && proxy !== void 0 && proxy !== null) {
+    if (proxy.__qPortal === true) {
+      depth--;
+      if (proxy.$options.name === "QMenu") {
+        proxy = closePortalMenus(proxy, evt);
+        continue;
+      }
+      proxy.hide(evt);
+    }
+    proxy = getParentProxy(proxy);
+  }
+}
+const QPortal = createComponent({
+  name: "QPortal",
+  setup(_, { slots }) {
+    return () => slots.default();
   }
 });
-var QCardSection = createComponent({
-  name: "QCardSection",
+function isOnGlobalDialog(vm) {
+  vm = vm.parent;
+  while (vm !== void 0 && vm !== null) {
+    if (vm.type.name === "QGlobalDialog") {
+      return true;
+    }
+    if (vm.type.name === "QDialog" || vm.type.name === "QMenu") {
+      return false;
+    }
+    vm = vm.parent;
+  }
+  return false;
+}
+function usePortal(vm, innerRef, renderPortalContent, type2) {
+  const portalIsActive = ref(false);
+  const portalIsAccessible = ref(false);
+  let portalEl = null;
+  const focusObj = {};
+  const onGlobalDialog = type2 === "dialog" && isOnGlobalDialog(vm);
+  function showPortal(isReady) {
+    if (isReady === true) {
+      removeFocusWaitFlag(focusObj);
+      portalIsAccessible.value = true;
+      return;
+    }
+    portalIsAccessible.value = false;
+    if (portalIsActive.value === false) {
+      if (onGlobalDialog === false && portalEl === null) {
+        portalEl = createGlobalNode(false, type2);
+      }
+      portalIsActive.value = true;
+      portalProxyList.push(vm.proxy);
+      addFocusWaitFlag(focusObj);
+    }
+  }
+  function hidePortal(isReady) {
+    portalIsAccessible.value = false;
+    if (isReady !== true)
+      return;
+    removeFocusWaitFlag(focusObj);
+    portalIsActive.value = false;
+    const index = portalProxyList.indexOf(vm.proxy);
+    if (index !== -1) {
+      portalProxyList.splice(index, 1);
+    }
+    if (portalEl !== null) {
+      removeGlobalNode(portalEl);
+      portalEl = null;
+    }
+  }
+  onUnmounted(() => {
+    hidePortal(true);
+  });
+  vm.proxy.__qPortal = true;
+  injectProp(vm.proxy, "contentEl", () => innerRef.value);
+  return {
+    showPortal,
+    hidePortal,
+    portalIsActive,
+    portalIsAccessible,
+    renderPortal: () => onGlobalDialog === true ? renderPortalContent() : portalIsActive.value === true ? [h(Teleport, { to: portalEl }, h(QPortal, renderPortalContent))] : void 0
+  };
+}
+const handlers$1 = [];
+let escDown;
+function onKeydown(evt) {
+  escDown = evt.keyCode === 27;
+}
+function onBlur() {
+  if (escDown === true) {
+    escDown = false;
+  }
+}
+function onKeyup(evt) {
+  if (escDown === true) {
+    escDown = false;
+    if (isKeyCode(evt, 27) === true) {
+      handlers$1[handlers$1.length - 1](evt);
+    }
+  }
+}
+function update(action) {
+  window[action]("keydown", onKeydown);
+  window[action]("blur", onBlur);
+  window[action]("keyup", onKeyup);
+  escDown = false;
+}
+function addEscapeKey(fn) {
+  if (client.is.desktop === true) {
+    handlers$1.push(fn);
+    if (handlers$1.length === 1) {
+      update("addEventListener");
+    }
+  }
+}
+function removeEscapeKey(fn) {
+  const index = handlers$1.indexOf(fn);
+  if (index !== -1) {
+    handlers$1.splice(index, 1);
+    if (handlers$1.length === 0) {
+      update("removeEventListener");
+    }
+  }
+}
+const handlers = [];
+function trigger(e2) {
+  handlers[handlers.length - 1](e2);
+}
+function addFocusout(fn) {
+  if (client.is.desktop === true) {
+    handlers.push(fn);
+    if (handlers.length === 1) {
+      document.body.addEventListener("focusin", trigger);
+    }
+  }
+}
+function removeFocusout(fn) {
+  const index = handlers.indexOf(fn);
+  if (index !== -1) {
+    handlers.splice(index, 1);
+    if (handlers.length === 0) {
+      document.body.removeEventListener("focusin", trigger);
+    }
+  }
+}
+let maximizedModals = 0;
+const positionClass = {
+  standard: "fixed-full flex-center",
+  top: "fixed-top justify-center",
+  bottom: "fixed-bottom justify-center",
+  right: "fixed-right items-center",
+  left: "fixed-left items-center"
+};
+const defaultTransitions = {
+  standard: ["scale", "scale"],
+  top: ["slide-down", "slide-up"],
+  bottom: ["slide-up", "slide-down"],
+  right: ["slide-left", "slide-right"],
+  left: ["slide-right", "slide-left"]
+};
+var QDialog = createComponent({
+  name: "QDialog",
+  inheritAttrs: false,
   props: {
-    tag: {
+    ...useModelToggleProps,
+    ...useTransitionProps,
+    transitionShow: String,
+    transitionHide: String,
+    persistent: Boolean,
+    autoClose: Boolean,
+    allowFocusOutside: Boolean,
+    noEscDismiss: Boolean,
+    noBackdropDismiss: Boolean,
+    noRouteDismiss: Boolean,
+    noRefocus: Boolean,
+    noFocus: Boolean,
+    noShake: Boolean,
+    seamless: Boolean,
+    maximized: Boolean,
+    fullWidth: Boolean,
+    fullHeight: Boolean,
+    square: Boolean,
+    backdropFilter: String,
+    position: {
       type: String,
-      default: "div"
-    },
-    horizontal: Boolean
+      default: "standard",
+      validator: (val) => ["standard", "top", "bottom", "left", "right"].includes(val)
+    }
   },
-  setup(props, { slots }) {
-    const classes = computed(
-      () => `q-card__section q-card__section--${props.horizontal === true ? "horiz row no-wrap" : "vert"}`
+  emits: [
+    ...useModelToggleEmits,
+    "shake",
+    "click",
+    "escapeKey"
+  ],
+  setup(props, { slots, emit, attrs }) {
+    const vm = getCurrentInstance();
+    const innerRef = ref(null);
+    const showing = ref(false);
+    const animating = ref(false);
+    let shakeTimeout = null, refocusTarget = null, isMaximized, avoidAutoClose;
+    const hideOnRouteChange = computed(
+      () => props.persistent !== true && props.noRouteDismiss !== true && props.seamless !== true
     );
-    return () => h(props.tag, { class: classes.value }, hSlot(slots.default));
+    const { preventBodyScroll } = usePreventScroll();
+    const { registerTimeout } = useTimeout();
+    const { registerTick, removeTick } = useTick();
+    const { transitionProps, transitionStyle } = useTransition(
+      props,
+      () => defaultTransitions[props.position][0],
+      () => defaultTransitions[props.position][1]
+    );
+    const backdropStyle = computed(() => transitionStyle.value + (props.backdropFilter !== void 0 ? `;backdrop-filter:${props.backdropFilter};-webkit-backdrop-filter:${props.backdropFilter}` : ""));
+    const { showPortal, hidePortal, portalIsAccessible, renderPortal } = usePortal(
+      vm,
+      innerRef,
+      renderPortalContent,
+      "dialog"
+    );
+    const { hide } = useModelToggle({
+      showing,
+      hideOnRouteChange,
+      handleShow,
+      handleHide,
+      processOnMount: true
+    });
+    const { addToHistory, removeFromHistory } = useHistory(showing, hide, hideOnRouteChange);
+    const classes = computed(
+      () => `q-dialog__inner flex no-pointer-events q-dialog__inner--${props.maximized === true ? "maximized" : "minimized"} q-dialog__inner--${props.position} ${positionClass[props.position]}` + (animating.value === true ? " q-dialog__inner--animating" : "") + (props.fullWidth === true ? " q-dialog__inner--fullwidth" : "") + (props.fullHeight === true ? " q-dialog__inner--fullheight" : "") + (props.square === true ? " q-dialog__inner--square" : "")
+    );
+    const useBackdrop = computed(() => showing.value === true && props.seamless !== true);
+    const onEvents = computed(() => props.autoClose === true ? { onClick: onAutoClose } : {});
+    const rootClasses = computed(() => [
+      `q-dialog fullscreen no-pointer-events q-dialog--${useBackdrop.value === true ? "modal" : "seamless"}`,
+      attrs.class
+    ]);
+    watch(() => props.maximized, (state) => {
+      showing.value === true && updateMaximized(state);
+    });
+    watch(useBackdrop, (val) => {
+      preventBodyScroll(val);
+      if (val === true) {
+        addFocusout(onFocusChange);
+        addEscapeKey(onEscapeKey);
+      } else {
+        removeFocusout(onFocusChange);
+        removeEscapeKey(onEscapeKey);
+      }
+    });
+    function handleShow(evt) {
+      addToHistory();
+      refocusTarget = props.noRefocus === false && document.activeElement !== null ? document.activeElement : null;
+      updateMaximized(props.maximized);
+      showPortal();
+      animating.value = true;
+      if (props.noFocus !== true) {
+        document.activeElement !== null && document.activeElement.blur();
+        registerTick(focus);
+      } else {
+        removeTick();
+      }
+      registerTimeout(() => {
+        if (vm.proxy.$q.platform.is.ios === true) {
+          if (props.seamless !== true && document.activeElement) {
+            const { top, bottom } = document.activeElement.getBoundingClientRect(), { innerHeight } = window, height = window.visualViewport !== void 0 ? window.visualViewport.height : innerHeight;
+            if (top > 0 && bottom > height / 2) {
+              document.scrollingElement.scrollTop = Math.min(
+                document.scrollingElement.scrollHeight - height,
+                bottom >= innerHeight ? Infinity : Math.ceil(document.scrollingElement.scrollTop + bottom - height / 2)
+              );
+            }
+            document.activeElement.scrollIntoView();
+          }
+          avoidAutoClose = true;
+          innerRef.value.click();
+          avoidAutoClose = false;
+        }
+        showPortal(true);
+        animating.value = false;
+        emit("show", evt);
+      }, props.transitionDuration);
+    }
+    function handleHide(evt) {
+      removeTick();
+      removeFromHistory();
+      cleanup(true);
+      animating.value = true;
+      hidePortal();
+      if (refocusTarget !== null) {
+        ((evt && evt.type.indexOf("key") === 0 ? refocusTarget.closest('[tabindex]:not([tabindex^="-"])') : void 0) || refocusTarget).focus();
+        refocusTarget = null;
+      }
+      registerTimeout(() => {
+        hidePortal(true);
+        animating.value = false;
+        emit("hide", evt);
+      }, props.transitionDuration);
+    }
+    function focus(selector) {
+      addFocusFn(() => {
+        let node = innerRef.value;
+        if (node === null)
+          return;
+        if (selector !== void 0) {
+          const target = node.querySelector(selector);
+          if (target !== null) {
+            target.focus({ preventScroll: true });
+            return;
+          }
+        }
+        if (node.contains(document.activeElement) !== true) {
+          node = node.querySelector("[autofocus][tabindex], [data-autofocus][tabindex]") || node.querySelector("[autofocus] [tabindex], [data-autofocus] [tabindex]") || node.querySelector("[autofocus], [data-autofocus]") || node;
+          node.focus({ preventScroll: true });
+        }
+      });
+    }
+    function shake(focusTarget) {
+      if (focusTarget && typeof focusTarget.focus === "function") {
+        focusTarget.focus({ preventScroll: true });
+      } else {
+        focus();
+      }
+      emit("shake");
+      const node = innerRef.value;
+      if (node !== null) {
+        node.classList.remove("q-animate--scale");
+        node.classList.add("q-animate--scale");
+        shakeTimeout !== null && clearTimeout(shakeTimeout);
+        shakeTimeout = setTimeout(() => {
+          shakeTimeout = null;
+          if (innerRef.value !== null) {
+            node.classList.remove("q-animate--scale");
+            focus();
+          }
+        }, 170);
+      }
+    }
+    function onEscapeKey() {
+      if (props.seamless !== true) {
+        if (props.persistent === true || props.noEscDismiss === true) {
+          props.maximized !== true && props.noShake !== true && shake();
+        } else {
+          emit("escapeKey");
+          hide();
+        }
+      }
+    }
+    function cleanup(hiding) {
+      if (shakeTimeout !== null) {
+        clearTimeout(shakeTimeout);
+        shakeTimeout = null;
+      }
+      if (hiding === true || showing.value === true) {
+        updateMaximized(false);
+        if (props.seamless !== true) {
+          preventBodyScroll(false);
+          removeFocusout(onFocusChange);
+          removeEscapeKey(onEscapeKey);
+        }
+      }
+      if (hiding !== true) {
+        refocusTarget = null;
+      }
+    }
+    function updateMaximized(active) {
+      if (active === true) {
+        if (isMaximized !== true) {
+          maximizedModals < 1 && document.body.classList.add("q-body--dialog");
+          maximizedModals++;
+          isMaximized = true;
+        }
+      } else if (isMaximized === true) {
+        if (maximizedModals < 2) {
+          document.body.classList.remove("q-body--dialog");
+        }
+        maximizedModals--;
+        isMaximized = false;
+      }
+    }
+    function onAutoClose(e2) {
+      if (avoidAutoClose !== true) {
+        hide(e2);
+        emit("click", e2);
+      }
+    }
+    function onBackdropClick(e2) {
+      if (props.persistent !== true && props.noBackdropDismiss !== true) {
+        hide(e2);
+      } else if (props.noShake !== true) {
+        shake();
+      }
+    }
+    function onFocusChange(evt) {
+      if (props.allowFocusOutside !== true && portalIsAccessible.value === true && childHasFocus(innerRef.value, evt.target) !== true) {
+        focus('[tabindex]:not([tabindex="-1"])');
+      }
+    }
+    Object.assign(vm.proxy, {
+      focus,
+      shake,
+      __updateRefocusTarget(target) {
+        refocusTarget = target || null;
+      }
+    });
+    onBeforeUnmount(cleanup);
+    function renderPortalContent() {
+      return h("div", {
+        role: "dialog",
+        "aria-modal": useBackdrop.value === true ? "true" : "false",
+        ...attrs,
+        class: rootClasses.value
+      }, [
+        h(Transition, {
+          name: "q-transition--fade",
+          appear: true
+        }, () => useBackdrop.value === true ? h("div", {
+          class: "q-dialog__backdrop fixed-full",
+          style: backdropStyle.value,
+          "aria-hidden": "true",
+          tabindex: -1,
+          onClick: onBackdropClick
+        }) : null),
+        h(
+          Transition,
+          transitionProps.value,
+          () => showing.value === true ? h("div", {
+            ref: innerRef,
+            class: classes.value,
+            style: transitionStyle.value,
+            tabindex: -1,
+            ...onEvents.value
+          }, hSlot(slots.default)) : null
+        )
+      ]);
+    }
+    return renderPortal;
   }
 });
 var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
@@ -1254,11 +1757,11 @@ const Fn = { class: "v-code-block--button-copy" }, In = { class: "v-code-block--
         const a2 = e2.value.code.toString();
         x.value = JSON.stringify(JSON.parse(a2), null, e2.value.indent);
       }
-    })(), e2.value.highlightjs && __vitePreload(() => import("./index.4e7368ca.js"), true ? ["assets/index.4e7368ca.js","assets/plugin-vue_export-helper.a1f24b34.js","assets/index.14bd400a.js","assets/index.89f95bc7.css","assets/QPage.39696ad9.js"] : void 0).then((a2) => {
+    })(), e2.value.highlightjs && __vitePreload(() => import("./index.4b0e2934.js"), true ? ["assets/index.4b0e2934.js","assets/index.7fcedf38.js","assets/index.89f95bc7.css","assets/plugin-vue_export-helper.59bb07ac.js","assets/QPage.a7190671.js"] : void 0).then((a2) => {
       L = a2.default, L.registerLanguage("plain", An), M.value = L.highlight(x.value, { language: e2.value.lang }).value;
     }).catch((a2) => {
       console.error("Highlight.js import:", { err: a2 });
-    }), e2.value.prismjs && __vitePreload(() => import("./prism.f62aeaa7.js").then(function(n2) {
+    }), e2.value.prismjs && __vitePreload(() => import("./prism.1fee871c.js").then(function(n2) {
       return n2.p;
     }), true ? [] : void 0).then((a2) => {
       A = a2.default, M.value = A.highlight(x.value, A.languages[e2.value.lang], e2.value.lang);
@@ -54811,7 +55314,7 @@ var MyMarkdown_vue_vue_type_style_index_0_lang = "";
 const _hoisted_1$1 = { class: "my-markdown-wrapper" };
 const _hoisted_2 = ["innerHTML"];
 const _hoisted_3 = { key: 1 };
-const _sfc_main$1 = {
+const _sfc_main$3 = {
   __name: "MyMarkdown",
   props: {
     source: String,
@@ -54835,9 +55338,7 @@ const _sfc_main$1 = {
       eval: false
     };
     const md = shallowRef(new MarkdownIt(md_options));
-    md.value.use(b, {
-      permalink: b.permalink.headerLink()
-    });
+    md.value.use(b, {});
     md.value.use(imgSrcAbs);
     const content = ref([]);
     const addHTMLChunk = (tokens, token_start, token_end, env) => {
@@ -54917,6 +55418,169 @@ const _sfc_main$1 = {
     };
   }
 };
+var QCardSection = createComponent({
+  name: "QCardSection",
+  props: {
+    tag: {
+      type: String,
+      default: "div"
+    },
+    horizontal: Boolean
+  },
+  setup(props, { slots }) {
+    const classes = computed(
+      () => `q-card__section q-card__section--${props.horizontal === true ? "horiz row no-wrap" : "vert"}`
+    );
+    return () => h(props.tag, { class: classes.value }, hSlot(slots.default));
+  }
+});
+var QCard = createComponent({
+  name: "QCard",
+  props: {
+    ...useDarkProps,
+    tag: {
+      type: String,
+      default: "div"
+    },
+    square: Boolean,
+    flat: Boolean,
+    bordered: Boolean
+  },
+  setup(props, { slots }) {
+    const { proxy: { $q } } = getCurrentInstance();
+    const isDark = useDark(props, $q);
+    const classes = computed(
+      () => "q-card" + (isDark.value === true ? " q-card--dark q-dark" : "") + (props.bordered === true ? " q-card--bordered" : "") + (props.square === true ? " q-card--square no-border-radius" : "") + (props.flat === true ? " q-card--flat no-shadow" : "")
+    );
+    return () => h(props.tag, { class: classes.value }, hSlot(slots.default));
+  }
+});
+var FunctionOverview_vue_vue_type_style_index_0_scoped_true_lang = "";
+const _sfc_main$2 = {
+  __name: "FunctionOverview",
+  props: {
+    fn_item: Object
+  },
+  setup(__props) {
+    return (_ctx, _cache) => {
+      return openBlock(), createBlock(QCard, { class: "fn-overview" }, {
+        default: withCtx(() => [
+          createVNode(QCardSection, null, {
+            default: withCtx(() => [
+              createVNode(_sfc_main$3, {
+                source: __props.fn_item.readme.excerpt,
+                "file-path": __props.fn_item.path_base
+              }, null, 8, ["source", "file-path"]),
+              _cache[0] || (_cache[0] = createBaseVNode("h2", null, "Bauteile", -1)),
+              createBaseVNode("ul", null, [
+                (openBlock(true), createElementBlock(Fragment, null, renderList(__props.fn_item.bauteile, (part_item, part_name) => {
+                  return openBlock(), createElementBlock("li", { key: part_name }, toDisplayString(part_name), 1);
+                }), 128))
+              ])
+            ]),
+            _: 1
+          })
+        ]),
+        _: 1
+      });
+    };
+  }
+};
+var FunctionOverview = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-a6179a80"]]);
+function getDepth(value) {
+  if (value === false) {
+    return 0;
+  }
+  if (value === true || value === void 0) {
+    return 1;
+  }
+  const depth = parseInt(value, 10);
+  return isNaN(depth) ? 0 : depth;
+}
+var ClosePopup = createDirective(
+  {
+    name: "close-popup",
+    beforeMount(el, { value }) {
+      const ctx = {
+        depth: getDepth(value),
+        handler(evt) {
+          ctx.depth !== 0 && setTimeout(() => {
+            const proxy = getPortalProxy(el);
+            if (proxy !== void 0) {
+              closePortals(proxy, evt, ctx.depth);
+            }
+          });
+        },
+        handlerKey(evt) {
+          isKeyCode(evt, 13) === true && ctx.handler(evt);
+        }
+      };
+      el.__qclosepopup = ctx;
+      el.addEventListener("click", ctx.handler);
+      el.addEventListener("keyup", ctx.handlerKey);
+    },
+    updated(el, { value, oldValue }) {
+      if (value !== oldValue) {
+        el.__qclosepopup.depth = getDepth(value);
+      }
+    },
+    beforeUnmount(el) {
+      const ctx = el.__qclosepopup;
+      el.removeEventListener("click", ctx.handler);
+      el.removeEventListener("keyup", ctx.handlerKey);
+      delete el.__qclosepopup;
+    }
+  }
+);
+var FunctionDetails_vue_vue_type_style_index_0_scoped_true_lang = "";
+const _sfc_main$1 = {
+  __name: "FunctionDetails",
+  props: {
+    fn_item: Object
+  },
+  setup(__props) {
+    return (_ctx, _cache) => {
+      return openBlock(), createBlock(QCard, { class: "fn-details" }, {
+        default: withCtx(() => [
+          withDirectives(createVNode(QBtn, {
+            flat: "",
+            class: "absolute-top-right q-mt-md q-mr-md",
+            icon: "close",
+            size: "xl",
+            round: ""
+          }, null, 512), [
+            [ClosePopup]
+          ]),
+          createVNode(QCardSection, null, {
+            default: withCtx(() => [
+              createVNode(_sfc_main$3, {
+                source: __props.fn_item.readme.content,
+                "file-path": __props.fn_item.path_base
+              }, null, 8, ["source", "file-path"]),
+              (openBlock(true), createElementBlock(Fragment, null, renderList(__props.fn_item.bauteile, (part_item, part_name) => {
+                return openBlock(), createBlock(QCard, {
+                  key: part_name,
+                  class: "q-ma-md q-pa-md card-bauteil"
+                }, {
+                  default: withCtx(() => [
+                    createVNode(_sfc_main$3, {
+                      source: part_item.readme.content,
+                      "file-path": part_item.path_base
+                    }, null, 8, ["source", "file-path"])
+                  ]),
+                  _: 2
+                }, 1024);
+              }), 128))
+            ]),
+            _: 1
+          })
+        ]),
+        _: 1
+      });
+    };
+  }
+};
+var FunctionDetails = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-583ce504"]]);
 var empty = null;
 var empty_1 = empty;
 var toString = Object.prototype.toString;
@@ -60070,7 +60734,10 @@ matter.clearCache = function() {
 var grayMatter = matter;
 const preProcessingMD = (source2, path_base) => {
   console.group("preProcessingMD");
-  const processedObj = grayMatter(source2, { eval: false });
+  const processedObj = grayMatter(source2, {
+    eval: false,
+    excerpt_separator: "<!-- more_details -->"
+  });
   console.log("path_base:", path_base);
   console.log("processedObj:", processedObj);
   console.groupEnd();
@@ -60082,7 +60749,7 @@ const mksGetFunktionen = (mksContent2) => {
     mksContent2["funktionen"] = {};
   }
   const mksFn = mksContent2["funktionen"];
-  const funktionen_dir = { "./funktionen/Entfernung/readme.md": '---\ntitel: MYS Material\ntags: "entfernung"\n---\n\n# Entfernung\n\n![Ma\xDFband](./Yellow%20Tape%20Measure.svg)\n\n## Funktionen\n\n```c++ :./example.cpp\n```\n\nSensoren die Entfernungen Messen k\xF6nnen.\nhier ist unter anderem Wichtig in welchem Bereich der jeweilige Sensor messen kann.\nes kann z.B. sein das der minimale Abstand durch aus 5cm betr\xE4gt.\nauch sind die Genauigkeit sehr unterschiedlich - von wenigen Millimetern Abweichungen bis zu mehreren Centimeter.\n\n## Anschl\xFCsse\n\n### Eingang\n\nje nach Bauteil\n\n### Ausgang\n\n-   je nach Bauteil\n\n## Kurz-Datenblatt\n\nsiehe einzelnes bauteile.\n\nRelevante Gr\xF6\xDFen:\n\n-   Messbereich\n-   Genauigkeit\n\n## Siehe Auch\n\n-   -\n\n## Bauteile\n\nTODO: ARCHITECTURE link sub-pages\n', "./funktionen/LEDs/readme.md": '---\ntags: "output, led, licht, Farbe"\n---\n\n# LEDs\n\n![LED](./led-lamp-green-on.svg)\n\n## Funktionen\n\nDer Motortreiber \xFCbersetzt die schwachen Signale & Spannungen des micro-controllers (Arduino / RaspberryPi) in Starke Spannungen & Str\xF6me um die verschiedenen [Motoren](./motor/) an zu steuern (zu _treiben_).\n\n## Anschl\xFCsse\n\n### Eingang\n\nje nach Bauteil\n\n-   I2C\n-   Digital IO\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\nsiehe einzelnes bauteile.\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   x\n\n## Bauteile\n\n', "./funktionen/Motortreiber/readme.md": '---\ntags: "motor, motortreiber"\n---\n\n# Motortreiber\n\n![Motortreiber allgemein](https://makeyourschool.de/wp-content/uploads/2018/10/70_motortreiber-1024x1024.jpg)\n\nTODO: CONTENT change image to general\n\n## Funktionen\n\nDer Motortreiber \xFCbersetzt die schwachen Signale & Spannungen des micro-controllers (Arduino / RaspberryPi) in Starke Spannungen & Str\xF6me um die verschiedenen [Motoren](./motor/) an zu steuern (zu _treiben_).\n\n## Anschl\xFCsse\n\n### Eingang\n\nje nach Bauteil\n\n-   I2C\n-   Digital IO\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\nsiehe einzelnes bauteile.\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   [Motoren](./motor/)\n\n## Bauteile\nTODO: ARCHITECTURE link sub-pages\n', "./funktionen/Schalter/readme.md": '---\ntags: "input"\n---\n\n# Taster & Schalter\n\n![Taster allgemein](https://makeyourschool.de/wp-content/uploads/2018/10/59_taster_knopf-1024x1024.jpg)\n<!-- TODO: CONTENT change image to general -->\n\n## Funktionen\n\nDer Taster / Schalter ist ein *Input*.\n\nDer Unterschied zwischen Taster und Schalter:\n- Taster: nur solange *an* wie er Bet\xE4tigt (z.B: gedr\xFCckt) wird\n- Schalter: Bet\xE4tigung/Aktion wechselt den Zustand zwischen an und aus\n\nwenn ein Taster/Schalter **an** ist sind die Kontakte verbunden.\nwenn er **aus** ist sind die kontakte unverbunden.\ndiesen unterschied kann ein uC *messen*.\n\nes gibt diese in sehr vielen verschiedenen Ausf\xFChrungen.\n\n\n## Anschl\xFCsse\n\n### Eingang\n\n- Mechanische Bet\xE4tigung\n\n### Ausgang\n\n-   Zwei *Pins* werden *verbunden\n\n## Kurz-Datenblatt\n\nsiehe bauteile\n\n## Siehe Auch\n\n-   *-*\n\n## Weiterf\xFChrende Hintergrundinformationen:\n\n    [Schalter (Elektrotechnik) \u2013 Wikipedia Artikel](https://de.wikipedia.org/wiki/Schalter_(Elektrotechnik))\n    [Positionsschalter \u2013 Wikipedia Artikel](https://de.wikipedia.org/wiki/Positionsschalter)\n    [GPIO \u2013 Wikipedia Artikel](https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe)\n\n\n## Bauteile\n<!-- TODO: ARCHITECTURE link sub-pages  -->\n<!-- in `bauteile` folder -->\n' };
+  const funktionen_dir = { "./funktionen/Entfernung/readme.md": '---\ntitel: MYS Material\ntags: "entfernung"\n---\n\n# Entfernung\n\n![Ma\xDFband](./Yellow%20Tape%20Measure.svg)\n\n## Funktionen\n\nSensoren die Entfernungen Messen k\xF6nnen.\n\n<!-- more_details -->\n\nhier ist unter anderem Wichtig in welchem Bereich der jeweilige Sensor messen kann.\nes kann z.B. sein das der minimale Abstand durch aus 5cm betr\xE4gt.\nauch sind die Genauigkeit sehr unterschiedlich - von wenigen Millimetern Abweichungen bis zu mehreren Centimeter.\n\n## Anschl\xFCsse\n\n### Eingang\n\nje nach Bauteil\n\n### Ausgang\n\n-   je nach Bauteil\n\n## Kurz-Datenblatt\n\nsiehe einzelnes bauteile.\n\nRelevante Gr\xF6\xDFen:\n\n-   Messbereich (mm, cm, m)\n-   Genauigkeit (z.B. `+- n cm`)\n\n## Siehe Auch\n\n-   /\n', "./funktionen/LEDs/readme.md": '---\ntags: "output, led, licht, Farbe"\n---\n\n# LEDs\n\n![LED](./led-lamp-green-on.svg)\n\n## Funktionen\n\nEine LED kann verwendet werden um zust\xE4nde zu signalisieren oder auch um Licht im sinne von Beleuchtung zu erzeugen.\n\nes gibt sehr viele verschiedene formen und ausf\xFChrungen von LEDs.\n\n<!-- more_details -->\n\n## Anschl\xFCsse\n\n### Eingang\n\nje nach Bauteil\n\n-   I2C\n-   Digital IO\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\nsiehe einzelnes bauteile.\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   x\n', "./funktionen/Motortreiber/readme.md": '---\ntags: "motor, motortreiber"\n---\n\n# Motortreiber\n\n![Motortreiber allgemein](https://makeyourschool.de/wp-content/uploads/2018/10/70_motortreiber-1024x1024.jpg)\n\nTODO: CONTENT change image to general\n\n## Funktionen\n\nDer Motortreiber \xFCbersetzt die schwachen Signale & Spannungen des micro-controllers (Arduino / RaspberryPi) in Starke Spannungen & Str\xF6me um die verschiedenen [Motoren](./motor/) anzusteuern (zu _treiben_).\n\n<!-- more_details -->\n\n## Anschl\xFCsse\n\n### Eingang\n\nje nach Bauteil\n\n-   I2C\n-   Digital IO\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\nsiehe einzelnes bauteile.\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   [Motoren](./motor/)\n', "./funktionen/Schalter/readme.md": '---\ntags: "input"\n---\n\n# Taster & Schalter\n\n![Taster allgemein](https://makeyourschool.de/wp-content/uploads/2018/10/59_taster_knopf-1024x1024.jpg)\n\n<!-- TODO: CONTENT change image to general -->\n\n## Funktionen\n\nDer Taster / Schalter ist ein _Input_.\n\nDer Unterschied zwischen Taster und Schalter:\n\n-   Taster: nur solange _an_ wie er Bet\xE4tigt (z.B: gedr\xFCckt) wird\n-   Schalter: Bet\xE4tigung/Aktion wechselt den Zustand zwischen an und aus\n\nes gibt diese in sehr vielen verschiedenen Ausf\xFChrungen.\n\n<!-- more_details -->\n\nwenn ein Taster/Schalter **an** ist sind die Kontakte verbunden.\nwenn er **aus** ist sind die kontakte unverbunden.\ndiesen unterschied kann ein uC _messen_.\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   Mechanische Bet\xE4tigung\n\n### Ausgang\n\n-   Zwei _Pins_ werden \\*verbunden\n\n## Kurz-Datenblatt\n\nsiehe bauteile\n\n## Siehe Auch\n\n-   _-_\n\n## Weiterf\xFChrende Informationen:\n\n-   [Schalter (Elektrotechnik) \u2013 Wikipedia Artikel](<https://de.wikipedia.org/wiki/Schalter_(Elektrotechnik)>)\n-   [Positionsschalter \u2013 Wikipedia Artikel](https://de.wikipedia.org/wiki/Positionsschalter)\n-   [GPIO \u2013 Wikipedia Artikel](https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe)\n-   library f\xFCr _tasten-events_ [slight_ButtonInput](https://github.com/s-light/slight_ButtonInput/) (kann direkt in der IDE installiert werden)\n' };
   for (const path in funktionen_dir) {
     const fn_name = path.replace("./funktionen/", "").replace("/readme.md", "");
     if (mksFn[fn_name] == void 0) {
@@ -60097,7 +60764,7 @@ const mksGetFunktionen = (mksContent2) => {
 const mksGetFnBauteile = (mksContent2) => {
   console.group("mksGetFnBauteile");
   const mksFn = mksContent2["funktionen"];
-  const bauteile_dir = { "./funktionen/Entfernung/bauteile/mks-GroveUltraschall/readme.md": "# Grove Ultraschall Entfernungsmesser\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/17_ultraschallentfernungssensor-1024x1024.jpg)\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nkurz-Beschreibung\n\n```c++ :./example.cpp\n```\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   I2C\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugeh\xF6rigem part\n\n\n\n## library\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName\n<!-- TODO: CONTENT change library name -->\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an\n```c++ :./examples/BauteilTemplate_minimal/BauteilTemplate_minimal.ino\n```\n\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n- nimm Bauteil\n- Schlie\xDFe an Port D2 an\n- nehm Beispiel Code\n    - kopiere von hier dr\xFCber\n    - oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n- Sketch Hochladen\n- Das Sollte nun passieren:\n    - die LED Blinkt im 1 Sekunden Takt\n", "./funktionen/LEDs/bauteile/mks-LED-Streifen/readme.md": "# Pixel LED-Streifen\n\nmks Nr 65\n\nAndere Namen:\n- Neopixel\n- Dotstar\n- WS2811\n- APA102\n\n![LED-Streifen](https://makeyourschool.de/wp-content/uploads/2018/08/65_led-streifen-1024x1024.jpg)\n\n## Beschreibung\nLED-Streifen sind Flexible B\xE4nder auf denen in bestimmtem Abstand `Adresierbare LED's` aufgel\xF6tete sind.\njeder *Pixel* beinhaltet einen kleinen controller chip (meist schwarzen - dem LED-Treiber) und den meist drei eigentlichen LEDs in den Licht-Grundfarben Rot, Gr\xFCn und Blau.\nJeder *Pixel* kann einzeln *Adressiert* werden (Entspricht einem Haus in einer Stra\xDFe).\ndabei k\xF6nnen alle drei Grundfarben einzeln in ihrere Helligkeit (255 Stufen) eingestellt werden -\ndadurch k\xF6nnen alle Regenbogen Farben + Wei\xDF erzeugt werden.\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   Serielle Daten\n\n### Ausgang\n\n-   Licht\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 3-5V\n-   ben\xF6tigter Strom: 20mA-60mA pro Pixel\n\nBeispiel:\n10 Pixel * 60mA = 600mA = 0,6A\n\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugeh\xF6rigem part\n\n## library\n\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: [fastled](https://fastled.io/)\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/pixel_minimal/pixel_minimal.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schlie\xDFe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier dr\xFCber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n", "./funktionen/Motortreiber/bauteile/mks-GroveMotortreiberI2C/readme.md": "# Grove motortreiber I2C\n\nmks Nr 70\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/70_motortreiber-1024x1024.jpg)\n\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nkurz-Beschreibung\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   I2C\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 1A\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugeh\xF6rigem part\n\n## library\n\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName\n\n<!-- TODO: CONTENT change library name -->\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/grove_motortreiber_minimal/grove_motortreiber_minimal.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schlie\xDFe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier dr\xFCber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n", "./funktionen/Schalter/bauteile/mks-Endschalter/readme.md": "# Endschalter\n\n![Bauteil](./bauteil.jpg)\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nDer Endschalter funktioniert wie ein normaler Schalter und kann als Eingabe f\xFCr einen Mikrocontroller verwendet werden. \nDer Schalter besitzt einen elastischen Schaltarm, der einen elektrischen Kontakt zwischen den Anschlusspins herstellt, wenn der Arm gedr\xFCckt wird.\n\nDer Endschalter kommt vor allem bei Robotern oder anderen bewegten Maschinen zum Einsatz, um Kollisionen zu erkennen und zu vermeiden. \nSo kann dieser zum Beispiel an einem Roboter angebaut werden - wenn der Roboter dann gegen ein Hindernis f\xE4hrt, \nwird der Endschalter bet\xE4tigt bevor der Roboter das Hindernis wirklich ber\xFChrt.\nSo wird die bevorstehende Kollision erkannt und kann vermieden werden. (z.B. f\xE4hrt der Roboter dann R\xFCckw\xE4rts vom Hindernis weg.)\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   Mechanische Bet\xE4tigung\n\n### Ausgang\n\n-   3 Kontakte (NC-C-NO)\n    - C = Common (gemeinsamer Anschluss)\n    - NC = Normal Closed (im unged\xFCrckten zustand mit C verbunden)\n    - NO = Normal Open (im ged\xFCrckten zustand mit C verbunden)\n\n## Kurz-Datenblatt\n\n-   Schaltleistung: 5A 125VAC\n\n[Hersteller Datenblatt](https://asset.conrad.com/media10/add/160267/c1/-/de/000707243DS01/datenblatt-707243-hartmann-mikroschalter-mbb1-01-a-01-c-09-a-250-vac-5-a-1-x-einein-tastend-1-st.pdf)\n\n## Siehe Auch\n\n-   -\n\n\n\n## library\nkeine library n\xF6tig.\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n<!-- TODO: ARCHITECTURE include example *_minimal.ino-->\n\n## Anleitung\n\n- schlie\xDFe den Endschalter wie folgt an:\n    - C an GND\n    - NO an D2\n- nehm Beispiel Code \n    - kopiere von hier dr\xFCber in neuen leeren arduino sketch\n    - oder direkt \xFCber das Men\xFC der Arduino IDE *1: \n        `Datei-Beispiele-MakeYourSchool-Taster-Endschalter-Endschalter_Minimal`\n- Sketch Hochladen\n- Das Sollte nun passieren:\n    - \xD6ffne den Serial-Monitor (Symbol ganz rechts oben in der IDE)\n    - Wenn du nun den Endschalter dr\xFCckst sollte `Endschalter wurde gerade gedr\xFCckt!` angezeigt werden.\n    - Wenn du ihn wieder los l\xE4sst sollte `Endschalter wurde wieder ge\xF6ffnet` angezeigt werden.\n\n*1: daf\xFCr musst du einmalig die `MakeYourSchool` library installiert haben.\ndiese bringt alle hier im system vorhandenen Beispielcodes in die IDE..\n", "./funktionen/Schalter/bauteile/mks-GroveKippschalter/readme.md": "# Kippschalter\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/24_kippschalter-1024x1024.jpg)\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nkurz-Beschreibung\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   I2C\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugeh\xF6rigem part\n\n\n\n## library\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName\n<!-- TODO: CONTENT change library name -->\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n<!-- TODO: ARCHITECTURE include example *_minimal.ino-->\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n- nimm Bauteil\n- Schlie\xDFe an Port D2 an\n- nehm Beispiel Code \n    - kopiere von hier dr\xFCber\n    - oder direkt in der Arduino IDE: \n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n- Sketch Hochladen\n- Das Sollte nun passieren:\n    - die LED Blinkt im 1 Sekunden Takt\n", "./funktionen/Schalter/bauteile/mks-GroveMagnetschalter/readme.md": "# Magnetschalter\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/28_magnetschalter-1024x1024.jpg)\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nkurz-Beschreibung\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   I2C\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugeh\xF6rigem part\n\n\n\n## library\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName\n<!-- TODO: CONTENT change library name -->\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n<!-- TODO: ARCHITECTURE include example *_minimal.ino-->\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n- nimm Bauteil\n- Schlie\xDFe an Port D2 an\n- nehm Beispiel Code \n    - kopiere von hier dr\xFCber\n    - oder direkt in der Arduino IDE: \n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n- Sketch Hochladen\n- Das Sollte nun passieren:\n    - die LED Blinkt im 1 Sekunden Takt\n", "./funktionen/Schalter/bauteile/mks-GroveSchalter/readme.md": "# Schalter\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/61_schalter-1024x1024.jpg)\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nkurz-Beschreibung\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   I2C\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugeh\xF6rigem part\n\n\n\n## library\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName\n<!-- TODO: CONTENT change library name -->\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n<!-- TODO: ARCHITECTURE include example *_minimal.ino-->\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n- nimm Bauteil\n- Schlie\xDFe an Port D2 an\n- nehm Beispiel Code \n    - kopiere von hier dr\xFCber\n    - oder direkt in der Arduino IDE: \n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n- Sketch Hochladen\n- Das Sollte nun passieren:\n    - die LED Blinkt im 1 Sekunden Takt\n", "./funktionen/Schalter/bauteile/mks-GroveTaster/readme.md": "# Taster (Grove)\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/60_taster_knopf_platine-1024x1024.jpg)\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nein einfacher Taster.\nauf einer Platine mit einem Grove-Buchse verl\xF6tete.\ndadurch ist der Anschluss super einfach :-)\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   Mechanische Bet\xE4tigung\n\n### Ausgang\n\n-   5V Signal (auf Grove Buchse)\n\n## Kurz-Datenblatt\n\n-   Betriebsspannung: 3.3-5V\n\n## Siehe Auch\n\n-   -\n\n\n\n## library\nkeine library n\xF6tig.\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/taster/taster.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n- nimm Bauteil\n- Schlie\xDFe an Port D2 an\n- nehm Beispiel Code\n    - kopiere von hier dr\xFCber\n    - oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n- Sketch Hochladen\n- Das Sollte nun passieren:\n    - die LED Blinkt im 1 Sekunden Takt\n", "./funktionen/Schalter/bauteile/mks-Taster/readme.md": "# Taster\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/59_taster_knopf-1024x1024.jpg)\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nein einfacher Taster\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   Mechanische Bet\xE4tigung\n\n### Ausgang\n\n-   ...\n\n## Kurz-Datenblatt\n\n-   Betriebsspannung: 3.3-5V\n\n## Siehe Auch\n\n-   https://makeyourschool.de/maker-ecke/material/taster-knopf/\n\n\n\n## library\nkeine library n\xF6tig\n<!-- TODO: CONTENT change library name -->\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n<!-- TODO: ARCHITECTURE include example *_minimal.ino-->\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n- nimm Bauteil\n- Schlie\xDFe an Port D2 an\n- nehm Beispiel Code \n    - kopiere von hier dr\xFCber\n    - oder direkt in der Arduino IDE: \n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n- Sketch Hochladen\n- Das Sollte nun passieren:\n    - die LED Blinkt im 1 Sekunden Takt\n" };
+  const bauteile_dir = { "./funktionen/Entfernung/bauteile/mks-GroveUltraschall/readme.md": "# Grove Ultraschall Entfernungsmesser\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/17_ultraschallentfernungssensor-1024x1024.jpg)\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nkurz-Beschreibung\n\n```c++ :./example.cpp\n```\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   I2C\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugeh\xF6rigem part\n\n\n\n## library\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName\n<!-- TODO: CONTENT change library name -->\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an\n```c++ :./examples/BauteilTemplate_minimal/BauteilTemplate_minimal.ino\n```\n\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n- nimm Bauteil\n- Schlie\xDFe an Port D2 an\n- nehm Beispiel Code\n    - kopiere von hier dr\xFCber\n    - oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n- Sketch Hochladen\n- Das Sollte nun passieren:\n    - die LED Blinkt im 1 Sekunden Takt\n", "./funktionen/LEDs/bauteile/mks-LED-Streifen/readme.md": "# Pixel LED-Streifen\n\nmks Nr 65\n\nAndere Namen:\n- Neopixel\n- Dotstar\n- WS2811\n- APA102\n\n![LED-Streifen](https://makeyourschool.de/wp-content/uploads/2018/08/65_led-streifen-1024x1024.jpg)\n\n## Beschreibung\nLED-Streifen sind Flexible B\xE4nder auf denen in bestimmtem Abstand `Adresierbare LED's` aufgel\xF6tete sind.\njeder *Pixel* beinhaltet einen kleinen controller chip (meist schwarzen - dem LED-Treiber) und den meist drei eigentlichen LEDs in den Licht-Grundfarben Rot, Gr\xFCn und Blau.\nJeder *Pixel* kann einzeln *Adressiert* werden (Entspricht einem Haus in einer Stra\xDFe).\ndabei k\xF6nnen alle drei Grundfarben einzeln in ihrere Helligkeit (255 Stufen) eingestellt werden -\ndadurch k\xF6nnen alle Regenbogen Farben + Wei\xDF erzeugt werden.\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   Serielle Daten\n\n### Ausgang\n\n-   Licht\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 3-5V\n-   ben\xF6tigter Strom: 20mA-60mA pro Pixel\n\nBeispiel:\n10 Pixel * 60mA = 600mA = 0,6A\n\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugeh\xF6rigem part\n\n## library\n\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: [fastled](https://fastled.io/)\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/pixel_minimal/pixel_minimal.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schlie\xDFe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier dr\xFCber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n", "./funktionen/Motortreiber/bauteile/mks-GroveMotortreiberI2C/readme.md": "# Grove motortreiber I2C\n\nmks Nr 70\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/70_motortreiber-1024x1024.jpg)\n\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nkurz-Beschreibung\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   I2C\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 1A\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugeh\xF6rigem part\n\n## library\n\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName\n\n<!-- TODO: CONTENT change library name -->\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/grove_motortreiber_minimal/grove_motortreiber_minimal.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schlie\xDFe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier dr\xFCber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n", "./funktionen/Schalter/bauteile/mks-Endschalter/readme.md": "# Endschalter\n\n![Bauteil](./bauteil.jpg)\n\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nDer Endschalter funktioniert wie ein normaler Schalter und kann als Eingabe f\xFCr einen Mikrocontroller verwendet werden.\nDer Schalter besitzt einen elastischen Schaltarm, der einen elektrischen Kontakt zwischen den Anschlusspins herstellt, wenn der Arm gedr\xFCckt wird.\n\nDer Endschalter kommt vor allem bei Robotern oder anderen bewegten Maschinen zum Einsatz, um Kollisionen zu erkennen und zu vermeiden.\nSo kann dieser zum Beispiel an einem Roboter angebaut werden - wenn der Roboter dann gegen ein Hindernis f\xE4hrt,\nwird der Endschalter bet\xE4tigt bevor der Roboter das Hindernis wirklich ber\xFChrt.\nSo wird die bevorstehende Kollision erkannt und kann vermieden werden. (z.B. f\xE4hrt der Roboter dann R\xFCckw\xE4rts vom Hindernis weg.)\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   Mechanische Bet\xE4tigung\n\n### Ausgang\n\n-   3 Kontakte (NC-C-NO)\n    -   C = Common (gemeinsamer Anschluss)\n    -   NC = Normal Closed (im unged\xFCrckten zustand mit C verbunden)\n    -   NO = Normal Open (im ged\xFCrckten zustand mit C verbunden)\n\n## Kurz-Datenblatt\n\n-   Schaltleistung: 5A 125VAC\n\n[Hersteller Datenblatt](https://asset.conrad.com/media10/add/160267/c1/-/de/000707243DS01/datenblatt-707243-hartmann-mikroschalter-mbb1-01-a-01-c-09-a-250-vac-5-a-1-x-einein-tastend-1-st.pdf)\n\n## Siehe Auch\n\n-   -\n\n## library\n\nkeine library n\xF6tig.\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/Endschalter_minimal/Endschalter_minimal.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n-   schlie\xDFe den Endschalter wie folgt an:\n    -   C an GND\n    -   NO an D2\n-   nehm Beispiel Code\n    -   kopiere von hier dr\xFCber in neuen leeren arduino sketch\n    -   oder direkt \xFCber das Men\xFC der Arduino IDE \\*1:\n        `Datei-Beispiele-MakeYourSchool-Taster-Endschalter-Endschalter_Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   \xD6ffne den Serial-Monitor (Symbol ganz rechts oben in der IDE)\n    -   Wenn du nun den Endschalter dr\xFCckst sollte `Endschalter wurde gerade gedr\xFCckt!` angezeigt werden.\n    -   Wenn du ihn wieder los l\xE4sst sollte `Endschalter wurde wieder ge\xF6ffnet` angezeigt werden.\n\n\\*1: daf\xFCr musst du einmalig die `MakeYourSchool` library installiert haben.\ndiese bringt alle hier im system vorhandenen Beispielcodes in die IDE..\n", "./funktionen/Schalter/bauteile/mks-GroveKippschalter/readme.md": "# Kippschalter\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/24_kippschalter-1024x1024.jpg)\n\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nkurz-Beschreibung\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   I2C\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugeh\xF6rigem part\n\n## library\n\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: keine library ben\xF6tigt.\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/grove_kippschalter_minimal/grove_kippschalter_minimal.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schlie\xDFe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier dr\xFCber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n", "./funktionen/Schalter/bauteile/mks-GroveMagnetschalter/readme.md": "# Magnetschalter\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/28_magnetschalter-1024x1024.jpg)\n\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nkurz-Beschreibung\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   I2C\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugeh\xF6rigem part\n\n## library\n\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName\n\n<!-- TODO: CONTENT change library name -->\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/grove_magnetschalter_minimal/grove_magnetschalter_minimal.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schlie\xDFe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier dr\xFCber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n", "./funktionen/Schalter/bauteile/mks-GroveSchalter/readme.md": "# Schalter\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/61_schalter-1024x1024.jpg)\n\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nkurz-Beschreibung\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   I2C\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugeh\xF6rigem part\n\n## library\n\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName\n\n<!-- TODO: CONTENT change library name -->\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/grove_schalter_minimal/grove_schalter_minimal.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schlie\xDFe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier dr\xFCber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n", "./funktionen/Schalter/bauteile/mks-GroveTaster/readme.md": "# Taster (Grove)\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/60_taster_knopf_platine-1024x1024.jpg)\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nein einfacher Taster.\nauf einer Platine mit einem Grove-Buchse verl\xF6tete.\ndadurch ist der Anschluss super einfach :-)\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   Mechanische Bet\xE4tigung\n\n### Ausgang\n\n-   5V Signal (auf Grove Buchse)\n\n## Kurz-Datenblatt\n\n-   Betriebsspannung: 3.3-5V\n\n## Siehe Auch\n\n-   -\n\n\n\n## library\nkeine library n\xF6tig.\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/taster/taster.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n- nimm Bauteil\n- Schlie\xDFe an Port D2 an\n- nehm Beispiel Code\n    - kopiere von hier dr\xFCber\n    - oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n- Sketch Hochladen\n- Das Sollte nun passieren:\n    - die LED Blinkt im 1 Sekunden Takt\n", "./funktionen/Schalter/bauteile/mks-Taster/readme.md": "# Taster\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/59_taster_knopf-1024x1024.jpg)\n\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nein einfacher Taster\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   Mechanische Bet\xE4tigung\n\n### Ausgang\n\n-   ...\n\n## Kurz-Datenblatt\n\n-   Betriebsspannung: 3.3-5V\n\n## Siehe Auch\n\n-   https://makeyourschool.de/maker-ecke/material/taster-knopf/\n\n## library\n\nkeine library n\xF6tig\n\n<!-- TODO: CONTENT change library name -->\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/taster/taster.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schlie\xDFe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier dr\xFCber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n" };
   const path_regex = /\.\/funktionen\/(?<fn_name>.*)\/bauteile\/(?<part_name>.*)\/readme\.md/;
   for (const path in bauteile_dir) {
     const { fn_name, part_name } = path_regex.exec(path).groups;
@@ -60134,7 +60801,7 @@ const mksGetContent = () => {
 var mksContent = mksGetContent();
 var IndexPage_vue_vue_type_style_index_0_scoped_true_lang = "";
 var IndexPage_vue_vue_type_style_index_1_lang = "";
-const _hoisted_1 = { class: "card-wrapper q-ma-md q-pa-md row items-start q-gutter-md" };
+const _hoisted_1 = { class: "card-wrapper row items-stretch" };
 const _sfc_main = {
   __name: "IndexPage",
   setup(__props) {
@@ -60143,47 +60810,36 @@ const _sfc_main = {
     const mks_funktionen = ref(mksContent["funktionen"]);
     useQuasar();
     return (_ctx, _cache) => {
-      return openBlock(), createBlock(QPage, { class: "" }, {
+      return openBlock(), createBlock(QPage, { class: "my-page" }, {
         default: withCtx(() => [
-          createBaseVNode("section", null, [
-            createVNode(_sfc_main$1, {
-              source: mks_welcome.value.readme.content,
-              "file-path": mks_welcome.value.path_base
-            }, null, 8, ["source", "file-path"]),
-            createBaseVNode("ul", _hoisted_1, [
-              (openBlock(true), createElementBlock(Fragment, null, renderList(mks_funktionen.value, (fn_item, fn_name) => {
-                return openBlock(), createElementBlock("li", { key: fn_name }, [
-                  createVNode(QCard, { class: "my-card q-ma-md q-pa-md" }, {
-                    default: withCtx(() => [
-                      createVNode(QCardSection, null, {
-                        default: withCtx(() => [
-                          createVNode(_sfc_main$1, {
-                            source: fn_item.readme.content,
-                            "file-path": fn_item.path_base
-                          }, null, 8, ["source", "file-path"]),
-                          (openBlock(true), createElementBlock(Fragment, null, renderList(fn_item.bauteile, (part_item, part_name) => {
-                            return openBlock(), createBlock(QCard, {
-                              key: part_name,
-                              class: "q-ma-md q-pa-md card-bauteil"
-                            }, {
-                              default: withCtx(() => [
-                                createVNode(_sfc_main$1, {
-                                  source: part_item.readme.content,
-                                  "file-path": part_item.path_base
-                                }, null, 8, ["source", "file-path"])
-                              ]),
-                              _: 2
-                            }, 1024);
-                          }), 128))
-                        ]),
-                        _: 2
-                      }, 1024)
-                    ]),
-                    _: 2
-                  }, 1024)
-                ]);
-              }), 128))
-            ])
+          createVNode(_sfc_main$3, {
+            source: mks_welcome.value.readme.content,
+            "file-path": mks_welcome.value.path_base
+          }, null, 8, ["source", "file-path"]),
+          createBaseVNode("ul", _hoisted_1, [
+            (openBlock(true), createElementBlock(Fragment, null, renderList(mks_funktionen.value, (fn_item, fn_name) => {
+              return openBlock(), createElementBlock("li", {
+                key: fn_name,
+                class: "my-card q-pa-md"
+              }, [
+                createVNode(FunctionOverview, {
+                  fn_item,
+                  onClick: ($event) => fn_item.showDetails = true,
+                  class: "clickable"
+                }, null, 8, ["fn_item", "onClick"]),
+                createVNode(QDialog, {
+                  modelValue: fn_item.showDetails,
+                  "onUpdate:modelValue": ($event) => fn_item.showDetails = $event,
+                  "full-height": "",
+                  "full-width": ""
+                }, {
+                  default: withCtx(() => [
+                    createVNode(FunctionDetails, { fn_item }, null, 8, ["fn_item"])
+                  ]),
+                  _: 2
+                }, 1032, ["modelValue", "onUpdate:modelValue"])
+              ]);
+            }), 128))
           ])
         ]),
         _: 1
@@ -60191,7 +60847,7 @@ const _sfc_main = {
     };
   }
 };
-var IndexPage = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-5dbaa90f"]]);
+var IndexPage = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-55322253"]]);
 var IndexPage$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   "default": IndexPage

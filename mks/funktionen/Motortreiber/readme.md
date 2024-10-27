@@ -10,7 +10,9 @@ TODO: CONTENT change image to general
 
 ## Funktionen
 
-Der Motortreiber übersetzt die schwachen Signale & Spannungen des micro-controllers (Arduino / RaspberryPi) in Starke Spannungen & Ströme um die verschiedenen [Motoren](./motor/) an zu steuern (zu _treiben_).
+Der Motortreiber übersetzt die schwachen Signale & Spannungen des micro-controllers (Arduino / RaspberryPi) in Starke Spannungen & Ströme um die verschiedenen [Motoren](./motor/) anzusteuern (zu _treiben_).
+
+<!-- more_details -->
 
 ## Anschlüsse
 
@@ -36,6 +38,3 @@ siehe einzelnes bauteile.
 ## Siehe Auch
 
 -   [Motoren](./motor/)
-
-## Bauteile
-TODO: ARCHITECTURE link sub-pages

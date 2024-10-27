@@ -1,5 +1,6 @@
 .my-markdown h1 {
   font-size: 4rem;
+  margin-top: 0;
 }
 .my-markdown h2 {
   font-size: 3rem;
@@ -27,18 +28,45 @@
 }
 .body--light .my-card .my-markdown h1:nth-child(1) {
   text-shadow: 0 0 2px white, 0 0 5px white, 0 0 10px white, 0 0 10px white, 0 0 10px white, 0 0 10px white, 0 0 10px white, 0 0 10px white;
-}.card-wrapper[data-v-5dbaa90f] {
+}.fn-overview[data-v-a6179a80] {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}.fn-details[data-v-583ce504] {
+  width: 100%;
+  height: 100%;
+}
+.fn-details .q-btn[data-v-583ce504] {
+  z-index: 2000;
+}
+.fn-details .q-card__section[data-v-583ce504] {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}.my-page[data-v-55322253] {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+}
+.card-wrapper[data-v-55322253] {
+  flex-grow: 1;
+  overflow: auto;
+  min-height: 0;
   list-style: none;
   padding: 0;
 }
-.card-wrapper li[data-v-5dbaa90f] {
+.card-wrapper li[data-v-55322253] {
   margin: 0;
 }
-.my-card[data-v-5dbaa90f] {
+.my-card[data-v-55322253] {
   width: 100%;
-  max-width: 31vw;
+  min-width: 25rem;
+  max-width: 32.5vw;
   max-height: 80vh;
-  overflow: scroll;
+}
+.clickable[data-v-55322253] {
+  cursor: pointer;
 }.my-card img {
   max-width: 100%;
   max-height: 20vh;
