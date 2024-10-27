@@ -6,8 +6,15 @@
         <!-- class="col-auto" -->
         <!-- -->
         <!-- <div class="scroll-wrapper col"> -->
+        <div>
+            <q-input rounded outlined v-model="searchText" label="Suche:"> </q-input>
+        </div>
         <ul class="card-wrapper row items-stretch">
-            <li v-for="(fn_item, fn_name) in mks_funktionen" :key="fn_name" class="my-card q-pa-md">
+            <li
+                v-for="(fn_item, fn_name) in mks_funktionen_filtered"
+                :key="fn_name"
+                class="my-card q-pa-md"
+            >
                 <FunctionOverview
                     :fn_item="fn_item"
                     @click="fn_item.showDetails = true"
@@ -27,11 +34,6 @@ import { ref, computed } from "vue";
 import { useQuasar } from "quasar";
 
 import MyMarkdown from "src/components/MyMarkdown.vue";
-
-// import { useTheTimeStore } from "stores/thetime.js";
-
-// import TimerDisplay from "components/TimerDisplay.vue";
-
 import FunctionOverview from "src/components/FunctionOverview.vue";
 import FunctionDetails from "src/components/FunctionDetails.vue";
 
@@ -45,17 +47,19 @@ const mks_welcome = ref(mksContent["welcome"]);
 // console.log(`mksContent.welcome['./readme.md'].path_base`, mksContent.welcome['./readme.md'].path_base);
 const mks_funktionen = ref(mksContent["funktionen"]);
 
-// const thetime = useTheTimeStore();
+const mks_funktionen_filtered = computed(() => {
+    const result = {};
+    for (const [fn_item, fn_name] of Object.entries(mks_funktionen)) {
+        result[fn_name] = fn_item;
+    }
+    return result;
+});
+
+const searchText = ref("");
 
 // $q.notify('Message')
 
 const $q = useQuasar();
-
-const getPageStyle = (offset, height) => {
-    return {
-        height: `${height - offset}px`,
-    };
-};
 </script>
 
 <style lang="sass" scoped>
