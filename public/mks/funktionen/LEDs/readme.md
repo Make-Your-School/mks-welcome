@@ -8,7 +8,11 @@ tags: "output, led, licht, Farbe"
 
 ## Funktionen
 
-Der Motortreiber übersetzt die schwachen Signale & Spannungen des micro-controllers (Arduino / RaspberryPi) in Starke Spannungen & Ströme um die verschiedenen [Motoren](./motor/) an zu steuern (zu _treiben_).
+Eine LED kann verwendet werden um zustände zu signalisieren oder auch um Licht im sinne von Beleuchtung zu erzeugen.
+
+es gibt sehr viele verschiedene formen und ausführungen von LEDs.
+
+<!-- more_details -->
 
 ## Anschlüsse
 
@@ -34,6 +38,3 @@ siehe einzelnes bauteile.
 ## Siehe Auch
 
 -   x
-
-## Bauteile
-

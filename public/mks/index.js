@@ -21,7 +21,10 @@ import matter from "gray-matter";
 
 const preProcessingMD = (source, path_base) => {
     console.group("preProcessingMD");
-    const processedObj = matter(source, { eval: false });
+    const processedObj = matter(source, {
+        eval: false,
+        excerpt_separator: "<!-- more_details -->",
+    });
     console.log("path_base:", path_base);
     console.log("processedObj:", processedObj);
     console.groupEnd();

@@ -1,4 +1,5 @@
 <template>
+    <!-- style="min-height: 0" -->
     <q-layout view="lHh Lpr lFf">
         <!-- <q-header elevated>
             <q-toolbar>
@@ -9,7 +10,6 @@
                 <div>Quasar v{{ $q.version }}</div>
             </q-toolbar>
         </q-header> -->
-
         <q-btn
             flat
             dense
@@ -22,14 +22,15 @@
         >
         </q-btn>
         <q-btn
-        class="fixed-top-right q-ma-sm"
-                            flat
-                            round
-                            @click="$q.dark.toggle()"
-                            :icon="$q.dark.isActive ? 'brightness_2' : 'brightness_5'"
-                        />
+            class="fixed-top-right q-ma-sm"
+            flat
+            round
+            @click="$q.dark.toggle()"
+            :icon="$q.dark.isActive ? 'brightness_2' : 'brightness_5'"
+            style="z-index: 10000"
+        />
 
-        <q-drawer v-model="leftDrawerOpen" bordered elevated persistent>
+        <q-drawer v-model="leftDrawerOpen" bordered elevated overlay persistent>
             <q-list class="q-pt-xl q-pb-xl">
                 <EssentialNavigation />
 
@@ -55,7 +56,8 @@
             </q-list>
         </q-drawer>
 
-        <q-page-container>
+        <!-- style="min-height: 0" -->
+        <q-page-container class="fixed fit q-pa-md">
             <router-view />
         </q-page-container>
     </q-layout>
@@ -100,6 +102,6 @@ const $q = useQuasar();
 
 <style>
 .body--light {
-  background-color: hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 100%);
 }
 </style>

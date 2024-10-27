@@ -78,7 +78,7 @@ const md_options = {
 const md = shallowRef(new MarkdownIt(md_options));
 
 md.value.use(anchor, {
-  permalink: anchor.permalink.headerLink()
+    //   permalink: anchor.permalink.headerLink()
 });
 
 // md.value.use(mdi_toc);
@@ -198,7 +198,8 @@ watchEffect(async () => {
 <style lang="sass">
 .my-markdown
     h1
-        font-size: 4rem
+        font-size: 4.0rem
+        margin-top: 0
     h2
         font-size: 3rem
     h3
@@ -219,4 +220,3 @@ watchEffect(async () => {
 .body--light .my-card .my-markdown h1:nth-child(1)
         text-shadow: 0 0 2px white, 0 0 5px white, 0 0 10px white, 0 0 10px white, 0 0 10px white, 0 0 10px white, 0 0 10px white, 0 0 10px white
 </style>
-, watchEffect
