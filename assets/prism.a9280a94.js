@@ -1,4 +1,4 @@
-import { c as commonjsGlobal } from "./IndexPage.0c11cc12.js";
+import { c as commonjsGlobal } from "./index.ddd68bc7.js";
 function _mergeNamespaces(n, m) {
   m.forEach(function(e) {
     e && typeof e !== "string" && !Array.isArray(e) && Object.keys(e).forEach(function(k) {

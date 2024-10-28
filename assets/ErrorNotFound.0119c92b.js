@@ -1,4 +1,4 @@
-import { H as openBlock, I as createElementBlock, G as createBaseVNode, j as createVNode, a2 as QBtn } from "./index.7fcedf38.js";
+import { R as openBlock, W as createElementBlock, V as createBaseVNode, j as createVNode, $ as QBtn } from "./index.536a6c4a.js";
 const _hoisted_1 = { class: "fullscreen bg-blue text-white text-center q-pa-md flex flex-center" };
 const _sfc_main = Object.assign({
   name: "ErrorNotFound"

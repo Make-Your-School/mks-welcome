@@ -1,6 +1,12 @@
+---
+tags: input, grove
+id: 60
+---
+
 # Taster (Grove)
 
 ![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/60_taster_knopf_platine-1024x1024.jpg)
+
 <!-- TODO: CONTENT change image -->
 <!-- TODO: ARCHITECTURE multiple images? -->
 <!-- do we need multiple images per part?-->
@@ -30,9 +36,8 @@ dadurch ist der Anschluss super einfach :-)
 
 -   -
 
-
-
 ## library
+
 keine library nötig.
 
 ## Beispiel
@@ -46,12 +51,13 @@ schau dir das Minimal-Beispiel an:
 ## Anleitung
 
 <!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE:
+
+-   nimm Bauteil
+-   Schließe an Port D2 an
+-   nehm Beispiel Code
+    -   kopiere von hier drüber
+    -   oder direkt in der Arduino IDE:
         `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt
+-   Sketch Hochladen
+-   Das Sollte nun passieren:
+    -   die LED Blinkt im 1 Sekunden Takt

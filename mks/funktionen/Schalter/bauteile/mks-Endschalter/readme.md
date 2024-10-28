@@ -1,3 +1,8 @@
+---
+tags: motor, input
+id: 25
+---
+
 # Endschalter
 
 ![Bauteil](./bauteil.jpg)

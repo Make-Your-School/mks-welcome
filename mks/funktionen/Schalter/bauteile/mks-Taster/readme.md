@@ -1,3 +1,8 @@
+---
+tags: input
+id: 59
+---
+
 # Taster
 
 ![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/59_taster_knopf-1024x1024.jpg)

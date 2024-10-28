@@ -1,4 +1,13 @@
-import { m as onBeforeUnmount, a6 as History, l as onDeactivated, v as vmIsDestroyed, a as getCurrentInstance, w as watch, a7 as vmHasRouter, o as onMounted, n as nextTick, a8 as css, a9 as getElement, z as client, aa as listenOpts, ab as stopAndPrevent, ac as getEventPath, i as inject, ad as quasarKey, c as computed } from "./index.7fcedf38.js";
+import { c as computed, p as onBeforeUnmount, ai as History, x as onDeactivated, I as vmIsDestroyed, a as getCurrentInstance, w as watch, aj as vmHasRouter, o as onMounted, v as nextTick, ak as css, al as getElement, N as client, am as listenOpts, u as stopAndPrevent, an as getEventPath } from "./index.536a6c4a.js";
+const useDarkProps = {
+  dark: {
+    type: Boolean,
+    default: null
+  }
+};
+function useDark(props, $q) {
+  return computed(() => props.dark === null ? $q.dark.isActive : props.dark);
+}
 function useHistory(showing, hide, hideOnRouteChange) {
   let historyEntry;
   function removeFromHistory() {
@@ -354,18 +363,6 @@ function usePreventScroll() {
     }
   };
 }
-function useQuasar() {
-  return inject(quasarKey);
-}
-const useDarkProps = {
-  dark: {
-    type: Boolean,
-    default: null
-  }
-};
-function useDark(props, $q) {
-  return computed(() => props.dark === null ? $q.dark.isActive : props.dark);
-}
 var _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -373,4 +370,4 @@ var _export_sfc = (sfc, props) => {
   }
   return target;
 };
-export { _export_sfc as _, useModelToggleEmits as a, useTimeout as b, useModelToggle as c, useHistory as d, usePreventScroll as e, useQuasar as f, useDarkProps as g, useDark as h, getScrollTarget as i, getVerticalScrollPosition as j, getHorizontalScrollPosition as k, getScrollbarWidth as l, scrollTargetProp as s, useModelToggleProps as u };
+export { _export_sfc as _, useDarkProps as a, useModelToggleProps as b, useModelToggleEmits as c, useTimeout as d, useModelToggle as e, useHistory as f, usePreventScroll as g, getScrollTarget as h, getVerticalScrollPosition as i, getHorizontalScrollPosition as j, getScrollbarWidth as k, scrollTargetProp as s, useDark as u };

@@ -1,546 +1,5 @@
-import { l as onDeactivated, m as onBeforeUnmount, n as nextTick, v as vmIsDestroyed, a as getCurrentInstance, c as computed, p as getParentProxy, q as createComponent, r as ref, b as onUnmounted, t as injectProp, h, u as Teleport, x as createGlobalNode, y as removeGlobalNode, z as client, B as isKeyCode, w as watch, C as Transition, D as hSlot, E as childHasFocus, G as createBaseVNode, d as defineComponent, H as openBlock, I as createElementBlock, J as mergeProps, K as createCommentVNode, L as mergeDefaults, M as useSlots, i as inject, N as toRefs, O as unref, P as onBeforeMount, o as onMounted, Q as normalizeStyle, R as renderSlot, S as normalizeProps, F as Fragment, U as createTextVNode, V as toDisplayString, W as normalizeClass, X as createBlock, _ as __vitePreload, s as shallowRef, Y as watchEffect, Z as renderList, j as createVNode, $ as withCtx, a0 as createDirective, a1 as withDirectives, a2 as QBtn } from "./index.7fcedf38.js";
-import { u as useModelToggleProps, a as useModelToggleEmits, b as useTimeout, c as useModelToggle, d as useHistory, e as usePreventScroll, f as useQuasar, g as useDarkProps, h as useDark, _ as _export_sfc } from "./plugin-vue_export-helper.59bb07ac.js";
-import { Q as QPage } from "./QPage.a7190671.js";
-function useTick() {
-  let tickFn;
-  const vm = getCurrentInstance();
-  function removeTick() {
-    tickFn = void 0;
-  }
-  onDeactivated(removeTick);
-  onBeforeUnmount(removeTick);
-  return {
-    removeTick,
-    registerTick(fn) {
-      tickFn = fn;
-      nextTick(() => {
-        if (tickFn === fn) {
-          vmIsDestroyed(vm) === false && tickFn();
-          tickFn = void 0;
-        }
-      });
-    }
-  };
-}
-const useTransitionProps = {
-  transitionShow: {
-    type: String,
-    default: "fade"
-  },
-  transitionHide: {
-    type: String,
-    default: "fade"
-  },
-  transitionDuration: {
-    type: [String, Number],
-    default: 300
-  }
-};
-function useTransition(props, defaultShowFn = () => {
-}, defaultHideFn = () => {
-}) {
-  return {
-    transitionProps: computed(() => {
-      const show = `q-transition--${props.transitionShow || defaultShowFn()}`;
-      const hide = `q-transition--${props.transitionHide || defaultHideFn()}`;
-      return {
-        appear: true,
-        enterFromClass: `${show}-enter-from`,
-        enterActiveClass: `${show}-enter-active`,
-        enterToClass: `${show}-enter-to`,
-        leaveFromClass: `${hide}-leave-from`,
-        leaveActiveClass: `${hide}-leave-active`,
-        leaveToClass: `${hide}-leave-to`
-      };
-    }),
-    transitionStyle: computed(() => `--q-transition-duration: ${props.transitionDuration}ms`)
-  };
-}
-let queue$1 = [];
-let waitFlags = [];
-function clearFlag(flag) {
-  waitFlags = waitFlags.filter((entry) => entry !== flag);
-}
-function addFocusWaitFlag(flag) {
-  clearFlag(flag);
-  waitFlags.push(flag);
-}
-function removeFocusWaitFlag(flag) {
-  clearFlag(flag);
-  if (waitFlags.length === 0 && queue$1.length !== 0) {
-    queue$1[queue$1.length - 1]();
-    queue$1 = [];
-  }
-}
-function addFocusFn(fn) {
-  if (waitFlags.length === 0) {
-    fn();
-  } else {
-    queue$1.push(fn);
-  }
-}
-const portalProxyList = [];
-function getPortalProxy(el) {
-  return portalProxyList.find(
-    (proxy) => proxy.contentEl !== null && proxy.contentEl.contains(el)
-  );
-}
-function closePortalMenus(proxy, evt) {
-  do {
-    if (proxy.$options.name === "QMenu") {
-      proxy.hide(evt);
-      if (proxy.$props.separateClosePopup === true) {
-        return getParentProxy(proxy);
-      }
-    } else if (proxy.__qPortal === true) {
-      const parent = getParentProxy(proxy);
-      if (parent !== void 0 && parent.$options.name === "QPopupProxy") {
-        proxy.hide(evt);
-        return parent;
-      } else {
-        return proxy;
-      }
-    }
-    proxy = getParentProxy(proxy);
-  } while (proxy !== void 0 && proxy !== null);
-}
-function closePortals(proxy, evt, depth) {
-  while (depth !== 0 && proxy !== void 0 && proxy !== null) {
-    if (proxy.__qPortal === true) {
-      depth--;
-      if (proxy.$options.name === "QMenu") {
-        proxy = closePortalMenus(proxy, evt);
-        continue;
-      }
-      proxy.hide(evt);
-    }
-    proxy = getParentProxy(proxy);
-  }
-}
-const QPortal = createComponent({
-  name: "QPortal",
-  setup(_, { slots }) {
-    return () => slots.default();
-  }
-});
-function isOnGlobalDialog(vm) {
-  vm = vm.parent;
-  while (vm !== void 0 && vm !== null) {
-    if (vm.type.name === "QGlobalDialog") {
-      return true;
-    }
-    if (vm.type.name === "QDialog" || vm.type.name === "QMenu") {
-      return false;
-    }
-    vm = vm.parent;
-  }
-  return false;
-}
-function usePortal(vm, innerRef, renderPortalContent, type2) {
-  const portalIsActive = ref(false);
-  const portalIsAccessible = ref(false);
-  let portalEl = null;
-  const focusObj = {};
-  const onGlobalDialog = type2 === "dialog" && isOnGlobalDialog(vm);
-  function showPortal(isReady) {
-    if (isReady === true) {
-      removeFocusWaitFlag(focusObj);
-      portalIsAccessible.value = true;
-      return;
-    }
-    portalIsAccessible.value = false;
-    if (portalIsActive.value === false) {
-      if (onGlobalDialog === false && portalEl === null) {
-        portalEl = createGlobalNode(false, type2);
-      }
-      portalIsActive.value = true;
-      portalProxyList.push(vm.proxy);
-      addFocusWaitFlag(focusObj);
-    }
-  }
-  function hidePortal(isReady) {
-    portalIsAccessible.value = false;
-    if (isReady !== true)
-      return;
-    removeFocusWaitFlag(focusObj);
-    portalIsActive.value = false;
-    const index = portalProxyList.indexOf(vm.proxy);
-    if (index !== -1) {
-      portalProxyList.splice(index, 1);
-    }
-    if (portalEl !== null) {
-      removeGlobalNode(portalEl);
-      portalEl = null;
-    }
-  }
-  onUnmounted(() => {
-    hidePortal(true);
-  });
-  vm.proxy.__qPortal = true;
-  injectProp(vm.proxy, "contentEl", () => innerRef.value);
-  return {
-    showPortal,
-    hidePortal,
-    portalIsActive,
-    portalIsAccessible,
-    renderPortal: () => onGlobalDialog === true ? renderPortalContent() : portalIsActive.value === true ? [h(Teleport, { to: portalEl }, h(QPortal, renderPortalContent))] : void 0
-  };
-}
-const handlers$1 = [];
-let escDown;
-function onKeydown(evt) {
-  escDown = evt.keyCode === 27;
-}
-function onBlur() {
-  if (escDown === true) {
-    escDown = false;
-  }
-}
-function onKeyup(evt) {
-  if (escDown === true) {
-    escDown = false;
-    if (isKeyCode(evt, 27) === true) {
-      handlers$1[handlers$1.length - 1](evt);
-    }
-  }
-}
-function update(action) {
-  window[action]("keydown", onKeydown);
-  window[action]("blur", onBlur);
-  window[action]("keyup", onKeyup);
-  escDown = false;
-}
-function addEscapeKey(fn) {
-  if (client.is.desktop === true) {
-    handlers$1.push(fn);
-    if (handlers$1.length === 1) {
-      update("addEventListener");
-    }
-  }
-}
-function removeEscapeKey(fn) {
-  const index = handlers$1.indexOf(fn);
-  if (index !== -1) {
-    handlers$1.splice(index, 1);
-    if (handlers$1.length === 0) {
-      update("removeEventListener");
-    }
-  }
-}
-const handlers = [];
-function trigger(e2) {
-  handlers[handlers.length - 1](e2);
-}
-function addFocusout(fn) {
-  if (client.is.desktop === true) {
-    handlers.push(fn);
-    if (handlers.length === 1) {
-      document.body.addEventListener("focusin", trigger);
-    }
-  }
-}
-function removeFocusout(fn) {
-  const index = handlers.indexOf(fn);
-  if (index !== -1) {
-    handlers.splice(index, 1);
-    if (handlers.length === 0) {
-      document.body.removeEventListener("focusin", trigger);
-    }
-  }
-}
-let maximizedModals = 0;
-const positionClass = {
-  standard: "fixed-full flex-center",
-  top: "fixed-top justify-center",
-  bottom: "fixed-bottom justify-center",
-  right: "fixed-right items-center",
-  left: "fixed-left items-center"
-};
-const defaultTransitions = {
-  standard: ["scale", "scale"],
-  top: ["slide-down", "slide-up"],
-  bottom: ["slide-up", "slide-down"],
-  right: ["slide-left", "slide-right"],
-  left: ["slide-right", "slide-left"]
-};
-var QDialog = createComponent({
-  name: "QDialog",
-  inheritAttrs: false,
-  props: {
-    ...useModelToggleProps,
-    ...useTransitionProps,
-    transitionShow: String,
-    transitionHide: String,
-    persistent: Boolean,
-    autoClose: Boolean,
-    allowFocusOutside: Boolean,
-    noEscDismiss: Boolean,
-    noBackdropDismiss: Boolean,
-    noRouteDismiss: Boolean,
-    noRefocus: Boolean,
-    noFocus: Boolean,
-    noShake: Boolean,
-    seamless: Boolean,
-    maximized: Boolean,
-    fullWidth: Boolean,
-    fullHeight: Boolean,
-    square: Boolean,
-    backdropFilter: String,
-    position: {
-      type: String,
-      default: "standard",
-      validator: (val) => ["standard", "top", "bottom", "left", "right"].includes(val)
-    }
-  },
-  emits: [
-    ...useModelToggleEmits,
-    "shake",
-    "click",
-    "escapeKey"
-  ],
-  setup(props, { slots, emit, attrs }) {
-    const vm = getCurrentInstance();
-    const innerRef = ref(null);
-    const showing = ref(false);
-    const animating = ref(false);
-    let shakeTimeout = null, refocusTarget = null, isMaximized, avoidAutoClose;
-    const hideOnRouteChange = computed(
-      () => props.persistent !== true && props.noRouteDismiss !== true && props.seamless !== true
-    );
-    const { preventBodyScroll } = usePreventScroll();
-    const { registerTimeout } = useTimeout();
-    const { registerTick, removeTick } = useTick();
-    const { transitionProps, transitionStyle } = useTransition(
-      props,
-      () => defaultTransitions[props.position][0],
-      () => defaultTransitions[props.position][1]
-    );
-    const backdropStyle = computed(() => transitionStyle.value + (props.backdropFilter !== void 0 ? `;backdrop-filter:${props.backdropFilter};-webkit-backdrop-filter:${props.backdropFilter}` : ""));
-    const { showPortal, hidePortal, portalIsAccessible, renderPortal } = usePortal(
-      vm,
-      innerRef,
-      renderPortalContent,
-      "dialog"
-    );
-    const { hide } = useModelToggle({
-      showing,
-      hideOnRouteChange,
-      handleShow,
-      handleHide,
-      processOnMount: true
-    });
-    const { addToHistory, removeFromHistory } = useHistory(showing, hide, hideOnRouteChange);
-    const classes = computed(
-      () => `q-dialog__inner flex no-pointer-events q-dialog__inner--${props.maximized === true ? "maximized" : "minimized"} q-dialog__inner--${props.position} ${positionClass[props.position]}` + (animating.value === true ? " q-dialog__inner--animating" : "") + (props.fullWidth === true ? " q-dialog__inner--fullwidth" : "") + (props.fullHeight === true ? " q-dialog__inner--fullheight" : "") + (props.square === true ? " q-dialog__inner--square" : "")
-    );
-    const useBackdrop = computed(() => showing.value === true && props.seamless !== true);
-    const onEvents = computed(() => props.autoClose === true ? { onClick: onAutoClose } : {});
-    const rootClasses = computed(() => [
-      `q-dialog fullscreen no-pointer-events q-dialog--${useBackdrop.value === true ? "modal" : "seamless"}`,
-      attrs.class
-    ]);
-    watch(() => props.maximized, (state) => {
-      showing.value === true && updateMaximized(state);
-    });
-    watch(useBackdrop, (val) => {
-      preventBodyScroll(val);
-      if (val === true) {
-        addFocusout(onFocusChange);
-        addEscapeKey(onEscapeKey);
-      } else {
-        removeFocusout(onFocusChange);
-        removeEscapeKey(onEscapeKey);
-      }
-    });
-    function handleShow(evt) {
-      addToHistory();
-      refocusTarget = props.noRefocus === false && document.activeElement !== null ? document.activeElement : null;
-      updateMaximized(props.maximized);
-      showPortal();
-      animating.value = true;
-      if (props.noFocus !== true) {
-        document.activeElement !== null && document.activeElement.blur();
-        registerTick(focus);
-      } else {
-        removeTick();
-      }
-      registerTimeout(() => {
-        if (vm.proxy.$q.platform.is.ios === true) {
-          if (props.seamless !== true && document.activeElement) {
-            const { top, bottom } = document.activeElement.getBoundingClientRect(), { innerHeight } = window, height = window.visualViewport !== void 0 ? window.visualViewport.height : innerHeight;
-            if (top > 0 && bottom > height / 2) {
-              document.scrollingElement.scrollTop = Math.min(
-                document.scrollingElement.scrollHeight - height,
-                bottom >= innerHeight ? Infinity : Math.ceil(document.scrollingElement.scrollTop + bottom - height / 2)
-              );
-            }
-            document.activeElement.scrollIntoView();
-          }
-          avoidAutoClose = true;
-          innerRef.value.click();
-          avoidAutoClose = false;
-        }
-        showPortal(true);
-        animating.value = false;
-        emit("show", evt);
-      }, props.transitionDuration);
-    }
-    function handleHide(evt) {
-      removeTick();
-      removeFromHistory();
-      cleanup(true);
-      animating.value = true;
-      hidePortal();
-      if (refocusTarget !== null) {
-        ((evt && evt.type.indexOf("key") === 0 ? refocusTarget.closest('[tabindex]:not([tabindex^="-"])') : void 0) || refocusTarget).focus();
-        refocusTarget = null;
-      }
-      registerTimeout(() => {
-        hidePortal(true);
-        animating.value = false;
-        emit("hide", evt);
-      }, props.transitionDuration);
-    }
-    function focus(selector) {
-      addFocusFn(() => {
-        let node = innerRef.value;
-        if (node === null)
-          return;
-        if (selector !== void 0) {
-          const target = node.querySelector(selector);
-          if (target !== null) {
-            target.focus({ preventScroll: true });
-            return;
-          }
-        }
-        if (node.contains(document.activeElement) !== true) {
-          node = node.querySelector("[autofocus][tabindex], [data-autofocus][tabindex]") || node.querySelector("[autofocus] [tabindex], [data-autofocus] [tabindex]") || node.querySelector("[autofocus], [data-autofocus]") || node;
-          node.focus({ preventScroll: true });
-        }
-      });
-    }
-    function shake(focusTarget) {
-      if (focusTarget && typeof focusTarget.focus === "function") {
-        focusTarget.focus({ preventScroll: true });
-      } else {
-        focus();
-      }
-      emit("shake");
-      const node = innerRef.value;
-      if (node !== null) {
-        node.classList.remove("q-animate--scale");
-        node.classList.add("q-animate--scale");
-        shakeTimeout !== null && clearTimeout(shakeTimeout);
-        shakeTimeout = setTimeout(() => {
-          shakeTimeout = null;
-          if (innerRef.value !== null) {
-            node.classList.remove("q-animate--scale");
-            focus();
-          }
-        }, 170);
-      }
-    }
-    function onEscapeKey() {
-      if (props.seamless !== true) {
-        if (props.persistent === true || props.noEscDismiss === true) {
-          props.maximized !== true && props.noShake !== true && shake();
-        } else {
-          emit("escapeKey");
-          hide();
-        }
-      }
-    }
-    function cleanup(hiding) {
-      if (shakeTimeout !== null) {
-        clearTimeout(shakeTimeout);
-        shakeTimeout = null;
-      }
-      if (hiding === true || showing.value === true) {
-        updateMaximized(false);
-        if (props.seamless !== true) {
-          preventBodyScroll(false);
-          removeFocusout(onFocusChange);
-          removeEscapeKey(onEscapeKey);
-        }
-      }
-      if (hiding !== true) {
-        refocusTarget = null;
-      }
-    }
-    function updateMaximized(active) {
-      if (active === true) {
-        if (isMaximized !== true) {
-          maximizedModals < 1 && document.body.classList.add("q-body--dialog");
-          maximizedModals++;
-          isMaximized = true;
-        }
-      } else if (isMaximized === true) {
-        if (maximizedModals < 2) {
-          document.body.classList.remove("q-body--dialog");
-        }
-        maximizedModals--;
-        isMaximized = false;
-      }
-    }
-    function onAutoClose(e2) {
-      if (avoidAutoClose !== true) {
-        hide(e2);
-        emit("click", e2);
-      }
-    }
-    function onBackdropClick(e2) {
-      if (props.persistent !== true && props.noBackdropDismiss !== true) {
-        hide(e2);
-      } else if (props.noShake !== true) {
-        shake();
-      }
-    }
-    function onFocusChange(evt) {
-      if (props.allowFocusOutside !== true && portalIsAccessible.value === true && childHasFocus(innerRef.value, evt.target) !== true) {
-        focus('[tabindex]:not([tabindex="-1"])');
-      }
-    }
-    Object.assign(vm.proxy, {
-      focus,
-      shake,
-      __updateRefocusTarget(target) {
-        refocusTarget = target || null;
-      }
-    });
-    onBeforeUnmount(cleanup);
-    function renderPortalContent() {
-      return h("div", {
-        role: "dialog",
-        "aria-modal": useBackdrop.value === true ? "true" : "false",
-        ...attrs,
-        class: rootClasses.value
-      }, [
-        h(Transition, {
-          name: "q-transition--fade",
-          appear: true
-        }, () => useBackdrop.value === true ? h("div", {
-          class: "q-dialog__backdrop fixed-full",
-          style: backdropStyle.value,
-          "aria-hidden": "true",
-          tabindex: -1,
-          onClick: onBackdropClick
-        }) : null),
-        h(
-          Transition,
-          transitionProps.value,
-          () => showing.value === true ? h("div", {
-            ref: innerRef,
-            class: classes.value,
-            style: transitionStyle.value,
-            tabindex: -1,
-            ...onEvents.value
-          }, hSlot(slots.default)) : null
-        )
-      ]);
-    }
-    return renderPortal;
-  }
-});
+import { u as useQuasar } from "./use-quasar.2fbad186.js";
+import { V as createBaseVNode, d as defineComponent, R as openBlock, W as createElementBlock, a4 as mergeProps, a5 as createCommentVNode, a6 as mergeDefaults, a7 as useSlots, i as inject, r as ref, a8 as toRefs, c as computed, a9 as unref, w as watch, aa as onBeforeMount, o as onMounted, ab as normalizeStyle, ac as renderSlot, ad as normalizeProps, F as Fragment, ae as createTextVNode, Y as toDisplayString, af as normalizeClass, S as createBlock, ag as __vitePreload, s as shallowRef, ah as watchEffect, X as renderList, j as createVNode } from "./index.536a6c4a.js";
 var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
 function commonjsRequire(path) {
   throw new Error('Could not dynamically require "' + path + '". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.');
@@ -1622,7 +1081,7 @@ const Fn = { class: "v-code-block--button-copy" }, In = { class: "v-code-block--
 })(defineComponent({ __name: "VCodeBlock", props: mergeDefaults({ browserWindow: { type: Boolean }, cssPath: {}, code: {}, codeBlockRadius: {}, copyButton: { type: Boolean }, copyIcons: { type: Boolean }, copyTab: { type: Boolean }, copyFailedText: {}, copyText: {}, copySuccessText: {}, floatingTabs: { type: Boolean }, globalOptions: { type: Boolean }, height: {}, highlightjs: { type: Boolean }, indent: {}, label: {}, lang: {}, languages: {}, maxHeight: {}, persistentCopyButton: { type: Boolean }, prismjs: { type: Boolean }, prismPlugin: { type: Boolean }, runTab: { type: Boolean }, runText: {}, tabGap: {}, tabs: { type: Boolean }, theme: { type: [String, Boolean] } }, { browserWindow: false, cssPath: void 0, code: "", codeBlockRadius: "0.5rem", copyButton: true, copyIcons: true, copyTab: true, copyFailedText: "Copy failed!", copyText: "Copy Code", copySuccessText: "Copied!", floatingTabs: true, height: "auto", highlightjs: false, indent: 2, label: "", lang: "javascript", maxHeight: "auto", persistentCopyButton: false, prismjs: false, prismPlugin: false, runTab: false, runText: "Run", tabGap: "0.25rem", tabs: false, theme: "neon-bunny" }), emits: ["run", "update:copy-status"], setup(r2, { emit: t2 }) {
   const b2 = t2, f2 = useSlots(), q2 = inject(vn, {}), E = r2, e2 = ref({ ...E, ...q2 });
   let L, A;
-  const x = ref(null), h2 = ref("copy"), T = ref(""), F = ref(false), I = ref(false), C = ref(false), mn = ref("https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles"), Y = ref("https://cdn.jsdelivr.net/gh/PrismJS/prism@1.29.0/themes"), dn = ref("https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@1.9.0/themes"), M = ref(""), G = ref(""), j = ref(""), { copyButton: kn, copyIcons: fn, copyTab: K, label: Q, runTab: X, tabs: N } = toRefs(e2.value), _n = computed(() => {
+  const x = ref(null), h = ref("copy"), T = ref(""), F = ref(false), I = ref(false), C = ref(false), mn = ref("https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles"), Y = ref("https://cdn.jsdelivr.net/gh/PrismJS/prism@1.29.0/themes"), dn = ref("https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@1.9.0/themes"), M = ref(""), G = ref(""), j = ref(""), { copyButton: kn, copyIcons: fn, copyTab: K, label: Q, runTab: X, tabs: N } = toRefs(e2.value), _n = computed(() => {
     let a2 = "";
     return e2.value.highlightjs && (a2 = M.value), e2.value.prismjs && e2.value.prismPlugin && (a2 = x.value), a2;
   }), wn = computed(() => ((a2) => {
@@ -1631,10 +1090,10 @@ const Fn = { class: "v-code-block--button-copy" }, In = { class: "v-code-block--
   })({ isMobile: C, isPrism: e2.value.prismjs })), xn = computed(() => ((a2) => {
     const { copyStatus: s2, isMobile: o2, persistentCopyButton: l2 } = a2;
     return { [`${u$1}--code-copy-button`]: true, [`${u$1}--code-copy-button-mobile`]: unref(o2), [`${u$1}--code-copy-button-persist`]: unref(l2), [`${u$1}--code-copy-button-status-${unref(s2)}`]: true };
-  })({ copyStatus: h2, isMobile: C, persistentCopyButton: e2.value.persistentCopyButton })), Z2 = computed(() => ((a2) => {
+  })({ copyStatus: h, isMobile: C, persistentCopyButton: e2.value.persistentCopyButton })), Z2 = computed(() => ((a2) => {
     const { copyStatus: s2, highlightjs: o2, useTheme: l2 } = a2, y = cn(unref(o2)), v = jn(unref(l2));
     return { [`${u$1}--button-copy-icon-status-${unref(s2)}`]: true, [`${u$1}--me-1`]: true, [`${u$1}--tab-${y}-${v}-icon-status-${unref(s2)}`]: true, [`${u$1}--tab-${y}-${v}-icon`]: true };
-  })({ copyStatus: h2, highlightjs: e2.value.highlightjs, useTheme: j })), Tn = computed(() => ((a2) => {
+  })({ copyStatus: h, highlightjs: e2.value.highlightjs, useTheme: j })), Tn = computed(() => ((a2) => {
     const { isMobile: s2 } = a2;
     return { [`${u$1}--label`]: true, [`${u$1}--label-mobile`]: unref(s2) };
   })({ isMobile: C })), nn = computed(() => ((a2) => {
@@ -1664,11 +1123,11 @@ const Fn = { class: "v-code-block--button-copy" }, In = { class: "v-code-block--
   }
   function P2() {
     F.value || (F.value = true, navigator.clipboard.writeText(x.value).then(() => {
-      T.value = e2.value.copySuccessText, h2.value = "success", b2("update:copy-status", h2.value);
+      T.value = e2.value.copySuccessText, h.value = "success", b2("update:copy-status", h.value);
     }, (a2) => {
-      T.value = e2.value.copyFailedText, h2.value = "failed", b2("update:copy-status", h2.value), console.error("Copy to clipboard failed: ", a2);
+      T.value = e2.value.copyFailedText, h.value = "failed", b2("update:copy-status", h.value), console.error("Copy to clipboard failed: ", a2);
     }), setTimeout(() => {
-      T.value = e2.value.copyText, h2.value = "copy", b2("update:copy-status", h2.value), F.value = false;
+      T.value = e2.value.copyText, h.value = "copy", b2("update:copy-status", h.value), F.value = false;
     }, 3e3));
   }
   function ln() {
@@ -1757,11 +1216,11 @@ const Fn = { class: "v-code-block--button-copy" }, In = { class: "v-code-block--
         const a2 = e2.value.code.toString();
         x.value = JSON.stringify(JSON.parse(a2), null, e2.value.indent);
       }
-    })(), e2.value.highlightjs && __vitePreload(() => import("./index.4b0e2934.js"), true ? ["assets/index.4b0e2934.js","assets/index.7fcedf38.js","assets/index.89f95bc7.css","assets/plugin-vue_export-helper.59bb07ac.js","assets/QPage.a7190671.js"] : void 0).then((a2) => {
+    })(), e2.value.highlightjs && __vitePreload(() => import("./index.5d581c34.js"), true ? ["assets/index.5d581c34.js","assets/use-quasar.2fbad186.js","assets/index.536a6c4a.js","assets/index.89f95bc7.css"] : void 0).then((a2) => {
       L = a2.default, L.registerLanguage("plain", An), M.value = L.highlight(x.value, { language: e2.value.lang }).value;
     }).catch((a2) => {
       console.error("Highlight.js import:", { err: a2 });
-    }), e2.value.prismjs && __vitePreload(() => import("./prism.1fee871c.js").then(function(n2) {
+    }), e2.value.prismjs && __vitePreload(() => import("./prism.a9280a94.js").then(function(n2) {
       return n2.p;
     }), true ? [] : void 0).then((a2) => {
       A = a2.default, M.value = A.highlight(x.value, A.languages[e2.value.lang], e2.value.lang);
@@ -1780,7 +1239,7 @@ const Fn = { class: "v-code-block--button-copy" }, In = { class: "v-code-block--
     j.value = e2.value.theme, ln(), sn(), tn();
   }), window.addEventListener("orientationchange", () => {
     sn();
-  }), (a2, s2) => (openBlock(), createElementBlock("div", { class: normalizeClass(unref(wn)) }, [unref(Q) || unref(N) || unref(f2).label || unref(f2).tabs ? (openBlock(), createElementBlock("div", { key: 0, class: "v-code-block--header", style: normalizeStyle(unref($n)) }, [createBaseVNode("div", { class: normalizeClass(["v-code-block--label v-code-block--pb-1", unref(Tn)]) }, [unref(f2).label ? renderSlot(a2.$slots, "label", normalizeProps(mergeProps({ key: 0 }, { copyCode: P2, copyStatus: unref(h2), runCode: J })), void 0, true) : (openBlock(), createElementBlock(Fragment, { key: 1 }, [createTextVNode(toDisplayString(unref(Q)), 1)], 64))], 2), createBaseVNode("div", { class: "v-code-block--tabs", style: normalizeStyle(unref(zn)) }, [unref(f2).tabs ? renderSlot(a2.$slots, "tabs", normalizeProps(mergeProps({ key: 0 }, { copyCode: P2, copyStatus: unref(h2), runCode: J })), void 0, true) : (openBlock(), createElementBlock(Fragment, { key: 1 }, [unref(K) && unref(N) ? (openBlock(), createElementBlock("div", { key: 0, class: normalizeClass(["v-code-block--tab", unref(nn)]), onClick: P2 }, [createBaseVNode("div", Fn, [unref(fn) ? (openBlock(), createBlock(pn, { key: 0, class: normalizeClass(["v-code-block--button-copy-icon", unref(Z2)]), icon: unref(h2) }, null, 8, ["class", "icon"])) : createCommentVNode("", true), createTextVNode(" " + toDisplayString(unref(T)), 1)])], 2)) : createCommentVNode("", true), unref(X) && unref(N) && !unref(C) ? (openBlock(), createElementBlock("div", { key: 1, class: normalizeClass(["v-code-block--tab v-code-block--tab-run", unref(nn)]), onClick: J }, [createBaseVNode("div", In, toDisplayString(unref(G)), 1)], 2)) : createCommentVNode("", true)], 64))], 4)], 4)) : createCommentVNode("", true), createBaseVNode("div", Gn, [createBaseVNode("div", { class: normalizeClass(["v-code-block--code-copy-button", unref(xn)]), onClick: P2 }, [unref(f2).copyButton ? renderSlot(a2.$slots, "copyButton", normalizeProps(mergeProps({ key: 0 }, { copyStatus: unref(h2) })), void 0, true) : (openBlock(), createElementBlock(Fragment, { key: 1 }, [unref(kn) ? (openBlock(), createBlock(pn, { key: 0, class: normalizeClass(["v-code-block--button-copy-icon", unref(Z2)]), icon: unref(h2) }, null, 8, ["class", "icon"])) : createCommentVNode("", true)], 64))], 2), createBaseVNode("pre", mergeProps(a2.$attrs, { class: `language-${unref(e2).lang}`, style: unref(Cn) }), [createTextVNode("				"), a2.prismPlugin ? (openBlock(), createElementBlock("code", { key: 0, class: normalizeClass(`language-${unref(e2).lang} ${unref(e2).browserWindow ? "v-code-block--code-browser" : ""} ${unref(e2).highlightjs ? "hljs" : ""}`), style: normalizeStyle(unref(en)), textContent: toDisplayString(unref(_n)) }, null, 14, Jn)) : (openBlock(), createElementBlock("code", { key: 1, class: normalizeClass(`language-${unref(e2).lang} ${unref(e2).browserWindow ? "v-code-block--code-browser" : ""} ${unref(e2).highlightjs ? "hljs" : ""}`), style: normalizeStyle(unref(en)), innerHTML: unref(M) }, null, 14, On)), createTextVNode(`
+  }), (a2, s2) => (openBlock(), createElementBlock("div", { class: normalizeClass(unref(wn)) }, [unref(Q) || unref(N) || unref(f2).label || unref(f2).tabs ? (openBlock(), createElementBlock("div", { key: 0, class: "v-code-block--header", style: normalizeStyle(unref($n)) }, [createBaseVNode("div", { class: normalizeClass(["v-code-block--label v-code-block--pb-1", unref(Tn)]) }, [unref(f2).label ? renderSlot(a2.$slots, "label", normalizeProps(mergeProps({ key: 0 }, { copyCode: P2, copyStatus: unref(h), runCode: J })), void 0, true) : (openBlock(), createElementBlock(Fragment, { key: 1 }, [createTextVNode(toDisplayString(unref(Q)), 1)], 64))], 2), createBaseVNode("div", { class: "v-code-block--tabs", style: normalizeStyle(unref(zn)) }, [unref(f2).tabs ? renderSlot(a2.$slots, "tabs", normalizeProps(mergeProps({ key: 0 }, { copyCode: P2, copyStatus: unref(h), runCode: J })), void 0, true) : (openBlock(), createElementBlock(Fragment, { key: 1 }, [unref(K) && unref(N) ? (openBlock(), createElementBlock("div", { key: 0, class: normalizeClass(["v-code-block--tab", unref(nn)]), onClick: P2 }, [createBaseVNode("div", Fn, [unref(fn) ? (openBlock(), createBlock(pn, { key: 0, class: normalizeClass(["v-code-block--button-copy-icon", unref(Z2)]), icon: unref(h) }, null, 8, ["class", "icon"])) : createCommentVNode("", true), createTextVNode(" " + toDisplayString(unref(T)), 1)])], 2)) : createCommentVNode("", true), unref(X) && unref(N) && !unref(C) ? (openBlock(), createElementBlock("div", { key: 1, class: normalizeClass(["v-code-block--tab v-code-block--tab-run", unref(nn)]), onClick: J }, [createBaseVNode("div", In, toDisplayString(unref(G)), 1)], 2)) : createCommentVNode("", true)], 64))], 4)], 4)) : createCommentVNode("", true), createBaseVNode("div", Gn, [createBaseVNode("div", { class: normalizeClass(["v-code-block--code-copy-button", unref(xn)]), onClick: P2 }, [unref(f2).copyButton ? renderSlot(a2.$slots, "copyButton", normalizeProps(mergeProps({ key: 0 }, { copyStatus: unref(h) })), void 0, true) : (openBlock(), createElementBlock(Fragment, { key: 1 }, [unref(kn) ? (openBlock(), createBlock(pn, { key: 0, class: normalizeClass(["v-code-block--button-copy-icon", unref(Z2)]), icon: unref(h) }, null, 8, ["class", "icon"])) : createCommentVNode("", true)], 64))], 2), createBaseVNode("pre", mergeProps(a2.$attrs, { class: `language-${unref(e2).lang}`, style: unref(Cn) }), [createTextVNode("				"), a2.prismPlugin ? (openBlock(), createElementBlock("code", { key: 0, class: normalizeClass(`language-${unref(e2).lang} ${unref(e2).browserWindow ? "v-code-block--code-browser" : ""} ${unref(e2).highlightjs ? "hljs" : ""}`), style: normalizeStyle(unref(en)), textContent: toDisplayString(unref(_n)) }, null, 14, Jn)) : (openBlock(), createElementBlock("code", { key: 1, class: normalizeClass(`language-${unref(e2).lang} ${unref(e2).browserWindow ? "v-code-block--code-browser" : ""} ${unref(e2).highlightjs ? "hljs" : ""}`), style: normalizeStyle(unref(en)), innerHTML: unref(M) }, null, 14, On)), createTextVNode(`
 			`)], 16)])], 2));
 } }), [["__scopeId", "data-v-bf24cfd8"]]);
 Object.freeze(Object.defineProperty({ __proto__: null, default: Rn }, Symbol.toStringTag, { value: "Module" }));
@@ -7083,6 +6542,2073 @@ Object.assign(f.defaults, { style: "visually-hidden", space: true, placement: "a
     return e3.content;
   }).join("");
 }, permalink: false, renderPermalink: r$1, permalinkClass: u.defaults.class, permalinkSpace: u.defaults.space, permalinkSymbol: "\xB6", permalinkBefore: "before" === u.defaults.placement, permalinkHref: u.defaults.renderHref, permalinkAttrs: u.defaults.renderAttrs }, b.default = b;
+function emoji_html(tokens, idx) {
+  return tokens[idx].content;
+}
+function create_rule(md, emojies, shortcuts, scanRE, replaceRE) {
+  const arrayReplaceAt2 = md.utils.arrayReplaceAt;
+  const ucm = md.utils.lib.ucmicro;
+  const has2 = md.utils.has;
+  const ZPCc = new RegExp([ucm.Z.source, ucm.P.source, ucm.Cc.source].join("|"));
+  function splitTextToken(text2, level, Token2) {
+    let last_pos = 0;
+    const nodes = [];
+    text2.replace(replaceRE, function(match2, offset, src) {
+      let emoji_name;
+      if (has2(shortcuts, match2)) {
+        emoji_name = shortcuts[match2];
+        if (offset > 0 && !ZPCc.test(src[offset - 1]))
+          return;
+        if (offset + match2.length < src.length && !ZPCc.test(src[offset + match2.length])) {
+          return;
+        }
+      } else {
+        emoji_name = match2.slice(1, -1);
+      }
+      if (offset > last_pos) {
+        const token2 = new Token2("text", "", 0);
+        token2.content = text2.slice(last_pos, offset);
+        nodes.push(token2);
+      }
+      const token = new Token2("emoji", "", 0);
+      token.markup = emoji_name;
+      token.content = emojies[emoji_name];
+      nodes.push(token);
+      last_pos = offset + match2.length;
+    });
+    if (last_pos < text2.length) {
+      const token = new Token2("text", "", 0);
+      token.content = text2.slice(last_pos);
+      nodes.push(token);
+    }
+    return nodes;
+  }
+  return function emoji_replace(state) {
+    let token;
+    const blockTokens = state.tokens;
+    let autolinkLevel = 0;
+    for (let j = 0, l2 = blockTokens.length; j < l2; j++) {
+      if (blockTokens[j].type !== "inline") {
+        continue;
+      }
+      let tokens = blockTokens[j].children;
+      for (let i2 = tokens.length - 1; i2 >= 0; i2--) {
+        token = tokens[i2];
+        if (token.type === "link_open" || token.type === "link_close") {
+          if (token.info === "auto") {
+            autolinkLevel -= token.nesting;
+          }
+        }
+        if (token.type === "text" && autolinkLevel === 0 && scanRE.test(token.content)) {
+          blockTokens[j].children = tokens = arrayReplaceAt2(
+            tokens,
+            i2,
+            splitTextToken(token.content, token.level, state.Token)
+          );
+        }
+      }
+    }
+  };
+}
+function quoteRE(str2) {
+  return str2.replace(/[.?*+^$[\]\\(){}|-]/g, "\\$&");
+}
+function normalize_opts(options2) {
+  let emojies = options2.defs;
+  if (options2.enabled.length) {
+    emojies = Object.keys(emojies).reduce((acc, key) => {
+      if (options2.enabled.indexOf(key) >= 0)
+        acc[key] = emojies[key];
+      return acc;
+    }, {});
+  }
+  const shortcuts = Object.keys(options2.shortcuts).reduce((acc, key) => {
+    if (!emojies[key])
+      return acc;
+    if (Array.isArray(options2.shortcuts[key])) {
+      options2.shortcuts[key].forEach((alias) => {
+        acc[alias] = key;
+      });
+      return acc;
+    }
+    acc[options2.shortcuts[key]] = key;
+    return acc;
+  }, {});
+  const keys = Object.keys(emojies);
+  let names;
+  if (keys.length === 0) {
+    names = "^$";
+  } else {
+    names = keys.map((name) => {
+      return `:${name}:`;
+    }).concat(Object.keys(shortcuts)).sort().reverse().map((name) => {
+      return quoteRE(name);
+    }).join("|");
+  }
+  const scanRE = RegExp(names);
+  const replaceRE = RegExp(names, "g");
+  return {
+    defs: emojies,
+    shortcuts,
+    scanRE,
+    replaceRE
+  };
+}
+function emoji_plugin$1(md, options2) {
+  const defaults2 = {
+    defs: {},
+    shortcuts: {},
+    enabled: []
+  };
+  const opts = normalize_opts(md.utils.assign({}, defaults2, options2 || {}));
+  md.renderer.rules.emoji = emoji_html;
+  md.core.ruler.after(
+    "linkify",
+    "emoji",
+    create_rule(md, opts.defs, opts.shortcuts, opts.scanRE, opts.replaceRE)
+  );
+}
+var emojies_shortcuts = {
+  angry: [">:(", ">:-("],
+  blush: [':")', ':-")'],
+  broken_heart: ["</3", "<\\3"],
+  confused: [":/", ":-/"],
+  cry: [":'(", ":'-(", ":,(", ":,-("],
+  frowning: [":(", ":-("],
+  heart: ["<3"],
+  imp: ["]:(", "]:-("],
+  innocent: ["o:)", "O:)", "o:-)", "O:-)", "0:)", "0:-)"],
+  joy: [":')", ":'-)", ":,)", ":,-)", ":'D", ":'-D", ":,D", ":,-D"],
+  kissing: [":*", ":-*"],
+  laughing: ["x-)", "X-)"],
+  neutral_face: [":|", ":-|"],
+  open_mouth: [":o", ":-o", ":O", ":-O"],
+  rage: [":@", ":-@"],
+  smile: [":D", ":-D"],
+  smiley: [":)", ":-)"],
+  smiling_imp: ["]:)", "]:-)"],
+  sob: [":,'(", ":,'-(", ";(", ";-("],
+  stuck_out_tongue: [":P", ":-P"],
+  sunglasses: ["8-)", "B-)"],
+  sweat: [",:(", ",:-("],
+  sweat_smile: [",:)", ",:-)"],
+  unamused: [":s", ":-S", ":z", ":-Z", ":$", ":-$"],
+  wink: [";)", ";-)"]
+};
+var emojies_defs = {
+  "100": "\u{1F4AF}",
+  "1234": "\u{1F522}",
+  "grinning": "\u{1F600}",
+  "smiley": "\u{1F603}",
+  "smile": "\u{1F604}",
+  "grin": "\u{1F601}",
+  "laughing": "\u{1F606}",
+  "satisfied": "\u{1F606}",
+  "sweat_smile": "\u{1F605}",
+  "rofl": "\u{1F923}",
+  "joy": "\u{1F602}",
+  "slightly_smiling_face": "\u{1F642}",
+  "upside_down_face": "\u{1F643}",
+  "melting_face": "\u{1FAE0}",
+  "wink": "\u{1F609}",
+  "blush": "\u{1F60A}",
+  "innocent": "\u{1F607}",
+  "smiling_face_with_three_hearts": "\u{1F970}",
+  "heart_eyes": "\u{1F60D}",
+  "star_struck": "\u{1F929}",
+  "kissing_heart": "\u{1F618}",
+  "kissing": "\u{1F617}",
+  "relaxed": "\u263A\uFE0F",
+  "kissing_closed_eyes": "\u{1F61A}",
+  "kissing_smiling_eyes": "\u{1F619}",
+  "smiling_face_with_tear": "\u{1F972}",
+  "yum": "\u{1F60B}",
+  "stuck_out_tongue": "\u{1F61B}",
+  "stuck_out_tongue_winking_eye": "\u{1F61C}",
+  "zany_face": "\u{1F92A}",
+  "stuck_out_tongue_closed_eyes": "\u{1F61D}",
+  "money_mouth_face": "\u{1F911}",
+  "hugs": "\u{1F917}",
+  "hand_over_mouth": "\u{1F92D}",
+  "face_with_open_eyes_and_hand_over_mouth": "\u{1FAE2}",
+  "face_with_peeking_eye": "\u{1FAE3}",
+  "shushing_face": "\u{1F92B}",
+  "thinking": "\u{1F914}",
+  "saluting_face": "\u{1FAE1}",
+  "zipper_mouth_face": "\u{1F910}",
+  "raised_eyebrow": "\u{1F928}",
+  "neutral_face": "\u{1F610}",
+  "expressionless": "\u{1F611}",
+  "no_mouth": "\u{1F636}",
+  "dotted_line_face": "\u{1FAE5}",
+  "face_in_clouds": "\u{1F636}\u200D\u{1F32B}\uFE0F",
+  "smirk": "\u{1F60F}",
+  "unamused": "\u{1F612}",
+  "roll_eyes": "\u{1F644}",
+  "grimacing": "\u{1F62C}",
+  "face_exhaling": "\u{1F62E}\u200D\u{1F4A8}",
+  "lying_face": "\u{1F925}",
+  "shaking_face": "\u{1FAE8}",
+  "relieved": "\u{1F60C}",
+  "pensive": "\u{1F614}",
+  "sleepy": "\u{1F62A}",
+  "drooling_face": "\u{1F924}",
+  "sleeping": "\u{1F634}",
+  "mask": "\u{1F637}",
+  "face_with_thermometer": "\u{1F912}",
+  "face_with_head_bandage": "\u{1F915}",
+  "nauseated_face": "\u{1F922}",
+  "vomiting_face": "\u{1F92E}",
+  "sneezing_face": "\u{1F927}",
+  "hot_face": "\u{1F975}",
+  "cold_face": "\u{1F976}",
+  "woozy_face": "\u{1F974}",
+  "dizzy_face": "\u{1F635}",
+  "face_with_spiral_eyes": "\u{1F635}\u200D\u{1F4AB}",
+  "exploding_head": "\u{1F92F}",
+  "cowboy_hat_face": "\u{1F920}",
+  "partying_face": "\u{1F973}",
+  "disguised_face": "\u{1F978}",
+  "sunglasses": "\u{1F60E}",
+  "nerd_face": "\u{1F913}",
+  "monocle_face": "\u{1F9D0}",
+  "confused": "\u{1F615}",
+  "face_with_diagonal_mouth": "\u{1FAE4}",
+  "worried": "\u{1F61F}",
+  "slightly_frowning_face": "\u{1F641}",
+  "frowning_face": "\u2639\uFE0F",
+  "open_mouth": "\u{1F62E}",
+  "hushed": "\u{1F62F}",
+  "astonished": "\u{1F632}",
+  "flushed": "\u{1F633}",
+  "pleading_face": "\u{1F97A}",
+  "face_holding_back_tears": "\u{1F979}",
+  "frowning": "\u{1F626}",
+  "anguished": "\u{1F627}",
+  "fearful": "\u{1F628}",
+  "cold_sweat": "\u{1F630}",
+  "disappointed_relieved": "\u{1F625}",
+  "cry": "\u{1F622}",
+  "sob": "\u{1F62D}",
+  "scream": "\u{1F631}",
+  "confounded": "\u{1F616}",
+  "persevere": "\u{1F623}",
+  "disappointed": "\u{1F61E}",
+  "sweat": "\u{1F613}",
+  "weary": "\u{1F629}",
+  "tired_face": "\u{1F62B}",
+  "yawning_face": "\u{1F971}",
+  "triumph": "\u{1F624}",
+  "rage": "\u{1F621}",
+  "pout": "\u{1F621}",
+  "angry": "\u{1F620}",
+  "cursing_face": "\u{1F92C}",
+  "smiling_imp": "\u{1F608}",
+  "imp": "\u{1F47F}",
+  "skull": "\u{1F480}",
+  "skull_and_crossbones": "\u2620\uFE0F",
+  "hankey": "\u{1F4A9}",
+  "poop": "\u{1F4A9}",
+  "shit": "\u{1F4A9}",
+  "clown_face": "\u{1F921}",
+  "japanese_ogre": "\u{1F479}",
+  "japanese_goblin": "\u{1F47A}",
+  "ghost": "\u{1F47B}",
+  "alien": "\u{1F47D}",
+  "space_invader": "\u{1F47E}",
+  "robot": "\u{1F916}",
+  "smiley_cat": "\u{1F63A}",
+  "smile_cat": "\u{1F638}",
+  "joy_cat": "\u{1F639}",
+  "heart_eyes_cat": "\u{1F63B}",
+  "smirk_cat": "\u{1F63C}",
+  "kissing_cat": "\u{1F63D}",
+  "scream_cat": "\u{1F640}",
+  "crying_cat_face": "\u{1F63F}",
+  "pouting_cat": "\u{1F63E}",
+  "see_no_evil": "\u{1F648}",
+  "hear_no_evil": "\u{1F649}",
+  "speak_no_evil": "\u{1F64A}",
+  "love_letter": "\u{1F48C}",
+  "cupid": "\u{1F498}",
+  "gift_heart": "\u{1F49D}",
+  "sparkling_heart": "\u{1F496}",
+  "heartpulse": "\u{1F497}",
+  "heartbeat": "\u{1F493}",
+  "revolving_hearts": "\u{1F49E}",
+  "two_hearts": "\u{1F495}",
+  "heart_decoration": "\u{1F49F}",
+  "heavy_heart_exclamation": "\u2763\uFE0F",
+  "broken_heart": "\u{1F494}",
+  "heart_on_fire": "\u2764\uFE0F\u200D\u{1F525}",
+  "mending_heart": "\u2764\uFE0F\u200D\u{1FA79}",
+  "heart": "\u2764\uFE0F",
+  "pink_heart": "\u{1FA77}",
+  "orange_heart": "\u{1F9E1}",
+  "yellow_heart": "\u{1F49B}",
+  "green_heart": "\u{1F49A}",
+  "blue_heart": "\u{1F499}",
+  "light_blue_heart": "\u{1FA75}",
+  "purple_heart": "\u{1F49C}",
+  "brown_heart": "\u{1F90E}",
+  "black_heart": "\u{1F5A4}",
+  "grey_heart": "\u{1FA76}",
+  "white_heart": "\u{1F90D}",
+  "kiss": "\u{1F48B}",
+  "anger": "\u{1F4A2}",
+  "boom": "\u{1F4A5}",
+  "collision": "\u{1F4A5}",
+  "dizzy": "\u{1F4AB}",
+  "sweat_drops": "\u{1F4A6}",
+  "dash": "\u{1F4A8}",
+  "hole": "\u{1F573}\uFE0F",
+  "speech_balloon": "\u{1F4AC}",
+  "eye_speech_bubble": "\u{1F441}\uFE0F\u200D\u{1F5E8}\uFE0F",
+  "left_speech_bubble": "\u{1F5E8}\uFE0F",
+  "right_anger_bubble": "\u{1F5EF}\uFE0F",
+  "thought_balloon": "\u{1F4AD}",
+  "zzz": "\u{1F4A4}",
+  "wave": "\u{1F44B}",
+  "raised_back_of_hand": "\u{1F91A}",
+  "raised_hand_with_fingers_splayed": "\u{1F590}\uFE0F",
+  "hand": "\u270B",
+  "raised_hand": "\u270B",
+  "vulcan_salute": "\u{1F596}",
+  "rightwards_hand": "\u{1FAF1}",
+  "leftwards_hand": "\u{1FAF2}",
+  "palm_down_hand": "\u{1FAF3}",
+  "palm_up_hand": "\u{1FAF4}",
+  "leftwards_pushing_hand": "\u{1FAF7}",
+  "rightwards_pushing_hand": "\u{1FAF8}",
+  "ok_hand": "\u{1F44C}",
+  "pinched_fingers": "\u{1F90C}",
+  "pinching_hand": "\u{1F90F}",
+  "v": "\u270C\uFE0F",
+  "crossed_fingers": "\u{1F91E}",
+  "hand_with_index_finger_and_thumb_crossed": "\u{1FAF0}",
+  "love_you_gesture": "\u{1F91F}",
+  "metal": "\u{1F918}",
+  "call_me_hand": "\u{1F919}",
+  "point_left": "\u{1F448}",
+  "point_right": "\u{1F449}",
+  "point_up_2": "\u{1F446}",
+  "middle_finger": "\u{1F595}",
+  "fu": "\u{1F595}",
+  "point_down": "\u{1F447}",
+  "point_up": "\u261D\uFE0F",
+  "index_pointing_at_the_viewer": "\u{1FAF5}",
+  "+1": "\u{1F44D}",
+  "thumbsup": "\u{1F44D}",
+  "-1": "\u{1F44E}",
+  "thumbsdown": "\u{1F44E}",
+  "fist_raised": "\u270A",
+  "fist": "\u270A",
+  "fist_oncoming": "\u{1F44A}",
+  "facepunch": "\u{1F44A}",
+  "punch": "\u{1F44A}",
+  "fist_left": "\u{1F91B}",
+  "fist_right": "\u{1F91C}",
+  "clap": "\u{1F44F}",
+  "raised_hands": "\u{1F64C}",
+  "heart_hands": "\u{1FAF6}",
+  "open_hands": "\u{1F450}",
+  "palms_up_together": "\u{1F932}",
+  "handshake": "\u{1F91D}",
+  "pray": "\u{1F64F}",
+  "writing_hand": "\u270D\uFE0F",
+  "nail_care": "\u{1F485}",
+  "selfie": "\u{1F933}",
+  "muscle": "\u{1F4AA}",
+  "mechanical_arm": "\u{1F9BE}",
+  "mechanical_leg": "\u{1F9BF}",
+  "leg": "\u{1F9B5}",
+  "foot": "\u{1F9B6}",
+  "ear": "\u{1F442}",
+  "ear_with_hearing_aid": "\u{1F9BB}",
+  "nose": "\u{1F443}",
+  "brain": "\u{1F9E0}",
+  "anatomical_heart": "\u{1FAC0}",
+  "lungs": "\u{1FAC1}",
+  "tooth": "\u{1F9B7}",
+  "bone": "\u{1F9B4}",
+  "eyes": "\u{1F440}",
+  "eye": "\u{1F441}\uFE0F",
+  "tongue": "\u{1F445}",
+  "lips": "\u{1F444}",
+  "biting_lip": "\u{1FAE6}",
+  "baby": "\u{1F476}",
+  "child": "\u{1F9D2}",
+  "boy": "\u{1F466}",
+  "girl": "\u{1F467}",
+  "adult": "\u{1F9D1}",
+  "blond_haired_person": "\u{1F471}",
+  "man": "\u{1F468}",
+  "bearded_person": "\u{1F9D4}",
+  "man_beard": "\u{1F9D4}\u200D\u2642\uFE0F",
+  "woman_beard": "\u{1F9D4}\u200D\u2640\uFE0F",
+  "red_haired_man": "\u{1F468}\u200D\u{1F9B0}",
+  "curly_haired_man": "\u{1F468}\u200D\u{1F9B1}",
+  "white_haired_man": "\u{1F468}\u200D\u{1F9B3}",
+  "bald_man": "\u{1F468}\u200D\u{1F9B2}",
+  "woman": "\u{1F469}",
+  "red_haired_woman": "\u{1F469}\u200D\u{1F9B0}",
+  "person_red_hair": "\u{1F9D1}\u200D\u{1F9B0}",
+  "curly_haired_woman": "\u{1F469}\u200D\u{1F9B1}",
+  "person_curly_hair": "\u{1F9D1}\u200D\u{1F9B1}",
+  "white_haired_woman": "\u{1F469}\u200D\u{1F9B3}",
+  "person_white_hair": "\u{1F9D1}\u200D\u{1F9B3}",
+  "bald_woman": "\u{1F469}\u200D\u{1F9B2}",
+  "person_bald": "\u{1F9D1}\u200D\u{1F9B2}",
+  "blond_haired_woman": "\u{1F471}\u200D\u2640\uFE0F",
+  "blonde_woman": "\u{1F471}\u200D\u2640\uFE0F",
+  "blond_haired_man": "\u{1F471}\u200D\u2642\uFE0F",
+  "older_adult": "\u{1F9D3}",
+  "older_man": "\u{1F474}",
+  "older_woman": "\u{1F475}",
+  "frowning_person": "\u{1F64D}",
+  "frowning_man": "\u{1F64D}\u200D\u2642\uFE0F",
+  "frowning_woman": "\u{1F64D}\u200D\u2640\uFE0F",
+  "pouting_face": "\u{1F64E}",
+  "pouting_man": "\u{1F64E}\u200D\u2642\uFE0F",
+  "pouting_woman": "\u{1F64E}\u200D\u2640\uFE0F",
+  "no_good": "\u{1F645}",
+  "no_good_man": "\u{1F645}\u200D\u2642\uFE0F",
+  "ng_man": "\u{1F645}\u200D\u2642\uFE0F",
+  "no_good_woman": "\u{1F645}\u200D\u2640\uFE0F",
+  "ng_woman": "\u{1F645}\u200D\u2640\uFE0F",
+  "ok_person": "\u{1F646}",
+  "ok_man": "\u{1F646}\u200D\u2642\uFE0F",
+  "ok_woman": "\u{1F646}\u200D\u2640\uFE0F",
+  "tipping_hand_person": "\u{1F481}",
+  "information_desk_person": "\u{1F481}",
+  "tipping_hand_man": "\u{1F481}\u200D\u2642\uFE0F",
+  "sassy_man": "\u{1F481}\u200D\u2642\uFE0F",
+  "tipping_hand_woman": "\u{1F481}\u200D\u2640\uFE0F",
+  "sassy_woman": "\u{1F481}\u200D\u2640\uFE0F",
+  "raising_hand": "\u{1F64B}",
+  "raising_hand_man": "\u{1F64B}\u200D\u2642\uFE0F",
+  "raising_hand_woman": "\u{1F64B}\u200D\u2640\uFE0F",
+  "deaf_person": "\u{1F9CF}",
+  "deaf_man": "\u{1F9CF}\u200D\u2642\uFE0F",
+  "deaf_woman": "\u{1F9CF}\u200D\u2640\uFE0F",
+  "bow": "\u{1F647}",
+  "bowing_man": "\u{1F647}\u200D\u2642\uFE0F",
+  "bowing_woman": "\u{1F647}\u200D\u2640\uFE0F",
+  "facepalm": "\u{1F926}",
+  "man_facepalming": "\u{1F926}\u200D\u2642\uFE0F",
+  "woman_facepalming": "\u{1F926}\u200D\u2640\uFE0F",
+  "shrug": "\u{1F937}",
+  "man_shrugging": "\u{1F937}\u200D\u2642\uFE0F",
+  "woman_shrugging": "\u{1F937}\u200D\u2640\uFE0F",
+  "health_worker": "\u{1F9D1}\u200D\u2695\uFE0F",
+  "man_health_worker": "\u{1F468}\u200D\u2695\uFE0F",
+  "woman_health_worker": "\u{1F469}\u200D\u2695\uFE0F",
+  "student": "\u{1F9D1}\u200D\u{1F393}",
+  "man_student": "\u{1F468}\u200D\u{1F393}",
+  "woman_student": "\u{1F469}\u200D\u{1F393}",
+  "teacher": "\u{1F9D1}\u200D\u{1F3EB}",
+  "man_teacher": "\u{1F468}\u200D\u{1F3EB}",
+  "woman_teacher": "\u{1F469}\u200D\u{1F3EB}",
+  "judge": "\u{1F9D1}\u200D\u2696\uFE0F",
+  "man_judge": "\u{1F468}\u200D\u2696\uFE0F",
+  "woman_judge": "\u{1F469}\u200D\u2696\uFE0F",
+  "farmer": "\u{1F9D1}\u200D\u{1F33E}",
+  "man_farmer": "\u{1F468}\u200D\u{1F33E}",
+  "woman_farmer": "\u{1F469}\u200D\u{1F33E}",
+  "cook": "\u{1F9D1}\u200D\u{1F373}",
+  "man_cook": "\u{1F468}\u200D\u{1F373}",
+  "woman_cook": "\u{1F469}\u200D\u{1F373}",
+  "mechanic": "\u{1F9D1}\u200D\u{1F527}",
+  "man_mechanic": "\u{1F468}\u200D\u{1F527}",
+  "woman_mechanic": "\u{1F469}\u200D\u{1F527}",
+  "factory_worker": "\u{1F9D1}\u200D\u{1F3ED}",
+  "man_factory_worker": "\u{1F468}\u200D\u{1F3ED}",
+  "woman_factory_worker": "\u{1F469}\u200D\u{1F3ED}",
+  "office_worker": "\u{1F9D1}\u200D\u{1F4BC}",
+  "man_office_worker": "\u{1F468}\u200D\u{1F4BC}",
+  "woman_office_worker": "\u{1F469}\u200D\u{1F4BC}",
+  "scientist": "\u{1F9D1}\u200D\u{1F52C}",
+  "man_scientist": "\u{1F468}\u200D\u{1F52C}",
+  "woman_scientist": "\u{1F469}\u200D\u{1F52C}",
+  "technologist": "\u{1F9D1}\u200D\u{1F4BB}",
+  "man_technologist": "\u{1F468}\u200D\u{1F4BB}",
+  "woman_technologist": "\u{1F469}\u200D\u{1F4BB}",
+  "singer": "\u{1F9D1}\u200D\u{1F3A4}",
+  "man_singer": "\u{1F468}\u200D\u{1F3A4}",
+  "woman_singer": "\u{1F469}\u200D\u{1F3A4}",
+  "artist": "\u{1F9D1}\u200D\u{1F3A8}",
+  "man_artist": "\u{1F468}\u200D\u{1F3A8}",
+  "woman_artist": "\u{1F469}\u200D\u{1F3A8}",
+  "pilot": "\u{1F9D1}\u200D\u2708\uFE0F",
+  "man_pilot": "\u{1F468}\u200D\u2708\uFE0F",
+  "woman_pilot": "\u{1F469}\u200D\u2708\uFE0F",
+  "astronaut": "\u{1F9D1}\u200D\u{1F680}",
+  "man_astronaut": "\u{1F468}\u200D\u{1F680}",
+  "woman_astronaut": "\u{1F469}\u200D\u{1F680}",
+  "firefighter": "\u{1F9D1}\u200D\u{1F692}",
+  "man_firefighter": "\u{1F468}\u200D\u{1F692}",
+  "woman_firefighter": "\u{1F469}\u200D\u{1F692}",
+  "police_officer": "\u{1F46E}",
+  "cop": "\u{1F46E}",
+  "policeman": "\u{1F46E}\u200D\u2642\uFE0F",
+  "policewoman": "\u{1F46E}\u200D\u2640\uFE0F",
+  "detective": "\u{1F575}\uFE0F",
+  "male_detective": "\u{1F575}\uFE0F\u200D\u2642\uFE0F",
+  "female_detective": "\u{1F575}\uFE0F\u200D\u2640\uFE0F",
+  "guard": "\u{1F482}",
+  "guardsman": "\u{1F482}\u200D\u2642\uFE0F",
+  "guardswoman": "\u{1F482}\u200D\u2640\uFE0F",
+  "ninja": "\u{1F977}",
+  "construction_worker": "\u{1F477}",
+  "construction_worker_man": "\u{1F477}\u200D\u2642\uFE0F",
+  "construction_worker_woman": "\u{1F477}\u200D\u2640\uFE0F",
+  "person_with_crown": "\u{1FAC5}",
+  "prince": "\u{1F934}",
+  "princess": "\u{1F478}",
+  "person_with_turban": "\u{1F473}",
+  "man_with_turban": "\u{1F473}\u200D\u2642\uFE0F",
+  "woman_with_turban": "\u{1F473}\u200D\u2640\uFE0F",
+  "man_with_gua_pi_mao": "\u{1F472}",
+  "woman_with_headscarf": "\u{1F9D5}",
+  "person_in_tuxedo": "\u{1F935}",
+  "man_in_tuxedo": "\u{1F935}\u200D\u2642\uFE0F",
+  "woman_in_tuxedo": "\u{1F935}\u200D\u2640\uFE0F",
+  "person_with_veil": "\u{1F470}",
+  "man_with_veil": "\u{1F470}\u200D\u2642\uFE0F",
+  "woman_with_veil": "\u{1F470}\u200D\u2640\uFE0F",
+  "bride_with_veil": "\u{1F470}\u200D\u2640\uFE0F",
+  "pregnant_woman": "\u{1F930}",
+  "pregnant_man": "\u{1FAC3}",
+  "pregnant_person": "\u{1FAC4}",
+  "breast_feeding": "\u{1F931}",
+  "woman_feeding_baby": "\u{1F469}\u200D\u{1F37C}",
+  "man_feeding_baby": "\u{1F468}\u200D\u{1F37C}",
+  "person_feeding_baby": "\u{1F9D1}\u200D\u{1F37C}",
+  "angel": "\u{1F47C}",
+  "santa": "\u{1F385}",
+  "mrs_claus": "\u{1F936}",
+  "mx_claus": "\u{1F9D1}\u200D\u{1F384}",
+  "superhero": "\u{1F9B8}",
+  "superhero_man": "\u{1F9B8}\u200D\u2642\uFE0F",
+  "superhero_woman": "\u{1F9B8}\u200D\u2640\uFE0F",
+  "supervillain": "\u{1F9B9}",
+  "supervillain_man": "\u{1F9B9}\u200D\u2642\uFE0F",
+  "supervillain_woman": "\u{1F9B9}\u200D\u2640\uFE0F",
+  "mage": "\u{1F9D9}",
+  "mage_man": "\u{1F9D9}\u200D\u2642\uFE0F",
+  "mage_woman": "\u{1F9D9}\u200D\u2640\uFE0F",
+  "fairy": "\u{1F9DA}",
+  "fairy_man": "\u{1F9DA}\u200D\u2642\uFE0F",
+  "fairy_woman": "\u{1F9DA}\u200D\u2640\uFE0F",
+  "vampire": "\u{1F9DB}",
+  "vampire_man": "\u{1F9DB}\u200D\u2642\uFE0F",
+  "vampire_woman": "\u{1F9DB}\u200D\u2640\uFE0F",
+  "merperson": "\u{1F9DC}",
+  "merman": "\u{1F9DC}\u200D\u2642\uFE0F",
+  "mermaid": "\u{1F9DC}\u200D\u2640\uFE0F",
+  "elf": "\u{1F9DD}",
+  "elf_man": "\u{1F9DD}\u200D\u2642\uFE0F",
+  "elf_woman": "\u{1F9DD}\u200D\u2640\uFE0F",
+  "genie": "\u{1F9DE}",
+  "genie_man": "\u{1F9DE}\u200D\u2642\uFE0F",
+  "genie_woman": "\u{1F9DE}\u200D\u2640\uFE0F",
+  "zombie": "\u{1F9DF}",
+  "zombie_man": "\u{1F9DF}\u200D\u2642\uFE0F",
+  "zombie_woman": "\u{1F9DF}\u200D\u2640\uFE0F",
+  "troll": "\u{1F9CC}",
+  "massage": "\u{1F486}",
+  "massage_man": "\u{1F486}\u200D\u2642\uFE0F",
+  "massage_woman": "\u{1F486}\u200D\u2640\uFE0F",
+  "haircut": "\u{1F487}",
+  "haircut_man": "\u{1F487}\u200D\u2642\uFE0F",
+  "haircut_woman": "\u{1F487}\u200D\u2640\uFE0F",
+  "walking": "\u{1F6B6}",
+  "walking_man": "\u{1F6B6}\u200D\u2642\uFE0F",
+  "walking_woman": "\u{1F6B6}\u200D\u2640\uFE0F",
+  "standing_person": "\u{1F9CD}",
+  "standing_man": "\u{1F9CD}\u200D\u2642\uFE0F",
+  "standing_woman": "\u{1F9CD}\u200D\u2640\uFE0F",
+  "kneeling_person": "\u{1F9CE}",
+  "kneeling_man": "\u{1F9CE}\u200D\u2642\uFE0F",
+  "kneeling_woman": "\u{1F9CE}\u200D\u2640\uFE0F",
+  "person_with_probing_cane": "\u{1F9D1}\u200D\u{1F9AF}",
+  "man_with_probing_cane": "\u{1F468}\u200D\u{1F9AF}",
+  "woman_with_probing_cane": "\u{1F469}\u200D\u{1F9AF}",
+  "person_in_motorized_wheelchair": "\u{1F9D1}\u200D\u{1F9BC}",
+  "man_in_motorized_wheelchair": "\u{1F468}\u200D\u{1F9BC}",
+  "woman_in_motorized_wheelchair": "\u{1F469}\u200D\u{1F9BC}",
+  "person_in_manual_wheelchair": "\u{1F9D1}\u200D\u{1F9BD}",
+  "man_in_manual_wheelchair": "\u{1F468}\u200D\u{1F9BD}",
+  "woman_in_manual_wheelchair": "\u{1F469}\u200D\u{1F9BD}",
+  "runner": "\u{1F3C3}",
+  "running": "\u{1F3C3}",
+  "running_man": "\u{1F3C3}\u200D\u2642\uFE0F",
+  "running_woman": "\u{1F3C3}\u200D\u2640\uFE0F",
+  "woman_dancing": "\u{1F483}",
+  "dancer": "\u{1F483}",
+  "man_dancing": "\u{1F57A}",
+  "business_suit_levitating": "\u{1F574}\uFE0F",
+  "dancers": "\u{1F46F}",
+  "dancing_men": "\u{1F46F}\u200D\u2642\uFE0F",
+  "dancing_women": "\u{1F46F}\u200D\u2640\uFE0F",
+  "sauna_person": "\u{1F9D6}",
+  "sauna_man": "\u{1F9D6}\u200D\u2642\uFE0F",
+  "sauna_woman": "\u{1F9D6}\u200D\u2640\uFE0F",
+  "climbing": "\u{1F9D7}",
+  "climbing_man": "\u{1F9D7}\u200D\u2642\uFE0F",
+  "climbing_woman": "\u{1F9D7}\u200D\u2640\uFE0F",
+  "person_fencing": "\u{1F93A}",
+  "horse_racing": "\u{1F3C7}",
+  "skier": "\u26F7\uFE0F",
+  "snowboarder": "\u{1F3C2}",
+  "golfing": "\u{1F3CC}\uFE0F",
+  "golfing_man": "\u{1F3CC}\uFE0F\u200D\u2642\uFE0F",
+  "golfing_woman": "\u{1F3CC}\uFE0F\u200D\u2640\uFE0F",
+  "surfer": "\u{1F3C4}",
+  "surfing_man": "\u{1F3C4}\u200D\u2642\uFE0F",
+  "surfing_woman": "\u{1F3C4}\u200D\u2640\uFE0F",
+  "rowboat": "\u{1F6A3}",
+  "rowing_man": "\u{1F6A3}\u200D\u2642\uFE0F",
+  "rowing_woman": "\u{1F6A3}\u200D\u2640\uFE0F",
+  "swimmer": "\u{1F3CA}",
+  "swimming_man": "\u{1F3CA}\u200D\u2642\uFE0F",
+  "swimming_woman": "\u{1F3CA}\u200D\u2640\uFE0F",
+  "bouncing_ball_person": "\u26F9\uFE0F",
+  "bouncing_ball_man": "\u26F9\uFE0F\u200D\u2642\uFE0F",
+  "basketball_man": "\u26F9\uFE0F\u200D\u2642\uFE0F",
+  "bouncing_ball_woman": "\u26F9\uFE0F\u200D\u2640\uFE0F",
+  "basketball_woman": "\u26F9\uFE0F\u200D\u2640\uFE0F",
+  "weight_lifting": "\u{1F3CB}\uFE0F",
+  "weight_lifting_man": "\u{1F3CB}\uFE0F\u200D\u2642\uFE0F",
+  "weight_lifting_woman": "\u{1F3CB}\uFE0F\u200D\u2640\uFE0F",
+  "bicyclist": "\u{1F6B4}",
+  "biking_man": "\u{1F6B4}\u200D\u2642\uFE0F",
+  "biking_woman": "\u{1F6B4}\u200D\u2640\uFE0F",
+  "mountain_bicyclist": "\u{1F6B5}",
+  "mountain_biking_man": "\u{1F6B5}\u200D\u2642\uFE0F",
+  "mountain_biking_woman": "\u{1F6B5}\u200D\u2640\uFE0F",
+  "cartwheeling": "\u{1F938}",
+  "man_cartwheeling": "\u{1F938}\u200D\u2642\uFE0F",
+  "woman_cartwheeling": "\u{1F938}\u200D\u2640\uFE0F",
+  "wrestling": "\u{1F93C}",
+  "men_wrestling": "\u{1F93C}\u200D\u2642\uFE0F",
+  "women_wrestling": "\u{1F93C}\u200D\u2640\uFE0F",
+  "water_polo": "\u{1F93D}",
+  "man_playing_water_polo": "\u{1F93D}\u200D\u2642\uFE0F",
+  "woman_playing_water_polo": "\u{1F93D}\u200D\u2640\uFE0F",
+  "handball_person": "\u{1F93E}",
+  "man_playing_handball": "\u{1F93E}\u200D\u2642\uFE0F",
+  "woman_playing_handball": "\u{1F93E}\u200D\u2640\uFE0F",
+  "juggling_person": "\u{1F939}",
+  "man_juggling": "\u{1F939}\u200D\u2642\uFE0F",
+  "woman_juggling": "\u{1F939}\u200D\u2640\uFE0F",
+  "lotus_position": "\u{1F9D8}",
+  "lotus_position_man": "\u{1F9D8}\u200D\u2642\uFE0F",
+  "lotus_position_woman": "\u{1F9D8}\u200D\u2640\uFE0F",
+  "bath": "\u{1F6C0}",
+  "sleeping_bed": "\u{1F6CC}",
+  "people_holding_hands": "\u{1F9D1}\u200D\u{1F91D}\u200D\u{1F9D1}",
+  "two_women_holding_hands": "\u{1F46D}",
+  "couple": "\u{1F46B}",
+  "two_men_holding_hands": "\u{1F46C}",
+  "couplekiss": "\u{1F48F}",
+  "couplekiss_man_woman": "\u{1F469}\u200D\u2764\uFE0F\u200D\u{1F48B}\u200D\u{1F468}",
+  "couplekiss_man_man": "\u{1F468}\u200D\u2764\uFE0F\u200D\u{1F48B}\u200D\u{1F468}",
+  "couplekiss_woman_woman": "\u{1F469}\u200D\u2764\uFE0F\u200D\u{1F48B}\u200D\u{1F469}",
+  "couple_with_heart": "\u{1F491}",
+  "couple_with_heart_woman_man": "\u{1F469}\u200D\u2764\uFE0F\u200D\u{1F468}",
+  "couple_with_heart_man_man": "\u{1F468}\u200D\u2764\uFE0F\u200D\u{1F468}",
+  "couple_with_heart_woman_woman": "\u{1F469}\u200D\u2764\uFE0F\u200D\u{1F469}",
+  "family": "\u{1F46A}",
+  "family_man_woman_boy": "\u{1F468}\u200D\u{1F469}\u200D\u{1F466}",
+  "family_man_woman_girl": "\u{1F468}\u200D\u{1F469}\u200D\u{1F467}",
+  "family_man_woman_girl_boy": "\u{1F468}\u200D\u{1F469}\u200D\u{1F467}\u200D\u{1F466}",
+  "family_man_woman_boy_boy": "\u{1F468}\u200D\u{1F469}\u200D\u{1F466}\u200D\u{1F466}",
+  "family_man_woman_girl_girl": "\u{1F468}\u200D\u{1F469}\u200D\u{1F467}\u200D\u{1F467}",
+  "family_man_man_boy": "\u{1F468}\u200D\u{1F468}\u200D\u{1F466}",
+  "family_man_man_girl": "\u{1F468}\u200D\u{1F468}\u200D\u{1F467}",
+  "family_man_man_girl_boy": "\u{1F468}\u200D\u{1F468}\u200D\u{1F467}\u200D\u{1F466}",
+  "family_man_man_boy_boy": "\u{1F468}\u200D\u{1F468}\u200D\u{1F466}\u200D\u{1F466}",
+  "family_man_man_girl_girl": "\u{1F468}\u200D\u{1F468}\u200D\u{1F467}\u200D\u{1F467}",
+  "family_woman_woman_boy": "\u{1F469}\u200D\u{1F469}\u200D\u{1F466}",
+  "family_woman_woman_girl": "\u{1F469}\u200D\u{1F469}\u200D\u{1F467}",
+  "family_woman_woman_girl_boy": "\u{1F469}\u200D\u{1F469}\u200D\u{1F467}\u200D\u{1F466}",
+  "family_woman_woman_boy_boy": "\u{1F469}\u200D\u{1F469}\u200D\u{1F466}\u200D\u{1F466}",
+  "family_woman_woman_girl_girl": "\u{1F469}\u200D\u{1F469}\u200D\u{1F467}\u200D\u{1F467}",
+  "family_man_boy": "\u{1F468}\u200D\u{1F466}",
+  "family_man_boy_boy": "\u{1F468}\u200D\u{1F466}\u200D\u{1F466}",
+  "family_man_girl": "\u{1F468}\u200D\u{1F467}",
+  "family_man_girl_boy": "\u{1F468}\u200D\u{1F467}\u200D\u{1F466}",
+  "family_man_girl_girl": "\u{1F468}\u200D\u{1F467}\u200D\u{1F467}",
+  "family_woman_boy": "\u{1F469}\u200D\u{1F466}",
+  "family_woman_boy_boy": "\u{1F469}\u200D\u{1F466}\u200D\u{1F466}",
+  "family_woman_girl": "\u{1F469}\u200D\u{1F467}",
+  "family_woman_girl_boy": "\u{1F469}\u200D\u{1F467}\u200D\u{1F466}",
+  "family_woman_girl_girl": "\u{1F469}\u200D\u{1F467}\u200D\u{1F467}",
+  "speaking_head": "\u{1F5E3}\uFE0F",
+  "bust_in_silhouette": "\u{1F464}",
+  "busts_in_silhouette": "\u{1F465}",
+  "people_hugging": "\u{1FAC2}",
+  "footprints": "\u{1F463}",
+  "monkey_face": "\u{1F435}",
+  "monkey": "\u{1F412}",
+  "gorilla": "\u{1F98D}",
+  "orangutan": "\u{1F9A7}",
+  "dog": "\u{1F436}",
+  "dog2": "\u{1F415}",
+  "guide_dog": "\u{1F9AE}",
+  "service_dog": "\u{1F415}\u200D\u{1F9BA}",
+  "poodle": "\u{1F429}",
+  "wolf": "\u{1F43A}",
+  "fox_face": "\u{1F98A}",
+  "raccoon": "\u{1F99D}",
+  "cat": "\u{1F431}",
+  "cat2": "\u{1F408}",
+  "black_cat": "\u{1F408}\u200D\u2B1B",
+  "lion": "\u{1F981}",
+  "tiger": "\u{1F42F}",
+  "tiger2": "\u{1F405}",
+  "leopard": "\u{1F406}",
+  "horse": "\u{1F434}",
+  "moose": "\u{1FACE}",
+  "donkey": "\u{1FACF}",
+  "racehorse": "\u{1F40E}",
+  "unicorn": "\u{1F984}",
+  "zebra": "\u{1F993}",
+  "deer": "\u{1F98C}",
+  "bison": "\u{1F9AC}",
+  "cow": "\u{1F42E}",
+  "ox": "\u{1F402}",
+  "water_buffalo": "\u{1F403}",
+  "cow2": "\u{1F404}",
+  "pig": "\u{1F437}",
+  "pig2": "\u{1F416}",
+  "boar": "\u{1F417}",
+  "pig_nose": "\u{1F43D}",
+  "ram": "\u{1F40F}",
+  "sheep": "\u{1F411}",
+  "goat": "\u{1F410}",
+  "dromedary_camel": "\u{1F42A}",
+  "camel": "\u{1F42B}",
+  "llama": "\u{1F999}",
+  "giraffe": "\u{1F992}",
+  "elephant": "\u{1F418}",
+  "mammoth": "\u{1F9A3}",
+  "rhinoceros": "\u{1F98F}",
+  "hippopotamus": "\u{1F99B}",
+  "mouse": "\u{1F42D}",
+  "mouse2": "\u{1F401}",
+  "rat": "\u{1F400}",
+  "hamster": "\u{1F439}",
+  "rabbit": "\u{1F430}",
+  "rabbit2": "\u{1F407}",
+  "chipmunk": "\u{1F43F}\uFE0F",
+  "beaver": "\u{1F9AB}",
+  "hedgehog": "\u{1F994}",
+  "bat": "\u{1F987}",
+  "bear": "\u{1F43B}",
+  "polar_bear": "\u{1F43B}\u200D\u2744\uFE0F",
+  "koala": "\u{1F428}",
+  "panda_face": "\u{1F43C}",
+  "sloth": "\u{1F9A5}",
+  "otter": "\u{1F9A6}",
+  "skunk": "\u{1F9A8}",
+  "kangaroo": "\u{1F998}",
+  "badger": "\u{1F9A1}",
+  "feet": "\u{1F43E}",
+  "paw_prints": "\u{1F43E}",
+  "turkey": "\u{1F983}",
+  "chicken": "\u{1F414}",
+  "rooster": "\u{1F413}",
+  "hatching_chick": "\u{1F423}",
+  "baby_chick": "\u{1F424}",
+  "hatched_chick": "\u{1F425}",
+  "bird": "\u{1F426}",
+  "penguin": "\u{1F427}",
+  "dove": "\u{1F54A}\uFE0F",
+  "eagle": "\u{1F985}",
+  "duck": "\u{1F986}",
+  "swan": "\u{1F9A2}",
+  "owl": "\u{1F989}",
+  "dodo": "\u{1F9A4}",
+  "feather": "\u{1FAB6}",
+  "flamingo": "\u{1F9A9}",
+  "peacock": "\u{1F99A}",
+  "parrot": "\u{1F99C}",
+  "wing": "\u{1FABD}",
+  "black_bird": "\u{1F426}\u200D\u2B1B",
+  "goose": "\u{1FABF}",
+  "frog": "\u{1F438}",
+  "crocodile": "\u{1F40A}",
+  "turtle": "\u{1F422}",
+  "lizard": "\u{1F98E}",
+  "snake": "\u{1F40D}",
+  "dragon_face": "\u{1F432}",
+  "dragon": "\u{1F409}",
+  "sauropod": "\u{1F995}",
+  "t-rex": "\u{1F996}",
+  "whale": "\u{1F433}",
+  "whale2": "\u{1F40B}",
+  "dolphin": "\u{1F42C}",
+  "flipper": "\u{1F42C}",
+  "seal": "\u{1F9AD}",
+  "fish": "\u{1F41F}",
+  "tropical_fish": "\u{1F420}",
+  "blowfish": "\u{1F421}",
+  "shark": "\u{1F988}",
+  "octopus": "\u{1F419}",
+  "shell": "\u{1F41A}",
+  "coral": "\u{1FAB8}",
+  "jellyfish": "\u{1FABC}",
+  "snail": "\u{1F40C}",
+  "butterfly": "\u{1F98B}",
+  "bug": "\u{1F41B}",
+  "ant": "\u{1F41C}",
+  "bee": "\u{1F41D}",
+  "honeybee": "\u{1F41D}",
+  "beetle": "\u{1FAB2}",
+  "lady_beetle": "\u{1F41E}",
+  "cricket": "\u{1F997}",
+  "cockroach": "\u{1FAB3}",
+  "spider": "\u{1F577}\uFE0F",
+  "spider_web": "\u{1F578}\uFE0F",
+  "scorpion": "\u{1F982}",
+  "mosquito": "\u{1F99F}",
+  "fly": "\u{1FAB0}",
+  "worm": "\u{1FAB1}",
+  "microbe": "\u{1F9A0}",
+  "bouquet": "\u{1F490}",
+  "cherry_blossom": "\u{1F338}",
+  "white_flower": "\u{1F4AE}",
+  "lotus": "\u{1FAB7}",
+  "rosette": "\u{1F3F5}\uFE0F",
+  "rose": "\u{1F339}",
+  "wilted_flower": "\u{1F940}",
+  "hibiscus": "\u{1F33A}",
+  "sunflower": "\u{1F33B}",
+  "blossom": "\u{1F33C}",
+  "tulip": "\u{1F337}",
+  "hyacinth": "\u{1FABB}",
+  "seedling": "\u{1F331}",
+  "potted_plant": "\u{1FAB4}",
+  "evergreen_tree": "\u{1F332}",
+  "deciduous_tree": "\u{1F333}",
+  "palm_tree": "\u{1F334}",
+  "cactus": "\u{1F335}",
+  "ear_of_rice": "\u{1F33E}",
+  "herb": "\u{1F33F}",
+  "shamrock": "\u2618\uFE0F",
+  "four_leaf_clover": "\u{1F340}",
+  "maple_leaf": "\u{1F341}",
+  "fallen_leaf": "\u{1F342}",
+  "leaves": "\u{1F343}",
+  "empty_nest": "\u{1FAB9}",
+  "nest_with_eggs": "\u{1FABA}",
+  "mushroom": "\u{1F344}",
+  "grapes": "\u{1F347}",
+  "melon": "\u{1F348}",
+  "watermelon": "\u{1F349}",
+  "tangerine": "\u{1F34A}",
+  "orange": "\u{1F34A}",
+  "mandarin": "\u{1F34A}",
+  "lemon": "\u{1F34B}",
+  "banana": "\u{1F34C}",
+  "pineapple": "\u{1F34D}",
+  "mango": "\u{1F96D}",
+  "apple": "\u{1F34E}",
+  "green_apple": "\u{1F34F}",
+  "pear": "\u{1F350}",
+  "peach": "\u{1F351}",
+  "cherries": "\u{1F352}",
+  "strawberry": "\u{1F353}",
+  "blueberries": "\u{1FAD0}",
+  "kiwi_fruit": "\u{1F95D}",
+  "tomato": "\u{1F345}",
+  "olive": "\u{1FAD2}",
+  "coconut": "\u{1F965}",
+  "avocado": "\u{1F951}",
+  "eggplant": "\u{1F346}",
+  "potato": "\u{1F954}",
+  "carrot": "\u{1F955}",
+  "corn": "\u{1F33D}",
+  "hot_pepper": "\u{1F336}\uFE0F",
+  "bell_pepper": "\u{1FAD1}",
+  "cucumber": "\u{1F952}",
+  "leafy_green": "\u{1F96C}",
+  "broccoli": "\u{1F966}",
+  "garlic": "\u{1F9C4}",
+  "onion": "\u{1F9C5}",
+  "peanuts": "\u{1F95C}",
+  "beans": "\u{1FAD8}",
+  "chestnut": "\u{1F330}",
+  "ginger_root": "\u{1FADA}",
+  "pea_pod": "\u{1FADB}",
+  "bread": "\u{1F35E}",
+  "croissant": "\u{1F950}",
+  "baguette_bread": "\u{1F956}",
+  "flatbread": "\u{1FAD3}",
+  "pretzel": "\u{1F968}",
+  "bagel": "\u{1F96F}",
+  "pancakes": "\u{1F95E}",
+  "waffle": "\u{1F9C7}",
+  "cheese": "\u{1F9C0}",
+  "meat_on_bone": "\u{1F356}",
+  "poultry_leg": "\u{1F357}",
+  "cut_of_meat": "\u{1F969}",
+  "bacon": "\u{1F953}",
+  "hamburger": "\u{1F354}",
+  "fries": "\u{1F35F}",
+  "pizza": "\u{1F355}",
+  "hotdog": "\u{1F32D}",
+  "sandwich": "\u{1F96A}",
+  "taco": "\u{1F32E}",
+  "burrito": "\u{1F32F}",
+  "tamale": "\u{1FAD4}",
+  "stuffed_flatbread": "\u{1F959}",
+  "falafel": "\u{1F9C6}",
+  "egg": "\u{1F95A}",
+  "fried_egg": "\u{1F373}",
+  "shallow_pan_of_food": "\u{1F958}",
+  "stew": "\u{1F372}",
+  "fondue": "\u{1FAD5}",
+  "bowl_with_spoon": "\u{1F963}",
+  "green_salad": "\u{1F957}",
+  "popcorn": "\u{1F37F}",
+  "butter": "\u{1F9C8}",
+  "salt": "\u{1F9C2}",
+  "canned_food": "\u{1F96B}",
+  "bento": "\u{1F371}",
+  "rice_cracker": "\u{1F358}",
+  "rice_ball": "\u{1F359}",
+  "rice": "\u{1F35A}",
+  "curry": "\u{1F35B}",
+  "ramen": "\u{1F35C}",
+  "spaghetti": "\u{1F35D}",
+  "sweet_potato": "\u{1F360}",
+  "oden": "\u{1F362}",
+  "sushi": "\u{1F363}",
+  "fried_shrimp": "\u{1F364}",
+  "fish_cake": "\u{1F365}",
+  "moon_cake": "\u{1F96E}",
+  "dango": "\u{1F361}",
+  "dumpling": "\u{1F95F}",
+  "fortune_cookie": "\u{1F960}",
+  "takeout_box": "\u{1F961}",
+  "crab": "\u{1F980}",
+  "lobster": "\u{1F99E}",
+  "shrimp": "\u{1F990}",
+  "squid": "\u{1F991}",
+  "oyster": "\u{1F9AA}",
+  "icecream": "\u{1F366}",
+  "shaved_ice": "\u{1F367}",
+  "ice_cream": "\u{1F368}",
+  "doughnut": "\u{1F369}",
+  "cookie": "\u{1F36A}",
+  "birthday": "\u{1F382}",
+  "cake": "\u{1F370}",
+  "cupcake": "\u{1F9C1}",
+  "pie": "\u{1F967}",
+  "chocolate_bar": "\u{1F36B}",
+  "candy": "\u{1F36C}",
+  "lollipop": "\u{1F36D}",
+  "custard": "\u{1F36E}",
+  "honey_pot": "\u{1F36F}",
+  "baby_bottle": "\u{1F37C}",
+  "milk_glass": "\u{1F95B}",
+  "coffee": "\u2615",
+  "teapot": "\u{1FAD6}",
+  "tea": "\u{1F375}",
+  "sake": "\u{1F376}",
+  "champagne": "\u{1F37E}",
+  "wine_glass": "\u{1F377}",
+  "cocktail": "\u{1F378}",
+  "tropical_drink": "\u{1F379}",
+  "beer": "\u{1F37A}",
+  "beers": "\u{1F37B}",
+  "clinking_glasses": "\u{1F942}",
+  "tumbler_glass": "\u{1F943}",
+  "pouring_liquid": "\u{1FAD7}",
+  "cup_with_straw": "\u{1F964}",
+  "bubble_tea": "\u{1F9CB}",
+  "beverage_box": "\u{1F9C3}",
+  "mate": "\u{1F9C9}",
+  "ice_cube": "\u{1F9CA}",
+  "chopsticks": "\u{1F962}",
+  "plate_with_cutlery": "\u{1F37D}\uFE0F",
+  "fork_and_knife": "\u{1F374}",
+  "spoon": "\u{1F944}",
+  "hocho": "\u{1F52A}",
+  "knife": "\u{1F52A}",
+  "jar": "\u{1FAD9}",
+  "amphora": "\u{1F3FA}",
+  "earth_africa": "\u{1F30D}",
+  "earth_americas": "\u{1F30E}",
+  "earth_asia": "\u{1F30F}",
+  "globe_with_meridians": "\u{1F310}",
+  "world_map": "\u{1F5FA}\uFE0F",
+  "japan": "\u{1F5FE}",
+  "compass": "\u{1F9ED}",
+  "mountain_snow": "\u{1F3D4}\uFE0F",
+  "mountain": "\u26F0\uFE0F",
+  "volcano": "\u{1F30B}",
+  "mount_fuji": "\u{1F5FB}",
+  "camping": "\u{1F3D5}\uFE0F",
+  "beach_umbrella": "\u{1F3D6}\uFE0F",
+  "desert": "\u{1F3DC}\uFE0F",
+  "desert_island": "\u{1F3DD}\uFE0F",
+  "national_park": "\u{1F3DE}\uFE0F",
+  "stadium": "\u{1F3DF}\uFE0F",
+  "classical_building": "\u{1F3DB}\uFE0F",
+  "building_construction": "\u{1F3D7}\uFE0F",
+  "bricks": "\u{1F9F1}",
+  "rock": "\u{1FAA8}",
+  "wood": "\u{1FAB5}",
+  "hut": "\u{1F6D6}",
+  "houses": "\u{1F3D8}\uFE0F",
+  "derelict_house": "\u{1F3DA}\uFE0F",
+  "house": "\u{1F3E0}",
+  "house_with_garden": "\u{1F3E1}",
+  "office": "\u{1F3E2}",
+  "post_office": "\u{1F3E3}",
+  "european_post_office": "\u{1F3E4}",
+  "hospital": "\u{1F3E5}",
+  "bank": "\u{1F3E6}",
+  "hotel": "\u{1F3E8}",
+  "love_hotel": "\u{1F3E9}",
+  "convenience_store": "\u{1F3EA}",
+  "school": "\u{1F3EB}",
+  "department_store": "\u{1F3EC}",
+  "factory": "\u{1F3ED}",
+  "japanese_castle": "\u{1F3EF}",
+  "european_castle": "\u{1F3F0}",
+  "wedding": "\u{1F492}",
+  "tokyo_tower": "\u{1F5FC}",
+  "statue_of_liberty": "\u{1F5FD}",
+  "church": "\u26EA",
+  "mosque": "\u{1F54C}",
+  "hindu_temple": "\u{1F6D5}",
+  "synagogue": "\u{1F54D}",
+  "shinto_shrine": "\u26E9\uFE0F",
+  "kaaba": "\u{1F54B}",
+  "fountain": "\u26F2",
+  "tent": "\u26FA",
+  "foggy": "\u{1F301}",
+  "night_with_stars": "\u{1F303}",
+  "cityscape": "\u{1F3D9}\uFE0F",
+  "sunrise_over_mountains": "\u{1F304}",
+  "sunrise": "\u{1F305}",
+  "city_sunset": "\u{1F306}",
+  "city_sunrise": "\u{1F307}",
+  "bridge_at_night": "\u{1F309}",
+  "hotsprings": "\u2668\uFE0F",
+  "carousel_horse": "\u{1F3A0}",
+  "playground_slide": "\u{1F6DD}",
+  "ferris_wheel": "\u{1F3A1}",
+  "roller_coaster": "\u{1F3A2}",
+  "barber": "\u{1F488}",
+  "circus_tent": "\u{1F3AA}",
+  "steam_locomotive": "\u{1F682}",
+  "railway_car": "\u{1F683}",
+  "bullettrain_side": "\u{1F684}",
+  "bullettrain_front": "\u{1F685}",
+  "train2": "\u{1F686}",
+  "metro": "\u{1F687}",
+  "light_rail": "\u{1F688}",
+  "station": "\u{1F689}",
+  "tram": "\u{1F68A}",
+  "monorail": "\u{1F69D}",
+  "mountain_railway": "\u{1F69E}",
+  "train": "\u{1F68B}",
+  "bus": "\u{1F68C}",
+  "oncoming_bus": "\u{1F68D}",
+  "trolleybus": "\u{1F68E}",
+  "minibus": "\u{1F690}",
+  "ambulance": "\u{1F691}",
+  "fire_engine": "\u{1F692}",
+  "police_car": "\u{1F693}",
+  "oncoming_police_car": "\u{1F694}",
+  "taxi": "\u{1F695}",
+  "oncoming_taxi": "\u{1F696}",
+  "car": "\u{1F697}",
+  "red_car": "\u{1F697}",
+  "oncoming_automobile": "\u{1F698}",
+  "blue_car": "\u{1F699}",
+  "pickup_truck": "\u{1F6FB}",
+  "truck": "\u{1F69A}",
+  "articulated_lorry": "\u{1F69B}",
+  "tractor": "\u{1F69C}",
+  "racing_car": "\u{1F3CE}\uFE0F",
+  "motorcycle": "\u{1F3CD}\uFE0F",
+  "motor_scooter": "\u{1F6F5}",
+  "manual_wheelchair": "\u{1F9BD}",
+  "motorized_wheelchair": "\u{1F9BC}",
+  "auto_rickshaw": "\u{1F6FA}",
+  "bike": "\u{1F6B2}",
+  "kick_scooter": "\u{1F6F4}",
+  "skateboard": "\u{1F6F9}",
+  "roller_skate": "\u{1F6FC}",
+  "busstop": "\u{1F68F}",
+  "motorway": "\u{1F6E3}\uFE0F",
+  "railway_track": "\u{1F6E4}\uFE0F",
+  "oil_drum": "\u{1F6E2}\uFE0F",
+  "fuelpump": "\u26FD",
+  "wheel": "\u{1F6DE}",
+  "rotating_light": "\u{1F6A8}",
+  "traffic_light": "\u{1F6A5}",
+  "vertical_traffic_light": "\u{1F6A6}",
+  "stop_sign": "\u{1F6D1}",
+  "construction": "\u{1F6A7}",
+  "anchor": "\u2693",
+  "ring_buoy": "\u{1F6DF}",
+  "boat": "\u26F5",
+  "sailboat": "\u26F5",
+  "canoe": "\u{1F6F6}",
+  "speedboat": "\u{1F6A4}",
+  "passenger_ship": "\u{1F6F3}\uFE0F",
+  "ferry": "\u26F4\uFE0F",
+  "motor_boat": "\u{1F6E5}\uFE0F",
+  "ship": "\u{1F6A2}",
+  "airplane": "\u2708\uFE0F",
+  "small_airplane": "\u{1F6E9}\uFE0F",
+  "flight_departure": "\u{1F6EB}",
+  "flight_arrival": "\u{1F6EC}",
+  "parachute": "\u{1FA82}",
+  "seat": "\u{1F4BA}",
+  "helicopter": "\u{1F681}",
+  "suspension_railway": "\u{1F69F}",
+  "mountain_cableway": "\u{1F6A0}",
+  "aerial_tramway": "\u{1F6A1}",
+  "artificial_satellite": "\u{1F6F0}\uFE0F",
+  "rocket": "\u{1F680}",
+  "flying_saucer": "\u{1F6F8}",
+  "bellhop_bell": "\u{1F6CE}\uFE0F",
+  "luggage": "\u{1F9F3}",
+  "hourglass": "\u231B",
+  "hourglass_flowing_sand": "\u23F3",
+  "watch": "\u231A",
+  "alarm_clock": "\u23F0",
+  "stopwatch": "\u23F1\uFE0F",
+  "timer_clock": "\u23F2\uFE0F",
+  "mantelpiece_clock": "\u{1F570}\uFE0F",
+  "clock12": "\u{1F55B}",
+  "clock1230": "\u{1F567}",
+  "clock1": "\u{1F550}",
+  "clock130": "\u{1F55C}",
+  "clock2": "\u{1F551}",
+  "clock230": "\u{1F55D}",
+  "clock3": "\u{1F552}",
+  "clock330": "\u{1F55E}",
+  "clock4": "\u{1F553}",
+  "clock430": "\u{1F55F}",
+  "clock5": "\u{1F554}",
+  "clock530": "\u{1F560}",
+  "clock6": "\u{1F555}",
+  "clock630": "\u{1F561}",
+  "clock7": "\u{1F556}",
+  "clock730": "\u{1F562}",
+  "clock8": "\u{1F557}",
+  "clock830": "\u{1F563}",
+  "clock9": "\u{1F558}",
+  "clock930": "\u{1F564}",
+  "clock10": "\u{1F559}",
+  "clock1030": "\u{1F565}",
+  "clock11": "\u{1F55A}",
+  "clock1130": "\u{1F566}",
+  "new_moon": "\u{1F311}",
+  "waxing_crescent_moon": "\u{1F312}",
+  "first_quarter_moon": "\u{1F313}",
+  "moon": "\u{1F314}",
+  "waxing_gibbous_moon": "\u{1F314}",
+  "full_moon": "\u{1F315}",
+  "waning_gibbous_moon": "\u{1F316}",
+  "last_quarter_moon": "\u{1F317}",
+  "waning_crescent_moon": "\u{1F318}",
+  "crescent_moon": "\u{1F319}",
+  "new_moon_with_face": "\u{1F31A}",
+  "first_quarter_moon_with_face": "\u{1F31B}",
+  "last_quarter_moon_with_face": "\u{1F31C}",
+  "thermometer": "\u{1F321}\uFE0F",
+  "sunny": "\u2600\uFE0F",
+  "full_moon_with_face": "\u{1F31D}",
+  "sun_with_face": "\u{1F31E}",
+  "ringed_planet": "\u{1FA90}",
+  "star": "\u2B50",
+  "star2": "\u{1F31F}",
+  "stars": "\u{1F320}",
+  "milky_way": "\u{1F30C}",
+  "cloud": "\u2601\uFE0F",
+  "partly_sunny": "\u26C5",
+  "cloud_with_lightning_and_rain": "\u26C8\uFE0F",
+  "sun_behind_small_cloud": "\u{1F324}\uFE0F",
+  "sun_behind_large_cloud": "\u{1F325}\uFE0F",
+  "sun_behind_rain_cloud": "\u{1F326}\uFE0F",
+  "cloud_with_rain": "\u{1F327}\uFE0F",
+  "cloud_with_snow": "\u{1F328}\uFE0F",
+  "cloud_with_lightning": "\u{1F329}\uFE0F",
+  "tornado": "\u{1F32A}\uFE0F",
+  "fog": "\u{1F32B}\uFE0F",
+  "wind_face": "\u{1F32C}\uFE0F",
+  "cyclone": "\u{1F300}",
+  "rainbow": "\u{1F308}",
+  "closed_umbrella": "\u{1F302}",
+  "open_umbrella": "\u2602\uFE0F",
+  "umbrella": "\u2614",
+  "parasol_on_ground": "\u26F1\uFE0F",
+  "zap": "\u26A1",
+  "snowflake": "\u2744\uFE0F",
+  "snowman_with_snow": "\u2603\uFE0F",
+  "snowman": "\u26C4",
+  "comet": "\u2604\uFE0F",
+  "fire": "\u{1F525}",
+  "droplet": "\u{1F4A7}",
+  "ocean": "\u{1F30A}",
+  "jack_o_lantern": "\u{1F383}",
+  "christmas_tree": "\u{1F384}",
+  "fireworks": "\u{1F386}",
+  "sparkler": "\u{1F387}",
+  "firecracker": "\u{1F9E8}",
+  "sparkles": "\u2728",
+  "balloon": "\u{1F388}",
+  "tada": "\u{1F389}",
+  "confetti_ball": "\u{1F38A}",
+  "tanabata_tree": "\u{1F38B}",
+  "bamboo": "\u{1F38D}",
+  "dolls": "\u{1F38E}",
+  "flags": "\u{1F38F}",
+  "wind_chime": "\u{1F390}",
+  "rice_scene": "\u{1F391}",
+  "red_envelope": "\u{1F9E7}",
+  "ribbon": "\u{1F380}",
+  "gift": "\u{1F381}",
+  "reminder_ribbon": "\u{1F397}\uFE0F",
+  "tickets": "\u{1F39F}\uFE0F",
+  "ticket": "\u{1F3AB}",
+  "medal_military": "\u{1F396}\uFE0F",
+  "trophy": "\u{1F3C6}",
+  "medal_sports": "\u{1F3C5}",
+  "1st_place_medal": "\u{1F947}",
+  "2nd_place_medal": "\u{1F948}",
+  "3rd_place_medal": "\u{1F949}",
+  "soccer": "\u26BD",
+  "baseball": "\u26BE",
+  "softball": "\u{1F94E}",
+  "basketball": "\u{1F3C0}",
+  "volleyball": "\u{1F3D0}",
+  "football": "\u{1F3C8}",
+  "rugby_football": "\u{1F3C9}",
+  "tennis": "\u{1F3BE}",
+  "flying_disc": "\u{1F94F}",
+  "bowling": "\u{1F3B3}",
+  "cricket_game": "\u{1F3CF}",
+  "field_hockey": "\u{1F3D1}",
+  "ice_hockey": "\u{1F3D2}",
+  "lacrosse": "\u{1F94D}",
+  "ping_pong": "\u{1F3D3}",
+  "badminton": "\u{1F3F8}",
+  "boxing_glove": "\u{1F94A}",
+  "martial_arts_uniform": "\u{1F94B}",
+  "goal_net": "\u{1F945}",
+  "golf": "\u26F3",
+  "ice_skate": "\u26F8\uFE0F",
+  "fishing_pole_and_fish": "\u{1F3A3}",
+  "diving_mask": "\u{1F93F}",
+  "running_shirt_with_sash": "\u{1F3BD}",
+  "ski": "\u{1F3BF}",
+  "sled": "\u{1F6F7}",
+  "curling_stone": "\u{1F94C}",
+  "dart": "\u{1F3AF}",
+  "yo_yo": "\u{1FA80}",
+  "kite": "\u{1FA81}",
+  "gun": "\u{1F52B}",
+  "8ball": "\u{1F3B1}",
+  "crystal_ball": "\u{1F52E}",
+  "magic_wand": "\u{1FA84}",
+  "video_game": "\u{1F3AE}",
+  "joystick": "\u{1F579}\uFE0F",
+  "slot_machine": "\u{1F3B0}",
+  "game_die": "\u{1F3B2}",
+  "jigsaw": "\u{1F9E9}",
+  "teddy_bear": "\u{1F9F8}",
+  "pinata": "\u{1FA85}",
+  "mirror_ball": "\u{1FAA9}",
+  "nesting_dolls": "\u{1FA86}",
+  "spades": "\u2660\uFE0F",
+  "hearts": "\u2665\uFE0F",
+  "diamonds": "\u2666\uFE0F",
+  "clubs": "\u2663\uFE0F",
+  "chess_pawn": "\u265F\uFE0F",
+  "black_joker": "\u{1F0CF}",
+  "mahjong": "\u{1F004}",
+  "flower_playing_cards": "\u{1F3B4}",
+  "performing_arts": "\u{1F3AD}",
+  "framed_picture": "\u{1F5BC}\uFE0F",
+  "art": "\u{1F3A8}",
+  "thread": "\u{1F9F5}",
+  "sewing_needle": "\u{1FAA1}",
+  "yarn": "\u{1F9F6}",
+  "knot": "\u{1FAA2}",
+  "eyeglasses": "\u{1F453}",
+  "dark_sunglasses": "\u{1F576}\uFE0F",
+  "goggles": "\u{1F97D}",
+  "lab_coat": "\u{1F97C}",
+  "safety_vest": "\u{1F9BA}",
+  "necktie": "\u{1F454}",
+  "shirt": "\u{1F455}",
+  "tshirt": "\u{1F455}",
+  "jeans": "\u{1F456}",
+  "scarf": "\u{1F9E3}",
+  "gloves": "\u{1F9E4}",
+  "coat": "\u{1F9E5}",
+  "socks": "\u{1F9E6}",
+  "dress": "\u{1F457}",
+  "kimono": "\u{1F458}",
+  "sari": "\u{1F97B}",
+  "one_piece_swimsuit": "\u{1FA71}",
+  "swim_brief": "\u{1FA72}",
+  "shorts": "\u{1FA73}",
+  "bikini": "\u{1F459}",
+  "womans_clothes": "\u{1F45A}",
+  "folding_hand_fan": "\u{1FAAD}",
+  "purse": "\u{1F45B}",
+  "handbag": "\u{1F45C}",
+  "pouch": "\u{1F45D}",
+  "shopping": "\u{1F6CD}\uFE0F",
+  "school_satchel": "\u{1F392}",
+  "thong_sandal": "\u{1FA74}",
+  "mans_shoe": "\u{1F45E}",
+  "shoe": "\u{1F45E}",
+  "athletic_shoe": "\u{1F45F}",
+  "hiking_boot": "\u{1F97E}",
+  "flat_shoe": "\u{1F97F}",
+  "high_heel": "\u{1F460}",
+  "sandal": "\u{1F461}",
+  "ballet_shoes": "\u{1FA70}",
+  "boot": "\u{1F462}",
+  "hair_pick": "\u{1FAAE}",
+  "crown": "\u{1F451}",
+  "womans_hat": "\u{1F452}",
+  "tophat": "\u{1F3A9}",
+  "mortar_board": "\u{1F393}",
+  "billed_cap": "\u{1F9E2}",
+  "military_helmet": "\u{1FA96}",
+  "rescue_worker_helmet": "\u26D1\uFE0F",
+  "prayer_beads": "\u{1F4FF}",
+  "lipstick": "\u{1F484}",
+  "ring": "\u{1F48D}",
+  "gem": "\u{1F48E}",
+  "mute": "\u{1F507}",
+  "speaker": "\u{1F508}",
+  "sound": "\u{1F509}",
+  "loud_sound": "\u{1F50A}",
+  "loudspeaker": "\u{1F4E2}",
+  "mega": "\u{1F4E3}",
+  "postal_horn": "\u{1F4EF}",
+  "bell": "\u{1F514}",
+  "no_bell": "\u{1F515}",
+  "musical_score": "\u{1F3BC}",
+  "musical_note": "\u{1F3B5}",
+  "notes": "\u{1F3B6}",
+  "studio_microphone": "\u{1F399}\uFE0F",
+  "level_slider": "\u{1F39A}\uFE0F",
+  "control_knobs": "\u{1F39B}\uFE0F",
+  "microphone": "\u{1F3A4}",
+  "headphones": "\u{1F3A7}",
+  "radio": "\u{1F4FB}",
+  "saxophone": "\u{1F3B7}",
+  "accordion": "\u{1FA97}",
+  "guitar": "\u{1F3B8}",
+  "musical_keyboard": "\u{1F3B9}",
+  "trumpet": "\u{1F3BA}",
+  "violin": "\u{1F3BB}",
+  "banjo": "\u{1FA95}",
+  "drum": "\u{1F941}",
+  "long_drum": "\u{1FA98}",
+  "maracas": "\u{1FA87}",
+  "flute": "\u{1FA88}",
+  "iphone": "\u{1F4F1}",
+  "calling": "\u{1F4F2}",
+  "phone": "\u260E\uFE0F",
+  "telephone": "\u260E\uFE0F",
+  "telephone_receiver": "\u{1F4DE}",
+  "pager": "\u{1F4DF}",
+  "fax": "\u{1F4E0}",
+  "battery": "\u{1F50B}",
+  "low_battery": "\u{1FAAB}",
+  "electric_plug": "\u{1F50C}",
+  "computer": "\u{1F4BB}",
+  "desktop_computer": "\u{1F5A5}\uFE0F",
+  "printer": "\u{1F5A8}\uFE0F",
+  "keyboard": "\u2328\uFE0F",
+  "computer_mouse": "\u{1F5B1}\uFE0F",
+  "trackball": "\u{1F5B2}\uFE0F",
+  "minidisc": "\u{1F4BD}",
+  "floppy_disk": "\u{1F4BE}",
+  "cd": "\u{1F4BF}",
+  "dvd": "\u{1F4C0}",
+  "abacus": "\u{1F9EE}",
+  "movie_camera": "\u{1F3A5}",
+  "film_strip": "\u{1F39E}\uFE0F",
+  "film_projector": "\u{1F4FD}\uFE0F",
+  "clapper": "\u{1F3AC}",
+  "tv": "\u{1F4FA}",
+  "camera": "\u{1F4F7}",
+  "camera_flash": "\u{1F4F8}",
+  "video_camera": "\u{1F4F9}",
+  "vhs": "\u{1F4FC}",
+  "mag": "\u{1F50D}",
+  "mag_right": "\u{1F50E}",
+  "candle": "\u{1F56F}\uFE0F",
+  "bulb": "\u{1F4A1}",
+  "flashlight": "\u{1F526}",
+  "izakaya_lantern": "\u{1F3EE}",
+  "lantern": "\u{1F3EE}",
+  "diya_lamp": "\u{1FA94}",
+  "notebook_with_decorative_cover": "\u{1F4D4}",
+  "closed_book": "\u{1F4D5}",
+  "book": "\u{1F4D6}",
+  "open_book": "\u{1F4D6}",
+  "green_book": "\u{1F4D7}",
+  "blue_book": "\u{1F4D8}",
+  "orange_book": "\u{1F4D9}",
+  "books": "\u{1F4DA}",
+  "notebook": "\u{1F4D3}",
+  "ledger": "\u{1F4D2}",
+  "page_with_curl": "\u{1F4C3}",
+  "scroll": "\u{1F4DC}",
+  "page_facing_up": "\u{1F4C4}",
+  "newspaper": "\u{1F4F0}",
+  "newspaper_roll": "\u{1F5DE}\uFE0F",
+  "bookmark_tabs": "\u{1F4D1}",
+  "bookmark": "\u{1F516}",
+  "label": "\u{1F3F7}\uFE0F",
+  "moneybag": "\u{1F4B0}",
+  "coin": "\u{1FA99}",
+  "yen": "\u{1F4B4}",
+  "dollar": "\u{1F4B5}",
+  "euro": "\u{1F4B6}",
+  "pound": "\u{1F4B7}",
+  "money_with_wings": "\u{1F4B8}",
+  "credit_card": "\u{1F4B3}",
+  "receipt": "\u{1F9FE}",
+  "chart": "\u{1F4B9}",
+  "envelope": "\u2709\uFE0F",
+  "email": "\u{1F4E7}",
+  "e-mail": "\u{1F4E7}",
+  "incoming_envelope": "\u{1F4E8}",
+  "envelope_with_arrow": "\u{1F4E9}",
+  "outbox_tray": "\u{1F4E4}",
+  "inbox_tray": "\u{1F4E5}",
+  "package": "\u{1F4E6}",
+  "mailbox": "\u{1F4EB}",
+  "mailbox_closed": "\u{1F4EA}",
+  "mailbox_with_mail": "\u{1F4EC}",
+  "mailbox_with_no_mail": "\u{1F4ED}",
+  "postbox": "\u{1F4EE}",
+  "ballot_box": "\u{1F5F3}\uFE0F",
+  "pencil2": "\u270F\uFE0F",
+  "black_nib": "\u2712\uFE0F",
+  "fountain_pen": "\u{1F58B}\uFE0F",
+  "pen": "\u{1F58A}\uFE0F",
+  "paintbrush": "\u{1F58C}\uFE0F",
+  "crayon": "\u{1F58D}\uFE0F",
+  "memo": "\u{1F4DD}",
+  "pencil": "\u{1F4DD}",
+  "briefcase": "\u{1F4BC}",
+  "file_folder": "\u{1F4C1}",
+  "open_file_folder": "\u{1F4C2}",
+  "card_index_dividers": "\u{1F5C2}\uFE0F",
+  "date": "\u{1F4C5}",
+  "calendar": "\u{1F4C6}",
+  "spiral_notepad": "\u{1F5D2}\uFE0F",
+  "spiral_calendar": "\u{1F5D3}\uFE0F",
+  "card_index": "\u{1F4C7}",
+  "chart_with_upwards_trend": "\u{1F4C8}",
+  "chart_with_downwards_trend": "\u{1F4C9}",
+  "bar_chart": "\u{1F4CA}",
+  "clipboard": "\u{1F4CB}",
+  "pushpin": "\u{1F4CC}",
+  "round_pushpin": "\u{1F4CD}",
+  "paperclip": "\u{1F4CE}",
+  "paperclips": "\u{1F587}\uFE0F",
+  "straight_ruler": "\u{1F4CF}",
+  "triangular_ruler": "\u{1F4D0}",
+  "scissors": "\u2702\uFE0F",
+  "card_file_box": "\u{1F5C3}\uFE0F",
+  "file_cabinet": "\u{1F5C4}\uFE0F",
+  "wastebasket": "\u{1F5D1}\uFE0F",
+  "lock": "\u{1F512}",
+  "unlock": "\u{1F513}",
+  "lock_with_ink_pen": "\u{1F50F}",
+  "closed_lock_with_key": "\u{1F510}",
+  "key": "\u{1F511}",
+  "old_key": "\u{1F5DD}\uFE0F",
+  "hammer": "\u{1F528}",
+  "axe": "\u{1FA93}",
+  "pick": "\u26CF\uFE0F",
+  "hammer_and_pick": "\u2692\uFE0F",
+  "hammer_and_wrench": "\u{1F6E0}\uFE0F",
+  "dagger": "\u{1F5E1}\uFE0F",
+  "crossed_swords": "\u2694\uFE0F",
+  "bomb": "\u{1F4A3}",
+  "boomerang": "\u{1FA83}",
+  "bow_and_arrow": "\u{1F3F9}",
+  "shield": "\u{1F6E1}\uFE0F",
+  "carpentry_saw": "\u{1FA9A}",
+  "wrench": "\u{1F527}",
+  "screwdriver": "\u{1FA9B}",
+  "nut_and_bolt": "\u{1F529}",
+  "gear": "\u2699\uFE0F",
+  "clamp": "\u{1F5DC}\uFE0F",
+  "balance_scale": "\u2696\uFE0F",
+  "probing_cane": "\u{1F9AF}",
+  "link": "\u{1F517}",
+  "chains": "\u26D3\uFE0F",
+  "hook": "\u{1FA9D}",
+  "toolbox": "\u{1F9F0}",
+  "magnet": "\u{1F9F2}",
+  "ladder": "\u{1FA9C}",
+  "alembic": "\u2697\uFE0F",
+  "test_tube": "\u{1F9EA}",
+  "petri_dish": "\u{1F9EB}",
+  "dna": "\u{1F9EC}",
+  "microscope": "\u{1F52C}",
+  "telescope": "\u{1F52D}",
+  "satellite": "\u{1F4E1}",
+  "syringe": "\u{1F489}",
+  "drop_of_blood": "\u{1FA78}",
+  "pill": "\u{1F48A}",
+  "adhesive_bandage": "\u{1FA79}",
+  "crutch": "\u{1FA7C}",
+  "stethoscope": "\u{1FA7A}",
+  "x_ray": "\u{1FA7B}",
+  "door": "\u{1F6AA}",
+  "elevator": "\u{1F6D7}",
+  "mirror": "\u{1FA9E}",
+  "window": "\u{1FA9F}",
+  "bed": "\u{1F6CF}\uFE0F",
+  "couch_and_lamp": "\u{1F6CB}\uFE0F",
+  "chair": "\u{1FA91}",
+  "toilet": "\u{1F6BD}",
+  "plunger": "\u{1FAA0}",
+  "shower": "\u{1F6BF}",
+  "bathtub": "\u{1F6C1}",
+  "mouse_trap": "\u{1FAA4}",
+  "razor": "\u{1FA92}",
+  "lotion_bottle": "\u{1F9F4}",
+  "safety_pin": "\u{1F9F7}",
+  "broom": "\u{1F9F9}",
+  "basket": "\u{1F9FA}",
+  "roll_of_paper": "\u{1F9FB}",
+  "bucket": "\u{1FAA3}",
+  "soap": "\u{1F9FC}",
+  "bubbles": "\u{1FAE7}",
+  "toothbrush": "\u{1FAA5}",
+  "sponge": "\u{1F9FD}",
+  "fire_extinguisher": "\u{1F9EF}",
+  "shopping_cart": "\u{1F6D2}",
+  "smoking": "\u{1F6AC}",
+  "coffin": "\u26B0\uFE0F",
+  "headstone": "\u{1FAA6}",
+  "funeral_urn": "\u26B1\uFE0F",
+  "nazar_amulet": "\u{1F9FF}",
+  "hamsa": "\u{1FAAC}",
+  "moyai": "\u{1F5FF}",
+  "placard": "\u{1FAA7}",
+  "identification_card": "\u{1FAAA}",
+  "atm": "\u{1F3E7}",
+  "put_litter_in_its_place": "\u{1F6AE}",
+  "potable_water": "\u{1F6B0}",
+  "wheelchair": "\u267F",
+  "mens": "\u{1F6B9}",
+  "womens": "\u{1F6BA}",
+  "restroom": "\u{1F6BB}",
+  "baby_symbol": "\u{1F6BC}",
+  "wc": "\u{1F6BE}",
+  "passport_control": "\u{1F6C2}",
+  "customs": "\u{1F6C3}",
+  "baggage_claim": "\u{1F6C4}",
+  "left_luggage": "\u{1F6C5}",
+  "warning": "\u26A0\uFE0F",
+  "children_crossing": "\u{1F6B8}",
+  "no_entry": "\u26D4",
+  "no_entry_sign": "\u{1F6AB}",
+  "no_bicycles": "\u{1F6B3}",
+  "no_smoking": "\u{1F6AD}",
+  "do_not_litter": "\u{1F6AF}",
+  "non-potable_water": "\u{1F6B1}",
+  "no_pedestrians": "\u{1F6B7}",
+  "no_mobile_phones": "\u{1F4F5}",
+  "underage": "\u{1F51E}",
+  "radioactive": "\u2622\uFE0F",
+  "biohazard": "\u2623\uFE0F",
+  "arrow_up": "\u2B06\uFE0F",
+  "arrow_upper_right": "\u2197\uFE0F",
+  "arrow_right": "\u27A1\uFE0F",
+  "arrow_lower_right": "\u2198\uFE0F",
+  "arrow_down": "\u2B07\uFE0F",
+  "arrow_lower_left": "\u2199\uFE0F",
+  "arrow_left": "\u2B05\uFE0F",
+  "arrow_upper_left": "\u2196\uFE0F",
+  "arrow_up_down": "\u2195\uFE0F",
+  "left_right_arrow": "\u2194\uFE0F",
+  "leftwards_arrow_with_hook": "\u21A9\uFE0F",
+  "arrow_right_hook": "\u21AA\uFE0F",
+  "arrow_heading_up": "\u2934\uFE0F",
+  "arrow_heading_down": "\u2935\uFE0F",
+  "arrows_clockwise": "\u{1F503}",
+  "arrows_counterclockwise": "\u{1F504}",
+  "back": "\u{1F519}",
+  "end": "\u{1F51A}",
+  "on": "\u{1F51B}",
+  "soon": "\u{1F51C}",
+  "top": "\u{1F51D}",
+  "place_of_worship": "\u{1F6D0}",
+  "atom_symbol": "\u269B\uFE0F",
+  "om": "\u{1F549}\uFE0F",
+  "star_of_david": "\u2721\uFE0F",
+  "wheel_of_dharma": "\u2638\uFE0F",
+  "yin_yang": "\u262F\uFE0F",
+  "latin_cross": "\u271D\uFE0F",
+  "orthodox_cross": "\u2626\uFE0F",
+  "star_and_crescent": "\u262A\uFE0F",
+  "peace_symbol": "\u262E\uFE0F",
+  "menorah": "\u{1F54E}",
+  "six_pointed_star": "\u{1F52F}",
+  "khanda": "\u{1FAAF}",
+  "aries": "\u2648",
+  "taurus": "\u2649",
+  "gemini": "\u264A",
+  "cancer": "\u264B",
+  "leo": "\u264C",
+  "virgo": "\u264D",
+  "libra": "\u264E",
+  "scorpius": "\u264F",
+  "sagittarius": "\u2650",
+  "capricorn": "\u2651",
+  "aquarius": "\u2652",
+  "pisces": "\u2653",
+  "ophiuchus": "\u26CE",
+  "twisted_rightwards_arrows": "\u{1F500}",
+  "repeat": "\u{1F501}",
+  "repeat_one": "\u{1F502}",
+  "arrow_forward": "\u25B6\uFE0F",
+  "fast_forward": "\u23E9",
+  "next_track_button": "\u23ED\uFE0F",
+  "play_or_pause_button": "\u23EF\uFE0F",
+  "arrow_backward": "\u25C0\uFE0F",
+  "rewind": "\u23EA",
+  "previous_track_button": "\u23EE\uFE0F",
+  "arrow_up_small": "\u{1F53C}",
+  "arrow_double_up": "\u23EB",
+  "arrow_down_small": "\u{1F53D}",
+  "arrow_double_down": "\u23EC",
+  "pause_button": "\u23F8\uFE0F",
+  "stop_button": "\u23F9\uFE0F",
+  "record_button": "\u23FA\uFE0F",
+  "eject_button": "\u23CF\uFE0F",
+  "cinema": "\u{1F3A6}",
+  "low_brightness": "\u{1F505}",
+  "high_brightness": "\u{1F506}",
+  "signal_strength": "\u{1F4F6}",
+  "wireless": "\u{1F6DC}",
+  "vibration_mode": "\u{1F4F3}",
+  "mobile_phone_off": "\u{1F4F4}",
+  "female_sign": "\u2640\uFE0F",
+  "male_sign": "\u2642\uFE0F",
+  "transgender_symbol": "\u26A7\uFE0F",
+  "heavy_multiplication_x": "\u2716\uFE0F",
+  "heavy_plus_sign": "\u2795",
+  "heavy_minus_sign": "\u2796",
+  "heavy_division_sign": "\u2797",
+  "heavy_equals_sign": "\u{1F7F0}",
+  "infinity": "\u267E\uFE0F",
+  "bangbang": "\u203C\uFE0F",
+  "interrobang": "\u2049\uFE0F",
+  "question": "\u2753",
+  "grey_question": "\u2754",
+  "grey_exclamation": "\u2755",
+  "exclamation": "\u2757",
+  "heavy_exclamation_mark": "\u2757",
+  "wavy_dash": "\u3030\uFE0F",
+  "currency_exchange": "\u{1F4B1}",
+  "heavy_dollar_sign": "\u{1F4B2}",
+  "medical_symbol": "\u2695\uFE0F",
+  "recycle": "\u267B\uFE0F",
+  "fleur_de_lis": "\u269C\uFE0F",
+  "trident": "\u{1F531}",
+  "name_badge": "\u{1F4DB}",
+  "beginner": "\u{1F530}",
+  "o": "\u2B55",
+  "white_check_mark": "\u2705",
+  "ballot_box_with_check": "\u2611\uFE0F",
+  "heavy_check_mark": "\u2714\uFE0F",
+  "x": "\u274C",
+  "negative_squared_cross_mark": "\u274E",
+  "curly_loop": "\u27B0",
+  "loop": "\u27BF",
+  "part_alternation_mark": "\u303D\uFE0F",
+  "eight_spoked_asterisk": "\u2733\uFE0F",
+  "eight_pointed_black_star": "\u2734\uFE0F",
+  "sparkle": "\u2747\uFE0F",
+  "copyright": "\xA9\uFE0F",
+  "registered": "\xAE\uFE0F",
+  "tm": "\u2122\uFE0F",
+  "hash": "#\uFE0F\u20E3",
+  "asterisk": "*\uFE0F\u20E3",
+  "zero": "0\uFE0F\u20E3",
+  "one": "1\uFE0F\u20E3",
+  "two": "2\uFE0F\u20E3",
+  "three": "3\uFE0F\u20E3",
+  "four": "4\uFE0F\u20E3",
+  "five": "5\uFE0F\u20E3",
+  "six": "6\uFE0F\u20E3",
+  "seven": "7\uFE0F\u20E3",
+  "eight": "8\uFE0F\u20E3",
+  "nine": "9\uFE0F\u20E3",
+  "keycap_ten": "\u{1F51F}",
+  "capital_abcd": "\u{1F520}",
+  "abcd": "\u{1F521}",
+  "symbols": "\u{1F523}",
+  "abc": "\u{1F524}",
+  "a": "\u{1F170}\uFE0F",
+  "ab": "\u{1F18E}",
+  "b": "\u{1F171}\uFE0F",
+  "cl": "\u{1F191}",
+  "cool": "\u{1F192}",
+  "free": "\u{1F193}",
+  "information_source": "\u2139\uFE0F",
+  "id": "\u{1F194}",
+  "m": "\u24C2\uFE0F",
+  "new": "\u{1F195}",
+  "ng": "\u{1F196}",
+  "o2": "\u{1F17E}\uFE0F",
+  "ok": "\u{1F197}",
+  "parking": "\u{1F17F}\uFE0F",
+  "sos": "\u{1F198}",
+  "up": "\u{1F199}",
+  "vs": "\u{1F19A}",
+  "koko": "\u{1F201}",
+  "sa": "\u{1F202}\uFE0F",
+  "ideograph_advantage": "\u{1F250}",
+  "accept": "\u{1F251}",
+  "congratulations": "\u3297\uFE0F",
+  "secret": "\u3299\uFE0F",
+  "u6e80": "\u{1F235}",
+  "red_circle": "\u{1F534}",
+  "orange_circle": "\u{1F7E0}",
+  "yellow_circle": "\u{1F7E1}",
+  "green_circle": "\u{1F7E2}",
+  "large_blue_circle": "\u{1F535}",
+  "purple_circle": "\u{1F7E3}",
+  "brown_circle": "\u{1F7E4}",
+  "black_circle": "\u26AB",
+  "white_circle": "\u26AA",
+  "red_square": "\u{1F7E5}",
+  "orange_square": "\u{1F7E7}",
+  "yellow_square": "\u{1F7E8}",
+  "green_square": "\u{1F7E9}",
+  "blue_square": "\u{1F7E6}",
+  "purple_square": "\u{1F7EA}",
+  "brown_square": "\u{1F7EB}",
+  "black_large_square": "\u2B1B",
+  "white_large_square": "\u2B1C",
+  "black_medium_square": "\u25FC\uFE0F",
+  "white_medium_square": "\u25FB\uFE0F",
+  "black_medium_small_square": "\u25FE",
+  "white_medium_small_square": "\u25FD",
+  "black_small_square": "\u25AA\uFE0F",
+  "white_small_square": "\u25AB\uFE0F",
+  "large_orange_diamond": "\u{1F536}",
+  "large_blue_diamond": "\u{1F537}",
+  "small_orange_diamond": "\u{1F538}",
+  "small_blue_diamond": "\u{1F539}",
+  "small_red_triangle": "\u{1F53A}",
+  "small_red_triangle_down": "\u{1F53B}",
+  "diamond_shape_with_a_dot_inside": "\u{1F4A0}",
+  "radio_button": "\u{1F518}",
+  "white_square_button": "\u{1F533}",
+  "black_square_button": "\u{1F532}",
+  "checkered_flag": "\u{1F3C1}",
+  "triangular_flag_on_post": "\u{1F6A9}",
+  "crossed_flags": "\u{1F38C}",
+  "black_flag": "\u{1F3F4}",
+  "white_flag": "\u{1F3F3}\uFE0F",
+  "rainbow_flag": "\u{1F3F3}\uFE0F\u200D\u{1F308}",
+  "transgender_flag": "\u{1F3F3}\uFE0F\u200D\u26A7\uFE0F",
+  "pirate_flag": "\u{1F3F4}\u200D\u2620\uFE0F",
+  "ascension_island": "\u{1F1E6}\u{1F1E8}",
+  "andorra": "\u{1F1E6}\u{1F1E9}",
+  "united_arab_emirates": "\u{1F1E6}\u{1F1EA}",
+  "afghanistan": "\u{1F1E6}\u{1F1EB}",
+  "antigua_barbuda": "\u{1F1E6}\u{1F1EC}",
+  "anguilla": "\u{1F1E6}\u{1F1EE}",
+  "albania": "\u{1F1E6}\u{1F1F1}",
+  "armenia": "\u{1F1E6}\u{1F1F2}",
+  "angola": "\u{1F1E6}\u{1F1F4}",
+  "antarctica": "\u{1F1E6}\u{1F1F6}",
+  "argentina": "\u{1F1E6}\u{1F1F7}",
+  "american_samoa": "\u{1F1E6}\u{1F1F8}",
+  "austria": "\u{1F1E6}\u{1F1F9}",
+  "australia": "\u{1F1E6}\u{1F1FA}",
+  "aruba": "\u{1F1E6}\u{1F1FC}",
+  "aland_islands": "\u{1F1E6}\u{1F1FD}",
+  "azerbaijan": "\u{1F1E6}\u{1F1FF}",
+  "bosnia_herzegovina": "\u{1F1E7}\u{1F1E6}",
+  "barbados": "\u{1F1E7}\u{1F1E7}",
+  "bangladesh": "\u{1F1E7}\u{1F1E9}",
+  "belgium": "\u{1F1E7}\u{1F1EA}",
+  "burkina_faso": "\u{1F1E7}\u{1F1EB}",
+  "bulgaria": "\u{1F1E7}\u{1F1EC}",
+  "bahrain": "\u{1F1E7}\u{1F1ED}",
+  "burundi": "\u{1F1E7}\u{1F1EE}",
+  "benin": "\u{1F1E7}\u{1F1EF}",
+  "st_barthelemy": "\u{1F1E7}\u{1F1F1}",
+  "bermuda": "\u{1F1E7}\u{1F1F2}",
+  "brunei": "\u{1F1E7}\u{1F1F3}",
+  "bolivia": "\u{1F1E7}\u{1F1F4}",
+  "caribbean_netherlands": "\u{1F1E7}\u{1F1F6}",
+  "brazil": "\u{1F1E7}\u{1F1F7}",
+  "bahamas": "\u{1F1E7}\u{1F1F8}",
+  "bhutan": "\u{1F1E7}\u{1F1F9}",
+  "bouvet_island": "\u{1F1E7}\u{1F1FB}",
+  "botswana": "\u{1F1E7}\u{1F1FC}",
+  "belarus": "\u{1F1E7}\u{1F1FE}",
+  "belize": "\u{1F1E7}\u{1F1FF}",
+  "canada": "\u{1F1E8}\u{1F1E6}",
+  "cocos_islands": "\u{1F1E8}\u{1F1E8}",
+  "congo_kinshasa": "\u{1F1E8}\u{1F1E9}",
+  "central_african_republic": "\u{1F1E8}\u{1F1EB}",
+  "congo_brazzaville": "\u{1F1E8}\u{1F1EC}",
+  "switzerland": "\u{1F1E8}\u{1F1ED}",
+  "cote_divoire": "\u{1F1E8}\u{1F1EE}",
+  "cook_islands": "\u{1F1E8}\u{1F1F0}",
+  "chile": "\u{1F1E8}\u{1F1F1}",
+  "cameroon": "\u{1F1E8}\u{1F1F2}",
+  "cn": "\u{1F1E8}\u{1F1F3}",
+  "colombia": "\u{1F1E8}\u{1F1F4}",
+  "clipperton_island": "\u{1F1E8}\u{1F1F5}",
+  "costa_rica": "\u{1F1E8}\u{1F1F7}",
+  "cuba": "\u{1F1E8}\u{1F1FA}",
+  "cape_verde": "\u{1F1E8}\u{1F1FB}",
+  "curacao": "\u{1F1E8}\u{1F1FC}",
+  "christmas_island": "\u{1F1E8}\u{1F1FD}",
+  "cyprus": "\u{1F1E8}\u{1F1FE}",
+  "czech_republic": "\u{1F1E8}\u{1F1FF}",
+  "de": "\u{1F1E9}\u{1F1EA}",
+  "diego_garcia": "\u{1F1E9}\u{1F1EC}",
+  "djibouti": "\u{1F1E9}\u{1F1EF}",
+  "denmark": "\u{1F1E9}\u{1F1F0}",
+  "dominica": "\u{1F1E9}\u{1F1F2}",
+  "dominican_republic": "\u{1F1E9}\u{1F1F4}",
+  "algeria": "\u{1F1E9}\u{1F1FF}",
+  "ceuta_melilla": "\u{1F1EA}\u{1F1E6}",
+  "ecuador": "\u{1F1EA}\u{1F1E8}",
+  "estonia": "\u{1F1EA}\u{1F1EA}",
+  "egypt": "\u{1F1EA}\u{1F1EC}",
+  "western_sahara": "\u{1F1EA}\u{1F1ED}",
+  "eritrea": "\u{1F1EA}\u{1F1F7}",
+  "es": "\u{1F1EA}\u{1F1F8}",
+  "ethiopia": "\u{1F1EA}\u{1F1F9}",
+  "eu": "\u{1F1EA}\u{1F1FA}",
+  "european_union": "\u{1F1EA}\u{1F1FA}",
+  "finland": "\u{1F1EB}\u{1F1EE}",
+  "fiji": "\u{1F1EB}\u{1F1EF}",
+  "falkland_islands": "\u{1F1EB}\u{1F1F0}",
+  "micronesia": "\u{1F1EB}\u{1F1F2}",
+  "faroe_islands": "\u{1F1EB}\u{1F1F4}",
+  "fr": "\u{1F1EB}\u{1F1F7}",
+  "gabon": "\u{1F1EC}\u{1F1E6}",
+  "gb": "\u{1F1EC}\u{1F1E7}",
+  "uk": "\u{1F1EC}\u{1F1E7}",
+  "grenada": "\u{1F1EC}\u{1F1E9}",
+  "georgia": "\u{1F1EC}\u{1F1EA}",
+  "french_guiana": "\u{1F1EC}\u{1F1EB}",
+  "guernsey": "\u{1F1EC}\u{1F1EC}",
+  "ghana": "\u{1F1EC}\u{1F1ED}",
+  "gibraltar": "\u{1F1EC}\u{1F1EE}",
+  "greenland": "\u{1F1EC}\u{1F1F1}",
+  "gambia": "\u{1F1EC}\u{1F1F2}",
+  "guinea": "\u{1F1EC}\u{1F1F3}",
+  "guadeloupe": "\u{1F1EC}\u{1F1F5}",
+  "equatorial_guinea": "\u{1F1EC}\u{1F1F6}",
+  "greece": "\u{1F1EC}\u{1F1F7}",
+  "south_georgia_south_sandwich_islands": "\u{1F1EC}\u{1F1F8}",
+  "guatemala": "\u{1F1EC}\u{1F1F9}",
+  "guam": "\u{1F1EC}\u{1F1FA}",
+  "guinea_bissau": "\u{1F1EC}\u{1F1FC}",
+  "guyana": "\u{1F1EC}\u{1F1FE}",
+  "hong_kong": "\u{1F1ED}\u{1F1F0}",
+  "heard_mcdonald_islands": "\u{1F1ED}\u{1F1F2}",
+  "honduras": "\u{1F1ED}\u{1F1F3}",
+  "croatia": "\u{1F1ED}\u{1F1F7}",
+  "haiti": "\u{1F1ED}\u{1F1F9}",
+  "hungary": "\u{1F1ED}\u{1F1FA}",
+  "canary_islands": "\u{1F1EE}\u{1F1E8}",
+  "indonesia": "\u{1F1EE}\u{1F1E9}",
+  "ireland": "\u{1F1EE}\u{1F1EA}",
+  "israel": "\u{1F1EE}\u{1F1F1}",
+  "isle_of_man": "\u{1F1EE}\u{1F1F2}",
+  "india": "\u{1F1EE}\u{1F1F3}",
+  "british_indian_ocean_territory": "\u{1F1EE}\u{1F1F4}",
+  "iraq": "\u{1F1EE}\u{1F1F6}",
+  "iran": "\u{1F1EE}\u{1F1F7}",
+  "iceland": "\u{1F1EE}\u{1F1F8}",
+  "it": "\u{1F1EE}\u{1F1F9}",
+  "jersey": "\u{1F1EF}\u{1F1EA}",
+  "jamaica": "\u{1F1EF}\u{1F1F2}",
+  "jordan": "\u{1F1EF}\u{1F1F4}",
+  "jp": "\u{1F1EF}\u{1F1F5}",
+  "kenya": "\u{1F1F0}\u{1F1EA}",
+  "kyrgyzstan": "\u{1F1F0}\u{1F1EC}",
+  "cambodia": "\u{1F1F0}\u{1F1ED}",
+  "kiribati": "\u{1F1F0}\u{1F1EE}",
+  "comoros": "\u{1F1F0}\u{1F1F2}",
+  "st_kitts_nevis": "\u{1F1F0}\u{1F1F3}",
+  "north_korea": "\u{1F1F0}\u{1F1F5}",
+  "kr": "\u{1F1F0}\u{1F1F7}",
+  "kuwait": "\u{1F1F0}\u{1F1FC}",
+  "cayman_islands": "\u{1F1F0}\u{1F1FE}",
+  "kazakhstan": "\u{1F1F0}\u{1F1FF}",
+  "laos": "\u{1F1F1}\u{1F1E6}",
+  "lebanon": "\u{1F1F1}\u{1F1E7}",
+  "st_lucia": "\u{1F1F1}\u{1F1E8}",
+  "liechtenstein": "\u{1F1F1}\u{1F1EE}",
+  "sri_lanka": "\u{1F1F1}\u{1F1F0}",
+  "liberia": "\u{1F1F1}\u{1F1F7}",
+  "lesotho": "\u{1F1F1}\u{1F1F8}",
+  "lithuania": "\u{1F1F1}\u{1F1F9}",
+  "luxembourg": "\u{1F1F1}\u{1F1FA}",
+  "latvia": "\u{1F1F1}\u{1F1FB}",
+  "libya": "\u{1F1F1}\u{1F1FE}",
+  "morocco": "\u{1F1F2}\u{1F1E6}",
+  "monaco": "\u{1F1F2}\u{1F1E8}",
+  "moldova": "\u{1F1F2}\u{1F1E9}",
+  "montenegro": "\u{1F1F2}\u{1F1EA}",
+  "st_martin": "\u{1F1F2}\u{1F1EB}",
+  "madagascar": "\u{1F1F2}\u{1F1EC}",
+  "marshall_islands": "\u{1F1F2}\u{1F1ED}",
+  "macedonia": "\u{1F1F2}\u{1F1F0}",
+  "mali": "\u{1F1F2}\u{1F1F1}",
+  "myanmar": "\u{1F1F2}\u{1F1F2}",
+  "mongolia": "\u{1F1F2}\u{1F1F3}",
+  "macau": "\u{1F1F2}\u{1F1F4}",
+  "northern_mariana_islands": "\u{1F1F2}\u{1F1F5}",
+  "martinique": "\u{1F1F2}\u{1F1F6}",
+  "mauritania": "\u{1F1F2}\u{1F1F7}",
+  "montserrat": "\u{1F1F2}\u{1F1F8}",
+  "malta": "\u{1F1F2}\u{1F1F9}",
+  "mauritius": "\u{1F1F2}\u{1F1FA}",
+  "maldives": "\u{1F1F2}\u{1F1FB}",
+  "malawi": "\u{1F1F2}\u{1F1FC}",
+  "mexico": "\u{1F1F2}\u{1F1FD}",
+  "malaysia": "\u{1F1F2}\u{1F1FE}",
+  "mozambique": "\u{1F1F2}\u{1F1FF}",
+  "namibia": "\u{1F1F3}\u{1F1E6}",
+  "new_caledonia": "\u{1F1F3}\u{1F1E8}",
+  "niger": "\u{1F1F3}\u{1F1EA}",
+  "norfolk_island": "\u{1F1F3}\u{1F1EB}",
+  "nigeria": "\u{1F1F3}\u{1F1EC}",
+  "nicaragua": "\u{1F1F3}\u{1F1EE}",
+  "netherlands": "\u{1F1F3}\u{1F1F1}",
+  "norway": "\u{1F1F3}\u{1F1F4}",
+  "nepal": "\u{1F1F3}\u{1F1F5}",
+  "nauru": "\u{1F1F3}\u{1F1F7}",
+  "niue": "\u{1F1F3}\u{1F1FA}",
+  "new_zealand": "\u{1F1F3}\u{1F1FF}",
+  "oman": "\u{1F1F4}\u{1F1F2}",
+  "panama": "\u{1F1F5}\u{1F1E6}",
+  "peru": "\u{1F1F5}\u{1F1EA}",
+  "french_polynesia": "\u{1F1F5}\u{1F1EB}",
+  "papua_new_guinea": "\u{1F1F5}\u{1F1EC}",
+  "philippines": "\u{1F1F5}\u{1F1ED}",
+  "pakistan": "\u{1F1F5}\u{1F1F0}",
+  "poland": "\u{1F1F5}\u{1F1F1}",
+  "st_pierre_miquelon": "\u{1F1F5}\u{1F1F2}",
+  "pitcairn_islands": "\u{1F1F5}\u{1F1F3}",
+  "puerto_rico": "\u{1F1F5}\u{1F1F7}",
+  "palestinian_territories": "\u{1F1F5}\u{1F1F8}",
+  "portugal": "\u{1F1F5}\u{1F1F9}",
+  "palau": "\u{1F1F5}\u{1F1FC}",
+  "paraguay": "\u{1F1F5}\u{1F1FE}",
+  "qatar": "\u{1F1F6}\u{1F1E6}",
+  "reunion": "\u{1F1F7}\u{1F1EA}",
+  "romania": "\u{1F1F7}\u{1F1F4}",
+  "serbia": "\u{1F1F7}\u{1F1F8}",
+  "ru": "\u{1F1F7}\u{1F1FA}",
+  "rwanda": "\u{1F1F7}\u{1F1FC}",
+  "saudi_arabia": "\u{1F1F8}\u{1F1E6}",
+  "solomon_islands": "\u{1F1F8}\u{1F1E7}",
+  "seychelles": "\u{1F1F8}\u{1F1E8}",
+  "sudan": "\u{1F1F8}\u{1F1E9}",
+  "sweden": "\u{1F1F8}\u{1F1EA}",
+  "singapore": "\u{1F1F8}\u{1F1EC}",
+  "st_helena": "\u{1F1F8}\u{1F1ED}",
+  "slovenia": "\u{1F1F8}\u{1F1EE}",
+  "svalbard_jan_mayen": "\u{1F1F8}\u{1F1EF}",
+  "slovakia": "\u{1F1F8}\u{1F1F0}",
+  "sierra_leone": "\u{1F1F8}\u{1F1F1}",
+  "san_marino": "\u{1F1F8}\u{1F1F2}",
+  "senegal": "\u{1F1F8}\u{1F1F3}",
+  "somalia": "\u{1F1F8}\u{1F1F4}",
+  "suriname": "\u{1F1F8}\u{1F1F7}",
+  "south_sudan": "\u{1F1F8}\u{1F1F8}",
+  "sao_tome_principe": "\u{1F1F8}\u{1F1F9}",
+  "el_salvador": "\u{1F1F8}\u{1F1FB}",
+  "sint_maarten": "\u{1F1F8}\u{1F1FD}",
+  "syria": "\u{1F1F8}\u{1F1FE}",
+  "swaziland": "\u{1F1F8}\u{1F1FF}",
+  "tristan_da_cunha": "\u{1F1F9}\u{1F1E6}",
+  "turks_caicos_islands": "\u{1F1F9}\u{1F1E8}",
+  "chad": "\u{1F1F9}\u{1F1E9}",
+  "french_southern_territories": "\u{1F1F9}\u{1F1EB}",
+  "togo": "\u{1F1F9}\u{1F1EC}",
+  "thailand": "\u{1F1F9}\u{1F1ED}",
+  "tajikistan": "\u{1F1F9}\u{1F1EF}",
+  "tokelau": "\u{1F1F9}\u{1F1F0}",
+  "timor_leste": "\u{1F1F9}\u{1F1F1}",
+  "turkmenistan": "\u{1F1F9}\u{1F1F2}",
+  "tunisia": "\u{1F1F9}\u{1F1F3}",
+  "tonga": "\u{1F1F9}\u{1F1F4}",
+  "tr": "\u{1F1F9}\u{1F1F7}",
+  "trinidad_tobago": "\u{1F1F9}\u{1F1F9}",
+  "tuvalu": "\u{1F1F9}\u{1F1FB}",
+  "taiwan": "\u{1F1F9}\u{1F1FC}",
+  "tanzania": "\u{1F1F9}\u{1F1FF}",
+  "ukraine": "\u{1F1FA}\u{1F1E6}",
+  "uganda": "\u{1F1FA}\u{1F1EC}",
+  "us_outlying_islands": "\u{1F1FA}\u{1F1F2}",
+  "united_nations": "\u{1F1FA}\u{1F1F3}",
+  "us": "\u{1F1FA}\u{1F1F8}",
+  "uruguay": "\u{1F1FA}\u{1F1FE}",
+  "uzbekistan": "\u{1F1FA}\u{1F1FF}",
+  "vatican_city": "\u{1F1FB}\u{1F1E6}",
+  "st_vincent_grenadines": "\u{1F1FB}\u{1F1E8}",
+  "venezuela": "\u{1F1FB}\u{1F1EA}",
+  "british_virgin_islands": "\u{1F1FB}\u{1F1EC}",
+  "us_virgin_islands": "\u{1F1FB}\u{1F1EE}",
+  "vietnam": "\u{1F1FB}\u{1F1F3}",
+  "vanuatu": "\u{1F1FB}\u{1F1FA}",
+  "wallis_futuna": "\u{1F1FC}\u{1F1EB}",
+  "samoa": "\u{1F1FC}\u{1F1F8}",
+  "kosovo": "\u{1F1FD}\u{1F1F0}",
+  "yemen": "\u{1F1FE}\u{1F1EA}",
+  "mayotte": "\u{1F1FE}\u{1F1F9}",
+  "south_africa": "\u{1F1FF}\u{1F1E6}",
+  "zambia": "\u{1F1FF}\u{1F1F2}",
+  "zimbabwe": "\u{1F1FF}\u{1F1FC}",
+  "england": "\u{1F3F4}\u{E0067}\u{E0062}\u{E0065}\u{E006E}\u{E0067}\u{E007F}",
+  "scotland": "\u{1F3F4}\u{E0067}\u{E0062}\u{E0073}\u{E0063}\u{E0074}\u{E007F}",
+  "wales": "\u{1F3F4}\u{E0067}\u{E0062}\u{E0077}\u{E006C}\u{E0073}\u{E007F}"
+};
+function emoji_plugin(md, options2) {
+  const defaults2 = {
+    defs: emojies_defs,
+    shortcuts: emojies_shortcuts,
+    enabled: []
+  };
+  const opts = md.utils.assign({}, defaults2, options2 || {});
+  emoji_plugin$1(md, opts);
+}
 /**
  * make all img 'src' attribute absolute.
  * @module imgSrcAbs
@@ -55311,10 +56837,10 @@ hljs.default = hljs;
 var lib = hljs;
 var HighlightJS = lib;
 var MyMarkdown_vue_vue_type_style_index_0_lang = "";
-const _hoisted_1$1 = { class: "my-markdown-wrapper" };
+const _hoisted_1 = { class: "my-markdown-wrapper" };
 const _hoisted_2 = ["innerHTML"];
 const _hoisted_3 = { key: 1 };
-const _sfc_main$3 = {
+const _sfc_main = {
   __name: "MyMarkdown",
   props: {
     source: String,
@@ -55339,6 +56865,7 @@ const _sfc_main$3 = {
     };
     const md = shallowRef(new MarkdownIt(md_options));
     md.value.use(b, {});
+    md.value.use(emoji_plugin);
     md.value.use(imgSrcAbs);
     const content = ref([]);
     const addHTMLChunk = (tokens, token_start, token_end, env) => {
@@ -55394,7 +56921,7 @@ const _sfc_main$3 = {
       addHTMLChunk(tokens, chunk_start, tokens.length - 1, env);
     });
     return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("div", _hoisted_1$1, [
+      return openBlock(), createElementBlock("div", _hoisted_1, [
         (openBlock(true), createElementBlock(Fragment, null, renderList(content.value, (item, index) => {
           return openBlock(), createElementBlock("div", { key: index }, [
             item.type == "html" ? (openBlock(), createElementBlock("div", {
@@ -55418,169 +56945,6 @@ const _sfc_main$3 = {
     };
   }
 };
-var QCardSection = createComponent({
-  name: "QCardSection",
-  props: {
-    tag: {
-      type: String,
-      default: "div"
-    },
-    horizontal: Boolean
-  },
-  setup(props, { slots }) {
-    const classes = computed(
-      () => `q-card__section q-card__section--${props.horizontal === true ? "horiz row no-wrap" : "vert"}`
-    );
-    return () => h(props.tag, { class: classes.value }, hSlot(slots.default));
-  }
-});
-var QCard = createComponent({
-  name: "QCard",
-  props: {
-    ...useDarkProps,
-    tag: {
-      type: String,
-      default: "div"
-    },
-    square: Boolean,
-    flat: Boolean,
-    bordered: Boolean
-  },
-  setup(props, { slots }) {
-    const { proxy: { $q } } = getCurrentInstance();
-    const isDark = useDark(props, $q);
-    const classes = computed(
-      () => "q-card" + (isDark.value === true ? " q-card--dark q-dark" : "") + (props.bordered === true ? " q-card--bordered" : "") + (props.square === true ? " q-card--square no-border-radius" : "") + (props.flat === true ? " q-card--flat no-shadow" : "")
-    );
-    return () => h(props.tag, { class: classes.value }, hSlot(slots.default));
-  }
-});
-var FunctionOverview_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$2 = {
-  __name: "FunctionOverview",
-  props: {
-    fn_item: Object
-  },
-  setup(__props) {
-    return (_ctx, _cache) => {
-      return openBlock(), createBlock(QCard, { class: "fn-overview" }, {
-        default: withCtx(() => [
-          createVNode(QCardSection, null, {
-            default: withCtx(() => [
-              createVNode(_sfc_main$3, {
-                source: __props.fn_item.readme.excerpt,
-                "file-path": __props.fn_item.path_base
-              }, null, 8, ["source", "file-path"]),
-              _cache[0] || (_cache[0] = createBaseVNode("h2", null, "Bauteile", -1)),
-              createBaseVNode("ul", null, [
-                (openBlock(true), createElementBlock(Fragment, null, renderList(__props.fn_item.bauteile, (part_item, part_name) => {
-                  return openBlock(), createElementBlock("li", { key: part_name }, toDisplayString(part_name), 1);
-                }), 128))
-              ])
-            ]),
-            _: 1
-          })
-        ]),
-        _: 1
-      });
-    };
-  }
-};
-var FunctionOverview = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-a6179a80"]]);
-function getDepth(value) {
-  if (value === false) {
-    return 0;
-  }
-  if (value === true || value === void 0) {
-    return 1;
-  }
-  const depth = parseInt(value, 10);
-  return isNaN(depth) ? 0 : depth;
-}
-var ClosePopup = createDirective(
-  {
-    name: "close-popup",
-    beforeMount(el, { value }) {
-      const ctx = {
-        depth: getDepth(value),
-        handler(evt) {
-          ctx.depth !== 0 && setTimeout(() => {
-            const proxy = getPortalProxy(el);
-            if (proxy !== void 0) {
-              closePortals(proxy, evt, ctx.depth);
-            }
-          });
-        },
-        handlerKey(evt) {
-          isKeyCode(evt, 13) === true && ctx.handler(evt);
-        }
-      };
-      el.__qclosepopup = ctx;
-      el.addEventListener("click", ctx.handler);
-      el.addEventListener("keyup", ctx.handlerKey);
-    },
-    updated(el, { value, oldValue }) {
-      if (value !== oldValue) {
-        el.__qclosepopup.depth = getDepth(value);
-      }
-    },
-    beforeUnmount(el) {
-      const ctx = el.__qclosepopup;
-      el.removeEventListener("click", ctx.handler);
-      el.removeEventListener("keyup", ctx.handlerKey);
-      delete el.__qclosepopup;
-    }
-  }
-);
-var FunctionDetails_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$1 = {
-  __name: "FunctionDetails",
-  props: {
-    fn_item: Object
-  },
-  setup(__props) {
-    return (_ctx, _cache) => {
-      return openBlock(), createBlock(QCard, { class: "fn-details" }, {
-        default: withCtx(() => [
-          withDirectives(createVNode(QBtn, {
-            flat: "",
-            class: "absolute-top-right q-mt-md q-mr-md",
-            icon: "close",
-            size: "xl",
-            round: ""
-          }, null, 512), [
-            [ClosePopup]
-          ]),
-          createVNode(QCardSection, null, {
-            default: withCtx(() => [
-              createVNode(_sfc_main$3, {
-                source: __props.fn_item.readme.content,
-                "file-path": __props.fn_item.path_base
-              }, null, 8, ["source", "file-path"]),
-              (openBlock(true), createElementBlock(Fragment, null, renderList(__props.fn_item.bauteile, (part_item, part_name) => {
-                return openBlock(), createBlock(QCard, {
-                  key: part_name,
-                  class: "q-ma-md q-pa-md card-bauteil"
-                }, {
-                  default: withCtx(() => [
-                    createVNode(_sfc_main$3, {
-                      source: part_item.readme.content,
-                      "file-path": part_item.path_base
-                    }, null, 8, ["source", "file-path"])
-                  ]),
-                  _: 2
-                }, 1024);
-              }), 128))
-            ]),
-            _: 1
-          })
-        ]),
-        _: 1
-      });
-    };
-  }
-};
-var FunctionDetails = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-583ce504"]]);
 var empty = null;
 var empty_1 = empty;
 var toString = Object.prototype.toString;
@@ -60732,124 +62096,4 @@ matter.clearCache = function() {
   matter.cache = {};
 };
 var grayMatter = matter;
-const preProcessingMD = (source2, path_base) => {
-  console.group("preProcessingMD");
-  const processedObj = grayMatter(source2, {
-    eval: false,
-    excerpt_separator: "<!-- more_details -->"
-  });
-  console.log("path_base:", path_base);
-  console.log("processedObj:", processedObj);
-  console.groupEnd();
-  return processedObj;
-};
-const mksGetFunktionen = (mksContent2) => {
-  console.group("mksGetFunktionen");
-  if (mksContent2["funktionen"] == void 0) {
-    mksContent2["funktionen"] = {};
-  }
-  const mksFn = mksContent2["funktionen"];
-  const funktionen_dir = { "./funktionen/Entfernung/readme.md": '---\ntitel: MYS Material\ntags: "entfernung"\n---\n\n# Entfernung\n\n![Ma\xDFband](./Yellow%20Tape%20Measure.svg)\n\n## Funktionen\n\nSensoren die Entfernungen Messen k\xF6nnen.\n\n<!-- more_details -->\n\nhier ist unter anderem Wichtig in welchem Bereich der jeweilige Sensor messen kann.\nes kann z.B. sein das der minimale Abstand durch aus 5cm betr\xE4gt.\nauch sind die Genauigkeit sehr unterschiedlich - von wenigen Millimetern Abweichungen bis zu mehreren Centimeter.\n\n## Anschl\xFCsse\n\n### Eingang\n\nje nach Bauteil\n\n### Ausgang\n\n-   je nach Bauteil\n\n## Kurz-Datenblatt\n\nsiehe einzelnes bauteile.\n\nRelevante Gr\xF6\xDFen:\n\n-   Messbereich (mm, cm, m)\n-   Genauigkeit (z.B. `+- n cm`)\n\n## Siehe Auch\n\n-   /\n', "./funktionen/LEDs/readme.md": '---\ntags: "output, led, licht, Farbe"\n---\n\n# LEDs\n\n![LED](./led-lamp-green-on.svg)\n\n## Funktionen\n\nEine LED kann verwendet werden um zust\xE4nde zu signalisieren oder auch um Licht im sinne von Beleuchtung zu erzeugen.\n\nes gibt sehr viele verschiedene formen und ausf\xFChrungen von LEDs.\n\n<!-- more_details -->\n\n## Anschl\xFCsse\n\n### Eingang\n\nje nach Bauteil\n\n-   I2C\n-   Digital IO\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\nsiehe einzelnes bauteile.\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   x\n', "./funktionen/Motortreiber/readme.md": '---\ntags: "motor, motortreiber"\n---\n\n# Motortreiber\n\n![Motortreiber allgemein](https://makeyourschool.de/wp-content/uploads/2018/10/70_motortreiber-1024x1024.jpg)\n\nTODO: CONTENT change image to general\n\n## Funktionen\n\nDer Motortreiber \xFCbersetzt die schwachen Signale & Spannungen des micro-controllers (Arduino / RaspberryPi) in Starke Spannungen & Str\xF6me um die verschiedenen [Motoren](./motor/) anzusteuern (zu _treiben_).\n\n<!-- more_details -->\n\n## Anschl\xFCsse\n\n### Eingang\n\nje nach Bauteil\n\n-   I2C\n-   Digital IO\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\nsiehe einzelnes bauteile.\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   [Motoren](./motor/)\n', "./funktionen/Schalter/readme.md": '---\ntags: "input"\n---\n\n# Taster & Schalter\n\n![Taster allgemein](https://makeyourschool.de/wp-content/uploads/2018/10/59_taster_knopf-1024x1024.jpg)\n\n<!-- TODO: CONTENT change image to general -->\n\n## Funktionen\n\nDer Taster / Schalter ist ein _Input_.\n\nDer Unterschied zwischen Taster und Schalter:\n\n-   Taster: nur solange _an_ wie er Bet\xE4tigt (z.B: gedr\xFCckt) wird\n-   Schalter: Bet\xE4tigung/Aktion wechselt den Zustand zwischen an und aus\n\nes gibt diese in sehr vielen verschiedenen Ausf\xFChrungen.\n\n<!-- more_details -->\n\nwenn ein Taster/Schalter **an** ist sind die Kontakte verbunden.\nwenn er **aus** ist sind die kontakte unverbunden.\ndiesen unterschied kann ein uC _messen_.\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   Mechanische Bet\xE4tigung\n\n### Ausgang\n\n-   Zwei _Pins_ werden \\*verbunden\n\n## Kurz-Datenblatt\n\nsiehe bauteile\n\n## Siehe Auch\n\n-   _-_\n\n## Weiterf\xFChrende Informationen:\n\n-   [Schalter (Elektrotechnik) \u2013 Wikipedia Artikel](<https://de.wikipedia.org/wiki/Schalter_(Elektrotechnik)>)\n-   [Positionsschalter \u2013 Wikipedia Artikel](https://de.wikipedia.org/wiki/Positionsschalter)\n-   [GPIO \u2013 Wikipedia Artikel](https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe)\n-   library f\xFCr _tasten-events_ [slight_ButtonInput](https://github.com/s-light/slight_ButtonInput/) (kann direkt in der IDE installiert werden)\n' };
-  for (const path in funktionen_dir) {
-    const fn_name = path.replace("./funktionen/", "").replace("/readme.md", "");
-    if (mksFn[fn_name] == void 0) {
-      mksFn[fn_name] = {};
-    }
-    mksFn[fn_name].path_readme = path;
-    mksFn[fn_name].path_base = path.replace("./", "mks/").replace("/readme.md", "/");
-    mksFn[fn_name].readme = preProcessingMD(funktionen_dir[path], mksFn[fn_name].path_base);
-  }
-  console.groupEnd();
-};
-const mksGetFnBauteile = (mksContent2) => {
-  console.group("mksGetFnBauteile");
-  const mksFn = mksContent2["funktionen"];
-  const bauteile_dir = { "./funktionen/Entfernung/bauteile/mks-GroveUltraschall/readme.md": "# Grove Ultraschall Entfernungsmesser\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/17_ultraschallentfernungssensor-1024x1024.jpg)\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nkurz-Beschreibung\n\n```c++ :./example.cpp\n```\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   I2C\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugeh\xF6rigem part\n\n\n\n## library\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName\n<!-- TODO: CONTENT change library name -->\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an\n```c++ :./examples/BauteilTemplate_minimal/BauteilTemplate_minimal.ino\n```\n\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n- nimm Bauteil\n- Schlie\xDFe an Port D2 an\n- nehm Beispiel Code\n    - kopiere von hier dr\xFCber\n    - oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n- Sketch Hochladen\n- Das Sollte nun passieren:\n    - die LED Blinkt im 1 Sekunden Takt\n", "./funktionen/LEDs/bauteile/mks-LED-Streifen/readme.md": "# Pixel LED-Streifen\n\nmks Nr 65\n\nAndere Namen:\n- Neopixel\n- Dotstar\n- WS2811\n- APA102\n\n![LED-Streifen](https://makeyourschool.de/wp-content/uploads/2018/08/65_led-streifen-1024x1024.jpg)\n\n## Beschreibung\nLED-Streifen sind Flexible B\xE4nder auf denen in bestimmtem Abstand `Adresierbare LED's` aufgel\xF6tete sind.\njeder *Pixel* beinhaltet einen kleinen controller chip (meist schwarzen - dem LED-Treiber) und den meist drei eigentlichen LEDs in den Licht-Grundfarben Rot, Gr\xFCn und Blau.\nJeder *Pixel* kann einzeln *Adressiert* werden (Entspricht einem Haus in einer Stra\xDFe).\ndabei k\xF6nnen alle drei Grundfarben einzeln in ihrere Helligkeit (255 Stufen) eingestellt werden -\ndadurch k\xF6nnen alle Regenbogen Farben + Wei\xDF erzeugt werden.\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   Serielle Daten\n\n### Ausgang\n\n-   Licht\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 3-5V\n-   ben\xF6tigter Strom: 20mA-60mA pro Pixel\n\nBeispiel:\n10 Pixel * 60mA = 600mA = 0,6A\n\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugeh\xF6rigem part\n\n## library\n\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: [fastled](https://fastled.io/)\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/pixel_minimal/pixel_minimal.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schlie\xDFe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier dr\xFCber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n", "./funktionen/Motortreiber/bauteile/mks-GroveMotortreiberI2C/readme.md": "# Grove motortreiber I2C\n\nmks Nr 70\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/70_motortreiber-1024x1024.jpg)\n\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nkurz-Beschreibung\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   I2C\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 1A\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugeh\xF6rigem part\n\n## library\n\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName\n\n<!-- TODO: CONTENT change library name -->\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/grove_motortreiber_minimal/grove_motortreiber_minimal.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schlie\xDFe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier dr\xFCber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n", "./funktionen/Schalter/bauteile/mks-Endschalter/readme.md": "# Endschalter\n\n![Bauteil](./bauteil.jpg)\n\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nDer Endschalter funktioniert wie ein normaler Schalter und kann als Eingabe f\xFCr einen Mikrocontroller verwendet werden.\nDer Schalter besitzt einen elastischen Schaltarm, der einen elektrischen Kontakt zwischen den Anschlusspins herstellt, wenn der Arm gedr\xFCckt wird.\n\nDer Endschalter kommt vor allem bei Robotern oder anderen bewegten Maschinen zum Einsatz, um Kollisionen zu erkennen und zu vermeiden.\nSo kann dieser zum Beispiel an einem Roboter angebaut werden - wenn der Roboter dann gegen ein Hindernis f\xE4hrt,\nwird der Endschalter bet\xE4tigt bevor der Roboter das Hindernis wirklich ber\xFChrt.\nSo wird die bevorstehende Kollision erkannt und kann vermieden werden. (z.B. f\xE4hrt der Roboter dann R\xFCckw\xE4rts vom Hindernis weg.)\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   Mechanische Bet\xE4tigung\n\n### Ausgang\n\n-   3 Kontakte (NC-C-NO)\n    -   C = Common (gemeinsamer Anschluss)\n    -   NC = Normal Closed (im unged\xFCrckten zustand mit C verbunden)\n    -   NO = Normal Open (im ged\xFCrckten zustand mit C verbunden)\n\n## Kurz-Datenblatt\n\n-   Schaltleistung: 5A 125VAC\n\n[Hersteller Datenblatt](https://asset.conrad.com/media10/add/160267/c1/-/de/000707243DS01/datenblatt-707243-hartmann-mikroschalter-mbb1-01-a-01-c-09-a-250-vac-5-a-1-x-einein-tastend-1-st.pdf)\n\n## Siehe Auch\n\n-   -\n\n## library\n\nkeine library n\xF6tig.\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/Endschalter_minimal/Endschalter_minimal.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n-   schlie\xDFe den Endschalter wie folgt an:\n    -   C an GND\n    -   NO an D2\n-   nehm Beispiel Code\n    -   kopiere von hier dr\xFCber in neuen leeren arduino sketch\n    -   oder direkt \xFCber das Men\xFC der Arduino IDE \\*1:\n        `Datei-Beispiele-MakeYourSchool-Taster-Endschalter-Endschalter_Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   \xD6ffne den Serial-Monitor (Symbol ganz rechts oben in der IDE)\n    -   Wenn du nun den Endschalter dr\xFCckst sollte `Endschalter wurde gerade gedr\xFCckt!` angezeigt werden.\n    -   Wenn du ihn wieder los l\xE4sst sollte `Endschalter wurde wieder ge\xF6ffnet` angezeigt werden.\n\n\\*1: daf\xFCr musst du einmalig die `MakeYourSchool` library installiert haben.\ndiese bringt alle hier im system vorhandenen Beispielcodes in die IDE..\n", "./funktionen/Schalter/bauteile/mks-GroveKippschalter/readme.md": "# Kippschalter\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/24_kippschalter-1024x1024.jpg)\n\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nkurz-Beschreibung\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   I2C\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugeh\xF6rigem part\n\n## library\n\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: keine library ben\xF6tigt.\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/grove_kippschalter_minimal/grove_kippschalter_minimal.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schlie\xDFe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier dr\xFCber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n", "./funktionen/Schalter/bauteile/mks-GroveMagnetschalter/readme.md": "# Magnetschalter\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/28_magnetschalter-1024x1024.jpg)\n\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nkurz-Beschreibung\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   I2C\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugeh\xF6rigem part\n\n## library\n\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName\n\n<!-- TODO: CONTENT change library name -->\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/grove_magnetschalter_minimal/grove_magnetschalter_minimal.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schlie\xDFe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier dr\xFCber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n", "./funktionen/Schalter/bauteile/mks-GroveSchalter/readme.md": "# Schalter\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/61_schalter-1024x1024.jpg)\n\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nkurz-Beschreibung\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   I2C\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugeh\xF6rigem part\n\n## library\n\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName\n\n<!-- TODO: CONTENT change library name -->\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/grove_schalter_minimal/grove_schalter_minimal.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schlie\xDFe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier dr\xFCber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n", "./funktionen/Schalter/bauteile/mks-GroveTaster/readme.md": "# Taster (Grove)\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/60_taster_knopf_platine-1024x1024.jpg)\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nein einfacher Taster.\nauf einer Platine mit einem Grove-Buchse verl\xF6tete.\ndadurch ist der Anschluss super einfach :-)\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   Mechanische Bet\xE4tigung\n\n### Ausgang\n\n-   5V Signal (auf Grove Buchse)\n\n## Kurz-Datenblatt\n\n-   Betriebsspannung: 3.3-5V\n\n## Siehe Auch\n\n-   -\n\n\n\n## library\nkeine library n\xF6tig.\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/taster/taster.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n- nimm Bauteil\n- Schlie\xDFe an Port D2 an\n- nehm Beispiel Code\n    - kopiere von hier dr\xFCber\n    - oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n- Sketch Hochladen\n- Das Sollte nun passieren:\n    - die LED Blinkt im 1 Sekunden Takt\n", "./funktionen/Schalter/bauteile/mks-Taster/readme.md": "# Taster\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/59_taster_knopf-1024x1024.jpg)\n\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nein einfacher Taster\n\n## Anschl\xFCsse\n\n### Eingang\n\n-   Mechanische Bet\xE4tigung\n\n### Ausgang\n\n-   ...\n\n## Kurz-Datenblatt\n\n-   Betriebsspannung: 3.3-5V\n\n## Siehe Auch\n\n-   https://makeyourschool.de/maker-ecke/material/taster-knopf/\n\n## library\n\nkeine library n\xF6tig\n\n<!-- TODO: CONTENT change library name -->\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/taster/taster.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schlie\xDFe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier dr\xFCber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n" };
-  const path_regex = /\.\/funktionen\/(?<fn_name>.*)\/bauteile\/(?<part_name>.*)\/readme\.md/;
-  for (const path in bauteile_dir) {
-    const { fn_name, part_name } = path_regex.exec(path).groups;
-    if (mksFn[fn_name] == void 0) {
-      mksFn[fn_name] = {};
-    }
-    if (mksFn[fn_name].bauteile == void 0) {
-      mksFn[fn_name].bauteile = {};
-    }
-    const bauteile = mksFn[fn_name].bauteile;
-    bauteile[part_name] = {};
-    bauteile[part_name]["path_readme"] = path;
-    bauteile[part_name]["path_base"] = path.replace("./", "mks/").replace("/readme.md", "/");
-    bauteile[part_name].readme = grayMatter(bauteile_dir[path], { eval: false });
-    console.log(`${fn_name} - ${part_name}`, bauteile[part_name]);
-  }
-  console.groupEnd();
-};
-const mksGetContent = () => {
-  console.group("mksContent");
-  let mksContent2 = {
-    welcome: {},
-    funktionen: {}
-  };
-  let temp = { "./readme.md": '---\ntitel: MYS Material\ntags: "welcome"\n---\n\n# MYS Material\n\nhier findet ihr eine Liste aller MYS Materialien..\n:tada:\n\n[mks](https://makeyourschool.de/maker-ecke/material/)\n\n```c++ :./nothinghere.cpp\nfails to import.\nTODO: check for 404 / 200 and handle these in a smart way..\n```\n\nTODO: implement deep-linking to directly jump to Funktionen und Bauteilen\nmaybe with router-view?!\n\n\nTODO: implement search & filtering\n\n# Funktionen\n' };
-  const path_base = "mks/";
-  mksContent2["welcome"].readme = preProcessingMD(temp["./readme.md"], path_base);
-  mksContent2["welcome"]["path_base"] = path_base;
-  mksGetFunktionen(mksContent2);
-  mksGetFnBauteile(mksContent2);
-  console.groupEnd();
-  return mksContent2;
-};
-var mksContent = mksGetContent();
-var IndexPage_vue_vue_type_style_index_0_scoped_true_lang = "";
-var IndexPage_vue_vue_type_style_index_1_lang = "";
-const _hoisted_1 = { class: "card-wrapper row items-stretch" };
-const _sfc_main = {
-  __name: "IndexPage",
-  setup(__props) {
-    console.log("mksContent", mksContent);
-    const mks_welcome = ref(mksContent["welcome"]);
-    const mks_funktionen = ref(mksContent["funktionen"]);
-    useQuasar();
-    return (_ctx, _cache) => {
-      return openBlock(), createBlock(QPage, { class: "my-page" }, {
-        default: withCtx(() => [
-          createVNode(_sfc_main$3, {
-            source: mks_welcome.value.readme.content,
-            "file-path": mks_welcome.value.path_base
-          }, null, 8, ["source", "file-path"]),
-          createBaseVNode("ul", _hoisted_1, [
-            (openBlock(true), createElementBlock(Fragment, null, renderList(mks_funktionen.value, (fn_item, fn_name) => {
-              return openBlock(), createElementBlock("li", {
-                key: fn_name,
-                class: "my-card q-pa-md"
-              }, [
-                createVNode(FunctionOverview, {
-                  fn_item,
-                  onClick: ($event) => fn_item.showDetails = true,
-                  class: "clickable"
-                }, null, 8, ["fn_item", "onClick"]),
-                createVNode(QDialog, {
-                  modelValue: fn_item.showDetails,
-                  "onUpdate:modelValue": ($event) => fn_item.showDetails = $event,
-                  "full-height": "",
-                  "full-width": ""
-                }, {
-                  default: withCtx(() => [
-                    createVNode(FunctionDetails, { fn_item }, null, 8, ["fn_item"])
-                  ]),
-                  _: 2
-                }, 1032, ["modelValue", "onUpdate:modelValue"])
-              ]);
-            }), 128))
-          ])
-        ]),
-        _: 1
-      });
-    };
-  }
-};
-var IndexPage = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-55322253"]]);
-var IndexPage$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null,
-  "default": IndexPage
-}, Symbol.toStringTag, { value: "Module" }));
-export { HighlightJS as H, IndexPage$1 as I, commonjsGlobal as c };
+export { HighlightJS as H, _sfc_main as _, commonjsGlobal as c, grayMatter as g };

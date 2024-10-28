@@ -1,3 +1,8 @@
+---
+tags: input
+id: 61
+---
+
 # Schalter
 
 ![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/61_schalter-1024x1024.jpg)

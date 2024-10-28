@@ -1,3 +1,8 @@
+---
+tags: input
+id: 28
+---
+
 # Magnetschalter
 
 ![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/28_magnetschalter-1024x1024.jpg)

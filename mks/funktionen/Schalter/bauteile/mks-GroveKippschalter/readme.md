@@ -1,3 +1,8 @@
+---
+tags: input, lage, orientierung, position
+id: 24
+---
+
 # Kippschalter
 
 ![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/24_kippschalter-1024x1024.jpg)

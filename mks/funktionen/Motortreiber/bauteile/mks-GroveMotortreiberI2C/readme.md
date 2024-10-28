@@ -1,3 +1,8 @@
+---
+tags: motor, motortreiber, i2c
+id: 70
+---
+
 # Grove motortreiber I2C
 
 mks Nr 70
