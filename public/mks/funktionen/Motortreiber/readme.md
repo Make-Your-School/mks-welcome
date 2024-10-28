@@ -1,5 +1,6 @@
 ---
-tags: "motor, motortreiber"
+tags: motor, motortreiber, output
+id: 70
 ---
 
 # Motortreiber
