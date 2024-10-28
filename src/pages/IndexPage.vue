@@ -47,10 +47,41 @@ const mks_welcome = ref(mksContent["welcome"]);
 // console.log(`mksContent.welcome['./readme.md'].path_base`, mksContent.welcome['./readme.md'].path_base);
 const mks_funktionen = ref(mksContent["funktionen"]);
 
+const check_searchTextInReadme = (readme, item_name) => {
+    return (
+        item_name?.toLowerCase().includes(searchText.value.toLowerCase()) ||
+        readme.content.toLowerCase().includes(searchText.value.toLowerCase()) ||
+        readme.data?.tags?.toLowerCase().includes(searchText.value.toLowerCase())
+    );
+};
+
+const getObjItemsWithSearchTextInReadme = (obj) => {
+    const result = {};
+    for (const [item_name, item] of Object.entries(obj)) {
+        // console.log(`item_name`, item_name, `item`, item);
+        if (check_searchTextInReadme(item.readme, item_name)) {
+            result[item_name] = item;
+        }
+    }
+    return result;
+};
+
 const mks_funktionen_filtered = computed(() => {
     const result = {};
-    for (const [fn_item, fn_name] of Object.entries(mks_funktionen)) {
-        result[fn_name] = fn_item;
+    for (const [fn_name, fn_item] of Object.entries(mks_funktionen.value)) {
+        console.log(`fn_name`, fn_name, `fn_item`, fn_item);
+        // only include in result if search text is somewhere in the content..
+        // check bauteile
+        const bauteile_includes = getObjItemsWithSearchTextInReadme(fn_item.bauteile);
+        // console.log("bauteile_includes", bauteile_includes);
+        console.log("Object.keys(bauteile_includes)", Object.keys(bauteile_includes));
+
+        if (
+            check_searchTextInReadme(fn_item.readme, fn_name) ||
+            Object.keys(bauteile_includes).length > 0
+        ) {
+            result[fn_name] = fn_item;
+        }
     }
     return result;
 });
