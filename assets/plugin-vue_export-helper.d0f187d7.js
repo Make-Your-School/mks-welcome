@@ -1,4 +1,4 @@
-import { c as computed, p as onBeforeUnmount, ai as History, x as onDeactivated, I as vmIsDestroyed, a as getCurrentInstance, w as watch, aj as vmHasRouter, o as onMounted, v as nextTick, ak as css, al as getElement, N as client, am as listenOpts, u as stopAndPrevent, an as getEventPath } from "./index.41b9157e.js";
+import { c as computed, p as onBeforeUnmount, ai as History, x as onDeactivated, I as vmIsDestroyed, a as getCurrentInstance, w as watch, aj as vmHasRouter, o as onMounted, v as nextTick, ak as css, al as getElement, N as client, am as listenOpts, u as stopAndPrevent, an as getEventPath } from "./index.cb623f96.js";
 const useDarkProps = {
   dark: {
     type: Boolean,

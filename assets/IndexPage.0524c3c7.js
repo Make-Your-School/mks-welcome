@@ -1,8 +1,8 @@
-import { l as isRuntimeSsrPreHydration, r as ref, o as onMounted, w as watch, c as computed, m as onBeforeUpdate, a as getCurrentInstance, i as inject, n as formKey, p as onBeforeUnmount, q as debounce, t as injectProp, u as stopAndPrevent, v as nextTick, x as onDeactivated, y as onActivated, h, z as prevent, Q as QIcon, B as QSpinner, C as hSlot, D as Transition, E as shouldIgnoreKey, G as createComponent, H as stop, I as vmIsDestroyed, J as getParentProxy, b as onUnmounted, K as Teleport, L as createGlobalNode, M as removeGlobalNode, N as client, O as isKeyCode, P as childHasFocus, R as openBlock, S as createBlock, U as withCtx, j as createVNode, V as createElementBlock, W as createBaseVNode, F as Fragment, X as renderList, Y as toDisplayString, Z as createCommentVNode, _ as createDirective, $ as withDirectives, a0 as QBtn } from "./index.41b9157e.js";
-import { u as useDark, a as useDarkProps, b as useModelToggleProps, c as useModelToggleEmits, d as useTimeout, e as useModelToggle, f as useHistory, g as usePreventScroll, _ as _export_sfc } from "./plugin-vue_export-helper.9c8439fb.js";
-import { Q as QPage } from "./QPage.200a6e61.js";
-import { u as useQuasar } from "./use-quasar.66f52c3a.js";
-import { _ as _sfc_main$3, g as grayMatter } from "./index.5bb09221.js";
+import { l as isRuntimeSsrPreHydration, r as ref, o as onMounted, w as watch, c as computed, m as onBeforeUpdate, a as getCurrentInstance, i as inject, n as formKey, p as onBeforeUnmount, q as debounce, t as injectProp, u as stopAndPrevent, v as nextTick, x as onDeactivated, y as onActivated, h, z as prevent, Q as QIcon, B as QSpinner, C as hSlot, D as Transition, E as shouldIgnoreKey, G as createComponent, H as stop, I as vmIsDestroyed, J as getParentProxy, b as onUnmounted, K as Teleport, L as createGlobalNode, M as removeGlobalNode, N as client, O as isKeyCode, P as childHasFocus, R as openBlock, S as createBlock, U as withCtx, j as createVNode, V as createElementBlock, W as createBaseVNode, F as Fragment, X as renderList, Y as toDisplayString, Z as createCommentVNode, _ as createDirective, $ as withDirectives, a0 as QBtn } from "./index.cb623f96.js";
+import { u as useDark, a as useDarkProps, b as useModelToggleProps, c as useModelToggleEmits, d as useTimeout, e as useModelToggle, f as useHistory, g as usePreventScroll, _ as _export_sfc } from "./plugin-vue_export-helper.d0f187d7.js";
+import { Q as QPage } from "./QPage.7761124f.js";
+import { u as useQuasar } from "./use-quasar.203ad343.js";
+import { _ as _sfc_main$3, g as grayMatter } from "./index.4ad9f1b7.js";
 let buf, bufIdx = 0;
 const hexBytes = new Array(256);
 for (let i = 0; i < 256; i++) {
@@ -2114,7 +2114,7 @@ const preProcessingMD = (source, path_base) => {
   return processedObj;
 };
 const mksAddPartsToTags = (mksContent2) => {
-  console.group("mksAddPartsToTags");
+  console.groupCollapsed("mksAddPartsToTags");
   const mksTags = mksContent2.tags;
   const mksParts = mksContent2.parts;
   for (const [tag_name, tag] of Object.entries(mksTags)) {
@@ -2124,12 +2124,9 @@ const mksAddPartsToTags = (mksContent2) => {
   }
   for (const [part_name, part] of Object.entries(mksParts)) {
     const part_tags = part.readme.data.tags;
-    console.log(`${part_name} part_tags`, part_tags);
     if (part_tags) {
       for (const part_tag of part_tags) {
         part_tag.toLowerCase();
-        console.log("part_tag", part_tag);
-        console.log("mksTags[part_tag]", mksTags[part_tag]);
         if (mksTags[part_tag]) {
           mksTags[part_tag].parts[part_name] = part;
         }
