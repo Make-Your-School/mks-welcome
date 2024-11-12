@@ -1,6 +1,7 @@
 ---
-tags: input
-id: 61
+title: Taster & Schalter
+tags: [input]
+id: 261
 ---
 
 # Taster & Schalter

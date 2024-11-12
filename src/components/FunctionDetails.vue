@@ -10,13 +10,15 @@
         />
         <q-card-section>
             <my-markdown :source="fn_item.readme.content" :file-path="fn_item.path_base" />
-            <q-card
-                v-for="(part_item, part_name) in fn_item.bauteile"
-                :key="part_name"
-                class="q-ma-md q-pa-md card-bauteil"
-            >
-                <my-markdown :source="part_item.readme.content" :file-path="part_item.path_base" />
-            </q-card>
+            <div v-if="fn_item.parts">
+                <q-card
+                    v-for="(part_item, part_name) in fn_item.parts"
+                    :key="part_name"
+                    class="q-ma-md q-pa-md card-bauteil"
+                >
+                    <my-markdown :source="part_item.readme.content" :file-path="part_item.path_base" />
+                </q-card>
+            </div>
         </q-card-section>
     </q-card>
 </template>

@@ -1,21 +1,28 @@
+---
+tags: [output, leds, licht]
+id: 65
+---
+
 # Pixel LED-Streifen
-
-mks Nr 65
-
-Andere Namen:
-- Neopixel
-- Dotstar
-- WS2811
-- APA102
 
 ![LED-Streifen](https://makeyourschool.de/wp-content/uploads/2018/08/65_led-streifen-1024x1024.jpg)
 
 ## Beschreibung
 LED-Streifen sind Flexible Bänder auf denen in bestimmtem Abstand `Adresierbare LED's` aufgelötete sind.
+
+<!-- more_details -->
+
 jeder *Pixel* beinhaltet einen kleinen controller chip (meist schwarzen - dem LED-Treiber) und den meist drei eigentlichen LEDs in den Licht-Grundfarben Rot, Grün und Blau.
 Jeder *Pixel* kann einzeln *Adressiert* werden (Entspricht einem Haus in einer Straße).
 dabei können alle drei Grundfarben einzeln in ihrere Helligkeit (255 Stufen) eingestellt werden -
 dadurch können alle Regenbogen Farben + Weiß erzeugt werden.
+
+
+Andere Namen:
+- Neopixel
+- WS2811
+- Dotstar
+- APA102
 
 ## Anschlüsse
 

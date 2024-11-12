@@ -1,6 +1,6 @@
 ---
-titel: MYS Material
-tags: entfernung, input
+titel: Entfernung
+tags: [entfernung, input]
 id: 17
 ---
 
@@ -18,25 +18,11 @@ hier ist unter anderem Wichtig in welchem Bereich der jeweilige Sensor messen ka
 es kann z.B. sein das der minimale Abstand durch aus 5cm beträgt.
 auch sind die Genauigkeit sehr unterschiedlich - von wenigen Millimetern Abweichungen bis zu mehreren Centimeter.
 
-## Anschlüsse
-
-### Eingang
-
-je nach Bauteil
-
-### Ausgang
-
--   je nach Bauteil
-
-## Kurz-Datenblatt
-
-siehe einzelnes bauteile.
-
-Relevante Größen:
+## Relevante Größen:
 
 -   Messbereich (mm, cm, m)
 -   Genauigkeit (z.B. `+- n cm`)
 
 ## Siehe Auch
 
--   /
+-   ToDo

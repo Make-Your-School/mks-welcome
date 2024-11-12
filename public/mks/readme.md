@@ -1,6 +1,6 @@
 ---
 titel: MYS Material
-tags: "welcome"
+tags: [welcome, ]
 ---
 
 # MYS Material

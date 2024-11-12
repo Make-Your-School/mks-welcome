@@ -11,7 +11,7 @@
         </div>
         <ul class="card-wrapper row items-stretch">
             <li
-                v-for="(fn_item, fn_name) in mks_tags_filtered"
+                v-for="(fn_item, fn_name) in mks_items_filtered"
                 :key="fn_name"
                 class="my-card q-pa-md"
             >
@@ -53,7 +53,7 @@ const check_searchTextInReadme = (readme, item_name) => {
     return (
         item_name?.toLowerCase().includes(searchText.value.toLowerCase()) ||
         readme.content.toLowerCase().includes(searchText.value.toLowerCase()) ||
-        readme.data?.tags?.toLowerCase().includes(searchText.value.toLowerCase())
+        readme.data?.tags?.join(", ").toLowerCase().includes(searchText.value.toLowerCase())
     );
 };
 
@@ -68,7 +68,7 @@ const getObjItemsWithSearchTextInReadme = (obj) => {
     return result;
 };
 
-const mks_tags_filtered = computed(() => {
+const mks_items_filtered = computed(() => {
     // const result = {};
     // for (const [fn_name, fn_item] of Object.entries(mks_tags.value)) {
     //     console.log(`fn_name`, fn_name, `fn_item`, fn_item);
