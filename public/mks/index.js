@@ -13,7 +13,7 @@ const preProcessingMD = (source, path_base) => {
 };
 
 const mksAddPartsToTags = (mksContent) => {
-    console.group("mksAddPartsToTags");
+    console.groupCollapsed("mksAddPartsToTags");
     const mksTags = mksContent.tags;
     const mksParts = mksContent.parts;
 
@@ -27,12 +27,12 @@ const mksAddPartsToTags = (mksContent) => {
     for (const [part_name, part] of Object.entries(mksParts)) {
         // console.log("part:", part);
         const part_tags = part.readme.data.tags;
-        console.log(`${part_name} part_tags`, part_tags);
+        // console.log(`${part_name} part_tags`, part_tags);
         if (part_tags) {
             for (const part_tag of part_tags) {
                 const part_tag_lc = part_tag.toLowerCase();
-                console.log("part_tag", part_tag);
-                console.log("mksTags[part_tag]", mksTags[part_tag]);
+                // console.log("part_tag", part_tag);
+                // console.log("mksTags[part_tag]", mksTags[part_tag]);
                 if (mksTags[part_tag]) {
                     mksTags[part_tag].parts[part_name] = part;
                 }
