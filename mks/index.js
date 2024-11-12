@@ -1,23 +1,4 @@
-// import * as matter from "gray-matter";
 import matter from "gray-matter";
-// import * as matter from "gray-matter-browser";
-
-// // console.log(file_list);
-// for (const item of Object.keys(file_list).sort()) {
-//     console.log(item);
-// }
-// const file_tree = () => {
-//     let file_tree = {};
-//     const dir_funktionen = import.meta.glob("./*/*.md", {
-//         query: "?raw",
-//         // import: "default",
-//     });
-//     console.log(dir_funktionen);
-//     dir_funktionen.en;
-//     return file_tree;
-// }
-
-// export default file_tree();
 
 const preProcessingMD = (source, path_base) => {
     // console.group("preProcessingMD");
@@ -31,76 +12,79 @@ const preProcessingMD = (source, path_base) => {
     return processedObj;
 };
 
-const mksGetFunktionen = (mksContent) => {
-    console.groupCollapsed("mksGetFunktionen");
-    if (mksContent["funktionen"] == undefined) {
-        mksContent["funktionen"] = {};
-    }
-    const mksFn = mksContent["funktionen"];
+// const mksGetTags = (mksContent) => {
+//     console.groupCollapsed("mksGetTags");
+//     if (mksContent["tags"] == undefined) {
+//         mksContent["tags"] = {};
+//     }
+//     const mksTags = mksContent["tags"];
 
-    const funktionen_dir = import.meta.glob("./funktionen/*/readme.md", {
+//     const tags_dir = import.meta.glob("./tags/*/readme.md", {
+//         as: "raw",
+//         eager: true,
+//     });
+//     const path_regex = /\.\/tags\/(?<tag_name>.*)\/readme\.md/;
+//     for (const path in tags_dir) {
+//         // console.log(path);
+//         // const mdContent = tags_dir[path];
+//         // console.log("mdContent:", mdContent);
+//         const { tag_name } = path_regex.exec(path).groups;
+//         if (mksTags[tag_name] == undefined) {
+//             mksTags[tag_name] = {};
+//         }
+
+//         mksTags[tag_name].path_readme = path;
+//         mksTags[tag_name].path_base = path.replace("./", "mks/").replace("/readme.md", "/");
+//         // extract / parse front matter
+//         // https://github.com/jonschlinkert/gray-matter
+//         mksTags[tag_name].readme = preProcessingMD(tags_dir[path], mksTags[tag_name].path_base);
+
+//         // mksFn[tag_name].bauteile = mksGetItems(mksFn[tag_name].path_base);
+
+//         // console.log(`${tag_name}`, mksFn[tag_name]);
+
+//         console.log(`${tag_name} '${mksTags[tag_name].path_base}'`);
+//     }
+//     console.groupEnd();
+// };
+
+const getTagsContent = () => {
+    return import.meta.glob(`./tags/*/readme.md`, {
         as: "raw",
         eager: true,
     });
-    for (const path in funktionen_dir) {
-        // console.log(path);
-        // const mdContent = funktionen_dir[path];
-        // console.log("mdContent:", mdContent);
-        const fn_name = path.replace("./funktionen/", "").replace("/readme.md", "");
-        if (mksFn[fn_name] == undefined) {
-            mksFn[fn_name] = {};
-        }
-
-        mksFn[fn_name].path_readme = path;
-        mksFn[fn_name].path_base = path.replace("./", "mks/").replace("/readme.md", "/");
-        // extract / parse front matter
-        // https://github.com/jonschlinkert/gray-matter
-        mksFn[fn_name].readme = preProcessingMD(funktionen_dir[path], mksFn[fn_name].path_base);
-
-        // mksFn[fn_name].bauteile = mksGetFnBauteile(mksFn[fn_name].path_base);
-
-        // console.log(`${fn_name}`, mksFn[fn_name]);
-
-        console.log(`${fn_name} '${mksFn[fn_name].path_base}'`);
-    }
-    console.groupEnd();
-};
-
-const mksGetFnBauteile = (mksContent) => {
-    console.groupCollapsed("mksGetFnBauteile");
-
-    const mksFn = mksContent["funktionen"];
-
-    const bauteile_dir = import.meta.glob("./funktionen/*/bauteile/*/readme.md", {
+}
+const getPartsContent = () => {
+    return import.meta.glob(`./parts/*/readme.md`, {
         as: "raw",
         eager: true,
     });
-    // console.log("bauteile_dir", bauteile_dir);
-    const path_regex = /\.\/funktionen\/(?<fn_name>.*)\/bauteile\/(?<part_name>.*)\/readme\.md/;
-    for (const path in bauteile_dir) {
+}
+
+const mksGetItems = (mksContent, folderName, items_dir) => {
+    console.groupCollapsed("mksGetItems");
+
+    if (mksContent[folderName] == undefined) {
+        mksContent[folderName] = {};
+    }
+    const mksItems = mksContent[folderName];
+
+    // const items_dir = import.meta.glob("./parts/*/readme.md", {
+    // console.log("items_dir", items_dir);
+    // const path_regex = /\.\/parts\/(?<item_name>.*)\/readme\.md/;
+    const path_regex = new RegExp(`\.\/${folderName}\/(?<item_name>.*)\/readme\.md`);
+    for (const path in items_dir) {
         // console.log(path);
-        const { fn_name, part_name } = path_regex.exec(path).groups;
-        // console.log(`fn_name: '${fn_name}'`);
-        // console.log(`part_name: '${part_name}'`);
-
-        if (mksFn[fn_name] == undefined) {
-            mksFn[fn_name] = {};
-        }
-        if (mksFn[fn_name].bauteile == undefined) {
-            mksFn[fn_name].bauteile = {};
-        }
-        const bauteile = mksFn[fn_name].bauteile;
-        bauteile[part_name] = {};
-        bauteile[part_name].path_readme = path;
-        bauteile[part_name].path_base = path.replace("./", "mks/").replace("/readme.md", "/");
-        // extract / parse front matter
-        // https://github.com/jonschlinkert/gray-matter
-        bauteile[part_name].readme = matter(bauteile_dir[path], { eval: false });
-
-        // bauteile[part_name].bauteile = mksGetFnBauteile(bauteile[part_name].path_base);
-
-        // console.log(`${fn_name} - ${part_name}`, bauteile[part_name]);
-        console.log(`${fn_name} - ${part_name} '${bauteile[part_name].path_base}'`);
+        const { item_name } = path_regex.exec(path).groups;
+        // console.log(`item_name: '${item_name}'`);
+        mksItems[item_name] = {};
+        mksItems[item_name].path_readme = path;
+        mksItems[item_name].path_base = `mks/${folderName}/${item_name}/`;
+        mksItems[item_name].readme = preProcessingMD(
+            items_dir[path],
+            mksItems[item_name].path_base
+        );
+        console.log(`${item_name} '${mksItems[item_name].path_base}'`);
     }
     console.groupEnd();
 };
@@ -109,7 +93,8 @@ const mksGetContent = () => {
     console.group("mksContent");
     let mksContent = {
         welcome: {},
-        funktionen: {},
+        tags: {},
+        parts: {},
     };
 
     let temp = import.meta.glob("./readme.md", {
@@ -120,10 +105,10 @@ const mksGetContent = () => {
     mksContent.welcome.readme = preProcessingMD(temp["./readme.md"], path_base);
     mksContent.welcome.path_base = path_base;
 
-    mksGetFunktionen(mksContent);
-    mksGetFnBauteile(mksContent);
+    mksGetItems(mksContent, "tags", getTagsContent());
+    mksGetItems(mksContent, "parts", getPartsContent());
 
-    // console.log("mksContent:", mksContent);
+    console.log("mksContent:", mksContent);
     console.groupEnd();
     return mksContent;
 };

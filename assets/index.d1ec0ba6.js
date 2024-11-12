@@ -10125,32 +10125,32 @@ const childrenCommon = [
     title: "md test",
     icon: "brush",
     path: "/",
-    component: () => __vitePreload(() => import("./IndexPage.a90a002d.js"), true ? ["assets/IndexPage.a90a002d.js","assets/IndexPage.59f2ca92.css","assets/plugin-vue_export-helper.3b9f66a8.js","assets/QPage.eda3bd4d.js","assets/use-quasar.2fbad186.js","assets/index.ddd68bc7.js","assets/index.81c2e2ee.css"] : void 0)
+    component: () => __vitePreload(() => import("./IndexPage.28b8a4e7.js"), true ? ["assets/IndexPage.28b8a4e7.js","assets/IndexPage.d2809658.css","assets/plugin-vue_export-helper.9dcc62aa.js","assets/QPage.5f9f75a9.js","assets/use-quasar.3a1daed4.js","assets/index.ee3cf4d1.js","assets/index.81c2e2ee.css"] : void 0)
   },
   {
     title: "About",
     icon: "info",
     path: "about",
-    component: () => __vitePreload(() => import("./AboutPage.221c0685.js"), true ? ["assets/AboutPage.221c0685.js","assets/QPage.eda3bd4d.js"] : void 0)
+    component: () => __vitePreload(() => import("./AboutPage.e7f645eb.js"), true ? ["assets/AboutPage.e7f645eb.js","assets/QPage.5f9f75a9.js"] : void 0)
   },
   {
     title: "Settings",
     icon: "settings",
     path: "settings",
-    component: () => __vitePreload(() => import("./SettingsPage.d6948189.js"), true ? ["assets/SettingsPage.d6948189.js","assets/QPage.eda3bd4d.js","assets/index.ddd68bc7.js","assets/index.81c2e2ee.css","assets/use-quasar.2fbad186.js"] : void 0)
+    component: () => __vitePreload(() => import("./SettingsPage.1dfaf2b1.js"), true ? ["assets/SettingsPage.1dfaf2b1.js","assets/QPage.5f9f75a9.js","assets/index.ee3cf4d1.js","assets/index.81c2e2ee.css","assets/use-quasar.3a1daed4.js"] : void 0)
   }
 ];
 const routes = [
   {
     path: "/",
-    component: () => __vitePreload(() => import("./MainLayout.cf03edd3.js"), true ? ["assets/MainLayout.cf03edd3.js","assets/MainLayout.5ea167dc.css","assets/plugin-vue_export-helper.3b9f66a8.js","assets/use-quasar.2fbad186.js"] : void 0),
+    component: () => __vitePreload(() => import("./MainLayout.92e26882.js"), true ? ["assets/MainLayout.92e26882.js","assets/MainLayout.5ea167dc.css","assets/plugin-vue_export-helper.9dcc62aa.js","assets/use-quasar.3a1daed4.js"] : void 0),
     children: [
       ...childrenCommon
     ]
   },
   {
     path: "/:catchAll(.*)*",
-    component: () => __vitePreload(() => import("./ErrorNotFound.0119c92b.js"), true ? [] : void 0)
+    component: () => __vitePreload(() => import("./ErrorNotFound.1c91efac.js"), true ? [] : void 0)
   }
 ];
 var createRouter = route(function() {
@@ -12004,8 +12004,8 @@ createQuasarApp(createApp, quasarUserOptions).then((app2) => {
     (bootFiles) => bootFiles.map((entry) => entry.default)
   ];
   return Promise[method]([
-    __vitePreload(() => import("./i18n.18444715.js"), true ? [] : void 0),
-    __vitePreload(() => import("./addressbar-color.6eb89fb8.js"), true ? [] : void 0)
+    __vitePreload(() => import("./i18n.15dda767.js"), true ? [] : void 0),
+    __vitePreload(() => import("./addressbar-color.cc6fcfc7.js"), true ? [] : void 0)
   ]).then((bootFiles) => {
     const boot2 = mapFn(bootFiles).filter((entry) => typeof entry === "function");
     start(app2, boot2);
