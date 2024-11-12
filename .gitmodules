@@ -1,24 +1,24 @@
 [submodule "mks/funktionen/Entfernung/bauteile/mks-GroveUltraschall"]
-	path = public/mks/funktionen/Entfernung/bauteile/mks-GroveUltraschall
+	path = public/mks/parts/mks-GroveUltraschall
 	url = https://github.com/s-light/mks-GroveUltraschall.git
 [submodule "mks/funktionen/Motortreiber/bauteile/mks-GroveMotortreiberI2C"]
-	path = public/mks/funktionen/Motortreiber/bauteile/mks-GroveMotortreiberI2C
+	path = public/mks/parts/mks-GroveMotortreiberI2C
 	url = https://github.com/s-light/mks-GroveMotortreiberI2C.git
 [submodule "mks/funktionen/Schalter/bauteile/mks-GroveMagnetschalter"]
-	path = public/mks/funktionen/Schalter/bauteile/mks-GroveMagnetschalter
+	path = public/mks/parts/mks-GroveMagnetschalter
 	url = https://github.com/s-light/mks-GroveMagnetschalter.git
 [submodule "mks/funktionen/Schalter/bauteile/mks-GroveKippschalter"]
-	path = public/mks/funktionen/Schalter/bauteile/mks-GroveKippschalter
+	path = public/mks/parts/mks-GroveKippschalter
 	url = https://github.com/s-light/mks-GroveKippschalter.git
 [submodule "mks/funktionen/Schalter/bauteile/mks-GroveTaster"]
-	path = public/mks/funktionen/Schalter/bauteile/mks-GroveTaster
+	path = public/mks/parts/mks-GroveTaster
 	url = https://github.com/s-light/mks-GroveTaster.git
 [submodule "mks/funktionen/Schalter/bauteile/mks-GroveSchalter"]
-	path = public/mks/funktionen/Schalter/bauteile/mks-GroveSchalter
+	path = public/mks/parts/mks-GroveSchalter
 	url = https://github.com/s-light/mks-GroveSchalter.git
 [submodule "mks/funktionen/Schalter/bauteile/mks-Endschalter"]
-	path = public/mks/funktionen/Schalter/bauteile/mks-Endschalter
+	path = public/mks/parts/mks-Endschalter
 	url = https://github.com/s-light/mks-Endschalter.git
 [submodule "mks/funktionen/Schalter/bauteile/mks-Taster"]
-	path = public/mks/funktionen/Schalter/bauteile/mks-Taster
+	path = public/mks/parts/mks-Taster
 	url = https://github.com/s-light/mks-Taster.git
