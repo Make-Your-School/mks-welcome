@@ -4,13 +4,13 @@
 // https://github.com/tokusumi/markdown-embed-code
 
 // c++ :./relative/file/to/your/code.cpp
-const RE_INFO = /(?<codeLang>.*)\s\:(?<codeFilePath>.*)/;
+const RE_INFO = /(?<codeLang>.*)\s?\:(?<codeFilePath>.*)/;
 
 const embedCode = async (tokens, idx, options, env, self) => {
     const token = tokens[idx];
-    // console.log(`token: `, token);
+    console.log(`token: `, token);
     const reResult = RE_INFO.exec(token.info);
-    // console.log(`reResult: `, reResult);
+    console.log(`reResult: `, reResult);
     if (reResult) {
         const { codeLang, codeFilePath } = reResult.groups;
         // console.log(`codeLang: `, codeLang);
@@ -74,6 +74,7 @@ export const runEmbedCode = async (tokens, options, env, self) => {
     for (let idx = 0; idx < tokens.length; idx++) {
         const token = tokens[idx];
         if (token.type == "fence") {
+            // console.log("ping");
             await embedCode(tokens, idx, options, env, self);
         }
     }
