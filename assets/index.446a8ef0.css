@@ -6294,14 +6294,14 @@ body.q-ios-padding .q-notifications__list--center, body.q-ios-padding .q-notific
   }
 }
 :root {
-  --q-primary: #1976D2;
-  --q-secondary: #26A69A;
-  --q-accent: #9C27B0;
-  --q-positive: #21BA45;
-  --q-negative: #C10015;
-  --q-info: #31CCEC;
-  --q-warning: #F2C037;
-  --q-dark: #1D1D1D;
+  --q-primary: rgb(104, 191, 202);
+  --q-secondary: rgb(245, 157, 33);
+  --q-accent: rgb(234, 96, 49);
+  --q-positive: rgb(176, 171, 3);
+  --q-negative: rgb(234, 96, 49);
+  --q-info: rgb(104, 191, 202);
+  --q-warning: rgb(245, 157, 33);
+  --q-dark: #1d1d1d;
   --q-dark-page: #121212;
 }
 .text-dark {
@@ -10623,4 +10623,14 @@ body.body--dark {
 .q-dark {
   color: #fff;
   background: var(--q-dark);
+}body.body--light {
+  color: hsl(194, 26%, 22%);
+}
+
+body.body--dark {
+  color: hsl(194, 26%, 82%);
+}
+
+body.body--dark .q-dark {
+  color: hsl(194, 26%, 82%);
 }

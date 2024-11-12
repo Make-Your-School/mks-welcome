@@ -1216,7 +1216,7 @@ const Fn = { class: "v-code-block--button-copy" }, In = { class: "v-code-block--
         const a2 = e2.value.code.toString();
         x.value = JSON.stringify(JSON.parse(a2), null, e2.value.indent);
       }
-    })(), e2.value.highlightjs && __vitePreload(() => import("./index.9fa2268e.js"), true ? ["assets/index.9fa2268e.js","assets/use-quasar.203ad343.js","assets/index.cb623f96.js","assets/index.89f95bc7.css"] : void 0).then((a2) => {
+    })(), e2.value.highlightjs && __vitePreload(() => import("./index.9fa2268e.js"), true ? ["assets/index.9fa2268e.js","assets/use-quasar.203ad343.js","assets/index.cb623f96.js","assets/index.446a8ef0.css"] : void 0).then((a2) => {
       L = a2.default, L.registerLanguage("plain", An), M.value = L.highlight(x.value, { language: e2.value.lang }).value;
     }).catch((a2) => {
       console.error("Highlight.js import:", { err: a2 });
