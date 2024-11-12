@@ -11,17 +11,18 @@
         </div>
         <ul class="card-wrapper row items-stretch">
             <li
-                v-for="(fn_item, fn_name) in mks_funktionen_filtered"
+                v-for="(fn_item, fn_name) in mks_tags_filtered"
                 :key="fn_name"
                 class="my-card q-pa-md"
             >
                 <FunctionOverview
                     :fn_item="fn_item"
+                    :mks_parts="mks_parts"
                     @click="fn_item.showDetails = true"
                     class="clickable"
                 />
                 <q-dialog v-model="fn_item.showDetails" full-height full-width>
-                    <FunctionDetails :fn_item="fn_item" />
+                    <FunctionDetails :fn_item="fn_item" :mks_parts="mks_parts" />
                 </q-dialog>
             </li>
         </ul>
@@ -40,12 +41,13 @@ import FunctionDetails from "src/components/FunctionDetails.vue";
 import mksContent from "../../public/mks/";
 // console.log("mksContent", mksContent);
 console.log("mksContent", mksContent);
-const mks_welcome = ref(mksContent["welcome"]);
+const mks_welcome = ref(mksContent.welcome);
 // console.log(`mksContent['welcome']['./readme.md']['content']`, mksContent['welcome']['./readme.md']['content']);
 // console.log(`mksContent.welcome`, mksContent.welcome);
 // console.log(`mksContent.welcome['./readme.md'].content`, mksContent.welcome['./readme.md'].content);
 // console.log(`mksContent.welcome['./readme.md'].path_base`, mksContent.welcome['./readme.md'].path_base);
-const mks_funktionen = ref(mksContent["funktionen"]);
+const mks_tags = ref(mksContent.tags);
+const mks_parts = ref(mksContent.parts);
 
 const check_searchTextInReadme = (readme, item_name) => {
     return (
@@ -66,23 +68,30 @@ const getObjItemsWithSearchTextInReadme = (obj) => {
     return result;
 };
 
-const mks_funktionen_filtered = computed(() => {
-    const result = {};
-    for (const [fn_name, fn_item] of Object.entries(mks_funktionen.value)) {
-        console.log(`fn_name`, fn_name, `fn_item`, fn_item);
-        // only include in result if search text is somewhere in the content..
-        // check bauteile
-        const bauteile_includes = getObjItemsWithSearchTextInReadme(fn_item.bauteile);
-        // console.log("bauteile_includes", bauteile_includes);
-        console.log("Object.keys(bauteile_includes)", Object.keys(bauteile_includes));
+const mks_tags_filtered = computed(() => {
+    // const result = {};
+    // for (const [fn_name, fn_item] of Object.entries(mks_tags.value)) {
+    //     console.log(`fn_name`, fn_name, `fn_item`, fn_item);
+    //     // only include in result if search text is somewhere in the content..
+    //     // check bauteile
+    //     // const bauteile_includes = getObjItemsWithSearchTextInReadme(mks_parts.);
+    //     // // console.log("bauteile_includes", bauteile_includes);
+    //     // console.log("Object.keys(bauteile_includes)", Object.keys(bauteile_includes));
 
-        if (
-            check_searchTextInReadme(fn_item.readme, fn_name) ||
-            Object.keys(bauteile_includes).length > 0
-        ) {
-            result[fn_name] = fn_item;
-        }
-    }
+    //     // if (
+    //     //     check_searchTextInReadme(fn_item.readme, fn_name) ||
+    //     //     Object.keys(bauteile_includes).length > 0
+    //     // ) {
+    //     if (
+    //         check_searchTextInReadme(fn_item.readme, fn_name)
+    //     ) {
+    //         result[fn_name] = fn_item;
+    //     }
+    // }
+    const result = {
+        ...getObjItemsWithSearchTextInReadme(mks_tags.value),
+        ...getObjItemsWithSearchTextInReadme(mks_parts.value),
+    };
     return result;
 });
 
