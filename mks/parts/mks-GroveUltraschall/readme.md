@@ -1,6 +1,6 @@
 ---
 titel: Grove Ultraschall Entfernungsmesser
-tags: entfernung, input
+tags: [input, entfernung, grove]
 id: 17
 ---
 
@@ -17,9 +17,9 @@ id: 17
 
 kurz-Beschreibung
 
-```c++ :./example.cpp
+<!-- more_details -->
 
-```
+mehr details
 
 ## Anschlüsse
 
@@ -39,7 +39,7 @@ kurz-Beschreibung
 
 ## Siehe Auch
 
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
+-   x
 
 ## library
 

@@ -1,5 +1,6 @@
 ---
-tags: input, grove
+title: Grove Taster
+tags: [input, taster_taster_schalter, schalter, taster, grove]
 id: 60
 ---
 
@@ -17,6 +18,10 @@ id: 60
 ein einfacher Taster.
 auf einer Platine mit einem Grove-Buchse verlötete.
 dadurch ist der Anschluss super einfach :-)
+
+<!-- more_details -->
+
+mehr details
 
 ## Anschlüsse
 

@@ -1,7 +1,7 @@
-import { Q as QPage } from "./QPage.5f9f75a9.js";
-import { g as grayMatter, _ as _sfc_main$1 } from "./index.ee3cf4d1.js";
-import { r as ref, R as openBlock, S as createBlock, U as withCtx, V as createBaseVNode, Y as toDisplayString, a9 as unref, ae as createTextVNode, j as createVNode } from "./index.d1ec0ba6.js";
-import "./use-quasar.3a1daed4.js";
+import { Q as QPage } from "./QPage.200a6e61.js";
+import { g as grayMatter, _ as _sfc_main$1 } from "./index.5bb09221.js";
+import { r as ref, R as openBlock, S as createBlock, U as withCtx, W as createBaseVNode, Y as toDisplayString, a9 as unref, ae as createTextVNode, j as createVNode } from "./index.41b9157e.js";
+import "./use-quasar.66f52c3a.js";
 const preProcessingMD = (source, path_base) => {
   console.group("preProcessingMD");
   const processedObj = grayMatter(source, {
@@ -19,7 +19,7 @@ const mksGetContent = () => {
     welcome: {},
     funktionen: {}
   };
-  let temp = { "./readme.md": '---\ntitel: MD Test\ntags: "welcome"\n---\n\n# Test MD features\n\ndemo Text..\n\n:tada:\n\nlink:\n[mks](https://makeyourschool.de/maker-ecke/material/)\n\n```c++ :./nothinghere.cpp\nfails to import.\ncheck that 404  file not found is handled smoothly\n```\n\n```c++ :./example.ino\n//this should be replaced..\n```\n\n![test](./test_image.png)\n\n## heading2\n\n-   list element\n-   list element\n-   list element\n-   list element\n' };
+  let temp = { "./readme.md": "---\ntitel: MD Test\ntags: [test, mock]\n---\n\n# Test MD features\n\ndemo Text..\n\n:tada:\n\nlink:\n[mks](https://makeyourschool.de/maker-ecke/material/)\n\n```c++ :./nothinghere.cpp\nfails to import.\ncheck that 404  file not found is handled smoothly\n```\n\n```c++ :./example.ino\n//this should be replaced..\n```\n\n![test](./test_image.png)\n\n## heading2\n\n-   list element\n-   list element\n-   list element\n-   list element\n" };
   const path_base = "./";
   mksContent2["welcome"].readme = preProcessingMD(temp["./readme.md"], path_base);
   mksContent2["welcome"].path_readme = path_base;

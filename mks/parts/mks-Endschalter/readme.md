@@ -1,11 +1,12 @@
 ---
-tags: motor, input
+title: Endschalter
+tags: [taster_schalter, schalter, taster_taster_schalter, schalter, taster, motor, input]
 id: 25
 ---
 
 # Endschalter
 
-![Bauteil](./bauteil.jpg)
+![Endschalter](./bauteil.jpg)
 
 <!-- TODO: CONTENT change image -->
 <!-- TODO: ARCHITECTURE multiple images? -->
@@ -16,6 +17,8 @@ id: 25
 
 Der Endschalter funktioniert wie ein normaler Schalter und kann als Eingabe für einen Mikrocontroller verwendet werden.
 Der Schalter besitzt einen elastischen Schaltarm, der einen elektrischen Kontakt zwischen den Anschlusspins herstellt, wenn der Arm gedrückt wird.
+
+<!-- more_details -->
 
 Der Endschalter kommt vor allem bei Robotern oder anderen bewegten Maschinen zum Einsatz, um Kollisionen zu erkennen und zu vermeiden.
 So kann dieser zum Beispiel an einem Roboter angebaut werden - wenn der Roboter dann gegen ein Hindernis fährt,

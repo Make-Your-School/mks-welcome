@@ -1,6 +1,6 @@
 ---
 titel: MD Test
-tags: "welcome"
+tags: [test, mock]
 ---
 
 # Test MD features

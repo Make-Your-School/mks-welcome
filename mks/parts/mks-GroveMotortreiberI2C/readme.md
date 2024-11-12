@@ -1,5 +1,6 @@
 ---
-tags: motor, motortreiber, i2c
+title: Grove Motortreiber (I2C)
+tags: [output, aktor, motortreiber, motor, i2c]
 id: 70
 ---
 
@@ -16,6 +17,10 @@ mks Nr 70
 ## Beschreibung
 
 kurz-Beschreibung
+
+<!-- more_details -->
+
+mehr details
 
 ## Anschlüsse
 

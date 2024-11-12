@@ -1,5 +1,6 @@
 ---
-tags: input
+title: Taster
+tags: [input, taster, taster_schalter,]
 id: 59
 ---
 
@@ -15,6 +16,10 @@ id: 59
 ## Beschreibung
 
 ein einfacher Taster
+
+<!-- more_details -->
+
+mehr details
 
 ## Anschlüsse
 

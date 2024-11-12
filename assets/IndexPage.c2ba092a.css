@@ -1,41 +1,41 @@
-.fn-overview[data-v-093ede36] {
+.fn-overview[data-v-110d4e60] {
   width: 100%;
   height: 100%;
   overflow: scroll;
-}.fn-details[data-v-583ce504] {
+}.fn-details[data-v-7090066f] {
   width: 100%;
   height: 100%;
 }
-.fn-details .q-btn[data-v-583ce504] {
+.fn-details .q-btn[data-v-7090066f] {
   z-index: 2000;
 }
-.fn-details .q-card__section[data-v-583ce504] {
+.fn-details .q-card__section[data-v-7090066f] {
   width: 100%;
   height: 100%;
   overflow: scroll;
-}.my-page[data-v-17d4ff8c] {
+}.my-page[data-v-454a43d5] {
   display: flex;
   flex-direction: column;
   min-height: 0;
   height: 100%;
 }
-.card-wrapper[data-v-17d4ff8c] {
+.card-wrapper[data-v-454a43d5] {
   flex-grow: 1;
   overflow: auto;
   min-height: 0;
   list-style: none;
   padding: 0;
 }
-.card-wrapper li[data-v-17d4ff8c] {
+.card-wrapper li[data-v-454a43d5] {
   margin: 0;
 }
-.my-card[data-v-17d4ff8c] {
+.my-card[data-v-454a43d5] {
   width: 100%;
   min-width: 25rem;
   max-width: 32.5vw;
   max-height: 80vh;
 }
-.clickable[data-v-17d4ff8c] {
+.clickable[data-v-454a43d5] {
   cursor: pointer;
 }.my-card img {
   max-width: 100%;

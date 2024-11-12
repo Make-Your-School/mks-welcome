@@ -10125,32 +10125,32 @@ const childrenCommon = [
     title: "md test",
     icon: "brush",
     path: "/",
-    component: () => __vitePreload(() => import("./IndexPage.28b8a4e7.js"), true ? ["assets/IndexPage.28b8a4e7.js","assets/IndexPage.d2809658.css","assets/plugin-vue_export-helper.9dcc62aa.js","assets/QPage.5f9f75a9.js","assets/use-quasar.3a1daed4.js","assets/index.ee3cf4d1.js","assets/index.81c2e2ee.css"] : void 0)
+    component: () => __vitePreload(() => import("./IndexPage.5ab51499.js"), true ? ["assets/IndexPage.5ab51499.js","assets/IndexPage.c2ba092a.css","assets/plugin-vue_export-helper.9c8439fb.js","assets/QPage.200a6e61.js","assets/use-quasar.66f52c3a.js","assets/index.5bb09221.js","assets/index.81c2e2ee.css"] : void 0)
   },
   {
     title: "About",
     icon: "info",
     path: "about",
-    component: () => __vitePreload(() => import("./AboutPage.e7f645eb.js"), true ? ["assets/AboutPage.e7f645eb.js","assets/QPage.5f9f75a9.js"] : void 0)
+    component: () => __vitePreload(() => import("./AboutPage.fca13ec8.js"), true ? ["assets/AboutPage.fca13ec8.js","assets/QPage.200a6e61.js"] : void 0)
   },
   {
     title: "Settings",
     icon: "settings",
     path: "settings",
-    component: () => __vitePreload(() => import("./SettingsPage.1dfaf2b1.js"), true ? ["assets/SettingsPage.1dfaf2b1.js","assets/QPage.5f9f75a9.js","assets/index.ee3cf4d1.js","assets/index.81c2e2ee.css","assets/use-quasar.3a1daed4.js"] : void 0)
+    component: () => __vitePreload(() => import("./SettingsPage.77748626.js"), true ? ["assets/SettingsPage.77748626.js","assets/QPage.200a6e61.js","assets/index.5bb09221.js","assets/index.81c2e2ee.css","assets/use-quasar.66f52c3a.js"] : void 0)
   }
 ];
 const routes = [
   {
     path: "/",
-    component: () => __vitePreload(() => import("./MainLayout.92e26882.js"), true ? ["assets/MainLayout.92e26882.js","assets/MainLayout.5ea167dc.css","assets/plugin-vue_export-helper.9dcc62aa.js","assets/use-quasar.3a1daed4.js"] : void 0),
+    component: () => __vitePreload(() => import("./MainLayout.69630f39.js"), true ? ["assets/MainLayout.69630f39.js","assets/MainLayout.5ea167dc.css","assets/plugin-vue_export-helper.9c8439fb.js","assets/use-quasar.66f52c3a.js"] : void 0),
     children: [
       ...childrenCommon
     ]
   },
   {
     path: "/:catchAll(.*)*",
-    component: () => __vitePreload(() => import("./ErrorNotFound.1c91efac.js"), true ? [] : void 0)
+    component: () => __vitePreload(() => import("./ErrorNotFound.6c6d70f5.js"), true ? [] : void 0)
   }
 ];
 var createRouter = route(function() {
@@ -12004,11 +12004,11 @@ createQuasarApp(createApp, quasarUserOptions).then((app2) => {
     (bootFiles) => bootFiles.map((entry) => entry.default)
   ];
   return Promise[method]([
-    __vitePreload(() => import("./i18n.15dda767.js"), true ? [] : void 0),
-    __vitePreload(() => import("./addressbar-color.cc6fcfc7.js"), true ? [] : void 0)
+    __vitePreload(() => import("./i18n.5e2e37f5.js"), true ? [] : void 0),
+    __vitePreload(() => import("./addressbar-color.d005769c.js"), true ? [] : void 0)
   ]).then((bootFiles) => {
     const boot2 = mapFn(bootFiles).filter((entry) => typeof entry === "function");
     start(app2, boot2);
   });
 });
-export { QBtn as $, AddressbarColor as A, QSpinner as B, hSlot as C, Transition as D, shouldIgnoreKey as E, Fragment as F, createComponent as G, stop as H, vmIsDestroyed as I, getParentProxy as J, Teleport as K, createGlobalNode as L, removeGlobalNode as M, client as N, isKeyCode as O, childHasFocus as P, QIcon as Q, openBlock as R, createBlock as S, Text as T, withCtx as U, createBaseVNode as V, createElementBlock as W, renderList as X, toDisplayString as Y, createDirective as Z, withDirectives as _, getCurrentInstance as a, emptyRenderFn as a0, layoutKey as a1, pageContainerKey as a2, quasarKey as a3, mergeProps as a4, createCommentVNode as a5, mergeDefaults as a6, useSlots as a7, toRefs as a8, unref as a9, reactive as aA, hMergeSlot as aB, childrenCommon as aC, resolveComponent as aD, onBeforeMount as aa, normalizeStyle as ab, renderSlot as ac, normalizeProps as ad, createTextVNode as ae, normalizeClass as af, __vitePreload as ag, watchEffect as ah, History as ai, vmHasRouter as aj, css as ak, getElement as al, listenOpts as am, getEventPath as an, useRouterLinkProps as ao, useRouterLink as ap, hUniqueSlot as aq, Platform as ar, noop$1 as as, leftClick as at, addEvt as au, preventDraggable as av, position as aw, cleanEvt as ax, hDir as ay, provide as az, onUnmounted as b, computed as c, defineComponent as d, effectScope as e, isRef as f, global as g, h, inject as i, createVNode as j, boot as k, isRuntimeSsrPreHydration as l, onBeforeUpdate as m, formKey as n, onMounted as o, onBeforeUnmount as p, debounce as q, ref as r, shallowRef as s, injectProp as t, stopAndPrevent as u, nextTick as v, watch as w, onDeactivated as x, onActivated as y, prevent as z };
+export { withDirectives as $, AddressbarColor as A, QSpinner as B, hSlot as C, Transition as D, shouldIgnoreKey as E, Fragment as F, createComponent as G, stop as H, vmIsDestroyed as I, getParentProxy as J, Teleport as K, createGlobalNode as L, removeGlobalNode as M, client as N, isKeyCode as O, childHasFocus as P, QIcon as Q, openBlock as R, createBlock as S, Text as T, withCtx as U, createElementBlock as V, createBaseVNode as W, renderList as X, toDisplayString as Y, createCommentVNode as Z, createDirective as _, getCurrentInstance as a, QBtn as a0, emptyRenderFn as a1, layoutKey as a2, pageContainerKey as a3, quasarKey as a4, mergeProps as a5, mergeDefaults as a6, useSlots as a7, toRefs as a8, unref as a9, reactive as aA, hMergeSlot as aB, childrenCommon as aC, resolveComponent as aD, onBeforeMount as aa, normalizeStyle as ab, renderSlot as ac, normalizeProps as ad, createTextVNode as ae, normalizeClass as af, __vitePreload as ag, watchEffect as ah, History as ai, vmHasRouter as aj, css as ak, getElement as al, listenOpts as am, getEventPath as an, useRouterLinkProps as ao, useRouterLink as ap, hUniqueSlot as aq, Platform as ar, noop$1 as as, leftClick as at, addEvt as au, preventDraggable as av, position as aw, cleanEvt as ax, hDir as ay, provide as az, onUnmounted as b, computed as c, defineComponent as d, effectScope as e, isRef as f, global as g, h, inject as i, createVNode as j, boot as k, isRuntimeSsrPreHydration as l, onBeforeUpdate as m, formKey as n, onMounted as o, onBeforeUnmount as p, debounce as q, ref as r, shallowRef as s, injectProp as t, stopAndPrevent as u, nextTick as v, watch as w, onDeactivated as x, onActivated as y, prevent as z };

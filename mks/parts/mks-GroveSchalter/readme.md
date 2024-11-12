@@ -1,5 +1,6 @@
 ---
-tags: input
+title: Grove Schalter
+tags: [input, taster_schalter, schalter, grove]
 id: 61
 ---
 
@@ -15,6 +16,10 @@ id: 61
 ## Beschreibung
 
 kurz-Beschreibung
+
+<!-- more_details -->
+
+mehr details
 
 ## Anschlüsse
 

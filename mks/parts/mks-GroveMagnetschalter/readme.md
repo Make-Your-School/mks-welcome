@@ -1,5 +1,6 @@
 ---
-tags: input
+title: Magnetschalter
+tags: [input, taster_schalter, schalter, taster_taster_schalter, schalter, taster, magnet]
 id: 28
 ---
 
@@ -15,6 +16,10 @@ id: 28
 ## Beschreibung
 
 kurz-Beschreibung
+
+<!-- more_details -->
+
+mehr details
 
 ## Anschlüsse
 

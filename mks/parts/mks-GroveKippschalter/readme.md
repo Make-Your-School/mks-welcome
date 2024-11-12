@@ -1,5 +1,6 @@
 ---
-tags: input, lage, orientierung, position
+title: Kippschalter
+tags: [input, taster_schalter, schalter, lage, orientierung, position]
 id: 24
 ---
 
@@ -15,6 +16,10 @@ id: 24
 ## Beschreibung
 
 kurz-Beschreibung
+
+<!-- more_details -->
+
+mehr details
 
 ## Anschlüsse
 
