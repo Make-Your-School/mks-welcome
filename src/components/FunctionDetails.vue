@@ -16,7 +16,10 @@
                     :key="part_name"
                     class="q-ma-md q-pa-md card-bauteil"
                 >
-                    <my-markdown :source="part_item.readme.content" :file-path="part_item.path_base" />
+                    <my-markdown
+                        :source="part_item.readme.content"
+                        :file-path="part_item.path_base"
+                    />
                 </q-card>
             </div>
         </q-card-section>

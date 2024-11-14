@@ -1,6 +1,6 @@
 ---
 titel: MYS Material
-tags: [welcome, ]
+tags: [welcome]
 ---
 
 # MYS Material
@@ -11,5 +11,3 @@ hier findet ihr eine Liste aller MYS Materialien..
 
 TODO: implement deep-linking to directly jump to Funktionen und Bauteilen
 maybe with router-view?!
-
-# Funktionen
