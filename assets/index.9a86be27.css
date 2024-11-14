@@ -1,0 +1,38 @@
+.my-markdown {
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.my-markdown h1 {
+  font-size: 4rem;
+  margin-top: 0;
+  font-weight: bold;
+}
+.my-markdown h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.my-markdown h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.my-markdown h4 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.my-markdown h5 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.my-markdown h6 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.my-markdown p {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.my-markdown img {
+  max-width: min(100%, 15vw);
+  width: auto;
+  height: auto;
+}
