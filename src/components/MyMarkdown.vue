@@ -199,26 +199,39 @@ watchEffect(async () => {
 
 <style lang="sass">
 .my-markdown
+    padding: 1rem
+    border-radius: 0.5rem
     h1
         font-size: 4.0rem
         margin-top: 0
+        font-weight: bold
     h2
         font-size: 3rem
+        font-weight: bold
     h3
         font-size: 2rem
+        font-weight: bold
     h4
         font-size: 1rem
+        font-weight: bold
     h5
         font-size: 1rem
+        font-weight: bold
     h6
         font-size: 1rem
+        font-weight: bold
+    p
+        font-size: 1rem
+        font-weight: bold
     img
-        max-width: 10vw
-.my-card .my-markdown h1:nth-child(1)
-        position: sticky
-        top: 1rem
-        text-shadow: 0 0 2px black, 0 0 5px black, 0 0 10px black, 0 0 10px black, 0 0 10px black, 0 0 10px black, 0 0 10px black, 0 0 10px black
-        background-color: inherit
-.body--light .my-card .my-markdown h1:nth-child(1)
-        text-shadow: 0 0 2px white, 0 0 5px white, 0 0 10px white, 0 0 10px white, 0 0 10px white, 0 0 10px white, 0 0 10px white, 0 0 10px white
+        // max-width:
+        max-width: min(100%,15vw)
+        width: auto
+        height: auto
+
+// .my-card .my-markdown h1:nth-child(1)
+//        position: sticky
+//        top: 1rem
+//        text-shadow: 0 0 2px black, 0 0 5px black, 0 0 10px black, 0 0 10px black, 0 0 10px black, 0 0 10px black, 0 0 10px black, 0 0 10px black
+//.body--light .my-card .my-markdown h1:nth-child(1)
 </style>

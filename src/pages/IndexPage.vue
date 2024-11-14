@@ -116,11 +116,17 @@ const $q = useQuasar();
     padding: 0
     li
         margin: 0
+.q-card
+    background-color: #84cbd4
 .my-card
     width: 100%
     min-width: 25rem
     max-width: 32.5vw
     max-height: 80vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
 .clickable
     cursor: pointer
 </style>
@@ -130,4 +136,14 @@ const $q = useQuasar();
     img
         max-width: 100%
         max-height: 20vh
+        display: block
+        margin: auto
+        background-color: white
+    h1
+        color: white
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100%
+        text-align: center
 </style>
