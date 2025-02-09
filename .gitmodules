@@ -1,24 +1,24 @@
-[submodule "mks/funktionen/Entfernung/bauteile/mks-GroveUltraschall"]
+[submodule "public/mks/mks-GroveUltraschall"]
 	path = public/mks/parts/mks-GroveUltraschall
-	url = https://github.com/s-light/mks-GroveUltraschall.git
-[submodule "mks/funktionen/Motortreiber/bauteile/mks-GroveMotortreiberI2C"]
+	url = https://github.com/Make-Your-School/mks-GroveUltraschall.git
+[submodule "public/mks/mks-GroveMotortreiberI2C"]
 	path = public/mks/parts/mks-GroveMotortreiberI2C
-	url = https://github.com/s-light/mks-GroveMotortreiberI2C.git
-[submodule "mks/funktionen/Schalter/bauteile/mks-GroveMagnetschalter"]
+	url = https://github.com/Make-Your-School/mks-GroveMotortreiberI2C.git
+[submodule "public/mks/mks-GroveMagnetschalter"]
 	path = public/mks/parts/mks-GroveMagnetschalter
-	url = https://github.com/s-light/mks-GroveMagnetschalter.git
-[submodule "mks/funktionen/Schalter/bauteile/mks-GroveKippschalter"]
+	url = https://github.com/Make-Your-School/mks-GroveMagnetschalter.git
+[submodule "public/mks/mks-GroveKippschalter"]
 	path = public/mks/parts/mks-GroveKippschalter
-	url = https://github.com/s-light/mks-GroveKippschalter.git
-[submodule "mks/funktionen/Schalter/bauteile/mks-GroveTaster"]
+	url = https://github.com/Make-Your-School/mks-GroveKippschalter.git
+[submodule "public/mks/mks-GroveTaster"]
 	path = public/mks/parts/mks-GroveTaster
-	url = https://github.com/s-light/mks-GroveTaster.git
-[submodule "mks/funktionen/Schalter/bauteile/mks-GroveSchalter"]
+	url = https://github.com/Make-Your-School/mks-GroveTaster.git
+[submodule "public/mks/mks-GroveSchalter"]
 	path = public/mks/parts/mks-GroveSchalter
-	url = https://github.com/s-light/mks-GroveSchalter.git
-[submodule "mks/funktionen/Schalter/bauteile/mks-Endschalter"]
+	url = https://github.com/Make-Your-School/mks-GroveSchalter.git
+[submodule "public/mks/parts/mks-Endschalter"]
 	path = public/mks/parts/mks-Endschalter
-	url = https://github.com/s-light/mks-Endschalter.git
-[submodule "mks/funktionen/Schalter/bauteile/mks-Taster"]
+	url = https://github.com/Make-Your-School/mks-Endschalter.git
+[submodule "public/mks/mks-Taster"]
 	path = public/mks/parts/mks-Taster
-	url = https://github.com/s-light/mks-Taster.git
+	url = https://github.com/Make-Your-School/mks-Taster.git
