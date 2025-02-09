@@ -1,5 +1,5 @@
-import { u as useQuasar } from "./use-quasar.507a28ce.js";
-import { W as createBaseVNode, d as defineComponent, R as openBlock, V as createElementBlock, a5 as mergeProps, Z as createCommentVNode, a6 as mergeDefaults, a7 as useSlots, i as inject, r as ref, a8 as toRefs, c as computed, a9 as unref, w as watch, aa as onBeforeMount, o as onMounted, ab as normalizeStyle, ac as renderSlot, ad as normalizeProps, F as Fragment, ae as createTextVNode, Y as toDisplayString, af as normalizeClass, S as createBlock, ag as __vitePreload, s as shallowRef, ah as watchEffect, X as renderList, j as createVNode } from "./index.303cff6a.js";
+import { u as useQuasar } from "./use-quasar.9174f756.js";
+import { W as createBaseVNode, d as defineComponent, R as openBlock, V as createElementBlock, a5 as mergeProps, Z as createCommentVNode, a6 as mergeDefaults, a7 as useSlots, i as inject, r as ref, a8 as toRefs, c as computed, a9 as unref, w as watch, aa as onBeforeMount, o as onMounted, ab as normalizeStyle, ac as renderSlot, ad as normalizeProps, F as Fragment, ae as createTextVNode, Y as toDisplayString, af as normalizeClass, S as createBlock, ag as __vitePreload, s as shallowRef, ah as watchEffect, X as renderList, j as createVNode } from "./index.933943d8.js";
 var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
 function commonjsRequire(path) {
   throw new Error('Could not dynamically require "' + path + '". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.');
@@ -1216,11 +1216,11 @@ const Fn = { class: "v-code-block--button-copy" }, In = { class: "v-code-block--
         const a2 = e2.value.code.toString();
         x.value = JSON.stringify(JSON.parse(a2), null, e2.value.indent);
       }
-    })(), e2.value.highlightjs && __vitePreload(() => import("./index.ada05d5f.js"), true ? ["assets/index.ada05d5f.js","assets/use-quasar.507a28ce.js","assets/index.303cff6a.js","assets/index.446a8ef0.css"] : void 0).then((a2) => {
+    })(), e2.value.highlightjs && __vitePreload(() => import("./index.de0b252f.js"), true ? ["assets/index.de0b252f.js","assets/use-quasar.9174f756.js","assets/index.933943d8.js","assets/index.446a8ef0.css"] : void 0).then((a2) => {
       L = a2.default, L.registerLanguage("plain", An), M.value = L.highlight(x.value, { language: e2.value.lang }).value;
     }).catch((a2) => {
       console.error("Highlight.js import:", { err: a2 });
-    }), e2.value.prismjs && __vitePreload(() => import("./prism.d18a8251.js").then(function(n2) {
+    }), e2.value.prismjs && __vitePreload(() => import("./prism.7ff888fa.js").then(function(n2) {
       return n2.p;
     }), true ? [] : void 0).then((a2) => {
       A = a2.default, M.value = A.highlight(x.value, A.languages[e2.value.lang], e2.value.lang);
