@@ -5,7 +5,7 @@ export const childrenCommon = [
         title: "md test",
         icon: "brush",
         path: "/",
-        component: () => import("pages/IndexPage.vue"),
+        component: () => import("pages/MKS_Parts.vue"),
     },
     {
         title: "About",
