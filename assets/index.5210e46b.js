@@ -10122,35 +10122,47 @@ function extractChangingRecords(to, from) {
 }
 const childrenCommon = [
   {
-    title: "md test",
-    icon: "brush",
+    title: "home",
+    icon: "precision_manufacturing",
     path: "/",
-    component: () => __vitePreload(() => import("./MKS_Parts.ca396945.js"), true ? ["assets/MKS_Parts.ca396945.js","assets/MKS_Parts.b27ce08e.css","assets/plugin-vue_export-helper.9db79517.js","assets/QPage.f6457c5c.js","assets/use-quasar.9174f756.js","assets/index.7484078d.js","assets/index.9a86be27.css"] : void 0)
+    component: () => __vitePreload(() => import("./MKS_Parts.c64a204e.js"), true ? ["assets/MKS_Parts.c64a204e.js","assets/MKS_Parts.48c46018.css","assets/use-prevent-scroll.70a740e3.js","assets/selection.1d2d9eb9.js","assets/preprocessMD.9a825059.js","assets/preprocessMD.78e3becb.css","assets/QPage.07e1241f.js","assets/use-quasar.f46cdb9a.js","assets/MyMarkdown.b1be03ae.js","assets/index.8c4641b6.js","assets/plugin-vue_export-helper.21dcd24c.js"] : void 0)
   },
   {
     title: "About",
     icon: "info",
     path: "about",
-    component: () => __vitePreload(() => import("./AboutPage.c62de614.js"), true ? ["assets/AboutPage.c62de614.js","assets/QPage.f6457c5c.js"] : void 0)
+    component: () => __vitePreload(() => import("./AboutPage.2a816ce8.js"), true ? ["assets/AboutPage.2a816ce8.js","assets/QPage.07e1241f.js","assets/MyMarkdown.b1be03ae.js","assets/preprocessMD.9a825059.js","assets/preprocessMD.78e3becb.css","assets/selection.1d2d9eb9.js","assets/use-quasar.f46cdb9a.js","assets/index.8c4641b6.js"] : void 0)
   },
   {
     title: "Settings",
     icon: "settings",
     path: "settings",
-    component: () => __vitePreload(() => import("./SettingsPage.42510146.js"), true ? ["assets/SettingsPage.42510146.js","assets/QPage.f6457c5c.js","assets/index.7484078d.js","assets/index.9a86be27.css","assets/use-quasar.9174f756.js"] : void 0)
+    component: () => __vitePreload(() => import("./SettingsPage.d3fb1673.js"), true ? ["assets/SettingsPage.d3fb1673.js","assets/QPage.07e1241f.js"] : void 0)
+  },
+  {
+    title: "MD-Demo",
+    icon: "brush",
+    path: "md-demo",
+    component: () => __vitePreload(() => import("./MDDemo.2a03d6ee.js"), true ? ["assets/MDDemo.2a03d6ee.js","assets/QPage.07e1241f.js","assets/MyMarkdown.b1be03ae.js","assets/preprocessMD.9a825059.js","assets/preprocessMD.78e3becb.css","assets/selection.1d2d9eb9.js","assets/use-quasar.f46cdb9a.js","assets/index.8c4641b6.js","assets/demo.fff9be3e.js"] : void 0)
+  },
+  {
+    title: "Formatting Experiments",
+    icon: "brush",
+    path: "formatting-experiments",
+    component: () => __vitePreload(() => import("./FormattingExperiments.2300e031.js"), true ? ["assets/FormattingExperiments.2300e031.js","assets/FormattingExperiments.383f650b.css","assets/preprocessMD.9a825059.js","assets/preprocessMD.78e3becb.css","assets/selection.1d2d9eb9.js","assets/QPage.07e1241f.js","assets/demo.fff9be3e.js","assets/plugin-vue_export-helper.21dcd24c.js"] : void 0)
   }
 ];
 const routes = [
   {
     path: "/",
-    component: () => __vitePreload(() => import("./MainLayout.0fd95289.js"), true ? ["assets/MainLayout.0fd95289.js","assets/MainLayout.5ea167dc.css","assets/plugin-vue_export-helper.9db79517.js","assets/use-quasar.9174f756.js"] : void 0),
+    component: () => __vitePreload(() => import("./MainLayout.acecd948.js"), true ? ["assets/MainLayout.acecd948.js","assets/MainLayout.5ea167dc.css","assets/use-prevent-scroll.70a740e3.js","assets/selection.1d2d9eb9.js","assets/use-quasar.f46cdb9a.js","assets/plugin-vue_export-helper.21dcd24c.js"] : void 0),
     children: [
       ...childrenCommon
     ]
   },
   {
     path: "/:catchAll(.*)*",
-    component: () => __vitePreload(() => import("./ErrorNotFound.1b9f3c88.js"), true ? [] : void 0)
+    component: () => __vitePreload(() => import("./ErrorNotFound.4c37ea88.js"), true ? [] : void 0)
   }
 ];
 var createRouter = route(function() {
@@ -11936,7 +11948,7 @@ var Notify = {
     }
   }
 };
-var quasarUserOptions = { config: { "notify": {}, "dark": false }, plugins: { AddressbarColor, AppFullscreen: Plugin$2, LocalStorage: Plugin$1, SessionStorage: Plugin, Notify } };
+var quasarUserOptions = { config: { "notify": {}, "dark": "auto" }, plugins: { AddressbarColor, AppFullscreen: Plugin$2, LocalStorage: Plugin$1, SessionStorage: Plugin, Notify } };
 const publicPath = `/mks-welcome/`;
 async function start({
   app: app2,
@@ -12004,11 +12016,11 @@ createQuasarApp(createApp, quasarUserOptions).then((app2) => {
     (bootFiles) => bootFiles.map((entry) => entry.default)
   ];
   return Promise[method]([
-    __vitePreload(() => import("./i18n.cbf2ab13.js"), true ? [] : void 0),
-    __vitePreload(() => import("./addressbar-color.fb078938.js"), true ? [] : void 0)
+    __vitePreload(() => import("./i18n.ab3cdb9b.js"), true ? [] : void 0),
+    __vitePreload(() => import("./addressbar-color.0dca201d.js"), true ? [] : void 0)
   ]).then((bootFiles) => {
     const boot2 = mapFn(bootFiles).filter((entry) => typeof entry === "function");
     start(app2, boot2);
   });
 });
-export { withDirectives as $, AddressbarColor as A, QSpinner as B, hSlot as C, Transition as D, shouldIgnoreKey as E, Fragment as F, createComponent as G, stop as H, vmIsDestroyed as I, getParentProxy as J, Teleport as K, createGlobalNode as L, removeGlobalNode as M, client as N, isKeyCode as O, childHasFocus as P, QIcon as Q, openBlock as R, createBlock as S, Text as T, withCtx as U, createElementBlock as V, createBaseVNode as W, renderList as X, toDisplayString as Y, createCommentVNode as Z, createDirective as _, getCurrentInstance as a, QBtn as a0, emptyRenderFn as a1, layoutKey as a2, pageContainerKey as a3, quasarKey as a4, mergeProps as a5, mergeDefaults as a6, useSlots as a7, toRefs as a8, unref as a9, reactive as aA, hMergeSlot as aB, childrenCommon as aC, resolveComponent as aD, onBeforeMount as aa, normalizeStyle as ab, renderSlot as ac, normalizeProps as ad, createTextVNode as ae, normalizeClass as af, __vitePreload as ag, watchEffect as ah, History as ai, vmHasRouter as aj, css as ak, getElement as al, listenOpts as am, getEventPath as an, useRouterLinkProps as ao, useRouterLink as ap, hUniqueSlot as aq, Platform as ar, noop$1 as as, leftClick as at, addEvt as au, preventDraggable as av, position as aw, cleanEvt as ax, hDir as ay, provide as az, onUnmounted as b, computed as c, defineComponent as d, effectScope as e, isRef as f, global as g, h, inject as i, createVNode as j, boot as k, isRuntimeSsrPreHydration as l, onBeforeUpdate as m, formKey as n, onMounted as o, onBeforeUnmount as p, debounce as q, ref as r, shallowRef as s, injectProp as t, stopAndPrevent as u, nextTick as v, watch as w, onDeactivated as x, onActivated as y, prevent as z };
+export { quasarKey as $, AddressbarColor as A, QSpinner as B, hSlot as C, Transition as D, shouldIgnoreKey as E, Fragment as F, createComponent as G, stop as H, client as I, isKeyCode as J, childHasFocus as K, openBlock as L, createBlock as M, withCtx as N, createElementBlock as O, createBaseVNode as P, QIcon as Q, renderList as R, toDisplayString as S, Text as T, createCommentVNode as U, createDirective as V, withDirectives as W, QBtn as X, emptyRenderFn as Y, layoutKey as Z, pageContainerKey as _, getCurrentInstance as a, watchEffect as a0, unref as a1, createTextVNode as a2, vmIsDestroyed as a3, getParentProxy as a4, Teleport as a5, createGlobalNode as a6, removeGlobalNode as a7, addEvt as a8, cleanEvt as a9, reactive as aA, hMergeSlot as aB, childrenCommon as aC, resolveComponent as aD, listenOpts as aa, mergeProps as ab, mergeDefaults as ac, useSlots as ad, toRefs as ae, onBeforeMount as af, normalizeStyle as ag, renderSlot as ah, normalizeProps as ai, normalizeClass as aj, __vitePreload as ak, History as al, getEventPath as am, vmHasRouter as an, css as ao, getElement as ap, Platform as aq, useRouterLinkProps as ar, useRouterLink as as, hUniqueSlot as at, noop$1 as au, leftClick as av, preventDraggable as aw, position as ax, hDir as ay, provide as az, onUnmounted as b, computed as c, defineComponent as d, effectScope as e, isRef as f, global as g, h, inject as i, createVNode as j, boot as k, isRuntimeSsrPreHydration as l, onBeforeUpdate as m, formKey as n, onMounted as o, onBeforeUnmount as p, debounce as q, ref as r, shallowRef as s, injectProp as t, stopAndPrevent as u, nextTick as v, watch as w, onDeactivated as x, onActivated as y, prevent as z };

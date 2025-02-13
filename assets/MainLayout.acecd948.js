@@ -1,6 +1,8 @@
-import { G as createComponent, c as computed, h, C as hSlot, ao as useRouterLinkProps, ap as useRouterLink, r as ref, O as isKeyCode, u as stopAndPrevent, aq as hUniqueSlot, a as getCurrentInstance, ar as Platform, _ as createDirective, N as client, as as noop, at as leftClick, au as addEvt, av as preventDraggable, z as prevent, H as stop, aw as position, ax as cleanEvt, i as inject, a1 as emptyRenderFn, a2 as layoutKey, w as watch, o as onMounted, v as nextTick, p as onBeforeUnmount, $ as withDirectives, ay as hDir, az as provide, a3 as pageContainerKey, am as listenOpts, l as isRuntimeSsrPreHydration, aA as reactive, b as onUnmounted, aB as hMergeSlot, aC as childrenCommon, R as openBlock, V as createElementBlock, X as renderList, S as createBlock, U as withCtx, j as createVNode, Q as QIcon, ae as createTextVNode, Y as toDisplayString, F as Fragment, aD as resolveComponent, a0 as QBtn, a9 as unref, W as createBaseVNode } from "./index.933943d8.js";
-import { a as useDarkProps, u as useDark, b as useModelToggleProps, c as useModelToggleEmits, d as useTimeout, e as useModelToggle, f as useHistory, g as usePreventScroll, s as scrollTargetProp, h as getScrollTarget, i as getVerticalScrollPosition, j as getHorizontalScrollPosition, k as getScrollbarWidth, _ as _export_sfc } from "./plugin-vue_export-helper.9db79517.js";
-import { u as useQuasar } from "./use-quasar.9174f756.js";
+import { G as createComponent, c as computed, h, C as hSlot, ar as useRouterLinkProps, as as useRouterLink, r as ref, J as isKeyCode, u as stopAndPrevent, at as hUniqueSlot, a as getCurrentInstance, V as createDirective, I as client, au as noop, av as leftClick, a8 as addEvt, aw as preventDraggable, z as prevent, H as stop, ax as position, a9 as cleanEvt, i as inject, Y as emptyRenderFn, Z as layoutKey, w as watch, o as onMounted, v as nextTick, p as onBeforeUnmount, W as withDirectives, ay as hDir, az as provide, _ as pageContainerKey, aa as listenOpts, l as isRuntimeSsrPreHydration, aA as reactive, b as onUnmounted, aB as hMergeSlot, aC as childrenCommon, L as openBlock, O as createElementBlock, R as renderList, M as createBlock, N as withCtx, j as createVNode, Q as QIcon, a2 as createTextVNode, S as toDisplayString, F as Fragment, aD as resolveComponent, X as QBtn, a1 as unref, P as createBaseVNode } from "./index.5210e46b.js";
+import { a as useDarkProps, u as useDark, b as useHistory, c as usePreventScroll } from "./use-prevent-scroll.70a740e3.js";
+import { d as clearSelection, u as useModelToggleProps, a as useModelToggleEmits, b as useTimeout, c as useModelToggle, s as scrollTargetProp, e as getScrollTarget, h as getVerticalScrollPosition, f as getHorizontalScrollPosition, g as getScrollbarWidth } from "./selection.1d2d9eb9.js";
+import { u as useQuasar } from "./use-quasar.f46cdb9a.js";
+import { _ as _export_sfc } from "./plugin-vue_export-helper.21dcd24c.js";
 var QItemSection = createComponent({
   name: "QItemSection",
   props: {
@@ -205,19 +207,6 @@ function getModifierDirections(mod) {
 const avoidNodeNamesList = ["INPUT", "TEXTAREA"];
 function shouldStart(evt, ctx) {
   return ctx.event === void 0 && evt.target !== void 0 && evt.target.draggable !== true && typeof ctx.handler === "function" && avoidNodeNamesList.includes(evt.target.nodeName.toUpperCase()) === false && (evt.qClonedBy === void 0 || evt.qClonedBy.indexOf(ctx.uid) === -1);
-}
-function clearSelection() {
-  if (window.getSelection !== void 0) {
-    const selection = window.getSelection();
-    if (selection.empty !== void 0) {
-      selection.empty();
-    } else if (selection.removeAllRanges !== void 0) {
-      selection.removeAllRanges();
-      Platform.is.mobile !== true && selection.addRange(document.createRange());
-    }
-  } else if (document.selection !== void 0) {
-    document.selection.empty();
-  }
 }
 function getChanges(evt, ctx, isFinal) {
   const pos = position(evt);
@@ -1505,7 +1494,7 @@ const _sfc_main = Object.assign({
     function toggleLeftDrawer() {
       leftDrawerOpen.value = !leftDrawerOpen.value;
     }
-    const appinfo = { "name": "mks-welcome", "version": "0.0.1", "productName": "MYS MKS", "description": "evolution of the material-website" };
+    const appinfo = { "name": "mks-welcome", "version": "0.1.1", "productName": "MYS MKS", "description": "evolution of the material-website", "projectUrl": "https://github.com/Make-Your-School/mks-welcome/", "previewUrl": "https://make-your-school.github.io/mks-welcome/" };
     const $q = useQuasar();
     return (_ctx, _cache) => {
       const _component_router_view = resolveComponent("router-view");

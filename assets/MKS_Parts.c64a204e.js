@@ -1,8 +1,12 @@
-import { l as isRuntimeSsrPreHydration, r as ref, o as onMounted, w as watch, c as computed, m as onBeforeUpdate, a as getCurrentInstance, i as inject, n as formKey, p as onBeforeUnmount, q as debounce, t as injectProp, u as stopAndPrevent, v as nextTick, x as onDeactivated, y as onActivated, h, z as prevent, Q as QIcon, B as QSpinner, C as hSlot, D as Transition, E as shouldIgnoreKey, G as createComponent, H as stop, I as vmIsDestroyed, J as getParentProxy, b as onUnmounted, K as Teleport, L as createGlobalNode, M as removeGlobalNode, N as client, O as isKeyCode, P as childHasFocus, R as openBlock, S as createBlock, U as withCtx, j as createVNode, V as createElementBlock, W as createBaseVNode, F as Fragment, X as renderList, Y as toDisplayString, Z as createCommentVNode, _ as createDirective, $ as withDirectives, a0 as QBtn } from "./index.933943d8.js";
-import { u as useDark, a as useDarkProps, b as useModelToggleProps, c as useModelToggleEmits, d as useTimeout, e as useModelToggle, f as useHistory, g as usePreventScroll, _ as _export_sfc } from "./plugin-vue_export-helper.9db79517.js";
-import { Q as QPage } from "./QPage.f6457c5c.js";
-import { u as useQuasar } from "./use-quasar.9174f756.js";
-import { _ as _sfc_main$3, g as grayMatter } from "./index.7484078d.js";
+import { l as isRuntimeSsrPreHydration, r as ref, o as onMounted, w as watch, c as computed, m as onBeforeUpdate, a as getCurrentInstance, i as inject, n as formKey, p as onBeforeUnmount, q as debounce, t as injectProp, u as stopAndPrevent, v as nextTick, x as onDeactivated, y as onActivated, h, z as prevent, Q as QIcon, B as QSpinner, C as hSlot, D as Transition, E as shouldIgnoreKey, G as createComponent, H as stop, I as client, J as isKeyCode, K as childHasFocus, L as openBlock, M as createBlock, N as withCtx, j as createVNode, O as createElementBlock, P as createBaseVNode, F as Fragment, R as renderList, S as toDisplayString, U as createCommentVNode, V as createDirective, W as withDirectives, X as QBtn } from "./index.5210e46b.js";
+import { u as useDark, a as useDarkProps, b as useHistory, c as usePreventScroll } from "./use-prevent-scroll.70a740e3.js";
+import { a as addFocusFn, r as removeFocusFn, u as useTransitionProps, b as useTick, c as useTransition, d as usePortal, g as getPortalProxy, e as closePortals, p as preProcessingMD } from "./preprocessMD.9a825059.js";
+import { u as useModelToggleProps, a as useModelToggleEmits, b as useTimeout, c as useModelToggle } from "./selection.1d2d9eb9.js";
+import { Q as QPage } from "./QPage.07e1241f.js";
+import { u as useQuasar } from "./use-quasar.f46cdb9a.js";
+import { _ as _sfc_main$3 } from "./MyMarkdown.b1be03ae.js";
+import { _ as _export_sfc } from "./plugin-vue_export-helper.21dcd24c.js";
+import "./index.8c4641b6.js";
 let buf, bufIdx = 0;
 const hexBytes = new Array(256);
 for (let i = 0; i < 256; i++) {
@@ -270,32 +274,6 @@ function useValidate(focused, innerLoading) {
     validate,
     resetValidation
   };
-}
-let queue = [];
-let waitFlags = [];
-function clearFlag(flag) {
-  waitFlags = waitFlags.filter((entry) => entry !== flag);
-}
-function addFocusWaitFlag(flag) {
-  clearFlag(flag);
-  waitFlags.push(flag);
-}
-function removeFocusWaitFlag(flag) {
-  clearFlag(flag);
-  if (waitFlags.length === 0 && queue.length !== 0) {
-    queue[queue.length - 1]();
-    queue = [];
-  }
-}
-function addFocusFn(fn) {
-  if (waitFlags.length === 0) {
-    fn();
-  } else {
-    queue.push(fn);
-  }
-}
-function removeFocusFn(fn) {
-  queue = queue.filter((entry) => entry !== fn);
 }
 function fieldValueIsFilled(val) {
   return val !== void 0 && val !== null && ("" + val).length !== 0;
@@ -1419,168 +1397,6 @@ var QInput = createComponent({
     return renderFn;
   }
 });
-function useTick() {
-  let tickFn;
-  const vm = getCurrentInstance();
-  function removeTick() {
-    tickFn = void 0;
-  }
-  onDeactivated(removeTick);
-  onBeforeUnmount(removeTick);
-  return {
-    removeTick,
-    registerTick(fn) {
-      tickFn = fn;
-      nextTick(() => {
-        if (tickFn === fn) {
-          vmIsDestroyed(vm) === false && tickFn();
-          tickFn = void 0;
-        }
-      });
-    }
-  };
-}
-const useTransitionProps = {
-  transitionShow: {
-    type: String,
-    default: "fade"
-  },
-  transitionHide: {
-    type: String,
-    default: "fade"
-  },
-  transitionDuration: {
-    type: [String, Number],
-    default: 300
-  }
-};
-function useTransition(props, defaultShowFn = () => {
-}, defaultHideFn = () => {
-}) {
-  return {
-    transitionProps: computed(() => {
-      const show = `q-transition--${props.transitionShow || defaultShowFn()}`;
-      const hide = `q-transition--${props.transitionHide || defaultHideFn()}`;
-      return {
-        appear: true,
-        enterFromClass: `${show}-enter-from`,
-        enterActiveClass: `${show}-enter-active`,
-        enterToClass: `${show}-enter-to`,
-        leaveFromClass: `${hide}-leave-from`,
-        leaveActiveClass: `${hide}-leave-active`,
-        leaveToClass: `${hide}-leave-to`
-      };
-    }),
-    transitionStyle: computed(() => `--q-transition-duration: ${props.transitionDuration}ms`)
-  };
-}
-const portalProxyList = [];
-function getPortalProxy(el) {
-  return portalProxyList.find(
-    (proxy) => proxy.contentEl !== null && proxy.contentEl.contains(el)
-  );
-}
-function closePortalMenus(proxy, evt) {
-  do {
-    if (proxy.$options.name === "QMenu") {
-      proxy.hide(evt);
-      if (proxy.$props.separateClosePopup === true) {
-        return getParentProxy(proxy);
-      }
-    } else if (proxy.__qPortal === true) {
-      const parent = getParentProxy(proxy);
-      if (parent !== void 0 && parent.$options.name === "QPopupProxy") {
-        proxy.hide(evt);
-        return parent;
-      } else {
-        return proxy;
-      }
-    }
-    proxy = getParentProxy(proxy);
-  } while (proxy !== void 0 && proxy !== null);
-}
-function closePortals(proxy, evt, depth) {
-  while (depth !== 0 && proxy !== void 0 && proxy !== null) {
-    if (proxy.__qPortal === true) {
-      depth--;
-      if (proxy.$options.name === "QMenu") {
-        proxy = closePortalMenus(proxy, evt);
-        continue;
-      }
-      proxy.hide(evt);
-    }
-    proxy = getParentProxy(proxy);
-  }
-}
-const QPortal = createComponent({
-  name: "QPortal",
-  setup(_, { slots }) {
-    return () => slots.default();
-  }
-});
-function isOnGlobalDialog(vm) {
-  vm = vm.parent;
-  while (vm !== void 0 && vm !== null) {
-    if (vm.type.name === "QGlobalDialog") {
-      return true;
-    }
-    if (vm.type.name === "QDialog" || vm.type.name === "QMenu") {
-      return false;
-    }
-    vm = vm.parent;
-  }
-  return false;
-}
-function usePortal(vm, innerRef, renderPortalContent, type) {
-  const portalIsActive = ref(false);
-  const portalIsAccessible = ref(false);
-  let portalEl = null;
-  const focusObj = {};
-  const onGlobalDialog = type === "dialog" && isOnGlobalDialog(vm);
-  function showPortal(isReady) {
-    if (isReady === true) {
-      removeFocusWaitFlag(focusObj);
-      portalIsAccessible.value = true;
-      return;
-    }
-    portalIsAccessible.value = false;
-    if (portalIsActive.value === false) {
-      if (onGlobalDialog === false && portalEl === null) {
-        portalEl = createGlobalNode(false, type);
-      }
-      portalIsActive.value = true;
-      portalProxyList.push(vm.proxy);
-      addFocusWaitFlag(focusObj);
-    }
-  }
-  function hidePortal(isReady) {
-    portalIsAccessible.value = false;
-    if (isReady !== true)
-      return;
-    removeFocusWaitFlag(focusObj);
-    portalIsActive.value = false;
-    const index = portalProxyList.indexOf(vm.proxy);
-    if (index !== -1) {
-      portalProxyList.splice(index, 1);
-    }
-    if (portalEl !== null) {
-      removeGlobalNode(portalEl);
-      portalEl = null;
-    }
-  }
-  onUnmounted(() => {
-    hidePortal(true);
-  });
-  vm.proxy.__qPortal = true;
-  injectProp(vm.proxy, "contentEl", () => innerRef.value);
-  return {
-    showPortal,
-    hidePortal,
-    portalIsActive,
-    portalIsAccessible,
-    renderPortal: () => onGlobalDialog === true ? renderPortalContent() : portalIsActive.value === true ? [h(Teleport, { to: portalEl }, h(QPortal, renderPortalContent))] : void 0
-  };
-}
 const handlers$1 = [];
 let escDown;
 function onKeydown(evt) {
@@ -2106,13 +1922,6 @@ const _sfc_main$1 = {
   }
 };
 var PartDetails = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-7d35a3b4"]]);
-const preProcessingMD = (source, path_base) => {
-  const processedObj = grayMatter(source, {
-    eval: false,
-    excerpt_separator: "<!-- more_details -->"
-  });
-  return processedObj;
-};
 const mksAddPartsToTags = (mksContent2) => {
   console.groupCollapsed("mksAddPartsToTags");
   const mksTags = mksContent2.tags;
@@ -2170,9 +1979,9 @@ const mksGetContent = () => {
     tags: {},
     parts: {}
   };
+  const path_base = "../../public/mks/";
   console.log("load welcome readme");
   let temp = { "../../public/mks/readme.md": "---\ntitel: MYS Material\ntags: [welcome, ]\n---\n\n# MYS Material\n\nhier findet ihr eine Liste aller MYS Materialien..\n:tada:\n[mks](https://makeyourschool.de/maker-ecke/material/)\n\nTODO: implement deep-linking to directly jump to Funktionen und Bauteilen\nmaybe with router-view?!\n\n# Funktionen\n" };
-  const path_base = "../../public/mks/";
   mksContent2.welcome.readme = preProcessingMD(temp["../../public/mks/readme.md"]);
   mksContent2.welcome.path_base = path_base;
   console.log("welcome done.");
@@ -2192,7 +2001,7 @@ const _sfc_main = {
   setup(__props) {
     console.log("mksContent", mksContent);
     const mks_welcome = ref(mksContent.welcome);
-    const mks_tags = ref(mksContent.tags);
+    ref(mksContent.tags);
     const mks_parts = ref(mksContent.parts);
     const check_searchTextInReadme = (readme, item_name) => {
       var _a, _b;
@@ -2209,7 +2018,6 @@ const _sfc_main = {
     };
     const mks_items_filtered = computed(() => {
       const result = {
-        ...getObjItemsWithSearchTextInReadme(mks_tags.value),
         ...getObjItemsWithSearchTextInReadme(mks_parts.value)
       };
       return result;
@@ -2267,5 +2075,5 @@ const _sfc_main = {
     };
   }
 };
-var MKS_Parts = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-3d5675b3"]]);
+var MKS_Parts = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-6ef7c3a7"]]);
 export { MKS_Parts as default };

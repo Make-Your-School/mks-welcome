@@ -6294,15 +6294,15 @@ body.q-ios-padding .q-notifications__list--center, body.q-ios-padding .q-notific
   }
 }
 :root {
-  --q-primary: rgb(104, 191, 202);
-  --q-secondary: rgb(245, 157, 33);
-  --q-accent: rgb(234, 96, 49);
-  --q-positive: rgb(176, 171, 3);
-  --q-negative: rgb(234, 96, 49);
-  --q-info: rgb(104, 191, 202);
-  --q-warning: rgb(245, 157, 33);
-  --q-dark: #1d1d1d;
-  --q-dark-page: #121212;
+  --q-primary: hsl(187, 48%, 60%);
+  --q-secondary: hsl(35, 91%, 55%);
+  --q-accent: hsl(15, 81%, 55%);
+  --q-positive: hsl(58, 97%, 35%);
+  --q-negative: hsl(15, 81%, 55%);
+  --q-info: hsl(187, 48%, 60%);
+  --q-warning: hsl(35, 91%, 55%);
+  --q-dark: hsl(0, 0%, 11%);
+  --q-dark-page: hsl(0, 0%, 7%);
 }
 .text-dark {
   color: var(--q-dark) !important;
