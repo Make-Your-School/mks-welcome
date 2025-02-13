@@ -1,6 +1,6 @@
 <template>
-    <q-page class="flex column" style="align-items: center">
-        <section>
+    <q-page class="flex column" style="align-items: center;">
+        <section style="overflow: scroll;">
             Markdown Test Page
             <my-markdown :source="demo_content.readme.content" :file-path="demo_content.path_base" />
         </section>

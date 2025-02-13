@@ -4,30 +4,8 @@
     <div class="my-markdown-wrapper">
         <div v-for="(item, index) in content" :key="index">
             <div v-if="item.type == 'html'" v-html="item.content" class="my-markdown"></div>
-            <div v-if="item.type == 'code'">
-                <span>{{ item.include_path }}</span>
-                <pre>{{ item.content }}</pre>
-                <VCodeBlock
-                    :code="item.content"
-                    highlightjs
-                    :label="item.codeFilePath"
-                    :lang="item.codeLanguage"
-                    :theme="theme"
-                ></VCodeBlock>
-            </div>
-            <div v-if="item.type == 'abbr'">
-                <!-- https://quasar.dev/vue-components/tooltip#qtooltip-api -->
-                <span>
-                    {{ item.content }}
-                    <q-tooltip
-                        anchor="top middle"
-                        self="bottom middle"
-                        class="bg-amber text-black shadow-4"
-                    >
-                            {{ item.abbr }}
-                    </q-tooltip>
-                </span>
-            </div>
+            <MDCode v-if="item.type == 'code'" :item="item"></MDCode>
+            <MDAbbr v-if="item.type == 'abbr'" :item="item"></MDAbbr>
         </div>
     </div>
 </template>
@@ -36,8 +14,8 @@
 import { computed, h, shallowRef, ref, watch, watchEffect } from "vue";
 import { useQuasar } from "quasar";
 
-import VCodeBlock from "@wdns/vue-code-block";
-
+import MDCode from "src/components/MDCode.vue";
+import MDAbbr from "src/components/MDAbbr.vue";
 // import MyHtml from "./MyHtml.vue";
 
 // import VueMarkdown from "vue-markdown-render";
@@ -67,6 +45,7 @@ import cpp from 'highlight.js/lib/languages/cpp';
 // Then register the languages you need
 hljs.registerLanguage('cpp', cpp);
 hljs.registerLanguage('c++', cpp);
+
 
 const props = defineProps({
     source: String,
@@ -142,14 +121,14 @@ const addHTMLChunk = (tokens, token_start, token_end, env) => {
         content: "",
     };
     chunk.content = md.value.renderer.render(
-        tokens.splice(token_start, token_end),
+        tokens.slice(token_start, token_end),
         md.value.options,
         env
     );
     content.value.push(chunk);
 };
 const addCodeChunk = (token, env) => {
-    console.log("addCodeChunk token.content", token.content);
+    // console.log("addCodeChunk token.content", token.content);
     let chunk = {
         type: "code",
         content: token.content,
@@ -159,22 +138,15 @@ const addCodeChunk = (token, env) => {
     };
     content.value.push(chunk);
 };
-
-const theme = ref("base16/solarized-dark");
-const $q = useQuasar();
-watch(
-    () => $q.dark.isActive,
-    (val) => {
-        console.log(val ? "On dark mode" : "On light mode");
-        if (val) {
-            // dark
-            theme.value = "base16/solarized-dark";
-        } else {
-            // light
-            theme.value = "base16/solarized-light";
-        }
-    }
-);
+const addAbbrChunk = (token, env) => {
+    // console.log("addAbbrChunk token.content", token.content);
+    let chunk = {
+        type: "abbr",
+        content: token.content,
+        abbr: token.abbr,
+    };
+    content.value.push(chunk);
+};
 
 watchEffect(async () => {
     // https://github.com/markdown-it/markdown-it/issues/256#issuecomment-224700130
@@ -191,16 +163,25 @@ watchEffect(async () => {
     let chunk_start = 0;
     for (let idx = 0; idx < tokens.length; idx++) {
         const token = tokens[idx];
+        console.log(`tokens[${String(idx).padStart(3," ")}]`, token);
         // we want to extract all code blocks..
         if (token.type == "fence") {
             addHTMLChunk(tokens, chunk_start, idx - 1, env);
             addCodeChunk(token, env);
             chunk_start = idx + 1;
         }
+        if (token.type == "abbr") {
+            addHTMLChunk(tokens, chunk_start, idx - 1, env);
+            addAbbrChunk(token, env);
+            chunk_start = idx + 1;
+        }
     }
+    console.log(`chunk_start`, chunk_start);
     // add rest
     addHTMLChunk(tokens, chunk_start, tokens.length - 1, env);
 
+    console.log("tokens", tokens);
+    // console.log("content", content);
     // do final rendering
     // return md.value.render(props.source, env);
     // const htmlComponent = new MyHtml({

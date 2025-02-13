@@ -15,8 +15,8 @@
         </section>
         <section>
             <h3>tooltips / abbr</h3>
-            Dieses Bauteil nutzt die
             <!-- https://quasar.dev/vue-components/tooltip#qtooltip-api -->
+            Dieses Bauteil nutzt die
             <span>
                 I2C
                 <q-tooltip
@@ -39,11 +39,6 @@
 }
 </style>
 
-<style>
-#q-portal--tooltip-4 {
-    max-width: 50px;
-}
-</style>
 
 <script setup>
 import { ref, computed } from "vue";
