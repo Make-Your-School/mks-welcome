@@ -1,7 +1,65 @@
-import { M as MarkdownIt, f as b, R as Rn, Q as QTooltip } from "./preprocessMD.9a825059.js";
-import { u as useQuasar } from "./use-quasar.f46cdb9a.js";
+import { u as useQuasar } from "./use-quasar.c276c422.js";
+import { R as Rn, Q as QTooltip, M as MarkdownIt, f as b } from "./preprocessMD.c807aab7.js";
+import { r as ref, w as watch, L as openBlock, O as createElementBlock, P as createBaseVNode, S as toDisplayString, j as createVNode, a0 as unref, a1 as createTextVNode, N as withCtx, s as shallowRef, a2 as watchEffect, F as Fragment, R as renderList, U as createCommentVNode, M as createBlock } from "./index.bd970e15.js";
 import { H as HighlightJS } from "./index.8c4641b6.js";
-import { s as shallowRef, r as ref, w as watch, a0 as watchEffect, L as openBlock, O as createElementBlock, F as Fragment, R as renderList, U as createCommentVNode, P as createBaseVNode, S as toDisplayString, j as createVNode, a1 as unref, a2 as createTextVNode, N as withCtx } from "./index.5210e46b.js";
+const _hoisted_1$2 = { class: "MDCode" };
+const _sfc_main$2 = {
+  __name: "MDCode",
+  props: {
+    item: Object
+  },
+  setup(__props) {
+    const theme = ref("base16/solarized-dark");
+    const $q = useQuasar();
+    watch(
+      () => $q.dark.isActive,
+      (val) => {
+        console.log(val ? "On dark mode" : "On light mode");
+        if (val) {
+          theme.value = "base16/solarized-dark";
+        } else {
+          theme.value = "base16/solarized-light";
+        }
+      }
+    );
+    return (_ctx, _cache) => {
+      return openBlock(), createElementBlock("div", _hoisted_1$2, [
+        createBaseVNode("span", null, toDisplayString(__props.item.include_path), 1),
+        createVNode(unref(Rn), {
+          code: __props.item.content,
+          highlightjs: "",
+          label: __props.item.codeFilePath,
+          lang: __props.item.codeLanguage,
+          theme: theme.value
+        }, null, 8, ["code", "label", "lang", "theme"])
+      ]);
+    };
+  }
+};
+const _hoisted_1$1 = { class: "MDAbbr" };
+const _sfc_main$1 = {
+  __name: "MDAbbr",
+  props: {
+    item: Object
+  },
+  setup(__props) {
+    return (_ctx, _cache) => {
+      return openBlock(), createElementBlock("span", _hoisted_1$1, [
+        createTextVNode(toDisplayString(__props.item.content) + " ", 1),
+        createVNode(QTooltip, {
+          anchor: "top middle",
+          self: "bottom middle",
+          class: "bg-amber text-black shadow-4"
+        }, {
+          default: withCtx(() => [
+            createTextVNode(toDisplayString(__props.item.abbr), 1)
+          ]),
+          _: 1
+        })
+      ]);
+    };
+  }
+};
 function emoji_html(tokens, idx) {
   return tokens[idx].content;
 }
@@ -2681,8 +2739,6 @@ function cpp(hljs) {
 }
 const _hoisted_1 = { class: "my-markdown-wrapper" };
 const _hoisted_2 = ["innerHTML"];
-const _hoisted_3 = { key: 1 };
-const _hoisted_4 = { key: 2 };
 const _sfc_main = {
   __name: "MyMarkdown",
   props: {
@@ -2719,14 +2775,13 @@ const _sfc_main = {
         content: ""
       };
       chunk.content = md.value.renderer.render(
-        tokens.splice(token_start, token_end),
+        tokens.slice(token_start, token_end),
         md.value.options,
         env
       );
       content.value.push(chunk);
     };
     const addCodeChunk = (token, env) => {
-      console.log("addCodeChunk token.content", token.content);
       let chunk = {
         type: "code",
         content: token.content,
@@ -2736,19 +2791,14 @@ const _sfc_main = {
       };
       content.value.push(chunk);
     };
-    const theme = ref("base16/solarized-dark");
-    const $q = useQuasar();
-    watch(
-      () => $q.dark.isActive,
-      (val) => {
-        console.log(val ? "On dark mode" : "On light mode");
-        if (val) {
-          theme.value = "base16/solarized-dark";
-        } else {
-          theme.value = "base16/solarized-light";
-        }
-      }
-    );
+    const addAbbrChunk = (token, env) => {
+      let chunk = {
+        type: "abbr",
+        content: token.content,
+        abbr: token.abbr
+      };
+      content.value.push(chunk);
+    };
     watchEffect(async () => {
       const env = {
         filePath: props.filePath
@@ -2758,13 +2808,21 @@ const _sfc_main = {
       let chunk_start = 0;
       for (let idx = 0; idx < tokens.length; idx++) {
         const token = tokens[idx];
+        console.log(`tokens[${String(idx).padStart(3, " ")}]`, token);
         if (token.type == "fence") {
           addHTMLChunk(tokens, chunk_start, idx - 1, env);
           addCodeChunk(token);
           chunk_start = idx + 1;
         }
+        if (token.type == "abbr") {
+          addHTMLChunk(tokens, chunk_start, idx - 1, env);
+          addAbbrChunk(token);
+          chunk_start = idx + 1;
+        }
       }
+      console.log(`chunk_start`, chunk_start);
       addHTMLChunk(tokens, chunk_start, tokens.length - 1, env);
+      console.log("tokens", tokens);
     });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1, [
@@ -2775,32 +2833,14 @@ const _sfc_main = {
               innerHTML: item.content,
               class: "my-markdown"
             }, null, 8, _hoisted_2)) : createCommentVNode("", true),
-            item.type == "code" ? (openBlock(), createElementBlock("div", _hoisted_3, [
-              createBaseVNode("span", null, toDisplayString(item.include_path), 1),
-              createBaseVNode("pre", null, toDisplayString(item.content), 1),
-              createVNode(unref(Rn), {
-                code: item.content,
-                highlightjs: "",
-                label: item.codeFilePath,
-                lang: item.codeLanguage,
-                theme: theme.value
-              }, null, 8, ["code", "label", "lang", "theme"])
-            ])) : createCommentVNode("", true),
-            item.type == "abbr" ? (openBlock(), createElementBlock("div", _hoisted_4, [
-              createBaseVNode("span", null, [
-                createTextVNode(toDisplayString(item.content) + " ", 1),
-                createVNode(QTooltip, {
-                  anchor: "top middle",
-                  self: "bottom middle",
-                  class: "bg-amber text-black shadow-4"
-                }, {
-                  default: withCtx(() => [
-                    createTextVNode(toDisplayString(item.abbr), 1)
-                  ]),
-                  _: 2
-                }, 1024)
-              ])
-            ])) : createCommentVNode("", true)
+            item.type == "code" ? (openBlock(), createBlock(_sfc_main$2, {
+              key: 1,
+              item
+            }, null, 8, ["item"])) : createCommentVNode("", true),
+            item.type == "abbr" ? (openBlock(), createBlock(_sfc_main$1, {
+              key: 2,
+              item
+            }, null, 8, ["item"])) : createCommentVNode("", true)
           ]);
         }), 128))
       ]);

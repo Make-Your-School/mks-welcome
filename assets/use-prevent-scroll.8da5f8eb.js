@@ -1,5 +1,5 @@
-import { c as computed, p as onBeforeUnmount, al as History, I as client, aa as listenOpts, u as stopAndPrevent, am as getEventPath } from "./index.5210e46b.js";
-import { f as getHorizontalScrollPosition, h as getVerticalScrollPosition, i as hasScrollbar } from "./selection.1d2d9eb9.js";
+import { c as computed, p as onBeforeUnmount, al as History, I as client, ak as listenOpts, u as stopAndPrevent, am as getEventPath } from "./index.bd970e15.js";
+import { f as getHorizontalScrollPosition, h as getVerticalScrollPosition, i as hasScrollbar } from "./selection.9ddb791c.js";
 const useDarkProps = {
   dark: {
     type: Boolean,

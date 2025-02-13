@@ -1,11 +1,10 @@
-import { Q as QTooltip, R as Rn } from "./preprocessMD.9a825059.js";
-import { Q as QPage } from "./QPage.07e1241f.js";
-import { d as demo } from "./demo.fff9be3e.js";
+import { Q as QTooltip, R as Rn } from "./preprocessMD.c807aab7.js";
+import { Q as QPage } from "./QPage.c755eae9.js";
+import { d as demo } from "./demo.ee9f8253.js";
 import { _ as _export_sfc } from "./plugin-vue_export-helper.21dcd24c.js";
-import { r as ref, L as openBlock, M as createBlock, N as withCtx, P as createBaseVNode, j as createVNode, a1 as unref, a2 as createTextVNode } from "./index.5210e46b.js";
-import "./selection.1d2d9eb9.js";
+import { r as ref, L as openBlock, M as createBlock, N as withCtx, P as createBaseVNode, j as createVNode, a0 as unref, a1 as createTextVNode } from "./index.bd970e15.js";
+import "./selection.9ddb791c.js";
 var FormattingExperiments_vue_vue_type_style_index_0_scoped_true_lang = "";
-var FormattingExperiments_vue_vue_type_style_index_1_lang = "";
 const code_content = `
 void setup() {
   // ping
@@ -63,5 +62,5 @@ const _sfc_main = {
     };
   }
 };
-var FormattingExperiments = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-2b5324aa"]]);
+var FormattingExperiments = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-9cd8aef2"]]);
 export { FormattingExperiments as default };
