@@ -14,10 +14,13 @@ const packageInfo = require("./package.json");
 
 const { configure } = require("quasar/wrappers");
 const path = require("path");
+// console.log("__dirname", __dirname);
 
 // required for the gray-matter plugin.
 // https://github.com/davidmyersdev/vite-plugin-node-polyfills
 const { nodePolyfills } = require("vite-plugin-node-polyfills");
+
+
 
 module.exports = configure(function (/* ctx */) {
     return {
@@ -116,8 +119,12 @@ module.exports = configure(function (/* ctx */) {
 
         // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer
         devServer: {
-            https: true,
             open: false, // opens browser window automatically
+            // https: true, // for automagically self-signed cert.
+            https: {
+                key:  path.join(__dirname, ".certs/localhost/key.pem"),
+                cert: path.join(__dirname, ".certs/localhost/cert.pem"),
+            },
         },
 
         // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
@@ -127,7 +134,7 @@ module.exports = configure(function (/* ctx */) {
                     // https://quasar.dev/quasar-plugins/notify
                 },
                 // true "auto" false
-                dark: false,
+                dark: "auto",
             },
 
             // iconSet: 'material-icons', // Quasar icon set

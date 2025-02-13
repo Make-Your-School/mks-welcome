@@ -6,13 +6,27 @@
             <div v-if="item.type == 'html'" v-html="item.content" class="my-markdown"></div>
             <div v-if="item.type == 'code'">
                 <span>{{ item.include_path }}</span>
+                <pre>{{ item.content }}</pre>
                 <VCodeBlock
                     :code="item.content"
                     highlightjs
-                    label="Hello World"
+                    :label="item.codeFilePath"
                     :lang="item.codeLanguage"
                     :theme="theme"
                 ></VCodeBlock>
+            </div>
+            <div v-if="item.type == 'abbr'">
+                <!-- https://quasar.dev/vue-components/tooltip#qtooltip-api -->
+                <span>
+                    {{ item.content }}
+                    <q-tooltip
+                        anchor="top middle"
+                        self="bottom middle"
+                        class="bg-amber text-black shadow-4"
+                    >
+                            {{ item.abbr }}
+                    </q-tooltip>
+                </span>
             </div>
         </div>
     </div>
@@ -49,9 +63,10 @@ import hljs from "highlight.js";
 // import "highlight.js/styles/night-owl.css";
 // import 'highlight.js/styles/base16/solarized-dark.css';
 // import hljs from 'highlight.js/lib/core';
-// import javascript from 'highlight.js/lib/languages/javascript';
-// // Then register the languages you need
-// hljs.registerLanguage('javascript', javascript);
+import cpp from 'highlight.js/lib/languages/cpp';
+// Then register the languages you need
+hljs.registerLanguage('cpp', cpp);
+hljs.registerLanguage('c++', cpp);
 
 const props = defineProps({
     source: String,
@@ -134,6 +149,7 @@ const addHTMLChunk = (tokens, token_start, token_end, env) => {
     content.value.push(chunk);
 };
 const addCodeChunk = (token, env) => {
+    console.log("addCodeChunk token.content", token.content);
     let chunk = {
         type: "code",
         content: token.content,
@@ -172,14 +188,13 @@ watchEffect(async () => {
     await runEmbedCode(tokens, {}, env, md.value);
 
     // now lets split the tokens in parseInt.
-    // we want to extract all code blocks..
     let chunk_start = 0;
     for (let idx = 0; idx < tokens.length; idx++) {
         const token = tokens[idx];
+        // we want to extract all code blocks..
         if (token.type == "fence") {
             addHTMLChunk(tokens, chunk_start, idx - 1, env);
             addCodeChunk(token, env);
-
             chunk_start = idx + 1;
         }
     }

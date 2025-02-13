@@ -13,11 +13,11 @@
 // Tip: Use the "Theme Builder" on Quasar's documentation website.
 
 
-$mks-blue: rgb(104, 191, 202);
-$mks-green: rgb(176, 171, 3);
-$mks-yellow:  rgb(245, 157, 33);
-$mks-orange:  rgb(234, 96, 49);
-$mks-gray: rgb(239, 239, 239);
+$mks-blue: hsl(187, 48%, 60%);
+$mks-green: hsl(58, 97%, 35%);
+$mks-yellow:  hsl(35, 91%, 55%);
+$mks-orange:  hsl(15, 81%, 55%);
+$mks-gray: hsl(0, 0%, 94%);
 
 $primary: $mks-blue;
 $secondary: $mks-yellow;
@@ -26,8 +26,8 @@ $accent: $mks-orange;
 $text: hsl(194, 26%, 22%);
 $text-on-dark: hsl(194, 26%, 82%);
 
-$dark: #1d1d1d;
-$dark-page: #121212;
+$dark: hsl(0, 0%, 11%);
+$dark-page: hsl(0, 0%, 7%);
 
 $positive: $mks-green;
 $negative: $mks-orange;

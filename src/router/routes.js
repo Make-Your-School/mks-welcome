@@ -2,8 +2,8 @@ export const childrenCommon = [
     {
         // title: 'Welcome',
         // icon: 'home',
-        title: "md test",
-        icon: "brush",
+        title: "home",
+        icon: "precision_manufacturing",
         path: "/",
         component: () => import("pages/MKS_Parts.vue"),
     },
@@ -19,6 +19,18 @@ export const childrenCommon = [
         icon: "settings",
         path: "settings",
         component: () => import("pages/SettingsPage.vue"),
+    },
+    {
+        title: "MD-Demo",
+        icon: "brush",
+        path: "md-demo",
+        component: () => import("pages/MDDemo.vue"),
+    },
+    {
+        title: "Formatting Experiments",
+        icon: "brush",
+        path: "formatting-experiments",
+        component: () => import("pages/FormattingExperiments.vue"),
     },
 ];
 

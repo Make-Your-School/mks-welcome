@@ -39,7 +39,7 @@ import PartOverview from "src/components/PartOverview.vue";
 import PartDetails from "src/components/PartDetails.vue";
 
 // import mksContent from "../../public/mks/";
-import mksContent from "../stores/mksContent";
+import mksContent from "../content_md/mksContent";
 // console.log("mksContent", mksContent);
 console.log("mksContent", mksContent);
 const mks_welcome = ref(mksContent.welcome);
@@ -90,7 +90,7 @@ const mks_items_filtered = computed(() => {
     //     }
     // }
     const result = {
-        ...getObjItemsWithSearchTextInReadme(mks_tags.value),
+        // ...getObjItemsWithSearchTextInReadme(mks_tags.value),
         ...getObjItemsWithSearchTextInReadme(mks_parts.value),
     };
     return result;
@@ -149,3 +149,4 @@ const $q = useQuasar();
         text-align: center
 </style>
 ../../public/mks/mksContent
+../content_md/mksContent

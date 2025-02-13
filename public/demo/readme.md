@@ -12,15 +12,15 @@ demo Text..
 link:
 [mks](https://makeyourschool.de/maker-ecke/material/)
 
-```c++ :./nothinghere.cpp
-fails to import.
-check that 404  file not found is handled smoothly
-```
 
+
+this code block should be filled with a good example.ino code..
 ```c++ :./example.ino
 //this should be replaced..
+
 ```
 
+include an image:
 ![test](./test_image.png)
 
 ## heading2

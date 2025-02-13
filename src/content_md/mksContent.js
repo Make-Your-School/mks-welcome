@@ -1,17 +1,4 @@
-import matter from "gray-matter";
-
-const preProcessingMD = (source, path_base) => {
-    // console.group("preProcessingMD");
-    // console.log("source:", source);
-    // console.log("path_base:", path_base);
-    const processedObj = matter(source, {
-        eval: false,
-        excerpt_separator: "<!-- more_details -->",
-    });
-    // console.log("processedObj:", processedObj);
-    // console.groupEnd();
-    return processedObj;
-};
+import preProcessingMD from "./preprocessMD";
 
 const mksAddPartsToTags = (mksContent) => {
     console.groupCollapsed("mksAddPartsToTags");
@@ -94,13 +81,14 @@ const mksGetContent = () => {
         parts: {},
     };
 
+    const path_base = "../../public/mks/";
+
     console.log("load welcome readme");
     let temp = import.meta.glob("../../public/mks/readme.md", {
         as: "raw",
         eager: true,
     });
     // console.log("temp", temp);
-    const path_base = "../../public/mks/";
     // console.log("call preProcessingMD...");
     mksContent.welcome.readme = preProcessingMD(temp["../../public/mks/readme.md"], path_base);
     mksContent.welcome.path_base = path_base;
@@ -117,4 +105,5 @@ const mksGetContent = () => {
     return mksContent;
 };
 
+// we call these functions allready and only return the content?!
 export default mksGetContent();

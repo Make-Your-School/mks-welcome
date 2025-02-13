@@ -3,8 +3,9 @@
 // https://github.com/camelaissani/markdown-it-include
 // https://github.com/tokusumi/markdown-embed-code
 
+// check with https://regex101.com/
 // c++ :./relative/file/to/your/code.cpp
-const RE_INFO = /(?<codeLang>.*)\s?\:(?<codeFilePath>.*)/;
+const RE_INFO = /(?<codeLang>.*?)\s?\:(?<codeFilePath>.*)/;
 
 const embedCode = async (tokens, idx, options, env, self) => {
     const token = tokens[idx];

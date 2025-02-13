@@ -1,8 +1,10 @@
 {
     "name": "mks-welcome",
-    "version": "0.0.1",
+    "version": "0.1.1",
     "description": "evolution of the material-website",
     "productName": "MYS MKS",
+    "projectUrl": "https://github.com/Make-Your-School/mks-welcome/",
+    "previewUrl": "https://make-your-school.github.io/mks-welcome/",
     "author": "s-light <git@s-light.eu>",
     "private": true,
     "scripts": {
