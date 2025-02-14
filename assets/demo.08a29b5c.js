@@ -1,11 +1,11 @@
-import "./index.bd970e15.js";
-import { p as preProcessingMD } from "./preprocessMD.c807aab7.js";
+import "./index.2b129d83.js";
+import { p as preProcessingMD } from "./preprocessMD.45659a69.js";
 const demo = () => {
   console.group("mksContent");
   let content = {};
   const path_base = "../../public/demo/";
   console.log("load demo readme");
-  let temp = { "../../public/demo/readme.md": "0 ping\n\n```c++ :./example.ino\n//this should be replaced..\n```\n\n1 something\n\n2 here\n\n3 is\n\n*[HTML]: Hyper Text Markup Language\n*[W3C]:  World Wide Web Consortium\n\nThe HTML specification\nis maintained by the W3C.\n" };
+  let temp = { "../../public/demo/readme.md": "The HTML specification\nis maintained by the W3C.\n\n*[HTML]: Hyper Text Markup Language\n*[W3C]:  World Wide Web Consortium\n" };
   content.readme = preProcessingMD(temp["../../public/demo/readme.md"]);
   content.path_base = path_base;
   console.log("demo done.");

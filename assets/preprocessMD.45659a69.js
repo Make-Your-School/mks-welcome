@@ -1,5 +1,5 @@
-import { x as onDeactivated, p as onBeforeUnmount, v as nextTick, a3 as vmIsDestroyed, a as getCurrentInstance, c as computed, a4 as getParentProxy, G as createComponent, r as ref, b as onUnmounted, t as injectProp, h, a5 as Teleport, a6 as createGlobalNode, a7 as removeGlobalNode, P as createBaseVNode, d as defineComponent, L as openBlock, O as createElementBlock, a8 as mergeProps, U as createCommentVNode, a9 as mergeDefaults, aa as useSlots, i as inject, ab as toRefs, a0 as unref, w as watch, ac as onBeforeMount, o as onMounted, ad as normalizeStyle, ae as renderSlot, af as normalizeProps, F as Fragment, a1 as createTextVNode, S as toDisplayString, ag as normalizeClass, M as createBlock, ah as __vitePreload, J as isKeyCode, z as prevent, ai as addEvt, aj as cleanEvt, ak as listenOpts, I as client, D as Transition, C as hSlot, u as stopAndPrevent } from "./index.bd970e15.js";
-import { d as clearSelection, g as getScrollbarWidth, u as useModelToggleProps, s as scrollTargetProp, a as useModelToggleEmits, b as useTimeout, c as useModelToggle, e as getScrollTarget } from "./selection.9ddb791c.js";
+import { x as onDeactivated, p as onBeforeUnmount, v as nextTick, a3 as vmIsDestroyed, a as getCurrentInstance, c as computed, a4 as getParentProxy, G as createComponent, r as ref, b as onUnmounted, t as injectProp, h, a5 as Teleport, a6 as createGlobalNode, a7 as removeGlobalNode, P as createBaseVNode, d as defineComponent, L as openBlock, O as createElementBlock, a8 as mergeProps, U as createCommentVNode, a9 as mergeDefaults, aa as useSlots, i as inject, ab as toRefs, a0 as unref, w as watch, ac as onBeforeMount, o as onMounted, ad as normalizeStyle, ae as renderSlot, af as normalizeProps, F as Fragment, a1 as createTextVNode, S as toDisplayString, ag as normalizeClass, M as createBlock, ah as __vitePreload, J as isKeyCode, z as prevent, ai as addEvt, aj as cleanEvt, ak as listenOpts, I as client, D as Transition, C as hSlot, u as stopAndPrevent } from "./index.2b129d83.js";
+import { d as clearSelection, g as getScrollbarWidth, u as useModelToggleProps, s as scrollTargetProp, a as useModelToggleEmits, b as useTimeout, c as useModelToggle, e as getScrollTarget } from "./selection.a9b25e8c.js";
 let queue$1 = [];
 let waitFlags = [];
 function clearFlag(flag) {
@@ -1408,7 +1408,7 @@ const Fn = { class: "v-code-block--button-copy" }, In = { class: "v-code-block--
       L = a2.default, L.registerLanguage("plain", An), M.value = L.highlight(x.value, { language: e2.value.lang }).value;
     }).catch((a2) => {
       console.error("Highlight.js import:", { err: a2 });
-    }), e2.value.prismjs && __vitePreload(() => import("./prism.4f4fa95c.js").then(function(n2) {
+    }), e2.value.prismjs && __vitePreload(() => import("./prism.b595700a.js").then(function(n2) {
       return n2.p;
     }), true ? [] : void 0).then((a2) => {
       A = a2.default, M.value = A.highlight(x.value, A.languages[e2.value.lang], e2.value.lang);

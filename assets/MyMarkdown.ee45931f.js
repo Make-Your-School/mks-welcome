@@ -1,7 +1,23 @@
-import { u as useQuasar } from "./use-quasar.c276c422.js";
-import { R as Rn, Q as QTooltip, M as MarkdownIt, f as b } from "./preprocessMD.c807aab7.js";
-import { r as ref, w as watch, L as openBlock, O as createElementBlock, P as createBaseVNode, S as toDisplayString, j as createVNode, a0 as unref, a1 as createTextVNode, N as withCtx, s as shallowRef, a2 as watchEffect, F as Fragment, R as renderList, U as createCommentVNode, M as createBlock } from "./index.bd970e15.js";
+import { L as openBlock, O as createElementBlock, U as createCommentVNode, r as ref, w as watch, P as createBaseVNode, S as toDisplayString, j as createVNode, a0 as unref, a1 as createTextVNode, N as withCtx, s as shallowRef, a2 as watchEffect, F as Fragment, R as renderList, M as createBlock } from "./index.2b129d83.js";
+import { u as useQuasar } from "./use-quasar.d2c5bfd9.js";
+import { R as Rn, Q as QTooltip, M as MarkdownIt, f as b } from "./preprocessMD.45659a69.js";
 import { H as HighlightJS } from "./index.8c4641b6.js";
+const _hoisted_1$3 = ["innerHTML"];
+const _sfc_main$3 = {
+  __name: "MDHtml",
+  props: {
+    item: Object
+  },
+  setup(__props) {
+    return (_ctx, _cache) => {
+      return __props.item.type == "html" ? (openBlock(), createElementBlock("div", {
+        key: 0,
+        innerHTML: __props.item.content,
+        class: "my-markdown"
+      }, null, 8, _hoisted_1$3)) : createCommentVNode("", true);
+    };
+  }
+};
 const _hoisted_1$2 = { class: "MDCode" };
 const _sfc_main$2 = {
   __name: "MDCode",
@@ -2127,6 +2143,125 @@ function emoji_plugin(md, options) {
   const opts = md.utils.assign({}, defaults, options || {});
   emoji_plugin$1(md, opts);
 }
+function abbr_plugin(md) {
+  const escapeRE = md.utils.escapeRE;
+  md.utils.arrayReplaceAt;
+  const OTHER_CHARS = " \r\n$+<=>^`|~";
+  const UNICODE_PUNCT_RE = md.utils.lib.ucmicro.P.source;
+  const UNICODE_SPACE_RE = md.utils.lib.ucmicro.Z.source;
+  function abbr_def(state, startLine, endLine, silent) {
+    let labelEnd;
+    let pos = state.bMarks[startLine] + state.tShift[startLine];
+    const max = state.eMarks[startLine];
+    if (pos + 2 >= max) {
+      return false;
+    }
+    if (state.src.charCodeAt(pos++) !== 42) {
+      return false;
+    }
+    if (state.src.charCodeAt(pos++) !== 91) {
+      return false;
+    }
+    const labelStart = pos;
+    for (; pos < max; pos++) {
+      const ch = state.src.charCodeAt(pos);
+      if (ch === 91) {
+        return false;
+      } else if (ch === 93) {
+        labelEnd = pos;
+        break;
+      } else if (ch === 92) {
+        pos++;
+      }
+    }
+    if (labelEnd < 0 || state.src.charCodeAt(labelEnd + 1) !== 58) {
+      return false;
+    }
+    if (silent) {
+      return true;
+    }
+    const label = state.src.slice(labelStart, labelEnd).replace(/\\(.)/g, "$1");
+    const title = state.src.slice(labelEnd + 2, max).trim();
+    if (label.length === 0) {
+      return false;
+    }
+    if (title.length === 0) {
+      return false;
+    }
+    if (!state.env.abbreviations) {
+      state.env.abbreviations = {};
+    }
+    if (typeof state.env.abbreviations[":" + label] === "undefined") {
+      state.env.abbreviations[":" + label] = title;
+    }
+    state.line = startLine + 1;
+    return true;
+  }
+  function abbr_replace(state) {
+    const blockTokens = state.tokens;
+    if (!state.env.abbreviations) {
+      return;
+    }
+    const regSimple = new RegExp(
+      "(?:" + Object.keys(state.env.abbreviations).map(function(x) {
+        return x.substr(1);
+      }).sort(function(a, b2) {
+        return b2.length - a.length;
+      }).map(escapeRE).join("|") + ")"
+    );
+    const abbrList = "(" + Object.keys(state.env.abbreviations).map(function(x) {
+      return x.substr(1);
+    }).sort(function(a, b2) {
+      return b2.length - a.length;
+    }).map(escapeRE).join("|") + ")";
+    console.log("abbrList", abbrList);
+    const regText = "(^|" + UNICODE_PUNCT_RE + "|" + UNICODE_SPACE_RE + "|[" + OTHER_CHARS.split("").map(escapeRE).join("") + "])" + abbrList + "($|" + UNICODE_PUNCT_RE + "|" + UNICODE_SPACE_RE + "|[" + OTHER_CHARS.split("").map(escapeRE).join("") + "])";
+    const reg = new RegExp(regText, "g");
+    console.log("blockTokens", blockTokens.length);
+    for (let j = 0, l = blockTokens.length; j < l; j++) {
+      const blockToken = blockTokens[j];
+      console.log("blockToken", blockToken);
+      if (blockToken.type !== "inline") {
+        continue;
+      }
+      let pos = 0;
+      const text = blockToken.content;
+      reg.lastIndex = 0;
+      const nodes = [];
+      if (!regSimple.test(blockToken.content)) {
+        continue;
+      }
+      let m;
+      while (m = reg.exec(text)) {
+        if (m.index > 0 || m[1].length > 0) {
+          const token = new state.Token("inline", "", 0);
+          token.content = text.slice(pos, m.index + m[1].length);
+          nodes.push(token);
+        }
+        const token_t = new state.Token("abbr", "", 0);
+        token_t.content = m[2];
+        token_t.abbr = state.env.abbreviations[":" + m[2]];
+        nodes.push(token_t);
+        reg.lastIndex -= m[3].length;
+        pos = reg.lastIndex;
+      }
+      if (!nodes.length) {
+        continue;
+      }
+      if (pos < text.length) {
+        const token = new state.Token("inline", "", 0);
+        token.content = text.slice(pos);
+        nodes.push(token);
+      }
+      console.log("nodes", nodes);
+      j += nodes.length - 1;
+    }
+    console.log("blockTokens", blockTokens);
+    console.log("state.tokens", state.tokens);
+  }
+  md.block.ruler.before("reference", "abbr_def", abbr_def, { alt: ["paragraph", "reference"] });
+  md.core.ruler.after("linkify", "abbr_replace", abbr_replace);
+}
 /**
  * make all img 'src' attribute absolute.
  * @module imgSrcAbs
@@ -2766,8 +2901,10 @@ const _sfc_main = {
     };
     const md = shallowRef(new MarkdownIt(md_options));
     md.value.use(b, {});
+    md.value.use(abbr_plugin);
     md.value.use(emoji_plugin);
     md.value.use(imgSrcAbs);
+    ref("");
     const content = ref([]);
     const addHTMLChunk = (tokens, token_start, token_end, env) => {
       let chunk = {
@@ -2792,6 +2929,7 @@ const _sfc_main = {
       content.value.push(chunk);
     };
     const addAbbrChunk = (token, env) => {
+      console.log("addAbbrChunk token.content", token.content);
       let chunk = {
         type: "abbr",
         content: token.content,
@@ -2822,7 +2960,6 @@ const _sfc_main = {
       }
       console.log(`chunk_start`, chunk_start);
       addHTMLChunk(tokens, chunk_start, tokens.length - 1, env);
-      console.log("tokens", tokens);
     });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1, [
@@ -2833,12 +2970,16 @@ const _sfc_main = {
               innerHTML: item.content,
               class: "my-markdown"
             }, null, 8, _hoisted_2)) : createCommentVNode("", true),
-            item.type == "code" ? (openBlock(), createBlock(_sfc_main$2, {
+            item.type == "html" ? (openBlock(), createBlock(_sfc_main$3, {
               key: 1,
               item
             }, null, 8, ["item"])) : createCommentVNode("", true),
-            item.type == "abbr" ? (openBlock(), createBlock(_sfc_main$1, {
+            item.type == "code" ? (openBlock(), createBlock(_sfc_main$2, {
               key: 2,
+              item
+            }, null, 8, ["item"])) : createCommentVNode("", true),
+            item.type == "abbr" ? (openBlock(), createBlock(_sfc_main$1, {
+              key: 3,
               item
             }, null, 8, ["item"])) : createCommentVNode("", true)
           ]);
