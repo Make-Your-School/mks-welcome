@@ -10125,44 +10125,44 @@ const childrenCommon = [
     title: "home",
     icon: "precision_manufacturing",
     path: "/",
-    component: () => __vitePreload(() => import("./MKS_Parts.7c5f27b6.js"), true ? ["assets/MKS_Parts.7c5f27b6.js","assets/MKS_Parts.48c46018.css","assets/use-prevent-scroll.3e040c3f.js","assets/selection.a9b25e8c.js","assets/preprocessMD.45659a69.js","assets/preprocessMD.78e3becb.css","assets/QPage.22ce2eb8.js","assets/use-quasar.d2c5bfd9.js","assets/MyMarkdown.ee45931f.js","assets/index.8c4641b6.js","assets/plugin-vue_export-helper.21dcd24c.js"] : void 0)
+    component: () => __vitePreload(() => import("./MKS_Parts.42c5ed5e.js"), true ? ["assets/MKS_Parts.42c5ed5e.js","assets/MKS_Parts.48c46018.css","assets/use-prevent-scroll.971ca605.js","assets/selection.2090b7db.js","assets/preprocessMD.f7386811.js","assets/preprocessMD.78e3becb.css","assets/QPage.8bdc7846.js","assets/use-quasar.aa014653.js","assets/MyMarkdown.3b9d313f.js","assets/index.8c4641b6.js","assets/plugin-vue_export-helper.21dcd24c.js"] : void 0)
   },
   {
     title: "About",
     icon: "info",
     path: "about",
-    component: () => __vitePreload(() => import("./AboutPage.74f6b304.js"), true ? ["assets/AboutPage.74f6b304.js","assets/QPage.22ce2eb8.js","assets/MyMarkdown.ee45931f.js","assets/use-quasar.d2c5bfd9.js","assets/preprocessMD.45659a69.js","assets/preprocessMD.78e3becb.css","assets/selection.a9b25e8c.js","assets/index.8c4641b6.js"] : void 0)
+    component: () => __vitePreload(() => import("./AboutPage.4787b4b5.js"), true ? ["assets/AboutPage.4787b4b5.js","assets/QPage.8bdc7846.js","assets/MyMarkdown.3b9d313f.js","assets/use-quasar.aa014653.js","assets/preprocessMD.f7386811.js","assets/preprocessMD.78e3becb.css","assets/selection.2090b7db.js","assets/index.8c4641b6.js"] : void 0)
   },
   {
     title: "Settings",
     icon: "settings",
     path: "settings",
-    component: () => __vitePreload(() => import("./SettingsPage.83dc1dfe.js"), true ? ["assets/SettingsPage.83dc1dfe.js","assets/QPage.22ce2eb8.js"] : void 0)
+    component: () => __vitePreload(() => import("./SettingsPage.3f536c44.js"), true ? ["assets/SettingsPage.3f536c44.js","assets/QPage.8bdc7846.js"] : void 0)
   },
   {
     title: "MD-Demo",
     icon: "brush",
     path: "md-demo",
-    component: () => __vitePreload(() => import("./MDDemo.f620b219.js"), true ? ["assets/MDDemo.f620b219.js","assets/QPage.22ce2eb8.js","assets/MyMarkdown.ee45931f.js","assets/use-quasar.d2c5bfd9.js","assets/preprocessMD.45659a69.js","assets/preprocessMD.78e3becb.css","assets/selection.a9b25e8c.js","assets/index.8c4641b6.js","assets/demo.08a29b5c.js"] : void 0)
+    component: () => __vitePreload(() => import("./MDDemo.2574b420.js"), true ? ["assets/MDDemo.2574b420.js","assets/QPage.8bdc7846.js","assets/MyMarkdown.3b9d313f.js","assets/use-quasar.aa014653.js","assets/preprocessMD.f7386811.js","assets/preprocessMD.78e3becb.css","assets/selection.2090b7db.js","assets/index.8c4641b6.js","assets/demo.43c410d6.js"] : void 0)
   },
   {
     title: "Formatting Experiments",
     icon: "brush",
     path: "formatting-experiments",
-    component: () => __vitePreload(() => import("./FormattingExperiments.714e3d0b.js"), true ? ["assets/FormattingExperiments.714e3d0b.js","assets/FormattingExperiments.0f1e9aff.css","assets/preprocessMD.45659a69.js","assets/preprocessMD.78e3becb.css","assets/selection.a9b25e8c.js","assets/QPage.22ce2eb8.js","assets/demo.08a29b5c.js","assets/plugin-vue_export-helper.21dcd24c.js"] : void 0)
+    component: () => __vitePreload(() => import("./FormattingExperiments.342796c8.js"), true ? ["assets/FormattingExperiments.342796c8.js","assets/FormattingExperiments.0f1e9aff.css","assets/preprocessMD.f7386811.js","assets/preprocessMD.78e3becb.css","assets/selection.2090b7db.js","assets/QPage.8bdc7846.js","assets/demo.43c410d6.js","assets/plugin-vue_export-helper.21dcd24c.js"] : void 0)
   }
 ];
 const routes = [
   {
     path: "/",
-    component: () => __vitePreload(() => import("./MainLayout.e285727c.js"), true ? ["assets/MainLayout.e285727c.js","assets/MainLayout.5ea167dc.css","assets/use-prevent-scroll.3e040c3f.js","assets/selection.a9b25e8c.js","assets/use-quasar.d2c5bfd9.js","assets/plugin-vue_export-helper.21dcd24c.js"] : void 0),
+    component: () => __vitePreload(() => import("./MainLayout.a75e87cf.js"), true ? ["assets/MainLayout.a75e87cf.js","assets/MainLayout.5ea167dc.css","assets/use-prevent-scroll.971ca605.js","assets/selection.2090b7db.js","assets/use-quasar.aa014653.js","assets/plugin-vue_export-helper.21dcd24c.js"] : void 0),
     children: [
       ...childrenCommon
     ]
   },
   {
     path: "/:catchAll(.*)*",
-    component: () => __vitePreload(() => import("./ErrorNotFound.6b269f54.js"), true ? [] : void 0)
+    component: () => __vitePreload(() => import("./ErrorNotFound.e89d0b55.js"), true ? [] : void 0)
   }
 ];
 var createRouter = route(function() {
@@ -12016,8 +12016,8 @@ createQuasarApp(createApp, quasarUserOptions).then((app2) => {
     (bootFiles) => bootFiles.map((entry) => entry.default)
   ];
   return Promise[method]([
-    __vitePreload(() => import("./i18n.0fc1a3ff.js"), true ? [] : void 0),
-    __vitePreload(() => import("./addressbar-color.1070655f.js"), true ? [] : void 0)
+    __vitePreload(() => import("./i18n.9111624c.js"), true ? [] : void 0),
+    __vitePreload(() => import("./addressbar-color.3a57a120.js"), true ? [] : void 0)
   ]).then((bootFiles) => {
     const boot2 = mapFn(bootFiles).filter((entry) => typeof entry === "function");
     start(app2, boot2);
