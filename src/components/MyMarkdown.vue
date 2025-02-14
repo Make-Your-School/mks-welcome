@@ -1,9 +1,11 @@
 <template>
-    <!-- <VueMarkdown :source="source" :plugins="md_plugins" :options="md_options" /> -->
-    <!-- <div class="my-markdown" v-html="contentHTML"></div> -->
     <div class="my-markdown-wrapper">
+        <!-- <VueMarkdown :source="source" :plugins="md_plugins" :options="md_options" /> -->
+        <!-- <div class="my-markdown" v-html="contentHTML"></div> -->
+        <!-- <div class="my-markdown">{{ contentHTML  }}</div> -->
         <div v-for="(item, index) in content" :key="index">
             <div v-if="item.type == 'html'" v-html="item.content" class="my-markdown"></div>
+            <MDHtml v-if="item.type == 'html'" :item="item"></MDHtml>
             <MDCode v-if="item.type == 'code'" :item="item"></MDCode>
             <MDAbbr v-if="item.type == 'abbr'" :item="item"></MDAbbr>
         </div>
@@ -14,6 +16,11 @@
 import { computed, h, shallowRef, ref, watch, watchEffect } from "vue";
 import { useQuasar } from "quasar";
 
+// maybe refactor the custom vu component injects with
+// dynamically created components ?!
+// https://stackoverflow.com/questions/69488256/vue-3-append-component-to-the-dom-best-practice
+
+import MDHtml from "src/components/MDHtml.vue";
 import MDCode from "src/components/MDCode.vue";
 import MDAbbr from "src/components/MDAbbr.vue";
 // import MyHtml from "./MyHtml.vue";
@@ -28,6 +35,9 @@ import MarkdownIt from "markdown-it";
 import anchor from "markdown-it-anchor";
 import { full } from "markdown-it-emoji";
 
+// import plugin_abbr from "src/components/markdown-it-plugin-abbr";
+import plugin_abbr from "src/components/markdown-it-plugin-abbr-blocks";
+
 // https://github.com/nagaozen/markdown-it-toc-done-right
 // import * as mdi_toc from "markdown-it-toc-done-right";
 
@@ -41,11 +51,10 @@ import hljs from "highlight.js";
 // import "highlight.js/styles/night-owl.css";
 // import 'highlight.js/styles/base16/solarized-dark.css';
 // import hljs from 'highlight.js/lib/core';
-import cpp from 'highlight.js/lib/languages/cpp';
+import cpp from "highlight.js/lib/languages/cpp";
 // Then register the languages you need
-hljs.registerLanguage('cpp', cpp);
-hljs.registerLanguage('c++', cpp);
-
+hljs.registerLanguage("cpp", cpp);
+hljs.registerLanguage("c++", cpp);
 
 const props = defineProps({
     source: String,
@@ -75,6 +84,7 @@ const md = shallowRef(new MarkdownIt(md_options));
 md.value.use(anchor, {
     //   permalink: anchor.permalink.headerLink()
 });
+md.value.use(plugin_abbr);
 
 // md.value.use(mdi_toc);
 
@@ -112,7 +122,7 @@ md.value.use(markdownItPluginImgSrcAbs);
 // ];
 // const md_plugins = [MarkdownItAnchor];
 
-// const contentHTML = ref([]);
+const contentHTML = ref("");
 const content = ref([]);
 
 const addHTMLChunk = (tokens, token_start, token_end, env) => {
@@ -139,7 +149,7 @@ const addCodeChunk = (token, env) => {
     content.value.push(chunk);
 };
 const addAbbrChunk = (token, env) => {
-    // console.log("addAbbrChunk token.content", token.content);
+    console.log("addAbbrChunk token.content", token.content);
     let chunk = {
         type: "abbr",
         content: token.content,
@@ -156,14 +166,15 @@ watchEffect(async () => {
     };
 
     let tokens = md.value.parse(props.source, env);
+    // console.log("tokens", tokens);
     // call async function
     await runEmbedCode(tokens, {}, env, md.value);
 
-    // now lets split the tokens in parseInt.
+    // now lets split the tokens..
     let chunk_start = 0;
     for (let idx = 0; idx < tokens.length; idx++) {
         const token = tokens[idx];
-        console.log(`tokens[${String(idx).padStart(3," ")}]`, token);
+        console.log(`tokens[${String(idx).padStart(3, " ")}]`, token);
         // we want to extract all code blocks..
         if (token.type == "fence") {
             addHTMLChunk(tokens, chunk_start, idx - 1, env);
@@ -180,9 +191,28 @@ watchEffect(async () => {
     // add rest
     addHTMLChunk(tokens, chunk_start, tokens.length - 1, env);
 
-    console.log("tokens", tokens);
+    // console.log("tokens", tokens);
+
+    // md.value.renderer.rules.code = function (tokens, idx, options, env, self) {
+    //     const token = tokens[idx];
+    //     const item = {
+    //         content: token.content,
+    //         codeLanguage: token.codeLanguage,
+    //         filePath: token.filePath,
+    //         codeFilePath: token.codeFilePath,
+    //     };
+    //     return h(MDCode, {"item":item});
+    //     // Pass the token to the default renderer.
+    //     return defaultRender(tokens, idx, options, env, self);
+    // };
+
     // console.log("content", content);
     // do final rendering
+    // contentHTML.value = md.value.renderer.render(
+    //     tokens,
+    //     md.value.options,
+    //     env
+    // );
     // return md.value.render(props.source, env);
     // const htmlComponent = new MyHtml({
     //     props: {
