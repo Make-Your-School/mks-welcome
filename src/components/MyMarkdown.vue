@@ -12,7 +12,8 @@
 </template>
 
 <script setup>
-import { computed, h, shallowRef, ref, watch, watchEffect } from "vue";
+import { isProxy, toRaw } from 'vue';
+import { computed, h, shallowRef, ref, unref, watch, watchEffect } from "vue";
 import { useQuasar } from "quasar";
 
 // maybe refactor the custom vu component injects with
@@ -138,8 +139,10 @@ const addHTMLChunk = (tokens, token_start, token_end, env) => {
         type: "html",
         content: "",
     };
+    const token_slice = tokens.slice(token_start, token_end +1)
+    console.log("token_slice", token_slice);
     chunk.content = md.value.renderer.render(
-        tokens.slice(token_start, token_end),
+        token_slice,
         md.value.options,
         env
     );
@@ -179,17 +182,20 @@ watchEffect(async () => {
     await runEmbedCode(tokens, {}, env, md.value);
 
     // now lets split the tokens..
+    console.log("split tokens into html and special parts...");
     let chunk_start = 0;
     for (let idx = 0; idx < tokens.length; idx++) {
         const token = tokens[idx];
         console.log(`tokens[${String(idx).padStart(3, " ")}]`, token);
         // we want to extract all code blocks..
         if (token.type == "fence") {
+            console.log(`fence:  chunk_start ${chunk_start}, idx - 1 ${idx - 1}`);
             addHTMLChunk(tokens, chunk_start, idx - 1, env);
             addCodeChunk(token, env);
             chunk_start = idx + 1;
         }
         if (token.type == "abbr") {
+            console.log(`abbr:  chunk_start ${chunk_start}, idx - 1 ${idx - 1}`);
             addHTMLChunk(tokens, chunk_start, idx - 1, env);
             addAbbrChunk(token, env);
             chunk_start = idx + 1;
@@ -200,6 +206,8 @@ watchEffect(async () => {
     addHTMLChunk(tokens, chunk_start, tokens.length - 1, env);
 
     // console.log("tokens", tokens);
+    console.log("content.value", toRaw(content.value));
+
 
     // md.value.renderer.rules.code = function (tokens, idx, options, env, self) {
     //     const token = tokens[idx];
@@ -260,9 +268,9 @@ watchEffect(async () => {
     h6
         font-size: 1rem
         font-weight: bold
-    p
-        font-size: 1rem
-        font-weight: bold
+    // p
+    //     font-size: 1rem
+    //     font-weight: bold
     img
         // max-width:
         max-width: min(100%,15vw)
