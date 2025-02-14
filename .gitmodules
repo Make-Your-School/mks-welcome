@@ -22,6 +22,6 @@
 [submodule "public/mks/mks-Taster"]
 	path = public/mks/parts/mks-Taster
 	url = https://github.com/Make-Your-School/mks-Taster.git
-[submodule "public/mks/parts/mks-GroveSerialBluetoothv3.0"]
-	path = public/mks/parts/mks-GroveSerialBluetoothv3.0
-	url = git@github.com:Make-Your-School/mks-GroveSerialBluetoothv3.0.git
+[submodule "public/mks/parts/mks-GroveSerialBluetoothV3.0"]
+	path = public/mks/parts/mks-GroveSerialBluetoothV3.0
+	url = git@github.com:Make-Your-School/mks-GroveSerialBluetoothV3.0.git
