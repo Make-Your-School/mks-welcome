@@ -1,5 +1,4 @@
-The HTML specification
-is maintained by the W3C.
+The Page!
 
-*[HTML]: Hyper Text Markup Language
-*[W3C]:  World Wide Web Consortium
+A wonderfull world - the HTML specification is
+maintained by the W3C.

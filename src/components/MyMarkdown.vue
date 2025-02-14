@@ -4,7 +4,6 @@
         <!-- <div class="my-markdown" v-html="contentHTML"></div> -->
         <!-- <div class="my-markdown">{{ contentHTML  }}</div> -->
         <div v-for="(item, index) in content" :key="index">
-            <div v-if="item.type == 'html'" v-html="item.content" class="my-markdown"></div>
             <MDHtml v-if="item.type == 'html'" :item="item"></MDHtml>
             <MDCode v-if="item.type == 'code'" :item="item"></MDCode>
             <MDAbbr v-if="item.type == 'abbr'" :item="item"></MDAbbr>
@@ -37,7 +36,7 @@ import { full } from "markdown-it-emoji";
 
 // import plugin_abbr from "src/components/markdown-it-plugin-abbr";
 import plugin_abbr from "src/components/markdown-it-plugin-abbr-blocks";
-
+import mksAbbr from "src/content_md/mksAbbr";
 // https://github.com/nagaozen/markdown-it-toc-done-right
 // import * as mdi_toc from "markdown-it-toc-done-right";
 
@@ -63,6 +62,9 @@ const props = defineProps({
 
 // const emit = defineEmits(['change', 'delete'])
 
+// ------------------------------------------
+// setup markdown-it
+
 const md_options = {
     html: true,
     linkify: true,
@@ -84,7 +86,9 @@ const md = shallowRef(new MarkdownIt(md_options));
 md.value.use(anchor, {
     //   permalink: anchor.permalink.headerLink()
 });
-md.value.use(plugin_abbr);
+md.value.use(plugin_abbr, {
+    abbreviations:mksAbbr,
+});
 
 // md.value.use(mdi_toc);
 
@@ -121,6 +125,10 @@ md.value.use(markdownItPluginImgSrcAbs);
 //     plugin_with_options(mdit_include, { currentPath: (env) => env.filePath }),
 // ];
 // const md_plugins = [MarkdownItAnchor];
+
+// ------------------------------------------
+// prepare content
+
 
 const contentHTML = ref("");
 const content = ref([]);
@@ -224,9 +232,15 @@ watchEffect(async () => {
 </script>
 
 <style lang="sass">
-.my-markdown
+.my-markdown-wrapper
     padding: 1rem
     border-radius: 0.5rem
+
+.my-markdown-wrapper > div
+    display: inline
+
+.my-markdown
+    display: inline
     h1
         font-size: 4.0rem
         margin-top: 0

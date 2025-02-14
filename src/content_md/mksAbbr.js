@@ -6,29 +6,29 @@ const mksGetAbbr = () => {
     let mksAbbrList = {};
     const path_base = "../../public/mks/abbr/";
 
-    const items_dir = import.meta.glob(`../../public/mks/parts/*/readme.md`, {
+    const items_dir = import.meta.glob(`../../public/mks/abbr/*.md`, {
         as: "raw",
         eager: true,
     });
-    const path_regex = new RegExp(`\.\/${path_base}\/(?<item_name>.*)\.md`);
+    // console.log("items_dir", items_dir);
+    const path_regex = new RegExp(`\.\.\/\.\.\/public\/mks\/abbr\/(?<item_name>.*)\.md`);
+    // console.log("path_regex", path_regex);
     for (const path in items_dir) {
-        console.log(path);
+        // console.log(path);
         const { item_name } = path_regex.exec(path).groups;
-        console.log(`item_name: '${item_name}'`);
-        const item_name_lc = item_name.toLowerCase();
-        mksAbbrList[item_name_lc] = {};
-        mksAbbrList[item_name_lc].name = item_name;
-        mksAbbrList[item_name_lc].path_readme = path;
-        // mksAbbrList[item_name_lc].path_base = `mks/${folderName}/${item_name}/`;
-        mksAbbrList[item_name_lc].content = preProcessingMD(
+        // console.log(`item_name: '${item_name}'`);
+        mksAbbrList[item_name] = {};
+        mksAbbrList[item_name].name = item_name;
+        mksAbbrList[item_name].path_readme = path;
+        // mksAbbrList[item_name].path_base = `mks/${folderName}/${item_name}/`;
+        mksAbbrList[item_name].content = preProcessingMD(
             items_dir[path],
-            mksAbbrList[item_name_lc].path_base
+            mksAbbrList[item_name].path_base
         );
-        console.log(`${item_name} '${mksAbbrList[item_name_lc].path_base}'`);
+        // console.log(`${item_name} '${mksAbbrList[item_name].path_base}'`);
     }
-    mksGetItems(mksContent, "tags", getTagsContent());
-
-    console.log("mksContent:", mksContent);
+    console.log("mksAbbrList:", mksAbbrList);
+    // console.log("mksAbbrList:", Object.keys(mksAbbrList));
     console.groupEnd();
     return mksAbbrList;
 };

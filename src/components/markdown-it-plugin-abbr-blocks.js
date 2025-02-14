@@ -3,7 +3,18 @@
 
 // Enclose abbreviations in <abbr> tags
 //
-export default function abbr_plugin(md) {
+export default function abbr_plugin(md, opts) {
+    const opts_defaults = {
+        abbreviations: {},
+    };
+
+    opts = Object.assign({}, opts_defaults, opts);
+    // console.log(opts.abbreviations);
+    opts.abbreviations = Object.fromEntries(
+        Object.entries(opts.abbreviations).map(([key, value]) => [`:${key}`, value])
+    );
+    // console.log(opts.abbreviations);
+
     const escapeRE = md.utils.escapeRE;
     const arrayReplaceAt = md.utils.arrayReplaceAt;
 
@@ -61,12 +72,12 @@ export default function abbr_plugin(md) {
         if (title.length === 0) {
             return false;
         }
-        if (!state.env.abbreviations) {
-            state.env.abbreviations = {};
+        if (!opts.abbreviations) {
+            opts.abbreviations = {};
         }
         // prepend ':' to avoid conflict with Object.prototype members
-        if (typeof state.env.abbreviations[":" + label] === "undefined") {
-            state.env.abbreviations[":" + label] = title;
+        if (typeof opts.abbreviations[":" + label] === "undefined") {
+            opts.abbreviations[":" + label] = title;
         }
 
         state.line = startLine + 1;
@@ -77,13 +88,13 @@ export default function abbr_plugin(md) {
     function abbr_replace(state) {
         const blockTokens = state.tokens;
 
-        if (!state.env.abbreviations) {
+        if (!opts.abbreviations) {
             return;
         }
 
         const regSimple = new RegExp(
             "(?:" +
-                Object.keys(state.env.abbreviations)
+                Object.keys(opts.abbreviations)
                     .map(function (x) {
                         return x.substr(1);
                     })
@@ -98,7 +109,7 @@ export default function abbr_plugin(md) {
         const abbrList =
             // "(?<abbr>" +
             "(" +
-            Object.keys(state.env.abbreviations)
+            Object.keys(opts.abbreviations)
                 .map(function (x) {
                     return x.substr(1);
                 })
@@ -133,6 +144,77 @@ export default function abbr_plugin(md) {
         // `(?<pre>.*?)(?<abbr>HTML|W3C)(?<post>.*?)`;
         // const regAll = new RegExp(`(?<pre>.*?)${abbrList}(?<pre>.*?)`, "g");
 
+        function convertTokenToInlineBlock(token) {
+            console.group("convertTokenToInlineBlock");
+            const text = token.content;
+            const newBlocks = [];
+            if (token.type == "text") {
+                console.log("we have a text block");
+                // fast regexp run to determine whether there are any abbreviated words
+                // in the current token
+                if (regSimple.test(text)) {
+                    console.log("it contains an abbr! we need to split it up.");
+                    let pos = 0;
+                    reg.lastIndex = 0;
+                    let m;
+                    while ((m = reg.exec(text))) {
+                        console.log("m", m);
+                        if (m.index > 0 || m[1].length > 0) {
+                            console.log("handle pre abbr text");
+                            console.log("state", state);
+                            const newBlock = new state.Token("inline", "", 0);
+                            console.log("newBlock", newBlock);
+                            const newChild = new state.Token("text", "", 0);
+                            newChild.content = text.slice(pos, m.index + m[1].length);
+                            newBlock.children = [newChild];
+                            newBlock.content = newChild.content;
+                            newBlocks.push(newBlock);
+                        }
+
+                        // handle abbr itself
+                        const token_t = new state.Token("abbr", "q-tooltip", 0);
+                        token_t.content = m[2];
+                        token_t.attrs = [["title", opts.abbreviations[":" + m[2]]]];
+                        token_t.abbr = opts.abbreviations[":" + m[2]];
+                        newBlocks.push(token_t);
+
+                        reg.lastIndex -= m[3].length;
+                        pos = reg.lastIndex;
+                    }
+
+                    if (!newBlocks.length) {
+                        console.error(
+                            "uh - this can/should never happen as we have already checked that there is a abbr inside the token.. "
+                        );
+                    }
+
+                    // handle post abbr text
+                    if (pos < text.length) {
+                        const newBlock = new state.Token("inline", "", 0);
+                        const newChild = new state.Token("text", "", 0);
+                        newChild.content = text.slice(pos);
+                        newBlock.children = [newChild];
+                        newBlocks.push(newBlock);
+                    }
+                } else {
+                    console.log("no abbr. just copy over..");
+                    const newBlock = new state.Token("inline", "", 0);
+                    console.log("newBlock", newBlock);
+                    newBlock.children = [token];
+                    newBlocks.push(newBlock);
+                }
+            } else {
+                console.log("we have a non text block - just copy it over..");
+                const newBlock = new state.Token("inline", "", 0);
+                console.log("newBlock", newBlock);
+                newBlock.children = [token];
+                newBlocks.push(newBlock);
+            }
+
+            console.groupEnd();
+            return newBlocks;
+        }
+
         console.log("blockTokens", blockTokens.length);
         for (let j = 0, l = blockTokens.length; j < l; j++) {
             const blockToken = blockTokens[j];
@@ -140,51 +222,27 @@ export default function abbr_plugin(md) {
             if (blockToken.type !== "inline") {
                 continue;
             }
-
-            let pos = 0;
-            const text = blockToken.content;
-            reg.lastIndex = 0;
-            const nodes = [];
-
-            // check if there is any abbr in content at all..
             if (!regSimple.test(blockToken.content)) {
                 continue;
             }
 
-            // split content..
-            let m;
-
-            while ((m = reg.exec(text))) {
-                // console.log("m", m);
-                if (m.index > 0 || m[1].length > 0) {
-                    const token = new state.Token("inline", "", 0);
-                    token.content = text.slice(pos, m.index + m[1].length);
-                    nodes.push(token);
-                }
-
-                const token_t = new state.Token("abbr", "", 0);
-                token_t.content = m[2];
-                token_t.abbr = state.env.abbreviations[":" + m[2]];
-                nodes.push(token_t);
-
-                reg.lastIndex -= m[3].length;
-                pos = reg.lastIndex;
+            // there is at least one abbr in the content.
+            const newBlocks = [];
+            const childTokens = blockToken.children;
+            for (let tId = 0; tId < childTokens.length; tId++) {
+                console.log("childTokens[tId]", childTokens[tId]);
+                newBlocks.push(...convertTokenToInlineBlock(childTokens[tId]));
             }
-            if (!nodes.length) {
+
+            if (!newBlocks.length) {
                 continue;
             }
-
-            if (pos < text.length) {
-                const token = new state.Token("inline", "", 0);
-                token.content = text.slice(pos);
-                nodes.push(token);
-            }
-            console.log("nodes", nodes);
-            // blockTokens.splice(j, 1, ...nodes);
-            // jump over added nodes.at.
-            j += nodes.length - 1;
+            console.log("newBlocks", newBlocks);
+            blockTokens.splice(j, 1, ...newBlocks);
+            // jump over added newBlocks.
+            j += newBlocks.length - 1;
         }
-        console.log("blockTokens", blockTokens);
+        // console.log("blockTokens", blockTokens);
         console.log("state.tokens", state.tokens);
     }
 
