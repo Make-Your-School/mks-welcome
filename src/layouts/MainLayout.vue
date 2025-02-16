@@ -57,7 +57,7 @@
         </q-drawer>
 
         <!-- style="min-height: 0" -->
-        <q-page-container class="fixed fit q-pa-md">
+        <q-page-container class="fit q-pa-md">
             <router-view />
         </q-page-container>
     </q-layout>

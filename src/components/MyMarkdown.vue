@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import { isProxy, toRaw } from 'vue';
+import { isProxy, toRaw } from "vue";
 import { computed, h, shallowRef, ref, unref, watch, watchEffect } from "vue";
 import { useQuasar } from "quasar";
 
@@ -35,7 +35,10 @@ import MarkdownIt from "markdown-it";
 import anchor from "markdown-it-anchor";
 import { full } from "markdown-it-emoji";
 
-import alert from "@mdit/plugin-alert";
+// import alert as mdit_alert from "@mdit/plugin-alert";
+import { alert as mdit_alert } from "@mdit/plugin-alert";
+import "@mdit/plugin-alert/style";
+import md_it_container from "markdown-it-container";
 
 // import plugin_abbr from "src/components/markdown-it-plugin-abbr";
 import plugin_abbr from "src/components/markdown-it-plugin-abbr-blocks";
@@ -90,13 +93,31 @@ md.value.use(anchor, {
     //   permalink: anchor.permalink.headerLink()
 });
 md.value.use(plugin_abbr, {
-    abbreviations:mksAbbr,
+    abbreviations: mksAbbr,
 });
 
 // md.value.use(mdi_toc);
 
-md.value.use(alert);
+md.value.use(mdit_alert);
+md.value.use(md_it_container, "info");
+md.value.use(md_it_container, "tip");
+md.value.use(md_it_container, "important");
+md.value.use(md_it_container, "caution");
+md.value.use(md_it_container, "warning");
+// md.value.use(md_it_container, "warning", {
+//     render: function (tokens, idx) {
+//         console.log("tokens[idx]", tokens[idx]);
+//         var m = tokens[idx].info.trim().match(/^spoiler\s+(.*)$/);
 
+//         if (tokens[idx].nesting === 1) {
+//             // opening tag
+//             return "<details><summary>" + md.value.utils.escapeHtml(m[1]) + "</summary>\n";
+//         } else {
+//             // closing tag
+//             return "</details>\n";
+//         }
+//     },
+// });
 
 // https://mdit-plugins.github.io/include.html#syntax
 // md.value.use(mdit_include, {
@@ -135,7 +156,6 @@ md.value.use(markdownItPluginImgSrcAbs);
 // ------------------------------------------
 // prepare content
 
-
 const contentHTML = ref("");
 const content = ref([]);
 
@@ -144,13 +164,9 @@ const addHTMLChunk = (tokens, token_start, token_end, env) => {
         type: "html",
         content: "",
     };
-    const token_slice = tokens.slice(token_start, token_end +1)
+    const token_slice = tokens.slice(token_start, token_end + 1);
     console.log("token_slice", token_slice);
-    chunk.content = md.value.renderer.render(
-        token_slice,
-        md.value.options,
-        env
-    );
+    chunk.content = md.value.renderer.render(token_slice, md.value.options, env);
     content.value.push(chunk);
 };
 const addCodeChunk = (token, env) => {
@@ -212,7 +228,6 @@ watchEffect(async () => {
 
     // console.log("tokens", tokens);
     console.log("content.value", toRaw(content.value));
-
 
     // md.value.renderer.rules.code = function (tokens, idx, options, env, self) {
     //     const token = tokens[idx];
@@ -281,6 +296,15 @@ watchEffect(async () => {
         max-width: min(100%,15vw)
         width: auto
         height: auto
+
+    .info
+        background: hsla(208, 100%, 50%, 0.2)
+        padding: 1rem
+        border-radius: 1rem
+    .warning
+        background: hsla(0, 100%, 50%, 0.2)
+        padding: 1rem
+        border-radius: 1rem
 
 // .my-card .my-markdown h1:nth-child(1)
 //        position: sticky

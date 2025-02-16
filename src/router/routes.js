@@ -27,6 +27,12 @@ export const childrenCommon = [
         component: () => import("pages/MDDemo.vue"),
     },
     {
+        title: "MD-Dev",
+        icon: "brush",
+        path: "md-dev",
+        component: () => import("pages/MDDev.vue"),
+    },
+    {
         title: "Formatting Experiments",
         icon: "brush",
         path: "formatting-experiments",
