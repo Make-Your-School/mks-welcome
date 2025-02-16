@@ -11,6 +11,36 @@ some more text here.. :tada:
 link: [mks](https://makeyourschool.de/maker-ecke/material/) working?!
 and another paragraph
 
+## Info Boxes...
+
+### @mdit/plugin-alert
+
+> [!note]
+> This is a note
+
+> [!tip]
+> This is a tip
+
+> [!important]
+> Important Information...
+
+> [!caution]
+> be careful with this....
+
+> [!warning]
+> This is warning text
+
+### markdown-it-container
+
+::: info
+just some Information...
+:::
+
+::: warning
+*here be dragons*
+:::
+
+
 ## code
 this code block should be filled with a good example.ino code..
 ```c++ :./example.ino

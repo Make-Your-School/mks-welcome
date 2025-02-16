@@ -3,11 +3,11 @@
         <!-- <VueMarkdown :source="source" :plugins="md_plugins" :options="md_options" /> -->
         <!-- <div class="my-markdown" v-html="contentHTML"></div> -->
         <!-- <div class="my-markdown">{{ contentHTML  }}</div> -->
-        <div v-for="(item, index) in content" :key="index">
+        <span v-for="(item, index) in content" :key="index">
             <MDHtml v-if="item.type == 'html'" :item="item"></MDHtml>
             <MDCode v-if="item.type == 'code'" :item="item"></MDCode>
             <MDAbbr v-if="item.type == 'abbr'" :item="item"></MDAbbr>
-        </div>
+        </span>
     </div>
 </template>
 
@@ -34,6 +34,8 @@ import MarkdownIt from "markdown-it";
 // https://github.com/valeriangalliat/markdown-it-anchor/tree/master
 import anchor from "markdown-it-anchor";
 import { full } from "markdown-it-emoji";
+
+import alert from "@mdit/plugin-alert";
 
 // import plugin_abbr from "src/components/markdown-it-plugin-abbr";
 import plugin_abbr from "src/components/markdown-it-plugin-abbr-blocks";
@@ -92,6 +94,9 @@ md.value.use(plugin_abbr, {
 });
 
 // md.value.use(mdi_toc);
+
+md.value.use(alert);
+
 
 // https://mdit-plugins.github.io/include.html#syntax
 // md.value.use(mdit_include, {

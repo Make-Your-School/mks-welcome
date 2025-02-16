@@ -19,6 +19,7 @@
         "@mdit/plugin-include": "^0.13.1"
     },
     "dependencies": {
+        "@mdit/plugin-alert": "^0.16.0",
         "@quasar/extras": "^1.16.4",
         "@types/markdown-it": "*",
         "@wdns/vue-code-block": "^2.3.3",
@@ -27,6 +28,7 @@
         "markdown-it": "^14.1.0",
         "markdown-it-abbr": "^2.0.0",
         "markdown-it-anchor": "^9.2.0",
+        "markdown-it-container": "^4.0.0",
         "markdown-it-emoji": "^3.0.0",
         "markdown-it-toc-done-right": "^4.2.0",
         "pinia": "^2.2.4",
