@@ -8,21 +8,42 @@
 // Configuration for your app
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js
 
-const packageInfo = require("./package.json");
+import packageInfo from "./package.json";
 
 // const { viteSingleFile } = require("vite-plugin-singlefile");
 
-const { configure } = require("quasar/wrappers");
-const path = require("path");
+import { defineConfig } from "#q-app/wrappers";
+// import { defineBoot } from "#q-app/wrappers";
+// import { definePreFetch } from "#q-app/wrappers";
+// import { defineRouter } from "#q-app/wrappers";
+// import { defineStore } from "#q-app/wrappers";
+// import { defineSsrMiddleware } from "#q-app/wrappers";
+// import { defineSsrCreate } from "#q-app/wrappers";
+// import { defineSsrListen } from "#q-app/wrappers";
+// import { defineSsrClose } from "#q-app/wrappers";
+// import { defineSsrServeStaticContent } from "#q-app/wrappers";
+// import { defineSsrRenderPreloadTag } from "#q-app/wrappers";
+
+
+
+
+
+
+import path from "path";
 // console.log("__dirname", __dirname);
 
 // required for the gray-matter plugin.
 // https://github.com/davidmyersdev/vite-plugin-node-polyfills
-const { nodePolyfills } = require("vite-plugin-node-polyfills");
+import { nodePolyfills } from "vite-plugin-node-polyfills";
+
+// const Vue = require("@vitejs/plugin-vue");
+// const Markdown = require("unplugin-vue-markdown/vite");
 
 
 
-module.exports = configure(function (/* ctx */) {
+
+
+export default defineConfig((ctx) => {
     return {
         // https://v2.quasar.dev/quasar-cli-vite/prefetch-feature
         // preFetch: true,
@@ -58,10 +79,8 @@ module.exports = configure(function (/* ctx */) {
 
             vueRouterMode: "history", // available values: 'hash', 'history'
             // vueRouterBase,
-            // vueDevtools,
+            // vueDevtools: true,
             // vueOptionsAPI: false,
-
-            // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
 
             // publicPath: '/',
             // publicPath: "/quasar_lightpaint/dist/spa/",
@@ -85,36 +104,44 @@ module.exports = configure(function (/* ctx */) {
             // polyfillModulePreload: true,
             // distDir
 
+            /**
+             * Folder where Quasar CLI should look for .env* files.
+             * Can be an absolute path or a relative path to project root directory.
+             *
+             * @default project root directory
+             */
+            // envFolder?: string;
+            /**
+             * Additional .env* files to be loaded.
+             * Each entry can be an absolute path or a relative path to quasar.config > build > envFolder.
+             *
+             * @example ['.env.somefile', '../.env.someotherfile']
+             */
+            // envFiles?: string[];
+
             // extendViteConf (viteConf) {},
             // viteVuePluginOptions: {},
 
             vitePlugins: [
-                // [
-                //     "@intlify/unplugin-vue-i18n",
-                //     {
-                //         // if you want to use Vue I18n Legacy API, you need to set `compositionOnly: false`
-                //         // compositionOnly: false,
-
-                //         // if you want to use named tokens in your Vue I18n messages, such as 'Hello {name}',
-                //         // you need to set `runtimeOnly: false`
-                //         // runtimeOnly: false,
-
-                //         // you need to set i18n resource including paths !
-                //         include: path.resolve(__dirname, "./src/i18n/**"),
-                //     },
-                // ],
                 [
                     "vite-plugin-checker",
                     {
                         eslint: {
-                            lintCommand: 'eslint "./**/*.{js,mjs,cjs,vue}"',
+                            lintCommand:
+                                'eslint -c ./eslint.config.js "./src*/**/*.{js,mjs,cjs,vue}"',
+                            useFlatConfig: true,
                         },
                     },
                     { server: false },
                 ],
+                // Vue({
+                //     include: [/\.vue$/, /\.md$/], // <-- allows Vue to compile Markdown files
+                // }),
+                // Markdown({ /* options */ }),
                 // [viteSingleFile()],
                 nodePolyfills(),
             ],
+
         },
 
         // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer
@@ -122,7 +149,7 @@ module.exports = configure(function (/* ctx */) {
             open: false, // opens browser window automatically
             // https: true, // for automagically self-signed cert.
             https: {
-                key:  path.join(__dirname, ".certs/localhost/key.pem"),
+                key: path.join(__dirname, ".certs/localhost/key.pem"),
                 cert: path.join(__dirname, ".certs/localhost/cert.pem"),
             },
         },
@@ -136,6 +163,26 @@ module.exports = configure(function (/* ctx */) {
                 // true "auto" false
                 dark: "auto",
             },
+
+            /**
+             * Auto import - which file extensions should be interpreted as referring to Vue SFC?
+             * @default [ 'vue' ]
+             */
+            autoImportVueExtensions: ["vue", "md"],
+
+            /**
+             * Auto import - which file extensions should be interpreted as referring to script files?
+             * @default [ 'js', 'jsx', 'ts', 'tsx' ]
+             */
+            // autoImportScriptExtensions: "",
+
+            /**
+             * Treeshake Quasar's UI on dev too?
+             * Recommended to leave this as false for performance reasons.
+             * @default false
+             */
+            // devTreeshaking?: boolean;
+            // was previously under /quasar.conf > build
 
             // iconSet: 'material-icons', // Quasar icon set
             // lang: 'en-US', // Quasar language pack
@@ -166,8 +213,9 @@ module.exports = configure(function (/* ctx */) {
         //   rootComponent: 'src/App.vue',
         //   router: 'src/router/index',
         //   store: 'src/store/index',
-        //   registerServiceWorker: 'src-pwa/register-service-worker',
-        //   serviceWorker: 'src-pwa/custom-service-worker',
+        // pwaRegisterServiceWorker: 'src-pwa/register-service-worker',
+        // pwaServiceWorker: 'src-pwa/custom-service-worker',
+        // pwaManifestFile: 'src-pwa/manifest.json',
         //   pwaManifestFile: 'src-pwa/manifest.json',
         //   electronMain: 'src-electron/electron-main',
         //   electronPreload: 'src-electron/electron-preload'
@@ -196,12 +244,13 @@ module.exports = configure(function (/* ctx */) {
 
         // https://v2.quasar.dev/quasar-cli-vite/developing-pwa/configuring-pwa
         pwa: {
-            workboxMode: "generateSW", // or 'injectManifest'
+            workboxMode: "GenerateSW", // | "InjectManifest",
             injectPwaMetaTags: true,
+            // see below for the InjectPwaMetaTagsParams interface
             swFilename: "sw.js",
             manifestFilename: "manifest.json",
             useCredentialsForManifestTag: false,
-            // useFilenameHashes: true,
+            // Moved to quasar.config > build > useFilenameHashes
             // extendGenerateSWOptions (cfg) {}
             // extendInjectManifestOptions (cfg) {},
             // extendManifestJson (json) {}
