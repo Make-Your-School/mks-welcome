@@ -1,0 +1,52 @@
+import { Q as QPage } from "./QPage-DhjHp9nS.js";
+import { p as preProcessingMD, _ as _sfc_main$1 } from "./MyMarkdown-CN6rSJ0T.js";
+import { r as ref, L as createBlock, M as openBlock, N as withCtx, R as createBaseVNode, Z as createTextVNode, j as createVNode } from "./index-DYxZp72n.js";
+import "./_plugin-vue_export-helper-cWe_MhP7.js";
+import "./QTooltip-CHSomqtF.js";
+import "./selection-CARqgAhl.js";
+import "./index-C2HsSMC5.js";
+const __vite_glob_0_0 = "The Page!\n\nsun! the HTML specification is\nmaintained by the W3C.\n";
+const dev = () => {
+  console.group("mksContent");
+  let content = {};
+  const path_base = "../../public/dev/";
+  console.log("load demo/dev.md");
+  let temp = /* @__PURE__ */ Object.assign({
+    "../../public/demo/dev.md": __vite_glob_0_0
+  });
+  content.readme = preProcessingMD(temp["../../public/demo/dev.md"]);
+  content.path_base = path_base;
+  console.log("dev done.");
+  console.log("content:", content);
+  console.groupEnd();
+  return content;
+};
+const dev$1 = dev();
+const _hoisted_1 = { style: { "overflow": "scroll" } };
+const _sfc_main = {
+  __name: "MDDev",
+  setup(__props) {
+    console.log("dev", dev$1);
+    const dev_content = ref(dev$1);
+    return (_ctx, _cache) => {
+      return openBlock(), createBlock(QPage, {
+        class: "flex column",
+        style: { "align-items": "center" }
+      }, {
+        default: withCtx(() => [
+          createBaseVNode("section", _hoisted_1, [
+            _cache[0] || (_cache[0] = createTextVNode(" Markdown DEV ")),
+            createVNode(_sfc_main$1, {
+              source: dev_content.value.readme.content,
+              "file-path": dev_content.value.path_base
+            }, null, 8, ["source", "file-path"])
+          ])
+        ]),
+        _: 1
+      });
+    };
+  }
+};
+export {
+  _sfc_main as default
+};
