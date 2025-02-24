@@ -22,7 +22,8 @@
                 <q-tooltip
                     anchor="top middle"
                     self="bottom middle"
-                    class="bg-amber text-black shadow-4 maxWidth"
+                    class="bg-amber text-black shadow-4"
+                    maxWidth="10em"
                 >
                     InterInterCircuit - ein 2-Drahtiger Bus um zwischen einem *Main* und vielen
                     *Clients* zu kommunizieren. jeder Client hat eine Adresse (*Haus-Nummer*).
@@ -33,25 +34,8 @@
     </q-page>
 </template>
 
-<style scoped>
-.maxWidth {
-    max-width: 50px;
-}
-</style>
-
-
 <script setup>
-import { ref, computed } from "vue";
-import { useQuasar } from "quasar";
-
 import VCodeBlock from "@wdns/vue-code-block";
-
-import MyMarkdown from "src/components/MyMarkdown.vue";
-
-import demo from "src/content_md/demo";
-// console.log("demo", demo);
-console.log("demo", demo);
-const demo_content = ref(demo);
 
 const code_content = `
 void setup() {

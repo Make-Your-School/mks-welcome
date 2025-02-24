@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref} from "vue";
 import MyMarkdown from "src/components/MyMarkdown.vue";
 
 const appinfo = process.env.appinfo;

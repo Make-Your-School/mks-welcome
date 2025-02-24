@@ -1,12 +1,11 @@
-/* eslint-env node */
+// Configuration for your app
+// https://v2.quasar.dev/quasar-cli-vite/quasar-config-file
 
 /*
  * This file runs in a Node context (it's NOT transpiled by Babel), so use only
  * the ES6 features that are supported by your Node version. https://node.green/
  */
 
-// Configuration for your app
-// https://v2.quasar.dev/quasar-cli-vite/quasar-config-js
 
 import packageInfo from "./package.json";
 
@@ -24,11 +23,6 @@ import { defineConfig } from "#q-app/wrappers";
 // import { defineSsrServeStaticContent } from "#q-app/wrappers";
 // import { defineSsrRenderPreloadTag } from "#q-app/wrappers";
 
-
-
-
-
-
 import path from "path";
 // console.log("__dirname", __dirname);
 
@@ -36,12 +30,8 @@ import path from "path";
 // https://github.com/davidmyersdev/vite-plugin-node-polyfills
 import { nodePolyfills } from "vite-plugin-node-polyfills";
 
-// const Vue = require("@vitejs/plugin-vue");
-// const Markdown = require("unplugin-vue-markdown/vite");
-
-
-
-
+import Vue from '@vitejs/plugin-vue'
+import Markdown from 'unplugin-vue-markdown/vite'
 
 export default defineConfig((ctx) => {
     return {
@@ -141,7 +131,6 @@ export default defineConfig((ctx) => {
                 // [viteSingleFile()],
                 nodePolyfills(),
             ],
-
         },
 
         // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer

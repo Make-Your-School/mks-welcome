@@ -32,7 +32,7 @@
 
 <script setup>
 import { ref, computed } from "vue";
-import { useQuasar } from "quasar";
+// import { useQuasar } from "quasar";
 
 import MyMarkdown from "src/components/MyMarkdown.vue";
 import PartOverview from "src/components/PartOverview.vue";
@@ -47,7 +47,6 @@ const mks_welcome = ref(mksContent.welcome);
 // console.log(`mksContent.welcome`, mksContent.welcome);
 // console.log(`mksContent.welcome['./readme.md'].content`, mksContent.welcome['./readme.md'].content);
 // console.log(`mksContent.welcome['./readme.md'].path_base`, mksContent.welcome['./readme.md'].path_base);
-const mks_tags = ref(mksContent.tags);
 const mks_parts = ref(mksContent.parts);
 
 const check_searchTextInReadme = (readme, item_name) => {
@@ -100,7 +99,7 @@ const searchText = ref("");
 
 // $q.notify('Message')
 
-const $q = useQuasar();
+// const $q = useQuasar();
 </script>
 
 <style lang="sass" scoped>

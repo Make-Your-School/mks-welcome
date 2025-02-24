@@ -31,7 +31,8 @@
 // import { useQuasar } from "quasar";
 import MyMarkdown from "src/components/MyMarkdown.vue";
 
-const props = defineProps({
+// const props = defineProps({
+defineProps({
     fn_item: Object,
 });
 </script>

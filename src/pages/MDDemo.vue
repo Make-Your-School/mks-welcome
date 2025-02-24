@@ -8,8 +8,8 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
-import { useQuasar } from "quasar";
+import { ref } from "vue";
+// import { useQuasar } from "quasar";
 import MyMarkdown from "src/components/MyMarkdown.vue";
 
 import demo from "src/content_md/demo";

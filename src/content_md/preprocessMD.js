@@ -1,6 +1,7 @@
 import matter from "gray-matter";
 
-const preProcessingMD = (source, path_base) => {
+// const preProcessingMD = (source, path_base=undefined) => {
+const preProcessingMD = (source) => {
     // console.group("preProcessingMD");
     // console.log("source:", source);
     // console.log("path_base:", path_base);

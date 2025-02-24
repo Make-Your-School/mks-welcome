@@ -64,7 +64,7 @@
 </template>
 
 <script setup>
-import { ref, watchEffect } from "vue";
+import { ref } from "vue";
 import { useQuasar } from "quasar";
 
 import EssentialNavigation from "components/EssentialNavigation.vue";

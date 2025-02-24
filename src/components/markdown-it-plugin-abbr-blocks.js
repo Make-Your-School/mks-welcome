@@ -16,7 +16,7 @@ export default function abbr_plugin(md, opts) {
     // console.log(opts.abbreviations);
 
     const escapeRE = md.utils.escapeRE;
-    const arrayReplaceAt = md.utils.arrayReplaceAt;
+    // const arrayReplaceAt = md.utils.arrayReplaceAt;
 
     // ASCII characters in Cc, Sc, Sm, Sk categories we should terminate on;
     // you can check character classes here:

@@ -12,9 +12,11 @@
 </template>
 
 <script setup>
-import { isProxy, toRaw } from "vue";
-import { computed, h, shallowRef, ref, unref, watch, watchEffect } from "vue";
-import { useQuasar } from "quasar";
+// import { isProxy, toRaw } from "vue";
+import { toRaw } from "vue";
+// import { computed, h, shallowRef, ref, unref, watch, watchEffect } from "vue";
+import {  shallowRef, ref, watchEffect } from "vue";
+// import { useQuasar } from "quasar";
 
 // maybe refactor the custom vu component injects with
 // dynamically created components ?!
@@ -80,7 +82,7 @@ const md_options = {
         if (lang && hljs.getLanguage(lang)) {
             try {
                 return hljs.highlight(str, { language: lang }).value;
-            } catch (__) {}
+            } catch (__) {console.log(__);}
         }
         return ""; // use external default escaping
     },
@@ -156,7 +158,7 @@ md.value.use(markdownItPluginImgSrcAbs);
 // ------------------------------------------
 // prepare content
 
-const contentHTML = ref("");
+// const contentHTML = ref("");
 const content = ref([]);
 
 const addHTMLChunk = (tokens, token_start, token_end, env) => {
@@ -169,7 +171,9 @@ const addHTMLChunk = (tokens, token_start, token_end, env) => {
     chunk.content = md.value.renderer.render(token_slice, md.value.options, env);
     content.value.push(chunk);
 };
-const addCodeChunk = (token, env) => {
+
+// const addCodeChunk = (token, env) => {
+const addCodeChunk = (token) => {
     // console.log("addCodeChunk token.content", token.content);
     let chunk = {
         type: "code",
@@ -180,7 +184,9 @@ const addCodeChunk = (token, env) => {
     };
     content.value.push(chunk);
 };
-const addAbbrChunk = (token, env) => {
+
+// const addAbbrChunk = (token, env) => {
+const addAbbrChunk = (token) => {
     console.log("addAbbrChunk token.content", token.content);
     let chunk = {
         type: "abbr",

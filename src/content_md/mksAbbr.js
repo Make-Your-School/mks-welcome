@@ -4,14 +4,13 @@ const mksGetAbbr = () => {
     console.group("mksGetAbbr");
 
     let mksAbbrList = {};
-    const path_base = "../../public/mks/abbr/";
-
     const items_dir = import.meta.glob(`../../public/mks/abbr/*.md`, {
         as: "raw",
         eager: true,
     });
     // console.log("items_dir", items_dir);
-    const path_regex = new RegExp(`\.\.\/\.\.\/public\/mks\/abbr\/(?<item_name>.*)\.md`);
+    // const path_regex = new RegExp(`\.\.\/\.\.\/public\/mks\/abbr\/(?<item_name>.*)\.md`);
+    const path_regex = new RegExp(`../../public/mks/abbr/(?<item_name>.*).md`);
     // console.log("path_regex", path_regex);
     for (const path in items_dir) {
         // console.log(path);

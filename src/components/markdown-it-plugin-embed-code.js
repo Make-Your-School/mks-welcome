@@ -5,9 +5,11 @@
 
 // check with https://regex101.com/
 // c++ :./relative/file/to/your/code.cpp
-const RE_INFO = /(?<codeLang>.*?)\s?\:(?<codeFilePath>.*)/;
+// const RE_INFO = /(?<codeLang>.*?)\s?\:(?<codeFilePath>.*)/;
+const RE_INFO = /(?<codeLang>.*?)\s?:(?<codeFilePath>.*)/;
 
-const embedCode = async (tokens, idx, options, env, self) => {
+// const embedCode = async (tokens, idx, options, env, self) => {
+const embedCode = async (tokens, idx, options, env) => {
     const token = tokens[idx];
     console.log(`token: `, token);
     const reResult = RE_INFO.exec(token.info);
@@ -116,6 +118,8 @@ export function pluginEmbedCode(md) {
                 }
                 if (codeContent) {
                     token.content = codeContent;
+                    token.meta = {};
+                    token.meta.codeLang = codeLang;
                 }
             }
         }

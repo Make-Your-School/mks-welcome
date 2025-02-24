@@ -16,7 +16,7 @@ import { ref, watch } from "vue";
 import { useQuasar } from "quasar";
 import VCodeBlock from "@wdns/vue-code-block";
 
-const props = defineProps({
+defineProps({
     item: Object,
 });
 

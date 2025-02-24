@@ -32,7 +32,7 @@
 
 <script setup>
 import { ref, computed } from "vue";
-import { useQuasar } from "quasar";
+// import { useQuasar } from "quasar";
 
 import MyMarkdown from "src/components/MyMarkdown.vue";
 import TagOverview from "src/components/TagOverview.vue";
@@ -99,7 +99,7 @@ const searchText = ref("");
 
 // $q.notify('Message')
 
-const $q = useQuasar();
+// const $q = useQuasar();
 </script>
 
 <style lang="sass" scoped>

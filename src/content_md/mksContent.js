@@ -5,7 +5,7 @@ const mksAddPartsToTags = (mksContent) => {
     const mksTags = mksContent.tags;
     const mksParts = mksContent.parts;
 
-    for (const [tag_name, tag] of Object.entries(mksTags)) {
+    for (const [tag] of Object.entries(mksTags)) {
         // console.log("tag:", tag);
         if (tag.parts == undefined) {
             tag.parts = {};
@@ -18,7 +18,6 @@ const mksAddPartsToTags = (mksContent) => {
         // console.log(`${part_name} part_tags`, part_tags);
         if (part_tags) {
             for (const part_tag of part_tags) {
-                const part_tag_lc = part_tag.toLowerCase();
                 // console.log("part_tag", part_tag);
                 // console.log("mksTags[part_tag]", mksTags[part_tag]);
                 if (mksTags[part_tag]) {
@@ -54,7 +53,8 @@ const mksGetItems = (mksContent, folderName, items_dir) => {
     // const items_dir = import.meta.glob("./parts/*/readme.md", {
     // console.log("items_dir", items_dir);
     // const path_regex = /\.\/parts\/(?<item_name>.*)\/readme\.md/;
-    const path_regex = new RegExp(`\.\/${folderName}\/(?<item_name>.*)\/readme\.md`);
+    // const path_regex = new RegExp(`\.\/${folderName}\/(?<item_name>.*)\/readme\.md`);
+    const path_regex = new RegExp(`./${folderName}/(?<item_name>.*)/readme.md`);
     for (const path in items_dir) {
         // console.log(path);
         const { item_name } = path_regex.exec(path).groups;

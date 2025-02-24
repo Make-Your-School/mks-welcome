@@ -21,8 +21,8 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
-import { useQuasar } from "quasar";
+// import { ref, computed } from "vue";
+// import { useQuasar } from "quasar";
 
 const appinfo = process.env.appinfo;
 </script>
