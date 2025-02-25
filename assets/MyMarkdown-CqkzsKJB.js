@@ -1,8 +1,7 @@
-import { O as createElementBlock, P as createCommentVNode, M as openBlock, r as ref, w as watch, R as createBaseVNode, j as createVNode, U as toDisplayString, Y as unref, Z as createTextVNode, N as withCtx, s as shallowRef, _ as watchEffect, F as Fragment, S as renderList, $ as toRaw, L as createBlock } from "./index-CjbvCaPl.js";
-import { u as useQuasar, _ as _export_sfc } from "./_plugin-vue_export-helper-njIBZIjX.js";
-import { U as Un, g as getAugmentedNamespace, a as getDefaultExportFromCjs$1 } from "./vue-code-block.es-CF0XZvh9.js";
-import { Q as QTooltip } from "./QTooltip-DBn3Pwno.js";
-import { H as HighlightJS } from "./index-V0HypH2I.js";
+import { O as createElementBlock, P as createCommentVNode, M as openBlock, r as ref, w as watch, R as createBaseVNode, j as createVNode, U as toDisplayString, Y as unref, Z as createTextVNode, N as withCtx, s as shallowRef, _ as watchEffect, F as Fragment, S as renderList, $ as toRaw, L as createBlock } from "./index-BeRvWUUD.js";
+import { u as useQuasar, _ as _export_sfc } from "./_plugin-vue_export-helper-BU-rLAaV.js";
+import { U as Un, Q as QTooltip, f as getAugmentedNamespace, h as getDefaultExportFromCjs$1 } from "./QTooltip-DTDg5YEK.js";
+import { H as HighlightJS } from "./index-Dd8cLqlk.js";
 const _hoisted_1$3 = ["innerHTML"];
 const _sfc_main$3 = {
   __name: "MDHtml",
@@ -54,7 +53,6 @@ const _sfc_main$2 = {
   }
 };
 const _hoisted_1$1 = { class: "MDAbbr" };
-const _hoisted_2 = ["innerHTML"];
 const _sfc_main$1 = {
   __name: "MDAbbr",
   props: {
@@ -68,24 +66,23 @@ const _sfc_main$1 = {
           anchor: "top middle",
           self: "bottom middle",
           class: "MDAbbrContent bg-amber text-black shadow-4",
-          "max-width": "30em",
-          modelValue: _ctx.showing,
-          "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => _ctx.showing = $event)
+          "max-width": "30em"
         }, {
           default: withCtx(() => [
             createBaseVNode("div", null, [
-              createBaseVNode("div", {
-                innerHTML: __props.item.abbr.content.content
-              }, null, 8, _hoisted_2)
+              createVNode(_sfc_main, {
+                source: __props.item.abbr.content.content,
+                "file-path": __props.item.abbr.content.content
+              }, null, 8, ["source", "file-path"])
             ])
           ]),
           _: 1
-        }, 8, ["modelValue"])
+        })
       ]);
     };
   }
 };
-const MDAbbr = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-52d29386"]]);
+const MDAbbr = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-0c7c2b2c"]]);
 const decodeCache = {};
 function getDecodeCache(exclude) {
   let cache = decodeCache[exclude];
@@ -7915,10 +7912,26 @@ function abbr_plugin(md, opts) {
   md.block.ruler.before("reference", "abbr_def", abbr_def, { alt: ["paragraph", "reference"] });
   md.core.ruler.after("linkify", "abbr_replace", abbr_replace);
 }
-const __vite_glob_0_0 = "Hyper Text Markup Language\n";
-const __vite_glob_0_1 = "# I²C\nI²C = InterInterCircuit\n\nSerielle Schnittstelle\n2Pins: SDA, SCL\nes gibt immer einen *Controller* (z.B. Arduino oder RaspberryPi) und viele *Geräte* (z.B. Sensoren)\ndie Geräte werden über eine Adresse (*Hausnummer*) angesprochen.\nDiese kann Teils auch beim Gerät Eingestellt werden.\n";
-const __vite_glob_0_2 = "# Serielle Schnittstelle\nUART = Universal Asynchronous Receiver Transmitter\n\nmeist 2Pins: TX (Senden) und RX (Empfangen)\nder TX Pin des Sendenden Geräts muss an den RX-Pin des Empfangenen Gerätes angeschlossen werden.\n";
-const __vite_glob_0_3 = "World Wide Web Consortium\n";
+const HTML = "Hyper Text Markup Language\n";
+const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: HTML
+}, Symbol.toStringTag, { value: "Module" }));
+const I2C = "# I²C\nI²C = InterInterCircuit\n\nSerielle Schnittstelle\n2Pins: SDA, SCL\nes gibt immer einen *Controller* (z.B. Arduino oder RaspberryPi) und viele *Geräte* (z.B. Sensoren)\ndie Geräte werden über eine Adresse (*Hausnummer*) angesprochen.\nDiese kann Teils auch beim Gerät Eingestellt werden.\n";
+const __vite_glob_0_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: I2C
+}, Symbol.toStringTag, { value: "Module" }));
+const UART = "# Serielle Schnittstelle\nUART = Universal Asynchronous Receiver Transmitter\n\nmeist 2Pins: TX (Senden) und RX (Empfangen)\nder TX Pin des Sendenden Geräts muss an den RX-Pin des Empfangenen Gerätes angeschlossen werden.\n";
+const __vite_glob_0_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: UART
+}, Symbol.toStringTag, { value: "Module" }));
+const W3C = "World Wide Web Consortium\n";
+const __vite_glob_0_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: W3C
+}, Symbol.toStringTag, { value: "Module" }));
 var empty = null;
 const empty$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
@@ -13193,16 +13206,23 @@ const mksGetAbbr = () => {
     "../../public/mks/abbr/UART.md": __vite_glob_0_2,
     "../../public/mks/abbr/W3C.md": __vite_glob_0_3
   });
+  console.log("items_dir", items_dir);
   const path_regex = new RegExp(`../../public/mks/abbr/(?<item_name>.*).md`);
   for (const path in items_dir) {
+    console.log("path", path);
+    console.log("items_dir[path]", items_dir[path]);
     const { item_name } = path_regex.exec(path).groups;
+    console.log(`item_name: '${item_name}'`);
     mksAbbrList[item_name] = {};
     mksAbbrList[item_name].name = item_name;
     mksAbbrList[item_name].path_readme = path;
-    mksAbbrList[item_name].content = preProcessingMD(
-      items_dir[path],
+    mksAbbrList[item_name].path_base = `mks/abbr/`;
+    const content = preProcessingMD(
+      items_dir[path].default,
       mksAbbrList[item_name].path_base
     );
+    console.log(`mksAbbrList['${item_name}'] content:`, content);
+    mksAbbrList[item_name].content = content;
   }
   console.log("mksAbbrList:", mksAbbrList);
   console.groupEnd();

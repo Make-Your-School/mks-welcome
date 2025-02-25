@@ -1,12 +1,15 @@
-import { Q as QPage } from "./QPage-11_fG9Y4.js";
-import { p as preProcessingMD, _ as _sfc_main$1 } from "./MyMarkdown-DZSwuw4t.js";
-import { r as ref, L as createBlock, M as openBlock, N as withCtx, R as createBaseVNode, U as toDisplayString, Y as unref, Z as createTextVNode, j as createVNode } from "./index-CjbvCaPl.js";
-import "./_plugin-vue_export-helper-njIBZIjX.js";
-import "./vue-code-block.es-CF0XZvh9.js";
-import "./QTooltip-DBn3Pwno.js";
-import "./selection-Ca7Y0T0O.js";
-import "./index-V0HypH2I.js";
-const __vite_glob_0_0 = "# About\n\ndies ist die neuauflage der Material Koffer Set Hilfe-Seite.\n\nschau mal bei\nhttps://makeyourschool.de/maker-ecke/material/\nvorbei..\n\n";
+import { Q as QPage } from "./QPage-WNflYAs7.js";
+import { p as preProcessingMD, _ as _sfc_main$1 } from "./MyMarkdown-CqkzsKJB.js";
+import { r as ref, L as createBlock, M as openBlock, N as withCtx, R as createBaseVNode, U as toDisplayString, Y as unref, Z as createTextVNode, j as createVNode } from "./index-BeRvWUUD.js";
+import "./_plugin-vue_export-helper-BU-rLAaV.js";
+import "./QTooltip-DTDg5YEK.js";
+import "./selection-CoNXnmd1.js";
+import "./index-Dd8cLqlk.js";
+const about$2 = "# About\n\ndies ist die neuauflage der Material Koffer Set Hilfe-Seite.\n\nschau mal bei\nhttps://makeyourschool.de/maker-ecke/material/\nvorbei..\n\n";
+const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: about$2
+}, Symbol.toStringTag, { value: "Module" }));
 const about = () => {
   console.group("mksContent");
   let content = {};

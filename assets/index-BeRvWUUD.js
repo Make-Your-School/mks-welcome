@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/MKS_Parts-DCkxHtUu.js","assets/use-prevent-scroll-BZJ5mN5M.js","assets/selection-Ca7Y0T0O.js","assets/QTooltip-DBn3Pwno.js","assets/QPage-11_fG9Y4.js","assets/MyMarkdown-DZSwuw4t.js","assets/_plugin-vue_export-helper-njIBZIjX.js","assets/vue-code-block.es-CF0XZvh9.js","assets/index-V0HypH2I.js","assets/MyMarkdown-DKTd_lr7.css","assets/MKS_Parts-CWRDTFhH.css","assets/AboutPage-DUxkECjn.js","assets/SettingsPage-D_fRg9Pm.js","assets/MDDemo-BdY1utoY.js","assets/MDDev-BEM-aUKk.js","assets/MDDevTooltip-BYS0cixe.js","assets/MDDevTooltip-BFDB99Qh.css","assets/FormattingExperiments-D2u2Oh8o.js","assets/MainLayout-khwsy9Eu.js","assets/MainLayout-BvSd311F.css"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/MKS_Parts-DnxuRWwr.js","assets/use-prevent-scroll-BScyDzLG.js","assets/selection-CoNXnmd1.js","assets/QTooltip-DTDg5YEK.js","assets/QPage-WNflYAs7.js","assets/MyMarkdown-CqkzsKJB.js","assets/_plugin-vue_export-helper-BU-rLAaV.js","assets/index-Dd8cLqlk.js","assets/MyMarkdown-rSOGa1bO.css","assets/MKS_Parts-CWRDTFhH.css","assets/AboutPage-DGpzyGi8.js","assets/SettingsPage-CQtiz_1S.js","assets/MDDemo-hqorjXqs.js","assets/MDDev-uqzrBOy8.js","assets/MDDevTooltip-C9NJLR9N.js","assets/MDDevTooltip-BZN4zBpw.css","assets/FormattingExperiments-D1erKxOE.js","assets/MainLayout-DLDfdjAO.js","assets/MainLayout-BvSd311F.css"])))=>i.map(i=>d[i]);
 const scriptRel = /* @__PURE__ */ function detectScriptRel() {
   const relList = typeof document !== "undefined" && document.createElement("link").relList;
   return relList && relList.supports && relList.supports("modulepreload") ? "modulepreload" : "preload";
@@ -10421,50 +10421,50 @@ const childrenCommon = [
     title: "home",
     icon: "precision_manufacturing",
     path: "/",
-    component: () => __vitePreload(() => import("./MKS_Parts-DCkxHtUu.js"), true ? __vite__mapDeps([0,1,2,3,4,5,6,7,8,9,10]) : void 0)
+    component: () => __vitePreload(() => import("./MKS_Parts-DnxuRWwr.js"), true ? __vite__mapDeps([0,1,2,3,4,5,6,7,8,9]) : void 0)
   },
   {
     title: "About",
     // icon: 'mdi-information-variant',
     icon: "info",
     path: "about",
-    component: () => __vitePreload(() => import("./AboutPage-DUxkECjn.js"), true ? __vite__mapDeps([11,4,5,6,7,3,2,8,9]) : void 0)
+    component: () => __vitePreload(() => import("./AboutPage-DGpzyGi8.js"), true ? __vite__mapDeps([10,4,5,6,3,2,7,8]) : void 0)
   },
   {
     title: "Settings",
     icon: "settings",
     path: "settings",
-    component: () => __vitePreload(() => import("./SettingsPage-D_fRg9Pm.js"), true ? __vite__mapDeps([12,4]) : void 0)
+    component: () => __vitePreload(() => import("./SettingsPage-CQtiz_1S.js"), true ? __vite__mapDeps([11,4]) : void 0)
   },
   {
     title: "MD-Demo",
     icon: "brush",
     path: "md-demo",
-    component: () => __vitePreload(() => import("./MDDemo-BdY1utoY.js"), true ? __vite__mapDeps([13,4,5,6,7,3,2,8,9]) : void 0)
+    component: () => __vitePreload(() => import("./MDDemo-hqorjXqs.js"), true ? __vite__mapDeps([12,4,5,6,3,2,7,8]) : void 0)
   },
   {
     title: "MD-Dev",
     icon: "brush",
     path: "md-dev",
-    component: () => __vitePreload(() => import("./MDDev-BEM-aUKk.js"), true ? __vite__mapDeps([14,4,5,6,7,3,2,8,9]) : void 0)
+    component: () => __vitePreload(() => import("./MDDev-uqzrBOy8.js"), true ? __vite__mapDeps([13,4,5,6,3,2,7,8]) : void 0)
   },
   {
     title: "MD-DevTooltip",
     icon: "brush",
     path: "md-dev-tooltip",
-    component: () => __vitePreload(() => import("./MDDevTooltip-BYS0cixe.js"), true ? __vite__mapDeps([15,3,2,4,16]) : void 0)
+    component: () => __vitePreload(() => import("./MDDevTooltip-C9NJLR9N.js"), true ? __vite__mapDeps([14,3,2,4,5,6,7,8,15]) : void 0)
   },
   {
     title: "Formatting Experiments",
     icon: "brush",
     path: "formatting-experiments",
-    component: () => __vitePreload(() => import("./FormattingExperiments-D2u2Oh8o.js"), true ? __vite__mapDeps([17,3,2,4,7]) : void 0)
+    component: () => __vitePreload(() => import("./FormattingExperiments-D1erKxOE.js"), true ? __vite__mapDeps([16,3,2,4]) : void 0)
   }
 ];
 const routes = [
   {
     path: "/",
-    component: () => __vitePreload(() => import("./MainLayout-khwsy9Eu.js"), true ? __vite__mapDeps([18,1,2,6,19]) : void 0),
+    component: () => __vitePreload(() => import("./MainLayout-DLDfdjAO.js"), true ? __vite__mapDeps([17,1,2,6,18]) : void 0),
     children: [
       // { path: '', component: () => import('pages/Index.vue') },
       // { path: 'about', component: () => import('pages/About.vue') }
@@ -10478,7 +10478,7 @@ const routes = [
   // but you can also remove it
   {
     path: "/:catchAll(.*)*",
-    component: () => __vitePreload(() => import("./ErrorNotFound-CujYdPfH.js"), true ? [] : void 0)
+    component: () => __vitePreload(() => import("./ErrorNotFound-BohYNuB_.js"), true ? [] : void 0)
   }
 ];
 const createRouter = route(function() {
@@ -12333,8 +12333,8 @@ createQuasarApp(createApp, quasarUserOptions).then((app) => {
     (bootFiles) => bootFiles.map((entry) => entry.default)
   ];
   return Promise[method]([
-    __vitePreload(() => import("./i18n-hcak9JeF.js"), true ? [] : void 0),
-    __vitePreload(() => import("./addressbar-color-B2MWQGkQ.js"), true ? [] : void 0)
+    __vitePreload(() => import("./i18n-DPSPCab3.js"), true ? [] : void 0),
+    __vitePreload(() => import("./addressbar-color-D7L9lpRr.js"), true ? [] : void 0)
   ]).then((bootFiles) => {
     const boot2 = mapFn(bootFiles).filter((entry) => typeof entry === "function");
     start(app, boot2);
@@ -12370,26 +12370,26 @@ export {
   createTextVNode as Z,
   watchEffect as _,
   getCurrentInstance as a,
-  mergeDefaults as a0,
-  useSlots as a1,
-  toRefs as a2,
-  onBeforeMount as a3,
-  normalizeStyle as a4,
-  renderSlot as a5,
-  normalizeProps as a6,
-  mergeProps as a7,
-  normalizeClass as a8,
-  __vitePreload as a9,
+  vmIsDestroyed as a0,
+  getParentProxy as a1,
+  Teleport as a2,
+  createGlobalNode as a3,
+  removeGlobalNode as a4,
+  mergeDefaults as a5,
+  useSlots as a6,
+  toRefs as a7,
+  onBeforeMount as a8,
+  normalizeStyle as a9,
   quasarKey as aA,
   vmHasRouter as aB,
   css as aC,
   getElement as aD,
   Platform as aE,
-  vmIsDestroyed as aa,
-  getParentProxy as ab,
-  Teleport as ac,
-  createGlobalNode as ad,
-  removeGlobalNode as ae,
+  renderSlot as aa,
+  normalizeProps as ab,
+  mergeProps as ac,
+  normalizeClass as ad,
+  __vitePreload as ae,
   addEvt as af,
   cleanEvt as ag,
   listenOpts as ah,

@@ -1,12 +1,15 @@
-import { Q as QPage } from "./QPage-11_fG9Y4.js";
-import { p as preProcessingMD, _ as _sfc_main$1 } from "./MyMarkdown-DZSwuw4t.js";
-import { r as ref, L as createBlock, M as openBlock, N as withCtx, R as createBaseVNode, j as createVNode } from "./index-CjbvCaPl.js";
-import "./_plugin-vue_export-helper-njIBZIjX.js";
-import "./vue-code-block.es-CF0XZvh9.js";
-import "./QTooltip-DBn3Pwno.js";
-import "./selection-Ca7Y0T0O.js";
-import "./index-V0HypH2I.js";
-const __vite_glob_0_0 = "The Page!\n\nsun! the HTML specification is\nmaintained by the W3C.\n";
+import { Q as QPage } from "./QPage-WNflYAs7.js";
+import { p as preProcessingMD, _ as _sfc_main$1 } from "./MyMarkdown-CqkzsKJB.js";
+import { r as ref, L as createBlock, M as openBlock, N as withCtx, R as createBaseVNode, j as createVNode } from "./index-BeRvWUUD.js";
+import "./_plugin-vue_export-helper-BU-rLAaV.js";
+import "./QTooltip-DTDg5YEK.js";
+import "./selection-CoNXnmd1.js";
+import "./index-Dd8cLqlk.js";
+const dev$2 = "The Page!\nsun! the HTML specification is\nmaintained by the W3C.\n";
+const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: dev$2
+}, Symbol.toStringTag, { value: "Module" }));
 const dev = () => {
   console.group("mksContent");
   let content = {};
@@ -15,7 +18,8 @@ const dev = () => {
   let temp = /* @__PURE__ */ Object.assign({
     "../../public/demo/dev.md": __vite_glob_0_0
   });
-  content.readme = preProcessingMD(temp["../../public/demo/dev.md"]);
+  console.log("temp", temp);
+  content.readme = preProcessingMD(temp["../../public/demo/dev.md"].default);
   content.path_base = path_base;
   console.log("dev done.");
   console.log("content:", content);
