@@ -31,13 +31,13 @@ const mksAddPartsToTags = (mksContent) => {
 
 const getTagsContent = () => {
     return import.meta.glob(`../../public/mks/tags/*/readme.md`, {
-        as: "raw",
+        query: "?url&raw",
         eager: true,
     });
 };
 const getPartsContent = () => {
     return import.meta.glob(`../../public/mks/parts/*/readme.md`, {
-        as: "raw",
+        query: "?url&raw",
         eager: true,
     });
 };
@@ -65,7 +65,7 @@ const mksGetItems = (mksContent, folderName, items_dir) => {
         mksItems[item_name_lc].path_readme = path;
         mksItems[item_name_lc].path_base = `mks/${folderName}/${item_name}/`;
         mksItems[item_name_lc].readme = preProcessingMD(
-            items_dir[path],
+            items_dir[path].default,
             mksItems[item_name_lc].path_base
         );
         console.log(`${item_name} '${mksItems[item_name_lc].path_base}'`);
@@ -85,7 +85,7 @@ const mksGetContent = () => {
 
     console.log("load welcome readme");
     let temp = import.meta.glob("../../public/mks/readme.md", {
-        as: "raw",
+        query: "?url&raw",
         eager: true,
     });
     // console.log("temp", temp);

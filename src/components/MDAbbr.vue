@@ -6,16 +6,16 @@
             self="bottom middle"
             class="MDAbbrContent bg-amber text-black shadow-4"
             max-width="30em"
-            v-model="showing"
         >
             <div>
-                <div v-html="item.abbr.content.content"></div>
+                <my-markdown :source="item.abbr.content.content" :file-path="item.abbr.content.content" />
             </div>
         </q-tooltip>
     </span>
 </template>
 
 <script setup>
+import MyMarkdown from "src/components/MyMarkdown.vue";
 defineProps({
     item: Object,
 });
@@ -29,6 +29,7 @@ defineProps({
 <!-- we need unscoped css here! -->
 <style lang="sass">
 .q-tooltip.MDAbbrContent
+    margin: 0
     h1
         font-size: 1.5rem
         line-height: 110%

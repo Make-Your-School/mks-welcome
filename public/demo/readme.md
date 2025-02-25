@@ -13,8 +13,7 @@ and another paragraph
 
 ## Abbr
 
-Here we have a Text with some Abbreviations:
-HTML for example. or the good known W3C.
+Here we have a Text with some Abbreviations - here should be no line-break! just a Abbr now: HTML for example. or the good known W3C.
 and more in the topic of MYS we have UART in most of the uC's.
 and often Sensors are using I2C for there communication interface.
 
