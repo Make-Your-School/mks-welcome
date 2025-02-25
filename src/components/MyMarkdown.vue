@@ -213,7 +213,7 @@ watchEffect(async () => {
     let chunk_start = 0;
     for (let idx = 0; idx < tokens.length; idx++) {
         const token = tokens[idx];
-        console.log(`tokens[${String(idx).padStart(3, " ")}]`, token);
+        // console.log(`tokens[${String(idx).padStart(3, " ")}]`, token);
         // we want to extract all code blocks..
         if (token.type == "fence") {
             console.log(`fence:  chunk_start ${chunk_start}, idx - 1 ${idx - 1}`);

@@ -1,12 +1,12 @@
 import preProcessingMD from "./preprocessMD";
 
 const mksAddPartsToTags = (mksContent) => {
-    console.groupCollapsed("mksAddPartsToTags");
+    console.group("mksAddPartsToTags");
     const mksTags = mksContent.tags;
     const mksParts = mksContent.parts;
-
-    for (const [tag] of Object.entries(mksTags)) {
-        // console.log("tag:", tag);
+    console.log("mksTags", mksTags);
+    for (const [tagname, tag] of Object.entries(mksTags)) {
+        console.log(`tag '${tagname}':`, tag);
         if (tag.parts == undefined) {
             tag.parts = {};
         }
@@ -50,6 +50,7 @@ const mksGetItems = (mksContent, folderName, items_dir) => {
     }
     const mksItems = mksContent[folderName];
 
+
     // const items_dir = import.meta.glob("./parts/*/readme.md", {
     // console.log("items_dir", items_dir);
     // const path_regex = /\.\/parts\/(?<item_name>.*)\/readme\.md/;
@@ -70,6 +71,7 @@ const mksGetItems = (mksContent, folderName, items_dir) => {
         );
         console.log(`${item_name} '${mksItems[item_name_lc].path_base}'`);
     }
+    console.log("mksItems", mksItems);
     console.groupEnd();
 };
 
@@ -90,7 +92,7 @@ const mksGetContent = () => {
     });
     // console.log("temp", temp);
     // console.log("call preProcessingMD...");
-    mksContent.welcome.readme = preProcessingMD(temp["../../public/mks/readme.md"], path_base);
+    mksContent.welcome.readme = preProcessingMD(temp["../../public/mks/readme.md"].default, path_base);
     mksContent.welcome.path_base = path_base;
     console.log("welcome done.");
 

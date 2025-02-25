@@ -218,7 +218,7 @@ export default function abbr_plugin(md, opts) {
         console.log("blockTokens", blockTokens.length);
         for (let j = 0, l = blockTokens.length; j < l; j++) {
             const blockToken = blockTokens[j];
-            console.log("blockToken", blockToken);
+            // console.log("blockToken", blockToken);
             if (blockToken.type !== "inline") {
                 continue;
             }
