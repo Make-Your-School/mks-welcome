@@ -1,4 +1,4 @@
-import { h as getDefaultExportFromCjs } from "./QTooltip-CHSomqtF.js";
+import { a as getDefaultExportFromCjs } from "./vue-code-block.es-CF0XZvh9.js";
 var core;
 var hasRequiredCore;
 function requireCore() {

@@ -1,4 +1,4 @@
-import { i as commonjsGlobal, h as getDefaultExportFromCjs } from "./QTooltip-CHSomqtF.js";
+import { c as commonjsGlobal, a as getDefaultExportFromCjs } from "./vue-code-block.es-CF0XZvh9.js";
 function _mergeNamespaces(n, m) {
   for (var i = 0; i < m.length; i++) {
     const e = m[i];

@@ -1,7 +1,8 @@
-import { O as createElementBlock, P as createCommentVNode, M as openBlock, r as ref, w as watch, R as createBaseVNode, j as createVNode, U as toDisplayString, Y as unref, Z as createTextVNode, N as withCtx, s as shallowRef, _ as watchEffect, F as Fragment, S as renderList, $ as toRaw, L as createBlock } from "./index-DYxZp72n.js";
-import { u as useQuasar, _ as _export_sfc } from "./_plugin-vue_export-helper-cWe_MhP7.js";
-import { U as Un, Q as QTooltip, f as getAugmentedNamespace, h as getDefaultExportFromCjs$1 } from "./QTooltip-CHSomqtF.js";
-import { H as HighlightJS } from "./index-C2HsSMC5.js";
+import { O as createElementBlock, P as createCommentVNode, M as openBlock, r as ref, w as watch, R as createBaseVNode, j as createVNode, U as toDisplayString, Y as unref, Z as createTextVNode, N as withCtx, s as shallowRef, _ as watchEffect, F as Fragment, S as renderList, $ as toRaw, L as createBlock } from "./index-CjbvCaPl.js";
+import { u as useQuasar, _ as _export_sfc } from "./_plugin-vue_export-helper-njIBZIjX.js";
+import { U as Un, g as getAugmentedNamespace, a as getDefaultExportFromCjs$1 } from "./vue-code-block.es-CF0XZvh9.js";
+import { Q as QTooltip } from "./QTooltip-DBn3Pwno.js";
+import { H as HighlightJS } from "./index-V0HypH2I.js";
 const _hoisted_1$3 = ["innerHTML"];
 const _sfc_main$3 = {
   __name: "MDHtml",
@@ -53,6 +54,7 @@ const _sfc_main$2 = {
   }
 };
 const _hoisted_1$1 = { class: "MDAbbr" };
+const _hoisted_2 = ["innerHTML"];
 const _sfc_main$1 = {
   __name: "MDAbbr",
   props: {
@@ -65,18 +67,25 @@ const _sfc_main$1 = {
         createVNode(QTooltip, {
           anchor: "top middle",
           self: "bottom middle",
-          class: "bg-amber text-black shadow-4"
+          class: "MDAbbrContent bg-amber text-black shadow-4",
+          "max-width": "30em",
+          modelValue: _ctx.showing,
+          "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => _ctx.showing = $event)
         }, {
           default: withCtx(() => [
-            createTextVNode(toDisplayString(__props.item.abbr.content.content), 1)
+            createBaseVNode("div", null, [
+              createBaseVNode("div", {
+                innerHTML: __props.item.abbr.content.content
+              }, null, 8, _hoisted_2)
+            ])
           ]),
           _: 1
-        })
+        }, 8, ["modelValue"])
       ]);
     };
   }
 };
-const MDAbbr = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-b809f049"]]);
+const MDAbbr = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-52d29386"]]);
 const decodeCache = {};
 function getDecodeCache(exclude) {
   let cache = decodeCache[exclude];
