@@ -1,7 +1,7 @@
-import { O as createElementBlock, P as createCommentVNode, M as openBlock, r as ref, w as watch, R as createBaseVNode, j as createVNode, U as toDisplayString, Y as unref, Z as createTextVNode, N as withCtx, s as shallowRef, _ as watchEffect, F as Fragment, S as renderList, $ as toRaw, L as createBlock } from "./index-BeRvWUUD.js";
-import { u as useQuasar, _ as _export_sfc } from "./_plugin-vue_export-helper-BU-rLAaV.js";
-import { U as Un, Q as QTooltip, f as getAugmentedNamespace, h as getDefaultExportFromCjs$1 } from "./QTooltip-DTDg5YEK.js";
-import { H as HighlightJS } from "./index-Dd8cLqlk.js";
+import { O as createElementBlock, P as createCommentVNode, M as openBlock, r as ref, w as watch, R as createBaseVNode, j as createVNode, U as toDisplayString, Y as unref, Z as createTextVNode, N as withCtx, s as shallowRef, _ as watchEffect, F as Fragment, S as renderList, $ as toRaw, L as createBlock } from "./index-DWioU3IM.js";
+import { u as useQuasar, _ as _export_sfc } from "./_plugin-vue_export-helper-D82cFZQa.js";
+import { U as Un, Q as QTooltip, f as getAugmentedNamespace, h as getDefaultExportFromCjs$1 } from "./QTooltip-Blo8Z8hE.js";
+import { H as HighlightJS } from "./index-C2YOMUFB.js";
 const _hoisted_1$3 = ["innerHTML"];
 const _sfc_main$3 = {
   __name: "MDHtml",
@@ -7887,7 +7887,6 @@ function abbr_plugin(md, opts) {
     console.log("blockTokens", blockTokens.length);
     for (let j = 0, l2 = blockTokens.length; j < l2; j++) {
       const blockToken = blockTokens[j];
-      console.log("blockToken", blockToken);
       if (blockToken.type !== "inline") {
         continue;
       }
@@ -13941,7 +13940,6 @@ const _sfc_main = {
       let chunk_start = 0;
       for (let idx = 0; idx < tokens.length; idx++) {
         const token = tokens[idx];
-        console.log(`tokens[${String(idx).padStart(3, " ")}]`, token);
         if (token.type == "fence") {
           console.log(`fence:  chunk_start ${chunk_start}, idx - 1 ${idx - 1}`);
           addHTMLChunk(tokens, chunk_start, idx - 1, env);

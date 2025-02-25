@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/MKS_Parts-DnxuRWwr.js","assets/use-prevent-scroll-BScyDzLG.js","assets/selection-CoNXnmd1.js","assets/QTooltip-DTDg5YEK.js","assets/QPage-WNflYAs7.js","assets/MyMarkdown-CqkzsKJB.js","assets/_plugin-vue_export-helper-BU-rLAaV.js","assets/index-Dd8cLqlk.js","assets/MyMarkdown-rSOGa1bO.css","assets/MKS_Parts-CWRDTFhH.css","assets/AboutPage-DGpzyGi8.js","assets/SettingsPage-CQtiz_1S.js","assets/MDDemo-hqorjXqs.js","assets/MDDev-uqzrBOy8.js","assets/MDDevTooltip-C9NJLR9N.js","assets/MDDevTooltip-BZN4zBpw.css","assets/FormattingExperiments-D1erKxOE.js","assets/MainLayout-DLDfdjAO.js","assets/MainLayout-BvSd311F.css"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/MKS_Parts-BfTt_A-3.js","assets/use-prevent-scroll-Bhh0orRi.js","assets/selection-Do1_eA2L.js","assets/QTooltip-Blo8Z8hE.js","assets/QPage-DIZSsvCg.js","assets/MyMarkdown-B369TzTk.js","assets/_plugin-vue_export-helper-D82cFZQa.js","assets/index-C2YOMUFB.js","assets/MyMarkdown-rSOGa1bO.css","assets/MKS_Parts-CWRDTFhH.css","assets/AboutPage-B9ZhWJo7.js","assets/SettingsPage-pKaUY3kF.js","assets/MDDemo-p3hnvnXD.js","assets/MDDev-VfEg3-2Z.js","assets/MDDevTooltip-CDqForrJ.js","assets/MDDevTooltip-BZN4zBpw.css","assets/FormattingExperiments-D7zJ_zba.js","assets/MainLayout-BEDXiIb0.js","assets/MainLayout-BvSd311F.css"])))=>i.map(i=>d[i]);
 const scriptRel = /* @__PURE__ */ function detectScriptRel() {
   const relList = typeof document !== "undefined" && document.createElement("link").relList;
   return relList && relList.supports && relList.supports("modulepreload") ? "modulepreload" : "preload";
@@ -10421,50 +10421,50 @@ const childrenCommon = [
     title: "home",
     icon: "precision_manufacturing",
     path: "/",
-    component: () => __vitePreload(() => import("./MKS_Parts-DnxuRWwr.js"), true ? __vite__mapDeps([0,1,2,3,4,5,6,7,8,9]) : void 0)
+    component: () => __vitePreload(() => import("./MKS_Parts-BfTt_A-3.js"), true ? __vite__mapDeps([0,1,2,3,4,5,6,7,8,9]) : void 0)
   },
   {
     title: "About",
     // icon: 'mdi-information-variant',
     icon: "info",
     path: "about",
-    component: () => __vitePreload(() => import("./AboutPage-DGpzyGi8.js"), true ? __vite__mapDeps([10,4,5,6,3,2,7,8]) : void 0)
+    component: () => __vitePreload(() => import("./AboutPage-B9ZhWJo7.js"), true ? __vite__mapDeps([10,4,5,6,3,2,7,8]) : void 0)
   },
   {
     title: "Settings",
     icon: "settings",
     path: "settings",
-    component: () => __vitePreload(() => import("./SettingsPage-CQtiz_1S.js"), true ? __vite__mapDeps([11,4]) : void 0)
+    component: () => __vitePreload(() => import("./SettingsPage-pKaUY3kF.js"), true ? __vite__mapDeps([11,4]) : void 0)
   },
   {
     title: "MD-Demo",
     icon: "brush",
     path: "md-demo",
-    component: () => __vitePreload(() => import("./MDDemo-hqorjXqs.js"), true ? __vite__mapDeps([12,4,5,6,3,2,7,8]) : void 0)
+    component: () => __vitePreload(() => import("./MDDemo-p3hnvnXD.js"), true ? __vite__mapDeps([12,4,5,6,3,2,7,8]) : void 0)
   },
   {
     title: "MD-Dev",
     icon: "brush",
     path: "md-dev",
-    component: () => __vitePreload(() => import("./MDDev-uqzrBOy8.js"), true ? __vite__mapDeps([13,4,5,6,3,2,7,8]) : void 0)
+    component: () => __vitePreload(() => import("./MDDev-VfEg3-2Z.js"), true ? __vite__mapDeps([13,4,5,6,3,2,7,8]) : void 0)
   },
   {
     title: "MD-DevTooltip",
     icon: "brush",
     path: "md-dev-tooltip",
-    component: () => __vitePreload(() => import("./MDDevTooltip-C9NJLR9N.js"), true ? __vite__mapDeps([14,3,2,4,5,6,7,8,15]) : void 0)
+    component: () => __vitePreload(() => import("./MDDevTooltip-CDqForrJ.js"), true ? __vite__mapDeps([14,3,2,4,5,6,7,8,15]) : void 0)
   },
   {
     title: "Formatting Experiments",
     icon: "brush",
     path: "formatting-experiments",
-    component: () => __vitePreload(() => import("./FormattingExperiments-D1erKxOE.js"), true ? __vite__mapDeps([16,3,2,4]) : void 0)
+    component: () => __vitePreload(() => import("./FormattingExperiments-D7zJ_zba.js"), true ? __vite__mapDeps([16,3,2,4]) : void 0)
   }
 ];
 const routes = [
   {
     path: "/",
-    component: () => __vitePreload(() => import("./MainLayout-DLDfdjAO.js"), true ? __vite__mapDeps([17,1,2,6,18]) : void 0),
+    component: () => __vitePreload(() => import("./MainLayout-BEDXiIb0.js"), true ? __vite__mapDeps([17,1,2,6,18]) : void 0),
     children: [
       // { path: '', component: () => import('pages/Index.vue') },
       // { path: 'about', component: () => import('pages/About.vue') }
@@ -10478,7 +10478,7 @@ const routes = [
   // but you can also remove it
   {
     path: "/:catchAll(.*)*",
-    component: () => __vitePreload(() => import("./ErrorNotFound-BohYNuB_.js"), true ? [] : void 0)
+    component: () => __vitePreload(() => import("./ErrorNotFound--1gFHgbh.js"), true ? [] : void 0)
   }
 ];
 const createRouter = route(function() {
@@ -12333,8 +12333,8 @@ createQuasarApp(createApp, quasarUserOptions).then((app) => {
     (bootFiles) => bootFiles.map((entry) => entry.default)
   ];
   return Promise[method]([
-    __vitePreload(() => import("./i18n-DPSPCab3.js"), true ? [] : void 0),
-    __vitePreload(() => import("./addressbar-color-D7L9lpRr.js"), true ? [] : void 0)
+    __vitePreload(() => import("./i18n-r3TOllzv.js"), true ? [] : void 0),
+    __vitePreload(() => import("./addressbar-color-CqvzsY7W.js"), true ? [] : void 0)
   ]).then((bootFiles) => {
     const boot2 = mapFn(bootFiles).filter((entry) => typeof entry === "function");
     start(app, boot2);

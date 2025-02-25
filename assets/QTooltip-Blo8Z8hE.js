@@ -1,6 +1,6 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-BBFgHeoo.js","assets/index-Dd8cLqlk.js","assets/index-BeRvWUUD.js","assets/index-cjDBaXn0.css","assets/selection-CoNXnmd1.js"])))=>i.map(i=>d[i]);
-import { x as onDeactivated, p as onBeforeUnmount, v as nextTick, a0 as vmIsDestroyed, a as getCurrentInstance, c as computed, a1 as getParentProxy, r as ref, f as onUnmounted, t as injectProp, h, H as createComponent, a2 as Teleport, a3 as createGlobalNode, a4 as removeGlobalNode, d as defineComponent, a5 as mergeDefaults, a6 as useSlots, b as inject, a7 as toRefs, Y as unref, O as createElementBlock, w as watch, a8 as onBeforeMount, o as onMounted, M as openBlock, P as createCommentVNode, R as createBaseVNode, a9 as normalizeStyle, aa as renderSlot, ab as normalizeProps, ac as mergeProps, F as Fragment, Z as createTextVNode, U as toDisplayString, ad as normalizeClass, L as createBlock, ae as __vitePreload, z as prevent, af as addEvt, J as isKeyCode, ag as cleanEvt, ah as listenOpts, G as client, D as Transition, C as hSlot, u as stopAndPrevent } from "./index-BeRvWUUD.js";
-import { d as clearSelection, g as getScrollbarWidth, u as useModelToggleEmits, s as scrollTargetProp, a as useModelToggleProps, b as useTimeout, c as useModelToggle, e as getScrollTarget } from "./selection-CoNXnmd1.js";
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-ADzXkL6I.js","assets/index-C2YOMUFB.js","assets/index-DWioU3IM.js","assets/index-cjDBaXn0.css","assets/selection-Do1_eA2L.js"])))=>i.map(i=>d[i]);
+import { x as onDeactivated, p as onBeforeUnmount, v as nextTick, a0 as vmIsDestroyed, a as getCurrentInstance, c as computed, a1 as getParentProxy, r as ref, f as onUnmounted, t as injectProp, h, H as createComponent, a2 as Teleport, a3 as createGlobalNode, a4 as removeGlobalNode, d as defineComponent, a5 as mergeDefaults, a6 as useSlots, b as inject, a7 as toRefs, Y as unref, O as createElementBlock, w as watch, a8 as onBeforeMount, o as onMounted, M as openBlock, P as createCommentVNode, R as createBaseVNode, a9 as normalizeStyle, aa as renderSlot, ab as normalizeProps, ac as mergeProps, F as Fragment, Z as createTextVNode, U as toDisplayString, ad as normalizeClass, L as createBlock, ae as __vitePreload, z as prevent, af as addEvt, J as isKeyCode, ag as cleanEvt, ah as listenOpts, G as client, D as Transition, C as hSlot, u as stopAndPrevent } from "./index-DWioU3IM.js";
+import { d as clearSelection, g as getScrollbarWidth, u as useModelToggleEmits, s as scrollTargetProp, a as useModelToggleProps, b as useTimeout, c as useModelToggle, e as getScrollTarget } from "./selection-Do1_eA2L.js";
 let queue = [];
 let waitFlags = [];
 function clearFlag(flag) {
@@ -1762,11 +1762,11 @@ const In = { class: "v-code-block--button-copy" }, Gn = { class: "v-code-block--
     });
   }
   function tn() {
-    Sn(), e.value.highlightjs && __vitePreload(() => import("./index-BBFgHeoo.js"), true ? __vite__mapDeps([0,1,2,3,4]) : void 0).then((a) => {
+    Sn(), e.value.highlightjs && __vitePreload(() => import("./index-ADzXkL6I.js"), true ? __vite__mapDeps([0,1,2,3,4]) : void 0).then((a) => {
       L = a.default, L.registerLanguage("plain", Fn), M.value = L.highlight(_.value, { language: e.value.lang }).value;
     }).catch((a) => {
       console.error("Highlight.js import:", { err: a });
-    }), e.value.prismjs && __vitePreload(() => import("./prism-D_hOAcya.js").then((n) => n.p), true ? [] : void 0).then((a) => {
+    }), e.value.prismjs && __vitePreload(() => import("./prism-BoB7tw6I.js").then((n) => n.p), true ? [] : void 0).then((a) => {
       A = a.default, M.value = A.highlight(_.value, A.languages[e.value.lang], e.value.lang);
     }).catch((a) => {
       console.error("PrismJS import:", { err: a });

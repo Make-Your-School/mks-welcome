@@ -1,11 +1,11 @@
-import { l as isRuntimeSsrPreHydration, r as ref, o as onMounted, w as watch, c as computed, a as getCurrentInstance, m as onBeforeUpdate, b as inject, n as formKey, p as onBeforeUnmount, q as debounce, t as injectProp, u as stopAndPrevent, v as nextTick, x as onDeactivated, y as onActivated, h, z as prevent, Q as QIcon, B as QSpinner, C as hSlot, D as Transition, E as shouldIgnoreKey, G as client, H as createComponent, I as stop, J as isKeyCode, K as childHasFocus, L as createBlock, M as openBlock, N as withCtx, j as createVNode, O as createElementBlock, P as createCommentVNode, R as createBaseVNode, F as Fragment, S as renderList, U as toDisplayString, V as createDirective, W as withDirectives, X as QBtn } from "./index-BeRvWUUD.js";
-import { u as useDarkProps, a as useDark, b as useHistory, c as usePreventScroll } from "./use-prevent-scroll-BScyDzLG.js";
-import { a as addFocusFn, r as removeFocusFn, u as useTransitionProps, b as useTick, c as useTransition, d as usePortal, g as getPortalProxy, e as closePortals } from "./QTooltip-DTDg5YEK.js";
-import { u as useModelToggleEmits, a as useModelToggleProps, b as useTimeout, c as useModelToggle } from "./selection-CoNXnmd1.js";
-import { Q as QPage } from "./QPage-WNflYAs7.js";
-import { _ as _sfc_main$3, p as preProcessingMD } from "./MyMarkdown-CqkzsKJB.js";
-import { _ as _export_sfc } from "./_plugin-vue_export-helper-BU-rLAaV.js";
-import "./index-Dd8cLqlk.js";
+import { l as isRuntimeSsrPreHydration, r as ref, o as onMounted, w as watch, c as computed, a as getCurrentInstance, m as onBeforeUpdate, b as inject, n as formKey, p as onBeforeUnmount, q as debounce, t as injectProp, u as stopAndPrevent, v as nextTick, x as onDeactivated, y as onActivated, h, z as prevent, Q as QIcon, B as QSpinner, C as hSlot, D as Transition, E as shouldIgnoreKey, G as client, H as createComponent, I as stop, J as isKeyCode, K as childHasFocus, L as createBlock, M as openBlock, N as withCtx, j as createVNode, O as createElementBlock, P as createCommentVNode, R as createBaseVNode, F as Fragment, S as renderList, U as toDisplayString, V as createDirective, W as withDirectives, X as QBtn } from "./index-DWioU3IM.js";
+import { u as useDarkProps, a as useDark, b as useHistory, c as usePreventScroll } from "./use-prevent-scroll-Bhh0orRi.js";
+import { a as addFocusFn, r as removeFocusFn, u as useTransitionProps, b as useTick, c as useTransition, d as usePortal, g as getPortalProxy, e as closePortals } from "./QTooltip-Blo8Z8hE.js";
+import { u as useModelToggleEmits, a as useModelToggleProps, b as useTimeout, c as useModelToggle } from "./selection-Do1_eA2L.js";
+import { Q as QPage } from "./QPage-DIZSsvCg.js";
+import { _ as _sfc_main$3, p as preProcessingMD } from "./MyMarkdown-B369TzTk.js";
+import { _ as _export_sfc } from "./_plugin-vue_export-helper-D82cFZQa.js";
+import "./index-C2YOMUFB.js";
 let buf, bufIdx = 0;
 const hexBytes = new Array(256);
 for (let i = 0; i < 256; i++) {
@@ -2031,10 +2031,12 @@ const __vite_glob_2_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.def
   default: readme
 }, Symbol.toStringTag, { value: "Module" }));
 const mksAddPartsToTags = (mksContent2) => {
-  console.groupCollapsed("mksAddPartsToTags");
+  console.group("mksAddPartsToTags");
   const mksTags = mksContent2.tags;
   const mksParts = mksContent2.parts;
-  for (const [tag] of Object.entries(mksTags)) {
+  console.log("mksTags", mksTags);
+  for (const [tagname, tag] of Object.entries(mksTags)) {
+    console.log(`tag '${tagname}':`, tag);
     if (tag.parts == void 0) {
       tag.parts = {};
     }
@@ -2094,6 +2096,7 @@ const mksGetItems = (mksContent2, folderName, items_dir) => {
     );
     console.log(`${item_name} '${mksItems[item_name_lc].path_base}'`);
   }
+  console.log("mksItems", mksItems);
   console.groupEnd();
 };
 const mksGetContent = () => {
@@ -2108,7 +2111,7 @@ const mksGetContent = () => {
   let temp = /* @__PURE__ */ Object.assign({
     "../../public/mks/readme.md": __vite_glob_2_0
   });
-  mksContent2.welcome.readme = preProcessingMD(temp["../../public/mks/readme.md"]);
+  mksContent2.welcome.readme = preProcessingMD(temp["../../public/mks/readme.md"].default);
   mksContent2.welcome.path_base = path_base;
   console.log("welcome done.");
   mksGetItems(mksContent2, "tags", getTagsContent());
