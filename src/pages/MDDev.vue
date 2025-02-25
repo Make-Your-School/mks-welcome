@@ -1,7 +1,7 @@
 <template>
-    <q-page class="flex column" style="align-items: center;">
-        <section style="overflow: scroll;">
-            Markdown DEV
+    <q-page class="flex column" style="align-items: center">
+        <section style="overflow: scroll">
+            <h2>Markdown DEV</h2>
             <my-markdown :source="dev_content.readme.content" :file-path="dev_content.path_base" />
         </section>
     </q-page>

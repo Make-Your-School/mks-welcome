@@ -1,11 +1,16 @@
 <template>
     <span class="MDAbbr">
-        {{ item.content }}<q-tooltip
+        {{ item.content
+        }}<q-tooltip
             anchor="top middle"
             self="bottom middle"
-            class="bg-amber text-black shadow-4"
+            class="MDAbbrContent bg-amber text-black shadow-4"
+            max-width="30em"
+            v-model="showing"
         >
-                {{ item.abbr.content.content }}
+            <div>
+                <div v-html="item.abbr.content.content"></div>
+            </div>
         </q-tooltip>
     </span>
 </template>
@@ -14,11 +19,21 @@
 defineProps({
     item: Object,
 });
-
 </script>
 
 <style lang="sass" scoped>
 .MDAbbr
-    display: inline
     text-decoration: underline dotted
+</style>
+
+<!-- we need unscoped css here! -->
+<style lang="sass">
+.q-tooltip.MDAbbrContent
+    h1
+        font-size: 1.5rem
+        line-height: 110%
+        margin-top: 0.5rem
+        margin-bottom: 0.5rem
+    p
+        margin-bottom: 0.5rem
 </style>

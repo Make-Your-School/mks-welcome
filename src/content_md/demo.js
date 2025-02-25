@@ -1,19 +1,29 @@
 import preProcessingMD from "./preprocessMD";
 
 const demo = () => {
-    console.group("mksContent");
+    console.group("demo.js - loading content");
     let content = {};
-
     const path_base = "../../public/demo/";
-    console.log("load demo readme");
+    const fileURL = "../../public/demo/readme.md";
     let temp = import.meta.glob("../../public/demo/readme.md", {
-        as: "raw",
+        // let temp = import.meta.glob("/demo/readme.md", {
+        query: "?url&raw",
         eager: true,
     });
-    content.readme = preProcessingMD(temp["../../public/demo/readme.md"], path_base);
-    content.path_base = path_base;
-    console.log("demo done.");
-    console.log("content:", content);
+    // console.log("temp", temp);
+    // console.log("temp[fileURL].default", temp[fileURL].default);
+    if (temp[fileURL].default) {
+        content.readme = preProcessingMD(temp[fileURL].default, path_base);
+        content.path_base = path_base;
+        console.log("demo done.");
+        console.log("content:", content);
+    } else {
+        console.error(
+            `something with the import failed.. \n temp `,
+            temp,
+            ` does not contain file '${fileURL}'`,
+        );
+    }
     console.groupEnd();
     return content;
 };

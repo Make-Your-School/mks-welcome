@@ -33,6 +33,12 @@ export const childrenCommon = [
         component: () => import("pages/MDDev.vue"),
     },
     {
+        title: "MD-DevTooltip",
+        icon: "brush",
+        path: "md-dev-tooltip",
+        component: () => import("pages/MDDevTooltip.vue"),
+    },
+    {
         title: "Formatting Experiments",
         icon: "brush",
         path: "formatting-experiments",
