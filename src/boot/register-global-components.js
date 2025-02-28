@@ -8,6 +8,6 @@ import MDAbbr from 'src/components/MDComponents/MDAbbr.vue'
 export default defineBoot(async ({ app }) => {
   // https://quasar.dev/app-extensions/tips-and-tricks/provide-a-ui-component/
   // register global components
-  app.component('md-code', MDCode)
-  app.component('md-abbr', MDAbbr)
+  app.component('MDCode', MDCode)
+  app.component('MDAbbr', MDAbbr)
 })

@@ -9,17 +9,17 @@ export function MarkdownItPluginCodeAsMDCode(md) {
     // const defaultRender_fence = md.renderer.rules.fence || proxy;
 
     md.renderer.rules.fence = function (tokens, idx, options, env, slf) {
-        console.log(`MarkdownItPluginCodeAsMDCode.fence called`);
+        // console.log(`MarkdownItPluginCodeAsMDCode.fence called`);
         // console.log(`tokens: `, tokens)
         // // console.log(`env: `, env);
         const token = tokens[idx];
         // console.log(`token: `, token);
-        token.tag = "md-code";
+        token.tag = "MDCode";
         token.attrJoin("content", token.content);
         token.attrJoin("codeLanguage", token.info);
         token.attrJoin("includePath", token.meta?.includePath ? token.meta?.includePath : '');
         token.attrJoin("codeFilePath", token.meta?.codeFilePath ? token.meta?.codeFilePath : "");
-        console.log(`tokens[idx]: `, tokens[idx]);
+        // console.log(`tokens[idx]: `, tokens[idx]);
 
         // rendering
         return `<${token.tag} ${slf.renderAttrs(token)}></${token.tag}>`;

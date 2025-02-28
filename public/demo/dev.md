@@ -1,4 +1,11 @@
+---
+title: Testing Code-Blocks
+tags: [sw, code, style]
+id: 127
+---
+
 The Page!
+
 sun! the HTML specification is
 maintained by the W3C.
 
@@ -7,7 +14,3 @@ const ping = "pong";
 ```
 
 done.
-
-<script setup>
-import MDCode from "components/MDComponents/MDCode.vue";
-</script>
