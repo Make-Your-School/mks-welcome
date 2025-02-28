@@ -1,8 +1,7 @@
 // source / based on
 // https://github.com/markdown-it/markdown-it-abbr/blob/master/index.mjs
 
-// Enclose abbreviations in <abbr> tags
-//
+// Enclose abbreviations in <MDAbbr> component
 export default function abbr_plugin(md) {
     const escapeRE = md.utils.escapeRE;
     const arrayReplaceAt = md.utils.arrayReplaceAt;
@@ -160,10 +159,10 @@ export default function abbr_plugin(md) {
                     // token_o.attrs = [["title", state.env.abbreviations[":" + m[2]]]];
                     // nodes.push(token_o);
 
-                    const token_t = new state.Token("abbr", "q-tooltip", 0);
+                    const token_t = new state.Token("abbr", "MDAbbr", 0);
                     token_t.content = m[2];
-                    token_t.attrs = [["title", state.env.abbreviations[":" + m[2]]]];
-                    token_t.abbr = state.env.abbreviations[":" + m[2]];
+                    token_t.meta.abbrDescription = state.env.abbreviations[":" + m[2]];
+                    token_t.attrJoin("abbrDescription", token_t.meta.abbrDescription);
                     nodes.push(token_t);
 
                     // const token_c = new state.Token("abbr_close", "abbr", -1);
@@ -192,4 +191,12 @@ export default function abbr_plugin(md) {
     md.block.ruler.before("reference", "abbr_def", abbr_def, { alt: ["paragraph", "reference"] });
 
     md.core.ruler.after("linkify", "abbr_replace", abbr_replace);
+
+    md.renderer.rules.abbr = function (tokens, idx, options, env, slf) {
+        console.log(`MarkdownItPluginAbbrAsMDAbbr.abbr called`);
+        // the default rendering does escape html... we want it raw!
+        const token = tokens[idx];
+        console.log(`token: `, token);
+        return `<${token.tag} ${slf.renderAttrs(token)}>${token.content}</${token.tag}>`;
+    };
 }

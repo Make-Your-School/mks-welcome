@@ -77,7 +77,7 @@ export const runEmbedCode = async (tokens, options, env, self) => {
     for (let idx = 0; idx < tokens.length; idx++) {
         const token = tokens[idx];
         if (token.type == "fence") {
-            // console.log("ping");
+            console.log("ping", token);
             await embedCode(tokens, idx, options, env, self);
         }
     }

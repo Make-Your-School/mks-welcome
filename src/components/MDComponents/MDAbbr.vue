@@ -1,23 +1,22 @@
 <template>
     <span class="MDAbbr">
-        {{ item.content
-        }}<q-tooltip
+        <slot></slot><q-tooltip
             anchor="top middle"
             self="bottom middle"
-            class="MDAbbrContent bg-amber text-black shadow-4"
+            class="MDAbbrDescription bg-amber text-black shadow-4"
             max-width="30em"
-        >
-            <div>
-                <my-markdown :source="item.abbr.content.content" :file-path="item.abbr.content.content" />
-            </div>
-        </q-tooltip>
+            ><div>
+                <my-markdown
+                    :source="abbrDescription"
+                /></div
+        ></q-tooltip>
     </span>
 </template>
 
 <script setup>
-import MyMarkdown from "src/components/MyMarkdown.vue";
+import MyMarkdown from "components/MDComponents/MyMarkdown.vue";
 defineProps({
-    item: Object,
+    abbrDescription: String,
 });
 </script>
 
@@ -28,7 +27,7 @@ defineProps({
 
 <!-- we need unscoped css here! -->
 <style lang="sass">
-.q-tooltip.MDAbbrContent
+.q-tooltip.MDAbbrDescription
     margin: 0
     h1
         font-size: 1.5rem

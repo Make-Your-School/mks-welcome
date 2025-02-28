@@ -30,8 +30,10 @@ import path from "path";
 // https://github.com/davidmyersdev/vite-plugin-node-polyfills
 import { nodePolyfills } from "vite-plugin-node-polyfills";
 
-import Vue from '@vitejs/plugin-vue'
 import Markdown from 'unplugin-vue-markdown/vite'
+import markdownItConfig from "./markdown-it-config";
+
+
 
 export default defineConfig((ctx) => {
     return {
@@ -41,7 +43,7 @@ export default defineConfig((ctx) => {
         // app boot file (/src/boot)
         // --> boot files are part of "main.js"
         // https://v2.quasar.dev/quasar-cli-vite/boot-files
-        boot: ["i18n", "addressbar-color"],
+        boot: ["i18n", "addressbar-color", "register-global-components"],
 
         // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
         css: ["app.scss"],
@@ -111,6 +113,9 @@ export default defineConfig((ctx) => {
 
             // extendViteConf (viteConf) {},
             // viteVuePluginOptions: {},
+            viteVuePluginOptions: {
+                include: [/\.vue$/, /\.md$/], // <-- allows Vue to compile Markdown files
+            },
 
             vitePlugins: [
                 [
@@ -124,10 +129,7 @@ export default defineConfig((ctx) => {
                     },
                     { server: false },
                 ],
-                // Vue({
-                //     include: [/\.vue$/, /\.md$/], // <-- allows Vue to compile Markdown files
-                // }),
-                // Markdown({ /* options */ }),
+                Markdown(markdownItConfig),
                 // [viteSingleFile()],
                 nodePolyfills(),
             ],

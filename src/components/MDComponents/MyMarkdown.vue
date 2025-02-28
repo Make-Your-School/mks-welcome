@@ -22,9 +22,9 @@ import {  shallowRef, ref, watchEffect } from "vue";
 // dynamically created components ?!
 // https://stackoverflow.com/questions/69488256/vue-3-append-component-to-the-dom-best-practice
 
-import MDHtml from "src/components/MDHtml.vue";
-import MDCode from "src/components/MDCode.vue";
-import MDAbbr from "src/components/MDAbbr.vue";
+import MDHtml from "components/MDComponents/MDHtml.vue";
+import MDCode from "components/MDComponents/MDCode.vue";
+import MDAbbr from "components/MDComponents/MDAbbr.vue";
 // import MyHtml from "./MyHtml.vue";
 
 // import VueMarkdown from "vue-markdown-render";
@@ -43,16 +43,18 @@ import "@mdit/plugin-alert/style";
 import md_it_container from "markdown-it-container";
 
 // import plugin_abbr from "src/components/markdown-it-plugin-abbr";
-import plugin_abbr from "src/components/markdown-it-plugin-abbr-blocks";
+import plugin_abbr from "src/components/markdown-it-plugins/markdown-it-plugin-abbr-blocks";
 import mksAbbr from "src/content_md/mksAbbr";
 // https://github.com/nagaozen/markdown-it-toc-done-right
 // import * as mdi_toc from "markdown-it-toc-done-right";
 
 // import { include, include as mdit_include } from "@mdit/plugin-include";
 
-import markdownItPluginImgSrcAbs from "./markdown-it-plugin-img-src-abs";
+import markdownItPluginImgSrcAbs from "components/markdown-it-plugins/markdown-it-plugin-img-src-abs";
+
+
 // import markdownItPluginEmbedCode from "./markdown-it-plugin-embed-code";
-import { runEmbedCode } from "./markdown-it-plugin-embed-code";
+// import { runEmbedCode } from "./markdown-it-plugin-embed-code";
 
 import hljs from "highlight.js";
 // import "highlight.js/styles/night-owl.css";
@@ -62,6 +64,9 @@ import cpp from "highlight.js/lib/languages/cpp";
 // Then register the languages you need
 hljs.registerLanguage("cpp", cpp);
 hljs.registerLanguage("c++", cpp);
+
+
+import MarkdownItPluginCodeAsMDCode from 'components/markdown-it-plugins/markdown-it-plugin-code-as-mdcode'
 
 const props = defineProps({
     source: String,
@@ -101,6 +106,8 @@ md.value.use(plugin_abbr, {
 // md.value.use(mdi_toc);
 
 md.value.use(mdit_alert);
+
+// https://github.com/markdown-it/markdown-it-container
 md.value.use(md_it_container, "info");
 md.value.use(md_it_container, "tip");
 md.value.use(md_it_container, "important");
@@ -134,6 +141,8 @@ md.value.use(md_it_container, "warning");
 
 md.value.use(full);
 md.value.use(markdownItPluginImgSrcAbs);
+
+md.value.use(MarkdownItPluginCodeAsMDCode);
 
 // function setupPlugins(plugins){
 //     plugins.map(item => {
@@ -206,7 +215,7 @@ watchEffect(async () => {
     let tokens = md.value.parse(props.source, env);
     // console.log("tokens", tokens);
     // call async function
-    await runEmbedCode(tokens, {}, env, md.value);
+    // await runEmbedCode(tokens, {}, env, md.value);
 
     // now lets split the tokens..
     console.log("split tokens into html and special parts...");
@@ -318,3 +327,5 @@ watchEffect(async () => {
 //        text-shadow: 0 0 2px black, 0 0 5px black, 0 0 10px black, 0 0 10px black, 0 0 10px black, 0 0 10px black, 0 0 10px black, 0 0 10px black
 //.body--light .my-card .my-markdown h1:nth-child(1)
 </style>
+./markdown-it-plugin-code-as-mdcode
+./markdown-it-plugins/markdown-it-plugin-img-src-abs
