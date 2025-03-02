@@ -2,7 +2,6 @@
 // https://github.com/markdown-it/markdown-it-abbr/blob/master/index.mjs
 
 // Enclose abbreviations in <abbr> tags
-//
 export default function abbr_plugin(md, opts) {
     const opts_defaults = {
         abbreviations: {},
@@ -84,7 +83,6 @@ export default function abbr_plugin(md, opts) {
         return true;
     }
 
-    // function abbr_replace_
     function abbr_replace(state) {
         const blockTokens = state.tokens;
 

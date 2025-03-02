@@ -1,7 +1,7 @@
 // import { escapeHtml } from "markdown-it/lib/common/utils.mjs";
 
 export function MarkdownItPluginCodeAsMDCode(md) {
-    console.log(`MarkdownItPluginCodeAsMDCode setup..`);
+    // console.log(`MarkdownItPluginCodeAsMDCode setup..`);
     // console.log("md.renderer.rules", md.renderer.rules);
     // console.log("md.renderer.rules.fence", md.renderer.rules.fence);
 

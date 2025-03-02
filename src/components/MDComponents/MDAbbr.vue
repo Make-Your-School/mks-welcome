@@ -4,20 +4,33 @@
             anchor="top middle"
             self="bottom middle"
             class="MDAbbrDescription bg-amber text-black shadow-4"
-            max-width="30em"
-            ><div>
-                <my-markdown
-                    :source="abbrDescription"
-                /></div
-        ></q-tooltip>
+            max-width="40em"
+        ><slot name="abbrDescription"></slot></q-tooltip>
     </span>
 </template>
 
 <script setup>
-import MyMarkdown from "components/MDComponents/MyMarkdown.vue";
-defineProps({
-    abbrDescription: String,
-});
+{/* <div>
+                <!-- <mdrender></mdrender> -->
+                <!-- <component :is="{template:abbrDescription}"></component> -->
+                <div v-html="abbrDescription"></div>
+            </div
+        > */}
+
+// import { h } from "vue";
+// import MyMarkdown from "components/MDComponents/MyMarkdown.vue";
+// const props = defineProps({
+// defineProps({
+//     abbrDescription: String,
+// });
+
+// const mdrender = () => {
+//     return h('div', props.abbrDescription);
+// };
+
+// teh component template version is not possible -
+// it is missing
+// [Vue warn]: Component provided template option but runtime compilation is not supported in this build of Vue. Configure your bundler to alias "vue" to "vue/dist/vue.esm-bundler.js".
 </script>
 
 <style lang="sass" scoped>

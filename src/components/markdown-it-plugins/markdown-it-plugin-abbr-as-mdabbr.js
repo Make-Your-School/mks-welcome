@@ -2,7 +2,101 @@
 // https://github.com/markdown-it/markdown-it-abbr/blob/master/index.mjs
 
 // Enclose abbreviations in <MDAbbr> component
-export default function abbr_plugin(md) {
+
+// import { mksAbbrCollection } from "src/content_md/mksAbbr";
+
+// export const mksAbbrCollection = {}
+
+import md2html from "src/components/markdown-it-plugins/markdown-rendering.js";
+
+// import { glob } from 'node:fs/promises'
+import fs from "node:fs";
+import path from "node:path";
+
+export const mksAbbrLoadNodeJS = () => {
+    // console.group('mksAbbrLoadNodeJS')
+    let mksAbbrList = {};
+
+    // https://nodejs.org/docs/latest/api/fs.html#fsglobsyncpattern-options
+    // console.log('process.cwd()', process.cwd())
+    // const items_dir = globSync(`../../md_content/abbr/*.md`)
+    // const files = fs.globSync(`src/md_content/abbr/*.md`);
+    const files = fs.globSync(`public/mks/abbr/*.md`);
+    // console.log('files', files)
+    for (const filePath of files) {
+        // console.log('filePath', filePath)
+        const data = fs.readFileSync(filePath, "utf8");
+        // console.log('data', data)
+        const item_name = path.basename(filePath, path.extname(filePath));
+        // console.log(`item_name: '${item_name}'`)
+        const abbrDescription = md2html(data);
+        mksAbbrList[item_name] = abbrDescription;
+        // mksAbbrList[item_name] = {}
+        // mksAbbrList[item_name].name = item_name
+        // mksAbbrList[item_name].path_readme = filePath
+        // mksAbbrList[item_name].content =
+        // console.log('mksAbbrList[item_name].content', mksAbbrList[item_name].content)
+    }
+    // console.log('mksAbbrList:', mksAbbrList)
+    console.log("mksAbbrList:", Object.keys(mksAbbrList));
+    console.groupEnd();
+    return mksAbbrList;
+};
+
+export const mksAbbrLoad = () => {
+    console.group("mksAbbrLoad");
+
+    let mksAbbrList = {};
+    const items_dir = import.meta.glob(`../../../public/mks/abbr/*.md`, {
+        // query: "?url&raw",
+        // query: "?raw",
+        eager: true,
+    });
+    console.log("items_dir", items_dir);
+    // const path_regex = new RegExp(`\.\.\/\.\.\/public\/mks\/abbr\/(?<item_name>.*)\.md`);
+    const path_regex = new RegExp(`../../../public/mks/abbr/(?<item_name>.*).md`);
+    // /src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr.js
+    // /public/mks/abbr/HTML.md
+
+    // console.log("path_regex", path_regex);
+    for (const path in items_dir) {
+        console.log("path", path);
+        console.log("items_dir[path]", items_dir[path]);
+        const { item_name } = path_regex.exec(path).groups;
+        console.log(`item_name: '${item_name}'`);
+        mksAbbrList[item_name] = {};
+        mksAbbrList[item_name].name = item_name;
+        mksAbbrList[item_name].path_readme = path;
+        mksAbbrList[item_name].path_base = `mks/abbr/`;
+        mksAbbrList[item_name].content = items_dir[path].default;
+        // const content = preProcessingMD(
+        //     items_dir[path].default,
+        //     mksAbbrList[item_name].path_base
+        // );
+        // console.log(`mksAbbrList['${item_name}'] content:`, content);
+        // mksAbbrList[item_name].content = content;
+        // console.log(`${item_name} '${mksAbbrList[item_name].path_base}'`);
+    }
+    console.log("mksAbbrList:", mksAbbrList);
+    // console.log("mksAbbrList:", Object.keys(mksAbbrList));
+    console.groupEnd();
+    return mksAbbrList;
+};
+
+export default function abbr_plugin(md, opts) {
+    // console.log(`MarkdownItPluginAbbrAsMDAbbr.abbr_plugin`);
+    const opts_defaults = {
+        abbreviations: {},
+    };
+
+    opts = Object.assign({}, opts_defaults, opts);
+    // console.log('mksAbbrCollection', mksAbbrCollection)
+    // console.log('opts.abbreviations', opts.abbreviations)
+    opts.abbreviations = Object.fromEntries(
+        Object.entries(opts.abbreviations).map(([key, value]) => [`:${key}`, value]),
+    );
+    // console.log('opts.abbreviations', opts.abbreviations)
+
     const escapeRE = md.utils.escapeRE;
     const arrayReplaceAt = md.utils.arrayReplaceAt;
 
@@ -60,12 +154,12 @@ export default function abbr_plugin(md) {
         if (title.length === 0) {
             return false;
         }
-        if (!state.env.abbreviations) {
-            state.env.abbreviations = {};
+        if (!opts.abbreviations) {
+            opts.abbreviations = {};
         }
         // prepend ':' to avoid conflict with Object.prototype members
-        if (typeof state.env.abbreviations[":" + label] === "undefined") {
-            state.env.abbreviations[":" + label] = title;
+        if (typeof opts.abbreviations[":" + label] === "undefined") {
+            opts.abbreviations[":" + label] = title;
         }
 
         state.line = startLine + 1;
@@ -73,15 +167,21 @@ export default function abbr_plugin(md) {
     }
 
     function abbr_replace(state) {
+        // console.log(`MarkdownItPluginAbbrAsMDAbbr.abbr_replace`);
         const blockTokens = state.tokens;
 
-        if (!state.env.abbreviations) {
+        // const mksAbbrTemp = mksAbbrLoad()
+        // console.log('mksAbbrTemp', mksAbbrTemp)
+        // // console.log("mksAbbrCollection", mksAbbrCollection);
+
+        // console.log('opts.abbreviations', opts.abbreviations)
+        if (!opts.abbreviations) {
             return;
         }
 
         const regSimple = new RegExp(
             "(?:" +
-                Object.keys(state.env.abbreviations)
+                Object.keys(opts.abbreviations)
                     .map(function (x) {
                         return x.substr(1);
                     })
@@ -90,8 +190,23 @@ export default function abbr_plugin(md) {
                     })
                     .map(escapeRE)
                     .join("|") +
-                ")"
+                ")",
         );
+
+        const abbrList =
+            // "(?<abbr>" +
+            "(" +
+            Object.keys(opts.abbreviations)
+                .map(function (x) {
+                    return x.substr(1);
+                })
+                .sort(function (a, b) {
+                    return b.length - a.length;
+                })
+                .map(escapeRE)
+                .join("|") +
+            ")";
+        // console.log('abbrList', abbrList)
 
         const regText =
             "(^|" +
@@ -101,17 +216,7 @@ export default function abbr_plugin(md) {
             "|[" +
             OTHER_CHARS.split("").map(escapeRE).join("") +
             "])" +
-            "(" +
-            Object.keys(state.env.abbreviations)
-                .map(function (x) {
-                    return x.substr(1);
-                })
-                .sort(function (a, b) {
-                    return b.length - a.length;
-                })
-                .map(escapeRE)
-                .join("|") +
-            ")" +
+            abbrList +
             "($|" +
             UNICODE_PUNCT_RE +
             "|" +
@@ -156,14 +261,20 @@ export default function abbr_plugin(md) {
                     }
 
                     // const token_o = new state.Token("abbr_open", "abbr", 1);
-                    // token_o.attrs = [["title", state.env.abbreviations[":" + m[2]]]];
+                    // token_o.attrs = [["title", opts.abbreviations[":" + m[2]]]];
                     // nodes.push(token_o);
 
                     const token_t = new state.Token("abbr", "MDAbbr", 0);
                     token_t.content = m[2];
-                    token_t.meta.abbrDescription = state.env.abbreviations[":" + m[2]];
-                    token_t.attrJoin("abbrDescription", token_t.meta.abbrDescription);
+                    if (token_t.meta == undefined) {
+                        token_t.meta = {
+                            abbrDescription: "",
+                        };
+                    }
+                    token_t.meta.abbrDescription = opts.abbreviations[":" + m[2]].toString();
+                    // token_t.attrJoin('abbrDescription', token_t.meta.abbrDescription)
                     nodes.push(token_t);
+                    // console.log("token_t", token_t);
 
                     // const token_c = new state.Token("abbr_close", "abbr", -1);
                     // nodes.push(token_c);
@@ -193,10 +304,15 @@ export default function abbr_plugin(md) {
     md.core.ruler.after("linkify", "abbr_replace", abbr_replace);
 
     md.renderer.rules.abbr = function (tokens, idx, options, env, slf) {
-        console.log(`MarkdownItPluginAbbrAsMDAbbr.abbr called`);
+        // console.log(`MarkdownItPluginAbbrAsMDAbbr.abbr called`)
         // the default rendering does escape html... we want it raw!
         const token = tokens[idx];
-        console.log(`token: `, token);
-        return `<${token.tag} ${slf.renderAttrs(token)}>${token.content}</${token.tag}>`;
+        // console.log(`token: `, token)
+        const resultHTML = `<${token.tag} ${slf.renderAttrs(token)}>
+        <template #default>${token.content}</template>
+        <template #abbrDescription>${token.meta?.abbrDescription}</template>
+        </${token.tag}>`;
+        // console.log(`resultHTML: `, resultHTML)
+        return resultHTML;
     };
 }

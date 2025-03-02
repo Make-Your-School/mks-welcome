@@ -1,12 +1,14 @@
-import preProcessingMD from "./preprocessMD";
+// import preProcessingMD from "./preprocessMD";
 
-const mksGetAbbr = () => {
-    console.group("mksGetAbbr");
+export const mksAbbrCollection = {};
+
+export const mksAbbrLoad = () => {
+    console.group("mksAbbrLoad");
 
     let mksAbbrList = {};
     const items_dir = import.meta.glob(`../../public/mks/abbr/*.md`, {
         // query: "?url&raw",
-        query: "?raw",
+        // query: "?raw",
         eager: true,
     });
     console.log("items_dir", items_dir);
@@ -22,12 +24,13 @@ const mksGetAbbr = () => {
         mksAbbrList[item_name].name = item_name;
         mksAbbrList[item_name].path_readme = path;
         mksAbbrList[item_name].path_base = `mks/abbr/`;
-        const content = preProcessingMD(
-            items_dir[path].default,
-            mksAbbrList[item_name].path_base
-        );
-        console.log(`mksAbbrList['${item_name}'] content:`, content);
-        mksAbbrList[item_name].content = content;
+        mksAbbrList[item_name].content = items_dir[path].default;
+        // const content = preProcessingMD(
+        //     items_dir[path].default,
+        //     mksAbbrList[item_name].path_base
+        // );
+        // console.log(`mksAbbrList['${item_name}'] content:`, content);
+        // mksAbbrList[item_name].content = content;
         // console.log(`${item_name} '${mksAbbrList[item_name].path_base}'`);
     }
     console.log("mksAbbrList:", mksAbbrList);
@@ -36,4 +39,4 @@ const mksGetAbbr = () => {
     return mksAbbrList;
 };
 
-export default mksGetAbbr();
+export default mksAbbrCollection;

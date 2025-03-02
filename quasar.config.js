@@ -6,7 +6,6 @@
  * the ES6 features that are supported by your Node version. https://node.green/
  */
 
-
 import packageInfo from "./package.json";
 
 // const { viteSingleFile } = require("vite-plugin-singlefile");
@@ -30,10 +29,8 @@ import path from "path";
 // https://github.com/davidmyersdev/vite-plugin-node-polyfills
 import { nodePolyfills } from "vite-plugin-node-polyfills";
 
-import Markdown from 'unplugin-vue-markdown/vite'
+import Markdown from "unplugin-vue-markdown/vite";
 import markdownItConfig from "./markdown-it-config";
-
-
 
 export default defineConfig((ctx) => {
     return {
@@ -43,7 +40,12 @@ export default defineConfig((ctx) => {
         // app boot file (/src/boot)
         // --> boot files are part of "main.js"
         // https://v2.quasar.dev/quasar-cli-vite/boot-files
-        boot: ["i18n", "addressbar-color", "register-global-components"],
+        boot: [
+            "i18n",
+            "addressbar-color",
+            "register-global-components",
+            //"load-mksAbbr",
+        ],
 
         // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
         css: ["app.scss"],
