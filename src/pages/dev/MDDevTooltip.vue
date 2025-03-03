@@ -25,7 +25,7 @@
 
 <script setup>
 import { ref } from "vue";
-import MyMarkdown from "src/components/MyMarkdown.vue";
+import MyMarkdown from "src/components/MDComponents/MyMarkdown.vue";
 
 const mdcontent = ref(`
 # Hello

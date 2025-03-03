@@ -29,7 +29,7 @@
 <script setup>
 // import { computed, h, shallowRef, ref, watch, watchEffect } from "vue";
 // import { useQuasar } from "quasar";
-import MyMarkdown from "src/components/MyMarkdown.vue";
+import MyMarkdown from "src/components/MDComponents/MyMarkdown.vue";
 
 // const props = defineProps({
 defineProps({

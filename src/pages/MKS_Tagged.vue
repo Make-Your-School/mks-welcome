@@ -34,7 +34,7 @@
 import { ref, computed } from "vue";
 // import { useQuasar } from "quasar";
 
-import MyMarkdown from "src/components/MyMarkdown.vue";
+import MyMarkdown from "src/components/MDComponents/MyMarkdown.vue";
 import TagOverview from "src/components/TagOverview.vue";
 import TagDetails from "src/components/TagDetails.vue";
 
@@ -147,4 +147,3 @@ const searchText = ref("");
         width: 100%
         text-align: center
 </style>
-../../public/mks/mksContent

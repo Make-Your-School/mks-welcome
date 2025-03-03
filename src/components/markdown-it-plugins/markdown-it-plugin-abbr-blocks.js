@@ -117,7 +117,7 @@ export default function abbr_plugin(md, opts) {
                 .map(escapeRE)
                 .join("|") +
             ")";
-        console.log("abbrList", abbrList);
+        // console.log("abbrList", abbrList);
 
         const regText =
             "(^|" +
@@ -143,25 +143,25 @@ export default function abbr_plugin(md, opts) {
         // const regAll = new RegExp(`(?<pre>.*?)${abbrList}(?<pre>.*?)`, "g");
 
         function convertTokenToInlineBlock(token) {
-            console.group("convertTokenToInlineBlock");
+            // console.group("convertTokenToInlineBlock");
             const text = token.content;
             const newBlocks = [];
             if (token.type == "text") {
-                console.log("we have a text block");
+                // console.log("we have a text block");
                 // fast regexp run to determine whether there are any abbreviated words
                 // in the current token
                 if (regSimple.test(text)) {
-                    console.log("it contains an abbr! we need to split it up.");
+                    // console.log("it contains an abbr! we need to split it up.");
                     let pos = 0;
                     reg.lastIndex = 0;
                     let m;
                     while ((m = reg.exec(text))) {
-                        console.log("m", m);
+                        // console.log("m", m);
                         if (m.index > 0 || m[1].length > 0) {
-                            console.log("handle pre abbr text");
-                            console.log("state", state);
+                            // console.log("handle pre abbr text");
+                            // console.log("state", state);
                             const newBlock = new state.Token("inline", "", 0);
-                            console.log("newBlock", newBlock);
+                            // console.log("newBlock", newBlock);
                             const newChild = new state.Token("text", "", 0);
                             newChild.content = text.slice(pos, m.index + m[1].length);
                             newBlock.children = [newChild];
@@ -195,16 +195,16 @@ export default function abbr_plugin(md, opts) {
                         newBlocks.push(newBlock);
                     }
                 } else {
-                    console.log("no abbr. just copy over..");
+                    // console.log("no abbr. just copy over..");
                     const newBlock = new state.Token("inline", "", 0);
-                    console.log("newBlock", newBlock);
+                    // console.log("newBlock", newBlock);
                     newBlock.children = [token];
                     newBlocks.push(newBlock);
                 }
             } else {
-                console.log("we have a non text block - just copy it over..");
+                // console.log("we have a non text block - just copy it over..");
                 const newBlock = new state.Token("inline", "", 0);
-                console.log("newBlock", newBlock);
+                // console.log("newBlock", newBlock);
                 newBlock.children = [token];
                 newBlocks.push(newBlock);
             }
@@ -213,7 +213,7 @@ export default function abbr_plugin(md, opts) {
             return newBlocks;
         }
 
-        console.log("blockTokens", blockTokens.length);
+        // console.log("blockTokens", blockTokens.length);
         for (let j = 0, l = blockTokens.length; j < l; j++) {
             const blockToken = blockTokens[j];
             // console.log("blockToken", blockToken);
@@ -228,20 +228,20 @@ export default function abbr_plugin(md, opts) {
             const newBlocks = [];
             const childTokens = blockToken.children;
             for (let tId = 0; tId < childTokens.length; tId++) {
-                console.log("childTokens[tId]", childTokens[tId]);
+                // console.log("childTokens[tId]", childTokens[tId]);
                 newBlocks.push(...convertTokenToInlineBlock(childTokens[tId]));
             }
 
             if (!newBlocks.length) {
                 continue;
             }
-            console.log("newBlocks", newBlocks);
+            // console.log("newBlocks", newBlocks);
             blockTokens.splice(j, 1, ...newBlocks);
             // jump over added newBlocks.
             j += newBlocks.length - 1;
         }
         // console.log("blockTokens", blockTokens);
-        console.log("state.tokens", state.tokens);
+        // console.log("state.tokens", state.tokens);
     }
 
     md.block.ruler.before("reference", "abbr_def", abbr_def, { alt: ["paragraph", "reference"] });

@@ -10,7 +10,7 @@
 <script setup>
 import { ref } from "vue";
 // import { useQuasar } from "quasar";
-import MyMarkdown from "src/components/MyMarkdown.vue";
+import MyMarkdown from "src/components/MDComponents/MyMarkdown.vue";
 
 import demo from "src/content_md/demo";
 // console.log("demo", demo);
