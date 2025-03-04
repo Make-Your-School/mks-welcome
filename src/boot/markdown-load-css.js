@@ -1,4 +1,4 @@
-import { defineBoot } from '#q-app/wrappers'
+// import { defineBoot } from '#q-app/wrappers'
 
 // load css
 import "@mdit/plugin-alert/style";

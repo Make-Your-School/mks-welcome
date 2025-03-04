@@ -24,25 +24,25 @@ export const childrenCommon = [
         title: "MD-Demo",
         icon: "brush",
         path: "md-demo",
-        component: () => import("pages/MDDemo.vue"),
+        component: () => import("pages/dev/MDDemo.vue"),
     },
     {
         title: "MD-Dev",
         icon: "brush",
         path: "md-dev",
-        component: () => import("pages/MDDev.vue"),
+        component: () => import("pages/dev/MDDev.vue"),
     },
     {
         title: "MD-DevTooltip",
         icon: "brush",
         path: "md-dev-tooltip",
-        component: () => import("pages/MDDevTooltip.vue"),
+        component: () => import("pages/dev/MDDevTooltip.vue"),
     },
     {
         title: "Formatting Experiments",
         icon: "brush",
         path: "formatting-experiments",
-        component: () => import("pages/FormattingExperiments.vue"),
+        component: () => import("pages/dev/FormattingExperiments.vue"),
     },
 ];
 

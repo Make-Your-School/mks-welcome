@@ -114,6 +114,32 @@ export default defineConfig((ctx) => {
             // envFiles?: string[];
 
             // extendViteConf (viteConf) {},
+            // https://quasar.dev/quasar-cli-vite/handling-vite/
+            extendViteConf(viteConf, { isServer, isClient }) {
+                // We return an Object which will get deeply merged into
+                // the config, instead of directly tampering with viteConf
+                return {
+                    // build: {
+                    //     chunkSizeWarningLimit: 750,
+                    // },
+                    // plugins: [vue()],
+                    resolve: {
+                        alias: [
+                            {
+                                find: /^vue$/,
+                                replacement: "vue/dist/vue.esm-bundler.js",
+                            },
+                        ],
+                    },
+                };
+                // equivalent of following vite.config.js/vite.config.ts:
+                // export default defineConfig({
+                //   build: {
+                //     chunkSizeWarningLimit: 750
+                //   }
+                // })
+            },
+
             // viteVuePluginOptions: {},
             viteVuePluginOptions: {
                 include: [/\.vue$/, /\.md$/], // <-- allows Vue to compile Markdown files

@@ -174,10 +174,15 @@ export default function abbr_plugin(md, opts) {
         // console.log('mksAbbrTemp', mksAbbrTemp)
         // // console.log("mksAbbrCollection", mksAbbrCollection);
 
-        // console.log('opts.abbreviations', opts.abbreviations)
         if (!opts.abbreviations) {
+            console.log("!opts.abbreviations", !opts.abbreviations);
             return;
         }
+        // https://stackoverflow.com/questions/679915/how-do-i-test-for-an-empty-javascript-object
+        if (Object.keys(opts.abbreviations).length == 0) {
+            return;
+        }
+        // console.log('opts.abbreviations', opts.abbreviations)
 
         const regSimple = new RegExp(
             "(?:" +
@@ -225,6 +230,7 @@ export default function abbr_plugin(md, opts) {
             OTHER_CHARS.split("").map(escapeRE).join("") +
             "])";
 
+        // console.log("regText", regText);
         const reg = new RegExp(regText, "g");
 
         for (let j = 0, l = blockTokens.length; j < l; j++) {
@@ -254,6 +260,7 @@ export default function abbr_plugin(md, opts) {
                 let m;
 
                 while ((m = reg.exec(text))) {
+                    console.log("m", m);
                     if (m.index > 0 || m[1].length > 0) {
                         const token = new state.Token("text", "", 0);
                         token.content = text.slice(pos, m.index + m[1].length);

@@ -83,8 +83,8 @@ md.use(mdit_alert);
 // });
 
 // https://github.com/nagaozen/markdown-it-toc-done-right
-import * as mdi_toc from "markdown-it-toc-done-right";
-md.use(mdi_toc);
+// import * as mdi_toc from "markdown-it-toc-done-right";
+// md.use(mdi_toc);
 
 // import markdownItPluginEmbedCode from "./markdown-it-plugin-embed-code";
 // import { runEmbedCode } from "./markdown-it-plugin-embed-code";
@@ -116,10 +116,11 @@ md.use(MarkdownItPluginCodeAsMDCode);
 import MDCode from "components/MDComponents/MDCode.vue";
 
 // not used because of non interactive rendering...
-// import MarkdownItPluginAbbrAsMDAbbr from './markdown-it-plugin-abbr-as-mdabbr'
+import MarkdownItPluginAbbrAsMDAbbr from './markdown-it-plugin-abbr-as-mdabbr'
 // import mksAbbr from "src/content_md/mksAbbr";
-// import MDAbbr from "components/MDComponents/MDAbbr.vue";
-// md.use(MarkdownItPluginAbbrAsMDAbbr)
+// eslint-disable-next-line no-unused-vars
+import MDAbbr from "components/MDComponents/MDAbbr.vue";
+md.use(MarkdownItPluginAbbrAsMDAbbr)
 
 // ------------------------------------------
 // rendering
@@ -152,7 +153,7 @@ export const md2html = (source, filePath=undefined) => {
         filePath: filePath,
     };
 
-    let tokens = md.parse(processedObj, env);
+    let tokens = md.parse(processedObj.content, env);
     // console.log("tokens", tokens);
 
     // call async function
