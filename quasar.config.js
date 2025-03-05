@@ -44,7 +44,7 @@ export default defineConfig((ctx) => {
             "i18n",
             "addressbar-color",
             "register-global-components",
-            //"load-mksAbbr",
+            "markdown-load-css",
         ],
 
         // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css

@@ -34,18 +34,19 @@ hljs.registerLanguage("cpp", cpp);
 hljs.registerLanguage("c++", cpp);
 
 
-// defineProps({
-const props = defineProps({
+// const props = defineProps({
+defineProps({
     content: String,
     codeLanguage: String,
     includePath: String,
     codeFilePath: String,
+    fileExists: Boolean,
 })
-console.log("---");
-console.log("props.codeLanguage", props.codeLanguage);
-console.log("props.content", props.content);
-console.log("props.codeFilePath", props.codeFilePath);
-console.log("props.includePath", props.includePath);
+// console.log("---");
+// console.log("props.codeLanguage", props.codeLanguage);
+// console.log("props.content", props.content);
+// console.log("props.codeFilePath", props.codeFilePath);
+// console.log("props.includePath", props.includePath);
 
 const theme = ref('base16/solarized-dark')
 const $q = useQuasar()

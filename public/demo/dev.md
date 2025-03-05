@@ -1,13 +1,14 @@
----
-title: Testing Code-Blocks
-tags: [sw, code, style]
-id: 127
----
 
 ```c++ :./example.ino
-// this should be replaced..
+this does fail.. so we can check a 404 is handled smoothly.
 ```
 
-```c++ :./does_not_exist.ino
+
+```c++
+const hello = "world";
+let ping = 42;
+```
+
+```c++ :./example.ino
 this does fail.. so we can check a 404 is handled smoothly.
 ```

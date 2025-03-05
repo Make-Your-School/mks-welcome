@@ -69,6 +69,7 @@ import { useQuasar } from "quasar";
 
 import EssentialNavigation from "components/EssentialNavigation.vue";
 
+
 defineOptions({
     name: "MainLayout",
 });

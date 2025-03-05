@@ -2,19 +2,14 @@
     <q-page class="flex column" style="align-items: center;">
         <section style="overflow: scroll;">
             Markdown Test Page
-            <my-markdown :source="demo_content.readme.content" :file-path="demo_content.path_base" />
+            <MDContent></MDContent>
         </section>
     </q-page>
 </template>
 
 <script setup>
-import { ref } from "vue";
-// import { useQuasar } from "quasar";
-import MyMarkdown from "src/components/MDComponents/MyMarkdown.vue";
 
-import demo from "src/content_md/demo";
-// console.log("demo", demo);
-console.log("demo", demo);
-const demo_content = ref(demo);
-
+import * as md_obj from "../../../public/demo/readme.md"
+const MDContent = md_obj.default
+console.log('md_obj', md_obj)
 </script>

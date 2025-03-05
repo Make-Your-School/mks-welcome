@@ -26,6 +26,8 @@ const myRenderingInside = (tokens, options, env, md) => {
     // console.log("env", env);
     // console.log("md", md);
     runEmbedCode(tokens, options, env, md);
+    // if we use async functions here we need to make sure we are waiting for all of theme..
+    // in the runEmbedCode case it leaded to mixed results...
     // console.groupEnd();
 };
 
@@ -40,7 +42,13 @@ const markdownItSetup = async (md) => {
 
     // https://github.com/valeriangalliat/markdown-it-anchor/tree/master
     md.use(mditPluginAnchor, {
-        //   permalink: anchor.permalink.headerLink()
+        // https://github.com/valeriangalliat/markdown-it-anchor/tree/master?tab=readme-ov-file#link-after-header
+        // permalink: mditPluginAnchor.permalink.linkAfterHeader({
+        //     style: "visually-hidden",
+        //     assistiveText: (title) => `Permalink to “${title}”`,
+        //     visuallyHiddenClass: "visually-hidden",
+        //     wrapper: ['<div class="wrapper">', "</div>"],
+        // }),
     });
 
     // import "@mdit/plugin-alert/style";
@@ -85,8 +93,8 @@ const markdownItSetup = async (md) => {
 const markdownItConfig = {
     // wrapperClasses: 'prose prose-sm m-auto text-left',
     // headEnabled: true,
-    exposeExcerpt: true,
-    // excerpt: true,
+    // exposeExcerpt: true,
+    excerpt: true,
     break: true,
     // frontmatterOptions: { grayMatterOptions: {} },
     transforms: {

@@ -12,19 +12,19 @@ import path from "node:path";
 const RE_INFO = /(?<codeLang>.*?)\s?:(?<codeFilePath>.*)/;
 
 // const embedCode = async (tokens, idx, options, env, self) => {
-const embedCode = async (tokens, idx, options, env) => {
-    // console.group("embedCode:");
+const embedCode = (tokens, idx, options, env) => {
+    // console.group(`embedCode: idx [${idx}]~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`);
     const token = tokens[idx];
-    // console.log(`token: `, token);
+    // console.log(`token in: `, token);
+    if (token.meta == undefined) {
+        token.meta = {};
+    }
     // console.log(`options: `, options);
     // console.log(`env: `, env);
     const reResult = RE_INFO.exec(token.info);
     // console.log(`reResult: `, reResult);
     if (reResult) {
         const { codeLang, codeFilePath } = reResult.groups;
-        if (token.meta == undefined) {
-            token.meta = {};
-        }
         token.meta.codeLanguage = codeLang;
         token.info = codeLang;
         token.meta.codeFilePath = codeFilePath;
@@ -53,9 +53,11 @@ const embedCode = async (tokens, idx, options, env) => {
                 // });
                 if (fs.existsSync(filePath)) {
                     codeContent = fs.readFileSync(filePath, "utf8");
+                    token.meta.fileExists = true;
                 } else {
                     // throw new Error(`embed failed: file '${filePath}' not found.`);
                     console.log(`embed failed: file '${filePath}' not found.`);
+                    token.meta.fileExists = false;
                 }
                 // console.log(`codeContent: `, codeContent);
             } catch (error) {
@@ -67,8 +69,10 @@ const embedCode = async (tokens, idx, options, env) => {
                 // console.log("token", token);
             }
         }
+    } else {
+        token.meta.codeLanguage = token.info;
     }
-    // console.log("token", token);
+    // console.log("token out", token);
     // console.groupEnd()
 };
 
@@ -94,12 +98,12 @@ const embedCode = async (tokens, idx, options, env) => {
  * @license MIT
  * @exports runEmbedCode
  */
-export const runEmbedCode = async (tokens, options, env, self) => {
+export const runEmbedCode = (tokens, options, env, self) => {
     for (let idx = 0; idx < tokens.length; idx++) {
         const token = tokens[idx];
         if (token.type == "fence") {
-            // console.log("ping", token);
-            await embedCode(tokens, idx, options, env, self);
+        // if (token.type == "fence" && token.tag == "code") {
+            embedCode(tokens, idx, options, env, self);
         }
     }
 };

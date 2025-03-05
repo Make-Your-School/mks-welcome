@@ -25,6 +25,7 @@ export function MarkdownItPluginCodeAsMDCode(md) {
         token.attrSet("codeLanguage", token.info);
         token.attrSet("includePath", token.meta?.includePath ? token.meta?.includePath : '');
         token.attrSet("codeFilePath", token.meta?.codeFilePath ? token.meta?.codeFilePath : "");
+        token.attrSet("fileExists", token.meta?.fileExists ? token.meta?.fileExists : undefined);
         // console.log(`MarkdownItPluginCodeAsMDCode token: `, token);
         // console.log(`tokens[idx]: `, tokens[idx]);
 

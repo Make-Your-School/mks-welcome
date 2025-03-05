@@ -59,9 +59,19 @@ this does fail.. so we can check a 404 is handled smoothly.
 ```
 
 
+just some js...
+```js
+const hello = "world";
+let ping = 42;
+```
+
+embed example2.ino here:
 ```c++ :./example2.ino
 // this should be replaced..
 ```
+
+code examples done.
+
 
 
 ## images
