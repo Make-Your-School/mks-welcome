@@ -2,14 +2,15 @@
     <div class="my-markdown-wrapper">
         <!-- <mdrender></mdrender> -->
         <!-- <component :is="mdrender"></component> -->
-        <component :is="{template:contentHTML}"></component>
+        <component v-if="contentHTML" :is="{template:contentHTML}"></component>
         <!-- <div class="my-markdown" v-html="contentHTML"></div> -->
     </div>
 </template>
 
 <script setup>
 // import { h } from "vue";
-import { ref, watchEffect, toRaw } from "vue";
+// import { toRaw } from "vue";
+import { ref, watchEffect } from "vue";
 import { md2html } from "components/markdown-it-plugins/markdown-rendering.js";
 
 const props = defineProps({
@@ -24,8 +25,8 @@ const props = defineProps({
 const contentHTML = ref("");
 
 watchEffect(async () => {
-    contentHTML.value = md2html(props.source);
-    console.log("contentHTML.value", toRaw(contentHTML.value));
+    contentHTML.value = await md2html(props.source);
+    // console.log("contentHTML.value", contentHTML.value);
 });
 
 // const mdrender = () => {

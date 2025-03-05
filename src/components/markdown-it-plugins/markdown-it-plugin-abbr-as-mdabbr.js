@@ -43,8 +43,9 @@ export const mksAbbrLoadNodeJS = () => {
     return mksAbbrList;
 };
 
+// export const mksAbbrLoadWeb = () => {
 export const mksAbbrLoad = () => {
-    console.group("mksAbbrLoad");
+    // console.group("mksAbbrLoad");
 
     let mksAbbrList = {};
     const items_dir = import.meta.glob(`../../../public/mks/abbr/*.md`, {
@@ -52,7 +53,7 @@ export const mksAbbrLoad = () => {
         // query: "?raw",
         eager: true,
     });
-    console.log("items_dir", items_dir);
+    // console.log("items_dir", items_dir);
     // const path_regex = new RegExp(`\.\.\/\.\.\/public\/mks\/abbr\/(?<item_name>.*)\.md`);
     const path_regex = new RegExp(`../../../public/mks/abbr/(?<item_name>.*).md`);
     // /src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr.js
@@ -83,6 +84,10 @@ export const mksAbbrLoad = () => {
     return mksAbbrList;
 };
 
+// export const mksAbbrLoad = () => {
+//     console.log("import.meta.env.MODE", import.meta.env.MODE);
+// }
+
 export default function abbr_plugin(md, opts) {
     // console.log(`MarkdownItPluginAbbrAsMDAbbr.abbr_plugin`);
     const opts_defaults = {
@@ -90,6 +95,7 @@ export default function abbr_plugin(md, opts) {
     };
 
     opts = Object.assign({}, opts_defaults, opts);
+    // console.log("opts", opts);
     // console.log('mksAbbrCollection', mksAbbrCollection)
     // console.log('opts.abbreviations', opts.abbreviations)
     opts.abbreviations = Object.fromEntries(
@@ -260,7 +266,7 @@ export default function abbr_plugin(md, opts) {
                 let m;
 
                 while ((m = reg.exec(text))) {
-                    console.log("m", m);
+                    // console.log("m", m);
                     if (m.index > 0 || m[1].length > 0) {
                         const token = new state.Token("text", "", 0);
                         token.content = text.slice(pos, m.index + m[1].length);

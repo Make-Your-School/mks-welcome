@@ -13,12 +13,19 @@ export function MarkdownItPluginCodeAsMDCode(md) {
         // console.log(`tokens: `, tokens)
         // // console.log(`env: `, env);
         const token = tokens[idx];
-        // console.log(`token: `, token);
+        // console.log(`MarkdownItPluginCodeAsMDCode token: `, token);
         token.tag = "MDCode";
-        token.attrJoin("content", token.content);
-        token.attrJoin("codeLanguage", token.info);
-        token.attrJoin("includePath", token.meta?.includePath ? token.meta?.includePath : '');
-        token.attrJoin("codeFilePath", token.meta?.codeFilePath ? token.meta?.codeFilePath : "");
+        // token.attrs = [
+        //     ["content", token.content],
+        //     ["codeLanguage", token.info],
+        //     ["includePath", token.meta?.includePath ? token.meta?.includePath : ""],
+        //     ["codeFilePath", token.meta?.codeFilePath ? token.meta?.codeFilePath : ""],
+        // ];
+        token.attrSet("content", token.content);
+        token.attrSet("codeLanguage", token.info);
+        token.attrSet("includePath", token.meta?.includePath ? token.meta?.includePath : '');
+        token.attrSet("codeFilePath", token.meta?.codeFilePath ? token.meta?.codeFilePath : "");
+        // console.log(`MarkdownItPluginCodeAsMDCode token: `, token);
         // console.log(`tokens[idx]: `, tokens[idx]);
 
         // rendering

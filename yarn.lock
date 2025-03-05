@@ -696,7 +696,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/pluginutils@npm:^5.0.1, @rollup/pluginutils@npm:^5.1.4":
+"@rollup/pluginutils@npm:^5.0.1":
   version: 5.1.4
   resolution: "@rollup/pluginutils@npm:5.1.4"
   dependencies:
@@ -3946,13 +3946,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdown-it-async@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "markdown-it-async@npm:2.0.0"
+"markdown-it-async@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "markdown-it-async@npm:2.1.0"
   dependencies:
     "@types/markdown-it": ^14.1.2
     markdown-it: ^14.1.0
-  checksum: 191ddc79ff62c9dbc5374c3b126756533cd58907ff46d2bcb09570366a890628ac6b9cec6773f2e78da7293308ab639f2b57c02fd12a68731a73effdb4b13e60
+  checksum: 98065c614d10d41b232915aea7380a285a0e4855fad4205c1151f006952f6d5157c287581eb622d7bbdedb2281f329b7ab4f7397d2efb8c8c2f019d44290c2d0
   languageName: node
   linkType: hard
 
@@ -4719,6 +4719,13 @@ __metadata:
   version: 0.1.12
   resolution: "path-to-regexp@npm:0.1.12"
   checksum: ab237858bee7b25ecd885189f175ab5b5161e7b712b360d44f5c4516b8d271da3e4bf7bf0a7b9153ecb04c7d90ce8ff5158614e1208819cf62bac2b08452722e
+  languageName: node
+  linkType: hard
+
+"pathe@npm:^2.0.2":
+  version: 2.0.3
+  resolution: "pathe@npm:2.0.3"
+  checksum: 0602bdd4acb54d91044e0c56f1fb63467ae7d44ab3afea1f797947b0eb2b4d1d91cf0d58d065fdb0a8ab0c4acbbd8d3a5b424983eaf10dd5285d37a16f6e3ee9
   languageName: node
   linkType: hard
 
@@ -6207,25 +6214,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unplugin-vue-markdown@npm:^28.3.0":
-  version: 28.3.0
-  resolution: "unplugin-vue-markdown@npm:28.3.0"
+"unplugin-utils@npm:^0.2.4":
+  version: 0.2.4
+  resolution: "unplugin-utils@npm:0.2.4"
+  dependencies:
+    pathe: ^2.0.2
+    picomatch: ^4.0.2
+  checksum: 2016a80dff09b2b8c2b00fcc52adaf5f50eada84432fb7b9cf6bb131eb6aa40e1be6d96400de7a873d24db0c1a598765bc62a760c2b2ae35e79bd185bb92cf17
+  languageName: node
+  linkType: hard
+
+"unplugin-vue-markdown@portal:/home/stefan/mydata/github/markdown-it/unplugin-vue-markdown::locator=mks-welcome%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "unplugin-vue-markdown@portal:/home/stefan/mydata/github/markdown-it/unplugin-vue-markdown::locator=mks-welcome%40workspace%3A."
   dependencies:
     "@mdit-vue/plugin-component": ^2.1.3
     "@mdit-vue/plugin-frontmatter": ^2.1.3
     "@mdit-vue/types": ^2.1.0
-    "@rollup/pluginutils": ^5.1.4
     "@types/markdown-it": ^14.1.2
     markdown-it: ^14.1.0
-    markdown-it-async: ^2.0.0
-    unplugin: ^2.1.2
+    markdown-it-async: ^2.1.0
+    unplugin: ^2.2.0
+    unplugin-utils: ^0.2.4
   peerDependencies:
     vite: ^2.0.0 || ^3.0.0-0 || ^4.0.0-0 || ^5.0.0-0 || ^6.0.0
-  checksum: 7baf15901f09b82eeaeed780e39c2e05220e6cd49d6c54d632436171a263a723ac4b221002b4d1c60197c5cde8ce5afac8d5910bfd54dfcd661d3e009a5296ba
   languageName: node
-  linkType: hard
+  linkType: soft
 
-"unplugin@npm:^2.1.2":
+"unplugin@npm:^2.2.0":
   version: 2.2.0
   resolution: "unplugin@npm:2.2.0"
   dependencies:

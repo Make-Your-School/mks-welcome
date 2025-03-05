@@ -87,7 +87,7 @@ md.use(mdit_alert);
 // md.use(mdi_toc);
 
 // import markdownItPluginEmbedCode from "./markdown-it-plugin-embed-code";
-// import { runEmbedCode } from "./markdown-it-plugin-embed-code";
+import { runEmbedCode } from "./markdown-it-plugin-embed-code";
 
 // https://mdit-plugins.github.io/include.html#syntax
 // import { include, include as mdit_include } from "@mdit/plugin-include";
@@ -101,10 +101,6 @@ md.use(mdit_alert);
 // sadly plugins can not be async.
 // so we have to do the rendering steps manually - see below.
 
-// import plugin_abbr from "src/components/markdown-it-plugins/markdown-it-plugin-abbr-blocks";
-// md.use(plugin_abbr, {
-//     abbreviations: mksAbbr,
-// });
 
 import mditPluginImgSrcAbs from "components/markdown-it-plugins/markdown-it-plugin-img-src-abs";
 md.use(mditPluginImgSrcAbs);
@@ -120,7 +116,13 @@ import MarkdownItPluginAbbrAsMDAbbr from './markdown-it-plugin-abbr-as-mdabbr'
 // import mksAbbr from "src/content_md/mksAbbr";
 // eslint-disable-next-line no-unused-vars
 import MDAbbr from "components/MDComponents/MDAbbr.vue";
-md.use(MarkdownItPluginAbbrAsMDAbbr)
+// import mksAbbrLoad from "./markdown-it-plugin-abbr-as-mdabbr.js";
+// const mksAbbrCollection = mksAbbrLoad();
+// console.log("markdown-rendering.js - mksAbbrCollection", mksAbbrCollection);
+// import mksAbbrCollection from "src/../markdown-it-config.js";
+md.use(MarkdownItPluginAbbrAsMDAbbr, {
+    // abbreviations: mksAbbrCollection,
+})
 
 // ------------------------------------------
 // rendering
@@ -140,7 +142,7 @@ export const preProcessingMD = (source) => {
     return processedObj;
 };
 
-export const md2html = (source, filePath=undefined) => {
+export const md2html = async (source, filePath=undefined) => {
     // https://github.com/markdown-it/markdown-it/issues/256#issuecomment-224700130
     // we need to do it manually to be able to do async steps in between..
 
@@ -157,7 +159,7 @@ export const md2html = (source, filePath=undefined) => {
     // console.log("tokens", tokens);
 
     // call async function
-    // await runEmbedCode(tokens, {}, env, md);
+    await runEmbedCode(tokens, {}, env, md);
 
     return md.renderer.render(tokens, md.options, env);
 
