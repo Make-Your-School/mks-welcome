@@ -4529,7 +4529,7 @@ __metadata:
     postcss: ^8.4.14
     prettier: 3
     quasar: ^2.16.0
-    unplugin-vue-markdown: ^28.3.0
+    unplugin-vue-markdown: "https://github.com/s-light/unplugin-vue-markdown/#head=feat_transform_insideRendering"
     vite: ^6.2.0
     vite-plugin-checker: ^0.8.0
     vite-plugin-node-polyfills: ^0.22.0
