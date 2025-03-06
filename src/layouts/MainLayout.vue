@@ -30,7 +30,12 @@
             style="z-index: 10000"
         />
 
-        <q-drawer v-model="leftDrawerOpen" bordered elevated overlay persistent>
+        <q-drawer
+            v-model="leftDrawerOpen"
+            bordered
+            elevated
+            overlay
+        >
             <q-list class="q-pt-xl q-pb-xl">
                 <EssentialNavigation />
 
@@ -68,7 +73,6 @@ import { ref } from "vue";
 import { useQuasar } from "quasar";
 
 import EssentialNavigation from "components/EssentialNavigation.vue";
-
 
 defineOptions({
     name: "MainLayout",

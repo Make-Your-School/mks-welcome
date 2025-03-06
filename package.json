@@ -50,6 +50,7 @@
         "globals": "^15.15.0",
         "postcss": "^8.4.14",
         "prettier": "3",
+        "vite": "^6.2.0",
         "vite-plugin-checker": "^0.8.0",
         "vite-plugin-node-polyfills": "^0.22.0"
     },

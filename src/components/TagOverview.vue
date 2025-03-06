@@ -1,12 +1,13 @@
 <template>
-    <q-card class="fn-overview">
+    <q-card class="tag-overview">
         <q-card-section>
-            <my-markdown :source="fn_item.readme.excerpt" :file-path="fn_item.path_base" />
-            <div v-if="fn_item.parts">
+            <div v-html="mks_item.excerpt"></div>
+            <!-- <component :is="mks_item.readme.excerpt" :file-path="mks_item.path_base" /> -->
+            <div v-if="mks_item.parts">
                 <h2>Bauteile</h2>
                 <ul>
-                    <li v-for="(part_item, part_name) in fn_item.parts" :key="part_name">
-                        {{ part_name }} {{ part_item.readme.data?.id }}
+                    <li v-for="(part_item, part_name) in mks_item.parts" :key="part_name">
+                        {{ part_name }} {{ part_item.meta?.id }}
                     </li>
                 </ul>
                 <!-- <q-card class="q-ma-md q-pa-md card-bauteil">
@@ -29,16 +30,15 @@
 <script setup>
 // import { computed, h, shallowRef, ref, watch, watchEffect } from "vue";
 // import { useQuasar } from "quasar";
-import MyMarkdown from "src/components/MDComponents/MyMarkdown.vue";
 
 // const props = defineProps({
 defineProps({
-    fn_item: Object,
+    mks_item: Object,
 });
 </script>
 
 <style lang="sass" scoped>
-.fn-overview
+.tag-overview
   width: 100%
   height: 100%
   overflow: scroll

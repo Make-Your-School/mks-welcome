@@ -11,6 +11,10 @@ some more text here.. :tada:
 link: [mks](https://makeyourschool.de/maker-ecke/material/) working?!
 and another paragraph
 
+<!-- more_details -->
+
+this text is after the more_details break..
+
 ## Abbr
 
 Here we have a Text with some Abbreviations - here should be no line-break! just a Abbr now: HTML for example. or the good known W3C.

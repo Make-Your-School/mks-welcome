@@ -12,6 +12,7 @@ import { alert as mdit_alert } from "@mdit/plugin-alert";
 // https://github.com/markdown-it/markdown-it-container
 // import mditPluginContainer from "markdown-it-container";
 
+import mditPluginImgSrcAbs from "components/markdown-it-plugins/markdown-it-plugin-img-src-abs";
 
 // import markdownItPluginEmbedCode from "./markdown-it-plugin-embed-code";
 import { runEmbedCode } from "src/components/markdown-it-plugins/markdown-it-plugin-embed-code";
@@ -55,9 +56,7 @@ const markdownItSetup = async (md) => {
     // css loading now in `boot/markdown-load-css.js`
     md.use(mdit_alert);
 
-    // do we need this?
-    // import mditPluginImgSrcAbs from "components/markdown-it-plugins/markdown-it-plugin-img-src-abs";
-    // md.use(mditPluginImgSrcAbs);
+    md.use(mditPluginImgSrcAbs);
 
     // md.use(mditPluginContainer, "info");
     // md.use(mditPluginContainer, "tip");
@@ -92,18 +91,21 @@ const markdownItSetup = async (md) => {
 // https://github.com/unplugin/unplugin-vue-markdown/blob/main/src/types.ts
 const markdownItConfig = {
     // wrapperClasses: 'prose prose-sm m-auto text-left',
-    // headEnabled: true,
-    // exposeExcerpt: true,
-    excerpt: true,
     break: true,
-    // frontmatterOptions: { grayMatterOptions: {} },
+    // linkify: true,
+    // typographer: true,
+    excerpt: true,
+    frontmatterOptions: {
+        grayMatterOptions: {
+            eval: false,
+            excerpt_separator: "<!-- more_details -->",
+        },
+    },
     transforms: {
         // before: fn,
         renderingInside: myRenderingInside,
         // after: fn,
     },
-    // linkify: true,
-    // typographer: true,
     markdownItSetup: markdownItSetup,
 };
 

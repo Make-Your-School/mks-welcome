@@ -2,7 +2,7 @@
     <!-- <q-page class="flex flex-center content-stretch"> -->
     <!-- class="col" style="min-height: 0" -->
     <q-page class="my-page">
-        <my-markdown :source="mks_welcome.readme.content" :file-path="mks_welcome.path_base" />
+        <component :is="mks_welcome.readme.default"/>
         <!-- class="col-auto" -->
         <!-- -->
         <!-- <div class="scroll-wrapper col"> -->
@@ -11,19 +11,19 @@
         </div>
         <ul class="card-wrapper row items-stretch">
             <li
-                v-for="(fn_item, fn_name) in mks_items_filtered"
-                :key="fn_name"
+                v-for="(mks_item, mks_item_name) in mks_items_filtered"
+                :key="mks_item_name"
                 class="my-card q-pa-md"
             >
                 <PartOverview
-                    :fn_item="fn_item"
+                    :mks_item="mks_item"
                     :mks_parts="mks_parts"
-                    @click="fn_item.showDetails = true"
+                    @click="mks_item.showDetails = true"
                     class="clickable"
                 />
-                <q-dialog v-model="fn_item.showDetails" full-height full-width>
-                    <PartDetails :fn_item="fn_item" :mks_parts="mks_parts" />
-                </q-dialog>
+                <!-- <q-dialog v-model="mks_item.showDetails" full-height full-width>
+                    <PartDetails :mks_item="mks_item" :mks_parts="mks_parts" />
+                </q-dialog> -->
             </li>
         </ul>
         <!-- </div> -->
@@ -34,19 +34,13 @@
 import { ref, computed } from "vue";
 // import { useQuasar } from "quasar";
 
-import MyMarkdown from "src/components/MDComponents/MyMarkdown.vue";
 import PartOverview from "src/components/PartOverview.vue";
-import PartDetails from "src/components/PartDetails.vue";
+// import PartDetails from "src/components/PartDetails.vue";
 
 // import mksContent from "../../public/mks/";
 import mksContent from "../content_md/mksContent";
-// console.log("mksContent", mksContent);
 console.log("mksContent", mksContent);
 const mks_welcome = ref(mksContent.welcome);
-// console.log(`mksContent['welcome']['./readme.md']['content']`, mksContent['welcome']['./readme.md']['content']);
-// console.log(`mksContent.welcome`, mksContent.welcome);
-// console.log(`mksContent.welcome['./readme.md'].content`, mksContent.welcome['./readme.md'].content);
-// console.log(`mksContent.welcome['./readme.md'].path_base`, mksContent.welcome['./readme.md'].path_base);
 const mks_parts = ref(mksContent.parts);
 
 const check_searchTextInReadme = (readme, item_name) => {
@@ -70,8 +64,8 @@ const getObjItemsWithSearchTextInReadme = (obj) => {
 
 const mks_items_filtered = computed(() => {
     // const result = {};
-    // for (const [fn_name, fn_item] of Object.entries(mks_tags.value)) {
-    //     console.log(`fn_name`, fn_name, `fn_item`, fn_item);
+    // for (const [mks_item_name, mks_item] of Object.entries(mks_tags.value)) {
+    //     console.log(`mks_item_name`, mks_item_name, `mks_item`, fn_item);
     //     // only include in result if search text is somewhere in the content..
     //     // check bauteile
     //     // const bauteile_includes = getObjItemsWithSearchTextInReadme(mks_parts.);
@@ -138,7 +132,7 @@ const searchText = ref("");
         max-height: 20vh
         display: block
         margin: auto
-        background-color: white
+        background-color: transparent
     h1
         color: white
         display: flex

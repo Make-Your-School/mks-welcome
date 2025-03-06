@@ -40,7 +40,7 @@ defineProps({
     codeLanguage: String,
     includePath: String,
     codeFilePath: String,
-    fileExists: Boolean,
+    fileExists: String,
 })
 // console.log("---");
 // console.log("props.codeLanguage", props.codeLanguage);
