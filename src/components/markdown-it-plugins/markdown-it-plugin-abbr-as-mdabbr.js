@@ -7,7 +7,7 @@
 
 // export const mksAbbrCollection = {}
 
-import md2html from "src/components/markdown-it-plugins/markdown-rendering.js";
+import md2html from "./markdown-rendering.js";
 
 // import { glob } from 'node:fs/promises'
 import fs from "node:fs";

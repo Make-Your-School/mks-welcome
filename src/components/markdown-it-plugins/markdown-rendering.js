@@ -17,6 +17,8 @@ import cpp from "highlight.js/lib/languages/cpp";
 // Then register the languages you need
 hljs.registerLanguage("cpp", cpp);
 hljs.registerLanguage("c++", cpp);
+import css from "highlight.js/lib/languages/css";
+hljs.registerLanguage("css", css);
 
 const mditHighlightFn = function (str, lang) {
     if (lang && hljs.getLanguage(lang)) {
@@ -46,19 +48,19 @@ export const md = new MarkdownIt(md_options);
 // ------------------------------------------
 // setup plugins
 
-import { full as mditPluginEmoji } from "markdown-it-emoji";
-md.use(mditPluginEmoji);
+// import { full as mditPluginEmoji } from "markdown-it-emoji";
+// md.use(mditPluginEmoji);
 
 // https://github.com/valeriangalliat/markdown-it-anchor/tree/master
-import mditPluginAnchor from "markdown-it-anchor";
-md.use(mditPluginAnchor, {
-    //   permalink: anchor.permalink.headerLink()
-});
+// import mditPluginAnchor from "markdown-it-anchor";
+// md.use(mditPluginAnchor, {
+//     //   permalink: anchor.permalink.headerLink()
+// });
 
-import { alert as mdit_alert } from "@mdit/plugin-alert";
-// import "@mdit/plugin-alert/style";
-// css loading now in `boot/markdown-load-css.js`
-md.use(mdit_alert);
+// import { alert as mdit_alert } from "@mdit/plugin-alert";
+// // import "@mdit/plugin-alert/style";
+// // css loading now in `boot/markdown-load-css.js`
+// md.use(mdit_alert);
 
 // https://github.com/markdown-it/markdown-it-container
 // import mditPluginContainer from "markdown-it-container";
@@ -87,7 +89,7 @@ md.use(mdit_alert);
 // md.use(mdi_toc);
 
 // import markdownItPluginEmbedCode from "./markdown-it-plugin-embed-code";
-import { runEmbedCode } from "./markdown-it-plugin-embed-code";
+// import { runEmbedCode } from "./markdown-it-plugin-embed-code";
 
 // https://mdit-plugins.github.io/include.html#syntax
 // import { include, include as mdit_include } from "@mdit/plugin-include";
@@ -102,27 +104,27 @@ import { runEmbedCode } from "./markdown-it-plugin-embed-code";
 // so we have to do the rendering steps manually - see below.
 
 
-import mditPluginImgSrcAbs from "components/markdown-it-plugins/markdown-it-plugin-img-src-abs";
-md.use(mditPluginImgSrcAbs);
+// import mditPluginImgSrcAbs from "components/markdown-it-plugins/markdown-it-plugin-img-src-abs";
+// md.use(mditPluginImgSrcAbs);
 
-// not used because of non interactive rendering...
-import MarkdownItPluginCodeAsMDCode from "./markdown-it-plugin-code-as-mdcode";
-md.use(MarkdownItPluginCodeAsMDCode);
-// eslint-disable-next-line no-unused-vars
-import MDCode from "components/MDComponents/MDCode.vue";
+// // not used because of non interactive rendering...
+// import MarkdownItPluginCodeAsMDCode from "./markdown-it-plugin-code-as-mdcode";
+// md.use(MarkdownItPluginCodeAsMDCode);
+// // eslint-disable-next-line no-unused-vars
+// import MDCode from "components/MDComponents/MDCode.vue";
 
-// not used because of non interactive rendering...
-import MarkdownItPluginAbbrAsMDAbbr from './markdown-it-plugin-abbr-as-mdabbr'
-// import mksAbbr from "src/content_md/mksAbbr";
-// eslint-disable-next-line no-unused-vars
-import MDAbbr from "components/MDComponents/MDAbbr.vue";
-// import mksAbbrLoad from "./markdown-it-plugin-abbr-as-mdabbr.js";
-// const mksAbbrCollection = mksAbbrLoad();
-// console.log("markdown-rendering.js - mksAbbrCollection", mksAbbrCollection);
-// import mksAbbrCollection from "src/../markdown-it-config.js";
-md.use(MarkdownItPluginAbbrAsMDAbbr, {
-    // abbreviations: mksAbbrCollection,
-})
+// // not used because of non interactive rendering...
+// import MarkdownItPluginAbbrAsMDAbbr from './markdown-it-plugin-abbr-as-mdabbr'
+// // import mksAbbr from "src/content_md/mksAbbr";
+// // eslint-disable-next-line no-unused-vars
+// import MDAbbr from "components/MDComponents/MDAbbr.vue";
+// // import mksAbbrLoad from "./markdown-it-plugin-abbr-as-mdabbr.js";
+// // const mksAbbrCollection = mksAbbrLoad();
+// // console.log("markdown-rendering.js - mksAbbrCollection", mksAbbrCollection);
+// // import mksAbbrCollection from "src/../markdown-it-config.js";
+// md.use(MarkdownItPluginAbbrAsMDAbbr, {
+//     // abbreviations: mksAbbrCollection,
+// })
 
 // ------------------------------------------
 // rendering
@@ -142,7 +144,7 @@ export const preProcessingMD = (source) => {
     return processedObj;
 };
 
-export const md2html = async (source, filePath=undefined) => {
+export const md2html = (source, filePath=undefined) => {
     // https://github.com/markdown-it/markdown-it/issues/256#issuecomment-224700130
     // we need to do it manually to be able to do async steps in between..
 
@@ -159,7 +161,7 @@ export const md2html = async (source, filePath=undefined) => {
     // console.log("tokens", tokens);
 
     // call async function
-    await runEmbedCode(tokens, {}, env, md);
+    // await runEmbedCode(tokens, {}, env, md);
 
     return md.renderer.render(tokens, md.options, env);
 
