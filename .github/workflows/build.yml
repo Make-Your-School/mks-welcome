@@ -24,29 +24,12 @@ jobs:
             - name: Enable Corepack
               run: corepack enable
 
-            - name: Use Node.js 20.x
+            - name: Use Node.js 22.x
               uses: actions/setup-node@v4
               with:
                   node-version: "22.x"
                   cache: "yarn"
-
-            #   - name: Setup Node
-            #     uses: actions/setup-node@v1
-            #     with:
-            #       node-version: '10.x'
-            #   - name: Cache
-            #     uses: actions/cache@v1
-            #     with:
-            #       path: ~/.npm
-            #       key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-            #       restore-keys: |
-            #         ${{ runner.os }}-node-
-            #   - name: Install
-            #     run: npm ci
-            #   - name: Build
-            #     run: npm run build
-
-            - name: Install dependencies
+            - name: Install 🔧
               run: yarn install --immutable
 
             - name: Build 🔧
