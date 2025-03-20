@@ -32,7 +32,8 @@ import { nodePolyfills } from "vite-plugin-node-polyfills";
 import Markdown from "unplugin-vue-markdown/vite";
 import markdownItConfig from "./markdown-it-config";
 
-export default defineConfig((ctx) => {
+// export default defineConfig((ctx) => {
+export default defineConfig(() => {
     return {
         // https://v2.quasar.dev/quasar-cli-vite/prefetch-feature
         // preFetch: true,
@@ -40,12 +41,7 @@ export default defineConfig((ctx) => {
         // app boot file (/src/boot)
         // --> boot files are part of "main.js"
         // https://v2.quasar.dev/quasar-cli-vite/boot-files
-        boot: [
-            "i18n",
-            "addressbar-color",
-            "register-global-components",
-            "markdown-load-css",
-        ],
+        boot: ["i18n", "addressbar-color", "register-global-components", "markdown-load-css"],
 
         // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
         css: ["app.scss"],

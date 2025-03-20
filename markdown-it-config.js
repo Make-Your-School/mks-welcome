@@ -15,7 +15,6 @@ import { alert as mdit_alert } from "@mdit/plugin-alert";
 
 import mditPluginImgSrcAbs from "./src/components/markdown-it-plugins/markdown-it-plugin-img-src-abs";
 
-// import mditPluginEmbedCodeNodejs from "./markdown-it-plugin-embed-code";
 import { mditPluginEmbedCodeNodejs } from "./src/components/markdown-it-plugins/markdown-it-plugin-embed-code-nodejs.js";
 
 // const myRenderingInside = (tokens, options, env, md) => {
