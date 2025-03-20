@@ -74,7 +74,7 @@ export default defineConfig(() => {
 
             // publicPath: '/',
             // publicPath: "/quasar_lightpaint/dist/spa/",
-            publicPath: "mks-welcome",
+            publicPath: "/mks-welcome/",
             // analyze: true,
             env: {
                 //https://forum.quasar-framework.org/topic/6853/auto-generate-a-build-number-in-spa/15?_=1653270667151
