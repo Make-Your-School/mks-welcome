@@ -1,7 +1,3 @@
-import { b as inject, aA as quasarKey } from "./index-DWioU3IM.js";
-function useQuasar() {
-  return inject(quasarKey);
-}
 const _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -10,6 +6,5 @@ const _export_sfc = (sfc, props) => {
   return target;
 };
 export {
-  _export_sfc as _,
-  useQuasar as u
+  _export_sfc as _
 };

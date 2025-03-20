@@ -1,18 +1,4 @@
-.MDAbbr[data-v-0c7c2b2c] {
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
-}.q-tooltip.MDAbbrContent {
-  margin: 0;
-}
-.q-tooltip.MDAbbrContent h1 {
-  font-size: 1.5rem;
-  line-height: 110%;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-.q-tooltip.MDAbbrContent p {
-  margin-bottom: 0.5rem;
-}.markdown-alert {
+.markdown-alert {
   padding: 8px 16px;
   margin-bottom: 16px;
   color: inherit;
@@ -92,9 +78,11 @@
   padding: 1rem;
   border-radius: 0.5rem;
 }
+
 .my-markdown-wrapper > div {
   display: inline;
 }
+
 .my-markdown {
   display: inline;
 }
@@ -137,4 +125,8 @@
   background: hsla(0, 100%, 50%, 0.2);
   padding: 1rem;
   border-radius: 1rem;
+}
+
+.visually-hidden {
+  display: none;
 }

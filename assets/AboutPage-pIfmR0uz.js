@@ -1,15 +1,22 @@
-import { Q as QPage } from "./QPage-DIZSsvCg.js";
-import { p as preProcessingMD, _ as _sfc_main$1 } from "./MyMarkdown-B369TzTk.js";
-import { r as ref, L as createBlock, M as openBlock, N as withCtx, R as createBaseVNode, U as toDisplayString, Y as unref, Z as createTextVNode, j as createVNode } from "./index-DWioU3IM.js";
-import "./_plugin-vue_export-helper-D82cFZQa.js";
-import "./QTooltip-Blo8Z8hE.js";
-import "./selection-Do1_eA2L.js";
-import "./index-C2YOMUFB.js";
+import { Q as QPage } from "./QPage-CrJqOd1M.js";
+import { r as ref, O as createBlock, m as openBlock, p as withCtx, P as createBaseVNode, X as toDisplayString, u as unref, U as createTextVNode, j as createVNode } from "./index-DJGcSM7w.js";
+import { m as matter, _ as _sfc_main$1 } from "./MyMarkdown-DiUVk8GS.js";
+import "./_commonjsHelpers-CcAunmGO.js";
+import "./index-DXipyAWe.js";
+import "./core-CUVoAmL3.js";
+import "./cpp-DxF16jcj.js";
 const about$2 = "# About\n\ndies ist die neuauflage der Material Koffer Set Hilfe-Seite.\n\nschau mal bei\nhttps://makeyourschool.de/maker-ecke/material/\nvorbei..\n\n";
 const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: about$2
 }, Symbol.toStringTag, { value: "Module" }));
+const preProcessingMD = (source) => {
+  const processedObj = matter(source, {
+    eval: false,
+    excerpt_separator: "<!-- more_details -->"
+  });
+  return processedObj;
+};
 const about = () => {
   console.group("mksContent");
   let content = {};

@@ -1,27 +1,16 @@
-import { x as onDeactivated, p as onBeforeUnmount, a0 as vmIsDestroyed, a as getCurrentInstance, w as watch, aB as vmHasRouter, o as onMounted, v as nextTick, aC as css, aD as getElement, aE as Platform } from "./index-DWioU3IM.js";
-function useTimeout() {
-  let timer = null;
-  const vm = getCurrentInstance();
-  function removeTimeout() {
-    if (timer !== null) {
-      clearTimeout(timer);
-      timer = null;
+import { aA as Platform, a as getCurrentInstance, w as watch, aB as vmHasRouter, o as onMounted, C as nextTick, D as onDeactivated, x as onBeforeUnmount, af as vmIsDestroyed, aC as css, aD as getElement } from "./index-DJGcSM7w.js";
+function clearSelection() {
+  if (window.getSelection !== void 0) {
+    const selection = window.getSelection();
+    if (selection.empty !== void 0) {
+      selection.empty();
+    } else if (selection.removeAllRanges !== void 0) {
+      selection.removeAllRanges();
+      Platform.is.mobile !== true && selection.addRange(document.createRange());
     }
+  } else if (document.selection !== void 0) {
+    document.selection.empty();
   }
-  onDeactivated(removeTimeout);
-  onBeforeUnmount(removeTimeout);
-  return {
-    removeTimeout,
-    registerTimeout(fn, delay) {
-      removeTimeout();
-      if (vmIsDestroyed(vm) === false) {
-        timer = setTimeout(() => {
-          timer = null;
-          fn();
-        }, delay);
-      }
-    }
-  };
 }
 const useModelToggleProps = {
   modelValue: {
@@ -136,6 +125,30 @@ function useModelToggle({
   Object.assign(proxy, publicMethods);
   return publicMethods;
 }
+function useTimeout() {
+  let timer = null;
+  const vm = getCurrentInstance();
+  function removeTimeout() {
+    if (timer !== null) {
+      clearTimeout(timer);
+      timer = null;
+    }
+  }
+  onDeactivated(removeTimeout);
+  onBeforeUnmount(removeTimeout);
+  return {
+    removeTimeout,
+    registerTimeout(fn, delay) {
+      removeTimeout();
+      if (vmIsDestroyed(vm) === false) {
+        timer = setTimeout(() => {
+          timer = null;
+          fn();
+        }, delay);
+      }
+    }
+  };
+}
 const scrollTargetProp = [Element, String];
 const scrollTargets = [null, document, document.body, document.scrollingElement, document.documentElement];
 function getScrollTarget(el, targetEl) {
@@ -191,28 +204,15 @@ function hasScrollbar(el, onY = true) {
   }
   return onY ? el.scrollHeight > el.clientHeight && (el.classList.contains("scroll") || el.classList.contains("overflow-auto") || ["auto", "scroll"].includes(window.getComputedStyle(el)["overflow-y"])) : el.scrollWidth > el.clientWidth && (el.classList.contains("scroll") || el.classList.contains("overflow-auto") || ["auto", "scroll"].includes(window.getComputedStyle(el)["overflow-x"]));
 }
-function clearSelection() {
-  if (window.getSelection !== void 0) {
-    const selection = window.getSelection();
-    if (selection.empty !== void 0) {
-      selection.empty();
-    } else if (selection.removeAllRanges !== void 0) {
-      selection.removeAllRanges();
-      Platform.is.mobile !== true && selection.addRange(document.createRange());
-    }
-  } else if (document.selection !== void 0) {
-    document.selection.empty();
-  }
-}
 export {
   useModelToggleProps as a,
   useTimeout as b,
-  useModelToggle as c,
-  clearSelection as d,
+  clearSelection as c,
+  useModelToggle as d,
   getScrollTarget as e,
-  getVerticalScrollPosition as f,
+  getHorizontalScrollPosition as f,
   getScrollbarWidth as g,
-  getHorizontalScrollPosition as h,
+  getVerticalScrollPosition as h,
   hasScrollbar as i,
   scrollTargetProp as s,
   useModelToggleEmits as u

@@ -1,88 +1,7 @@
-import { O as createElementBlock, P as createCommentVNode, M as openBlock, r as ref, w as watch, R as createBaseVNode, j as createVNode, U as toDisplayString, Y as unref, Z as createTextVNode, N as withCtx, s as shallowRef, _ as watchEffect, F as Fragment, S as renderList, $ as toRaw, L as createBlock } from "./index-DWioU3IM.js";
-import { u as useQuasar, _ as _export_sfc } from "./_plugin-vue_export-helper-D82cFZQa.js";
-import { U as Un, Q as QTooltip, f as getAugmentedNamespace, h as getDefaultExportFromCjs$1 } from "./QTooltip-Blo8Z8hE.js";
-import { H as HighlightJS } from "./index-C2YOMUFB.js";
-const _hoisted_1$3 = ["innerHTML"];
-const _sfc_main$3 = {
-  __name: "MDHtml",
-  props: {
-    item: Object
-  },
-  setup(__props) {
-    return (_ctx, _cache) => {
-      return __props.item.type == "html" ? (openBlock(), createElementBlock("div", {
-        key: 0,
-        innerHTML: __props.item.content,
-        class: "my-markdown"
-      }, null, 8, _hoisted_1$3)) : createCommentVNode("", true);
-    };
-  }
-};
-const _hoisted_1$2 = { class: "MDCode" };
-const _sfc_main$2 = {
-  __name: "MDCode",
-  props: {
-    item: Object
-  },
-  setup(__props) {
-    const theme = ref("base16/solarized-dark");
-    const $q = useQuasar();
-    watch(
-      () => $q.dark.isActive,
-      (val) => {
-        console.log(val ? "On dark mode" : "On light mode");
-        if (val) {
-          theme.value = "base16/solarized-dark";
-        } else {
-          theme.value = "base16/solarized-light";
-        }
-      }
-    );
-    return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("div", _hoisted_1$2, [
-        createBaseVNode("span", null, toDisplayString(__props.item.include_path), 1),
-        createVNode(unref(Un), {
-          code: __props.item.content,
-          highlightjs: "",
-          label: __props.item.codeFilePath,
-          lang: __props.item.codeLanguage,
-          theme: theme.value
-        }, null, 8, ["code", "label", "lang", "theme"])
-      ]);
-    };
-  }
-};
-const _hoisted_1$1 = { class: "MDAbbr" };
-const _sfc_main$1 = {
-  __name: "MDAbbr",
-  props: {
-    item: Object
-  },
-  setup(__props) {
-    return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("span", _hoisted_1$1, [
-        createTextVNode(toDisplayString(__props.item.content), 1),
-        createVNode(QTooltip, {
-          anchor: "top middle",
-          self: "bottom middle",
-          class: "MDAbbrContent bg-amber text-black shadow-4",
-          "max-width": "30em"
-        }, {
-          default: withCtx(() => [
-            createBaseVNode("div", null, [
-              createVNode(_sfc_main, {
-                source: __props.item.abbr.content.content,
-                "file-path": __props.item.abbr.content.content
-              }, null, 8, ["source", "file-path"])
-            ])
-          ]),
-          _: 1
-        })
-      ]);
-    };
-  }
-};
-const MDAbbr = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-0c7c2b2c"]]);
+import { r as ref, Z as watchEffect, l as createElementBlock, m as openBlock, O as createBlock, _ as createCommentVNode, V as resolveDynamicComponent } from "./index-DJGcSM7w.js";
+import { a as getAugmentedNamespace, g as getDefaultExportFromCjs } from "./_commonjsHelpers-CcAunmGO.js";
+import { H as HighlightJS } from "./index-DXipyAWe.js";
+import { c as cpp } from "./cpp-DxF16jcj.js";
 const decodeCache = {};
 function getDecodeCache(exclude) {
   let cache = decodeCache[exclude];
@@ -107,13 +26,13 @@ function decode$1(string, exclude) {
   const cache = getDecodeCache(exclude);
   return string.replace(/(%[a-f0-9]{2})+/gi, function(seq2) {
     let result = "";
-    for (let i2 = 0, l2 = seq2.length; i2 < l2; i2 += 3) {
+    for (let i2 = 0, l = seq2.length; i2 < l; i2 += 3) {
       const b1 = parseInt(seq2.slice(i2 + 1, i2 + 3), 16);
       if (b1 < 128) {
         result += cache[b1];
         continue;
       }
-      if ((b1 & 224) === 192 && i2 + 3 < l2) {
+      if ((b1 & 224) === 192 && i2 + 3 < l) {
         const b2 = parseInt(seq2.slice(i2 + 4, i2 + 6), 16);
         if ((b2 & 192) === 128) {
           const chr = b1 << 6 & 1984 | b2 & 63;
@@ -126,7 +45,7 @@ function decode$1(string, exclude) {
           continue;
         }
       }
-      if ((b1 & 240) === 224 && i2 + 6 < l2) {
+      if ((b1 & 240) === 224 && i2 + 6 < l) {
         const b2 = parseInt(seq2.slice(i2 + 4, i2 + 6), 16);
         const b3 = parseInt(seq2.slice(i2 + 7, i2 + 9), 16);
         if ((b2 & 192) === 128 && (b3 & 192) === 128) {
@@ -140,7 +59,7 @@ function decode$1(string, exclude) {
           continue;
         }
       }
-      if ((b1 & 248) === 240 && i2 + 9 < l2) {
+      if ((b1 & 248) === 240 && i2 + 9 < l) {
         const b2 = parseInt(seq2.slice(i2 + 4, i2 + 6), 16);
         const b3 = parseInt(seq2.slice(i2 + 7, i2 + 9), 16);
         const b4 = parseInt(seq2.slice(i2 + 10, i2 + 12), 16);
@@ -193,9 +112,9 @@ function encode$1(string, exclude, keepEscaped) {
   }
   const cache = getEncodeCache(exclude);
   let result = "";
-  for (let i2 = 0, l2 = string.length; i2 < l2; i2++) {
+  for (let i2 = 0, l = string.length; i2 < l; i2++) {
     const code2 = string.charCodeAt(i2);
-    if (keepEscaped && code2 === 37 && i2 + 2 < l2) {
+    if (keepEscaped && code2 === 37 && i2 + 2 < l) {
       if (/^[0-9a-f]{2}$/i.test(string.slice(i2 + 1, i2 + 3))) {
         result += string.slice(i2, i2 + 3);
         i2 += 2;
@@ -207,7 +126,7 @@ function encode$1(string, exclude, keepEscaped) {
       continue;
     }
     if (code2 >= 55296 && code2 <= 57343) {
-      if (code2 >= 55296 && code2 <= 56319 && i2 + 1 < l2) {
+      if (code2 >= 55296 && code2 <= 56319 && i2 + 1 < l) {
         const nextCode = string.charCodeAt(i2 + 1);
         if (nextCode >= 56320 && nextCode <= 57343) {
           result += encodeURIComponent(string[i2] + string[i2 + 1]);
@@ -279,9 +198,9 @@ const slashedProtocol = {
 };
 function urlParse(url, slashesDenoteHost) {
   if (url && url instanceof Url) return url;
-  const u2 = new Url();
-  u2.parse(url, slashesDenoteHost);
-  return u2;
+  const u = new Url();
+  u.parse(url, slashesDenoteHost);
+  return u;
 }
 Url.prototype.parse = function(url, slashesDenoteHost) {
   let lowerProto, hec, slashes;
@@ -350,7 +269,7 @@ Url.prototype.parse = function(url, slashesDenoteHost) {
     const ipv6Hostname = this.hostname[0] === "[" && this.hostname[this.hostname.length - 1] === "]";
     if (!ipv6Hostname) {
       const hostparts = this.hostname.split(/\./);
-      for (let i2 = 0, l2 = hostparts.length; i2 < l2; i2++) {
+      for (let i2 = 0, l = hostparts.length; i2 < l; i2++) {
         const part = hostparts[i2];
         if (!part) {
           continue;
@@ -443,11 +362,11 @@ const ucmicro = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePrope
 }, Symbol.toStringTag, { value: "Module" }));
 const htmlDecodeTree = new Uint16Array(
   // prettier-ignore
-  'ᵁ<Õıʊҝջאٵ۞ޢߖࠏ੊ઑඡ๭༉༦჊ረዡᐕᒝᓃᓟᔥ\0\0\0\0\0\0ᕫᛍᦍᰒᷝ὾⁠↰⊍⏀⏻⑂⠤⤒ⴈ⹈⿎〖㊺㘹㞬㣾㨨㩱㫠㬮ࠀEMabcfglmnoprstu\\bfms¦³¹ÈÏlig耻Æ䃆P耻&䀦cute耻Á䃁reve;䄂Āiyx}rc耻Â䃂;䐐r;쀀𝔄rave耻À䃀pha;䎑acr;䄀d;橓Āgp¡on;䄄f;쀀𝔸plyFunction;恡ing耻Å䃅Ācs¾Ãr;쀀𝒜ign;扔ilde耻Ã䃃ml耻Ä䃄ЀaceforsuåûþėĜĢħĪĀcrêòkslash;或Ŷöø;櫧ed;挆y;䐑ƀcrtąċĔause;戵noullis;愬a;䎒r;쀀𝔅pf;쀀𝔹eve;䋘còēmpeq;扎܀HOacdefhilorsuōőŖƀƞƢƵƷƺǜȕɳɸɾcy;䐧PY耻©䂩ƀcpyŝŢźute;䄆Ā;iŧŨ拒talDifferentialD;慅leys;愭ȀaeioƉƎƔƘron;䄌dil耻Ç䃇rc;䄈nint;戰ot;䄊ĀdnƧƭilla;䂸terDot;䂷òſi;䎧rcleȀDMPTǇǋǑǖot;抙inus;抖lus;投imes;抗oĀcsǢǸkwiseContourIntegral;戲eCurlyĀDQȃȏoubleQuote;思uote;怙ȀlnpuȞȨɇɕonĀ;eȥȦ户;橴ƀgitȯȶȺruent;扡nt;戯ourIntegral;戮ĀfrɌɎ;愂oduct;成nterClockwiseContourIntegral;戳oss;樯cr;쀀𝒞pĀ;Cʄʅ拓ap;才րDJSZacefiosʠʬʰʴʸˋ˗ˡ˦̳ҍĀ;oŹʥtrahd;椑cy;䐂cy;䐅cy;䐏ƀgrsʿ˄ˇger;怡r;憡hv;櫤Āayː˕ron;䄎;䐔lĀ;t˝˞戇a;䎔r;쀀𝔇Āaf˫̧Ācm˰̢riticalȀADGT̖̜̀̆cute;䂴oŴ̋̍;䋙bleAcute;䋝rave;䁠ilde;䋜ond;拄ferentialD;慆Ѱ̽\0\0\0͔͂\0Ѕf;쀀𝔻ƀ;DE͈͉͍䂨ot;惜qual;扐blèCDLRUVͣͲ΂ϏϢϸontourIntegraìȹoɴ͹\0\0ͻ»͉nArrow;懓Āeo·ΤftƀARTΐΖΡrrow;懐ightArrow;懔eåˊngĀLRΫτeftĀARγιrrow;柸ightArrow;柺ightArrow;柹ightĀATϘϞrrow;懒ee;抨pɁϩ\0\0ϯrrow;懑ownArrow;懕erticalBar;戥ǹABLRTaВЪаўѿͼrrowƀ;BUНОТ憓ar;椓pArrow;懵reve;䌑eft˒к\0ц\0ѐightVector;楐eeVector;楞ectorĀ;Bљњ憽ar;楖ightǔѧ\0ѱeeVector;楟ectorĀ;BѺѻ懁ar;楗eeĀ;A҆҇护rrow;憧ĀctҒҗr;쀀𝒟rok;䄐ࠀNTacdfglmopqstuxҽӀӄӋӞӢӧӮӵԡԯԶՒ՝ՠեG;䅊H耻Ð䃐cute耻É䃉ƀaiyӒӗӜron;䄚rc耻Ê䃊;䐭ot;䄖r;쀀𝔈rave耻È䃈ement;戈ĀapӺӾcr;䄒tyɓԆ\0\0ԒmallSquare;旻erySmallSquare;斫ĀgpԦԪon;䄘f;쀀𝔼silon;䎕uĀaiԼՉlĀ;TՂՃ橵ilde;扂librium;懌Āci՗՚r;愰m;橳a;䎗ml耻Ë䃋Āipժկsts;戃onentialE;慇ʀcfiosօֈ֍ֲ׌y;䐤r;쀀𝔉lledɓ֗\0\0֣mallSquare;旼erySmallSquare;斪Ͱֺ\0ֿ\0\0ׄf;쀀𝔽All;戀riertrf;愱cò׋؀JTabcdfgorstר׬ׯ׺؀ؒؖ؛؝أ٬ٲcy;䐃耻>䀾mmaĀ;d׷׸䎓;䏜reve;䄞ƀeiy؇،ؐdil;䄢rc;䄜;䐓ot;䄠r;쀀𝔊;拙pf;쀀𝔾eater̀EFGLSTصلَٖٛ٦qualĀ;Lؾؿ扥ess;招ullEqual;执reater;檢ess;扷lantEqual;橾ilde;扳cr;쀀𝒢;扫ЀAacfiosuڅڋږڛڞڪھۊRDcy;䐪Āctڐڔek;䋇;䁞irc;䄤r;愌lbertSpace;愋ǰگ\0ڲf;愍izontalLine;攀Āctۃۅòکrok;䄦mpńېۘownHumðįqual;扏܀EJOacdfgmnostuۺ۾܃܇܎ܚܞܡܨ݄ݸދޏޕcy;䐕lig;䄲cy;䐁cute耻Í䃍Āiyܓܘrc耻Î䃎;䐘ot;䄰r;愑rave耻Ì䃌ƀ;apܠܯܿĀcgܴܷr;䄪inaryI;慈lieóϝǴ݉\0ݢĀ;eݍݎ戬Āgrݓݘral;戫section;拂isibleĀCTݬݲomma;恣imes;恢ƀgptݿރވon;䄮f;쀀𝕀a;䎙cr;愐ilde;䄨ǫޚ\0ޞcy;䐆l耻Ï䃏ʀcfosuެ޷޼߂ߐĀiyޱ޵rc;䄴;䐙r;쀀𝔍pf;쀀𝕁ǣ߇\0ߌr;쀀𝒥rcy;䐈kcy;䐄΀HJacfosߤߨ߽߬߱ࠂࠈcy;䐥cy;䐌ppa;䎚Āey߶߻dil;䄶;䐚r;쀀𝔎pf;쀀𝕂cr;쀀𝒦րJTaceflmostࠥࠩࠬࡐࡣ঳সে্਷ੇcy;䐉耻<䀼ʀcmnpr࠷࠼ࡁࡄࡍute;䄹bda;䎛g;柪lacetrf;愒r;憞ƀaeyࡗ࡜ࡡron;䄽dil;䄻;䐛Āfsࡨ॰tԀACDFRTUVarࡾࢩࢱࣦ࣠ࣼयज़ΐ४Ānrࢃ࢏gleBracket;柨rowƀ;BR࢙࢚࢞憐ar;懤ightArrow;懆eiling;挈oǵࢷ\0ࣃbleBracket;柦nǔࣈ\0࣒eeVector;楡ectorĀ;Bࣛࣜ懃ar;楙loor;挊ightĀAV࣯ࣵrrow;憔ector;楎Āerँगeƀ;AVउऊऐ抣rrow;憤ector;楚iangleƀ;BEतथऩ抲ar;槏qual;抴pƀDTVषूौownVector;楑eeVector;楠ectorĀ;Bॖॗ憿ar;楘ectorĀ;B॥०憼ar;楒ightáΜs̀EFGLSTॾঋকঝঢভqualGreater;拚ullEqual;扦reater;扶ess;檡lantEqual;橽ilde;扲r;쀀𝔏Ā;eঽা拘ftarrow;懚idot;䄿ƀnpw৔ਖਛgȀLRlr৞৷ਂਐeftĀAR০৬rrow;柵ightArrow;柷ightArrow;柶eftĀarγਊightáοightáϊf;쀀𝕃erĀLRਢਬeftArrow;憙ightArrow;憘ƀchtਾੀੂòࡌ;憰rok;䅁;扪Ѐacefiosuਗ਼੝੠੷੼અઋ઎p;椅y;䐜Ādl੥੯iumSpace;恟lintrf;愳r;쀀𝔐nusPlus;戓pf;쀀𝕄cò੶;䎜ҀJacefostuણધભીଔଙඑ඗ඞcy;䐊cute;䅃ƀaey઴હાron;䅇dil;䅅;䐝ƀgswે૰଎ativeƀMTV૓૟૨ediumSpace;怋hiĀcn૦૘ë૙eryThiî૙tedĀGL૸ଆreaterGreateòٳessLesóੈLine;䀊r;쀀𝔑ȀBnptଢନଷ଺reak;恠BreakingSpace;䂠f;愕ڀ;CDEGHLNPRSTV୕ୖ୪୼஡௫ఄ౞಄ದ೘ൡඅ櫬Āou୛୤ngruent;扢pCap;扭oubleVerticalBar;戦ƀlqxஃஊ஛ement;戉ualĀ;Tஒஓ扠ilde;쀀≂̸ists;戄reater΀;EFGLSTஶஷ஽௉௓௘௥扯qual;扱ullEqual;쀀≧̸reater;쀀≫̸ess;批lantEqual;쀀⩾̸ilde;扵umpń௲௽ownHump;쀀≎̸qual;쀀≏̸eĀfsఊధtTriangleƀ;BEచఛడ拪ar;쀀⧏̸qual;括s̀;EGLSTవశ఼ౄోౘ扮qual;扰reater;扸ess;쀀≪̸lantEqual;쀀⩽̸ilde;扴estedĀGL౨౹reaterGreater;쀀⪢̸essLess;쀀⪡̸recedesƀ;ESಒಓಛ技qual;쀀⪯̸lantEqual;拠ĀeiಫಹverseElement;戌ghtTriangleƀ;BEೋೌ೒拫ar;쀀⧐̸qual;拭ĀquೝഌuareSuĀbp೨೹setĀ;E೰ೳ쀀⊏̸qual;拢ersetĀ;Eഃആ쀀⊐̸qual;拣ƀbcpഓതൎsetĀ;Eഛഞ쀀⊂⃒qual;抈ceedsȀ;ESTലള഻െ抁qual;쀀⪰̸lantEqual;拡ilde;쀀≿̸ersetĀ;E൘൛쀀⊃⃒qual;抉ildeȀ;EFT൮൯൵ൿ扁qual;扄ullEqual;扇ilde;扉erticalBar;戤cr;쀀𝒩ilde耻Ñ䃑;䎝܀Eacdfgmoprstuvලෂ෉෕ෛ෠෧෼ขภยา฿ไlig;䅒cute耻Ó䃓Āiy෎ීrc耻Ô䃔;䐞blac;䅐r;쀀𝔒rave耻Ò䃒ƀaei෮ෲ෶cr;䅌ga;䎩cron;䎟pf;쀀𝕆enCurlyĀDQฎบoubleQuote;怜uote;怘;橔Āclวฬr;쀀𝒪ash耻Ø䃘iŬื฼de耻Õ䃕es;樷ml耻Ö䃖erĀBP๋๠Āar๐๓r;怾acĀek๚๜;揞et;掴arenthesis;揜Ҁacfhilors๿ງຊຏຒດຝະ໼rtialD;戂y;䐟r;쀀𝔓i;䎦;䎠usMinus;䂱Āipຢອncareplanåڝf;愙Ȁ;eio຺ູ໠໤檻cedesȀ;EST່້໏໚扺qual;檯lantEqual;扼ilde;找me;怳Ādp໩໮uct;戏ortionĀ;aȥ໹l;戝Āci༁༆r;쀀𝒫;䎨ȀUfos༑༖༛༟OT耻"䀢r;쀀𝔔pf;愚cr;쀀𝒬؀BEacefhiorsu༾གྷཇའཱིྦྷྪྭ႖ႩႴႾarr;椐G耻®䂮ƀcnrཎནབute;䅔g;柫rĀ;tཛྷཝ憠l;椖ƀaeyཧཬཱron;䅘dil;䅖;䐠Ā;vླྀཹ愜erseĀEUྂྙĀlq྇ྎement;戋uilibrium;懋pEquilibrium;楯r»ཹo;䎡ghtЀACDFTUVa࿁࿫࿳ဢဨၛႇϘĀnr࿆࿒gleBracket;柩rowƀ;BL࿜࿝࿡憒ar;懥eftArrow;懄eiling;按oǵ࿹\0စbleBracket;柧nǔည\0နeeVector;楝ectorĀ;Bဝသ懂ar;楕loor;挋Āerိ၃eƀ;AVဵံြ抢rrow;憦ector;楛iangleƀ;BEၐၑၕ抳ar;槐qual;抵pƀDTVၣၮၸownVector;楏eeVector;楜ectorĀ;Bႂႃ憾ar;楔ectorĀ;B႑႒懀ar;楓Āpuႛ႞f;愝ndImplies;楰ightarrow;懛ĀchႹႼr;愛;憱leDelayed;槴ڀHOacfhimoqstuფჱჷჽᄙᄞᅑᅖᅡᅧᆵᆻᆿĀCcჩხHcy;䐩y;䐨FTcy;䐬cute;䅚ʀ;aeiyᄈᄉᄎᄓᄗ檼ron;䅠dil;䅞rc;䅜;䐡r;쀀𝔖ortȀDLRUᄪᄴᄾᅉownArrow»ОeftArrow»࢚ightArrow»࿝pArrow;憑gma;䎣allCircle;战pf;쀀𝕊ɲᅭ\0\0ᅰt;戚areȀ;ISUᅻᅼᆉᆯ斡ntersection;抓uĀbpᆏᆞsetĀ;Eᆗᆘ抏qual;抑ersetĀ;Eᆨᆩ抐qual;抒nion;抔cr;쀀𝒮ar;拆ȀbcmpᇈᇛሉላĀ;sᇍᇎ拐etĀ;Eᇍᇕqual;抆ĀchᇠህeedsȀ;ESTᇭᇮᇴᇿ扻qual;檰lantEqual;扽ilde;承Tháྌ;我ƀ;esሒሓሣ拑rsetĀ;Eሜም抃qual;抇et»ሓրHRSacfhiorsሾቄ቉ቕ቞ቱቶኟዂወዑORN耻Þ䃞ADE;愢ĀHc቎ቒcy;䐋y;䐦Ābuቚቜ;䀉;䎤ƀaeyብቪቯron;䅤dil;䅢;䐢r;쀀𝔗Āeiቻ኉ǲኀ\0ኇefore;戴a;䎘Ācn኎ኘkSpace;쀀  Space;怉ldeȀ;EFTካኬኲኼ戼qual;扃ullEqual;扅ilde;扈pf;쀀𝕋ipleDot;惛Āctዖዛr;쀀𝒯rok;䅦ૡዷጎጚጦ\0ጬጱ\0\0\0\0\0ጸጽ፷ᎅ\0᏿ᐄᐊᐐĀcrዻጁute耻Ú䃚rĀ;oጇገ憟cir;楉rǣጓ\0጖y;䐎ve;䅬Āiyጞጣrc耻Û䃛;䐣blac;䅰r;쀀𝔘rave耻Ù䃙acr;䅪Ādiፁ፩erĀBPፈ፝Āarፍፐr;䁟acĀekፗፙ;揟et;掵arenthesis;揝onĀ;P፰፱拃lus;抎Āgp፻፿on;䅲f;쀀𝕌ЀADETadps᎕ᎮᎸᏄϨᏒᏗᏳrrowƀ;BDᅐᎠᎤar;椒ownArrow;懅ownArrow;憕quilibrium;楮eeĀ;AᏋᏌ报rrow;憥ownáϳerĀLRᏞᏨeftArrow;憖ightArrow;憗iĀ;lᏹᏺ䏒on;䎥ing;䅮cr;쀀𝒰ilde;䅨ml耻Ü䃜ҀDbcdefosvᐧᐬᐰᐳᐾᒅᒊᒐᒖash;披ar;櫫y;䐒ashĀ;lᐻᐼ抩;櫦Āerᑃᑅ;拁ƀbtyᑌᑐᑺar;怖Ā;iᑏᑕcalȀBLSTᑡᑥᑪᑴar;戣ine;䁼eparator;杘ilde;所ThinSpace;怊r;쀀𝔙pf;쀀𝕍cr;쀀𝒱dash;抪ʀcefosᒧᒬᒱᒶᒼirc;䅴dge;拀r;쀀𝔚pf;쀀𝕎cr;쀀𝒲Ȁfiosᓋᓐᓒᓘr;쀀𝔛;䎞pf;쀀𝕏cr;쀀𝒳ҀAIUacfosuᓱᓵᓹᓽᔄᔏᔔᔚᔠcy;䐯cy;䐇cy;䐮cute耻Ý䃝Āiyᔉᔍrc;䅶;䐫r;쀀𝔜pf;쀀𝕐cr;쀀𝒴ml;䅸ЀHacdefosᔵᔹᔿᕋᕏᕝᕠᕤcy;䐖cute;䅹Āayᕄᕉron;䅽;䐗ot;䅻ǲᕔ\0ᕛoWidtè૙a;䎖r;愨pf;愤cr;쀀𝒵௡ᖃᖊᖐ\0ᖰᖶᖿ\0\0\0\0ᗆᗛᗫᙟ᙭\0ᚕ᚛ᚲᚹ\0ᚾcute耻á䃡reve;䄃̀;Ediuyᖜᖝᖡᖣᖨᖭ戾;쀀∾̳;房rc耻â䃢te肻´̆;䐰lig耻æ䃦Ā;r²ᖺ;쀀𝔞rave耻à䃠ĀepᗊᗖĀfpᗏᗔsym;愵èᗓha;䎱ĀapᗟcĀclᗤᗧr;䄁g;樿ɤᗰ\0\0ᘊʀ;adsvᗺᗻᗿᘁᘇ戧nd;橕;橜lope;橘;橚΀;elmrszᘘᘙᘛᘞᘿᙏᙙ戠;榤e»ᘙsdĀ;aᘥᘦ戡ѡᘰᘲᘴᘶᘸᘺᘼᘾ;榨;榩;榪;榫;榬;榭;榮;榯tĀ;vᙅᙆ戟bĀ;dᙌᙍ抾;榝Āptᙔᙗh;戢»¹arr;捼Āgpᙣᙧon;䄅f;쀀𝕒΀;Eaeiop዁ᙻᙽᚂᚄᚇᚊ;橰cir;橯;扊d;手s;䀧roxĀ;e዁ᚒñᚃing耻å䃥ƀctyᚡᚦᚨr;쀀𝒶;䀪mpĀ;e዁ᚯñʈilde耻ã䃣ml耻ä䃤Āciᛂᛈoninôɲnt;樑ࠀNabcdefiklnoprsu᛭ᛱᜰ᜼ᝃᝈ᝸᝽០៦ᠹᡐᜍ᤽᥈ᥰot;櫭Ācrᛶ᜞kȀcepsᜀᜅᜍᜓong;扌psilon;䏶rime;怵imĀ;e᜚᜛戽q;拍Ŷᜢᜦee;抽edĀ;gᜬᜭ挅e»ᜭrkĀ;t፜᜷brk;掶Āoyᜁᝁ;䐱quo;怞ʀcmprtᝓ᝛ᝡᝤᝨausĀ;eĊĉptyv;榰séᜌnoõēƀahwᝯ᝱ᝳ;䎲;愶een;扬r;쀀𝔟g΀costuvwឍឝឳេ៕៛៞ƀaiuបពរðݠrc;旯p»፱ƀdptឤឨឭot;樀lus;樁imes;樂ɱឹ\0\0ើcup;樆ar;昅riangleĀdu៍្own;施p;斳plus;樄eåᑄåᒭarow;植ƀako៭ᠦᠵĀcn៲ᠣkƀlst៺֫᠂ozenge;槫riangleȀ;dlr᠒᠓᠘᠝斴own;斾eft;旂ight;斸k;搣Ʊᠫ\0ᠳƲᠯ\0ᠱ;斒;斑4;斓ck;斈ĀeoᠾᡍĀ;qᡃᡆ쀀=⃥uiv;쀀≡⃥t;挐Ȁptwxᡙᡞᡧᡬf;쀀𝕓Ā;tᏋᡣom»Ꮜtie;拈؀DHUVbdhmptuvᢅᢖᢪᢻᣗᣛᣬ᣿ᤅᤊᤐᤡȀLRlrᢎᢐᢒᢔ;敗;敔;敖;敓ʀ;DUduᢡᢢᢤᢦᢨ敐;敦;敩;敤;敧ȀLRlrᢳᢵᢷᢹ;敝;敚;敜;教΀;HLRhlrᣊᣋᣍᣏᣑᣓᣕ救;敬;散;敠;敫;敢;敟ox;槉ȀLRlrᣤᣦᣨᣪ;敕;敒;攐;攌ʀ;DUduڽ᣷᣹᣻᣽;敥;敨;攬;攴inus;抟lus;択imes;抠ȀLRlrᤙᤛᤝ᤟;敛;敘;攘;攔΀;HLRhlrᤰᤱᤳᤵᤷ᤻᤹攂;敪;敡;敞;攼;攤;攜Āevģ᥂bar耻¦䂦Ȁceioᥑᥖᥚᥠr;쀀𝒷mi;恏mĀ;e᜚᜜lƀ;bhᥨᥩᥫ䁜;槅sub;柈Ŭᥴ᥾lĀ;e᥹᥺怢t»᥺pƀ;Eeįᦅᦇ;檮Ā;qۜۛೡᦧ\0᧨ᨑᨕᨲ\0ᨷᩐ\0\0᪴\0\0᫁\0\0ᬡᬮ᭍᭒\0᯽\0ᰌƀcpr᦭ᦲ᧝ute;䄇̀;abcdsᦿᧀᧄ᧊᧕᧙戩nd;橄rcup;橉Āau᧏᧒p;橋p;橇ot;橀;쀀∩︀Āeo᧢᧥t;恁îړȀaeiu᧰᧻ᨁᨅǰ᧵\0᧸s;橍on;䄍dil耻ç䃧rc;䄉psĀ;sᨌᨍ橌m;橐ot;䄋ƀdmnᨛᨠᨦil肻¸ƭptyv;榲t脀¢;eᨭᨮ䂢räƲr;쀀𝔠ƀceiᨽᩀᩍy;䑇ckĀ;mᩇᩈ朓ark»ᩈ;䏇r΀;Ecefms᩟᩠ᩢᩫ᪤᪪᪮旋;槃ƀ;elᩩᩪᩭ䋆q;扗eɡᩴ\0\0᪈rrowĀlr᩼᪁eft;憺ight;憻ʀRSacd᪒᪔᪖᪚᪟»ཇ;擈st;抛irc;抚ash;抝nint;樐id;櫯cir;槂ubsĀ;u᪻᪼晣it»᪼ˬ᫇᫔᫺\0ᬊonĀ;eᫍᫎ䀺Ā;qÇÆɭ᫙\0\0᫢aĀ;t᫞᫟䀬;䁀ƀ;fl᫨᫩᫫戁îᅠeĀmx᫱᫶ent»᫩eóɍǧ᫾\0ᬇĀ;dኻᬂot;橭nôɆƀfryᬐᬔᬗ;쀀𝕔oäɔ脀©;sŕᬝr;愗Āaoᬥᬩrr;憵ss;朗Ācuᬲᬷr;쀀𝒸Ābpᬼ᭄Ā;eᭁᭂ櫏;櫑Ā;eᭉᭊ櫐;櫒dot;拯΀delprvw᭠᭬᭷ᮂᮬᯔ᯹arrĀlr᭨᭪;椸;椵ɰ᭲\0\0᭵r;拞c;拟arrĀ;p᭿ᮀ憶;椽̀;bcdosᮏᮐᮖᮡᮥᮨ截rcap;橈Āauᮛᮞp;橆p;橊ot;抍r;橅;쀀∪︀Ȁalrv᮵ᮿᯞᯣrrĀ;mᮼᮽ憷;椼yƀevwᯇᯔᯘqɰᯎ\0\0ᯒreã᭳uã᭵ee;拎edge;拏en耻¤䂤earrowĀlrᯮ᯳eft»ᮀight»ᮽeäᯝĀciᰁᰇoninôǷnt;戱lcty;挭ঀAHabcdefhijlorstuwz᰸᰻᰿ᱝᱩᱵᲊᲞᲬᲷ᳻᳿ᴍᵻᶑᶫᶻ᷆᷍rò΁ar;楥Ȁglrs᱈ᱍ᱒᱔ger;怠eth;愸òᄳhĀ;vᱚᱛ怐»ऊūᱡᱧarow;椏aã̕Āayᱮᱳron;䄏;䐴ƀ;ao̲ᱼᲄĀgrʿᲁr;懊tseq;橷ƀglmᲑᲔᲘ耻°䂰ta;䎴ptyv;榱ĀirᲣᲨsht;楿;쀀𝔡arĀlrᲳᲵ»ࣜ»သʀaegsv᳂͸᳖᳜᳠mƀ;oș᳊᳔ndĀ;ș᳑uit;晦amma;䏝in;拲ƀ;io᳧᳨᳸䃷de脀÷;o᳧ᳰntimes;拇nø᳷cy;䑒cɯᴆ\0\0ᴊrn;挞op;挍ʀlptuwᴘᴝᴢᵉᵕlar;䀤f;쀀𝕕ʀ;emps̋ᴭᴷᴽᵂqĀ;d͒ᴳot;扑inus;戸lus;戔quare;抡blebarwedgåúnƀadhᄮᵝᵧownarrowóᲃarpoonĀlrᵲᵶefôᲴighôᲶŢᵿᶅkaro÷གɯᶊ\0\0ᶎrn;挟op;挌ƀcotᶘᶣᶦĀryᶝᶡ;쀀𝒹;䑕l;槶rok;䄑Ādrᶰᶴot;拱iĀ;fᶺ᠖斿Āah᷀᷃ròЩaòྦangle;榦Āci᷒ᷕy;䑟grarr;柿ऀDacdefglmnopqrstuxḁḉḙḸոḼṉṡṾấắẽỡἪἷὄ὎὚ĀDoḆᴴoôᲉĀcsḎḔute耻é䃩ter;橮ȀaioyḢḧḱḶron;䄛rĀ;cḭḮ扖耻ê䃪lon;払;䑍ot;䄗ĀDrṁṅot;扒;쀀𝔢ƀ;rsṐṑṗ檚ave耻è䃨Ā;dṜṝ檖ot;檘Ȁ;ilsṪṫṲṴ檙nters;揧;愓Ā;dṹṺ檕ot;檗ƀapsẅẉẗcr;䄓tyƀ;svẒẓẕ戅et»ẓpĀ1;ẝẤĳạả;怄;怅怃ĀgsẪẬ;䅋p;怂ĀgpẴẸon;䄙f;쀀𝕖ƀalsỄỎỒrĀ;sỊị拕l;槣us;橱iƀ;lvỚớở䎵on»ớ;䏵ȀcsuvỪỳἋἣĀioữḱrc»Ḯɩỹ\0\0ỻíՈantĀglἂἆtr»ṝess»Ṻƀaeiἒ἖Ἒls;䀽st;扟vĀ;DȵἠD;橸parsl;槥ĀDaἯἳot;打rr;楱ƀcdiἾὁỸr;愯oô͒ĀahὉὋ;䎷耻ð䃰Āmrὓὗl耻ë䃫o;悬ƀcipὡὤὧl;䀡sôծĀeoὬὴctatioîՙnentialåչৡᾒ\0ᾞ\0ᾡᾧ\0\0ῆῌ\0ΐ\0ῦῪ \0 ⁚llingdotseñṄy;䑄male;晀ƀilrᾭᾳ῁lig;耀ﬃɩᾹ\0\0᾽g;耀ﬀig;耀ﬄ;쀀𝔣lig;耀ﬁlig;쀀fjƀaltῙ῜ῡt;晭ig;耀ﬂns;斱of;䆒ǰ΅\0ῳf;쀀𝕗ĀakֿῷĀ;vῼ´拔;櫙artint;樍Āao‌⁕Ācs‑⁒α‚‰‸⁅⁈\0⁐β•‥‧‪‬\0‮耻½䂽;慓耻¼䂼;慕;慙;慛Ƴ‴\0‶;慔;慖ʴ‾⁁\0\0⁃耻¾䂾;慗;慜5;慘ƶ⁌\0⁎;慚;慝8;慞l;恄wn;挢cr;쀀𝒻ࢀEabcdefgijlnorstv₂₉₟₥₰₴⃰⃵⃺⃿℃ℒℸ̗ℾ⅒↞Ā;lٍ₇;檌ƀcmpₐₕ₝ute;䇵maĀ;dₜ᳚䎳;檆reve;䄟Āiy₪₮rc;䄝;䐳ot;䄡Ȁ;lqsؾق₽⃉ƀ;qsؾٌ⃄lanô٥Ȁ;cdl٥⃒⃥⃕c;檩otĀ;o⃜⃝檀Ā;l⃢⃣檂;檄Ā;e⃪⃭쀀⋛︀s;檔r;쀀𝔤Ā;gٳ؛mel;愷cy;䑓Ȁ;Eajٚℌℎℐ;檒;檥;檤ȀEaesℛℝ℩ℴ;扩pĀ;p℣ℤ檊rox»ℤĀ;q℮ℯ檈Ā;q℮ℛim;拧pf;쀀𝕘Āci⅃ⅆr;愊mƀ;el٫ⅎ⅐;檎;檐茀>;cdlqr׮ⅠⅪⅮⅳⅹĀciⅥⅧ;檧r;橺ot;拗Par;榕uest;橼ʀadelsↄⅪ←ٖ↛ǰ↉\0↎proø₞r;楸qĀlqؿ↖lesó₈ií٫Āen↣↭rtneqq;쀀≩︀Å↪ԀAabcefkosy⇄⇇⇱⇵⇺∘∝∯≨≽ròΠȀilmr⇐⇔⇗⇛rsðᒄf»․ilôکĀdr⇠⇤cy;䑊ƀ;cwࣴ⇫⇯ir;楈;憭ar;意irc;䄥ƀalr∁∎∓rtsĀ;u∉∊晥it»∊lip;怦con;抹r;쀀𝔥sĀew∣∩arow;椥arow;椦ʀamopr∺∾≃≞≣rr;懿tht;戻kĀlr≉≓eftarrow;憩ightarrow;憪f;쀀𝕙bar;怕ƀclt≯≴≸r;쀀𝒽asè⇴rok;䄧Ābp⊂⊇ull;恃hen»ᱛૡ⊣\0⊪\0⊸⋅⋎\0⋕⋳\0\0⋸⌢⍧⍢⍿\0⎆⎪⎴cute耻í䃭ƀ;iyݱ⊰⊵rc耻î䃮;䐸Ācx⊼⊿y;䐵cl耻¡䂡ĀfrΟ⋉;쀀𝔦rave耻ì䃬Ȁ;inoܾ⋝⋩⋮Āin⋢⋦nt;樌t;戭fin;槜ta;愩lig;䄳ƀaop⋾⌚⌝ƀcgt⌅⌈⌗r;䄫ƀelpܟ⌏⌓inåގarôܠh;䄱f;抷ed;䆵ʀ;cfotӴ⌬⌱⌽⍁are;愅inĀ;t⌸⌹戞ie;槝doô⌙ʀ;celpݗ⍌⍐⍛⍡al;抺Āgr⍕⍙eróᕣã⍍arhk;樗rod;樼Ȁcgpt⍯⍲⍶⍻y;䑑on;䄯f;쀀𝕚a;䎹uest耻¿䂿Āci⎊⎏r;쀀𝒾nʀ;EdsvӴ⎛⎝⎡ӳ;拹ot;拵Ā;v⎦⎧拴;拳Ā;iݷ⎮lde;䄩ǫ⎸\0⎼cy;䑖l耻ï䃯̀cfmosu⏌⏗⏜⏡⏧⏵Āiy⏑⏕rc;䄵;䐹r;쀀𝔧ath;䈷pf;쀀𝕛ǣ⏬\0⏱r;쀀𝒿rcy;䑘kcy;䑔Ѐacfghjos␋␖␢␧␭␱␵␻ppaĀ;v␓␔䎺;䏰Āey␛␠dil;䄷;䐺r;쀀𝔨reen;䄸cy;䑅cy;䑜pf;쀀𝕜cr;쀀𝓀஀ABEHabcdefghjlmnoprstuv⑰⒁⒆⒍⒑┎┽╚▀♎♞♥♹♽⚚⚲⛘❝❨➋⟀⠁⠒ƀart⑷⑺⑼rò৆òΕail;椛arr;椎Ā;gঔ⒋;檋ar;楢ॣ⒥\0⒪\0⒱\0\0\0\0\0⒵Ⓔ\0ⓆⓈⓍ\0⓹ute;䄺mptyv;榴raîࡌbda;䎻gƀ;dlࢎⓁⓃ;榑åࢎ;檅uo耻«䂫rЀ;bfhlpst࢙ⓞⓦⓩ⓫⓮⓱⓵Ā;f࢝ⓣs;椟s;椝ë≒p;憫l;椹im;楳l;憢ƀ;ae⓿─┄檫il;椙Ā;s┉┊檭;쀀⪭︀ƀabr┕┙┝rr;椌rk;杲Āak┢┬cĀek┨┪;䁻;䁛Āes┱┳;榋lĀdu┹┻;榏;榍Ȁaeuy╆╋╖╘ron;䄾Ādi═╔il;䄼ìࢰâ┩;䐻Ȁcqrs╣╦╭╽a;椶uoĀ;rนᝆĀdu╲╷har;楧shar;楋h;憲ʀ;fgqs▋▌উ◳◿扤tʀahlrt▘▤▷◂◨rrowĀ;t࢙□aé⓶arpoonĀdu▯▴own»њp»०eftarrows;懇ightƀahs◍◖◞rrowĀ;sࣴࢧarpoonó྘quigarro÷⇰hreetimes;拋ƀ;qs▋ও◺lanôবʀ;cdgsব☊☍☝☨c;檨otĀ;o☔☕橿Ā;r☚☛檁;檃Ā;e☢☥쀀⋚︀s;檓ʀadegs☳☹☽♉♋pproøⓆot;拖qĀgq♃♅ôউgtò⒌ôছiíলƀilr♕࣡♚sht;楼;쀀𝔩Ā;Eজ♣;檑š♩♶rĀdu▲♮Ā;l॥♳;楪lk;斄cy;䑙ʀ;achtੈ⚈⚋⚑⚖rò◁orneòᴈard;楫ri;旺Āio⚟⚤dot;䅀ustĀ;a⚬⚭掰che»⚭ȀEaes⚻⚽⛉⛔;扨pĀ;p⛃⛄檉rox»⛄Ā;q⛎⛏檇Ā;q⛎⚻im;拦Ѐabnoptwz⛩⛴⛷✚✯❁❇❐Ānr⛮⛱g;柬r;懽rëࣁgƀlmr⛿✍✔eftĀar০✇ightá৲apsto;柼ightá৽parrowĀlr✥✩efô⓭ight;憬ƀafl✶✹✽r;榅;쀀𝕝us;樭imes;樴š❋❏st;戗áፎƀ;ef❗❘᠀旊nge»❘arĀ;l❤❥䀨t;榓ʀachmt❳❶❼➅➇ròࢨorneòᶌarĀ;d྘➃;業;怎ri;抿̀achiqt➘➝ੀ➢➮➻quo;怹r;쀀𝓁mƀ;egল➪➬;檍;檏Ābu┪➳oĀ;rฟ➹;怚rok;䅂萀<;cdhilqrࠫ⟒☹⟜⟠⟥⟪⟰Āci⟗⟙;檦r;橹reå◲mes;拉arr;楶uest;橻ĀPi⟵⟹ar;榖ƀ;ef⠀भ᠛旃rĀdu⠇⠍shar;楊har;楦Āen⠗⠡rtneqq;쀀≨︀Å⠞܀Dacdefhilnopsu⡀⡅⢂⢎⢓⢠⢥⢨⣚⣢⣤ઃ⣳⤂Dot;戺Ȁclpr⡎⡒⡣⡽r耻¯䂯Āet⡗⡙;時Ā;e⡞⡟朠se»⡟Ā;sျ⡨toȀ;dluျ⡳⡷⡻owîҌefôएðᏑker;斮Āoy⢇⢌mma;権;䐼ash;怔asuredangle»ᘦr;쀀𝔪o;愧ƀcdn⢯⢴⣉ro耻µ䂵Ȁ;acdᑤ⢽⣀⣄sôᚧir;櫰ot肻·Ƶusƀ;bd⣒ᤃ⣓戒Ā;uᴼ⣘;横ţ⣞⣡p;櫛ò−ðઁĀdp⣩⣮els;抧f;쀀𝕞Āct⣸⣽r;쀀𝓂pos»ᖝƀ;lm⤉⤊⤍䎼timap;抸ఀGLRVabcdefghijlmoprstuvw⥂⥓⥾⦉⦘⧚⧩⨕⨚⩘⩝⪃⪕⪤⪨⬄⬇⭄⭿⮮ⰴⱧⱼ⳩Āgt⥇⥋;쀀⋙̸Ā;v⥐௏쀀≫⃒ƀelt⥚⥲⥶ftĀar⥡⥧rrow;懍ightarrow;懎;쀀⋘̸Ā;v⥻ే쀀≪⃒ightarrow;懏ĀDd⦎⦓ash;抯ash;抮ʀbcnpt⦣⦧⦬⦱⧌la»˞ute;䅄g;쀀∠⃒ʀ;Eiop඄⦼⧀⧅⧈;쀀⩰̸d;쀀≋̸s;䅉roø඄urĀ;a⧓⧔普lĀ;s⧓ସǳ⧟\0⧣p肻 ଷmpĀ;e௹ఀʀaeouy⧴⧾⨃⨐⨓ǰ⧹\0⧻;橃on;䅈dil;䅆ngĀ;dൾ⨊ot;쀀⩭̸p;橂;䐽ash;怓΀;Aadqsxஒ⨩⨭⨻⩁⩅⩐rr;懗rĀhr⨳⨶k;椤Ā;oᏲᏰot;쀀≐̸uiöୣĀei⩊⩎ar;椨í஘istĀ;s஠டr;쀀𝔫ȀEest௅⩦⩹⩼ƀ;qs஼⩭௡ƀ;qs஼௅⩴lanô௢ií௪Ā;rஶ⪁»ஷƀAap⪊⪍⪑rò⥱rr;憮ar;櫲ƀ;svྍ⪜ྌĀ;d⪡⪢拼;拺cy;䑚΀AEadest⪷⪺⪾⫂⫅⫶⫹rò⥦;쀀≦̸rr;憚r;急Ȁ;fqs఻⫎⫣⫯tĀar⫔⫙rro÷⫁ightarro÷⪐ƀ;qs఻⪺⫪lanôౕĀ;sౕ⫴»శiíౝĀ;rవ⫾iĀ;eచథiäඐĀpt⬌⬑f;쀀𝕟膀¬;in⬙⬚⬶䂬nȀ;Edvஉ⬤⬨⬮;쀀⋹̸ot;쀀⋵̸ǡஉ⬳⬵;拷;拶iĀ;vಸ⬼ǡಸ⭁⭃;拾;拽ƀaor⭋⭣⭩rȀ;ast୻⭕⭚⭟lleì୻l;쀀⫽⃥;쀀∂̸lint;樔ƀ;ceಒ⭰⭳uåಥĀ;cಘ⭸Ā;eಒ⭽ñಘȀAait⮈⮋⮝⮧rò⦈rrƀ;cw⮔⮕⮙憛;쀀⤳̸;쀀↝̸ghtarrow»⮕riĀ;eೋೖ΀chimpqu⮽⯍⯙⬄୸⯤⯯Ȁ;cerല⯆ഷ⯉uå൅;쀀𝓃ortɭ⬅\0\0⯖ará⭖mĀ;e൮⯟Ā;q൴൳suĀbp⯫⯭å೸åഋƀbcp⯶ⰑⰙȀ;Ees⯿ⰀഢⰄ抄;쀀⫅̸etĀ;eഛⰋqĀ;qണⰀcĀ;eലⰗñസȀ;EesⰢⰣൟⰧ抅;쀀⫆̸etĀ;e൘ⰮqĀ;qൠⰣȀgilrⰽⰿⱅⱇìௗlde耻ñ䃱çృiangleĀlrⱒⱜeftĀ;eచⱚñదightĀ;eೋⱥñ೗Ā;mⱬⱭ䎽ƀ;esⱴⱵⱹ䀣ro;愖p;怇ҀDHadgilrsⲏⲔⲙⲞⲣⲰⲶⳓⳣash;抭arr;椄p;쀀≍⃒ash;抬ĀetⲨⲬ;쀀≥⃒;쀀>⃒nfin;槞ƀAetⲽⳁⳅrr;椂;쀀≤⃒Ā;rⳊⳍ쀀<⃒ie;쀀⊴⃒ĀAtⳘⳜrr;椃rie;쀀⊵⃒im;쀀∼⃒ƀAan⳰⳴ⴂrr;懖rĀhr⳺⳽k;椣Ā;oᏧᏥear;椧ቓ᪕\0\0\0\0\0\0\0\0\0\0\0\0\0ⴭ\0ⴸⵈⵠⵥ⵲ⶄᬇ\0\0ⶍⶫ\0ⷈⷎ\0ⷜ⸙⸫⸾⹃Ācsⴱ᪗ute耻ó䃳ĀiyⴼⵅrĀ;c᪞ⵂ耻ô䃴;䐾ʀabios᪠ⵒⵗǈⵚlac;䅑v;樸old;榼lig;䅓Ācr⵩⵭ir;榿;쀀𝔬ͯ⵹\0\0⵼\0ⶂn;䋛ave耻ò䃲;槁Ābmⶈ෴ar;榵Ȁacitⶕ⶘ⶥⶨrò᪀Āir⶝ⶠr;榾oss;榻nå๒;槀ƀaeiⶱⶵⶹcr;䅍ga;䏉ƀcdnⷀⷅǍron;䎿;榶pf;쀀𝕠ƀaelⷔ⷗ǒr;榷rp;榹΀;adiosvⷪⷫⷮ⸈⸍⸐⸖戨rò᪆Ȁ;efmⷷⷸ⸂⸅橝rĀ;oⷾⷿ愴f»ⷿ耻ª䂪耻º䂺gof;抶r;橖lope;橗;橛ƀclo⸟⸡⸧ò⸁ash耻ø䃸l;折iŬⸯ⸴de耻õ䃵esĀ;aǛ⸺s;樶ml耻ö䃶bar;挽ૡ⹞\0⹽\0⺀⺝\0⺢⺹\0\0⻋ຜ\0⼓\0\0⼫⾼\0⿈rȀ;astЃ⹧⹲຅脀¶;l⹭⹮䂶leìЃɩ⹸\0\0⹻m;櫳;櫽y;䐿rʀcimpt⺋⺏⺓ᡥ⺗nt;䀥od;䀮il;怰enk;怱r;쀀𝔭ƀimo⺨⺰⺴Ā;v⺭⺮䏆;䏕maô੶ne;明ƀ;tv⺿⻀⻈䏀chfork»´;䏖Āau⻏⻟nĀck⻕⻝kĀ;h⇴⻛;愎ö⇴sҀ;abcdemst⻳⻴ᤈ⻹⻽⼄⼆⼊⼎䀫cir;樣ir;樢Āouᵀ⼂;樥;橲n肻±ຝim;樦wo;樧ƀipu⼙⼠⼥ntint;樕f;쀀𝕡nd耻£䂣Ԁ;Eaceinosu່⼿⽁⽄⽇⾁⾉⾒⽾⾶;檳p;檷uå໙Ā;c໎⽌̀;acens່⽙⽟⽦⽨⽾pproø⽃urlyeñ໙ñ໎ƀaes⽯⽶⽺pprox;檹qq;檵im;拨iíໟmeĀ;s⾈ຮ怲ƀEas⽸⾐⽺ð⽵ƀdfp໬⾙⾯ƀals⾠⾥⾪lar;挮ine;挒urf;挓Ā;t໻⾴ï໻rel;抰Āci⿀⿅r;쀀𝓅;䏈ncsp;怈̀fiopsu⿚⋢⿟⿥⿫⿱r;쀀𝔮pf;쀀𝕢rime;恗cr;쀀𝓆ƀaeo⿸〉〓tĀei⿾々rnionóڰnt;樖stĀ;e【】䀿ñἙô༔઀ABHabcdefhilmnoprstux぀けさすムㄎㄫㅇㅢㅲㆎ㈆㈕㈤㈩㉘㉮㉲㊐㊰㊷ƀartぇおがròႳòϝail;検aròᱥar;楤΀cdenqrtとふへみわゔヌĀeuねぱ;쀀∽̱te;䅕iãᅮmptyv;榳gȀ;del࿑らるろ;榒;榥å࿑uo耻»䂻rր;abcfhlpstw࿜ガクシスゼゾダッデナp;極Ā;f࿠ゴs;椠;椳s;椞ë≝ð✮l;楅im;楴l;憣;憝Āaiパフil;椚oĀ;nホボ戶aló༞ƀabrョリヮrò៥rk;杳ĀakンヽcĀekヹ・;䁽;䁝Āes㄂㄄;榌lĀduㄊㄌ;榎;榐Ȁaeuyㄗㄜㄧㄩron;䅙Ādiㄡㄥil;䅗ì࿲âヺ;䑀Ȁclqsㄴㄷㄽㅄa;椷dhar;楩uoĀ;rȎȍh;憳ƀacgㅎㅟངlȀ;ipsླྀㅘㅛႜnåႻarôྩt;断ƀilrㅩဣㅮsht;楽;쀀𝔯ĀaoㅷㆆrĀduㅽㅿ»ѻĀ;l႑ㆄ;楬Ā;vㆋㆌ䏁;䏱ƀgns㆕ㇹㇼht̀ahlrstㆤㆰ㇂㇘㇤㇮rrowĀ;t࿜ㆭaéトarpoonĀduㆻㆿowîㅾp»႒eftĀah㇊㇐rrowó࿪arpoonóՑightarrows;應quigarro÷ニhreetimes;拌g;䋚ingdotseñἲƀahm㈍㈐㈓rò࿪aòՑ;怏oustĀ;a㈞㈟掱che»㈟mid;櫮Ȁabpt㈲㈽㉀㉒Ānr㈷㈺g;柭r;懾rëဃƀafl㉇㉊㉎r;榆;쀀𝕣us;樮imes;樵Āap㉝㉧rĀ;g㉣㉤䀩t;榔olint;樒arò㇣Ȁachq㉻㊀Ⴜ㊅quo;怺r;쀀𝓇Ābu・㊊oĀ;rȔȓƀhir㊗㊛㊠reåㇸmes;拊iȀ;efl㊪ၙᠡ㊫方tri;槎luhar;楨;愞ൡ㋕㋛㋟㌬㌸㍱\0㍺㎤\0\0㏬㏰\0㐨㑈㑚㒭㒱㓊㓱\0㘖\0\0㘳cute;䅛quï➺Ԁ;Eaceinpsyᇭ㋳㋵㋿㌂㌋㌏㌟㌦㌩;檴ǰ㋺\0㋼;檸on;䅡uåᇾĀ;dᇳ㌇il;䅟rc;䅝ƀEas㌖㌘㌛;檶p;檺im;择olint;樓iíሄ;䑁otƀ;be㌴ᵇ㌵担;橦΀Aacmstx㍆㍊㍗㍛㍞㍣㍭rr;懘rĀhr㍐㍒ë∨Ā;oਸ਼਴t耻§䂧i;䀻war;椩mĀin㍩ðnuóñt;朶rĀ;o㍶⁕쀀𝔰Ȁacoy㎂㎆㎑㎠rp;景Āhy㎋㎏cy;䑉;䑈rtɭ㎙\0\0㎜iäᑤaraì⹯耻­䂭Āgm㎨㎴maƀ;fv㎱㎲㎲䏃;䏂Ѐ;deglnprካ㏅㏉㏎㏖㏞㏡㏦ot;橪Ā;q኱ኰĀ;E㏓㏔檞;檠Ā;E㏛㏜檝;檟e;扆lus;樤arr;楲aròᄽȀaeit㏸㐈㐏㐗Āls㏽㐄lsetmé㍪hp;樳parsl;槤Ādlᑣ㐔e;挣Ā;e㐜㐝檪Ā;s㐢㐣檬;쀀⪬︀ƀflp㐮㐳㑂tcy;䑌Ā;b㐸㐹䀯Ā;a㐾㐿槄r;挿f;쀀𝕤aĀdr㑍ЂesĀ;u㑔㑕晠it»㑕ƀcsu㑠㑹㒟Āau㑥㑯pĀ;sᆈ㑫;쀀⊓︀pĀ;sᆴ㑵;쀀⊔︀uĀbp㑿㒏ƀ;esᆗᆜ㒆etĀ;eᆗ㒍ñᆝƀ;esᆨᆭ㒖etĀ;eᆨ㒝ñᆮƀ;afᅻ㒦ְrť㒫ֱ»ᅼaròᅈȀcemt㒹㒾㓂㓅r;쀀𝓈tmîñiì㐕aræᆾĀar㓎㓕rĀ;f㓔ឿ昆Āan㓚㓭ightĀep㓣㓪psiloîỠhé⺯s»⡒ʀbcmnp㓻㕞ሉ㖋㖎Ҁ;Edemnprs㔎㔏㔑㔕㔞㔣㔬㔱㔶抂;櫅ot;檽Ā;dᇚ㔚ot;櫃ult;櫁ĀEe㔨㔪;櫋;把lus;檿arr;楹ƀeiu㔽㕒㕕tƀ;en㔎㕅㕋qĀ;qᇚ㔏eqĀ;q㔫㔨m;櫇Ābp㕚㕜;櫕;櫓c̀;acensᇭ㕬㕲㕹㕻㌦pproø㋺urlyeñᇾñᇳƀaes㖂㖈㌛pproø㌚qñ㌗g;晪ڀ123;Edehlmnps㖩㖬㖯ሜ㖲㖴㗀㗉㗕㗚㗟㗨㗭耻¹䂹耻²䂲耻³䂳;櫆Āos㖹㖼t;檾ub;櫘Ā;dሢ㗅ot;櫄sĀou㗏㗒l;柉b;櫗arr;楻ult;櫂ĀEe㗤㗦;櫌;抋lus;櫀ƀeiu㗴㘉㘌tƀ;enሜ㗼㘂qĀ;qሢ㖲eqĀ;q㗧㗤m;櫈Ābp㘑㘓;櫔;櫖ƀAan㘜㘠㘭rr;懙rĀhr㘦㘨ë∮Ā;oਫ਩war;椪lig耻ß䃟௡㙑㙝㙠ዎ㙳㙹\0㙾㛂\0\0\0\0\0㛛㜃\0㜉㝬\0\0\0㞇ɲ㙖\0\0㙛get;挖;䏄rë๟ƀaey㙦㙫㙰ron;䅥dil;䅣;䑂lrec;挕r;쀀𝔱Ȁeiko㚆㚝㚵㚼ǲ㚋\0㚑eĀ4fኄኁaƀ;sv㚘㚙㚛䎸ym;䏑Ācn㚢㚲kĀas㚨㚮pproø዁im»ኬsðኞĀas㚺㚮ð዁rn耻þ䃾Ǭ̟㛆⋧es膀×;bd㛏㛐㛘䃗Ā;aᤏ㛕r;樱;樰ƀeps㛡㛣㜀á⩍Ȁ;bcf҆㛬㛰㛴ot;挶ir;櫱Ā;o㛹㛼쀀𝕥rk;櫚á㍢rime;怴ƀaip㜏㜒㝤dåቈ΀adempst㜡㝍㝀㝑㝗㝜㝟ngleʀ;dlqr㜰㜱㜶㝀㝂斵own»ᶻeftĀ;e⠀㜾ñम;扜ightĀ;e㊪㝋ñၚot;旬inus;樺lus;樹b;槍ime;樻ezium;揢ƀcht㝲㝽㞁Āry㝷㝻;쀀𝓉;䑆cy;䑛rok;䅧Āio㞋㞎xô᝷headĀlr㞗㞠eftarro÷ࡏightarrow»ཝऀAHabcdfghlmoprstuw㟐㟓㟗㟤㟰㟼㠎㠜㠣㠴㡑㡝㡫㢩㣌㣒㣪㣶ròϭar;楣Ācr㟜㟢ute耻ú䃺òᅐrǣ㟪\0㟭y;䑞ve;䅭Āiy㟵㟺rc耻û䃻;䑃ƀabh㠃㠆㠋ròᎭlac;䅱aòᏃĀir㠓㠘sht;楾;쀀𝔲rave耻ù䃹š㠧㠱rĀlr㠬㠮»ॗ»ႃlk;斀Āct㠹㡍ɯ㠿\0\0㡊rnĀ;e㡅㡆挜r»㡆op;挏ri;旸Āal㡖㡚cr;䅫肻¨͉Āgp㡢㡦on;䅳f;쀀𝕦̀adhlsuᅋ㡸㡽፲㢑㢠ownáᎳarpoonĀlr㢈㢌efô㠭ighô㠯iƀ;hl㢙㢚㢜䏅»ᏺon»㢚parrows;懈ƀcit㢰㣄㣈ɯ㢶\0\0㣁rnĀ;e㢼㢽挝r»㢽op;挎ng;䅯ri;旹cr;쀀𝓊ƀdir㣙㣝㣢ot;拰lde;䅩iĀ;f㜰㣨»᠓Āam㣯㣲rò㢨l耻ü䃼angle;榧ހABDacdeflnoprsz㤜㤟㤩㤭㦵㦸㦽㧟㧤㧨㧳㧹㧽㨁㨠ròϷarĀ;v㤦㤧櫨;櫩asèϡĀnr㤲㤷grt;榜΀eknprst㓣㥆㥋㥒㥝㥤㦖appá␕othinçẖƀhir㓫⻈㥙opô⾵Ā;hᎷ㥢ïㆍĀiu㥩㥭gmá㎳Ābp㥲㦄setneqĀ;q㥽㦀쀀⊊︀;쀀⫋︀setneqĀ;q㦏㦒쀀⊋︀;쀀⫌︀Āhr㦛㦟etá㚜iangleĀlr㦪㦯eft»थight»ၑy;䐲ash»ံƀelr㧄㧒㧗ƀ;beⷪ㧋㧏ar;抻q;扚lip;拮Ābt㧜ᑨaòᑩr;쀀𝔳tré㦮suĀbp㧯㧱»ജ»൙pf;쀀𝕧roð໻tré㦴Ācu㨆㨋r;쀀𝓋Ābp㨐㨘nĀEe㦀㨖»㥾nĀEe㦒㨞»㦐igzag;榚΀cefoprs㨶㨻㩖㩛㩔㩡㩪irc;䅵Ādi㩀㩑Ābg㩅㩉ar;機eĀ;qᗺ㩏;扙erp;愘r;쀀𝔴pf;쀀𝕨Ā;eᑹ㩦atèᑹcr;쀀𝓌ૣណ㪇\0㪋\0㪐㪛\0\0㪝㪨㪫㪯\0\0㫃㫎\0㫘ៜ៟tré៑r;쀀𝔵ĀAa㪔㪗ròσrò৶;䎾ĀAa㪡㪤ròθrò৫að✓is;拻ƀdptឤ㪵㪾Āfl㪺ឩ;쀀𝕩imåឲĀAa㫇㫊ròώròਁĀcq㫒ីr;쀀𝓍Āpt៖㫜ré។Ѐacefiosu㫰㫽㬈㬌㬑㬕㬛㬡cĀuy㫶㫻te耻ý䃽;䑏Āiy㬂㬆rc;䅷;䑋n耻¥䂥r;쀀𝔶cy;䑗pf;쀀𝕪cr;쀀𝓎Ācm㬦㬩y;䑎l耻ÿ䃿Ԁacdefhiosw㭂㭈㭔㭘㭤㭩㭭㭴㭺㮀cute;䅺Āay㭍㭒ron;䅾;䐷ot;䅼Āet㭝㭡træᕟa;䎶r;쀀𝔷cy;䐶grarr;懝pf;쀀𝕫cr;쀀𝓏Ājn㮅㮇;怍j;怌'.split("").map((c2) => c2.charCodeAt(0))
+  'ᵁ<Õıʊҝջאٵ۞ޢߖࠏ੊ઑඡ๭༉༦჊ረዡᐕᒝᓃᓟᔥ\0\0\0\0\0\0ᕫᛍᦍᰒᷝ὾⁠↰⊍⏀⏻⑂⠤⤒ⴈ⹈⿎〖㊺㘹㞬㣾㨨㩱㫠㬮ࠀEMabcfglmnoprstu\\bfms¦³¹ÈÏlig耻Æ䃆P耻&䀦cute耻Á䃁reve;䄂Āiyx}rc耻Â䃂;䐐r;쀀𝔄rave耻À䃀pha;䎑acr;䄀d;橓Āgp¡on;䄄f;쀀𝔸plyFunction;恡ing耻Å䃅Ācs¾Ãr;쀀𝒜ign;扔ilde耻Ã䃃ml耻Ä䃄ЀaceforsuåûþėĜĢħĪĀcrêòkslash;或Ŷöø;櫧ed;挆y;䐑ƀcrtąċĔause;戵noullis;愬a;䎒r;쀀𝔅pf;쀀𝔹eve;䋘còēmpeq;扎܀HOacdefhilorsuōőŖƀƞƢƵƷƺǜȕɳɸɾcy;䐧PY耻©䂩ƀcpyŝŢźute;䄆Ā;iŧŨ拒talDifferentialD;慅leys;愭ȀaeioƉƎƔƘron;䄌dil耻Ç䃇rc;䄈nint;戰ot;䄊ĀdnƧƭilla;䂸terDot;䂷òſi;䎧rcleȀDMPTǇǋǑǖot;抙inus;抖lus;投imes;抗oĀcsǢǸkwiseContourIntegral;戲eCurlyĀDQȃȏoubleQuote;思uote;怙ȀlnpuȞȨɇɕonĀ;eȥȦ户;橴ƀgitȯȶȺruent;扡nt;戯ourIntegral;戮ĀfrɌɎ;愂oduct;成nterClockwiseContourIntegral;戳oss;樯cr;쀀𝒞pĀ;Cʄʅ拓ap;才րDJSZacefiosʠʬʰʴʸˋ˗ˡ˦̳ҍĀ;oŹʥtrahd;椑cy;䐂cy;䐅cy;䐏ƀgrsʿ˄ˇger;怡r;憡hv;櫤Āayː˕ron;䄎;䐔lĀ;t˝˞戇a;䎔r;쀀𝔇Āaf˫̧Ācm˰̢riticalȀADGT̖̜̀̆cute;䂴oŴ̋̍;䋙bleAcute;䋝rave;䁠ilde;䋜ond;拄ferentialD;慆Ѱ̽\0\0\0͔͂\0Ѕf;쀀𝔻ƀ;DE͈͉͍䂨ot;惜qual;扐blèCDLRUVͣͲ΂ϏϢϸontourIntegraìȹoɴ͹\0\0ͻ»͉nArrow;懓Āeo·ΤftƀARTΐΖΡrrow;懐ightArrow;懔eåˊngĀLRΫτeftĀARγιrrow;柸ightArrow;柺ightArrow;柹ightĀATϘϞrrow;懒ee;抨pɁϩ\0\0ϯrrow;懑ownArrow;懕erticalBar;戥ǹABLRTaВЪаўѿͼrrowƀ;BUНОТ憓ar;椓pArrow;懵reve;䌑eft˒к\0ц\0ѐightVector;楐eeVector;楞ectorĀ;Bљњ憽ar;楖ightǔѧ\0ѱeeVector;楟ectorĀ;BѺѻ懁ar;楗eeĀ;A҆҇护rrow;憧ĀctҒҗr;쀀𝒟rok;䄐ࠀNTacdfglmopqstuxҽӀӄӋӞӢӧӮӵԡԯԶՒ՝ՠեG;䅊H耻Ð䃐cute耻É䃉ƀaiyӒӗӜron;䄚rc耻Ê䃊;䐭ot;䄖r;쀀𝔈rave耻È䃈ement;戈ĀapӺӾcr;䄒tyɓԆ\0\0ԒmallSquare;旻erySmallSquare;斫ĀgpԦԪon;䄘f;쀀𝔼silon;䎕uĀaiԼՉlĀ;TՂՃ橵ilde;扂librium;懌Āci՗՚r;愰m;橳a;䎗ml耻Ë䃋Āipժկsts;戃onentialE;慇ʀcfiosօֈ֍ֲ׌y;䐤r;쀀𝔉lledɓ֗\0\0֣mallSquare;旼erySmallSquare;斪Ͱֺ\0ֿ\0\0ׄf;쀀𝔽All;戀riertrf;愱cò׋؀JTabcdfgorstר׬ׯ׺؀ؒؖ؛؝أ٬ٲcy;䐃耻>䀾mmaĀ;d׷׸䎓;䏜reve;䄞ƀeiy؇،ؐdil;䄢rc;䄜;䐓ot;䄠r;쀀𝔊;拙pf;쀀𝔾eater̀EFGLSTصلَٖٛ٦qualĀ;Lؾؿ扥ess;招ullEqual;执reater;檢ess;扷lantEqual;橾ilde;扳cr;쀀𝒢;扫ЀAacfiosuڅڋږڛڞڪھۊRDcy;䐪Āctڐڔek;䋇;䁞irc;䄤r;愌lbertSpace;愋ǰگ\0ڲf;愍izontalLine;攀Āctۃۅòکrok;䄦mpńېۘownHumðįqual;扏܀EJOacdfgmnostuۺ۾܃܇܎ܚܞܡܨ݄ݸދޏޕcy;䐕lig;䄲cy;䐁cute耻Í䃍Āiyܓܘrc耻Î䃎;䐘ot;䄰r;愑rave耻Ì䃌ƀ;apܠܯܿĀcgܴܷr;䄪inaryI;慈lieóϝǴ݉\0ݢĀ;eݍݎ戬Āgrݓݘral;戫section;拂isibleĀCTݬݲomma;恣imes;恢ƀgptݿރވon;䄮f;쀀𝕀a;䎙cr;愐ilde;䄨ǫޚ\0ޞcy;䐆l耻Ï䃏ʀcfosuެ޷޼߂ߐĀiyޱ޵rc;䄴;䐙r;쀀𝔍pf;쀀𝕁ǣ߇\0ߌr;쀀𝒥rcy;䐈kcy;䐄΀HJacfosߤߨ߽߬߱ࠂࠈcy;䐥cy;䐌ppa;䎚Āey߶߻dil;䄶;䐚r;쀀𝔎pf;쀀𝕂cr;쀀𝒦րJTaceflmostࠥࠩࠬࡐࡣ঳সে্਷ੇcy;䐉耻<䀼ʀcmnpr࠷࠼ࡁࡄࡍute;䄹bda;䎛g;柪lacetrf;愒r;憞ƀaeyࡗ࡜ࡡron;䄽dil;䄻;䐛Āfsࡨ॰tԀACDFRTUVarࡾࢩࢱࣦ࣠ࣼयज़ΐ४Ānrࢃ࢏gleBracket;柨rowƀ;BR࢙࢚࢞憐ar;懤ightArrow;懆eiling;挈oǵࢷ\0ࣃbleBracket;柦nǔࣈ\0࣒eeVector;楡ectorĀ;Bࣛࣜ懃ar;楙loor;挊ightĀAV࣯ࣵrrow;憔ector;楎Āerँगeƀ;AVउऊऐ抣rrow;憤ector;楚iangleƀ;BEतथऩ抲ar;槏qual;抴pƀDTVषूौownVector;楑eeVector;楠ectorĀ;Bॖॗ憿ar;楘ectorĀ;B॥०憼ar;楒ightáΜs̀EFGLSTॾঋকঝঢভqualGreater;拚ullEqual;扦reater;扶ess;檡lantEqual;橽ilde;扲r;쀀𝔏Ā;eঽা拘ftarrow;懚idot;䄿ƀnpw৔ਖਛgȀLRlr৞৷ਂਐeftĀAR০৬rrow;柵ightArrow;柷ightArrow;柶eftĀarγਊightáοightáϊf;쀀𝕃erĀLRਢਬeftArrow;憙ightArrow;憘ƀchtਾੀੂòࡌ;憰rok;䅁;扪Ѐacefiosuਗ਼੝੠੷੼અઋ઎p;椅y;䐜Ādl੥੯iumSpace;恟lintrf;愳r;쀀𝔐nusPlus;戓pf;쀀𝕄cò੶;䎜ҀJacefostuણધભીଔଙඑ඗ඞcy;䐊cute;䅃ƀaey઴હાron;䅇dil;䅅;䐝ƀgswે૰଎ativeƀMTV૓૟૨ediumSpace;怋hiĀcn૦૘ë૙eryThiî૙tedĀGL૸ଆreaterGreateòٳessLesóੈLine;䀊r;쀀𝔑ȀBnptଢନଷ଺reak;恠BreakingSpace;䂠f;愕ڀ;CDEGHLNPRSTV୕ୖ୪୼஡௫ఄ౞಄ದ೘ൡඅ櫬Āou୛୤ngruent;扢pCap;扭oubleVerticalBar;戦ƀlqxஃஊ஛ement;戉ualĀ;Tஒஓ扠ilde;쀀≂̸ists;戄reater΀;EFGLSTஶஷ஽௉௓௘௥扯qual;扱ullEqual;쀀≧̸reater;쀀≫̸ess;批lantEqual;쀀⩾̸ilde;扵umpń௲௽ownHump;쀀≎̸qual;쀀≏̸eĀfsఊధtTriangleƀ;BEచఛడ拪ar;쀀⧏̸qual;括s̀;EGLSTవశ఼ౄోౘ扮qual;扰reater;扸ess;쀀≪̸lantEqual;쀀⩽̸ilde;扴estedĀGL౨౹reaterGreater;쀀⪢̸essLess;쀀⪡̸recedesƀ;ESಒಓಛ技qual;쀀⪯̸lantEqual;拠ĀeiಫಹverseElement;戌ghtTriangleƀ;BEೋೌ೒拫ar;쀀⧐̸qual;拭ĀquೝഌuareSuĀbp೨೹setĀ;E೰ೳ쀀⊏̸qual;拢ersetĀ;Eഃആ쀀⊐̸qual;拣ƀbcpഓതൎsetĀ;Eഛഞ쀀⊂⃒qual;抈ceedsȀ;ESTലള഻െ抁qual;쀀⪰̸lantEqual;拡ilde;쀀≿̸ersetĀ;E൘൛쀀⊃⃒qual;抉ildeȀ;EFT൮൯൵ൿ扁qual;扄ullEqual;扇ilde;扉erticalBar;戤cr;쀀𝒩ilde耻Ñ䃑;䎝܀Eacdfgmoprstuvලෂ෉෕ෛ෠෧෼ขภยา฿ไlig;䅒cute耻Ó䃓Āiy෎ීrc耻Ô䃔;䐞blac;䅐r;쀀𝔒rave耻Ò䃒ƀaei෮ෲ෶cr;䅌ga;䎩cron;䎟pf;쀀𝕆enCurlyĀDQฎบoubleQuote;怜uote;怘;橔Āclวฬr;쀀𝒪ash耻Ø䃘iŬื฼de耻Õ䃕es;樷ml耻Ö䃖erĀBP๋๠Āar๐๓r;怾acĀek๚๜;揞et;掴arenthesis;揜Ҁacfhilors๿ງຊຏຒດຝະ໼rtialD;戂y;䐟r;쀀𝔓i;䎦;䎠usMinus;䂱Āipຢອncareplanåڝf;愙Ȁ;eio຺ູ໠໤檻cedesȀ;EST່້໏໚扺qual;檯lantEqual;扼ilde;找me;怳Ādp໩໮uct;戏ortionĀ;aȥ໹l;戝Āci༁༆r;쀀𝒫;䎨ȀUfos༑༖༛༟OT耻"䀢r;쀀𝔔pf;愚cr;쀀𝒬؀BEacefhiorsu༾གྷཇའཱིྦྷྪྭ႖ႩႴႾarr;椐G耻®䂮ƀcnrཎནབute;䅔g;柫rĀ;tཛྷཝ憠l;椖ƀaeyཧཬཱron;䅘dil;䅖;䐠Ā;vླྀཹ愜erseĀEUྂྙĀlq྇ྎement;戋uilibrium;懋pEquilibrium;楯r»ཹo;䎡ghtЀACDFTUVa࿁࿫࿳ဢဨၛႇϘĀnr࿆࿒gleBracket;柩rowƀ;BL࿜࿝࿡憒ar;懥eftArrow;懄eiling;按oǵ࿹\0စbleBracket;柧nǔည\0နeeVector;楝ectorĀ;Bဝသ懂ar;楕loor;挋Āerိ၃eƀ;AVဵံြ抢rrow;憦ector;楛iangleƀ;BEၐၑၕ抳ar;槐qual;抵pƀDTVၣၮၸownVector;楏eeVector;楜ectorĀ;Bႂႃ憾ar;楔ectorĀ;B႑႒懀ar;楓Āpuႛ႞f;愝ndImplies;楰ightarrow;懛ĀchႹႼr;愛;憱leDelayed;槴ڀHOacfhimoqstuფჱჷჽᄙᄞᅑᅖᅡᅧᆵᆻᆿĀCcჩხHcy;䐩y;䐨FTcy;䐬cute;䅚ʀ;aeiyᄈᄉᄎᄓᄗ檼ron;䅠dil;䅞rc;䅜;䐡r;쀀𝔖ortȀDLRUᄪᄴᄾᅉownArrow»ОeftArrow»࢚ightArrow»࿝pArrow;憑gma;䎣allCircle;战pf;쀀𝕊ɲᅭ\0\0ᅰt;戚areȀ;ISUᅻᅼᆉᆯ斡ntersection;抓uĀbpᆏᆞsetĀ;Eᆗᆘ抏qual;抑ersetĀ;Eᆨᆩ抐qual;抒nion;抔cr;쀀𝒮ar;拆ȀbcmpᇈᇛሉላĀ;sᇍᇎ拐etĀ;Eᇍᇕqual;抆ĀchᇠህeedsȀ;ESTᇭᇮᇴᇿ扻qual;檰lantEqual;扽ilde;承Tháྌ;我ƀ;esሒሓሣ拑rsetĀ;Eሜም抃qual;抇et»ሓրHRSacfhiorsሾቄ቉ቕ቞ቱቶኟዂወዑORN耻Þ䃞ADE;愢ĀHc቎ቒcy;䐋y;䐦Ābuቚቜ;䀉;䎤ƀaeyብቪቯron;䅤dil;䅢;䐢r;쀀𝔗Āeiቻ኉ǲኀ\0ኇefore;戴a;䎘Ācn኎ኘkSpace;쀀  Space;怉ldeȀ;EFTካኬኲኼ戼qual;扃ullEqual;扅ilde;扈pf;쀀𝕋ipleDot;惛Āctዖዛr;쀀𝒯rok;䅦ૡዷጎጚጦ\0ጬጱ\0\0\0\0\0ጸጽ፷ᎅ\0᏿ᐄᐊᐐĀcrዻጁute耻Ú䃚rĀ;oጇገ憟cir;楉rǣጓ\0጖y;䐎ve;䅬Āiyጞጣrc耻Û䃛;䐣blac;䅰r;쀀𝔘rave耻Ù䃙acr;䅪Ādiፁ፩erĀBPፈ፝Āarፍፐr;䁟acĀekፗፙ;揟et;掵arenthesis;揝onĀ;P፰፱拃lus;抎Āgp፻፿on;䅲f;쀀𝕌ЀADETadps᎕ᎮᎸᏄϨᏒᏗᏳrrowƀ;BDᅐᎠᎤar;椒ownArrow;懅ownArrow;憕quilibrium;楮eeĀ;AᏋᏌ报rrow;憥ownáϳerĀLRᏞᏨeftArrow;憖ightArrow;憗iĀ;lᏹᏺ䏒on;䎥ing;䅮cr;쀀𝒰ilde;䅨ml耻Ü䃜ҀDbcdefosvᐧᐬᐰᐳᐾᒅᒊᒐᒖash;披ar;櫫y;䐒ashĀ;lᐻᐼ抩;櫦Āerᑃᑅ;拁ƀbtyᑌᑐᑺar;怖Ā;iᑏᑕcalȀBLSTᑡᑥᑪᑴar;戣ine;䁼eparator;杘ilde;所ThinSpace;怊r;쀀𝔙pf;쀀𝕍cr;쀀𝒱dash;抪ʀcefosᒧᒬᒱᒶᒼirc;䅴dge;拀r;쀀𝔚pf;쀀𝕎cr;쀀𝒲Ȁfiosᓋᓐᓒᓘr;쀀𝔛;䎞pf;쀀𝕏cr;쀀𝒳ҀAIUacfosuᓱᓵᓹᓽᔄᔏᔔᔚᔠcy;䐯cy;䐇cy;䐮cute耻Ý䃝Āiyᔉᔍrc;䅶;䐫r;쀀𝔜pf;쀀𝕐cr;쀀𝒴ml;䅸ЀHacdefosᔵᔹᔿᕋᕏᕝᕠᕤcy;䐖cute;䅹Āayᕄᕉron;䅽;䐗ot;䅻ǲᕔ\0ᕛoWidtè૙a;䎖r;愨pf;愤cr;쀀𝒵௡ᖃᖊᖐ\0ᖰᖶᖿ\0\0\0\0ᗆᗛᗫᙟ᙭\0ᚕ᚛ᚲᚹ\0ᚾcute耻á䃡reve;䄃̀;Ediuyᖜᖝᖡᖣᖨᖭ戾;쀀∾̳;房rc耻â䃢te肻´̆;䐰lig耻æ䃦Ā;r²ᖺ;쀀𝔞rave耻à䃠ĀepᗊᗖĀfpᗏᗔsym;愵èᗓha;䎱ĀapᗟcĀclᗤᗧr;䄁g;樿ɤᗰ\0\0ᘊʀ;adsvᗺᗻᗿᘁᘇ戧nd;橕;橜lope;橘;橚΀;elmrszᘘᘙᘛᘞᘿᙏᙙ戠;榤e»ᘙsdĀ;aᘥᘦ戡ѡᘰᘲᘴᘶᘸᘺᘼᘾ;榨;榩;榪;榫;榬;榭;榮;榯tĀ;vᙅᙆ戟bĀ;dᙌᙍ抾;榝Āptᙔᙗh;戢»¹arr;捼Āgpᙣᙧon;䄅f;쀀𝕒΀;Eaeiop዁ᙻᙽᚂᚄᚇᚊ;橰cir;橯;扊d;手s;䀧roxĀ;e዁ᚒñᚃing耻å䃥ƀctyᚡᚦᚨr;쀀𝒶;䀪mpĀ;e዁ᚯñʈilde耻ã䃣ml耻ä䃤Āciᛂᛈoninôɲnt;樑ࠀNabcdefiklnoprsu᛭ᛱᜰ᜼ᝃᝈ᝸᝽០៦ᠹᡐᜍ᤽᥈ᥰot;櫭Ācrᛶ᜞kȀcepsᜀᜅᜍᜓong;扌psilon;䏶rime;怵imĀ;e᜚᜛戽q;拍Ŷᜢᜦee;抽edĀ;gᜬᜭ挅e»ᜭrkĀ;t፜᜷brk;掶Āoyᜁᝁ;䐱quo;怞ʀcmprtᝓ᝛ᝡᝤᝨausĀ;eĊĉptyv;榰séᜌnoõēƀahwᝯ᝱ᝳ;䎲;愶een;扬r;쀀𝔟g΀costuvwឍឝឳេ៕៛៞ƀaiuបពរðݠrc;旯p»፱ƀdptឤឨឭot;樀lus;樁imes;樂ɱឹ\0\0ើcup;樆ar;昅riangleĀdu៍្own;施p;斳plus;樄eåᑄåᒭarow;植ƀako៭ᠦᠵĀcn៲ᠣkƀlst៺֫᠂ozenge;槫riangleȀ;dlr᠒᠓᠘᠝斴own;斾eft;旂ight;斸k;搣Ʊᠫ\0ᠳƲᠯ\0ᠱ;斒;斑4;斓ck;斈ĀeoᠾᡍĀ;qᡃᡆ쀀=⃥uiv;쀀≡⃥t;挐Ȁptwxᡙᡞᡧᡬf;쀀𝕓Ā;tᏋᡣom»Ꮜtie;拈؀DHUVbdhmptuvᢅᢖᢪᢻᣗᣛᣬ᣿ᤅᤊᤐᤡȀLRlrᢎᢐᢒᢔ;敗;敔;敖;敓ʀ;DUduᢡᢢᢤᢦᢨ敐;敦;敩;敤;敧ȀLRlrᢳᢵᢷᢹ;敝;敚;敜;教΀;HLRhlrᣊᣋᣍᣏᣑᣓᣕ救;敬;散;敠;敫;敢;敟ox;槉ȀLRlrᣤᣦᣨᣪ;敕;敒;攐;攌ʀ;DUduڽ᣷᣹᣻᣽;敥;敨;攬;攴inus;抟lus;択imes;抠ȀLRlrᤙᤛᤝ᤟;敛;敘;攘;攔΀;HLRhlrᤰᤱᤳᤵᤷ᤻᤹攂;敪;敡;敞;攼;攤;攜Āevģ᥂bar耻¦䂦Ȁceioᥑᥖᥚᥠr;쀀𝒷mi;恏mĀ;e᜚᜜lƀ;bhᥨᥩᥫ䁜;槅sub;柈Ŭᥴ᥾lĀ;e᥹᥺怢t»᥺pƀ;Eeįᦅᦇ;檮Ā;qۜۛೡᦧ\0᧨ᨑᨕᨲ\0ᨷᩐ\0\0᪴\0\0᫁\0\0ᬡᬮ᭍᭒\0᯽\0ᰌƀcpr᦭ᦲ᧝ute;䄇̀;abcdsᦿᧀᧄ᧊᧕᧙戩nd;橄rcup;橉Āau᧏᧒p;橋p;橇ot;橀;쀀∩︀Āeo᧢᧥t;恁îړȀaeiu᧰᧻ᨁᨅǰ᧵\0᧸s;橍on;䄍dil耻ç䃧rc;䄉psĀ;sᨌᨍ橌m;橐ot;䄋ƀdmnᨛᨠᨦil肻¸ƭptyv;榲t脀¢;eᨭᨮ䂢räƲr;쀀𝔠ƀceiᨽᩀᩍy;䑇ckĀ;mᩇᩈ朓ark»ᩈ;䏇r΀;Ecefms᩟᩠ᩢᩫ᪤᪪᪮旋;槃ƀ;elᩩᩪᩭ䋆q;扗eɡᩴ\0\0᪈rrowĀlr᩼᪁eft;憺ight;憻ʀRSacd᪒᪔᪖᪚᪟»ཇ;擈st;抛irc;抚ash;抝nint;樐id;櫯cir;槂ubsĀ;u᪻᪼晣it»᪼ˬ᫇᫔᫺\0ᬊonĀ;eᫍᫎ䀺Ā;qÇÆɭ᫙\0\0᫢aĀ;t᫞᫟䀬;䁀ƀ;fl᫨᫩᫫戁îᅠeĀmx᫱᫶ent»᫩eóɍǧ᫾\0ᬇĀ;dኻᬂot;橭nôɆƀfryᬐᬔᬗ;쀀𝕔oäɔ脀©;sŕᬝr;愗Āaoᬥᬩrr;憵ss;朗Ācuᬲᬷr;쀀𝒸Ābpᬼ᭄Ā;eᭁᭂ櫏;櫑Ā;eᭉᭊ櫐;櫒dot;拯΀delprvw᭠᭬᭷ᮂᮬᯔ᯹arrĀlr᭨᭪;椸;椵ɰ᭲\0\0᭵r;拞c;拟arrĀ;p᭿ᮀ憶;椽̀;bcdosᮏᮐᮖᮡᮥᮨ截rcap;橈Āauᮛᮞp;橆p;橊ot;抍r;橅;쀀∪︀Ȁalrv᮵ᮿᯞᯣrrĀ;mᮼᮽ憷;椼yƀevwᯇᯔᯘqɰᯎ\0\0ᯒreã᭳uã᭵ee;拎edge;拏en耻¤䂤earrowĀlrᯮ᯳eft»ᮀight»ᮽeäᯝĀciᰁᰇoninôǷnt;戱lcty;挭ঀAHabcdefhijlorstuwz᰸᰻᰿ᱝᱩᱵᲊᲞᲬᲷ᳻᳿ᴍᵻᶑᶫᶻ᷆᷍rò΁ar;楥Ȁglrs᱈ᱍ᱒᱔ger;怠eth;愸òᄳhĀ;vᱚᱛ怐»ऊūᱡᱧarow;椏aã̕Āayᱮᱳron;䄏;䐴ƀ;ao̲ᱼᲄĀgrʿᲁr;懊tseq;橷ƀglmᲑᲔᲘ耻°䂰ta;䎴ptyv;榱ĀirᲣᲨsht;楿;쀀𝔡arĀlrᲳᲵ»ࣜ»သʀaegsv᳂͸᳖᳜᳠mƀ;oș᳊᳔ndĀ;ș᳑uit;晦amma;䏝in;拲ƀ;io᳧᳨᳸䃷de脀÷;o᳧ᳰntimes;拇nø᳷cy;䑒cɯᴆ\0\0ᴊrn;挞op;挍ʀlptuwᴘᴝᴢᵉᵕlar;䀤f;쀀𝕕ʀ;emps̋ᴭᴷᴽᵂqĀ;d͒ᴳot;扑inus;戸lus;戔quare;抡blebarwedgåúnƀadhᄮᵝᵧownarrowóᲃarpoonĀlrᵲᵶefôᲴighôᲶŢᵿᶅkaro÷གɯᶊ\0\0ᶎrn;挟op;挌ƀcotᶘᶣᶦĀryᶝᶡ;쀀𝒹;䑕l;槶rok;䄑Ādrᶰᶴot;拱iĀ;fᶺ᠖斿Āah᷀᷃ròЩaòྦangle;榦Āci᷒ᷕy;䑟grarr;柿ऀDacdefglmnopqrstuxḁḉḙḸոḼṉṡṾấắẽỡἪἷὄ὎὚ĀDoḆᴴoôᲉĀcsḎḔute耻é䃩ter;橮ȀaioyḢḧḱḶron;䄛rĀ;cḭḮ扖耻ê䃪lon;払;䑍ot;䄗ĀDrṁṅot;扒;쀀𝔢ƀ;rsṐṑṗ檚ave耻è䃨Ā;dṜṝ檖ot;檘Ȁ;ilsṪṫṲṴ檙nters;揧;愓Ā;dṹṺ檕ot;檗ƀapsẅẉẗcr;䄓tyƀ;svẒẓẕ戅et»ẓpĀ1;ẝẤĳạả;怄;怅怃ĀgsẪẬ;䅋p;怂ĀgpẴẸon;䄙f;쀀𝕖ƀalsỄỎỒrĀ;sỊị拕l;槣us;橱iƀ;lvỚớở䎵on»ớ;䏵ȀcsuvỪỳἋἣĀioữḱrc»Ḯɩỹ\0\0ỻíՈantĀglἂἆtr»ṝess»Ṻƀaeiἒ἖Ἒls;䀽st;扟vĀ;DȵἠD;橸parsl;槥ĀDaἯἳot;打rr;楱ƀcdiἾὁỸr;愯oô͒ĀahὉὋ;䎷耻ð䃰Āmrὓὗl耻ë䃫o;悬ƀcipὡὤὧl;䀡sôծĀeoὬὴctatioîՙnentialåչৡᾒ\0ᾞ\0ᾡᾧ\0\0ῆῌ\0ΐ\0ῦῪ \0 ⁚llingdotseñṄy;䑄male;晀ƀilrᾭᾳ῁lig;耀ﬃɩᾹ\0\0᾽g;耀ﬀig;耀ﬄ;쀀𝔣lig;耀ﬁlig;쀀fjƀaltῙ῜ῡt;晭ig;耀ﬂns;斱of;䆒ǰ΅\0ῳf;쀀𝕗ĀakֿῷĀ;vῼ´拔;櫙artint;樍Āao‌⁕Ācs‑⁒α‚‰‸⁅⁈\0⁐β•‥‧‪‬\0‮耻½䂽;慓耻¼䂼;慕;慙;慛Ƴ‴\0‶;慔;慖ʴ‾⁁\0\0⁃耻¾䂾;慗;慜5;慘ƶ⁌\0⁎;慚;慝8;慞l;恄wn;挢cr;쀀𝒻ࢀEabcdefgijlnorstv₂₉₟₥₰₴⃰⃵⃺⃿℃ℒℸ̗ℾ⅒↞Ā;lٍ₇;檌ƀcmpₐₕ₝ute;䇵maĀ;dₜ᳚䎳;檆reve;䄟Āiy₪₮rc;䄝;䐳ot;䄡Ȁ;lqsؾق₽⃉ƀ;qsؾٌ⃄lanô٥Ȁ;cdl٥⃒⃥⃕c;檩otĀ;o⃜⃝檀Ā;l⃢⃣檂;檄Ā;e⃪⃭쀀⋛︀s;檔r;쀀𝔤Ā;gٳ؛mel;愷cy;䑓Ȁ;Eajٚℌℎℐ;檒;檥;檤ȀEaesℛℝ℩ℴ;扩pĀ;p℣ℤ檊rox»ℤĀ;q℮ℯ檈Ā;q℮ℛim;拧pf;쀀𝕘Āci⅃ⅆr;愊mƀ;el٫ⅎ⅐;檎;檐茀>;cdlqr׮ⅠⅪⅮⅳⅹĀciⅥⅧ;檧r;橺ot;拗Par;榕uest;橼ʀadelsↄⅪ←ٖ↛ǰ↉\0↎proø₞r;楸qĀlqؿ↖lesó₈ií٫Āen↣↭rtneqq;쀀≩︀Å↪ԀAabcefkosy⇄⇇⇱⇵⇺∘∝∯≨≽ròΠȀilmr⇐⇔⇗⇛rsðᒄf»․ilôکĀdr⇠⇤cy;䑊ƀ;cwࣴ⇫⇯ir;楈;憭ar;意irc;䄥ƀalr∁∎∓rtsĀ;u∉∊晥it»∊lip;怦con;抹r;쀀𝔥sĀew∣∩arow;椥arow;椦ʀamopr∺∾≃≞≣rr;懿tht;戻kĀlr≉≓eftarrow;憩ightarrow;憪f;쀀𝕙bar;怕ƀclt≯≴≸r;쀀𝒽asè⇴rok;䄧Ābp⊂⊇ull;恃hen»ᱛૡ⊣\0⊪\0⊸⋅⋎\0⋕⋳\0\0⋸⌢⍧⍢⍿\0⎆⎪⎴cute耻í䃭ƀ;iyݱ⊰⊵rc耻î䃮;䐸Ācx⊼⊿y;䐵cl耻¡䂡ĀfrΟ⋉;쀀𝔦rave耻ì䃬Ȁ;inoܾ⋝⋩⋮Āin⋢⋦nt;樌t;戭fin;槜ta;愩lig;䄳ƀaop⋾⌚⌝ƀcgt⌅⌈⌗r;䄫ƀelpܟ⌏⌓inåގarôܠh;䄱f;抷ed;䆵ʀ;cfotӴ⌬⌱⌽⍁are;愅inĀ;t⌸⌹戞ie;槝doô⌙ʀ;celpݗ⍌⍐⍛⍡al;抺Āgr⍕⍙eróᕣã⍍arhk;樗rod;樼Ȁcgpt⍯⍲⍶⍻y;䑑on;䄯f;쀀𝕚a;䎹uest耻¿䂿Āci⎊⎏r;쀀𝒾nʀ;EdsvӴ⎛⎝⎡ӳ;拹ot;拵Ā;v⎦⎧拴;拳Ā;iݷ⎮lde;䄩ǫ⎸\0⎼cy;䑖l耻ï䃯̀cfmosu⏌⏗⏜⏡⏧⏵Āiy⏑⏕rc;䄵;䐹r;쀀𝔧ath;䈷pf;쀀𝕛ǣ⏬\0⏱r;쀀𝒿rcy;䑘kcy;䑔Ѐacfghjos␋␖␢␧␭␱␵␻ppaĀ;v␓␔䎺;䏰Āey␛␠dil;䄷;䐺r;쀀𝔨reen;䄸cy;䑅cy;䑜pf;쀀𝕜cr;쀀𝓀஀ABEHabcdefghjlmnoprstuv⑰⒁⒆⒍⒑┎┽╚▀♎♞♥♹♽⚚⚲⛘❝❨➋⟀⠁⠒ƀart⑷⑺⑼rò৆òΕail;椛arr;椎Ā;gঔ⒋;檋ar;楢ॣ⒥\0⒪\0⒱\0\0\0\0\0⒵Ⓔ\0ⓆⓈⓍ\0⓹ute;䄺mptyv;榴raîࡌbda;䎻gƀ;dlࢎⓁⓃ;榑åࢎ;檅uo耻«䂫rЀ;bfhlpst࢙ⓞⓦⓩ⓫⓮⓱⓵Ā;f࢝ⓣs;椟s;椝ë≒p;憫l;椹im;楳l;憢ƀ;ae⓿─┄檫il;椙Ā;s┉┊檭;쀀⪭︀ƀabr┕┙┝rr;椌rk;杲Āak┢┬cĀek┨┪;䁻;䁛Āes┱┳;榋lĀdu┹┻;榏;榍Ȁaeuy╆╋╖╘ron;䄾Ādi═╔il;䄼ìࢰâ┩;䐻Ȁcqrs╣╦╭╽a;椶uoĀ;rนᝆĀdu╲╷har;楧shar;楋h;憲ʀ;fgqs▋▌উ◳◿扤tʀahlrt▘▤▷◂◨rrowĀ;t࢙□aé⓶arpoonĀdu▯▴own»њp»०eftarrows;懇ightƀahs◍◖◞rrowĀ;sࣴࢧarpoonó྘quigarro÷⇰hreetimes;拋ƀ;qs▋ও◺lanôবʀ;cdgsব☊☍☝☨c;檨otĀ;o☔☕橿Ā;r☚☛檁;檃Ā;e☢☥쀀⋚︀s;檓ʀadegs☳☹☽♉♋pproøⓆot;拖qĀgq♃♅ôউgtò⒌ôছiíলƀilr♕࣡♚sht;楼;쀀𝔩Ā;Eজ♣;檑š♩♶rĀdu▲♮Ā;l॥♳;楪lk;斄cy;䑙ʀ;achtੈ⚈⚋⚑⚖rò◁orneòᴈard;楫ri;旺Āio⚟⚤dot;䅀ustĀ;a⚬⚭掰che»⚭ȀEaes⚻⚽⛉⛔;扨pĀ;p⛃⛄檉rox»⛄Ā;q⛎⛏檇Ā;q⛎⚻im;拦Ѐabnoptwz⛩⛴⛷✚✯❁❇❐Ānr⛮⛱g;柬r;懽rëࣁgƀlmr⛿✍✔eftĀar০✇ightá৲apsto;柼ightá৽parrowĀlr✥✩efô⓭ight;憬ƀafl✶✹✽r;榅;쀀𝕝us;樭imes;樴š❋❏st;戗áፎƀ;ef❗❘᠀旊nge»❘arĀ;l❤❥䀨t;榓ʀachmt❳❶❼➅➇ròࢨorneòᶌarĀ;d྘➃;業;怎ri;抿̀achiqt➘➝ੀ➢➮➻quo;怹r;쀀𝓁mƀ;egল➪➬;檍;檏Ābu┪➳oĀ;rฟ➹;怚rok;䅂萀<;cdhilqrࠫ⟒☹⟜⟠⟥⟪⟰Āci⟗⟙;檦r;橹reå◲mes;拉arr;楶uest;橻ĀPi⟵⟹ar;榖ƀ;ef⠀भ᠛旃rĀdu⠇⠍shar;楊har;楦Āen⠗⠡rtneqq;쀀≨︀Å⠞܀Dacdefhilnopsu⡀⡅⢂⢎⢓⢠⢥⢨⣚⣢⣤ઃ⣳⤂Dot;戺Ȁclpr⡎⡒⡣⡽r耻¯䂯Āet⡗⡙;時Ā;e⡞⡟朠se»⡟Ā;sျ⡨toȀ;dluျ⡳⡷⡻owîҌefôएðᏑker;斮Āoy⢇⢌mma;権;䐼ash;怔asuredangle»ᘦr;쀀𝔪o;愧ƀcdn⢯⢴⣉ro耻µ䂵Ȁ;acdᑤ⢽⣀⣄sôᚧir;櫰ot肻·Ƶusƀ;bd⣒ᤃ⣓戒Ā;uᴼ⣘;横ţ⣞⣡p;櫛ò−ðઁĀdp⣩⣮els;抧f;쀀𝕞Āct⣸⣽r;쀀𝓂pos»ᖝƀ;lm⤉⤊⤍䎼timap;抸ఀGLRVabcdefghijlmoprstuvw⥂⥓⥾⦉⦘⧚⧩⨕⨚⩘⩝⪃⪕⪤⪨⬄⬇⭄⭿⮮ⰴⱧⱼ⳩Āgt⥇⥋;쀀⋙̸Ā;v⥐௏쀀≫⃒ƀelt⥚⥲⥶ftĀar⥡⥧rrow;懍ightarrow;懎;쀀⋘̸Ā;v⥻ే쀀≪⃒ightarrow;懏ĀDd⦎⦓ash;抯ash;抮ʀbcnpt⦣⦧⦬⦱⧌la»˞ute;䅄g;쀀∠⃒ʀ;Eiop඄⦼⧀⧅⧈;쀀⩰̸d;쀀≋̸s;䅉roø඄urĀ;a⧓⧔普lĀ;s⧓ସǳ⧟\0⧣p肻 ଷmpĀ;e௹ఀʀaeouy⧴⧾⨃⨐⨓ǰ⧹\0⧻;橃on;䅈dil;䅆ngĀ;dൾ⨊ot;쀀⩭̸p;橂;䐽ash;怓΀;Aadqsxஒ⨩⨭⨻⩁⩅⩐rr;懗rĀhr⨳⨶k;椤Ā;oᏲᏰot;쀀≐̸uiöୣĀei⩊⩎ar;椨í஘istĀ;s஠டr;쀀𝔫ȀEest௅⩦⩹⩼ƀ;qs஼⩭௡ƀ;qs஼௅⩴lanô௢ií௪Ā;rஶ⪁»ஷƀAap⪊⪍⪑rò⥱rr;憮ar;櫲ƀ;svྍ⪜ྌĀ;d⪡⪢拼;拺cy;䑚΀AEadest⪷⪺⪾⫂⫅⫶⫹rò⥦;쀀≦̸rr;憚r;急Ȁ;fqs఻⫎⫣⫯tĀar⫔⫙rro÷⫁ightarro÷⪐ƀ;qs఻⪺⫪lanôౕĀ;sౕ⫴»శiíౝĀ;rవ⫾iĀ;eచథiäඐĀpt⬌⬑f;쀀𝕟膀¬;in⬙⬚⬶䂬nȀ;Edvஉ⬤⬨⬮;쀀⋹̸ot;쀀⋵̸ǡஉ⬳⬵;拷;拶iĀ;vಸ⬼ǡಸ⭁⭃;拾;拽ƀaor⭋⭣⭩rȀ;ast୻⭕⭚⭟lleì୻l;쀀⫽⃥;쀀∂̸lint;樔ƀ;ceಒ⭰⭳uåಥĀ;cಘ⭸Ā;eಒ⭽ñಘȀAait⮈⮋⮝⮧rò⦈rrƀ;cw⮔⮕⮙憛;쀀⤳̸;쀀↝̸ghtarrow»⮕riĀ;eೋೖ΀chimpqu⮽⯍⯙⬄୸⯤⯯Ȁ;cerല⯆ഷ⯉uå൅;쀀𝓃ortɭ⬅\0\0⯖ará⭖mĀ;e൮⯟Ā;q൴൳suĀbp⯫⯭å೸åഋƀbcp⯶ⰑⰙȀ;Ees⯿ⰀഢⰄ抄;쀀⫅̸etĀ;eഛⰋqĀ;qണⰀcĀ;eലⰗñസȀ;EesⰢⰣൟⰧ抅;쀀⫆̸etĀ;e൘ⰮqĀ;qൠⰣȀgilrⰽⰿⱅⱇìௗlde耻ñ䃱çృiangleĀlrⱒⱜeftĀ;eచⱚñదightĀ;eೋⱥñ೗Ā;mⱬⱭ䎽ƀ;esⱴⱵⱹ䀣ro;愖p;怇ҀDHadgilrsⲏⲔⲙⲞⲣⲰⲶⳓⳣash;抭arr;椄p;쀀≍⃒ash;抬ĀetⲨⲬ;쀀≥⃒;쀀>⃒nfin;槞ƀAetⲽⳁⳅrr;椂;쀀≤⃒Ā;rⳊⳍ쀀<⃒ie;쀀⊴⃒ĀAtⳘⳜrr;椃rie;쀀⊵⃒im;쀀∼⃒ƀAan⳰⳴ⴂrr;懖rĀhr⳺⳽k;椣Ā;oᏧᏥear;椧ቓ᪕\0\0\0\0\0\0\0\0\0\0\0\0\0ⴭ\0ⴸⵈⵠⵥ⵲ⶄᬇ\0\0ⶍⶫ\0ⷈⷎ\0ⷜ⸙⸫⸾⹃Ācsⴱ᪗ute耻ó䃳ĀiyⴼⵅrĀ;c᪞ⵂ耻ô䃴;䐾ʀabios᪠ⵒⵗǈⵚlac;䅑v;樸old;榼lig;䅓Ācr⵩⵭ir;榿;쀀𝔬ͯ⵹\0\0⵼\0ⶂn;䋛ave耻ò䃲;槁Ābmⶈ෴ar;榵Ȁacitⶕ⶘ⶥⶨrò᪀Āir⶝ⶠr;榾oss;榻nå๒;槀ƀaeiⶱⶵⶹcr;䅍ga;䏉ƀcdnⷀⷅǍron;䎿;榶pf;쀀𝕠ƀaelⷔ⷗ǒr;榷rp;榹΀;adiosvⷪⷫⷮ⸈⸍⸐⸖戨rò᪆Ȁ;efmⷷⷸ⸂⸅橝rĀ;oⷾⷿ愴f»ⷿ耻ª䂪耻º䂺gof;抶r;橖lope;橗;橛ƀclo⸟⸡⸧ò⸁ash耻ø䃸l;折iŬⸯ⸴de耻õ䃵esĀ;aǛ⸺s;樶ml耻ö䃶bar;挽ૡ⹞\0⹽\0⺀⺝\0⺢⺹\0\0⻋ຜ\0⼓\0\0⼫⾼\0⿈rȀ;astЃ⹧⹲຅脀¶;l⹭⹮䂶leìЃɩ⹸\0\0⹻m;櫳;櫽y;䐿rʀcimpt⺋⺏⺓ᡥ⺗nt;䀥od;䀮il;怰enk;怱r;쀀𝔭ƀimo⺨⺰⺴Ā;v⺭⺮䏆;䏕maô੶ne;明ƀ;tv⺿⻀⻈䏀chfork»´;䏖Āau⻏⻟nĀck⻕⻝kĀ;h⇴⻛;愎ö⇴sҀ;abcdemst⻳⻴ᤈ⻹⻽⼄⼆⼊⼎䀫cir;樣ir;樢Āouᵀ⼂;樥;橲n肻±ຝim;樦wo;樧ƀipu⼙⼠⼥ntint;樕f;쀀𝕡nd耻£䂣Ԁ;Eaceinosu່⼿⽁⽄⽇⾁⾉⾒⽾⾶;檳p;檷uå໙Ā;c໎⽌̀;acens່⽙⽟⽦⽨⽾pproø⽃urlyeñ໙ñ໎ƀaes⽯⽶⽺pprox;檹qq;檵im;拨iíໟmeĀ;s⾈ຮ怲ƀEas⽸⾐⽺ð⽵ƀdfp໬⾙⾯ƀals⾠⾥⾪lar;挮ine;挒urf;挓Ā;t໻⾴ï໻rel;抰Āci⿀⿅r;쀀𝓅;䏈ncsp;怈̀fiopsu⿚⋢⿟⿥⿫⿱r;쀀𝔮pf;쀀𝕢rime;恗cr;쀀𝓆ƀaeo⿸〉〓tĀei⿾々rnionóڰnt;樖stĀ;e【】䀿ñἙô༔઀ABHabcdefhilmnoprstux぀けさすムㄎㄫㅇㅢㅲㆎ㈆㈕㈤㈩㉘㉮㉲㊐㊰㊷ƀartぇおがròႳòϝail;検aròᱥar;楤΀cdenqrtとふへみわゔヌĀeuねぱ;쀀∽̱te;䅕iãᅮmptyv;榳gȀ;del࿑らるろ;榒;榥å࿑uo耻»䂻rր;abcfhlpstw࿜ガクシスゼゾダッデナp;極Ā;f࿠ゴs;椠;椳s;椞ë≝ð✮l;楅im;楴l;憣;憝Āaiパフil;椚oĀ;nホボ戶aló༞ƀabrョリヮrò៥rk;杳ĀakンヽcĀekヹ・;䁽;䁝Āes㄂㄄;榌lĀduㄊㄌ;榎;榐Ȁaeuyㄗㄜㄧㄩron;䅙Ādiㄡㄥil;䅗ì࿲âヺ;䑀Ȁclqsㄴㄷㄽㅄa;椷dhar;楩uoĀ;rȎȍh;憳ƀacgㅎㅟངlȀ;ipsླྀㅘㅛႜnåႻarôྩt;断ƀilrㅩဣㅮsht;楽;쀀𝔯ĀaoㅷㆆrĀduㅽㅿ»ѻĀ;l႑ㆄ;楬Ā;vㆋㆌ䏁;䏱ƀgns㆕ㇹㇼht̀ahlrstㆤㆰ㇂㇘㇤㇮rrowĀ;t࿜ㆭaéトarpoonĀduㆻㆿowîㅾp»႒eftĀah㇊㇐rrowó࿪arpoonóՑightarrows;應quigarro÷ニhreetimes;拌g;䋚ingdotseñἲƀahm㈍㈐㈓rò࿪aòՑ;怏oustĀ;a㈞㈟掱che»㈟mid;櫮Ȁabpt㈲㈽㉀㉒Ānr㈷㈺g;柭r;懾rëဃƀafl㉇㉊㉎r;榆;쀀𝕣us;樮imes;樵Āap㉝㉧rĀ;g㉣㉤䀩t;榔olint;樒arò㇣Ȁachq㉻㊀Ⴜ㊅quo;怺r;쀀𝓇Ābu・㊊oĀ;rȔȓƀhir㊗㊛㊠reåㇸmes;拊iȀ;efl㊪ၙᠡ㊫方tri;槎luhar;楨;愞ൡ㋕㋛㋟㌬㌸㍱\0㍺㎤\0\0㏬㏰\0㐨㑈㑚㒭㒱㓊㓱\0㘖\0\0㘳cute;䅛quï➺Ԁ;Eaceinpsyᇭ㋳㋵㋿㌂㌋㌏㌟㌦㌩;檴ǰ㋺\0㋼;檸on;䅡uåᇾĀ;dᇳ㌇il;䅟rc;䅝ƀEas㌖㌘㌛;檶p;檺im;择olint;樓iíሄ;䑁otƀ;be㌴ᵇ㌵担;橦΀Aacmstx㍆㍊㍗㍛㍞㍣㍭rr;懘rĀhr㍐㍒ë∨Ā;oਸ਼਴t耻§䂧i;䀻war;椩mĀin㍩ðnuóñt;朶rĀ;o㍶⁕쀀𝔰Ȁacoy㎂㎆㎑㎠rp;景Āhy㎋㎏cy;䑉;䑈rtɭ㎙\0\0㎜iäᑤaraì⹯耻­䂭Āgm㎨㎴maƀ;fv㎱㎲㎲䏃;䏂Ѐ;deglnprካ㏅㏉㏎㏖㏞㏡㏦ot;橪Ā;q኱ኰĀ;E㏓㏔檞;檠Ā;E㏛㏜檝;檟e;扆lus;樤arr;楲aròᄽȀaeit㏸㐈㐏㐗Āls㏽㐄lsetmé㍪hp;樳parsl;槤Ādlᑣ㐔e;挣Ā;e㐜㐝檪Ā;s㐢㐣檬;쀀⪬︀ƀflp㐮㐳㑂tcy;䑌Ā;b㐸㐹䀯Ā;a㐾㐿槄r;挿f;쀀𝕤aĀdr㑍ЂesĀ;u㑔㑕晠it»㑕ƀcsu㑠㑹㒟Āau㑥㑯pĀ;sᆈ㑫;쀀⊓︀pĀ;sᆴ㑵;쀀⊔︀uĀbp㑿㒏ƀ;esᆗᆜ㒆etĀ;eᆗ㒍ñᆝƀ;esᆨᆭ㒖etĀ;eᆨ㒝ñᆮƀ;afᅻ㒦ְrť㒫ֱ»ᅼaròᅈȀcemt㒹㒾㓂㓅r;쀀𝓈tmîñiì㐕aræᆾĀar㓎㓕rĀ;f㓔ឿ昆Āan㓚㓭ightĀep㓣㓪psiloîỠhé⺯s»⡒ʀbcmnp㓻㕞ሉ㖋㖎Ҁ;Edemnprs㔎㔏㔑㔕㔞㔣㔬㔱㔶抂;櫅ot;檽Ā;dᇚ㔚ot;櫃ult;櫁ĀEe㔨㔪;櫋;把lus;檿arr;楹ƀeiu㔽㕒㕕tƀ;en㔎㕅㕋qĀ;qᇚ㔏eqĀ;q㔫㔨m;櫇Ābp㕚㕜;櫕;櫓c̀;acensᇭ㕬㕲㕹㕻㌦pproø㋺urlyeñᇾñᇳƀaes㖂㖈㌛pproø㌚qñ㌗g;晪ڀ123;Edehlmnps㖩㖬㖯ሜ㖲㖴㗀㗉㗕㗚㗟㗨㗭耻¹䂹耻²䂲耻³䂳;櫆Āos㖹㖼t;檾ub;櫘Ā;dሢ㗅ot;櫄sĀou㗏㗒l;柉b;櫗arr;楻ult;櫂ĀEe㗤㗦;櫌;抋lus;櫀ƀeiu㗴㘉㘌tƀ;enሜ㗼㘂qĀ;qሢ㖲eqĀ;q㗧㗤m;櫈Ābp㘑㘓;櫔;櫖ƀAan㘜㘠㘭rr;懙rĀhr㘦㘨ë∮Ā;oਫ਩war;椪lig耻ß䃟௡㙑㙝㙠ዎ㙳㙹\0㙾㛂\0\0\0\0\0㛛㜃\0㜉㝬\0\0\0㞇ɲ㙖\0\0㙛get;挖;䏄rë๟ƀaey㙦㙫㙰ron;䅥dil;䅣;䑂lrec;挕r;쀀𝔱Ȁeiko㚆㚝㚵㚼ǲ㚋\0㚑eĀ4fኄኁaƀ;sv㚘㚙㚛䎸ym;䏑Ācn㚢㚲kĀas㚨㚮pproø዁im»ኬsðኞĀas㚺㚮ð዁rn耻þ䃾Ǭ̟㛆⋧es膀×;bd㛏㛐㛘䃗Ā;aᤏ㛕r;樱;樰ƀeps㛡㛣㜀á⩍Ȁ;bcf҆㛬㛰㛴ot;挶ir;櫱Ā;o㛹㛼쀀𝕥rk;櫚á㍢rime;怴ƀaip㜏㜒㝤dåቈ΀adempst㜡㝍㝀㝑㝗㝜㝟ngleʀ;dlqr㜰㜱㜶㝀㝂斵own»ᶻeftĀ;e⠀㜾ñम;扜ightĀ;e㊪㝋ñၚot;旬inus;樺lus;樹b;槍ime;樻ezium;揢ƀcht㝲㝽㞁Āry㝷㝻;쀀𝓉;䑆cy;䑛rok;䅧Āio㞋㞎xô᝷headĀlr㞗㞠eftarro÷ࡏightarrow»ཝऀAHabcdfghlmoprstuw㟐㟓㟗㟤㟰㟼㠎㠜㠣㠴㡑㡝㡫㢩㣌㣒㣪㣶ròϭar;楣Ācr㟜㟢ute耻ú䃺òᅐrǣ㟪\0㟭y;䑞ve;䅭Āiy㟵㟺rc耻û䃻;䑃ƀabh㠃㠆㠋ròᎭlac;䅱aòᏃĀir㠓㠘sht;楾;쀀𝔲rave耻ù䃹š㠧㠱rĀlr㠬㠮»ॗ»ႃlk;斀Āct㠹㡍ɯ㠿\0\0㡊rnĀ;e㡅㡆挜r»㡆op;挏ri;旸Āal㡖㡚cr;䅫肻¨͉Āgp㡢㡦on;䅳f;쀀𝕦̀adhlsuᅋ㡸㡽፲㢑㢠ownáᎳarpoonĀlr㢈㢌efô㠭ighô㠯iƀ;hl㢙㢚㢜䏅»ᏺon»㢚parrows;懈ƀcit㢰㣄㣈ɯ㢶\0\0㣁rnĀ;e㢼㢽挝r»㢽op;挎ng;䅯ri;旹cr;쀀𝓊ƀdir㣙㣝㣢ot;拰lde;䅩iĀ;f㜰㣨»᠓Āam㣯㣲rò㢨l耻ü䃼angle;榧ހABDacdeflnoprsz㤜㤟㤩㤭㦵㦸㦽㧟㧤㧨㧳㧹㧽㨁㨠ròϷarĀ;v㤦㤧櫨;櫩asèϡĀnr㤲㤷grt;榜΀eknprst㓣㥆㥋㥒㥝㥤㦖appá␕othinçẖƀhir㓫⻈㥙opô⾵Ā;hᎷ㥢ïㆍĀiu㥩㥭gmá㎳Ābp㥲㦄setneqĀ;q㥽㦀쀀⊊︀;쀀⫋︀setneqĀ;q㦏㦒쀀⊋︀;쀀⫌︀Āhr㦛㦟etá㚜iangleĀlr㦪㦯eft»थight»ၑy;䐲ash»ံƀelr㧄㧒㧗ƀ;beⷪ㧋㧏ar;抻q;扚lip;拮Ābt㧜ᑨaòᑩr;쀀𝔳tré㦮suĀbp㧯㧱»ജ»൙pf;쀀𝕧roð໻tré㦴Ācu㨆㨋r;쀀𝓋Ābp㨐㨘nĀEe㦀㨖»㥾nĀEe㦒㨞»㦐igzag;榚΀cefoprs㨶㨻㩖㩛㩔㩡㩪irc;䅵Ādi㩀㩑Ābg㩅㩉ar;機eĀ;qᗺ㩏;扙erp;愘r;쀀𝔴pf;쀀𝕨Ā;eᑹ㩦atèᑹcr;쀀𝓌ૣណ㪇\0㪋\0㪐㪛\0\0㪝㪨㪫㪯\0\0㫃㫎\0㫘ៜ៟tré៑r;쀀𝔵ĀAa㪔㪗ròσrò৶;䎾ĀAa㪡㪤ròθrò৫að✓is;拻ƀdptឤ㪵㪾Āfl㪺ឩ;쀀𝕩imåឲĀAa㫇㫊ròώròਁĀcq㫒ីr;쀀𝓍Āpt៖㫜ré។Ѐacefiosu㫰㫽㬈㬌㬑㬕㬛㬡cĀuy㫶㫻te耻ý䃽;䑏Āiy㬂㬆rc;䅷;䑋n耻¥䂥r;쀀𝔶cy;䑗pf;쀀𝕪cr;쀀𝓎Ācm㬦㬩y;䑎l耻ÿ䃿Ԁacdefhiosw㭂㭈㭔㭘㭤㭩㭭㭴㭺㮀cute;䅺Āay㭍㭒ron;䅾;䐷ot;䅼Āet㭝㭡træᕟa;䎶r;쀀𝔷cy;䐶grarr;懝pf;쀀𝕫cr;쀀𝓏Ājn㮅㮇;怍j;怌'.split("").map((c) => c.charCodeAt(0))
 );
 const xmlDecodeTree = new Uint16Array(
   // prettier-ignore
-  "Ȁaglq	\x1Bɭ\0\0p;䀦os;䀧t;䀾t;䀼uot;䀢".split("").map((c2) => c2.charCodeAt(0))
+  "Ȁaglq	\x1Bɭ\0\0p;䀦os;䀧t;䀾t;䀼uot;䀢".split("").map((c) => c.charCodeAt(0))
 );
 var _a;
 const decodeMap = /* @__PURE__ */ new Map([
@@ -894,41 +813,41 @@ function assign$1(obj) {
 function arrayReplaceAt(src, pos, newElements) {
   return [].concat(src.slice(0, pos), newElements, src.slice(pos + 1));
 }
-function isValidEntityCode(c2) {
-  if (c2 >= 55296 && c2 <= 57343) {
+function isValidEntityCode(c) {
+  if (c >= 55296 && c <= 57343) {
     return false;
   }
-  if (c2 >= 64976 && c2 <= 65007) {
+  if (c >= 64976 && c <= 65007) {
     return false;
   }
-  if ((c2 & 65535) === 65535 || (c2 & 65535) === 65534) {
+  if ((c & 65535) === 65535 || (c & 65535) === 65534) {
     return false;
   }
-  if (c2 >= 0 && c2 <= 8) {
+  if (c >= 0 && c <= 8) {
     return false;
   }
-  if (c2 === 11) {
+  if (c === 11) {
     return false;
   }
-  if (c2 >= 14 && c2 <= 31) {
+  if (c >= 14 && c <= 31) {
     return false;
   }
-  if (c2 >= 127 && c2 <= 159) {
+  if (c >= 127 && c <= 159) {
     return false;
   }
-  if (c2 > 1114111) {
+  if (c > 1114111) {
     return false;
   }
   return true;
 }
-function fromCodePoint(c2) {
-  if (c2 > 65535) {
-    c2 -= 65536;
-    const surrogate1 = 55296 + (c2 >> 10);
-    const surrogate2 = 56320 + (c2 & 1023);
+function fromCodePoint(c) {
+  if (c > 65535) {
+    c -= 65536;
+    const surrogate1 = 55296 + (c >> 10);
+    const surrogate2 = 56320 + (c & 1023);
     return String.fromCharCode(surrogate1, surrogate2);
   }
-  return String.fromCharCode(c2);
+  return String.fromCharCode(c);
 }
 const UNESCAPE_MD_RE = /\\([!"#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~])/g;
 const ENTITY_RE = /&([a-z#][a-z0-9]{1,31});/gi;
@@ -1321,12 +1240,12 @@ function Renderer() {
   this.rules = assign$1({}, default_rules);
 }
 Renderer.prototype.renderAttrs = function renderAttrs(token) {
-  let i2, l2, result;
+  let i2, l, result;
   if (!token.attrs) {
     return "";
   }
   result = "";
-  for (i2 = 0, l2 = token.attrs.length; i2 < l2; i2++) {
+  for (i2 = 0, l = token.attrs.length; i2 < l; i2++) {
     result += " " + escapeHtml(token.attrs[i2][0]) + '="' + escapeHtml(token.attrs[i2][1]) + '"';
   }
   return result;
@@ -1611,12 +1530,12 @@ Token.prototype.attrJoin = function attrJoin(name, value) {
     this.attrs[idx][1] = this.attrs[idx][1] + " " + value;
   }
 };
-function StateCore(src, md, env) {
+function StateCore(src, md2, env) {
   this.src = src;
   this.env = env;
   this.tokens = [];
   this.inlineMode = false;
-  this.md = md;
+  this.md = md2;
 }
 StateCore.prototype.Token = Token;
 const NEWLINES_RE = /\r\n?|\n/g;
@@ -1641,7 +1560,7 @@ function block(state) {
 }
 function inline(state) {
   const tokens = state.tokens;
-  for (let i2 = 0, l2 = tokens.length; i2 < l2; i2++) {
+  for (let i2 = 0, l = tokens.length; i2 < l; i2++) {
     const tok = tokens[i2];
     if (tok.type === "inline") {
       state.md.inline.parse(tok.content, state.md, state.env, tok.children);
@@ -1659,7 +1578,7 @@ function linkify$1(state) {
   if (!state.md.options.linkify) {
     return;
   }
-  for (let j = 0, l2 = blockTokens.length; j < l2; j++) {
+  for (let j = 0, l = blockTokens.length; j < l; j++) {
     if (blockTokens[j].type !== "inline" || !state.md.linkify.pretest(blockTokens[j].content)) {
       continue;
     }
@@ -1830,17 +1749,17 @@ function process_inlines(tokens, state) {
     OUTER:
       while (pos < max) {
         QUOTE_RE.lastIndex = pos;
-        const t2 = QUOTE_RE.exec(text2);
-        if (!t2) {
+        const t = QUOTE_RE.exec(text2);
+        if (!t) {
           break;
         }
         let canOpen = true;
         let canClose = true;
-        pos = t2.index + 1;
-        const isSingle = t2[0] === "'";
+        pos = t.index + 1;
+        const isSingle = t[0] === "'";
         let lastChar = 32;
-        if (t2.index - 1 >= 0) {
-          lastChar = text2.charCodeAt(t2.index - 1);
+        if (t.index - 1 >= 0) {
+          lastChar = text2.charCodeAt(t.index - 1);
         } else {
           for (j = i2 - 1; j >= 0; j--) {
             if (tokens[j].type === "softbreak" || tokens[j].type === "hardbreak") break;
@@ -1878,7 +1797,7 @@ function process_inlines(tokens, state) {
             canClose = false;
           }
         }
-        if (nextChar === 34 && t2[0] === '"') {
+        if (nextChar === 34 && t[0] === '"') {
           if (lastChar >= 48 && lastChar <= 57) {
             canClose = canOpen = false;
           }
@@ -1889,7 +1808,7 @@ function process_inlines(tokens, state) {
         }
         if (!canOpen && !canClose) {
           if (isSingle) {
-            token.content = replaceAt(token.content, t2.index, APOSTROPHE);
+            token.content = replaceAt(token.content, t.index, APOSTROPHE);
           }
           continue;
         }
@@ -1910,7 +1829,7 @@ function process_inlines(tokens, state) {
                 openQuote = state.md.options.quotes[0];
                 closeQuote = state.md.options.quotes[1];
               }
-              token.content = replaceAt(token.content, t2.index, closeQuote);
+              token.content = replaceAt(token.content, t.index, closeQuote);
               tokens[item.token].content = replaceAt(
                 tokens[item.token].content,
                 item.pos,
@@ -1930,12 +1849,12 @@ function process_inlines(tokens, state) {
         if (canOpen) {
           stack.push({
             token: i2,
-            pos: t2.index,
+            pos: t.index,
             single: isSingle,
             level: thisLevel
           });
         } else if (canClose && isSingle) {
-          token.content = replaceAt(token.content, t2.index, APOSTROPHE);
+          token.content = replaceAt(token.content, t.index, APOSTROPHE);
         }
       }
   }
@@ -1954,8 +1873,8 @@ function smartquotes(state) {
 function text_join(state) {
   let curr, last;
   const blockTokens = state.tokens;
-  const l2 = blockTokens.length;
-  for (let j = 0; j < l2; j++) {
+  const l = blockTokens.length;
+  for (let j = 0; j < l; j++) {
     if (blockTokens[j].type !== "inline") continue;
     const tokens = blockTokens[j].children;
     const max = tokens.length;
@@ -1998,14 +1917,14 @@ function Core() {
 }
 Core.prototype.process = function(state) {
   const rules = this.ruler.getRules("");
-  for (let i2 = 0, l2 = rules.length; i2 < l2; i2++) {
+  for (let i2 = 0, l = rules.length; i2 < l; i2++) {
     rules[i2](state);
   }
 };
 Core.prototype.State = StateCore;
-function StateBlock(src, md, env, tokens) {
+function StateBlock(src, md2, env, tokens) {
   this.src = src;
-  this.md = md;
+  this.md = md2;
   this.env = env;
   this.tokens = tokens;
   this.bMarks = [];
@@ -2021,9 +1940,9 @@ function StateBlock(src, md, env, tokens) {
   this.listIndent = -1;
   this.parentType = "root";
   this.level = 0;
-  const s2 = this.src;
-  for (let start = 0, pos = 0, indent = 0, offset = 0, len2 = s2.length, indent_found = false; pos < len2; pos++) {
-    const ch = s2.charCodeAt(pos);
+  const s = this.src;
+  for (let start = 0, pos = 0, indent = 0, offset = 0, len2 = s.length, indent_found = false; pos < len2; pos++) {
+    const ch = s.charCodeAt(pos);
     if (!indent_found) {
       if (isSpace(ch)) {
         indent++;
@@ -2052,8 +1971,8 @@ function StateBlock(src, md, env, tokens) {
       start = pos + 1;
     }
   }
-  this.bMarks.push(s2.length);
-  this.eMarks.push(s2.length);
+  this.bMarks.push(s.length);
+  this.eMarks.push(s.length);
   this.tShift.push(0);
   this.sCount.push(0);
   this.bsCount.push(0);
@@ -2122,7 +2041,7 @@ StateBlock.prototype.getLines = function getLines(begin, end, indent, keepLastLF
   if (begin >= end) {
     return "";
   }
-  const queue2 = new Array(end - begin);
+  const queue = new Array(end - begin);
   for (let i2 = 0, line = begin; line < end; line++, i2++) {
     let lineIndent = 0;
     const lineStart = this.bMarks[line];
@@ -2149,12 +2068,12 @@ StateBlock.prototype.getLines = function getLines(begin, end, indent, keepLastLF
       first++;
     }
     if (lineIndent > indent) {
-      queue2[i2] = new Array(lineIndent - indent + 1).join(" ") + this.src.slice(first, last);
+      queue[i2] = new Array(lineIndent - indent + 1).join(" ") + this.src.slice(first, last);
     } else {
-      queue2[i2] = this.src.slice(first, last);
+      queue[i2] = this.src.slice(first, last);
     }
   }
-  return queue2.join("");
+  return queue.join("");
 };
 StateBlock.prototype.Token = Token;
 const MAX_AUTOCOMPLETED_CELLS = 65536;
@@ -2229,20 +2148,20 @@ function table(state, startLine, endLine, silent) {
   let columns = lineText.split("|");
   const aligns = [];
   for (let i2 = 0; i2 < columns.length; i2++) {
-    const t2 = columns[i2].trim();
-    if (!t2) {
+    const t = columns[i2].trim();
+    if (!t) {
       if (i2 === 0 || i2 === columns.length - 1) {
         continue;
       } else {
         return false;
       }
     }
-    if (!/^:?-+:?$/.test(t2)) {
+    if (!/^:?-+:?$/.test(t)) {
       return false;
     }
-    if (t2.charCodeAt(t2.length - 1) === 58) {
-      aligns.push(t2.charCodeAt(0) === 58 ? "center" : "right");
-    } else if (t2.charCodeAt(0) === 58) {
+    if (t.charCodeAt(t.length - 1) === 58) {
+      aligns.push(t.charCodeAt(0) === 58 ? "center" : "right");
+    } else if (t.charCodeAt(0) === 58) {
       aligns.push("left");
     } else {
       aligns.push("");
@@ -2294,7 +2213,7 @@ function table(state, startLine, endLine, silent) {
       break;
     }
     let terminate = false;
-    for (let i2 = 0, l2 = terminatorRules.length; i2 < l2; i2++) {
+    for (let i2 = 0, l = terminatorRules.length; i2 < l; i2++) {
       if (terminatorRules[i2](state, nextLine, endLine, true)) {
         terminate = true;
         break;
@@ -2515,7 +2434,7 @@ function blockquote(state, startLine, endLine, silent) {
       break;
     }
     let terminate = false;
-    for (let i2 = 0, l2 = terminatorRules.length; i2 < l2; i2++) {
+    for (let i2 = 0, l = terminatorRules.length; i2 < l; i2++) {
       if (terminatorRules[i2](state, nextLine, endLine, true)) {
         terminate = true;
         break;
@@ -2643,7 +2562,7 @@ function skipOrderedListMarker(state, startLine) {
 }
 function markTightParagraphs(state, idx) {
   const level = state.level + 2;
-  for (let i2 = idx + 2, l2 = state.tokens.length - 2; i2 < l2; i2++) {
+  for (let i2 = idx + 2, l = state.tokens.length - 2; i2 < l; i2++) {
     if (state.tokens[i2].level === level && state.tokens[i2].type === "paragraph_open") {
       state.tokens[i2 + 2].hidden = true;
       state.tokens[i2].hidden = true;
@@ -2774,7 +2693,7 @@ function list(state, startLine, endLine, silent) {
       break;
     }
     let terminate = false;
-    for (let i2 = 0, l2 = terminatorRules.length; i2 < l2; i2++) {
+    for (let i2 = 0, l = terminatorRules.length; i2 < l; i2++) {
       if (terminatorRules[i2](state, nextLine, endLine, true)) {
         terminate = true;
         break;
@@ -2840,7 +2759,7 @@ function reference(state, startLine, _endLine, silent) {
       const oldParentType = state.parentType;
       state.parentType = "reference";
       let terminate = false;
-      for (let i2 = 0, l2 = terminatorRules.length; i2 < l2; i2++) {
+      for (let i2 = 0, l = terminatorRules.length; i2 < l; i2++) {
         if (terminatorRules[i2](state, nextLine2, endLine, true)) {
           terminate = true;
           break;
@@ -3193,7 +3112,7 @@ function lheading(state, startLine, endLine) {
       continue;
     }
     let terminate = false;
-    for (let i2 = 0, l2 = terminatorRules.length; i2 < l2; i2++) {
+    for (let i2 = 0, l = terminatorRules.length; i2 < l; i2++) {
       if (terminatorRules[i2](state, nextLine, endLine, true)) {
         terminate = true;
         break;
@@ -3233,7 +3152,7 @@ function paragraph(state, startLine, endLine) {
       continue;
     }
     let terminate = false;
-    for (let i2 = 0, l2 = terminatorRules.length; i2 < l2; i2++) {
+    for (let i2 = 0, l = terminatorRules.length; i2 < l; i2++) {
       if (terminatorRules[i2](state, nextLine, endLine, true)) {
         terminate = true;
         break;
@@ -3318,18 +3237,18 @@ ParserBlock.prototype.tokenize = function(state, startLine, endLine) {
     }
   }
 };
-ParserBlock.prototype.parse = function(src, md, env, outTokens) {
+ParserBlock.prototype.parse = function(src, md2, env, outTokens) {
   if (!src) {
     return;
   }
-  const state = new this.State(src, md, env, outTokens);
+  const state = new this.State(src, md2, env, outTokens);
   this.tokenize(state, state.line, state.lineMax);
 };
 ParserBlock.prototype.State = StateBlock;
-function StateInline(src, md, env, outTokens) {
+function StateInline(src, md2, env, outTokens) {
   this.src = src;
   this.env = env;
-  this.md = md;
+  this.md = md2;
   this.tokens = outTokens;
   this.tokens_meta = Array(outTokens.length);
   this.pos = 0;
@@ -4300,8 +4219,8 @@ ParserInline.prototype.tokenize = function(state) {
     state.pushPending();
   }
 };
-ParserInline.prototype.parse = function(str2, md, env, outTokens) {
-  const state = new this.State(str2, md, env, outTokens);
+ParserInline.prototype.parse = function(str2, md2, env, outTokens) {
+  const state = new this.State(str2, md2, env, outTokens);
   this.tokenize(state);
   const rules = this.ruler2.getRules("");
   const len2 = rules.length;
@@ -4792,7 +4711,7 @@ const decode = function(input) {
   const output = [];
   const inputLength = input.length;
   let i2 = 0;
-  let n2 = initialN;
+  let n = initialN;
   let bias = initialBias;
   let basic = input.lastIndexOf(delimiter);
   if (basic < 0) {
@@ -4818,11 +4737,11 @@ const decode = function(input) {
         error("overflow");
       }
       i2 += digit * w;
-      const t2 = k <= bias ? tMin : k >= bias + tMax ? tMax : k - bias;
-      if (digit < t2) {
+      const t = k <= bias ? tMin : k >= bias + tMax ? tMax : k - bias;
+      if (digit < t) {
         break;
       }
-      const baseMinusT = base - t2;
+      const baseMinusT = base - t;
       if (w > floor(maxInt / baseMinusT)) {
         error("overflow");
       }
@@ -4830,12 +4749,12 @@ const decode = function(input) {
     }
     const out = output.length + 1;
     bias = adapt(i2 - oldi, out, oldi == 0);
-    if (floor(i2 / out) > maxInt - n2) {
+    if (floor(i2 / out) > maxInt - n) {
       error("overflow");
     }
-    n2 += floor(i2 / out);
+    n += floor(i2 / out);
     i2 %= out;
-    output.splice(i2++, 0, n2);
+    output.splice(i2++, 0, n);
   }
   return String.fromCodePoint(...output);
 };
@@ -4843,7 +4762,7 @@ const encode = function(input) {
   const output = [];
   input = ucs2decode(input);
   const inputLength = input.length;
-  let n2 = initialN;
+  let n = initialN;
   let delta = 0;
   let bias = initialBias;
   for (const currentValue of input) {
@@ -4859,31 +4778,31 @@ const encode = function(input) {
   while (handledCPCount < inputLength) {
     let m = maxInt;
     for (const currentValue of input) {
-      if (currentValue >= n2 && currentValue < m) {
+      if (currentValue >= n && currentValue < m) {
         m = currentValue;
       }
     }
     const handledCPCountPlusOne = handledCPCount + 1;
-    if (m - n2 > floor((maxInt - delta) / handledCPCountPlusOne)) {
+    if (m - n > floor((maxInt - delta) / handledCPCountPlusOne)) {
       error("overflow");
     }
-    delta += (m - n2) * handledCPCountPlusOne;
-    n2 = m;
+    delta += (m - n) * handledCPCountPlusOne;
+    n = m;
     for (const currentValue of input) {
-      if (currentValue < n2 && ++delta > maxInt) {
+      if (currentValue < n && ++delta > maxInt) {
         error("overflow");
       }
-      if (currentValue === n2) {
+      if (currentValue === n) {
         let q = delta;
         for (let k = base; ; k += base) {
-          const t2 = k <= bias ? tMin : k >= bias + tMax ? tMax : k - bias;
-          if (q < t2) {
+          const t = k <= bias ? tMin : k >= bias + tMax ? tMax : k - bias;
+          if (q < t) {
             break;
           }
-          const qMinusT = q - t2;
-          const baseMinusT = base - t2;
+          const qMinusT = q - t;
+          const baseMinusT = base - t;
           output.push(
-            stringFromCharCode(digitToBasic(t2 + qMinusT % baseMinusT, 0))
+            stringFromCharCode(digitToBasic(t + qMinusT % baseMinusT, 0))
           );
           q = floor(qMinusT / baseMinusT);
         }
@@ -4894,7 +4813,7 @@ const encode = function(input) {
       }
     }
     ++delta;
-    ++n2;
+    ++n;
   }
   return output.join("");
 };
@@ -5253,2684 +5172,6 @@ MarkdownIt.prototype.renderInline = function(src, env) {
   env = env || {};
   return this.renderer.render(this.parseInline(src, env), this.options, env);
 };
-function getDefaultExportFromCjs(x) {
-  return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
-}
-var browser = { exports: {} };
-var process = browser.exports = {};
-var cachedSetTimeout;
-var cachedClearTimeout;
-function defaultSetTimout() {
-  throw new Error("setTimeout has not been defined");
-}
-function defaultClearTimeout() {
-  throw new Error("clearTimeout has not been defined");
-}
-(function() {
-  try {
-    if (typeof setTimeout === "function") {
-      cachedSetTimeout = setTimeout;
-    } else {
-      cachedSetTimeout = defaultSetTimout;
-    }
-  } catch (e2) {
-    cachedSetTimeout = defaultSetTimout;
-  }
-  try {
-    if (typeof clearTimeout === "function") {
-      cachedClearTimeout = clearTimeout;
-    } else {
-      cachedClearTimeout = defaultClearTimeout;
-    }
-  } catch (e2) {
-    cachedClearTimeout = defaultClearTimeout;
-  }
-})();
-function runTimeout(fun) {
-  if (cachedSetTimeout === setTimeout) {
-    return setTimeout(fun, 0);
-  }
-  if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-    cachedSetTimeout = setTimeout;
-    return setTimeout(fun, 0);
-  }
-  try {
-    return cachedSetTimeout(fun, 0);
-  } catch (e2) {
-    try {
-      return cachedSetTimeout.call(null, fun, 0);
-    } catch (e22) {
-      return cachedSetTimeout.call(this, fun, 0);
-    }
-  }
-}
-function runClearTimeout(marker) {
-  if (cachedClearTimeout === clearTimeout) {
-    return clearTimeout(marker);
-  }
-  if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-    cachedClearTimeout = clearTimeout;
-    return clearTimeout(marker);
-  }
-  try {
-    return cachedClearTimeout(marker);
-  } catch (e2) {
-    try {
-      return cachedClearTimeout.call(null, marker);
-    } catch (e22) {
-      return cachedClearTimeout.call(this, marker);
-    }
-  }
-}
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-function cleanUpNextTick() {
-  if (!draining || !currentQueue) {
-    return;
-  }
-  draining = false;
-  if (currentQueue.length) {
-    queue = currentQueue.concat(queue);
-  } else {
-    queueIndex = -1;
-  }
-  if (queue.length) {
-    drainQueue();
-  }
-}
-function drainQueue() {
-  if (draining) {
-    return;
-  }
-  var timeout = runTimeout(cleanUpNextTick);
-  draining = true;
-  var len2 = queue.length;
-  while (len2) {
-    currentQueue = queue;
-    queue = [];
-    while (++queueIndex < len2) {
-      if (currentQueue) {
-        currentQueue[queueIndex].run();
-      }
-    }
-    queueIndex = -1;
-    len2 = queue.length;
-  }
-  currentQueue = null;
-  draining = false;
-  runClearTimeout(timeout);
-}
-process.nextTick = function(fun) {
-  var args = new Array(arguments.length - 1);
-  if (arguments.length > 1) {
-    for (var i2 = 1; i2 < arguments.length; i2++) {
-      args[i2 - 1] = arguments[i2];
-    }
-  }
-  queue.push(new Item(fun, args));
-  if (queue.length === 1 && !draining) {
-    runTimeout(drainQueue);
-  }
-};
-function Item(fun, array) {
-  this.fun = fun;
-  this.array = array;
-}
-Item.prototype.run = function() {
-  this.fun.apply(null, this.array);
-};
-process.title = "browser";
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = "";
-process.versions = {};
-function noop() {
-}
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-process.listeners = function(name) {
-  return [];
-};
-process.binding = function(name) {
-  throw new Error("process.binding is not supported");
-};
-process.cwd = function() {
-  return "/";
-};
-process.chdir = function(dir) {
-  throw new Error("process.chdir is not supported");
-};
-process.umask = function() {
-  return 0;
-};
-var browserExports = browser.exports;
-const process$1 = /* @__PURE__ */ getDefaultExportFromCjs(browserExports);
-var e = false, n = { false: "push", true: "unshift", after: "push", before: "unshift" }, t = { isPermalinkSymbol: true };
-function r(r2, a2, i2, l2) {
-  var o2;
-  if (!e) {
-    var c2 = "Using deprecated markdown-it-anchor permalink option, see https://github.com/valeriangalliat/markdown-it-anchor#permalinks";
-    "object" == typeof process$1 && process$1 && process$1.emitWarning ? process$1.emitWarning(c2) : console.warn(c2), e = true;
-  }
-  var s2 = [Object.assign(new i2.Token("link_open", "a", 1), { attrs: [].concat(a2.permalinkClass ? [["class", a2.permalinkClass]] : [], [["href", a2.permalinkHref(r2, i2)]], Object.entries(a2.permalinkAttrs(r2, i2))) }), Object.assign(new i2.Token("html_block", "", 0), { content: a2.permalinkSymbol, meta: t }), new i2.Token("link_close", "a", -1)];
-  a2.permalinkSpace && i2.tokens[l2 + 1].children[n[a2.permalinkBefore]](Object.assign(new i2.Token("text", "", 0), { content: " " })), (o2 = i2.tokens[l2 + 1].children)[n[a2.permalinkBefore]].apply(o2, s2);
-}
-function a(e2) {
-  return "#" + e2;
-}
-function i$1(e2) {
-  return {};
-}
-var l = { class: "header-anchor", symbol: "#", renderHref: a, renderAttrs: i$1 };
-function o(e2) {
-  function n2(t2) {
-    return t2 = Object.assign({}, n2.defaults, t2), function(n3, r2, a2, i2) {
-      return e2(n3, t2, r2, a2, i2);
-    };
-  }
-  return n2.defaults = Object.assign({}, l), n2.renderPermalinkImpl = e2, n2;
-}
-function c(e2) {
-  var n2 = [], t2 = e2.filter(function(e3) {
-    if ("class" !== e3[0]) return true;
-    n2.push(e3[1]);
-  });
-  return n2.length > 0 && t2.unshift(["class", n2.join(" ")]), t2;
-}
-var s = o(function(e2, r2, a2, i2, l2) {
-  var o2, s2 = [Object.assign(new i2.Token("link_open", "a", 1), { attrs: c([].concat(r2.class ? [["class", r2.class]] : [], [["href", r2.renderHref(e2, i2)]], r2.ariaHidden ? [["aria-hidden", "true"]] : [], Object.entries(r2.renderAttrs(e2, i2)))) }), Object.assign(new i2.Token("html_inline", "", 0), { content: r2.symbol, meta: t }), new i2.Token("link_close", "a", -1)];
-  if (r2.space) {
-    var u2 = "string" == typeof r2.space ? r2.space : " ";
-    i2.tokens[l2 + 1].children[n[r2.placement]](Object.assign(new i2.Token("string" == typeof r2.space ? "html_inline" : "text", "", 0), { content: u2 }));
-  }
-  (o2 = i2.tokens[l2 + 1].children)[n[r2.placement]].apply(o2, s2);
-});
-Object.assign(s.defaults, { space: true, placement: "after", ariaHidden: false });
-var u = o(s.renderPermalinkImpl);
-u.defaults = Object.assign({}, s.defaults, { ariaHidden: true });
-var d = o(function(e2, n2, t2, r2, a2) {
-  var i2 = [Object.assign(new r2.Token("link_open", "a", 1), { attrs: c([].concat(n2.class ? [["class", n2.class]] : [], [["href", n2.renderHref(e2, r2)]], Object.entries(n2.renderAttrs(e2, r2)))) })].concat(n2.safariReaderFix ? [new r2.Token("span_open", "span", 1)] : [], r2.tokens[a2 + 1].children, n2.safariReaderFix ? [new r2.Token("span_close", "span", -1)] : [], [new r2.Token("link_close", "a", -1)]);
-  r2.tokens[a2 + 1] = Object.assign(new r2.Token("inline", "", 0), { children: i2 });
-});
-Object.assign(d.defaults, { safariReaderFix: false });
-var f = o(function(e2, r2, a2, i2, l2) {
-  var o2;
-  if (!["visually-hidden", "aria-label", "aria-describedby", "aria-labelledby"].includes(r2.style)) throw new Error("`permalink.linkAfterHeader` called with unknown style option `" + r2.style + "`");
-  if (!["aria-describedby", "aria-labelledby"].includes(r2.style) && !r2.assistiveText) throw new Error("`permalink.linkAfterHeader` called without the `assistiveText` option in `" + r2.style + "` style");
-  if ("visually-hidden" === r2.style && !r2.visuallyHiddenClass) throw new Error("`permalink.linkAfterHeader` called without the `visuallyHiddenClass` option in `visually-hidden` style");
-  var s2 = i2.tokens[l2 + 1].children.filter(function(e3) {
-    return "text" === e3.type || "code_inline" === e3.type;
-  }).reduce(function(e3, n2) {
-    return e3 + n2.content;
-  }, ""), u2 = [], d2 = [];
-  if (r2.class && d2.push(["class", r2.class]), d2.push(["href", r2.renderHref(e2, i2)]), d2.push.apply(d2, Object.entries(r2.renderAttrs(e2, i2))), "visually-hidden" === r2.style) {
-    if (u2.push(Object.assign(new i2.Token("span_open", "span", 1), { attrs: [["class", r2.visuallyHiddenClass]] }), Object.assign(new i2.Token("text", "", 0), { content: r2.assistiveText(s2) }), new i2.Token("span_close", "span", -1)), r2.space) {
-      var f2 = "string" == typeof r2.space ? r2.space : " ";
-      u2[n[r2.placement]](Object.assign(new i2.Token("string" == typeof r2.space ? "html_inline" : "text", "", 0), { content: f2 }));
-    }
-    u2[n[r2.placement]](Object.assign(new i2.Token("span_open", "span", 1), { attrs: [["aria-hidden", "true"]] }), Object.assign(new i2.Token("html_inline", "", 0), { content: r2.symbol, meta: t }), new i2.Token("span_close", "span", -1));
-  } else u2.push(Object.assign(new i2.Token("html_inline", "", 0), { content: r2.symbol, meta: t }));
-  "aria-label" === r2.style ? d2.push(["aria-label", r2.assistiveText(s2)]) : ["aria-describedby", "aria-labelledby"].includes(r2.style) && d2.push([r2.style, e2]);
-  var p2 = [Object.assign(new i2.Token("link_open", "a", 1), { attrs: c(d2) })].concat(u2, [new i2.Token("link_close", "a", -1)]);
-  (o2 = i2.tokens).splice.apply(o2, [l2 + 3, 0].concat(p2)), r2.wrapper && (i2.tokens.splice(l2, 0, Object.assign(new i2.Token("html_block", "", 0), { content: r2.wrapper[0] + "\n" })), i2.tokens.splice(l2 + 3 + p2.length + 1, 0, Object.assign(new i2.Token("html_block", "", 0), { content: r2.wrapper[1] + "\n" })));
-});
-function p(e2, n2, t2, r2) {
-  var a2 = e2, i2 = r2;
-  if (t2 && Object.prototype.hasOwnProperty.call(n2, a2)) throw new Error("User defined `id` attribute `" + e2 + "` is not unique. Please fix it in your Markdown to continue.");
-  for (; Object.prototype.hasOwnProperty.call(n2, a2); ) a2 = e2 + "-" + i2, i2 += 1;
-  return n2[a2] = true, a2;
-}
-function b(e2, n2) {
-  n2 = Object.assign({}, b.defaults, n2), e2.core.ruler.push("anchor", function(e3) {
-    for (var t2, a2 = {}, i2 = e3.tokens, l2 = Array.isArray(n2.level) ? (t2 = n2.level, function(e4) {
-      return t2.includes(e4);
-    }) : /* @__PURE__ */ function(e4) {
-      return function(n3) {
-        return n3 >= e4;
-      };
-    }(n2.level), o2 = 0; o2 < i2.length; o2++) {
-      var c2 = i2[o2];
-      if ("heading_open" === c2.type && l2(Number(c2.tag.substr(1)))) {
-        var s2 = n2.getTokensText(i2[o2 + 1].children), u2 = c2.attrGet("id");
-        u2 = null == u2 ? p(u2 = n2.slugifyWithState ? n2.slugifyWithState(s2, e3) : n2.slugify(s2), a2, false, n2.uniqueSlugStartIndex) : p(u2, a2, true, n2.uniqueSlugStartIndex), c2.attrSet("id", u2), false !== n2.tabIndex && c2.attrSet("tabindex", "" + n2.tabIndex), "function" == typeof n2.permalink ? n2.permalink(u2, n2, e3, o2) : (n2.permalink || n2.renderPermalink && n2.renderPermalink !== r) && n2.renderPermalink(u2, n2, e3, o2), o2 = i2.indexOf(c2), n2.callback && n2.callback(c2, { slug: u2, title: s2 });
-      }
-    }
-  });
-}
-Object.assign(f.defaults, { style: "visually-hidden", space: true, placement: "after", wrapper: null }), b.permalink = { __proto__: null, legacy: r, renderHref: a, renderAttrs: i$1, makePermalink: o, linkInsideHeader: s, ariaHidden: u, headerLink: d, linkAfterHeader: f }, b.defaults = { level: 1, slugify: function(e2) {
-  return encodeURIComponent(String(e2).trim().toLowerCase().replace(/\s+/g, "-"));
-}, uniqueSlugStartIndex: 1, tabIndex: "-1", getTokensText: function(e2) {
-  return e2.filter(function(e3) {
-    return ["text", "code_inline"].includes(e3.type);
-  }).map(function(e3) {
-    return e3.content;
-  }).join("");
-}, permalink: false, renderPermalink: r, permalinkClass: u.defaults.class, permalinkSpace: u.defaults.space, permalinkSymbol: "¶", permalinkBefore: "before" === u.defaults.placement, permalinkHref: u.defaults.renderHref, permalinkAttrs: u.defaults.renderAttrs }, b.default = b;
-function emoji_html(tokens, idx) {
-  return tokens[idx].content;
-}
-function create_rule(md, emojies, shortcuts, scanRE, replaceRE) {
-  const arrayReplaceAt2 = md.utils.arrayReplaceAt;
-  const ucm = md.utils.lib.ucmicro;
-  const has2 = md.utils.has;
-  const ZPCc = new RegExp([ucm.Z.source, ucm.P.source, ucm.Cc.source].join("|"));
-  function splitTextToken(text2, level, Token2) {
-    let last_pos = 0;
-    const nodes = [];
-    text2.replace(replaceRE, function(match2, offset, src) {
-      let emoji_name;
-      if (has2(shortcuts, match2)) {
-        emoji_name = shortcuts[match2];
-        if (offset > 0 && !ZPCc.test(src[offset - 1])) return;
-        if (offset + match2.length < src.length && !ZPCc.test(src[offset + match2.length])) {
-          return;
-        }
-      } else {
-        emoji_name = match2.slice(1, -1);
-      }
-      if (offset > last_pos) {
-        const token2 = new Token2("text", "", 0);
-        token2.content = text2.slice(last_pos, offset);
-        nodes.push(token2);
-      }
-      const token = new Token2("emoji", "", 0);
-      token.markup = emoji_name;
-      token.content = emojies[emoji_name];
-      nodes.push(token);
-      last_pos = offset + match2.length;
-    });
-    if (last_pos < text2.length) {
-      const token = new Token2("text", "", 0);
-      token.content = text2.slice(last_pos);
-      nodes.push(token);
-    }
-    return nodes;
-  }
-  return function emoji_replace(state) {
-    let token;
-    const blockTokens = state.tokens;
-    let autolinkLevel = 0;
-    for (let j = 0, l2 = blockTokens.length; j < l2; j++) {
-      if (blockTokens[j].type !== "inline") {
-        continue;
-      }
-      let tokens = blockTokens[j].children;
-      for (let i2 = tokens.length - 1; i2 >= 0; i2--) {
-        token = tokens[i2];
-        if (token.type === "link_open" || token.type === "link_close") {
-          if (token.info === "auto") {
-            autolinkLevel -= token.nesting;
-          }
-        }
-        if (token.type === "text" && autolinkLevel === 0 && scanRE.test(token.content)) {
-          blockTokens[j].children = tokens = arrayReplaceAt2(
-            tokens,
-            i2,
-            splitTextToken(token.content, token.level, state.Token)
-          );
-        }
-      }
-    }
-  };
-}
-function quoteRE(str2) {
-  return str2.replace(/[.?*+^$[\]\\(){}|-]/g, "\\$&");
-}
-function normalize_opts(options2) {
-  let emojies = options2.defs;
-  if (options2.enabled.length) {
-    emojies = Object.keys(emojies).reduce((acc, key) => {
-      if (options2.enabled.indexOf(key) >= 0) acc[key] = emojies[key];
-      return acc;
-    }, {});
-  }
-  const shortcuts = Object.keys(options2.shortcuts).reduce((acc, key) => {
-    if (!emojies[key]) return acc;
-    if (Array.isArray(options2.shortcuts[key])) {
-      options2.shortcuts[key].forEach((alias) => {
-        acc[alias] = key;
-      });
-      return acc;
-    }
-    acc[options2.shortcuts[key]] = key;
-    return acc;
-  }, {});
-  const keys = Object.keys(emojies);
-  let names;
-  if (keys.length === 0) {
-    names = "^$";
-  } else {
-    names = keys.map((name) => {
-      return `:${name}:`;
-    }).concat(Object.keys(shortcuts)).sort().reverse().map((name) => {
-      return quoteRE(name);
-    }).join("|");
-  }
-  const scanRE = RegExp(names);
-  const replaceRE = RegExp(names, "g");
-  return {
-    defs: emojies,
-    shortcuts,
-    scanRE,
-    replaceRE
-  };
-}
-function emoji_plugin$1(md, options2) {
-  const defaults2 = {
-    defs: {},
-    shortcuts: {},
-    enabled: []
-  };
-  const opts = normalize_opts(md.utils.assign({}, defaults2, options2 || {}));
-  md.renderer.rules.emoji = emoji_html;
-  md.core.ruler.after(
-    "linkify",
-    "emoji",
-    create_rule(md, opts.defs, opts.shortcuts, opts.scanRE, opts.replaceRE)
-  );
-}
-const emojies_shortcuts = {
-  angry: [">:(", ">:-("],
-  blush: [':")', ':-")'],
-  broken_heart: ["</3", "<\\3"],
-  // :\ and :-\ not used because of conflict with markdown escaping
-  confused: [":/", ":-/"],
-  // twemoji shows question
-  cry: [":'(", ":'-(", ":,(", ":,-("],
-  frowning: [":(", ":-("],
-  heart: ["<3"],
-  imp: ["]:(", "]:-("],
-  innocent: ["o:)", "O:)", "o:-)", "O:-)", "0:)", "0:-)"],
-  joy: [":')", ":'-)", ":,)", ":,-)", ":'D", ":'-D", ":,D", ":,-D"],
-  kissing: [":*", ":-*"],
-  laughing: ["x-)", "X-)"],
-  neutral_face: [":|", ":-|"],
-  open_mouth: [":o", ":-o", ":O", ":-O"],
-  rage: [":@", ":-@"],
-  smile: [":D", ":-D"],
-  smiley: [":)", ":-)"],
-  smiling_imp: ["]:)", "]:-)"],
-  sob: [":,'(", ":,'-(", ";(", ";-("],
-  stuck_out_tongue: [":P", ":-P"],
-  sunglasses: ["8-)", "B-)"],
-  sweat: [",:(", ",:-("],
-  sweat_smile: [",:)", ",:-)"],
-  unamused: [":s", ":-S", ":z", ":-Z", ":$", ":-$"],
-  wink: [";)", ";-)"]
-};
-const emojies_defs = {
-  "100": "💯",
-  "1234": "🔢",
-  "grinning": "😀",
-  "smiley": "😃",
-  "smile": "😄",
-  "grin": "😁",
-  "laughing": "😆",
-  "satisfied": "😆",
-  "sweat_smile": "😅",
-  "rofl": "🤣",
-  "joy": "😂",
-  "slightly_smiling_face": "🙂",
-  "upside_down_face": "🙃",
-  "melting_face": "🫠",
-  "wink": "😉",
-  "blush": "😊",
-  "innocent": "😇",
-  "smiling_face_with_three_hearts": "🥰",
-  "heart_eyes": "😍",
-  "star_struck": "🤩",
-  "kissing_heart": "😘",
-  "kissing": "😗",
-  "relaxed": "☺️",
-  "kissing_closed_eyes": "😚",
-  "kissing_smiling_eyes": "😙",
-  "smiling_face_with_tear": "🥲",
-  "yum": "😋",
-  "stuck_out_tongue": "😛",
-  "stuck_out_tongue_winking_eye": "😜",
-  "zany_face": "🤪",
-  "stuck_out_tongue_closed_eyes": "😝",
-  "money_mouth_face": "🤑",
-  "hugs": "🤗",
-  "hand_over_mouth": "🤭",
-  "face_with_open_eyes_and_hand_over_mouth": "🫢",
-  "face_with_peeking_eye": "🫣",
-  "shushing_face": "🤫",
-  "thinking": "🤔",
-  "saluting_face": "🫡",
-  "zipper_mouth_face": "🤐",
-  "raised_eyebrow": "🤨",
-  "neutral_face": "😐",
-  "expressionless": "😑",
-  "no_mouth": "😶",
-  "dotted_line_face": "🫥",
-  "face_in_clouds": "😶‍🌫️",
-  "smirk": "😏",
-  "unamused": "😒",
-  "roll_eyes": "🙄",
-  "grimacing": "😬",
-  "face_exhaling": "😮‍💨",
-  "lying_face": "🤥",
-  "shaking_face": "🫨",
-  "relieved": "😌",
-  "pensive": "😔",
-  "sleepy": "😪",
-  "drooling_face": "🤤",
-  "sleeping": "😴",
-  "mask": "😷",
-  "face_with_thermometer": "🤒",
-  "face_with_head_bandage": "🤕",
-  "nauseated_face": "🤢",
-  "vomiting_face": "🤮",
-  "sneezing_face": "🤧",
-  "hot_face": "🥵",
-  "cold_face": "🥶",
-  "woozy_face": "🥴",
-  "dizzy_face": "😵",
-  "face_with_spiral_eyes": "😵‍💫",
-  "exploding_head": "🤯",
-  "cowboy_hat_face": "🤠",
-  "partying_face": "🥳",
-  "disguised_face": "🥸",
-  "sunglasses": "😎",
-  "nerd_face": "🤓",
-  "monocle_face": "🧐",
-  "confused": "😕",
-  "face_with_diagonal_mouth": "🫤",
-  "worried": "😟",
-  "slightly_frowning_face": "🙁",
-  "frowning_face": "☹️",
-  "open_mouth": "😮",
-  "hushed": "😯",
-  "astonished": "😲",
-  "flushed": "😳",
-  "pleading_face": "🥺",
-  "face_holding_back_tears": "🥹",
-  "frowning": "😦",
-  "anguished": "😧",
-  "fearful": "😨",
-  "cold_sweat": "😰",
-  "disappointed_relieved": "😥",
-  "cry": "😢",
-  "sob": "😭",
-  "scream": "😱",
-  "confounded": "😖",
-  "persevere": "😣",
-  "disappointed": "😞",
-  "sweat": "😓",
-  "weary": "😩",
-  "tired_face": "😫",
-  "yawning_face": "🥱",
-  "triumph": "😤",
-  "rage": "😡",
-  "pout": "😡",
-  "angry": "😠",
-  "cursing_face": "🤬",
-  "smiling_imp": "😈",
-  "imp": "👿",
-  "skull": "💀",
-  "skull_and_crossbones": "☠️",
-  "hankey": "💩",
-  "poop": "💩",
-  "shit": "💩",
-  "clown_face": "🤡",
-  "japanese_ogre": "👹",
-  "japanese_goblin": "👺",
-  "ghost": "👻",
-  "alien": "👽",
-  "space_invader": "👾",
-  "robot": "🤖",
-  "smiley_cat": "😺",
-  "smile_cat": "😸",
-  "joy_cat": "😹",
-  "heart_eyes_cat": "😻",
-  "smirk_cat": "😼",
-  "kissing_cat": "😽",
-  "scream_cat": "🙀",
-  "crying_cat_face": "😿",
-  "pouting_cat": "😾",
-  "see_no_evil": "🙈",
-  "hear_no_evil": "🙉",
-  "speak_no_evil": "🙊",
-  "love_letter": "💌",
-  "cupid": "💘",
-  "gift_heart": "💝",
-  "sparkling_heart": "💖",
-  "heartpulse": "💗",
-  "heartbeat": "💓",
-  "revolving_hearts": "💞",
-  "two_hearts": "💕",
-  "heart_decoration": "💟",
-  "heavy_heart_exclamation": "❣️",
-  "broken_heart": "💔",
-  "heart_on_fire": "❤️‍🔥",
-  "mending_heart": "❤️‍🩹",
-  "heart": "❤️",
-  "pink_heart": "🩷",
-  "orange_heart": "🧡",
-  "yellow_heart": "💛",
-  "green_heart": "💚",
-  "blue_heart": "💙",
-  "light_blue_heart": "🩵",
-  "purple_heart": "💜",
-  "brown_heart": "🤎",
-  "black_heart": "🖤",
-  "grey_heart": "🩶",
-  "white_heart": "🤍",
-  "kiss": "💋",
-  "anger": "💢",
-  "boom": "💥",
-  "collision": "💥",
-  "dizzy": "💫",
-  "sweat_drops": "💦",
-  "dash": "💨",
-  "hole": "🕳️",
-  "speech_balloon": "💬",
-  "eye_speech_bubble": "👁️‍🗨️",
-  "left_speech_bubble": "🗨️",
-  "right_anger_bubble": "🗯️",
-  "thought_balloon": "💭",
-  "zzz": "💤",
-  "wave": "👋",
-  "raised_back_of_hand": "🤚",
-  "raised_hand_with_fingers_splayed": "🖐️",
-  "hand": "✋",
-  "raised_hand": "✋",
-  "vulcan_salute": "🖖",
-  "rightwards_hand": "🫱",
-  "leftwards_hand": "🫲",
-  "palm_down_hand": "🫳",
-  "palm_up_hand": "🫴",
-  "leftwards_pushing_hand": "🫷",
-  "rightwards_pushing_hand": "🫸",
-  "ok_hand": "👌",
-  "pinched_fingers": "🤌",
-  "pinching_hand": "🤏",
-  "v": "✌️",
-  "crossed_fingers": "🤞",
-  "hand_with_index_finger_and_thumb_crossed": "🫰",
-  "love_you_gesture": "🤟",
-  "metal": "🤘",
-  "call_me_hand": "🤙",
-  "point_left": "👈",
-  "point_right": "👉",
-  "point_up_2": "👆",
-  "middle_finger": "🖕",
-  "fu": "🖕",
-  "point_down": "👇",
-  "point_up": "☝️",
-  "index_pointing_at_the_viewer": "🫵",
-  "+1": "👍",
-  "thumbsup": "👍",
-  "-1": "👎",
-  "thumbsdown": "👎",
-  "fist_raised": "✊",
-  "fist": "✊",
-  "fist_oncoming": "👊",
-  "facepunch": "👊",
-  "punch": "👊",
-  "fist_left": "🤛",
-  "fist_right": "🤜",
-  "clap": "👏",
-  "raised_hands": "🙌",
-  "heart_hands": "🫶",
-  "open_hands": "👐",
-  "palms_up_together": "🤲",
-  "handshake": "🤝",
-  "pray": "🙏",
-  "writing_hand": "✍️",
-  "nail_care": "💅",
-  "selfie": "🤳",
-  "muscle": "💪",
-  "mechanical_arm": "🦾",
-  "mechanical_leg": "🦿",
-  "leg": "🦵",
-  "foot": "🦶",
-  "ear": "👂",
-  "ear_with_hearing_aid": "🦻",
-  "nose": "👃",
-  "brain": "🧠",
-  "anatomical_heart": "🫀",
-  "lungs": "🫁",
-  "tooth": "🦷",
-  "bone": "🦴",
-  "eyes": "👀",
-  "eye": "👁️",
-  "tongue": "👅",
-  "lips": "👄",
-  "biting_lip": "🫦",
-  "baby": "👶",
-  "child": "🧒",
-  "boy": "👦",
-  "girl": "👧",
-  "adult": "🧑",
-  "blond_haired_person": "👱",
-  "man": "👨",
-  "bearded_person": "🧔",
-  "man_beard": "🧔‍♂️",
-  "woman_beard": "🧔‍♀️",
-  "red_haired_man": "👨‍🦰",
-  "curly_haired_man": "👨‍🦱",
-  "white_haired_man": "👨‍🦳",
-  "bald_man": "👨‍🦲",
-  "woman": "👩",
-  "red_haired_woman": "👩‍🦰",
-  "person_red_hair": "🧑‍🦰",
-  "curly_haired_woman": "👩‍🦱",
-  "person_curly_hair": "🧑‍🦱",
-  "white_haired_woman": "👩‍🦳",
-  "person_white_hair": "🧑‍🦳",
-  "bald_woman": "👩‍🦲",
-  "person_bald": "🧑‍🦲",
-  "blond_haired_woman": "👱‍♀️",
-  "blonde_woman": "👱‍♀️",
-  "blond_haired_man": "👱‍♂️",
-  "older_adult": "🧓",
-  "older_man": "👴",
-  "older_woman": "👵",
-  "frowning_person": "🙍",
-  "frowning_man": "🙍‍♂️",
-  "frowning_woman": "🙍‍♀️",
-  "pouting_face": "🙎",
-  "pouting_man": "🙎‍♂️",
-  "pouting_woman": "🙎‍♀️",
-  "no_good": "🙅",
-  "no_good_man": "🙅‍♂️",
-  "ng_man": "🙅‍♂️",
-  "no_good_woman": "🙅‍♀️",
-  "ng_woman": "🙅‍♀️",
-  "ok_person": "🙆",
-  "ok_man": "🙆‍♂️",
-  "ok_woman": "🙆‍♀️",
-  "tipping_hand_person": "💁",
-  "information_desk_person": "💁",
-  "tipping_hand_man": "💁‍♂️",
-  "sassy_man": "💁‍♂️",
-  "tipping_hand_woman": "💁‍♀️",
-  "sassy_woman": "💁‍♀️",
-  "raising_hand": "🙋",
-  "raising_hand_man": "🙋‍♂️",
-  "raising_hand_woman": "🙋‍♀️",
-  "deaf_person": "🧏",
-  "deaf_man": "🧏‍♂️",
-  "deaf_woman": "🧏‍♀️",
-  "bow": "🙇",
-  "bowing_man": "🙇‍♂️",
-  "bowing_woman": "🙇‍♀️",
-  "facepalm": "🤦",
-  "man_facepalming": "🤦‍♂️",
-  "woman_facepalming": "🤦‍♀️",
-  "shrug": "🤷",
-  "man_shrugging": "🤷‍♂️",
-  "woman_shrugging": "🤷‍♀️",
-  "health_worker": "🧑‍⚕️",
-  "man_health_worker": "👨‍⚕️",
-  "woman_health_worker": "👩‍⚕️",
-  "student": "🧑‍🎓",
-  "man_student": "👨‍🎓",
-  "woman_student": "👩‍🎓",
-  "teacher": "🧑‍🏫",
-  "man_teacher": "👨‍🏫",
-  "woman_teacher": "👩‍🏫",
-  "judge": "🧑‍⚖️",
-  "man_judge": "👨‍⚖️",
-  "woman_judge": "👩‍⚖️",
-  "farmer": "🧑‍🌾",
-  "man_farmer": "👨‍🌾",
-  "woman_farmer": "👩‍🌾",
-  "cook": "🧑‍🍳",
-  "man_cook": "👨‍🍳",
-  "woman_cook": "👩‍🍳",
-  "mechanic": "🧑‍🔧",
-  "man_mechanic": "👨‍🔧",
-  "woman_mechanic": "👩‍🔧",
-  "factory_worker": "🧑‍🏭",
-  "man_factory_worker": "👨‍🏭",
-  "woman_factory_worker": "👩‍🏭",
-  "office_worker": "🧑‍💼",
-  "man_office_worker": "👨‍💼",
-  "woman_office_worker": "👩‍💼",
-  "scientist": "🧑‍🔬",
-  "man_scientist": "👨‍🔬",
-  "woman_scientist": "👩‍🔬",
-  "technologist": "🧑‍💻",
-  "man_technologist": "👨‍💻",
-  "woman_technologist": "👩‍💻",
-  "singer": "🧑‍🎤",
-  "man_singer": "👨‍🎤",
-  "woman_singer": "👩‍🎤",
-  "artist": "🧑‍🎨",
-  "man_artist": "👨‍🎨",
-  "woman_artist": "👩‍🎨",
-  "pilot": "🧑‍✈️",
-  "man_pilot": "👨‍✈️",
-  "woman_pilot": "👩‍✈️",
-  "astronaut": "🧑‍🚀",
-  "man_astronaut": "👨‍🚀",
-  "woman_astronaut": "👩‍🚀",
-  "firefighter": "🧑‍🚒",
-  "man_firefighter": "👨‍🚒",
-  "woman_firefighter": "👩‍🚒",
-  "police_officer": "👮",
-  "cop": "👮",
-  "policeman": "👮‍♂️",
-  "policewoman": "👮‍♀️",
-  "detective": "🕵️",
-  "male_detective": "🕵️‍♂️",
-  "female_detective": "🕵️‍♀️",
-  "guard": "💂",
-  "guardsman": "💂‍♂️",
-  "guardswoman": "💂‍♀️",
-  "ninja": "🥷",
-  "construction_worker": "👷",
-  "construction_worker_man": "👷‍♂️",
-  "construction_worker_woman": "👷‍♀️",
-  "person_with_crown": "🫅",
-  "prince": "🤴",
-  "princess": "👸",
-  "person_with_turban": "👳",
-  "man_with_turban": "👳‍♂️",
-  "woman_with_turban": "👳‍♀️",
-  "man_with_gua_pi_mao": "👲",
-  "woman_with_headscarf": "🧕",
-  "person_in_tuxedo": "🤵",
-  "man_in_tuxedo": "🤵‍♂️",
-  "woman_in_tuxedo": "🤵‍♀️",
-  "person_with_veil": "👰",
-  "man_with_veil": "👰‍♂️",
-  "woman_with_veil": "👰‍♀️",
-  "bride_with_veil": "👰‍♀️",
-  "pregnant_woman": "🤰",
-  "pregnant_man": "🫃",
-  "pregnant_person": "🫄",
-  "breast_feeding": "🤱",
-  "woman_feeding_baby": "👩‍🍼",
-  "man_feeding_baby": "👨‍🍼",
-  "person_feeding_baby": "🧑‍🍼",
-  "angel": "👼",
-  "santa": "🎅",
-  "mrs_claus": "🤶",
-  "mx_claus": "🧑‍🎄",
-  "superhero": "🦸",
-  "superhero_man": "🦸‍♂️",
-  "superhero_woman": "🦸‍♀️",
-  "supervillain": "🦹",
-  "supervillain_man": "🦹‍♂️",
-  "supervillain_woman": "🦹‍♀️",
-  "mage": "🧙",
-  "mage_man": "🧙‍♂️",
-  "mage_woman": "🧙‍♀️",
-  "fairy": "🧚",
-  "fairy_man": "🧚‍♂️",
-  "fairy_woman": "🧚‍♀️",
-  "vampire": "🧛",
-  "vampire_man": "🧛‍♂️",
-  "vampire_woman": "🧛‍♀️",
-  "merperson": "🧜",
-  "merman": "🧜‍♂️",
-  "mermaid": "🧜‍♀️",
-  "elf": "🧝",
-  "elf_man": "🧝‍♂️",
-  "elf_woman": "🧝‍♀️",
-  "genie": "🧞",
-  "genie_man": "🧞‍♂️",
-  "genie_woman": "🧞‍♀️",
-  "zombie": "🧟",
-  "zombie_man": "🧟‍♂️",
-  "zombie_woman": "🧟‍♀️",
-  "troll": "🧌",
-  "massage": "💆",
-  "massage_man": "💆‍♂️",
-  "massage_woman": "💆‍♀️",
-  "haircut": "💇",
-  "haircut_man": "💇‍♂️",
-  "haircut_woman": "💇‍♀️",
-  "walking": "🚶",
-  "walking_man": "🚶‍♂️",
-  "walking_woman": "🚶‍♀️",
-  "standing_person": "🧍",
-  "standing_man": "🧍‍♂️",
-  "standing_woman": "🧍‍♀️",
-  "kneeling_person": "🧎",
-  "kneeling_man": "🧎‍♂️",
-  "kneeling_woman": "🧎‍♀️",
-  "person_with_probing_cane": "🧑‍🦯",
-  "man_with_probing_cane": "👨‍🦯",
-  "woman_with_probing_cane": "👩‍🦯",
-  "person_in_motorized_wheelchair": "🧑‍🦼",
-  "man_in_motorized_wheelchair": "👨‍🦼",
-  "woman_in_motorized_wheelchair": "👩‍🦼",
-  "person_in_manual_wheelchair": "🧑‍🦽",
-  "man_in_manual_wheelchair": "👨‍🦽",
-  "woman_in_manual_wheelchair": "👩‍🦽",
-  "runner": "🏃",
-  "running": "🏃",
-  "running_man": "🏃‍♂️",
-  "running_woman": "🏃‍♀️",
-  "woman_dancing": "💃",
-  "dancer": "💃",
-  "man_dancing": "🕺",
-  "business_suit_levitating": "🕴️",
-  "dancers": "👯",
-  "dancing_men": "👯‍♂️",
-  "dancing_women": "👯‍♀️",
-  "sauna_person": "🧖",
-  "sauna_man": "🧖‍♂️",
-  "sauna_woman": "🧖‍♀️",
-  "climbing": "🧗",
-  "climbing_man": "🧗‍♂️",
-  "climbing_woman": "🧗‍♀️",
-  "person_fencing": "🤺",
-  "horse_racing": "🏇",
-  "skier": "⛷️",
-  "snowboarder": "🏂",
-  "golfing": "🏌️",
-  "golfing_man": "🏌️‍♂️",
-  "golfing_woman": "🏌️‍♀️",
-  "surfer": "🏄",
-  "surfing_man": "🏄‍♂️",
-  "surfing_woman": "🏄‍♀️",
-  "rowboat": "🚣",
-  "rowing_man": "🚣‍♂️",
-  "rowing_woman": "🚣‍♀️",
-  "swimmer": "🏊",
-  "swimming_man": "🏊‍♂️",
-  "swimming_woman": "🏊‍♀️",
-  "bouncing_ball_person": "⛹️",
-  "bouncing_ball_man": "⛹️‍♂️",
-  "basketball_man": "⛹️‍♂️",
-  "bouncing_ball_woman": "⛹️‍♀️",
-  "basketball_woman": "⛹️‍♀️",
-  "weight_lifting": "🏋️",
-  "weight_lifting_man": "🏋️‍♂️",
-  "weight_lifting_woman": "🏋️‍♀️",
-  "bicyclist": "🚴",
-  "biking_man": "🚴‍♂️",
-  "biking_woman": "🚴‍♀️",
-  "mountain_bicyclist": "🚵",
-  "mountain_biking_man": "🚵‍♂️",
-  "mountain_biking_woman": "🚵‍♀️",
-  "cartwheeling": "🤸",
-  "man_cartwheeling": "🤸‍♂️",
-  "woman_cartwheeling": "🤸‍♀️",
-  "wrestling": "🤼",
-  "men_wrestling": "🤼‍♂️",
-  "women_wrestling": "🤼‍♀️",
-  "water_polo": "🤽",
-  "man_playing_water_polo": "🤽‍♂️",
-  "woman_playing_water_polo": "🤽‍♀️",
-  "handball_person": "🤾",
-  "man_playing_handball": "🤾‍♂️",
-  "woman_playing_handball": "🤾‍♀️",
-  "juggling_person": "🤹",
-  "man_juggling": "🤹‍♂️",
-  "woman_juggling": "🤹‍♀️",
-  "lotus_position": "🧘",
-  "lotus_position_man": "🧘‍♂️",
-  "lotus_position_woman": "🧘‍♀️",
-  "bath": "🛀",
-  "sleeping_bed": "🛌",
-  "people_holding_hands": "🧑‍🤝‍🧑",
-  "two_women_holding_hands": "👭",
-  "couple": "👫",
-  "two_men_holding_hands": "👬",
-  "couplekiss": "💏",
-  "couplekiss_man_woman": "👩‍❤️‍💋‍👨",
-  "couplekiss_man_man": "👨‍❤️‍💋‍👨",
-  "couplekiss_woman_woman": "👩‍❤️‍💋‍👩",
-  "couple_with_heart": "💑",
-  "couple_with_heart_woman_man": "👩‍❤️‍👨",
-  "couple_with_heart_man_man": "👨‍❤️‍👨",
-  "couple_with_heart_woman_woman": "👩‍❤️‍👩",
-  "family": "👪",
-  "family_man_woman_boy": "👨‍👩‍👦",
-  "family_man_woman_girl": "👨‍👩‍👧",
-  "family_man_woman_girl_boy": "👨‍👩‍👧‍👦",
-  "family_man_woman_boy_boy": "👨‍👩‍👦‍👦",
-  "family_man_woman_girl_girl": "👨‍👩‍👧‍👧",
-  "family_man_man_boy": "👨‍👨‍👦",
-  "family_man_man_girl": "👨‍👨‍👧",
-  "family_man_man_girl_boy": "👨‍👨‍👧‍👦",
-  "family_man_man_boy_boy": "👨‍👨‍👦‍👦",
-  "family_man_man_girl_girl": "👨‍👨‍👧‍👧",
-  "family_woman_woman_boy": "👩‍👩‍👦",
-  "family_woman_woman_girl": "👩‍👩‍👧",
-  "family_woman_woman_girl_boy": "👩‍👩‍👧‍👦",
-  "family_woman_woman_boy_boy": "👩‍👩‍👦‍👦",
-  "family_woman_woman_girl_girl": "👩‍👩‍👧‍👧",
-  "family_man_boy": "👨‍👦",
-  "family_man_boy_boy": "👨‍👦‍👦",
-  "family_man_girl": "👨‍👧",
-  "family_man_girl_boy": "👨‍👧‍👦",
-  "family_man_girl_girl": "👨‍👧‍👧",
-  "family_woman_boy": "👩‍👦",
-  "family_woman_boy_boy": "👩‍👦‍👦",
-  "family_woman_girl": "👩‍👧",
-  "family_woman_girl_boy": "👩‍👧‍👦",
-  "family_woman_girl_girl": "👩‍👧‍👧",
-  "speaking_head": "🗣️",
-  "bust_in_silhouette": "👤",
-  "busts_in_silhouette": "👥",
-  "people_hugging": "🫂",
-  "footprints": "👣",
-  "monkey_face": "🐵",
-  "monkey": "🐒",
-  "gorilla": "🦍",
-  "orangutan": "🦧",
-  "dog": "🐶",
-  "dog2": "🐕",
-  "guide_dog": "🦮",
-  "service_dog": "🐕‍🦺",
-  "poodle": "🐩",
-  "wolf": "🐺",
-  "fox_face": "🦊",
-  "raccoon": "🦝",
-  "cat": "🐱",
-  "cat2": "🐈",
-  "black_cat": "🐈‍⬛",
-  "lion": "🦁",
-  "tiger": "🐯",
-  "tiger2": "🐅",
-  "leopard": "🐆",
-  "horse": "🐴",
-  "moose": "🫎",
-  "donkey": "🫏",
-  "racehorse": "🐎",
-  "unicorn": "🦄",
-  "zebra": "🦓",
-  "deer": "🦌",
-  "bison": "🦬",
-  "cow": "🐮",
-  "ox": "🐂",
-  "water_buffalo": "🐃",
-  "cow2": "🐄",
-  "pig": "🐷",
-  "pig2": "🐖",
-  "boar": "🐗",
-  "pig_nose": "🐽",
-  "ram": "🐏",
-  "sheep": "🐑",
-  "goat": "🐐",
-  "dromedary_camel": "🐪",
-  "camel": "🐫",
-  "llama": "🦙",
-  "giraffe": "🦒",
-  "elephant": "🐘",
-  "mammoth": "🦣",
-  "rhinoceros": "🦏",
-  "hippopotamus": "🦛",
-  "mouse": "🐭",
-  "mouse2": "🐁",
-  "rat": "🐀",
-  "hamster": "🐹",
-  "rabbit": "🐰",
-  "rabbit2": "🐇",
-  "chipmunk": "🐿️",
-  "beaver": "🦫",
-  "hedgehog": "🦔",
-  "bat": "🦇",
-  "bear": "🐻",
-  "polar_bear": "🐻‍❄️",
-  "koala": "🐨",
-  "panda_face": "🐼",
-  "sloth": "🦥",
-  "otter": "🦦",
-  "skunk": "🦨",
-  "kangaroo": "🦘",
-  "badger": "🦡",
-  "feet": "🐾",
-  "paw_prints": "🐾",
-  "turkey": "🦃",
-  "chicken": "🐔",
-  "rooster": "🐓",
-  "hatching_chick": "🐣",
-  "baby_chick": "🐤",
-  "hatched_chick": "🐥",
-  "bird": "🐦",
-  "penguin": "🐧",
-  "dove": "🕊️",
-  "eagle": "🦅",
-  "duck": "🦆",
-  "swan": "🦢",
-  "owl": "🦉",
-  "dodo": "🦤",
-  "feather": "🪶",
-  "flamingo": "🦩",
-  "peacock": "🦚",
-  "parrot": "🦜",
-  "wing": "🪽",
-  "black_bird": "🐦‍⬛",
-  "goose": "🪿",
-  "frog": "🐸",
-  "crocodile": "🐊",
-  "turtle": "🐢",
-  "lizard": "🦎",
-  "snake": "🐍",
-  "dragon_face": "🐲",
-  "dragon": "🐉",
-  "sauropod": "🦕",
-  "t-rex": "🦖",
-  "whale": "🐳",
-  "whale2": "🐋",
-  "dolphin": "🐬",
-  "flipper": "🐬",
-  "seal": "🦭",
-  "fish": "🐟",
-  "tropical_fish": "🐠",
-  "blowfish": "🐡",
-  "shark": "🦈",
-  "octopus": "🐙",
-  "shell": "🐚",
-  "coral": "🪸",
-  "jellyfish": "🪼",
-  "snail": "🐌",
-  "butterfly": "🦋",
-  "bug": "🐛",
-  "ant": "🐜",
-  "bee": "🐝",
-  "honeybee": "🐝",
-  "beetle": "🪲",
-  "lady_beetle": "🐞",
-  "cricket": "🦗",
-  "cockroach": "🪳",
-  "spider": "🕷️",
-  "spider_web": "🕸️",
-  "scorpion": "🦂",
-  "mosquito": "🦟",
-  "fly": "🪰",
-  "worm": "🪱",
-  "microbe": "🦠",
-  "bouquet": "💐",
-  "cherry_blossom": "🌸",
-  "white_flower": "💮",
-  "lotus": "🪷",
-  "rosette": "🏵️",
-  "rose": "🌹",
-  "wilted_flower": "🥀",
-  "hibiscus": "🌺",
-  "sunflower": "🌻",
-  "blossom": "🌼",
-  "tulip": "🌷",
-  "hyacinth": "🪻",
-  "seedling": "🌱",
-  "potted_plant": "🪴",
-  "evergreen_tree": "🌲",
-  "deciduous_tree": "🌳",
-  "palm_tree": "🌴",
-  "cactus": "🌵",
-  "ear_of_rice": "🌾",
-  "herb": "🌿",
-  "shamrock": "☘️",
-  "four_leaf_clover": "🍀",
-  "maple_leaf": "🍁",
-  "fallen_leaf": "🍂",
-  "leaves": "🍃",
-  "empty_nest": "🪹",
-  "nest_with_eggs": "🪺",
-  "mushroom": "🍄",
-  "grapes": "🍇",
-  "melon": "🍈",
-  "watermelon": "🍉",
-  "tangerine": "🍊",
-  "orange": "🍊",
-  "mandarin": "🍊",
-  "lemon": "🍋",
-  "banana": "🍌",
-  "pineapple": "🍍",
-  "mango": "🥭",
-  "apple": "🍎",
-  "green_apple": "🍏",
-  "pear": "🍐",
-  "peach": "🍑",
-  "cherries": "🍒",
-  "strawberry": "🍓",
-  "blueberries": "🫐",
-  "kiwi_fruit": "🥝",
-  "tomato": "🍅",
-  "olive": "🫒",
-  "coconut": "🥥",
-  "avocado": "🥑",
-  "eggplant": "🍆",
-  "potato": "🥔",
-  "carrot": "🥕",
-  "corn": "🌽",
-  "hot_pepper": "🌶️",
-  "bell_pepper": "🫑",
-  "cucumber": "🥒",
-  "leafy_green": "🥬",
-  "broccoli": "🥦",
-  "garlic": "🧄",
-  "onion": "🧅",
-  "peanuts": "🥜",
-  "beans": "🫘",
-  "chestnut": "🌰",
-  "ginger_root": "🫚",
-  "pea_pod": "🫛",
-  "bread": "🍞",
-  "croissant": "🥐",
-  "baguette_bread": "🥖",
-  "flatbread": "🫓",
-  "pretzel": "🥨",
-  "bagel": "🥯",
-  "pancakes": "🥞",
-  "waffle": "🧇",
-  "cheese": "🧀",
-  "meat_on_bone": "🍖",
-  "poultry_leg": "🍗",
-  "cut_of_meat": "🥩",
-  "bacon": "🥓",
-  "hamburger": "🍔",
-  "fries": "🍟",
-  "pizza": "🍕",
-  "hotdog": "🌭",
-  "sandwich": "🥪",
-  "taco": "🌮",
-  "burrito": "🌯",
-  "tamale": "🫔",
-  "stuffed_flatbread": "🥙",
-  "falafel": "🧆",
-  "egg": "🥚",
-  "fried_egg": "🍳",
-  "shallow_pan_of_food": "🥘",
-  "stew": "🍲",
-  "fondue": "🫕",
-  "bowl_with_spoon": "🥣",
-  "green_salad": "🥗",
-  "popcorn": "🍿",
-  "butter": "🧈",
-  "salt": "🧂",
-  "canned_food": "🥫",
-  "bento": "🍱",
-  "rice_cracker": "🍘",
-  "rice_ball": "🍙",
-  "rice": "🍚",
-  "curry": "🍛",
-  "ramen": "🍜",
-  "spaghetti": "🍝",
-  "sweet_potato": "🍠",
-  "oden": "🍢",
-  "sushi": "🍣",
-  "fried_shrimp": "🍤",
-  "fish_cake": "🍥",
-  "moon_cake": "🥮",
-  "dango": "🍡",
-  "dumpling": "🥟",
-  "fortune_cookie": "🥠",
-  "takeout_box": "🥡",
-  "crab": "🦀",
-  "lobster": "🦞",
-  "shrimp": "🦐",
-  "squid": "🦑",
-  "oyster": "🦪",
-  "icecream": "🍦",
-  "shaved_ice": "🍧",
-  "ice_cream": "🍨",
-  "doughnut": "🍩",
-  "cookie": "🍪",
-  "birthday": "🎂",
-  "cake": "🍰",
-  "cupcake": "🧁",
-  "pie": "🥧",
-  "chocolate_bar": "🍫",
-  "candy": "🍬",
-  "lollipop": "🍭",
-  "custard": "🍮",
-  "honey_pot": "🍯",
-  "baby_bottle": "🍼",
-  "milk_glass": "🥛",
-  "coffee": "☕",
-  "teapot": "🫖",
-  "tea": "🍵",
-  "sake": "🍶",
-  "champagne": "🍾",
-  "wine_glass": "🍷",
-  "cocktail": "🍸",
-  "tropical_drink": "🍹",
-  "beer": "🍺",
-  "beers": "🍻",
-  "clinking_glasses": "🥂",
-  "tumbler_glass": "🥃",
-  "pouring_liquid": "🫗",
-  "cup_with_straw": "🥤",
-  "bubble_tea": "🧋",
-  "beverage_box": "🧃",
-  "mate": "🧉",
-  "ice_cube": "🧊",
-  "chopsticks": "🥢",
-  "plate_with_cutlery": "🍽️",
-  "fork_and_knife": "🍴",
-  "spoon": "🥄",
-  "hocho": "🔪",
-  "knife": "🔪",
-  "jar": "🫙",
-  "amphora": "🏺",
-  "earth_africa": "🌍",
-  "earth_americas": "🌎",
-  "earth_asia": "🌏",
-  "globe_with_meridians": "🌐",
-  "world_map": "🗺️",
-  "japan": "🗾",
-  "compass": "🧭",
-  "mountain_snow": "🏔️",
-  "mountain": "⛰️",
-  "volcano": "🌋",
-  "mount_fuji": "🗻",
-  "camping": "🏕️",
-  "beach_umbrella": "🏖️",
-  "desert": "🏜️",
-  "desert_island": "🏝️",
-  "national_park": "🏞️",
-  "stadium": "🏟️",
-  "classical_building": "🏛️",
-  "building_construction": "🏗️",
-  "bricks": "🧱",
-  "rock": "🪨",
-  "wood": "🪵",
-  "hut": "🛖",
-  "houses": "🏘️",
-  "derelict_house": "🏚️",
-  "house": "🏠",
-  "house_with_garden": "🏡",
-  "office": "🏢",
-  "post_office": "🏣",
-  "european_post_office": "🏤",
-  "hospital": "🏥",
-  "bank": "🏦",
-  "hotel": "🏨",
-  "love_hotel": "🏩",
-  "convenience_store": "🏪",
-  "school": "🏫",
-  "department_store": "🏬",
-  "factory": "🏭",
-  "japanese_castle": "🏯",
-  "european_castle": "🏰",
-  "wedding": "💒",
-  "tokyo_tower": "🗼",
-  "statue_of_liberty": "🗽",
-  "church": "⛪",
-  "mosque": "🕌",
-  "hindu_temple": "🛕",
-  "synagogue": "🕍",
-  "shinto_shrine": "⛩️",
-  "kaaba": "🕋",
-  "fountain": "⛲",
-  "tent": "⛺",
-  "foggy": "🌁",
-  "night_with_stars": "🌃",
-  "cityscape": "🏙️",
-  "sunrise_over_mountains": "🌄",
-  "sunrise": "🌅",
-  "city_sunset": "🌆",
-  "city_sunrise": "🌇",
-  "bridge_at_night": "🌉",
-  "hotsprings": "♨️",
-  "carousel_horse": "🎠",
-  "playground_slide": "🛝",
-  "ferris_wheel": "🎡",
-  "roller_coaster": "🎢",
-  "barber": "💈",
-  "circus_tent": "🎪",
-  "steam_locomotive": "🚂",
-  "railway_car": "🚃",
-  "bullettrain_side": "🚄",
-  "bullettrain_front": "🚅",
-  "train2": "🚆",
-  "metro": "🚇",
-  "light_rail": "🚈",
-  "station": "🚉",
-  "tram": "🚊",
-  "monorail": "🚝",
-  "mountain_railway": "🚞",
-  "train": "🚋",
-  "bus": "🚌",
-  "oncoming_bus": "🚍",
-  "trolleybus": "🚎",
-  "minibus": "🚐",
-  "ambulance": "🚑",
-  "fire_engine": "🚒",
-  "police_car": "🚓",
-  "oncoming_police_car": "🚔",
-  "taxi": "🚕",
-  "oncoming_taxi": "🚖",
-  "car": "🚗",
-  "red_car": "🚗",
-  "oncoming_automobile": "🚘",
-  "blue_car": "🚙",
-  "pickup_truck": "🛻",
-  "truck": "🚚",
-  "articulated_lorry": "🚛",
-  "tractor": "🚜",
-  "racing_car": "🏎️",
-  "motorcycle": "🏍️",
-  "motor_scooter": "🛵",
-  "manual_wheelchair": "🦽",
-  "motorized_wheelchair": "🦼",
-  "auto_rickshaw": "🛺",
-  "bike": "🚲",
-  "kick_scooter": "🛴",
-  "skateboard": "🛹",
-  "roller_skate": "🛼",
-  "busstop": "🚏",
-  "motorway": "🛣️",
-  "railway_track": "🛤️",
-  "oil_drum": "🛢️",
-  "fuelpump": "⛽",
-  "wheel": "🛞",
-  "rotating_light": "🚨",
-  "traffic_light": "🚥",
-  "vertical_traffic_light": "🚦",
-  "stop_sign": "🛑",
-  "construction": "🚧",
-  "anchor": "⚓",
-  "ring_buoy": "🛟",
-  "boat": "⛵",
-  "sailboat": "⛵",
-  "canoe": "🛶",
-  "speedboat": "🚤",
-  "passenger_ship": "🛳️",
-  "ferry": "⛴️",
-  "motor_boat": "🛥️",
-  "ship": "🚢",
-  "airplane": "✈️",
-  "small_airplane": "🛩️",
-  "flight_departure": "🛫",
-  "flight_arrival": "🛬",
-  "parachute": "🪂",
-  "seat": "💺",
-  "helicopter": "🚁",
-  "suspension_railway": "🚟",
-  "mountain_cableway": "🚠",
-  "aerial_tramway": "🚡",
-  "artificial_satellite": "🛰️",
-  "rocket": "🚀",
-  "flying_saucer": "🛸",
-  "bellhop_bell": "🛎️",
-  "luggage": "🧳",
-  "hourglass": "⌛",
-  "hourglass_flowing_sand": "⏳",
-  "watch": "⌚",
-  "alarm_clock": "⏰",
-  "stopwatch": "⏱️",
-  "timer_clock": "⏲️",
-  "mantelpiece_clock": "🕰️",
-  "clock12": "🕛",
-  "clock1230": "🕧",
-  "clock1": "🕐",
-  "clock130": "🕜",
-  "clock2": "🕑",
-  "clock230": "🕝",
-  "clock3": "🕒",
-  "clock330": "🕞",
-  "clock4": "🕓",
-  "clock430": "🕟",
-  "clock5": "🕔",
-  "clock530": "🕠",
-  "clock6": "🕕",
-  "clock630": "🕡",
-  "clock7": "🕖",
-  "clock730": "🕢",
-  "clock8": "🕗",
-  "clock830": "🕣",
-  "clock9": "🕘",
-  "clock930": "🕤",
-  "clock10": "🕙",
-  "clock1030": "🕥",
-  "clock11": "🕚",
-  "clock1130": "🕦",
-  "new_moon": "🌑",
-  "waxing_crescent_moon": "🌒",
-  "first_quarter_moon": "🌓",
-  "moon": "🌔",
-  "waxing_gibbous_moon": "🌔",
-  "full_moon": "🌕",
-  "waning_gibbous_moon": "🌖",
-  "last_quarter_moon": "🌗",
-  "waning_crescent_moon": "🌘",
-  "crescent_moon": "🌙",
-  "new_moon_with_face": "🌚",
-  "first_quarter_moon_with_face": "🌛",
-  "last_quarter_moon_with_face": "🌜",
-  "thermometer": "🌡️",
-  "sunny": "☀️",
-  "full_moon_with_face": "🌝",
-  "sun_with_face": "🌞",
-  "ringed_planet": "🪐",
-  "star": "⭐",
-  "star2": "🌟",
-  "stars": "🌠",
-  "milky_way": "🌌",
-  "cloud": "☁️",
-  "partly_sunny": "⛅",
-  "cloud_with_lightning_and_rain": "⛈️",
-  "sun_behind_small_cloud": "🌤️",
-  "sun_behind_large_cloud": "🌥️",
-  "sun_behind_rain_cloud": "🌦️",
-  "cloud_with_rain": "🌧️",
-  "cloud_with_snow": "🌨️",
-  "cloud_with_lightning": "🌩️",
-  "tornado": "🌪️",
-  "fog": "🌫️",
-  "wind_face": "🌬️",
-  "cyclone": "🌀",
-  "rainbow": "🌈",
-  "closed_umbrella": "🌂",
-  "open_umbrella": "☂️",
-  "umbrella": "☔",
-  "parasol_on_ground": "⛱️",
-  "zap": "⚡",
-  "snowflake": "❄️",
-  "snowman_with_snow": "☃️",
-  "snowman": "⛄",
-  "comet": "☄️",
-  "fire": "🔥",
-  "droplet": "💧",
-  "ocean": "🌊",
-  "jack_o_lantern": "🎃",
-  "christmas_tree": "🎄",
-  "fireworks": "🎆",
-  "sparkler": "🎇",
-  "firecracker": "🧨",
-  "sparkles": "✨",
-  "balloon": "🎈",
-  "tada": "🎉",
-  "confetti_ball": "🎊",
-  "tanabata_tree": "🎋",
-  "bamboo": "🎍",
-  "dolls": "🎎",
-  "flags": "🎏",
-  "wind_chime": "🎐",
-  "rice_scene": "🎑",
-  "red_envelope": "🧧",
-  "ribbon": "🎀",
-  "gift": "🎁",
-  "reminder_ribbon": "🎗️",
-  "tickets": "🎟️",
-  "ticket": "🎫",
-  "medal_military": "🎖️",
-  "trophy": "🏆",
-  "medal_sports": "🏅",
-  "1st_place_medal": "🥇",
-  "2nd_place_medal": "🥈",
-  "3rd_place_medal": "🥉",
-  "soccer": "⚽",
-  "baseball": "⚾",
-  "softball": "🥎",
-  "basketball": "🏀",
-  "volleyball": "🏐",
-  "football": "🏈",
-  "rugby_football": "🏉",
-  "tennis": "🎾",
-  "flying_disc": "🥏",
-  "bowling": "🎳",
-  "cricket_game": "🏏",
-  "field_hockey": "🏑",
-  "ice_hockey": "🏒",
-  "lacrosse": "🥍",
-  "ping_pong": "🏓",
-  "badminton": "🏸",
-  "boxing_glove": "🥊",
-  "martial_arts_uniform": "🥋",
-  "goal_net": "🥅",
-  "golf": "⛳",
-  "ice_skate": "⛸️",
-  "fishing_pole_and_fish": "🎣",
-  "diving_mask": "🤿",
-  "running_shirt_with_sash": "🎽",
-  "ski": "🎿",
-  "sled": "🛷",
-  "curling_stone": "🥌",
-  "dart": "🎯",
-  "yo_yo": "🪀",
-  "kite": "🪁",
-  "gun": "🔫",
-  "8ball": "🎱",
-  "crystal_ball": "🔮",
-  "magic_wand": "🪄",
-  "video_game": "🎮",
-  "joystick": "🕹️",
-  "slot_machine": "🎰",
-  "game_die": "🎲",
-  "jigsaw": "🧩",
-  "teddy_bear": "🧸",
-  "pinata": "🪅",
-  "mirror_ball": "🪩",
-  "nesting_dolls": "🪆",
-  "spades": "♠️",
-  "hearts": "♥️",
-  "diamonds": "♦️",
-  "clubs": "♣️",
-  "chess_pawn": "♟️",
-  "black_joker": "🃏",
-  "mahjong": "🀄",
-  "flower_playing_cards": "🎴",
-  "performing_arts": "🎭",
-  "framed_picture": "🖼️",
-  "art": "🎨",
-  "thread": "🧵",
-  "sewing_needle": "🪡",
-  "yarn": "🧶",
-  "knot": "🪢",
-  "eyeglasses": "👓",
-  "dark_sunglasses": "🕶️",
-  "goggles": "🥽",
-  "lab_coat": "🥼",
-  "safety_vest": "🦺",
-  "necktie": "👔",
-  "shirt": "👕",
-  "tshirt": "👕",
-  "jeans": "👖",
-  "scarf": "🧣",
-  "gloves": "🧤",
-  "coat": "🧥",
-  "socks": "🧦",
-  "dress": "👗",
-  "kimono": "👘",
-  "sari": "🥻",
-  "one_piece_swimsuit": "🩱",
-  "swim_brief": "🩲",
-  "shorts": "🩳",
-  "bikini": "👙",
-  "womans_clothes": "👚",
-  "folding_hand_fan": "🪭",
-  "purse": "👛",
-  "handbag": "👜",
-  "pouch": "👝",
-  "shopping": "🛍️",
-  "school_satchel": "🎒",
-  "thong_sandal": "🩴",
-  "mans_shoe": "👞",
-  "shoe": "👞",
-  "athletic_shoe": "👟",
-  "hiking_boot": "🥾",
-  "flat_shoe": "🥿",
-  "high_heel": "👠",
-  "sandal": "👡",
-  "ballet_shoes": "🩰",
-  "boot": "👢",
-  "hair_pick": "🪮",
-  "crown": "👑",
-  "womans_hat": "👒",
-  "tophat": "🎩",
-  "mortar_board": "🎓",
-  "billed_cap": "🧢",
-  "military_helmet": "🪖",
-  "rescue_worker_helmet": "⛑️",
-  "prayer_beads": "📿",
-  "lipstick": "💄",
-  "ring": "💍",
-  "gem": "💎",
-  "mute": "🔇",
-  "speaker": "🔈",
-  "sound": "🔉",
-  "loud_sound": "🔊",
-  "loudspeaker": "📢",
-  "mega": "📣",
-  "postal_horn": "📯",
-  "bell": "🔔",
-  "no_bell": "🔕",
-  "musical_score": "🎼",
-  "musical_note": "🎵",
-  "notes": "🎶",
-  "studio_microphone": "🎙️",
-  "level_slider": "🎚️",
-  "control_knobs": "🎛️",
-  "microphone": "🎤",
-  "headphones": "🎧",
-  "radio": "📻",
-  "saxophone": "🎷",
-  "accordion": "🪗",
-  "guitar": "🎸",
-  "musical_keyboard": "🎹",
-  "trumpet": "🎺",
-  "violin": "🎻",
-  "banjo": "🪕",
-  "drum": "🥁",
-  "long_drum": "🪘",
-  "maracas": "🪇",
-  "flute": "🪈",
-  "iphone": "📱",
-  "calling": "📲",
-  "phone": "☎️",
-  "telephone": "☎️",
-  "telephone_receiver": "📞",
-  "pager": "📟",
-  "fax": "📠",
-  "battery": "🔋",
-  "low_battery": "🪫",
-  "electric_plug": "🔌",
-  "computer": "💻",
-  "desktop_computer": "🖥️",
-  "printer": "🖨️",
-  "keyboard": "⌨️",
-  "computer_mouse": "🖱️",
-  "trackball": "🖲️",
-  "minidisc": "💽",
-  "floppy_disk": "💾",
-  "cd": "💿",
-  "dvd": "📀",
-  "abacus": "🧮",
-  "movie_camera": "🎥",
-  "film_strip": "🎞️",
-  "film_projector": "📽️",
-  "clapper": "🎬",
-  "tv": "📺",
-  "camera": "📷",
-  "camera_flash": "📸",
-  "video_camera": "📹",
-  "vhs": "📼",
-  "mag": "🔍",
-  "mag_right": "🔎",
-  "candle": "🕯️",
-  "bulb": "💡",
-  "flashlight": "🔦",
-  "izakaya_lantern": "🏮",
-  "lantern": "🏮",
-  "diya_lamp": "🪔",
-  "notebook_with_decorative_cover": "📔",
-  "closed_book": "📕",
-  "book": "📖",
-  "open_book": "📖",
-  "green_book": "📗",
-  "blue_book": "📘",
-  "orange_book": "📙",
-  "books": "📚",
-  "notebook": "📓",
-  "ledger": "📒",
-  "page_with_curl": "📃",
-  "scroll": "📜",
-  "page_facing_up": "📄",
-  "newspaper": "📰",
-  "newspaper_roll": "🗞️",
-  "bookmark_tabs": "📑",
-  "bookmark": "🔖",
-  "label": "🏷️",
-  "moneybag": "💰",
-  "coin": "🪙",
-  "yen": "💴",
-  "dollar": "💵",
-  "euro": "💶",
-  "pound": "💷",
-  "money_with_wings": "💸",
-  "credit_card": "💳",
-  "receipt": "🧾",
-  "chart": "💹",
-  "envelope": "✉️",
-  "email": "📧",
-  "e-mail": "📧",
-  "incoming_envelope": "📨",
-  "envelope_with_arrow": "📩",
-  "outbox_tray": "📤",
-  "inbox_tray": "📥",
-  "package": "📦",
-  "mailbox": "📫",
-  "mailbox_closed": "📪",
-  "mailbox_with_mail": "📬",
-  "mailbox_with_no_mail": "📭",
-  "postbox": "📮",
-  "ballot_box": "🗳️",
-  "pencil2": "✏️",
-  "black_nib": "✒️",
-  "fountain_pen": "🖋️",
-  "pen": "🖊️",
-  "paintbrush": "🖌️",
-  "crayon": "🖍️",
-  "memo": "📝",
-  "pencil": "📝",
-  "briefcase": "💼",
-  "file_folder": "📁",
-  "open_file_folder": "📂",
-  "card_index_dividers": "🗂️",
-  "date": "📅",
-  "calendar": "📆",
-  "spiral_notepad": "🗒️",
-  "spiral_calendar": "🗓️",
-  "card_index": "📇",
-  "chart_with_upwards_trend": "📈",
-  "chart_with_downwards_trend": "📉",
-  "bar_chart": "📊",
-  "clipboard": "📋",
-  "pushpin": "📌",
-  "round_pushpin": "📍",
-  "paperclip": "📎",
-  "paperclips": "🖇️",
-  "straight_ruler": "📏",
-  "triangular_ruler": "📐",
-  "scissors": "✂️",
-  "card_file_box": "🗃️",
-  "file_cabinet": "🗄️",
-  "wastebasket": "🗑️",
-  "lock": "🔒",
-  "unlock": "🔓",
-  "lock_with_ink_pen": "🔏",
-  "closed_lock_with_key": "🔐",
-  "key": "🔑",
-  "old_key": "🗝️",
-  "hammer": "🔨",
-  "axe": "🪓",
-  "pick": "⛏️",
-  "hammer_and_pick": "⚒️",
-  "hammer_and_wrench": "🛠️",
-  "dagger": "🗡️",
-  "crossed_swords": "⚔️",
-  "bomb": "💣",
-  "boomerang": "🪃",
-  "bow_and_arrow": "🏹",
-  "shield": "🛡️",
-  "carpentry_saw": "🪚",
-  "wrench": "🔧",
-  "screwdriver": "🪛",
-  "nut_and_bolt": "🔩",
-  "gear": "⚙️",
-  "clamp": "🗜️",
-  "balance_scale": "⚖️",
-  "probing_cane": "🦯",
-  "link": "🔗",
-  "chains": "⛓️",
-  "hook": "🪝",
-  "toolbox": "🧰",
-  "magnet": "🧲",
-  "ladder": "🪜",
-  "alembic": "⚗️",
-  "test_tube": "🧪",
-  "petri_dish": "🧫",
-  "dna": "🧬",
-  "microscope": "🔬",
-  "telescope": "🔭",
-  "satellite": "📡",
-  "syringe": "💉",
-  "drop_of_blood": "🩸",
-  "pill": "💊",
-  "adhesive_bandage": "🩹",
-  "crutch": "🩼",
-  "stethoscope": "🩺",
-  "x_ray": "🩻",
-  "door": "🚪",
-  "elevator": "🛗",
-  "mirror": "🪞",
-  "window": "🪟",
-  "bed": "🛏️",
-  "couch_and_lamp": "🛋️",
-  "chair": "🪑",
-  "toilet": "🚽",
-  "plunger": "🪠",
-  "shower": "🚿",
-  "bathtub": "🛁",
-  "mouse_trap": "🪤",
-  "razor": "🪒",
-  "lotion_bottle": "🧴",
-  "safety_pin": "🧷",
-  "broom": "🧹",
-  "basket": "🧺",
-  "roll_of_paper": "🧻",
-  "bucket": "🪣",
-  "soap": "🧼",
-  "bubbles": "🫧",
-  "toothbrush": "🪥",
-  "sponge": "🧽",
-  "fire_extinguisher": "🧯",
-  "shopping_cart": "🛒",
-  "smoking": "🚬",
-  "coffin": "⚰️",
-  "headstone": "🪦",
-  "funeral_urn": "⚱️",
-  "nazar_amulet": "🧿",
-  "hamsa": "🪬",
-  "moyai": "🗿",
-  "placard": "🪧",
-  "identification_card": "🪪",
-  "atm": "🏧",
-  "put_litter_in_its_place": "🚮",
-  "potable_water": "🚰",
-  "wheelchair": "♿",
-  "mens": "🚹",
-  "womens": "🚺",
-  "restroom": "🚻",
-  "baby_symbol": "🚼",
-  "wc": "🚾",
-  "passport_control": "🛂",
-  "customs": "🛃",
-  "baggage_claim": "🛄",
-  "left_luggage": "🛅",
-  "warning": "⚠️",
-  "children_crossing": "🚸",
-  "no_entry": "⛔",
-  "no_entry_sign": "🚫",
-  "no_bicycles": "🚳",
-  "no_smoking": "🚭",
-  "do_not_litter": "🚯",
-  "non-potable_water": "🚱",
-  "no_pedestrians": "🚷",
-  "no_mobile_phones": "📵",
-  "underage": "🔞",
-  "radioactive": "☢️",
-  "biohazard": "☣️",
-  "arrow_up": "⬆️",
-  "arrow_upper_right": "↗️",
-  "arrow_right": "➡️",
-  "arrow_lower_right": "↘️",
-  "arrow_down": "⬇️",
-  "arrow_lower_left": "↙️",
-  "arrow_left": "⬅️",
-  "arrow_upper_left": "↖️",
-  "arrow_up_down": "↕️",
-  "left_right_arrow": "↔️",
-  "leftwards_arrow_with_hook": "↩️",
-  "arrow_right_hook": "↪️",
-  "arrow_heading_up": "⤴️",
-  "arrow_heading_down": "⤵️",
-  "arrows_clockwise": "🔃",
-  "arrows_counterclockwise": "🔄",
-  "back": "🔙",
-  "end": "🔚",
-  "on": "🔛",
-  "soon": "🔜",
-  "top": "🔝",
-  "place_of_worship": "🛐",
-  "atom_symbol": "⚛️",
-  "om": "🕉️",
-  "star_of_david": "✡️",
-  "wheel_of_dharma": "☸️",
-  "yin_yang": "☯️",
-  "latin_cross": "✝️",
-  "orthodox_cross": "☦️",
-  "star_and_crescent": "☪️",
-  "peace_symbol": "☮️",
-  "menorah": "🕎",
-  "six_pointed_star": "🔯",
-  "khanda": "🪯",
-  "aries": "♈",
-  "taurus": "♉",
-  "gemini": "♊",
-  "cancer": "♋",
-  "leo": "♌",
-  "virgo": "♍",
-  "libra": "♎",
-  "scorpius": "♏",
-  "sagittarius": "♐",
-  "capricorn": "♑",
-  "aquarius": "♒",
-  "pisces": "♓",
-  "ophiuchus": "⛎",
-  "twisted_rightwards_arrows": "🔀",
-  "repeat": "🔁",
-  "repeat_one": "🔂",
-  "arrow_forward": "▶️",
-  "fast_forward": "⏩",
-  "next_track_button": "⏭️",
-  "play_or_pause_button": "⏯️",
-  "arrow_backward": "◀️",
-  "rewind": "⏪",
-  "previous_track_button": "⏮️",
-  "arrow_up_small": "🔼",
-  "arrow_double_up": "⏫",
-  "arrow_down_small": "🔽",
-  "arrow_double_down": "⏬",
-  "pause_button": "⏸️",
-  "stop_button": "⏹️",
-  "record_button": "⏺️",
-  "eject_button": "⏏️",
-  "cinema": "🎦",
-  "low_brightness": "🔅",
-  "high_brightness": "🔆",
-  "signal_strength": "📶",
-  "wireless": "🛜",
-  "vibration_mode": "📳",
-  "mobile_phone_off": "📴",
-  "female_sign": "♀️",
-  "male_sign": "♂️",
-  "transgender_symbol": "⚧️",
-  "heavy_multiplication_x": "✖️",
-  "heavy_plus_sign": "➕",
-  "heavy_minus_sign": "➖",
-  "heavy_division_sign": "➗",
-  "heavy_equals_sign": "🟰",
-  "infinity": "♾️",
-  "bangbang": "‼️",
-  "interrobang": "⁉️",
-  "question": "❓",
-  "grey_question": "❔",
-  "grey_exclamation": "❕",
-  "exclamation": "❗",
-  "heavy_exclamation_mark": "❗",
-  "wavy_dash": "〰️",
-  "currency_exchange": "💱",
-  "heavy_dollar_sign": "💲",
-  "medical_symbol": "⚕️",
-  "recycle": "♻️",
-  "fleur_de_lis": "⚜️",
-  "trident": "🔱",
-  "name_badge": "📛",
-  "beginner": "🔰",
-  "o": "⭕",
-  "white_check_mark": "✅",
-  "ballot_box_with_check": "☑️",
-  "heavy_check_mark": "✔️",
-  "x": "❌",
-  "negative_squared_cross_mark": "❎",
-  "curly_loop": "➰",
-  "loop": "➿",
-  "part_alternation_mark": "〽️",
-  "eight_spoked_asterisk": "✳️",
-  "eight_pointed_black_star": "✴️",
-  "sparkle": "❇️",
-  "copyright": "©️",
-  "registered": "®️",
-  "tm": "™️",
-  "hash": "#️⃣",
-  "asterisk": "*️⃣",
-  "zero": "0️⃣",
-  "one": "1️⃣",
-  "two": "2️⃣",
-  "three": "3️⃣",
-  "four": "4️⃣",
-  "five": "5️⃣",
-  "six": "6️⃣",
-  "seven": "7️⃣",
-  "eight": "8️⃣",
-  "nine": "9️⃣",
-  "keycap_ten": "🔟",
-  "capital_abcd": "🔠",
-  "abcd": "🔡",
-  "symbols": "🔣",
-  "abc": "🔤",
-  "a": "🅰️",
-  "ab": "🆎",
-  "b": "🅱️",
-  "cl": "🆑",
-  "cool": "🆒",
-  "free": "🆓",
-  "information_source": "ℹ️",
-  "id": "🆔",
-  "m": "Ⓜ️",
-  "new": "🆕",
-  "ng": "🆖",
-  "o2": "🅾️",
-  "ok": "🆗",
-  "parking": "🅿️",
-  "sos": "🆘",
-  "up": "🆙",
-  "vs": "🆚",
-  "koko": "🈁",
-  "sa": "🈂️",
-  "ideograph_advantage": "🉐",
-  "accept": "🉑",
-  "congratulations": "㊗️",
-  "secret": "㊙️",
-  "u6e80": "🈵",
-  "red_circle": "🔴",
-  "orange_circle": "🟠",
-  "yellow_circle": "🟡",
-  "green_circle": "🟢",
-  "large_blue_circle": "🔵",
-  "purple_circle": "🟣",
-  "brown_circle": "🟤",
-  "black_circle": "⚫",
-  "white_circle": "⚪",
-  "red_square": "🟥",
-  "orange_square": "🟧",
-  "yellow_square": "🟨",
-  "green_square": "🟩",
-  "blue_square": "🟦",
-  "purple_square": "🟪",
-  "brown_square": "🟫",
-  "black_large_square": "⬛",
-  "white_large_square": "⬜",
-  "black_medium_square": "◼️",
-  "white_medium_square": "◻️",
-  "black_medium_small_square": "◾",
-  "white_medium_small_square": "◽",
-  "black_small_square": "▪️",
-  "white_small_square": "▫️",
-  "large_orange_diamond": "🔶",
-  "large_blue_diamond": "🔷",
-  "small_orange_diamond": "🔸",
-  "small_blue_diamond": "🔹",
-  "small_red_triangle": "🔺",
-  "small_red_triangle_down": "🔻",
-  "diamond_shape_with_a_dot_inside": "💠",
-  "radio_button": "🔘",
-  "white_square_button": "🔳",
-  "black_square_button": "🔲",
-  "checkered_flag": "🏁",
-  "triangular_flag_on_post": "🚩",
-  "crossed_flags": "🎌",
-  "black_flag": "🏴",
-  "white_flag": "🏳️",
-  "rainbow_flag": "🏳️‍🌈",
-  "transgender_flag": "🏳️‍⚧️",
-  "pirate_flag": "🏴‍☠️",
-  "ascension_island": "🇦🇨",
-  "andorra": "🇦🇩",
-  "united_arab_emirates": "🇦🇪",
-  "afghanistan": "🇦🇫",
-  "antigua_barbuda": "🇦🇬",
-  "anguilla": "🇦🇮",
-  "albania": "🇦🇱",
-  "armenia": "🇦🇲",
-  "angola": "🇦🇴",
-  "antarctica": "🇦🇶",
-  "argentina": "🇦🇷",
-  "american_samoa": "🇦🇸",
-  "austria": "🇦🇹",
-  "australia": "🇦🇺",
-  "aruba": "🇦🇼",
-  "aland_islands": "🇦🇽",
-  "azerbaijan": "🇦🇿",
-  "bosnia_herzegovina": "🇧🇦",
-  "barbados": "🇧🇧",
-  "bangladesh": "🇧🇩",
-  "belgium": "🇧🇪",
-  "burkina_faso": "🇧🇫",
-  "bulgaria": "🇧🇬",
-  "bahrain": "🇧🇭",
-  "burundi": "🇧🇮",
-  "benin": "🇧🇯",
-  "st_barthelemy": "🇧🇱",
-  "bermuda": "🇧🇲",
-  "brunei": "🇧🇳",
-  "bolivia": "🇧🇴",
-  "caribbean_netherlands": "🇧🇶",
-  "brazil": "🇧🇷",
-  "bahamas": "🇧🇸",
-  "bhutan": "🇧🇹",
-  "bouvet_island": "🇧🇻",
-  "botswana": "🇧🇼",
-  "belarus": "🇧🇾",
-  "belize": "🇧🇿",
-  "canada": "🇨🇦",
-  "cocos_islands": "🇨🇨",
-  "congo_kinshasa": "🇨🇩",
-  "central_african_republic": "🇨🇫",
-  "congo_brazzaville": "🇨🇬",
-  "switzerland": "🇨🇭",
-  "cote_divoire": "🇨🇮",
-  "cook_islands": "🇨🇰",
-  "chile": "🇨🇱",
-  "cameroon": "🇨🇲",
-  "cn": "🇨🇳",
-  "colombia": "🇨🇴",
-  "clipperton_island": "🇨🇵",
-  "costa_rica": "🇨🇷",
-  "cuba": "🇨🇺",
-  "cape_verde": "🇨🇻",
-  "curacao": "🇨🇼",
-  "christmas_island": "🇨🇽",
-  "cyprus": "🇨🇾",
-  "czech_republic": "🇨🇿",
-  "de": "🇩🇪",
-  "diego_garcia": "🇩🇬",
-  "djibouti": "🇩🇯",
-  "denmark": "🇩🇰",
-  "dominica": "🇩🇲",
-  "dominican_republic": "🇩🇴",
-  "algeria": "🇩🇿",
-  "ceuta_melilla": "🇪🇦",
-  "ecuador": "🇪🇨",
-  "estonia": "🇪🇪",
-  "egypt": "🇪🇬",
-  "western_sahara": "🇪🇭",
-  "eritrea": "🇪🇷",
-  "es": "🇪🇸",
-  "ethiopia": "🇪🇹",
-  "eu": "🇪🇺",
-  "european_union": "🇪🇺",
-  "finland": "🇫🇮",
-  "fiji": "🇫🇯",
-  "falkland_islands": "🇫🇰",
-  "micronesia": "🇫🇲",
-  "faroe_islands": "🇫🇴",
-  "fr": "🇫🇷",
-  "gabon": "🇬🇦",
-  "gb": "🇬🇧",
-  "uk": "🇬🇧",
-  "grenada": "🇬🇩",
-  "georgia": "🇬🇪",
-  "french_guiana": "🇬🇫",
-  "guernsey": "🇬🇬",
-  "ghana": "🇬🇭",
-  "gibraltar": "🇬🇮",
-  "greenland": "🇬🇱",
-  "gambia": "🇬🇲",
-  "guinea": "🇬🇳",
-  "guadeloupe": "🇬🇵",
-  "equatorial_guinea": "🇬🇶",
-  "greece": "🇬🇷",
-  "south_georgia_south_sandwich_islands": "🇬🇸",
-  "guatemala": "🇬🇹",
-  "guam": "🇬🇺",
-  "guinea_bissau": "🇬🇼",
-  "guyana": "🇬🇾",
-  "hong_kong": "🇭🇰",
-  "heard_mcdonald_islands": "🇭🇲",
-  "honduras": "🇭🇳",
-  "croatia": "🇭🇷",
-  "haiti": "🇭🇹",
-  "hungary": "🇭🇺",
-  "canary_islands": "🇮🇨",
-  "indonesia": "🇮🇩",
-  "ireland": "🇮🇪",
-  "israel": "🇮🇱",
-  "isle_of_man": "🇮🇲",
-  "india": "🇮🇳",
-  "british_indian_ocean_territory": "🇮🇴",
-  "iraq": "🇮🇶",
-  "iran": "🇮🇷",
-  "iceland": "🇮🇸",
-  "it": "🇮🇹",
-  "jersey": "🇯🇪",
-  "jamaica": "🇯🇲",
-  "jordan": "🇯🇴",
-  "jp": "🇯🇵",
-  "kenya": "🇰🇪",
-  "kyrgyzstan": "🇰🇬",
-  "cambodia": "🇰🇭",
-  "kiribati": "🇰🇮",
-  "comoros": "🇰🇲",
-  "st_kitts_nevis": "🇰🇳",
-  "north_korea": "🇰🇵",
-  "kr": "🇰🇷",
-  "kuwait": "🇰🇼",
-  "cayman_islands": "🇰🇾",
-  "kazakhstan": "🇰🇿",
-  "laos": "🇱🇦",
-  "lebanon": "🇱🇧",
-  "st_lucia": "🇱🇨",
-  "liechtenstein": "🇱🇮",
-  "sri_lanka": "🇱🇰",
-  "liberia": "🇱🇷",
-  "lesotho": "🇱🇸",
-  "lithuania": "🇱🇹",
-  "luxembourg": "🇱🇺",
-  "latvia": "🇱🇻",
-  "libya": "🇱🇾",
-  "morocco": "🇲🇦",
-  "monaco": "🇲🇨",
-  "moldova": "🇲🇩",
-  "montenegro": "🇲🇪",
-  "st_martin": "🇲🇫",
-  "madagascar": "🇲🇬",
-  "marshall_islands": "🇲🇭",
-  "macedonia": "🇲🇰",
-  "mali": "🇲🇱",
-  "myanmar": "🇲🇲",
-  "mongolia": "🇲🇳",
-  "macau": "🇲🇴",
-  "northern_mariana_islands": "🇲🇵",
-  "martinique": "🇲🇶",
-  "mauritania": "🇲🇷",
-  "montserrat": "🇲🇸",
-  "malta": "🇲🇹",
-  "mauritius": "🇲🇺",
-  "maldives": "🇲🇻",
-  "malawi": "🇲🇼",
-  "mexico": "🇲🇽",
-  "malaysia": "🇲🇾",
-  "mozambique": "🇲🇿",
-  "namibia": "🇳🇦",
-  "new_caledonia": "🇳🇨",
-  "niger": "🇳🇪",
-  "norfolk_island": "🇳🇫",
-  "nigeria": "🇳🇬",
-  "nicaragua": "🇳🇮",
-  "netherlands": "🇳🇱",
-  "norway": "🇳🇴",
-  "nepal": "🇳🇵",
-  "nauru": "🇳🇷",
-  "niue": "🇳🇺",
-  "new_zealand": "🇳🇿",
-  "oman": "🇴🇲",
-  "panama": "🇵🇦",
-  "peru": "🇵🇪",
-  "french_polynesia": "🇵🇫",
-  "papua_new_guinea": "🇵🇬",
-  "philippines": "🇵🇭",
-  "pakistan": "🇵🇰",
-  "poland": "🇵🇱",
-  "st_pierre_miquelon": "🇵🇲",
-  "pitcairn_islands": "🇵🇳",
-  "puerto_rico": "🇵🇷",
-  "palestinian_territories": "🇵🇸",
-  "portugal": "🇵🇹",
-  "palau": "🇵🇼",
-  "paraguay": "🇵🇾",
-  "qatar": "🇶🇦",
-  "reunion": "🇷🇪",
-  "romania": "🇷🇴",
-  "serbia": "🇷🇸",
-  "ru": "🇷🇺",
-  "rwanda": "🇷🇼",
-  "saudi_arabia": "🇸🇦",
-  "solomon_islands": "🇸🇧",
-  "seychelles": "🇸🇨",
-  "sudan": "🇸🇩",
-  "sweden": "🇸🇪",
-  "singapore": "🇸🇬",
-  "st_helena": "🇸🇭",
-  "slovenia": "🇸🇮",
-  "svalbard_jan_mayen": "🇸🇯",
-  "slovakia": "🇸🇰",
-  "sierra_leone": "🇸🇱",
-  "san_marino": "🇸🇲",
-  "senegal": "🇸🇳",
-  "somalia": "🇸🇴",
-  "suriname": "🇸🇷",
-  "south_sudan": "🇸🇸",
-  "sao_tome_principe": "🇸🇹",
-  "el_salvador": "🇸🇻",
-  "sint_maarten": "🇸🇽",
-  "syria": "🇸🇾",
-  "swaziland": "🇸🇿",
-  "tristan_da_cunha": "🇹🇦",
-  "turks_caicos_islands": "🇹🇨",
-  "chad": "🇹🇩",
-  "french_southern_territories": "🇹🇫",
-  "togo": "🇹🇬",
-  "thailand": "🇹🇭",
-  "tajikistan": "🇹🇯",
-  "tokelau": "🇹🇰",
-  "timor_leste": "🇹🇱",
-  "turkmenistan": "🇹🇲",
-  "tunisia": "🇹🇳",
-  "tonga": "🇹🇴",
-  "tr": "🇹🇷",
-  "trinidad_tobago": "🇹🇹",
-  "tuvalu": "🇹🇻",
-  "taiwan": "🇹🇼",
-  "tanzania": "🇹🇿",
-  "ukraine": "🇺🇦",
-  "uganda": "🇺🇬",
-  "us_outlying_islands": "🇺🇲",
-  "united_nations": "🇺🇳",
-  "us": "🇺🇸",
-  "uruguay": "🇺🇾",
-  "uzbekistan": "🇺🇿",
-  "vatican_city": "🇻🇦",
-  "st_vincent_grenadines": "🇻🇨",
-  "venezuela": "🇻🇪",
-  "british_virgin_islands": "🇻🇬",
-  "us_virgin_islands": "🇻🇮",
-  "vietnam": "🇻🇳",
-  "vanuatu": "🇻🇺",
-  "wallis_futuna": "🇼🇫",
-  "samoa": "🇼🇸",
-  "kosovo": "🇽🇰",
-  "yemen": "🇾🇪",
-  "mayotte": "🇾🇹",
-  "south_africa": "🇿🇦",
-  "zambia": "🇿🇲",
-  "zimbabwe": "🇿🇼",
-  "england": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-  "scotland": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-  "wales": "🏴󠁧󠁢󠁷󠁬󠁳󠁿"
-};
-function emoji_plugin(md, options2) {
-  const defaults2 = {
-    defs: emojies_defs,
-    shortcuts: emojies_shortcuts,
-    enabled: []
-  };
-  const opts = md.utils.assign({}, defaults2, options2 || {});
-  emoji_plugin$1(md, opts);
-}
-const N = /^>(?:(?: {0,3})| {0,2}\t {0,1})\[!(.*)\]\s*$/i, O = (i2, { alertNames: A = ["tip", "warning", "caution", "important", "note"], deep: v = false, openRender: M, closeRender: I, titleRender: y } = {}) => {
-  const R = (e2, s2, o2, T) => {
-    if (e2.sCount[s2] - e2.blkIndent >= 4 || e2.level !== 0 && !v) return false;
-    const S = e2.bMarks[s2] + e2.tShift[s2], $ = e2.eMarks[s2];
-    if (e2.src.charAt(S) !== ">") return false;
-    const f2 = N.exec(e2.src.slice(S, $));
-    if (!f2 || !A.includes(f2[1].toLowerCase())) return false;
-    if (T) return true;
-    const k = f2[1].toLowerCase(), p2 = [], b2 = [], h = [], u2 = [], q = e2.lineMax, J = e2.parentType, L = e2.md.block.ruler.getRules("alert");
-    e2.parentType = "alert";
-    let t2;
-    for (t2 = s2 + 1; t2 < o2; t2++) {
-      let r2 = false, x = false, a2 = e2.bMarks[t2] + e2.tShift[t2];
-      const m = e2.eMarks[t2], E = e2.sCount[t2] < e2.blkIndent;
-      if (a2 >= m) break;
-      if (e2.src.charAt(a2++) === ">" && !E) {
-        let l2, c2 = e2.sCount[t2] + 1;
-        e2.src.charAt(a2) === " " ? (a2++, c2++, r2 = false, l2 = true) : e2.src.charAt(a2) === "	" ? (l2 = true, (e2.bsCount[t2] + c2) % 4 === 3 ? (a2++, c2++, r2 = false) : r2 = true) : l2 = false;
-        let d2 = c2;
-        for (p2.push(e2.bMarks[t2]), e2.bMarks[t2] = a2; a2 < m; ) {
-          const g = e2.src.charAt(a2);
-          if (g === "	") d2 += 4 - (d2 + e2.bsCount[t2] + (r2 ? 1 : 0)) % 4;
-          else if (g === " ") d2++;
-          else break;
-          a2++;
-        }
-        x = a2 >= m, b2.push(e2.bsCount[t2]), e2.bsCount[t2] = e2.sCount[t2] + 1 + (l2 ? 1 : 0), h.push(e2.sCount[t2]), e2.sCount[t2] = d2 - c2, u2.push(e2.tShift[t2]), e2.tShift[t2] = a2 - e2.bMarks[t2];
-        continue;
-      }
-      if (x) break;
-      let _ = false;
-      for (const l2 of L) if (l2(e2, t2, o2, true)) {
-        _ = true;
-        break;
-      }
-      if (_) {
-        e2.lineMax = t2, e2.blkIndent !== 0 && (p2.push(e2.bMarks[t2]), b2.push(e2.bsCount[t2]), u2.push(e2.tShift[t2]), h.push(e2.sCount[t2]), e2.sCount[t2] -= e2.blkIndent);
-        break;
-      }
-      p2.push(e2.bMarks[t2]), b2.push(e2.bsCount[t2]), u2.push(e2.tShift[t2]), h.push(e2.sCount[t2]), e2.sCount[t2] = -1;
-    }
-    const j = e2.blkIndent;
-    e2.blkIndent = 0;
-    const z = [s2, s2 + 1], w = [s2 + 1, 0], C = e2.push("alert_open", "div", 1);
-    C.markup = k, C.attrJoin("class", `markdown-alert markdown-alert-${k}`), C.map = w;
-    const n2 = e2.push("alert_title", "", 0);
-    n2.attrJoin("class", "markdown-alert-title"), n2.markup = k, n2.content = f2[1], n2.map = z, e2.md.block.tokenize(e2, s2 + 1, t2);
-    const B = e2.push("alert_close", "div", -1);
-    B.markup = k, e2.lineMax = q, e2.parentType = J, w[1] = e2.line;
-    for (let r2 = 0; r2 < u2.length; r2++) e2.bMarks[r2 + s2] = p2[r2], e2.tShift[r2 + s2] = u2[r2], e2.sCount[r2 + s2] = h[r2], e2.bsCount[r2 + s2] = b2[r2];
-    return e2.blkIndent = j, true;
-  };
-  i2.block.ruler.before("blockquote", "alert", R, { alt: ["paragraph", "reference", "blockquote", "list"] }), M && (i2.renderer.rules.alert_open = M), I && (i2.renderer.rules.alert_close = I), i2.renderer.rules.alert_title = y != null ? y : (e2, s2) => {
-    const o2 = e2[s2];
-    return `<p class="markdown-alert-title">${o2.content[0].toUpperCase() + o2.content.substring(1).toLowerCase()}</p>
-`;
-  };
-};
-function container_plugin(md, name, options2) {
-  function validateDefault(params) {
-    return params.trim().split(" ", 2)[0] === name;
-  }
-  function renderDefault(tokens, idx, _options, env, slf) {
-    if (tokens[idx].nesting === 1) {
-      tokens[idx].attrJoin("class", name);
-    }
-    return slf.renderToken(tokens, idx, _options, env, slf);
-  }
-  options2 = options2 || {};
-  const min_markers = 3;
-  const marker_str = options2.marker || ":";
-  const marker_char = marker_str.charCodeAt(0);
-  const marker_len = marker_str.length;
-  const validate = options2.validate || validateDefault;
-  const render = options2.render || renderDefault;
-  function container(state, startLine, endLine, silent) {
-    let pos;
-    let auto_closed = false;
-    let start = state.bMarks[startLine] + state.tShift[startLine];
-    let max = state.eMarks[startLine];
-    if (marker_char !== state.src.charCodeAt(start)) {
-      return false;
-    }
-    for (pos = start + 1; pos <= max; pos++) {
-      if (marker_str[(pos - start) % marker_len] !== state.src[pos]) {
-        break;
-      }
-    }
-    const marker_count = Math.floor((pos - start) / marker_len);
-    if (marker_count < min_markers) {
-      return false;
-    }
-    pos -= (pos - start) % marker_len;
-    const markup = state.src.slice(start, pos);
-    const params = state.src.slice(pos, max);
-    if (!validate(params, markup)) {
-      return false;
-    }
-    if (silent) {
-      return true;
-    }
-    let nextLine = startLine;
-    for (; ; ) {
-      nextLine++;
-      if (nextLine >= endLine) {
-        break;
-      }
-      start = state.bMarks[nextLine] + state.tShift[nextLine];
-      max = state.eMarks[nextLine];
-      if (start < max && state.sCount[nextLine] < state.blkIndent) {
-        break;
-      }
-      if (marker_char !== state.src.charCodeAt(start)) {
-        continue;
-      }
-      if (state.sCount[nextLine] - state.blkIndent >= 4) {
-        continue;
-      }
-      for (pos = start + 1; pos <= max; pos++) {
-        if (marker_str[(pos - start) % marker_len] !== state.src[pos]) {
-          break;
-        }
-      }
-      if (Math.floor((pos - start) / marker_len) < marker_count) {
-        continue;
-      }
-      pos -= (pos - start) % marker_len;
-      pos = state.skipSpaces(pos);
-      if (pos < max) {
-        continue;
-      }
-      auto_closed = true;
-      break;
-    }
-    const old_parent = state.parentType;
-    const old_line_max = state.lineMax;
-    state.parentType = "container";
-    state.lineMax = nextLine;
-    const token_o = state.push("container_" + name + "_open", "div", 1);
-    token_o.markup = markup;
-    token_o.block = true;
-    token_o.info = params;
-    token_o.map = [startLine, nextLine];
-    state.md.block.tokenize(state, startLine + 1, nextLine);
-    const token_c = state.push("container_" + name + "_close", "div", -1);
-    token_c.markup = state.src.slice(start, pos);
-    token_c.block = true;
-    state.parentType = old_parent;
-    state.lineMax = old_line_max;
-    state.line = nextLine + (auto_closed ? 1 : 0);
-    return true;
-  }
-  md.block.ruler.before("fence", "container_" + name, container, {
-    alt: ["paragraph", "reference", "blockquote", "list"]
-  });
-  md.renderer.rules["container_" + name + "_open"] = render;
-  md.renderer.rules["container_" + name + "_close"] = render;
-}
-function abbr_plugin(md, opts) {
-  const opts_defaults = {
-    abbreviations: {}
-  };
-  opts = Object.assign({}, opts_defaults, opts);
-  opts.abbreviations = Object.fromEntries(
-    Object.entries(opts.abbreviations).map(([key, value]) => [`:${key}`, value])
-  );
-  const escapeRE2 = md.utils.escapeRE;
-  const OTHER_CHARS = " \r\n$+<=>^`|~";
-  const UNICODE_PUNCT_RE = md.utils.lib.ucmicro.P.source;
-  const UNICODE_SPACE_RE = md.utils.lib.ucmicro.Z.source;
-  function abbr_def(state, startLine, endLine, silent) {
-    let labelEnd;
-    let pos = state.bMarks[startLine] + state.tShift[startLine];
-    const max = state.eMarks[startLine];
-    if (pos + 2 >= max) {
-      return false;
-    }
-    if (state.src.charCodeAt(pos++) !== 42) {
-      return false;
-    }
-    if (state.src.charCodeAt(pos++) !== 91) {
-      return false;
-    }
-    const labelStart = pos;
-    for (; pos < max; pos++) {
-      const ch = state.src.charCodeAt(pos);
-      if (ch === 91) {
-        return false;
-      } else if (ch === 93) {
-        labelEnd = pos;
-        break;
-      } else if (ch === 92) {
-        pos++;
-      }
-    }
-    if (labelEnd < 0 || state.src.charCodeAt(labelEnd + 1) !== 58) {
-      return false;
-    }
-    if (silent) {
-      return true;
-    }
-    const label = state.src.slice(labelStart, labelEnd).replace(/\\(.)/g, "$1");
-    const title = state.src.slice(labelEnd + 2, max).trim();
-    if (label.length === 0) {
-      return false;
-    }
-    if (title.length === 0) {
-      return false;
-    }
-    if (!opts.abbreviations) {
-      opts.abbreviations = {};
-    }
-    if (typeof opts.abbreviations[":" + label] === "undefined") {
-      opts.abbreviations[":" + label] = title;
-    }
-    state.line = startLine + 1;
-    return true;
-  }
-  function abbr_replace(state) {
-    const blockTokens = state.tokens;
-    if (!opts.abbreviations) {
-      return;
-    }
-    const regSimple = new RegExp(
-      "(?:" + Object.keys(opts.abbreviations).map(function(x) {
-        return x.substr(1);
-      }).sort(function(a2, b2) {
-        return b2.length - a2.length;
-      }).map(escapeRE2).join("|") + ")"
-    );
-    const abbrList = (
-      // "(?<abbr>" +
-      "(" + Object.keys(opts.abbreviations).map(function(x) {
-        return x.substr(1);
-      }).sort(function(a2, b2) {
-        return b2.length - a2.length;
-      }).map(escapeRE2).join("|") + ")"
-    );
-    console.log("abbrList", abbrList);
-    const regText = "(^|" + UNICODE_PUNCT_RE + "|" + UNICODE_SPACE_RE + "|[" + OTHER_CHARS.split("").map(escapeRE2).join("") + "])" + abbrList + "($|" + UNICODE_PUNCT_RE + "|" + UNICODE_SPACE_RE + "|[" + OTHER_CHARS.split("").map(escapeRE2).join("") + "])";
-    const reg = new RegExp(regText, "g");
-    function convertTokenToInlineBlock(token) {
-      console.group("convertTokenToInlineBlock");
-      const text2 = token.content;
-      const newBlocks = [];
-      if (token.type == "text") {
-        console.log("we have a text block");
-        if (regSimple.test(text2)) {
-          console.log("it contains an abbr! we need to split it up.");
-          let pos = 0;
-          reg.lastIndex = 0;
-          let m;
-          while (m = reg.exec(text2)) {
-            console.log("m", m);
-            if (m.index > 0 || m[1].length > 0) {
-              console.log("handle pre abbr text");
-              console.log("state", state);
-              const newBlock = new state.Token("inline", "", 0);
-              console.log("newBlock", newBlock);
-              const newChild = new state.Token("text", "", 0);
-              newChild.content = text2.slice(pos, m.index + m[1].length);
-              newBlock.children = [newChild];
-              newBlock.content = newChild.content;
-              newBlocks.push(newBlock);
-            }
-            const token_t = new state.Token("abbr", "q-tooltip", 0);
-            token_t.content = m[2];
-            token_t.attrs = [["title", opts.abbreviations[":" + m[2]]]];
-            token_t.abbr = opts.abbreviations[":" + m[2]];
-            newBlocks.push(token_t);
-            reg.lastIndex -= m[3].length;
-            pos = reg.lastIndex;
-          }
-          if (!newBlocks.length) {
-            console.error(
-              "uh - this can/should never happen as we have already checked that there is a abbr inside the token.. "
-            );
-          }
-          if (pos < text2.length) {
-            const newBlock = new state.Token("inline", "", 0);
-            const newChild = new state.Token("text", "", 0);
-            newChild.content = text2.slice(pos);
-            newBlock.children = [newChild];
-            newBlocks.push(newBlock);
-          }
-        } else {
-          console.log("no abbr. just copy over..");
-          const newBlock = new state.Token("inline", "", 0);
-          console.log("newBlock", newBlock);
-          newBlock.children = [token];
-          newBlocks.push(newBlock);
-        }
-      } else {
-        console.log("we have a non text block - just copy it over..");
-        const newBlock = new state.Token("inline", "", 0);
-        console.log("newBlock", newBlock);
-        newBlock.children = [token];
-        newBlocks.push(newBlock);
-      }
-      console.groupEnd();
-      return newBlocks;
-    }
-    console.log("blockTokens", blockTokens.length);
-    for (let j = 0, l2 = blockTokens.length; j < l2; j++) {
-      const blockToken = blockTokens[j];
-      if (blockToken.type !== "inline") {
-        continue;
-      }
-      if (!regSimple.test(blockToken.content)) {
-        continue;
-      }
-      const newBlocks = [];
-      const childTokens = blockToken.children;
-      for (let tId = 0; tId < childTokens.length; tId++) {
-        console.log("childTokens[tId]", childTokens[tId]);
-        newBlocks.push(...convertTokenToInlineBlock(childTokens[tId]));
-      }
-      if (!newBlocks.length) {
-        continue;
-      }
-      console.log("newBlocks", newBlocks);
-      blockTokens.splice(j, 1, ...newBlocks);
-      j += newBlocks.length - 1;
-    }
-    console.log("state.tokens", state.tokens);
-  }
-  md.block.ruler.before("reference", "abbr_def", abbr_def, { alt: ["paragraph", "reference"] });
-  md.core.ruler.after("linkify", "abbr_replace", abbr_replace);
-}
-const HTML = "Hyper Text Markup Language\n";
-const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null,
-  default: HTML
-}, Symbol.toStringTag, { value: "Module" }));
-const I2C = "# I²C\nI²C = InterInterCircuit\n\nSerielle Schnittstelle\n2Pins: SDA, SCL\nes gibt immer einen *Controller* (z.B. Arduino oder RaspberryPi) und viele *Geräte* (z.B. Sensoren)\ndie Geräte werden über eine Adresse (*Hausnummer*) angesprochen.\nDiese kann Teils auch beim Gerät Eingestellt werden.\n";
-const __vite_glob_0_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null,
-  default: I2C
-}, Symbol.toStringTag, { value: "Module" }));
-const UART = "# Serielle Schnittstelle\nUART = Universal Asynchronous Receiver Transmitter\n\nmeist 2Pins: TX (Senden) und RX (Empfangen)\nder TX Pin des Sendenden Geräts muss an den RX-Pin des Empfangenen Gerätes angeschlossen werden.\n";
-const __vite_glob_0_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null,
-  default: UART
-}, Symbol.toStringTag, { value: "Module" }));
-const W3C = "World Wide Web Consortium\n";
-const __vite_glob_0_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null,
-  default: W3C
-}, Symbol.toStringTag, { value: "Module" }));
 var empty = null;
 const empty$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
@@ -8081,23 +5322,23 @@ function requireExtendShallow() {
   if (hasRequiredExtendShallow) return extendShallow;
   hasRequiredExtendShallow = 1;
   var isObject2 = requireIsExtendable();
-  extendShallow = function extend(o2) {
-    if (!isObject2(o2)) {
-      o2 = {};
+  extendShallow = function extend(o) {
+    if (!isObject2(o)) {
+      o = {};
     }
     var len2 = arguments.length;
     for (var i2 = 1; i2 < len2; i2++) {
       var obj = arguments[i2];
       if (isObject2(obj)) {
-        assign2(o2, obj);
+        assign2(o, obj);
       }
     }
-    return o2;
+    return o;
   };
-  function assign2(a2, b2) {
-    for (var key in b2) {
-      if (hasOwn(b2, key)) {
-        a2[key] = b2[key];
+  function assign2(a, b) {
+    for (var key in b) {
+      if (hasOwn(b, key)) {
+        a[key] = b[key];
       }
     }
   }
@@ -8637,14 +5878,14 @@ function requireInt() {
   hasRequiredInt = 1;
   var common2 = requireCommon();
   var Type = requireType();
-  function isHexCode(c2) {
-    return 48 <= c2 && c2 <= 57 || 65 <= c2 && c2 <= 70 || 97 <= c2 && c2 <= 102;
+  function isHexCode(c) {
+    return 48 <= c && c <= 57 || 65 <= c && c <= 70 || 97 <= c && c <= 102;
   }
-  function isOctCode(c2) {
-    return 48 <= c2 && c2 <= 55;
+  function isOctCode(c) {
+    return 48 <= c && c <= 55;
   }
-  function isDecCode(c2) {
-    return 48 <= c2 && c2 <= 57;
+  function isDecCode(c) {
+    return 48 <= c && c <= 57;
   }
   function resolveYamlInteger(data) {
     if (data === null) return false;
@@ -8722,8 +5963,8 @@ function requireInt() {
       });
       value = 0;
       base2 = 1;
-      digits.forEach(function(d2) {
-        value += d2 * base2;
+      digits.forEach(function(d) {
+        value += d * base2;
         base2 *= 60;
       });
       return sign * value;
@@ -8801,8 +6042,8 @@ function requireFloat() {
       });
       value = 0;
       base2 = 1;
-      digits.forEach(function(d2) {
-        value += d2 * base2;
+      digits.forEach(function(d) {
+        value += d * base2;
         base2 *= 60;
       });
       return sign * value;
@@ -9354,57 +6595,57 @@ function requireLoader() {
   function _class2(obj) {
     return Object.prototype.toString.call(obj);
   }
-  function is_EOL(c2) {
-    return c2 === 10 || c2 === 13;
+  function is_EOL(c) {
+    return c === 10 || c === 13;
   }
-  function is_WHITE_SPACE(c2) {
-    return c2 === 9 || c2 === 32;
+  function is_WHITE_SPACE(c) {
+    return c === 9 || c === 32;
   }
-  function is_WS_OR_EOL(c2) {
-    return c2 === 9 || c2 === 32 || c2 === 10 || c2 === 13;
+  function is_WS_OR_EOL(c) {
+    return c === 9 || c === 32 || c === 10 || c === 13;
   }
-  function is_FLOW_INDICATOR(c2) {
-    return c2 === 44 || c2 === 91 || c2 === 93 || c2 === 123 || c2 === 125;
+  function is_FLOW_INDICATOR(c) {
+    return c === 44 || c === 91 || c === 93 || c === 123 || c === 125;
   }
-  function fromHexCode(c2) {
+  function fromHexCode(c) {
     var lc;
-    if (48 <= c2 && c2 <= 57) {
-      return c2 - 48;
+    if (48 <= c && c <= 57) {
+      return c - 48;
     }
-    lc = c2 | 32;
+    lc = c | 32;
     if (97 <= lc && lc <= 102) {
       return lc - 97 + 10;
     }
     return -1;
   }
-  function escapedHexLen(c2) {
-    if (c2 === 120) {
+  function escapedHexLen(c) {
+    if (c === 120) {
       return 2;
     }
-    if (c2 === 117) {
+    if (c === 117) {
       return 4;
     }
-    if (c2 === 85) {
+    if (c === 85) {
       return 8;
     }
     return 0;
   }
-  function fromDecimalCode(c2) {
-    if (48 <= c2 && c2 <= 57) {
-      return c2 - 48;
+  function fromDecimalCode(c) {
+    if (48 <= c && c <= 57) {
+      return c - 48;
     }
     return -1;
   }
-  function simpleEscapeSequence(c2) {
-    return c2 === 48 ? "\0" : c2 === 97 ? "\x07" : c2 === 98 ? "\b" : c2 === 116 ? "	" : c2 === 9 ? "	" : c2 === 110 ? "\n" : c2 === 118 ? "\v" : c2 === 102 ? "\f" : c2 === 114 ? "\r" : c2 === 101 ? "\x1B" : c2 === 32 ? " " : c2 === 34 ? '"' : c2 === 47 ? "/" : c2 === 92 ? "\\" : c2 === 78 ? "" : c2 === 95 ? " " : c2 === 76 ? "\u2028" : c2 === 80 ? "\u2029" : "";
+  function simpleEscapeSequence(c) {
+    return c === 48 ? "\0" : c === 97 ? "\x07" : c === 98 ? "\b" : c === 116 ? "	" : c === 9 ? "	" : c === 110 ? "\n" : c === 118 ? "\v" : c === 102 ? "\f" : c === 114 ? "\r" : c === 101 ? "\x1B" : c === 32 ? " " : c === 34 ? '"' : c === 47 ? "/" : c === 92 ? "\\" : c === 78 ? "" : c === 95 ? " " : c === 76 ? "\u2028" : c === 80 ? "\u2029" : "";
   }
-  function charFromCodepoint(c2) {
-    if (c2 <= 65535) {
-      return String.fromCharCode(c2);
+  function charFromCodepoint(c) {
+    if (c <= 65535) {
+      return String.fromCharCode(c);
     }
     return String.fromCharCode(
-      (c2 - 65536 >> 10) + 55296,
-      (c2 - 65536 & 1023) + 56320
+      (c - 65536 >> 10) + 55296,
+      (c - 65536 & 1023) + 56320
     );
   }
   var simpleEscapeCheck = new Array(256);
@@ -10587,20 +7828,20 @@ function requireDumper() {
     }
     return false;
   }
-  function isWhitespace(c2) {
-    return c2 === CHAR_SPACE || c2 === CHAR_TAB;
+  function isWhitespace(c) {
+    return c === CHAR_SPACE || c === CHAR_TAB;
   }
-  function isPrintable(c2) {
-    return 32 <= c2 && c2 <= 126 || 161 <= c2 && c2 <= 55295 && c2 !== 8232 && c2 !== 8233 || 57344 <= c2 && c2 <= 65533 && c2 !== 65279 || 65536 <= c2 && c2 <= 1114111;
+  function isPrintable(c) {
+    return 32 <= c && c <= 126 || 161 <= c && c <= 55295 && c !== 8232 && c !== 8233 || 57344 <= c && c <= 65533 && c !== 65279 || 65536 <= c && c <= 1114111;
   }
-  function isNsChar(c2) {
-    return isPrintable(c2) && !isWhitespace(c2) && c2 !== 65279 && c2 !== CHAR_CARRIAGE_RETURN && c2 !== CHAR_LINE_FEED;
+  function isNsChar(c) {
+    return isPrintable(c) && !isWhitespace(c) && c !== 65279 && c !== CHAR_CARRIAGE_RETURN && c !== CHAR_LINE_FEED;
   }
-  function isPlainSafe(c2, prev) {
-    return isPrintable(c2) && c2 !== 65279 && c2 !== CHAR_COMMA && c2 !== CHAR_LEFT_SQUARE_BRACKET && c2 !== CHAR_RIGHT_SQUARE_BRACKET && c2 !== CHAR_LEFT_CURLY_BRACKET && c2 !== CHAR_RIGHT_CURLY_BRACKET && c2 !== CHAR_COLON && (c2 !== CHAR_SHARP || prev && isNsChar(prev));
+  function isPlainSafe(c, prev) {
+    return isPrintable(c) && c !== 65279 && c !== CHAR_COMMA && c !== CHAR_LEFT_SQUARE_BRACKET && c !== CHAR_RIGHT_SQUARE_BRACKET && c !== CHAR_LEFT_CURLY_BRACKET && c !== CHAR_RIGHT_CURLY_BRACKET && c !== CHAR_COLON && (c !== CHAR_SHARP || prev && isNsChar(prev));
   }
-  function isPlainSafeFirst(c2) {
-    return isPrintable(c2) && c2 !== 65279 && !isWhitespace(c2) && c2 !== CHAR_MINUS && c2 !== CHAR_QUESTION && c2 !== CHAR_COLON && c2 !== CHAR_COMMA && c2 !== CHAR_LEFT_SQUARE_BRACKET && c2 !== CHAR_RIGHT_SQUARE_BRACKET && c2 !== CHAR_LEFT_CURLY_BRACKET && c2 !== CHAR_RIGHT_CURLY_BRACKET && c2 !== CHAR_SHARP && c2 !== CHAR_AMPERSAND && c2 !== CHAR_ASTERISK && c2 !== CHAR_EXCLAMATION && c2 !== CHAR_VERTICAL_LINE && c2 !== CHAR_EQUALS && c2 !== CHAR_GREATER_THAN && c2 !== CHAR_SINGLE_QUOTE && c2 !== CHAR_DOUBLE_QUOTE && c2 !== CHAR_PERCENT && c2 !== CHAR_COMMERCIAL_AT && c2 !== CHAR_GRAVE_ACCENT;
+  function isPlainSafeFirst(c) {
+    return isPrintable(c) && c !== 65279 && !isWhitespace(c) && c !== CHAR_MINUS && c !== CHAR_QUESTION && c !== CHAR_COLON && c !== CHAR_COMMA && c !== CHAR_LEFT_SQUARE_BRACKET && c !== CHAR_RIGHT_SQUARE_BRACKET && c !== CHAR_LEFT_CURLY_BRACKET && c !== CHAR_RIGHT_CURLY_BRACKET && c !== CHAR_SHARP && c !== CHAR_AMPERSAND && c !== CHAR_ASTERISK && c !== CHAR_EXCLAMATION && c !== CHAR_VERTICAL_LINE && c !== CHAR_EQUALS && c !== CHAR_GREATER_THAN && c !== CHAR_SINGLE_QUOTE && c !== CHAR_DOUBLE_QUOTE && c !== CHAR_PERCENT && c !== CHAR_COMMERCIAL_AT && c !== CHAR_GRAVE_ACCENT;
   }
   function needIndentIndicator(string) {
     var leadingSpaceRe = /^\n* /;
@@ -11157,81 +8398,81 @@ function fromByteArray(uint8) {
 var ieee754 = {};
 /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
 ieee754.read = function(buffer2, offset, isLE, mLen, nBytes) {
-  var e2, m;
+  var e, m;
   var eLen = nBytes * 8 - mLen - 1;
   var eMax = (1 << eLen) - 1;
   var eBias = eMax >> 1;
   var nBits = -7;
   var i2 = isLE ? nBytes - 1 : 0;
-  var d2 = isLE ? -1 : 1;
-  var s2 = buffer2[offset + i2];
-  i2 += d2;
-  e2 = s2 & (1 << -nBits) - 1;
-  s2 >>= -nBits;
+  var d = isLE ? -1 : 1;
+  var s = buffer2[offset + i2];
+  i2 += d;
+  e = s & (1 << -nBits) - 1;
+  s >>= -nBits;
   nBits += eLen;
-  for (; nBits > 0; e2 = e2 * 256 + buffer2[offset + i2], i2 += d2, nBits -= 8) {
+  for (; nBits > 0; e = e * 256 + buffer2[offset + i2], i2 += d, nBits -= 8) {
   }
-  m = e2 & (1 << -nBits) - 1;
-  e2 >>= -nBits;
+  m = e & (1 << -nBits) - 1;
+  e >>= -nBits;
   nBits += mLen;
-  for (; nBits > 0; m = m * 256 + buffer2[offset + i2], i2 += d2, nBits -= 8) {
+  for (; nBits > 0; m = m * 256 + buffer2[offset + i2], i2 += d, nBits -= 8) {
   }
-  if (e2 === 0) {
-    e2 = 1 - eBias;
-  } else if (e2 === eMax) {
-    return m ? NaN : (s2 ? -1 : 1) * Infinity;
+  if (e === 0) {
+    e = 1 - eBias;
+  } else if (e === eMax) {
+    return m ? NaN : (s ? -1 : 1) * Infinity;
   } else {
     m = m + Math.pow(2, mLen);
-    e2 = e2 - eBias;
+    e = e - eBias;
   }
-  return (s2 ? -1 : 1) * m * Math.pow(2, e2 - mLen);
+  return (s ? -1 : 1) * m * Math.pow(2, e - mLen);
 };
 ieee754.write = function(buffer2, value, offset, isLE, mLen, nBytes) {
-  var e2, m, c2;
+  var e, m, c;
   var eLen = nBytes * 8 - mLen - 1;
   var eMax = (1 << eLen) - 1;
   var eBias = eMax >> 1;
   var rt = mLen === 23 ? Math.pow(2, -24) - Math.pow(2, -77) : 0;
   var i2 = isLE ? 0 : nBytes - 1;
-  var d2 = isLE ? 1 : -1;
-  var s2 = value < 0 || value === 0 && 1 / value < 0 ? 1 : 0;
+  var d = isLE ? 1 : -1;
+  var s = value < 0 || value === 0 && 1 / value < 0 ? 1 : 0;
   value = Math.abs(value);
   if (isNaN(value) || value === Infinity) {
     m = isNaN(value) ? 1 : 0;
-    e2 = eMax;
+    e = eMax;
   } else {
-    e2 = Math.floor(Math.log(value) / Math.LN2);
-    if (value * (c2 = Math.pow(2, -e2)) < 1) {
-      e2--;
-      c2 *= 2;
+    e = Math.floor(Math.log(value) / Math.LN2);
+    if (value * (c = Math.pow(2, -e)) < 1) {
+      e--;
+      c *= 2;
     }
-    if (e2 + eBias >= 1) {
-      value += rt / c2;
+    if (e + eBias >= 1) {
+      value += rt / c;
     } else {
       value += rt * Math.pow(2, 1 - eBias);
     }
-    if (value * c2 >= 2) {
-      e2++;
-      c2 /= 2;
+    if (value * c >= 2) {
+      e++;
+      c /= 2;
     }
-    if (e2 + eBias >= eMax) {
+    if (e + eBias >= eMax) {
       m = 0;
-      e2 = eMax;
-    } else if (e2 + eBias >= 1) {
-      m = (value * c2 - 1) * Math.pow(2, mLen);
-      e2 = e2 + eBias;
+      e = eMax;
+    } else if (e + eBias >= 1) {
+      m = (value * c - 1) * Math.pow(2, mLen);
+      e = e + eBias;
     } else {
       m = value * Math.pow(2, eBias - 1) * Math.pow(2, mLen);
-      e2 = 0;
+      e = 0;
     }
   }
-  for (; mLen >= 8; buffer2[offset + i2] = m & 255, i2 += d2, m /= 256, mLen -= 8) {
+  for (; mLen >= 8; buffer2[offset + i2] = m & 255, i2 += d, m /= 256, mLen -= 8) {
   }
-  e2 = e2 << mLen | m;
+  e = e << mLen | m;
   eLen += mLen;
-  for (; eLen > 0; buffer2[offset + i2] = e2 & 255, i2 += d2, e2 /= 256, eLen -= 8) {
+  for (; eLen > 0; buffer2[offset + i2] = e & 255, i2 += d, e /= 256, eLen -= 8) {
   }
-  buffer2[offset + i2 - d2] |= s2 * 128;
+  buffer2[offset + i2 - d] |= s * 128;
 };
 /*!
  * The buffer module from node.js, for the browser.
@@ -11264,7 +8505,7 @@ ieee754.write = function(buffer2, value, offset, isLE, mLen, nBytes) {
       Object.setPrototypeOf(proto, GlobalUint8Array.prototype);
       Object.setPrototypeOf(arr, proto);
       return arr.foo() === 42;
-    } catch (e2) {
+    } catch (e) {
       return false;
     }
   }
@@ -11329,8 +8570,8 @@ ieee754.write = function(buffer2, value, offset, isLE, mLen, nBytes) {
     if (valueOf != null && valueOf !== value) {
       return Buffer2.from(valueOf, encodingOrOffset, length);
     }
-    const b2 = fromObject(value);
-    if (b2) return b2;
+    const b = fromObject(value);
+    if (b) return b;
     if (typeof Symbol !== "undefined" && Symbol.toPrimitive != null && typeof value[Symbol.toPrimitive] === "function") {
       return Buffer2.from(value[Symbol.toPrimitive]("string"), encodingOrOffset, length);
     }
@@ -11453,24 +8694,24 @@ ieee754.write = function(buffer2, value, offset, isLE, mLen, nBytes) {
     }
     return Buffer2.alloc(+length);
   }
-  Buffer2.isBuffer = function isBuffer(b2) {
-    return b2 != null && b2._isBuffer === true && b2 !== Buffer2.prototype;
+  Buffer2.isBuffer = function isBuffer(b) {
+    return b != null && b._isBuffer === true && b !== Buffer2.prototype;
   };
-  Buffer2.compare = function compare(a2, b2) {
-    if (isInstance(a2, GlobalUint8Array)) a2 = Buffer2.from(a2, a2.offset, a2.byteLength);
-    if (isInstance(b2, GlobalUint8Array)) b2 = Buffer2.from(b2, b2.offset, b2.byteLength);
-    if (!Buffer2.isBuffer(a2) || !Buffer2.isBuffer(b2)) {
+  Buffer2.compare = function compare(a, b) {
+    if (isInstance(a, GlobalUint8Array)) a = Buffer2.from(a, a.offset, a.byteLength);
+    if (isInstance(b, GlobalUint8Array)) b = Buffer2.from(b, b.offset, b.byteLength);
+    if (!Buffer2.isBuffer(a) || !Buffer2.isBuffer(b)) {
       throw new TypeError(
         'The "buf1", "buf2" arguments must be one of type Buffer or Uint8Array'
       );
     }
-    if (a2 === b2) return 0;
-    let x = a2.length;
-    let y = b2.length;
+    if (a === b) return 0;
+    let x = a.length;
+    let y = b.length;
     for (let i2 = 0, len2 = Math.min(x, y); i2 < len2; ++i2) {
-      if (a2[i2] !== b2[i2]) {
-        x = a2[i2];
-        y = b2[i2];
+      if (a[i2] !== b[i2]) {
+        x = a[i2];
+        y = b[i2];
         break;
       }
     }
@@ -11625,10 +8866,10 @@ ieee754.write = function(buffer2, value, offset, isLE, mLen, nBytes) {
     }
   }
   Buffer2.prototype._isBuffer = true;
-  function swap(b2, n2, m) {
-    const i2 = b2[n2];
-    b2[n2] = b2[m];
-    b2[m] = i2;
+  function swap(b, n, m) {
+    const i2 = b[n];
+    b[n] = b[m];
+    b[m] = i2;
   }
   Buffer2.prototype.swap16 = function swap16() {
     const len2 = this.length;
@@ -11671,10 +8912,10 @@ ieee754.write = function(buffer2, value, offset, isLE, mLen, nBytes) {
     return slowToString.apply(this, arguments);
   };
   Buffer2.prototype.toLocaleString = Buffer2.prototype.toString;
-  Buffer2.prototype.equals = function equals(b2) {
-    if (!Buffer2.isBuffer(b2)) throw new TypeError("Argument must be a Buffer");
-    if (this === b2) return true;
-    return Buffer2.compare(this, b2) === 0;
+  Buffer2.prototype.equals = function equals(b) {
+    if (!Buffer2.isBuffer(b)) throw new TypeError("Argument must be a Buffer");
+    if (this === b) return true;
+    return Buffer2.compare(this, b) === 0;
   };
   Buffer2.prototype.inspect = function inspect() {
     let str2 = "";
@@ -12668,13 +9909,13 @@ ieee754.write = function(buffer2, value, offset, isLE, mLen, nBytes) {
   }
   function checkIntBI(value, min, max, buf, offset, byteLength3) {
     if (value > max || value < min) {
-      const n2 = typeof min === "bigint" ? "n" : "";
+      const n = typeof min === "bigint" ? "n" : "";
       let range;
       {
         if (min === 0 || min === BigInt(0)) {
-          range = `>= 0${n2} and < 2${n2} ** ${(byteLength3 + 1) * 8}${n2}`;
+          range = `>= 0${n} and < 2${n} ** ${(byteLength3 + 1) * 8}${n}`;
         } else {
-          range = `>= -(2${n2} ** ${(byteLength3 + 1) * 8 - 1}${n2}) and < 2 ** ${(byteLength3 + 1) * 8 - 1}${n2}`;
+          range = `>= -(2${n} ** ${(byteLength3 + 1) * 8 - 1}${n}) and < 2 ** ${(byteLength3 + 1) * 8 - 1}${n}`;
         }
       }
       throw new errors2.ERR_OUT_OF_RANGE("value", range, value);
@@ -12778,13 +10019,13 @@ ieee754.write = function(buffer2, value, offset, isLE, mLen, nBytes) {
     return byteArray;
   }
   function utf16leToBytes(str2, units) {
-    let c2, hi, lo;
+    let c, hi, lo;
     const byteArray = [];
     for (let i2 = 0; i2 < str2.length; ++i2) {
       if ((units -= 2) < 0) break;
-      c2 = str2.charCodeAt(i2);
-      hi = c2 >> 8;
-      lo = c2 % 256;
+      c = str2.charCodeAt(i2);
+      hi = c >> 8;
+      lo = c % 256;
       byteArray.push(lo);
       byteArray.push(hi);
     }
@@ -13188,7 +10429,963 @@ function requireGrayMatter() {
   return grayMatter;
 }
 var grayMatterExports = requireGrayMatter();
-const matter = /* @__PURE__ */ getDefaultExportFromCjs$1(grayMatterExports);
+const matter = /* @__PURE__ */ getDefaultExportFromCjs(grayMatterExports);
+const MODES = (hljs) => {
+  return {
+    IMPORTANT: {
+      scope: "meta",
+      begin: "!important"
+    },
+    BLOCK_COMMENT: hljs.C_BLOCK_COMMENT_MODE,
+    HEXCOLOR: {
+      scope: "number",
+      begin: /#(([0-9a-fA-F]{3,4})|(([0-9a-fA-F]{2}){3,4}))\b/
+    },
+    FUNCTION_DISPATCH: {
+      className: "built_in",
+      begin: /[\w-]+(?=\()/
+    },
+    ATTRIBUTE_SELECTOR_MODE: {
+      scope: "selector-attr",
+      begin: /\[/,
+      end: /\]/,
+      illegal: "$",
+      contains: [
+        hljs.APOS_STRING_MODE,
+        hljs.QUOTE_STRING_MODE
+      ]
+    },
+    CSS_NUMBER_MODE: {
+      scope: "number",
+      begin: hljs.NUMBER_RE + "(%|em|ex|ch|rem|vw|vh|vmin|vmax|cm|mm|in|pt|pc|px|deg|grad|rad|turn|s|ms|Hz|kHz|dpi|dpcm|dppx)?",
+      relevance: 0
+    },
+    CSS_VARIABLE: {
+      className: "attr",
+      begin: /--[A-Za-z_][A-Za-z0-9_-]*/
+    }
+  };
+};
+const HTML_TAGS = [
+  "a",
+  "abbr",
+  "address",
+  "article",
+  "aside",
+  "audio",
+  "b",
+  "blockquote",
+  "body",
+  "button",
+  "canvas",
+  "caption",
+  "cite",
+  "code",
+  "dd",
+  "del",
+  "details",
+  "dfn",
+  "div",
+  "dl",
+  "dt",
+  "em",
+  "fieldset",
+  "figcaption",
+  "figure",
+  "footer",
+  "form",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "header",
+  "hgroup",
+  "html",
+  "i",
+  "iframe",
+  "img",
+  "input",
+  "ins",
+  "kbd",
+  "label",
+  "legend",
+  "li",
+  "main",
+  "mark",
+  "menu",
+  "nav",
+  "object",
+  "ol",
+  "optgroup",
+  "option",
+  "p",
+  "picture",
+  "q",
+  "quote",
+  "samp",
+  "section",
+  "select",
+  "source",
+  "span",
+  "strong",
+  "summary",
+  "sup",
+  "table",
+  "tbody",
+  "td",
+  "textarea",
+  "tfoot",
+  "th",
+  "thead",
+  "time",
+  "tr",
+  "ul",
+  "var",
+  "video"
+];
+const SVG_TAGS = [
+  "defs",
+  "g",
+  "marker",
+  "mask",
+  "pattern",
+  "svg",
+  "switch",
+  "symbol",
+  "feBlend",
+  "feColorMatrix",
+  "feComponentTransfer",
+  "feComposite",
+  "feConvolveMatrix",
+  "feDiffuseLighting",
+  "feDisplacementMap",
+  "feFlood",
+  "feGaussianBlur",
+  "feImage",
+  "feMerge",
+  "feMorphology",
+  "feOffset",
+  "feSpecularLighting",
+  "feTile",
+  "feTurbulence",
+  "linearGradient",
+  "radialGradient",
+  "stop",
+  "circle",
+  "ellipse",
+  "image",
+  "line",
+  "path",
+  "polygon",
+  "polyline",
+  "rect",
+  "text",
+  "use",
+  "textPath",
+  "tspan",
+  "foreignObject",
+  "clipPath"
+];
+const TAGS = [
+  ...HTML_TAGS,
+  ...SVG_TAGS
+];
+const MEDIA_FEATURES = [
+  "any-hover",
+  "any-pointer",
+  "aspect-ratio",
+  "color",
+  "color-gamut",
+  "color-index",
+  "device-aspect-ratio",
+  "device-height",
+  "device-width",
+  "display-mode",
+  "forced-colors",
+  "grid",
+  "height",
+  "hover",
+  "inverted-colors",
+  "monochrome",
+  "orientation",
+  "overflow-block",
+  "overflow-inline",
+  "pointer",
+  "prefers-color-scheme",
+  "prefers-contrast",
+  "prefers-reduced-motion",
+  "prefers-reduced-transparency",
+  "resolution",
+  "scan",
+  "scripting",
+  "update",
+  "width",
+  // TODO: find a better solution?
+  "min-width",
+  "max-width",
+  "min-height",
+  "max-height"
+].sort().reverse();
+const PSEUDO_CLASSES = [
+  "active",
+  "any-link",
+  "blank",
+  "checked",
+  "current",
+  "default",
+  "defined",
+  "dir",
+  // dir()
+  "disabled",
+  "drop",
+  "empty",
+  "enabled",
+  "first",
+  "first-child",
+  "first-of-type",
+  "fullscreen",
+  "future",
+  "focus",
+  "focus-visible",
+  "focus-within",
+  "has",
+  // has()
+  "host",
+  // host or host()
+  "host-context",
+  // host-context()
+  "hover",
+  "indeterminate",
+  "in-range",
+  "invalid",
+  "is",
+  // is()
+  "lang",
+  // lang()
+  "last-child",
+  "last-of-type",
+  "left",
+  "link",
+  "local-link",
+  "not",
+  // not()
+  "nth-child",
+  // nth-child()
+  "nth-col",
+  // nth-col()
+  "nth-last-child",
+  // nth-last-child()
+  "nth-last-col",
+  // nth-last-col()
+  "nth-last-of-type",
+  //nth-last-of-type()
+  "nth-of-type",
+  //nth-of-type()
+  "only-child",
+  "only-of-type",
+  "optional",
+  "out-of-range",
+  "past",
+  "placeholder-shown",
+  "read-only",
+  "read-write",
+  "required",
+  "right",
+  "root",
+  "scope",
+  "target",
+  "target-within",
+  "user-invalid",
+  "valid",
+  "visited",
+  "where"
+  // where()
+].sort().reverse();
+const PSEUDO_ELEMENTS = [
+  "after",
+  "backdrop",
+  "before",
+  "cue",
+  "cue-region",
+  "first-letter",
+  "first-line",
+  "grammar-error",
+  "marker",
+  "part",
+  "placeholder",
+  "selection",
+  "slotted",
+  "spelling-error"
+].sort().reverse();
+const ATTRIBUTES = [
+  "accent-color",
+  "align-content",
+  "align-items",
+  "align-self",
+  "alignment-baseline",
+  "all",
+  "anchor-name",
+  "animation",
+  "animation-composition",
+  "animation-delay",
+  "animation-direction",
+  "animation-duration",
+  "animation-fill-mode",
+  "animation-iteration-count",
+  "animation-name",
+  "animation-play-state",
+  "animation-range",
+  "animation-range-end",
+  "animation-range-start",
+  "animation-timeline",
+  "animation-timing-function",
+  "appearance",
+  "aspect-ratio",
+  "backdrop-filter",
+  "backface-visibility",
+  "background",
+  "background-attachment",
+  "background-blend-mode",
+  "background-clip",
+  "background-color",
+  "background-image",
+  "background-origin",
+  "background-position",
+  "background-position-x",
+  "background-position-y",
+  "background-repeat",
+  "background-size",
+  "baseline-shift",
+  "block-size",
+  "border",
+  "border-block",
+  "border-block-color",
+  "border-block-end",
+  "border-block-end-color",
+  "border-block-end-style",
+  "border-block-end-width",
+  "border-block-start",
+  "border-block-start-color",
+  "border-block-start-style",
+  "border-block-start-width",
+  "border-block-style",
+  "border-block-width",
+  "border-bottom",
+  "border-bottom-color",
+  "border-bottom-left-radius",
+  "border-bottom-right-radius",
+  "border-bottom-style",
+  "border-bottom-width",
+  "border-collapse",
+  "border-color",
+  "border-end-end-radius",
+  "border-end-start-radius",
+  "border-image",
+  "border-image-outset",
+  "border-image-repeat",
+  "border-image-slice",
+  "border-image-source",
+  "border-image-width",
+  "border-inline",
+  "border-inline-color",
+  "border-inline-end",
+  "border-inline-end-color",
+  "border-inline-end-style",
+  "border-inline-end-width",
+  "border-inline-start",
+  "border-inline-start-color",
+  "border-inline-start-style",
+  "border-inline-start-width",
+  "border-inline-style",
+  "border-inline-width",
+  "border-left",
+  "border-left-color",
+  "border-left-style",
+  "border-left-width",
+  "border-radius",
+  "border-right",
+  "border-right-color",
+  "border-right-style",
+  "border-right-width",
+  "border-spacing",
+  "border-start-end-radius",
+  "border-start-start-radius",
+  "border-style",
+  "border-top",
+  "border-top-color",
+  "border-top-left-radius",
+  "border-top-right-radius",
+  "border-top-style",
+  "border-top-width",
+  "border-width",
+  "bottom",
+  "box-align",
+  "box-decoration-break",
+  "box-direction",
+  "box-flex",
+  "box-flex-group",
+  "box-lines",
+  "box-ordinal-group",
+  "box-orient",
+  "box-pack",
+  "box-shadow",
+  "box-sizing",
+  "break-after",
+  "break-before",
+  "break-inside",
+  "caption-side",
+  "caret-color",
+  "clear",
+  "clip",
+  "clip-path",
+  "clip-rule",
+  "color",
+  "color-interpolation",
+  "color-interpolation-filters",
+  "color-profile",
+  "color-rendering",
+  "color-scheme",
+  "column-count",
+  "column-fill",
+  "column-gap",
+  "column-rule",
+  "column-rule-color",
+  "column-rule-style",
+  "column-rule-width",
+  "column-span",
+  "column-width",
+  "columns",
+  "contain",
+  "contain-intrinsic-block-size",
+  "contain-intrinsic-height",
+  "contain-intrinsic-inline-size",
+  "contain-intrinsic-size",
+  "contain-intrinsic-width",
+  "container",
+  "container-name",
+  "container-type",
+  "content",
+  "content-visibility",
+  "counter-increment",
+  "counter-reset",
+  "counter-set",
+  "cue",
+  "cue-after",
+  "cue-before",
+  "cursor",
+  "cx",
+  "cy",
+  "direction",
+  "display",
+  "dominant-baseline",
+  "empty-cells",
+  "enable-background",
+  "field-sizing",
+  "fill",
+  "fill-opacity",
+  "fill-rule",
+  "filter",
+  "flex",
+  "flex-basis",
+  "flex-direction",
+  "flex-flow",
+  "flex-grow",
+  "flex-shrink",
+  "flex-wrap",
+  "float",
+  "flood-color",
+  "flood-opacity",
+  "flow",
+  "font",
+  "font-display",
+  "font-family",
+  "font-feature-settings",
+  "font-kerning",
+  "font-language-override",
+  "font-optical-sizing",
+  "font-palette",
+  "font-size",
+  "font-size-adjust",
+  "font-smooth",
+  "font-smoothing",
+  "font-stretch",
+  "font-style",
+  "font-synthesis",
+  "font-synthesis-position",
+  "font-synthesis-small-caps",
+  "font-synthesis-style",
+  "font-synthesis-weight",
+  "font-variant",
+  "font-variant-alternates",
+  "font-variant-caps",
+  "font-variant-east-asian",
+  "font-variant-emoji",
+  "font-variant-ligatures",
+  "font-variant-numeric",
+  "font-variant-position",
+  "font-variation-settings",
+  "font-weight",
+  "forced-color-adjust",
+  "gap",
+  "glyph-orientation-horizontal",
+  "glyph-orientation-vertical",
+  "grid",
+  "grid-area",
+  "grid-auto-columns",
+  "grid-auto-flow",
+  "grid-auto-rows",
+  "grid-column",
+  "grid-column-end",
+  "grid-column-start",
+  "grid-gap",
+  "grid-row",
+  "grid-row-end",
+  "grid-row-start",
+  "grid-template",
+  "grid-template-areas",
+  "grid-template-columns",
+  "grid-template-rows",
+  "hanging-punctuation",
+  "height",
+  "hyphenate-character",
+  "hyphenate-limit-chars",
+  "hyphens",
+  "icon",
+  "image-orientation",
+  "image-rendering",
+  "image-resolution",
+  "ime-mode",
+  "initial-letter",
+  "initial-letter-align",
+  "inline-size",
+  "inset",
+  "inset-area",
+  "inset-block",
+  "inset-block-end",
+  "inset-block-start",
+  "inset-inline",
+  "inset-inline-end",
+  "inset-inline-start",
+  "isolation",
+  "justify-content",
+  "justify-items",
+  "justify-self",
+  "kerning",
+  "left",
+  "letter-spacing",
+  "lighting-color",
+  "line-break",
+  "line-height",
+  "line-height-step",
+  "list-style",
+  "list-style-image",
+  "list-style-position",
+  "list-style-type",
+  "margin",
+  "margin-block",
+  "margin-block-end",
+  "margin-block-start",
+  "margin-bottom",
+  "margin-inline",
+  "margin-inline-end",
+  "margin-inline-start",
+  "margin-left",
+  "margin-right",
+  "margin-top",
+  "margin-trim",
+  "marker",
+  "marker-end",
+  "marker-mid",
+  "marker-start",
+  "marks",
+  "mask",
+  "mask-border",
+  "mask-border-mode",
+  "mask-border-outset",
+  "mask-border-repeat",
+  "mask-border-slice",
+  "mask-border-source",
+  "mask-border-width",
+  "mask-clip",
+  "mask-composite",
+  "mask-image",
+  "mask-mode",
+  "mask-origin",
+  "mask-position",
+  "mask-repeat",
+  "mask-size",
+  "mask-type",
+  "masonry-auto-flow",
+  "math-depth",
+  "math-shift",
+  "math-style",
+  "max-block-size",
+  "max-height",
+  "max-inline-size",
+  "max-width",
+  "min-block-size",
+  "min-height",
+  "min-inline-size",
+  "min-width",
+  "mix-blend-mode",
+  "nav-down",
+  "nav-index",
+  "nav-left",
+  "nav-right",
+  "nav-up",
+  "none",
+  "normal",
+  "object-fit",
+  "object-position",
+  "offset",
+  "offset-anchor",
+  "offset-distance",
+  "offset-path",
+  "offset-position",
+  "offset-rotate",
+  "opacity",
+  "order",
+  "orphans",
+  "outline",
+  "outline-color",
+  "outline-offset",
+  "outline-style",
+  "outline-width",
+  "overflow",
+  "overflow-anchor",
+  "overflow-block",
+  "overflow-clip-margin",
+  "overflow-inline",
+  "overflow-wrap",
+  "overflow-x",
+  "overflow-y",
+  "overlay",
+  "overscroll-behavior",
+  "overscroll-behavior-block",
+  "overscroll-behavior-inline",
+  "overscroll-behavior-x",
+  "overscroll-behavior-y",
+  "padding",
+  "padding-block",
+  "padding-block-end",
+  "padding-block-start",
+  "padding-bottom",
+  "padding-inline",
+  "padding-inline-end",
+  "padding-inline-start",
+  "padding-left",
+  "padding-right",
+  "padding-top",
+  "page",
+  "page-break-after",
+  "page-break-before",
+  "page-break-inside",
+  "paint-order",
+  "pause",
+  "pause-after",
+  "pause-before",
+  "perspective",
+  "perspective-origin",
+  "place-content",
+  "place-items",
+  "place-self",
+  "pointer-events",
+  "position",
+  "position-anchor",
+  "position-visibility",
+  "print-color-adjust",
+  "quotes",
+  "r",
+  "resize",
+  "rest",
+  "rest-after",
+  "rest-before",
+  "right",
+  "rotate",
+  "row-gap",
+  "ruby-align",
+  "ruby-position",
+  "scale",
+  "scroll-behavior",
+  "scroll-margin",
+  "scroll-margin-block",
+  "scroll-margin-block-end",
+  "scroll-margin-block-start",
+  "scroll-margin-bottom",
+  "scroll-margin-inline",
+  "scroll-margin-inline-end",
+  "scroll-margin-inline-start",
+  "scroll-margin-left",
+  "scroll-margin-right",
+  "scroll-margin-top",
+  "scroll-padding",
+  "scroll-padding-block",
+  "scroll-padding-block-end",
+  "scroll-padding-block-start",
+  "scroll-padding-bottom",
+  "scroll-padding-inline",
+  "scroll-padding-inline-end",
+  "scroll-padding-inline-start",
+  "scroll-padding-left",
+  "scroll-padding-right",
+  "scroll-padding-top",
+  "scroll-snap-align",
+  "scroll-snap-stop",
+  "scroll-snap-type",
+  "scroll-timeline",
+  "scroll-timeline-axis",
+  "scroll-timeline-name",
+  "scrollbar-color",
+  "scrollbar-gutter",
+  "scrollbar-width",
+  "shape-image-threshold",
+  "shape-margin",
+  "shape-outside",
+  "shape-rendering",
+  "speak",
+  "speak-as",
+  "src",
+  // @font-face
+  "stop-color",
+  "stop-opacity",
+  "stroke",
+  "stroke-dasharray",
+  "stroke-dashoffset",
+  "stroke-linecap",
+  "stroke-linejoin",
+  "stroke-miterlimit",
+  "stroke-opacity",
+  "stroke-width",
+  "tab-size",
+  "table-layout",
+  "text-align",
+  "text-align-all",
+  "text-align-last",
+  "text-anchor",
+  "text-combine-upright",
+  "text-decoration",
+  "text-decoration-color",
+  "text-decoration-line",
+  "text-decoration-skip",
+  "text-decoration-skip-ink",
+  "text-decoration-style",
+  "text-decoration-thickness",
+  "text-emphasis",
+  "text-emphasis-color",
+  "text-emphasis-position",
+  "text-emphasis-style",
+  "text-indent",
+  "text-justify",
+  "text-orientation",
+  "text-overflow",
+  "text-rendering",
+  "text-shadow",
+  "text-size-adjust",
+  "text-transform",
+  "text-underline-offset",
+  "text-underline-position",
+  "text-wrap",
+  "text-wrap-mode",
+  "text-wrap-style",
+  "timeline-scope",
+  "top",
+  "touch-action",
+  "transform",
+  "transform-box",
+  "transform-origin",
+  "transform-style",
+  "transition",
+  "transition-behavior",
+  "transition-delay",
+  "transition-duration",
+  "transition-property",
+  "transition-timing-function",
+  "translate",
+  "unicode-bidi",
+  "user-modify",
+  "user-select",
+  "vector-effect",
+  "vertical-align",
+  "view-timeline",
+  "view-timeline-axis",
+  "view-timeline-inset",
+  "view-timeline-name",
+  "view-transition-name",
+  "visibility",
+  "voice-balance",
+  "voice-duration",
+  "voice-family",
+  "voice-pitch",
+  "voice-range",
+  "voice-rate",
+  "voice-stress",
+  "voice-volume",
+  "white-space",
+  "white-space-collapse",
+  "widows",
+  "width",
+  "will-change",
+  "word-break",
+  "word-spacing",
+  "word-wrap",
+  "writing-mode",
+  "x",
+  "y",
+  "z-index",
+  "zoom"
+].sort().reverse();
+function css(hljs) {
+  const regex2 = hljs.regex;
+  const modes = MODES(hljs);
+  const VENDOR_PREFIX = { begin: /-(webkit|moz|ms|o)-(?=[a-z])/ };
+  const AT_MODIFIERS = "and or not only";
+  const AT_PROPERTY_RE = /@-?\w[\w]*(-\w+)*/;
+  const IDENT_RE = "[a-zA-Z-][a-zA-Z0-9_-]*";
+  const STRINGS = [
+    hljs.APOS_STRING_MODE,
+    hljs.QUOTE_STRING_MODE
+  ];
+  return {
+    name: "CSS",
+    case_insensitive: true,
+    illegal: /[=|'\$]/,
+    keywords: { keyframePosition: "from to" },
+    classNameAliases: {
+      // for visual continuity with `tag {}` and because we
+      // don't have a great class for this?
+      keyframePosition: "selector-tag"
+    },
+    contains: [
+      modes.BLOCK_COMMENT,
+      VENDOR_PREFIX,
+      // to recognize keyframe 40% etc which are outside the scope of our
+      // attribute value mode
+      modes.CSS_NUMBER_MODE,
+      {
+        className: "selector-id",
+        begin: /#[A-Za-z0-9_-]+/,
+        relevance: 0
+      },
+      {
+        className: "selector-class",
+        begin: "\\." + IDENT_RE,
+        relevance: 0
+      },
+      modes.ATTRIBUTE_SELECTOR_MODE,
+      {
+        className: "selector-pseudo",
+        variants: [
+          { begin: ":(" + PSEUDO_CLASSES.join("|") + ")" },
+          { begin: ":(:)?(" + PSEUDO_ELEMENTS.join("|") + ")" }
+        ]
+      },
+      // we may actually need this (12/2020)
+      // { // pseudo-selector params
+      //   begin: /\(/,
+      //   end: /\)/,
+      //   contains: [ hljs.CSS_NUMBER_MODE ]
+      // },
+      modes.CSS_VARIABLE,
+      {
+        className: "attribute",
+        begin: "\\b(" + ATTRIBUTES.join("|") + ")\\b"
+      },
+      // attribute values
+      {
+        begin: /:/,
+        end: /[;}{]/,
+        contains: [
+          modes.BLOCK_COMMENT,
+          modes.HEXCOLOR,
+          modes.IMPORTANT,
+          modes.CSS_NUMBER_MODE,
+          ...STRINGS,
+          // needed to highlight these as strings and to avoid issues with
+          // illegal characters that might be inside urls that would tigger the
+          // languages illegal stack
+          {
+            begin: /(url|data-uri)\(/,
+            end: /\)/,
+            relevance: 0,
+            // from keywords
+            keywords: { built_in: "url data-uri" },
+            contains: [
+              ...STRINGS,
+              {
+                className: "string",
+                // any character other than `)` as in `url()` will be the start
+                // of a string, which ends with `)` (from the parent mode)
+                begin: /[^)]/,
+                endsWithParent: true,
+                excludeEnd: true
+              }
+            ]
+          },
+          modes.FUNCTION_DISPATCH
+        ]
+      },
+      {
+        begin: regex2.lookahead(/@/),
+        end: "[{;]",
+        relevance: 0,
+        illegal: /:/,
+        // break on Less variables @var: ...
+        contains: [
+          {
+            className: "keyword",
+            begin: AT_PROPERTY_RE
+          },
+          {
+            begin: /\s/,
+            endsWithParent: true,
+            excludeEnd: true,
+            relevance: 0,
+            keywords: {
+              $pattern: /[a-z-]+/,
+              keyword: AT_MODIFIERS,
+              attribute: MEDIA_FEATURES.join(" ")
+            },
+            contains: [
+              {
+                begin: /[a-z-]+(?=:)/,
+                className: "attribute"
+              },
+              ...STRINGS,
+              modes.CSS_NUMBER_MODE
+            ]
+          }
+        ]
+      },
+      {
+        className: "selector-tag",
+        begin: "\\b(" + TAGS.join("|") + ")\\b"
+      }
+    ]
+  };
+}
+HighlightJS.registerLanguage("cpp", cpp);
+HighlightJS.registerLanguage("c++", cpp);
+HighlightJS.registerLanguage("css", css);
+const mditHighlightFn = function(str2, lang) {
+  if (lang && HighlightJS.getLanguage(lang)) {
+    try {
+      return HighlightJS.highlight(str2, { language: lang }).value;
+    } catch (__) {
+      console.log(__);
+    }
+  }
+  return "";
+};
+const md_options = {
+  eval: false,
+  html: true,
+  linkify: true,
+  typographer: true,
+  highlight: mditHighlightFn
+};
+const md = new MarkdownIt(md_options);
 const preProcessingMD = (source) => {
   const processedObj = matter(source, {
     eval: false,
@@ -13196,667 +11393,14 @@ const preProcessingMD = (source) => {
   });
   return processedObj;
 };
-const mksGetAbbr = () => {
-  console.group("mksGetAbbr");
-  let mksAbbrList = {};
-  const items_dir = /* @__PURE__ */ Object.assign({
-    "../../public/mks/abbr/HTML.md": __vite_glob_0_0,
-    "../../public/mks/abbr/I2C.md": __vite_glob_0_1,
-    "../../public/mks/abbr/UART.md": __vite_glob_0_2,
-    "../../public/mks/abbr/W3C.md": __vite_glob_0_3
-  });
-  console.log("items_dir", items_dir);
-  const path_regex = new RegExp(`../../public/mks/abbr/(?<item_name>.*).md`);
-  for (const path in items_dir) {
-    console.log("path", path);
-    console.log("items_dir[path]", items_dir[path]);
-    const { item_name } = path_regex.exec(path).groups;
-    console.log(`item_name: '${item_name}'`);
-    mksAbbrList[item_name] = {};
-    mksAbbrList[item_name].name = item_name;
-    mksAbbrList[item_name].path_readme = path;
-    mksAbbrList[item_name].path_base = `mks/abbr/`;
-    const content = preProcessingMD(
-      items_dir[path].default,
-      mksAbbrList[item_name].path_base
-    );
-    console.log(`mksAbbrList['${item_name}'] content:`, content);
-    mksAbbrList[item_name].content = content;
-  }
-  console.log("mksAbbrList:", mksAbbrList);
-  console.groupEnd();
-  return mksAbbrList;
+const md2html = (source, filePath = void 0) => {
+  const processedObj = preProcessingMD(source);
+  const env = {
+    filePath
+  };
+  let tokens = md.parse(processedObj.content, env);
+  return md.renderer.render(tokens, md.options, env);
 };
-const mksAbbr = mksGetAbbr();
-/**
- * make all img 'src' attribute absolute.
- * @module imgSrcAbs
- * @param {MarkdownIt} md - MarkdownIt instance
- * @returns {undefined} - Side effects only
- * @author Stefan Krüger s-light.eu
- * @version 1.0.0
- * @license MIT
- * @exports imgSrcAbs
- */
-function imgSrcAbs(md) {
-  const defaultRender = md.renderer.rules.image || function(tokens, idx, options2, env, self) {
-    return self.renderToken(tokens, idx, options2);
-  };
-  md.renderer.rules.image = function(tokens, idx, options2, env, self) {
-    const token = tokens[idx];
-    let srcValue = token.attrGet("src");
-    if (!srcValue.startsWith("http")) {
-      srcValue = srcValue.replace("./", env.filePath);
-      token.attrSet("src", srcValue);
-    }
-    return defaultRender(tokens, idx, options2, env, self);
-  };
-}
-const RE_INFO = /(?<codeLang>.*?)\s?:(?<codeFilePath>.*)/;
-const embedCode = async (tokens, idx, options2, env) => {
-  const token = tokens[idx];
-  console.log(`token: `, token);
-  const reResult = RE_INFO.exec(token.info);
-  console.log(`reResult: `, reResult);
-  if (reResult) {
-    const { codeLang, codeFilePath } = reResult.groups;
-    if (codeFilePath) {
-      const filePath = codeFilePath.replace("./", env.filePath);
-      let codeContent = void 0;
-      try {
-        codeContent = await fetch(filePath).then(async (response) => {
-          console.log(`response: `, response);
-          if (response.status == 200) {
-            return await response.text();
-          } else if (response.status == 404) {
-            throw new Error(`embed failed: file '${filePath}' not found.`, response);
-          } else {
-            throw new Error(`embed failed.`, response);
-          }
-        });
-      } catch (error2) {
-        console.log(error2);
-      }
-      if (codeContent) {
-        token.content = codeContent;
-        token.codeLanguage = codeLang;
-        token.codeFilePath = codeFilePath;
-        token.filePath = filePath;
-      }
-    }
-  }
-};
-/**
- * embed code from relative file paths
- * example:
- * ```md
- * ```c++ :./relative/file/to/your/code.cpp
- *  // this code here is overwritten..
- *  // this way you can embed a info here for renderer that do not understand the embedding..
- *  //something like:
- *
- *  // please look at ./relative/file/to/your/code.cpp
- * ```
- * @module runEmbedCode
- * @param {MarkdownItTokens} tokens - MarkdownIt instance
- * @param {MarkdownItOptions} options - options Object
- * @param {Object} env - environment options Object
- * @param {MarkdownIt} self - MarkdownIt instance
- * @returns {undefined} - Side effects only
- * @author Stefan Krüger s-light.eu
- * @version 1.0.0
- * @license MIT
- * @exports runEmbedCode
- */
-const runEmbedCode = async (tokens, options2, env, self) => {
-  for (let idx = 0; idx < tokens.length; idx++) {
-    const token = tokens[idx];
-    if (token.type == "fence") {
-      await embedCode(tokens, idx, options2, env);
-    }
-  }
-};
-function cpp(hljs) {
-  const regex2 = hljs.regex;
-  const C_LINE_COMMENT_MODE = hljs.COMMENT("//", "$", { contains: [{ begin: /\\\n/ }] });
-  const DECLTYPE_AUTO_RE = "decltype\\(auto\\)";
-  const NAMESPACE_RE = "[a-zA-Z_]\\w*::";
-  const TEMPLATE_ARGUMENT_RE = "<[^<>]+>";
-  const FUNCTION_TYPE_RE = "(?!struct)(" + DECLTYPE_AUTO_RE + "|" + regex2.optional(NAMESPACE_RE) + "[a-zA-Z_]\\w*" + regex2.optional(TEMPLATE_ARGUMENT_RE) + ")";
-  const CPP_PRIMITIVE_TYPES = {
-    className: "type",
-    begin: "\\b[a-z\\d_]*_t\\b"
-  };
-  const CHARACTER_ESCAPES = "\\\\(x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4,8}|[0-7]{3}|\\S)";
-  const STRINGS = {
-    className: "string",
-    variants: [
-      {
-        begin: '(u8?|U|L)?"',
-        end: '"',
-        illegal: "\\n",
-        contains: [hljs.BACKSLASH_ESCAPE]
-      },
-      {
-        begin: "(u8?|U|L)?'(" + CHARACTER_ESCAPES + "|.)",
-        end: "'",
-        illegal: "."
-      },
-      hljs.END_SAME_AS_BEGIN({
-        begin: /(?:u8?|U|L)?R"([^()\\ ]{0,16})\(/,
-        end: /\)([^()\\ ]{0,16})"/
-      })
-    ]
-  };
-  const NUMBERS = {
-    className: "number",
-    variants: [
-      // Floating-point literal.
-      {
-        begin: "[+-]?(?:(?:[0-9](?:'?[0-9])*\\.(?:[0-9](?:'?[0-9])*)?|\\.[0-9](?:'?[0-9])*)(?:[Ee][+-]?[0-9](?:'?[0-9])*)?|[0-9](?:'?[0-9])*[Ee][+-]?[0-9](?:'?[0-9])*|0[Xx](?:[0-9A-Fa-f](?:'?[0-9A-Fa-f])*(?:\\.(?:[0-9A-Fa-f](?:'?[0-9A-Fa-f])*)?)?|\\.[0-9A-Fa-f](?:'?[0-9A-Fa-f])*)[Pp][+-]?[0-9](?:'?[0-9])*)(?:[Ff](?:16|32|64|128)?|(BF|bf)16|[Ll]|)"
-      },
-      // Integer literal.
-      {
-        begin: "[+-]?\\b(?:0[Bb][01](?:'?[01])*|0[Xx][0-9A-Fa-f](?:'?[0-9A-Fa-f])*|0(?:'?[0-7])*|[1-9](?:'?[0-9])*)(?:[Uu](?:LL?|ll?)|[Uu][Zz]?|(?:LL?|ll?)[Uu]?|[Zz][Uu]|)"
-        // Note: there are user-defined literal suffixes too, but perhaps having the custom suffix not part of the
-        // literal highlight actually makes it stand out more.
-      }
-    ],
-    relevance: 0
-  };
-  const PREPROCESSOR = {
-    className: "meta",
-    begin: /#\s*[a-z]+\b/,
-    end: /$/,
-    keywords: { keyword: "if else elif endif define undef warning error line pragma _Pragma ifdef ifndef include" },
-    contains: [
-      {
-        begin: /\\\n/,
-        relevance: 0
-      },
-      hljs.inherit(STRINGS, { className: "string" }),
-      {
-        className: "string",
-        begin: /<.*?>/
-      },
-      C_LINE_COMMENT_MODE,
-      hljs.C_BLOCK_COMMENT_MODE
-    ]
-  };
-  const TITLE_MODE = {
-    className: "title",
-    begin: regex2.optional(NAMESPACE_RE) + hljs.IDENT_RE,
-    relevance: 0
-  };
-  const FUNCTION_TITLE = regex2.optional(NAMESPACE_RE) + hljs.IDENT_RE + "\\s*\\(";
-  const RESERVED_KEYWORDS = [
-    "alignas",
-    "alignof",
-    "and",
-    "and_eq",
-    "asm",
-    "atomic_cancel",
-    "atomic_commit",
-    "atomic_noexcept",
-    "auto",
-    "bitand",
-    "bitor",
-    "break",
-    "case",
-    "catch",
-    "class",
-    "co_await",
-    "co_return",
-    "co_yield",
-    "compl",
-    "concept",
-    "const_cast|10",
-    "consteval",
-    "constexpr",
-    "constinit",
-    "continue",
-    "decltype",
-    "default",
-    "delete",
-    "do",
-    "dynamic_cast|10",
-    "else",
-    "enum",
-    "explicit",
-    "export",
-    "extern",
-    "false",
-    "final",
-    "for",
-    "friend",
-    "goto",
-    "if",
-    "import",
-    "inline",
-    "module",
-    "mutable",
-    "namespace",
-    "new",
-    "noexcept",
-    "not",
-    "not_eq",
-    "nullptr",
-    "operator",
-    "or",
-    "or_eq",
-    "override",
-    "private",
-    "protected",
-    "public",
-    "reflexpr",
-    "register",
-    "reinterpret_cast|10",
-    "requires",
-    "return",
-    "sizeof",
-    "static_assert",
-    "static_cast|10",
-    "struct",
-    "switch",
-    "synchronized",
-    "template",
-    "this",
-    "thread_local",
-    "throw",
-    "transaction_safe",
-    "transaction_safe_dynamic",
-    "true",
-    "try",
-    "typedef",
-    "typeid",
-    "typename",
-    "union",
-    "using",
-    "virtual",
-    "volatile",
-    "while",
-    "xor",
-    "xor_eq"
-  ];
-  const RESERVED_TYPES = [
-    "bool",
-    "char",
-    "char16_t",
-    "char32_t",
-    "char8_t",
-    "double",
-    "float",
-    "int",
-    "long",
-    "short",
-    "void",
-    "wchar_t",
-    "unsigned",
-    "signed",
-    "const",
-    "static"
-  ];
-  const TYPE_HINTS = [
-    "any",
-    "auto_ptr",
-    "barrier",
-    "binary_semaphore",
-    "bitset",
-    "complex",
-    "condition_variable",
-    "condition_variable_any",
-    "counting_semaphore",
-    "deque",
-    "false_type",
-    "flat_map",
-    "flat_set",
-    "future",
-    "imaginary",
-    "initializer_list",
-    "istringstream",
-    "jthread",
-    "latch",
-    "lock_guard",
-    "multimap",
-    "multiset",
-    "mutex",
-    "optional",
-    "ostringstream",
-    "packaged_task",
-    "pair",
-    "promise",
-    "priority_queue",
-    "queue",
-    "recursive_mutex",
-    "recursive_timed_mutex",
-    "scoped_lock",
-    "set",
-    "shared_future",
-    "shared_lock",
-    "shared_mutex",
-    "shared_timed_mutex",
-    "shared_ptr",
-    "stack",
-    "string_view",
-    "stringstream",
-    "timed_mutex",
-    "thread",
-    "true_type",
-    "tuple",
-    "unique_lock",
-    "unique_ptr",
-    "unordered_map",
-    "unordered_multimap",
-    "unordered_multiset",
-    "unordered_set",
-    "variant",
-    "vector",
-    "weak_ptr",
-    "wstring",
-    "wstring_view"
-  ];
-  const FUNCTION_HINTS = [
-    "abort",
-    "abs",
-    "acos",
-    "apply",
-    "as_const",
-    "asin",
-    "atan",
-    "atan2",
-    "calloc",
-    "ceil",
-    "cerr",
-    "cin",
-    "clog",
-    "cos",
-    "cosh",
-    "cout",
-    "declval",
-    "endl",
-    "exchange",
-    "exit",
-    "exp",
-    "fabs",
-    "floor",
-    "fmod",
-    "forward",
-    "fprintf",
-    "fputs",
-    "free",
-    "frexp",
-    "fscanf",
-    "future",
-    "invoke",
-    "isalnum",
-    "isalpha",
-    "iscntrl",
-    "isdigit",
-    "isgraph",
-    "islower",
-    "isprint",
-    "ispunct",
-    "isspace",
-    "isupper",
-    "isxdigit",
-    "labs",
-    "launder",
-    "ldexp",
-    "log",
-    "log10",
-    "make_pair",
-    "make_shared",
-    "make_shared_for_overwrite",
-    "make_tuple",
-    "make_unique",
-    "malloc",
-    "memchr",
-    "memcmp",
-    "memcpy",
-    "memset",
-    "modf",
-    "move",
-    "pow",
-    "printf",
-    "putchar",
-    "puts",
-    "realloc",
-    "scanf",
-    "sin",
-    "sinh",
-    "snprintf",
-    "sprintf",
-    "sqrt",
-    "sscanf",
-    "std",
-    "stderr",
-    "stdin",
-    "stdout",
-    "strcat",
-    "strchr",
-    "strcmp",
-    "strcpy",
-    "strcspn",
-    "strlen",
-    "strncat",
-    "strncmp",
-    "strncpy",
-    "strpbrk",
-    "strrchr",
-    "strspn",
-    "strstr",
-    "swap",
-    "tan",
-    "tanh",
-    "terminate",
-    "to_underlying",
-    "tolower",
-    "toupper",
-    "vfprintf",
-    "visit",
-    "vprintf",
-    "vsprintf"
-  ];
-  const LITERALS = [
-    "NULL",
-    "false",
-    "nullopt",
-    "nullptr",
-    "true"
-  ];
-  const BUILT_IN = ["_Pragma"];
-  const CPP_KEYWORDS = {
-    type: RESERVED_TYPES,
-    keyword: RESERVED_KEYWORDS,
-    literal: LITERALS,
-    built_in: BUILT_IN,
-    _type_hints: TYPE_HINTS
-  };
-  const FUNCTION_DISPATCH = {
-    className: "function.dispatch",
-    relevance: 0,
-    keywords: {
-      // Only for relevance, not highlighting.
-      _hint: FUNCTION_HINTS
-    },
-    begin: regex2.concat(
-      /\b/,
-      /(?!decltype)/,
-      /(?!if)/,
-      /(?!for)/,
-      /(?!switch)/,
-      /(?!while)/,
-      hljs.IDENT_RE,
-      regex2.lookahead(/(<[^<>]+>|)\s*\(/)
-    )
-  };
-  const EXPRESSION_CONTAINS = [
-    FUNCTION_DISPATCH,
-    PREPROCESSOR,
-    CPP_PRIMITIVE_TYPES,
-    C_LINE_COMMENT_MODE,
-    hljs.C_BLOCK_COMMENT_MODE,
-    NUMBERS,
-    STRINGS
-  ];
-  const EXPRESSION_CONTEXT = {
-    // This mode covers expression context where we can't expect a function
-    // definition and shouldn't highlight anything that looks like one:
-    // `return some()`, `else if()`, `(x*sum(1, 2))`
-    variants: [
-      {
-        begin: /=/,
-        end: /;/
-      },
-      {
-        begin: /\(/,
-        end: /\)/
-      },
-      {
-        beginKeywords: "new throw return else",
-        end: /;/
-      }
-    ],
-    keywords: CPP_KEYWORDS,
-    contains: EXPRESSION_CONTAINS.concat([
-      {
-        begin: /\(/,
-        end: /\)/,
-        keywords: CPP_KEYWORDS,
-        contains: EXPRESSION_CONTAINS.concat(["self"]),
-        relevance: 0
-      }
-    ]),
-    relevance: 0
-  };
-  const FUNCTION_DECLARATION = {
-    className: "function",
-    begin: "(" + FUNCTION_TYPE_RE + "[\\*&\\s]+)+" + FUNCTION_TITLE,
-    returnBegin: true,
-    end: /[{;=]/,
-    excludeEnd: true,
-    keywords: CPP_KEYWORDS,
-    illegal: /[^\w\s\*&:<>.]/,
-    contains: [
-      {
-        // to prevent it from being confused as the function title
-        begin: DECLTYPE_AUTO_RE,
-        keywords: CPP_KEYWORDS,
-        relevance: 0
-      },
-      {
-        begin: FUNCTION_TITLE,
-        returnBegin: true,
-        contains: [TITLE_MODE],
-        relevance: 0
-      },
-      // needed because we do not have look-behind on the below rule
-      // to prevent it from grabbing the final : in a :: pair
-      {
-        begin: /::/,
-        relevance: 0
-      },
-      // initializers
-      {
-        begin: /:/,
-        endsWithParent: true,
-        contains: [
-          STRINGS,
-          NUMBERS
-        ]
-      },
-      // allow for multiple declarations, e.g.:
-      // extern void f(int), g(char);
-      {
-        relevance: 0,
-        match: /,/
-      },
-      {
-        className: "params",
-        begin: /\(/,
-        end: /\)/,
-        keywords: CPP_KEYWORDS,
-        relevance: 0,
-        contains: [
-          C_LINE_COMMENT_MODE,
-          hljs.C_BLOCK_COMMENT_MODE,
-          STRINGS,
-          NUMBERS,
-          CPP_PRIMITIVE_TYPES,
-          // Count matching parentheses.
-          {
-            begin: /\(/,
-            end: /\)/,
-            keywords: CPP_KEYWORDS,
-            relevance: 0,
-            contains: [
-              "self",
-              C_LINE_COMMENT_MODE,
-              hljs.C_BLOCK_COMMENT_MODE,
-              STRINGS,
-              NUMBERS,
-              CPP_PRIMITIVE_TYPES
-            ]
-          }
-        ]
-      },
-      CPP_PRIMITIVE_TYPES,
-      C_LINE_COMMENT_MODE,
-      hljs.C_BLOCK_COMMENT_MODE,
-      PREPROCESSOR
-    ]
-  };
-  return {
-    name: "C++",
-    aliases: [
-      "cc",
-      "c++",
-      "h++",
-      "hpp",
-      "hh",
-      "hxx",
-      "cxx"
-    ],
-    keywords: CPP_KEYWORDS,
-    illegal: "</",
-    classNameAliases: { "function.dispatch": "built_in" },
-    contains: [].concat(
-      EXPRESSION_CONTEXT,
-      FUNCTION_DECLARATION,
-      FUNCTION_DISPATCH,
-      EXPRESSION_CONTAINS,
-      [
-        PREPROCESSOR,
-        {
-          // containers: ie, `vector <int> rooms (9);`
-          begin: "\\b(deque|list|queue|priority_queue|pair|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array|tuple|optional|variant|function|flat_map|flat_set)\\s*<(?!<)",
-          end: ">",
-          keywords: CPP_KEYWORDS,
-          contains: [
-            "self",
-            CPP_PRIMITIVE_TYPES
-          ]
-        },
-        {
-          begin: hljs.IDENT_RE + "::",
-          keywords: CPP_KEYWORDS
-        },
-        {
-          match: [
-            // extra complexity to deal with `enum class` and `enum struct`
-            /\b(?:enum(?:\s+(?:class|struct))?|class|struct|union)/,
-            /\s+/,
-            /\w+/
-          ],
-          className: {
-            1: "keyword",
-            3: "title.class"
-          }
-        }
-      ]
-    )
-  };
-}
 const _hoisted_1 = { class: "my-markdown-wrapper" };
 const _sfc_main = {
   __name: "MyMarkdown",
@@ -13865,121 +11409,19 @@ const _sfc_main = {
     filePath: String
   },
   setup(__props) {
-    HighlightJS.registerLanguage("cpp", cpp);
-    HighlightJS.registerLanguage("c++", cpp);
     const props = __props;
-    const md_options = {
-      html: true,
-      linkify: true,
-      typographer: true,
-      // breaks:       false,
-      highlight: function(str2, lang) {
-        if (lang && HighlightJS.getLanguage(lang)) {
-          try {
-            return HighlightJS.highlight(str2, { language: lang }).value;
-          } catch (__) {
-            console.log(__);
-          }
-        }
-        return "";
-      },
-      eval: false
-    };
-    const md = shallowRef(new MarkdownIt(md_options));
-    md.value.use(b, {
-      //   permalink: anchor.permalink.headerLink()
-    });
-    md.value.use(abbr_plugin, {
-      abbreviations: mksAbbr
-    });
-    md.value.use(O);
-    md.value.use(container_plugin, "info");
-    md.value.use(container_plugin, "tip");
-    md.value.use(container_plugin, "important");
-    md.value.use(container_plugin, "caution");
-    md.value.use(container_plugin, "warning");
-    md.value.use(emoji_plugin);
-    md.value.use(imgSrcAbs);
-    const content = ref([]);
-    const addHTMLChunk = (tokens, token_start, token_end, env) => {
-      let chunk = {
-        type: "html",
-        content: ""
-      };
-      const token_slice = tokens.slice(token_start, token_end + 1);
-      console.log("token_slice", token_slice);
-      chunk.content = md.value.renderer.render(token_slice, md.value.options, env);
-      content.value.push(chunk);
-    };
-    const addCodeChunk = (token) => {
-      let chunk = {
-        type: "code",
-        content: token.content,
-        codeLanguage: token.codeLanguage,
-        filePath: token.filePath,
-        codeFilePath: token.codeFilePath
-      };
-      content.value.push(chunk);
-    };
-    const addAbbrChunk = (token) => {
-      console.log("addAbbrChunk token.content", token.content);
-      let chunk = {
-        type: "abbr",
-        content: token.content,
-        abbr: token.abbr
-      };
-      content.value.push(chunk);
-    };
+    const contentHTML = ref("");
     watchEffect(async () => {
-      const env = {
-        filePath: props.filePath
-      };
-      let tokens = md.value.parse(props.source, env);
-      await runEmbedCode(tokens, {}, env, md.value);
-      console.log("split tokens into html and special parts...");
-      let chunk_start = 0;
-      for (let idx = 0; idx < tokens.length; idx++) {
-        const token = tokens[idx];
-        if (token.type == "fence") {
-          console.log(`fence:  chunk_start ${chunk_start}, idx - 1 ${idx - 1}`);
-          addHTMLChunk(tokens, chunk_start, idx - 1, env);
-          addCodeChunk(token);
-          chunk_start = idx + 1;
-        }
-        if (token.type == "abbr") {
-          console.log(`abbr:  chunk_start ${chunk_start}, idx - 1 ${idx - 1}`);
-          addHTMLChunk(tokens, chunk_start, idx - 1, env);
-          addAbbrChunk(token);
-          chunk_start = idx + 1;
-        }
-      }
-      console.log(`chunk_start`, chunk_start);
-      addHTMLChunk(tokens, chunk_start, tokens.length - 1, env);
-      console.log("content.value", toRaw(content.value));
+      contentHTML.value = await md2html(props.source);
     });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1, [
-        (openBlock(true), createElementBlock(Fragment, null, renderList(content.value, (item, index) => {
-          return openBlock(), createElementBlock("span", { key: index }, [
-            item.type == "html" ? (openBlock(), createBlock(_sfc_main$3, {
-              key: 0,
-              item
-            }, null, 8, ["item"])) : createCommentVNode("", true),
-            item.type == "code" ? (openBlock(), createBlock(_sfc_main$2, {
-              key: 1,
-              item
-            }, null, 8, ["item"])) : createCommentVNode("", true),
-            item.type == "abbr" ? (openBlock(), createBlock(MDAbbr, {
-              key: 2,
-              item
-            }, null, 8, ["item"])) : createCommentVNode("", true)
-          ]);
-        }), 128))
+        contentHTML.value ? (openBlock(), createBlock(resolveDynamicComponent({ template: contentHTML.value }), { key: 0 })) : createCommentVNode("", true)
       ]);
     };
   }
 };
 export {
   _sfc_main as _,
-  preProcessingMD as p
+  matter as m
 };

@@ -1,0 +1,15 @@
+.MDAbbr[data-v-fa8e34f6] {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}.q-tooltip.MDAbbrDescription {
+  margin: 0;
+}
+.q-tooltip.MDAbbrDescription h1 {
+  font-size: 1.5rem;
+  line-height: 110%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.q-tooltip.MDAbbrDescription p {
+  margin-bottom: 0.5rem;
+}

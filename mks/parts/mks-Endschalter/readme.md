@@ -6,7 +6,7 @@ id: 25
 
 # Endschalter
 
-![Endschalter](./bauteil.jpg)
+![Endschalter](./bauteil.png)
 
 <!-- TODO: CONTENT change image -->
 <!-- TODO: ARCHITECTURE multiple images? -->
