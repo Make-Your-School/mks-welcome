@@ -33,7 +33,9 @@ So kann beispielsweise eine Pin oder der angezeigte Bluetooth-Name eingestellt w
 
 - Signal Eingang: 5V
 - Betriebsspannung: 5V
-- Fully Qualified Bluetooth V2.0+EDR
+- Fully Qualified Bluetooth `V2.1+EDR`
+- Modul-Bezeichnung `HM-01`
+- Chip `BC417143`
 
 ## library
 
@@ -74,13 +76,20 @@ Liste der wichtigsten AT-Befehle (Optionen sind in [ ] angegeben (keine Leerzeic
 | AT             | Verbindung testen                                                                 |
 | AT+DEFAULT     | Auf Werkszustand zurücksetzen                                                     |
 | AT+ROLE[S/M/?] | Slave oder Master aktivieren bzw. aktuelle Einstellung abfragen (Standard: Slave) |
-| AT+NAME[.../?] | Name einstellen/abfragen (Standard: HMSoft)                                       |
+| AT+NAME[.../?] | Name einstellen/abfragen (Standard: HMSoft max. 12 Zeichen)                       |
 | AT+PIN[.../?]  | Pin einstellen/abfragen (Standard: 1234)                                          |
 | AT+CLEAR       | Letzte Bluetooth-Verbindung löschen                                               |
 | AT+TEMP?       | Temperatur des BT-Moduls ausgeben                                                 |
 | AT+AUTH[0/1/?] | Authentifizierung einstellen bzw. abfragen (Standard: 0)                          |
 | AT+VERSION     | Firmware-Version ausgeben                                                         |
 | AT+RESTART     | BT-Modul neu starten                                                              |
+| AT+HELP?       | _Hilfe_ anzeigen                                                                  |
+
+#### Beispiele
+
+- Namen abfragen `AT+NAME?`
+    - modul antwortet mit `OK+NAME deraktuelle`
+- Namen setzen `AT+NAMEFrosch`
 
 ### Zwei Bluetooth-Module miteinander verbinden
 
@@ -115,3 +124,4 @@ Liste der wichtigsten AT-Befehle (Optionen sind in [ ] angegeben (keine Leerzeic
 
 - [UART – Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)
 - [Bluetooth – Wikipedia Artikel](https://de.wikipedia.org/wiki/Bluetooth)
+- [Bluetooth-Chip Software Datasheet](https://files.seeedstudio.com/wiki/Bluetooth_Shield_V2/res/Bluetooth_en.pdf)
