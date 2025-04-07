@@ -1,5 +1,5 @@
-import { a as getCurrentInstance, r as ref, G as prevent, a8 as addEvt, C as nextTick, a9 as isKeyCode, w as watch, o as onMounted, x as onBeforeUnmount, aa as cleanEvt, ab as listenOpts, M as createComponent, f as onUnmounted, z as injectProp, h, ac as Teleport, ad as createGlobalNode, ae as removeGlobalNode, c as computed, D as onDeactivated, af as vmIsDestroyed, L as client, J as Transition, I as hSlot, B as stopAndPrevent } from "./index-DJGcSM7w.js";
-import { c as clearSelection, g as getScrollbarWidth, u as useModelToggleEmits, s as scrollTargetProp, a as useModelToggleProps, b as useTimeout, d as useModelToggle, e as getScrollTarget } from "./scroll-DaHTuuDa.js";
+import { a as getCurrentInstance, r as ref, G as prevent, a8 as addEvt, C as nextTick, a9 as isKeyCode, w as watch, o as onMounted, x as onBeforeUnmount, aa as cleanEvt, ab as listenOpts, M as createComponent, f as onUnmounted, z as injectProp, h, ac as Teleport, ad as createGlobalNode, ae as removeGlobalNode, c as computed, D as onDeactivated, af as vmIsDestroyed, L as client, J as Transition, I as hSlot, B as stopAndPrevent } from "./index-DzLZeyMe.js";
+import { c as clearSelection, g as getScrollbarWidth, u as useModelToggleEmits, s as scrollTargetProp, a as useModelToggleProps, b as useTimeout, d as useModelToggle, e as getScrollTarget } from "./scroll-q-yqoYkB.js";
 import { b as removeFocusWaitFlag, c as addFocusWaitFlag } from "./focus-manager-TfMniKh0.js";
 const useAnchorStaticProps = {
   /* SSR does not know about Element */

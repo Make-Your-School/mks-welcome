@@ -1,9 +1,9 @@
-import { q as isRuntimeSsrPreHydration, r as ref, o as onMounted, w as watch, c as computed, a as getCurrentInstance, t as onBeforeUpdate, b as inject, v as formKey, x as onBeforeUnmount, y as debounce, z as injectProp, B as stopAndPrevent, C as nextTick, D as onDeactivated, E as onActivated, h, G as prevent, Q as QIcon, H as QSpinner, I as hSlot, J as Transition, K as shouldIgnoreKey, L as client, M as createComponent, N as stop, O as createBlock, m as openBlock, p as withCtx, j as createVNode, P as createBaseVNode, l as createElementBlock, R as createStaticVNode, S as resolveComponent, U as createTextVNode, V as resolveDynamicComponent, F as Fragment, W as renderList } from "./index-DJGcSM7w.js";
-import { u as useDarkProps, a as useDark } from "./use-dark-z_lffkF_.js";
+import { q as isRuntimeSsrPreHydration, r as ref, o as onMounted, w as watch, c as computed, a as getCurrentInstance, t as onBeforeUpdate, b as inject, v as formKey, x as onBeforeUnmount, y as debounce, z as injectProp, B as stopAndPrevent, C as nextTick, D as onDeactivated, E as onActivated, h, G as prevent, Q as QIcon, H as QSpinner, I as hSlot, J as Transition, K as shouldIgnoreKey, L as client, M as createComponent, N as stop, O as createBlock, m as openBlock, p as withCtx, j as createVNode, P as createBaseVNode, l as createElementBlock, R as createStaticVNode, S as resolveComponent, U as createTextVNode, V as resolveDynamicComponent, F as Fragment, W as renderList } from "./index-DzLZeyMe.js";
+import { u as useDarkProps, a as useDark } from "./use-dark-CS0UWAPj.js";
 import { a as addFocusFn, r as removeFocusFn } from "./focus-manager-TfMniKh0.js";
-import { Q as QPage } from "./QPage-CrJqOd1M.js";
+import { Q as QPage } from "./QPage-CBXi-rZz.js";
 import { _ as _export_sfc } from "./_plugin-vue_export-helper-1tPrXgE0.js";
-import { m as md_obj } from "./readme-B402Cm0f.js";
+import { m as md_obj } from "./readme-DY3YmBJW.js";
 let buf, bufIdx = 0;
 const hexBytes = new Array(256);
 for (let i = 0; i < 256; i++) {
@@ -1459,8 +1459,8 @@ const QCard = createComponent({
     return () => h(props.tag, { class: classes.value }, hSlot(slots.default));
   }
 });
-const _hoisted_1$g = ["innerHTML"];
-const _sfc_main$g = {
+const _hoisted_1$h = ["innerHTML"];
+const _sfc_main$h = {
   __name: "PartOverview",
   props: {
     mks_item: Object
@@ -1473,7 +1473,7 @@ const _sfc_main$g = {
             default: withCtx(() => [
               createBaseVNode("div", {
                 innerHTML: __props.mks_item.excerpt
-              }, null, 8, _hoisted_1$g)
+              }, null, 8, _hoisted_1$h)
             ]),
             _: 1
           })
@@ -1483,7 +1483,26 @@ const _sfc_main$g = {
     };
   }
 };
-const PartOverview = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["__scopeId", "data-v-d46b0f1c"]]);
+const PartOverview = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["__scopeId", "data-v-d46b0f1c"]]);
+const _hoisted_1$g = { class: "markdown-body" };
+const excerpt$f = "";
+const _sfc_main$g = {
+  __name: "readme",
+  setup(__props, { expose: __expose }) {
+    const frontmatter = {};
+    __expose({ frontmatter });
+    return (_ctx, _cache) => {
+      return openBlock(), createElementBlock("div", _hoisted_1$g, _cache[0] || (_cache[0] = [
+        createStaticVNode('<hr><h2 id="titel%3A-entfernungtags%3A-%5Bentfernung%2C-input%5Did%3A-17" tabindex="-1">titel: Entfernung tags: [entfernung, input] id: 17</h2><h1 id="entfernung" tabindex="-1">Entfernung</h1><p><img src="/mks-welcome/mks/tags/Entfernung/Yellow%20Tape%20Measure.svg" alt="Maßband"></p><h2 id="funktionen" tabindex="-1">Funktionen</h2><p>Sensoren die Entfernungen Messen können.</p><p>hier ist unter anderem Wichtig in welchem Bereich der jeweilige Sensor messen kann. es kann z.B. sein das der minimale Abstand durch aus 5cm beträgt. auch sind die Genauigkeit sehr unterschiedlich - von wenigen Millimetern Abweichungen bis zu mehreren Centimeter.</p><h2 id="relevante-gr%C3%B6%C3%9Fen%3A" tabindex="-1">Relevante Größen:</h2><ul><li>Messbereich (mm, cm, m)</li><li>Genauigkeit (z.B. <code>+- n cm</code>)</li></ul><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li>ToDo</li></ul>', 11)
+      ]));
+    };
+  }
+};
+const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: _sfc_main$g,
+  excerpt: excerpt$f
+}, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$f = { class: "markdown-body" };
 const excerpt$e = "";
 const _sfc_main$f = {
@@ -1493,12 +1512,12 @@ const _sfc_main$f = {
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1$f, _cache[0] || (_cache[0] = [
-        createStaticVNode('<hr><h2 id="titel%3A-entfernungtags%3A-%5Bentfernung%2C-input%5Did%3A-17" tabindex="-1">titel: Entfernung tags: [entfernung, input] id: 17</h2><h1 id="entfernung" tabindex="-1">Entfernung</h1><p><img src="/mks-welcome/mks/tags/Entfernung/Yellow%20Tape%20Measure.svg" alt="Maßband"></p><h2 id="funktionen" tabindex="-1">Funktionen</h2><p>Sensoren die Entfernungen Messen können.</p><p>hier ist unter anderem Wichtig in welchem Bereich der jeweilige Sensor messen kann. es kann z.B. sein das der minimale Abstand durch aus 5cm beträgt. auch sind die Genauigkeit sehr unterschiedlich - von wenigen Millimetern Abweichungen bis zu mehreren Centimeter.</p><h2 id="relevante-gr%C3%B6%C3%9Fen%3A" tabindex="-1">Relevante Größen:</h2><ul><li>Messbereich (mm, cm, m)</li><li>Genauigkeit (z.B. <code>+- n cm</code>)</li></ul><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li>ToDo</li></ul>', 11)
+        createStaticVNode('<hr><h2 id="title%3A-ledstags%3A-%5Boutput%2C-led%2C-licht%2C-farbe%5D" tabindex="-1">title: LEDs tags: [output, led, licht, Farbe]</h2><h1 id="leds" tabindex="-1">LEDs</h1><p><img src="/mks-welcome/mks/tags/LEDs/led-lamp-green-on.svg" alt="LED"></p><h2 id="funktionen" tabindex="-1">Funktionen</h2><p>Eine LED kann verwendet werden um zustände zu signalisieren oder auch um Licht im sinne von Beleuchtung zu erzeugen.</p><p>es gibt sehr viele verschiedene formen und ausführungen von LEDs.</p><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li>x</li></ul>', 9)
       ]));
     };
   }
 };
-const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_0_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$f,
   excerpt: excerpt$e
@@ -1512,12 +1531,12 @@ const _sfc_main$e = {
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1$e, _cache[0] || (_cache[0] = [
-        createStaticVNode('<hr><h2 id="title%3A-ledstags%3A-%5Boutput%2C-led%2C-licht%2C-farbe%5D" tabindex="-1">title: LEDs tags: [output, led, licht, Farbe]</h2><h1 id="leds" tabindex="-1">LEDs</h1><p><img src="/mks-welcome/mks/tags/LEDs/led-lamp-green-on.svg" alt="LED"></p><h2 id="funktionen" tabindex="-1">Funktionen</h2><p>Eine LED kann verwendet werden um zustände zu signalisieren oder auch um Licht im sinne von Beleuchtung zu erzeugen.</p><p>es gibt sehr viele verschiedene formen und ausführungen von LEDs.</p><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li>x</li></ul>', 9)
+        createStaticVNode('<hr><h2 id="tags%3A-%5Bmotor%2C-output%5D" tabindex="-1">tags: [motor, output]</h2><h1 id="motoren" tabindex="-1">Motoren</h1><p><img src="/mks-welcome/mks/tags/Motor/cyberscooty-motor-stepper.svg" alt="Motor allgemein"></p><p>TODO: CONTENT change image to general</p><h2 id="funktion" tabindex="-1">Funktion</h2><p>Der Motortreiber übersetzt die schwachen Signale &amp; Spannungen des micro-controllers (Arduino / RaspberryPi) in Starke Spannungen &amp; Ströme um die verschiedenen <a href="#motor">Motoren</a> anzusteuern (zu <em>treiben</em>).</p><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li><a href="#motor">Motoren</a></li></ul>', 9)
       ]));
     };
   }
 };
-const __vite_glob_0_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_0_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$e,
   excerpt: excerpt$d
@@ -1531,12 +1550,12 @@ const _sfc_main$d = {
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1$d, _cache[0] || (_cache[0] = [
-        createStaticVNode('<hr><h2 id="tags%3A-%5Bmotor%2C-output%5D" tabindex="-1">tags: [motor, output]</h2><h1 id="motoren" tabindex="-1">Motoren</h1><p><img src="/mks-welcome/mks/tags/Motor/cyberscooty-motor-stepper.svg" alt="Motor allgemein"></p><p>TODO: CONTENT change image to general</p><h2 id="funktion" tabindex="-1">Funktion</h2><p>Der Motortreiber übersetzt die schwachen Signale &amp; Spannungen des micro-controllers (Arduino / RaspberryPi) in Starke Spannungen &amp; Ströme um die verschiedenen <a href="#motor">Motoren</a> anzusteuern (zu <em>treiben</em>).</p><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li><a href="#motor">Motoren</a></li></ul>', 9)
+        createStaticVNode('<hr><h2 id="title%3A-motortreibertags%3A-%5Bmotor%2C-motortreiber%2C-output%5Did%3A-70" tabindex="-1">title: Motortreiber tags: [motor, motortreiber, output] id: 70</h2><h1 id="motortreiber" tabindex="-1">Motortreiber</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/70_motortreiber-1024x1024.jpg" alt="Motortreiber allgemein"></p><p>TODO: CONTENT change image to general</p><h2 id="funktion" tabindex="-1">Funktion</h2><p>Wandelt Elektrische Signale in Dreh-Bewegung um.</p><p>Es gibt soooo viele verschiedene Motoren…</p><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li><a href="#motortreiber">Motortreiber</a></li></ul>', 10)
       ]));
     };
   }
 };
-const __vite_glob_0_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_0_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$d,
   excerpt: excerpt$c
@@ -1550,12 +1569,12 @@ const _sfc_main$c = {
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1$c, _cache[0] || (_cache[0] = [
-        createStaticVNode('<hr><h2 id="title%3A-motortreibertags%3A-%5Bmotor%2C-motortreiber%2C-output%5Did%3A-70" tabindex="-1">title: Motortreiber tags: [motor, motortreiber, output] id: 70</h2><h1 id="motortreiber" tabindex="-1">Motortreiber</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/70_motortreiber-1024x1024.jpg" alt="Motortreiber allgemein"></p><p>TODO: CONTENT change image to general</p><h2 id="funktion" tabindex="-1">Funktion</h2><p>Wandelt Elektrische Signale in Dreh-Bewegung um.</p><p>Es gibt soooo viele verschiedene Motoren…</p><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li><a href="#motortreiber">Motortreiber</a></li></ul>', 10)
+        createStaticVNode('<hr><h2 id="title%3A-taster-%26-schaltertags%3A-%5Binput%5Did%3A-261" tabindex="-1">title: Taster &amp; Schalter tags: [input] id: 261</h2><h1 id="taster-%26-schalter" tabindex="-1">Taster &amp; Schalter</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/59_taster_knopf-1024x1024.jpg" alt="Taster allgemein"></p><h2 id="funktionen" tabindex="-1">Funktionen</h2><p>Der Taster / Schalter ist ein <em>Input</em>.</p><p>Der Unterschied zwischen Taster und Schalter:</p><ul><li>Taster: nur solange <em>an</em> wie er Betätigt (z.B: gedrückt) wird</li><li>Schalter: Betätigung/Aktion wechselt den Zustand zwischen an und aus</li></ul><p>es gibt diese in sehr vielen verschiedenen Ausführungen.</p><p>wenn ein Taster/Schalter <strong>an</strong> ist sind die Kontakte verbunden. wenn er <strong>aus</strong> ist sind die kontakte unverbunden. diesen unterschied kann ein uC <em>messen</em>.</p><h2 id="anschl%C3%BCsse" tabindex="-1">Anschlüsse</h2><h3 id="eingang" tabindex="-1">Eingang</h3><ul><li>Mechanische Betätigung</li></ul><h3 id="ausgang" tabindex="-1">Ausgang</h3><ul><li>Zwei <em>Pins</em> werden *verbunden</li></ul><h2 id="kurz-datenblatt" tabindex="-1">Kurz-Datenblatt</h2><p>siehe bauteile</p><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li><em>-</em></li></ul><h2 id="weiterf%C3%BChrende-informationen%3A" tabindex="-1">Weiterführende Informationen:</h2><ul><li><a href="https://de.wikipedia.org/wiki/Schalter_(Elektrotechnik)">Schalter (Elektrotechnik) – Wikipedia Artikel</a></li><li><a href="https://de.wikipedia.org/wiki/Positionsschalter">Positionsschalter – Wikipedia Artikel</a></li><li><a href="https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe">GPIO – Wikipedia Artikel</a></li><li>library für <em>tasten-events</em> <a href="https://github.com/s-light/slight_ButtonInput/">slight_ButtonInput</a> (kann direkt in der IDE installiert werden)</li></ul>', 21)
       ]));
     };
   }
 };
-const __vite_glob_0_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_0_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$c,
   excerpt: excerpt$b
@@ -1568,13 +1587,38 @@ const _sfc_main$b = {
     const frontmatter = {};
     __expose({ frontmatter });
     return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("div", _hoisted_1$b, _cache[0] || (_cache[0] = [
-        createStaticVNode('<hr><h2 id="title%3A-taster-%26-schaltertags%3A-%5Binput%5Did%3A-261" tabindex="-1">title: Taster &amp; Schalter tags: [input] id: 261</h2><h1 id="taster-%26-schalter" tabindex="-1">Taster &amp; Schalter</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/59_taster_knopf-1024x1024.jpg" alt="Taster allgemein"></p><h2 id="funktionen" tabindex="-1">Funktionen</h2><p>Der Taster / Schalter ist ein <em>Input</em>.</p><p>Der Unterschied zwischen Taster und Schalter:</p><ul><li>Taster: nur solange <em>an</em> wie er Betätigt (z.B: gedrückt) wird</li><li>Schalter: Betätigung/Aktion wechselt den Zustand zwischen an und aus</li></ul><p>es gibt diese in sehr vielen verschiedenen Ausführungen.</p><p>wenn ein Taster/Schalter <strong>an</strong> ist sind die Kontakte verbunden. wenn er <strong>aus</strong> ist sind die kontakte unverbunden. diesen unterschied kann ein uC <em>messen</em>.</p><h2 id="anschl%C3%BCsse" tabindex="-1">Anschlüsse</h2><h3 id="eingang" tabindex="-1">Eingang</h3><ul><li>Mechanische Betätigung</li></ul><h3 id="ausgang" tabindex="-1">Ausgang</h3><ul><li>Zwei <em>Pins</em> werden *verbunden</li></ul><h2 id="kurz-datenblatt" tabindex="-1">Kurz-Datenblatt</h2><p>siehe bauteile</p><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li><em>-</em></li></ul><h2 id="weiterf%C3%BChrende-informationen%3A" tabindex="-1">Weiterführende Informationen:</h2><ul><li><a href="https://de.wikipedia.org/wiki/Schalter_(Elektrotechnik)">Schalter (Elektrotechnik) – Wikipedia Artikel</a></li><li><a href="https://de.wikipedia.org/wiki/Positionsschalter">Positionsschalter – Wikipedia Artikel</a></li><li><a href="https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe">GPIO – Wikipedia Artikel</a></li><li>library für <em>tasten-events</em> <a href="https://github.com/s-light/slight_ButtonInput/">slight_ButtonInput</a> (kann direkt in der IDE installiert werden)</li></ul>', 21)
-      ]));
+      const _component_MDAbbr = resolveComponent("MDAbbr");
+      return openBlock(), createElementBlock("div", _hoisted_1$b, [
+        _cache[2] || (_cache[2] = createStaticVNode('<h1 id="mks-bauteil" tabindex="-1">mks-Bauteil</h1><p><img src="/mks-welcome/mks/parts/mks-Grove125KHzRFIDReader-V1.0/bauteil.png" alt="Bauteil"></p><h2 id="beschreibung" tabindex="-1">Beschreibung</h2><p>kurz-Beschreibung</p><h2 id="anschl%C3%BCsse" tabindex="-1">Anschlüsse</h2><h3 id="eingang" tabindex="-1">Eingang</h3>', 6)),
+        createBaseVNode("ul", null, [
+          createBaseVNode("li", null, [
+            createVNode(_component_MDAbbr, null, {
+              default: withCtx(() => _cache[0] || (_cache[0] = [
+                createTextVNode("I2C")
+              ])),
+              abbrDescription: withCtx(() => _cache[1] || (_cache[1] = [
+                createBaseVNode("h1", null, "I²C", -1),
+                createBaseVNode("p", null, "I²C InterInterCircuit", -1),
+                createBaseVNode("p", null, [
+                  createTextVNode("Serielle Schnittstelle 2Pins: SDA, SCL es gibt immer einen "),
+                  createBaseVNode("em", null, "Controller"),
+                  createTextVNode(" (z.B. Arduino oder RaspberryPi) und viele "),
+                  createBaseVNode("em", null, "Geräte"),
+                  createTextVNode(" (z.B. Sensoren) die Geräte werden über eine Adresse ("),
+                  createBaseVNode("em", null, "Hausnummer"),
+                  createTextVNode(") angesprochen. Diese kann Teils auch beim Gerät Eingestellt werden.")
+                ], -1)
+              ])),
+              _: 1
+            })
+          ])
+        ]),
+        _cache[3] || (_cache[3] = createStaticVNode('<h3 id="ausgang" tabindex="-1">Ausgang</h3><ul><li>High Power / High Voltage</li></ul><h2 id="kurz-datenblatt" tabindex="-1">Kurz-Datenblatt</h2><ul><li>Signal Eingang: 3-5V</li><li>Betriebsspannung: 5-12V</li><li>Ausgang Strom Max: 2A</li></ul><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li>falls vorhanden link zu anderem Bauteil / zugehörigem part</li></ul><h2 id="library" tabindex="-1">library</h2><p>um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName</p><h2 id="beispiel" tabindex="-1">Beispiel</h2><p>schau dir das Minimal-Beispiel an:</p><h2 id="anleitung" tabindex="-1">Anleitung</h2><ul><li>nimm Bauteil</li><li>Schließe an Port D2 an</li><li>nehm Beispiel Code <ul><li>kopiere von hier drüber</li><li>oder direkt in der Arduino IDE: <code>Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal</code></li></ul></li><li>Sketch Hochladen</li><li>Das Sollte nun passieren: <ul><li>die LED Blinkt im 1 Sekunden Takt</li></ul></li></ul>', 12))
+      ]);
     };
   }
 };
-const __vite_glob_0_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_1_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$b,
   excerpt: excerpt$a
@@ -1627,7 +1671,7 @@ const _sfc_main$a = {
     };
   }
 };
-const __vite_glob_1_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_1_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$a,
   excerpt: excerpt$9
@@ -1680,7 +1724,7 @@ const _sfc_main$9 = {
     };
   }
 };
-const __vite_glob_1_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_1_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$9,
   excerpt: excerpt$8
@@ -1807,7 +1851,7 @@ const _sfc_main$8 = {
     };
   }
 };
-const __vite_glob_1_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_1_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$8,
   excerpt: excerpt$7
@@ -1860,7 +1904,7 @@ const _sfc_main$7 = {
     };
   }
 };
-const __vite_glob_1_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_1_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$7,
   excerpt: excerpt$6
@@ -2024,7 +2068,7 @@ void loop() {
     };
   }
 };
-const __vite_glob_1_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_1_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$6,
   excerpt: excerpt$5
@@ -2052,7 +2096,7 @@ const _sfc_main$5 = {
     };
   }
 };
-const __vite_glob_1_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_1_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$5,
   excerpt: excerpt$4
@@ -2105,7 +2149,7 @@ const _sfc_main$4 = {
     };
   }
 };
-const __vite_glob_1_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_1_8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$4,
   excerpt: excerpt$3
@@ -2133,7 +2177,7 @@ const _sfc_main$3 = {
     };
   }
 };
-const __vite_glob_1_8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_1_9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$3,
   excerpt: excerpt$2
@@ -2161,7 +2205,7 @@ const _sfc_main$2 = {
     };
   }
 };
-const __vite_glob_1_9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_1_10 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$2,
   excerpt: excerpt$1
@@ -2237,15 +2281,16 @@ const getTagsContent = () => {
 const getPartsContent = () => {
   return /* @__PURE__ */ Object.assign({
     "../../public/mks/parts/mks-Endschalter/readme.md": md_obj,
-    "../../public/mks/parts/mks-GroveKippschalter/readme.md": __vite_glob_1_1,
-    "../../public/mks/parts/mks-GroveMagnetschalter/readme.md": __vite_glob_1_2,
-    "../../public/mks/parts/mks-GroveMotortreiberI2C/readme.md": __vite_glob_1_3,
-    "../../public/mks/parts/mks-GroveSchalter/readme.md": __vite_glob_1_4,
-    "../../public/mks/parts/mks-GroveSerialBluetoothV3.0/readme.md": __vite_glob_1_5,
-    "../../public/mks/parts/mks-GroveTaster/readme.md": __vite_glob_1_6,
-    "../../public/mks/parts/mks-GroveUltraschall/readme.md": __vite_glob_1_7,
-    "../../public/mks/parts/mks-Pixel-LED-Streifen/readme.md": __vite_glob_1_8,
-    "../../public/mks/parts/mks-Taster/readme.md": __vite_glob_1_9
+    "../../public/mks/parts/mks-Grove125KHzRFIDReader-V1.0/readme.md": __vite_glob_1_1,
+    "../../public/mks/parts/mks-GroveKippschalter/readme.md": __vite_glob_1_2,
+    "../../public/mks/parts/mks-GroveMagnetschalter/readme.md": __vite_glob_1_3,
+    "../../public/mks/parts/mks-GroveMotortreiberI2C/readme.md": __vite_glob_1_4,
+    "../../public/mks/parts/mks-GroveSchalter/readme.md": __vite_glob_1_5,
+    "../../public/mks/parts/mks-GroveSerialBluetoothV3.0/readme.md": __vite_glob_1_6,
+    "../../public/mks/parts/mks-GroveTaster/readme.md": __vite_glob_1_7,
+    "../../public/mks/parts/mks-GroveUltraschall/readme.md": __vite_glob_1_8,
+    "../../public/mks/parts/mks-Pixel-LED-Streifen/readme.md": __vite_glob_1_9,
+    "../../public/mks/parts/mks-Taster/readme.md": __vite_glob_1_10
   });
 };
 const extractFrontmatterImports = (item) => {
