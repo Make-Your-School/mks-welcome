@@ -1,0 +1,5 @@
+html {
+    color: orange;
+    background-color: hsl(219, 100%, 18%);
+    box-shadow: 0 0 10px black;
+}

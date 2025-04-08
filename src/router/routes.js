@@ -33,6 +33,12 @@ export const childrenCommon = [
         component: () => import("pages/dev/MDDev.vue"),
     },
     {
+        title: "MDGlob",
+        icon: "precision_manufacturing",
+        path: "md-glob",
+        component: () => import("pages/dev/MDGlob.vue"),
+    },
+    {
         title: "MD-Dev-Imported",
         icon: "brush",
         path: "md-dev-imported",

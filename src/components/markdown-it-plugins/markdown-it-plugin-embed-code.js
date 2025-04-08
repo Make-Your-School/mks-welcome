@@ -102,7 +102,7 @@ export const runEmbedCode = (tokens, options, env, self) => {
     for (let idx = 0; idx < tokens.length; idx++) {
         const token = tokens[idx];
         if (token.type == "fence") {
-            // if (token.type == "fence" && token.tag == "code") {
+        // if (token.type == "fence" && token.tag == "code") {
             embedCode(tokens, idx, options, env, self);
         }
     }

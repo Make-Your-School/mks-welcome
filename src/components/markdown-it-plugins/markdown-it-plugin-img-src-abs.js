@@ -32,16 +32,16 @@ export default function imgSrcAbs(md) {
             // console.log(`srcValue: '${srcValue}'`);
             // console.log(`check env: `, env);
             if (env?.id) {
-                console.log(`env.id found:`, env.id);
+                // console.log(`env.id found:`, env.id);
                 // srcValue = srcValue.replace("./", env.public);
                 // console.log(`__dirname`, __dirname);
                 // console.log(`process.cwd()`, process.cwd());
                 const fullPath = env.id;
                 const projectRelPath = path.relative(process.cwd(), fullPath);
                 const basePath = path.dirname(projectRelPath).replace("public", "/mks-welcome");
-                console.log("basePath", basePath);
+                // console.log("basePath", basePath);
                 const filePath = srcValue.replace("./", basePath + path.sep);
-                console.log("filePath", filePath);
+                // console.log("filePath", filePath);
 
                 token.meta.filePath = filePath;
                 // console.log(`srcValue: (moded) '${srcValue}'`);

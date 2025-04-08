@@ -32,6 +32,8 @@ import cpp from "highlight.js/lib/languages/cpp";
 // Then register the languages you need
 hljs.registerLanguage("cpp", cpp);
 hljs.registerLanguage("c++", cpp);
+import css from "highlight.js/lib/languages/css";
+hljs.registerLanguage("css", css);
 
 
 // const props = defineProps({
