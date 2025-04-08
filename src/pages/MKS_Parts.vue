@@ -43,10 +43,18 @@ console.log("mksContent", mksContent);
 const mks_welcome = ref(mksContent.welcome);
 const mks_parts = ref(mksContent.parts);
 
+// const check_searchTextInReadme = (readme, item_name) => {
+//     return (
+//         item_name?.toLowerCase().includes(searchText.value.toLowerCase()) ||
+//         readme.content.toLowerCase().includes(searchText.value.toLowerCase()) ||
+//         readme.data?.tags?.join(", ").toLowerCase().includes(searchText.value.toLowerCase())
+//     );
+// };
 const check_searchTextInReadme = (readme, item_name) => {
     return (
         item_name?.toLowerCase().includes(searchText.value.toLowerCase()) ||
-        readme.content.toLowerCase().includes(searchText.value.toLowerCase()) ||
+        readme.content_text.toLowerCase().includes(searchText.value.toLowerCase()) ||
+        // TODO: find a better way to search for text in rendered output..
         readme.data?.tags?.join(", ").toLowerCase().includes(searchText.value.toLowerCase())
     );
 };
@@ -54,8 +62,8 @@ const check_searchTextInReadme = (readme, item_name) => {
 const getObjItemsWithSearchTextInReadme = (obj) => {
     const result = {};
     for (const [item_name, item] of Object.entries(obj)) {
-        // console.log(`item_name`, item_name, `item`, item);
-        if (check_searchTextInReadme(item.readme, item_name)) {
+        console.log(`item_name`, item_name, `item`, item);
+        if (check_searchTextInReadme(item, item_name)) {
             result[item_name] = item;
         }
     }

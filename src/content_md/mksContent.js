@@ -34,9 +34,21 @@ const getTagsContent = () => {
         eager: true,
     });
 };
+const getTagsContentText = () => {
+    return import.meta.glob(`../../public/mks/tags/*/readme.md`, {
+        query: "?raw",
+        eager: true,
+    });
+};
 const getPartsContent = () => {
     return import.meta.glob(`../../public/mks/parts/*/readme.md`, {
         // query: "?url&raw",
+        eager: true,
+    });
+};
+const getPartsContentText = () => {
+    return import.meta.glob(`../../public/mks/parts/*/readme.md`, {
+        query: "?raw",
         eager: true,
     });
 };
@@ -54,7 +66,7 @@ const extractFrontmatterImports = (item) => {
 
 
 
-const mksGetItems = (mksContent, folderName, items_dir) => {
+const mksGetItems = (mksContent, folderName, items_dir, items_dir_text) => {
     console.groupCollapsed("mksGetItems");
 
     if (mksContent[folderName] == undefined) {
@@ -81,6 +93,9 @@ const mksGetItems = (mksContent, folderName, items_dir) => {
         mksItems[item_name_lc].path_base = `mks/${folderName}/${item_name}/`;
         mksItems[item_name_lc].readme = importedObj
         mksItems[item_name_lc].content = importedObj.default;
+        // console.log('items_dir_text[path].default', items_dir_text[path].default)
+        mksItems[item_name_lc].content_text = items_dir_text[path].default
+        // TODO: find a better way to support text-search of rendered content.
         mksItems[item_name_lc].excerpt = importedObj.excerpt;
         mksItems[item_name_lc].meta = extractFrontmatterImports(importedObj);
 
@@ -114,8 +129,8 @@ const mksGetContent = () => {
 
 
 
-    mksGetItems(mksContent, "tags", getTagsContent());
-    mksGetItems(mksContent, "parts", getPartsContent());
+    mksGetItems(mksContent, 'tags', getTagsContent(), getTagsContentText())
+    mksGetItems(mksContent, 'parts', getPartsContent(), getPartsContentText())
     mksAddPartsToTags(mksContent);
 
     console.log("mksContent:", mksContent);
