@@ -69,6 +69,16 @@ const routes = [
         path: "/",
         component: () => import("layouts/MainLayout.vue"),
         children: [
+            // {
+            //     path: 'part',
+            //     component: () => import('pages/MKS_Part_Details.vue')
+            // },
+            {
+                // path: 'parts/:mks_item_name',
+                path: 'part/:part_name?',
+                component: () => import('pages/MKS_Part_Details.vue'),
+                props: true
+            },
             // { path: '', component: () => import('pages/Index.vue') },
             // { path: 'about', component: () => import('pages/About.vue') }
             ...childrenCommon,

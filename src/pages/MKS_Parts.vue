@@ -18,9 +18,14 @@
                 <PartOverview
                     :mks_item="mks_item"
                     :mks_parts="mks_parts"
-                    @click="mks_item.showDetails = true"
+                    @click="$router.push(`part/${mks_item_name}`)"
                     class="clickable"
-                />
+                    />
+                    <!--
+                        @click="$router.push({ name: 'part'}) "
+                    @click="$router.push({ name: 'parts', params: { 'part_name':mks_item_name } }) "
+                    @click="mks_item.showDetails = true"
+                -->
                 <!-- <q-dialog v-model="mks_item.showDetails" full-height full-width>
                     <PartDetails :mks_item="mks_item" :mks_parts="mks_parts" />
                 </q-dialog> -->
