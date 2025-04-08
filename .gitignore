@@ -8,8 +8,8 @@ node_modules
 /quasar.config.*.temporary.compiled*
 
 # allow build for preview on github pages
-dist/*
-# !dist/spa
+# dist/*
+!dist/spa
 # try if our build process is also working with the ignore here..
 
 # Cordova related directories and files
