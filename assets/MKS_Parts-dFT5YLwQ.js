@@ -1,9 +1,9 @@
-import { q as isRuntimeSsrPreHydration, r as ref, o as onMounted, w as watch, c as computed, a as getCurrentInstance, t as onBeforeUpdate, b as inject, v as formKey, x as onBeforeUnmount, y as debounce, z as injectProp, B as stopAndPrevent, C as nextTick, D as onDeactivated, E as onActivated, h, G as prevent, Q as QIcon, H as QSpinner, I as hSlot, J as Transition, K as shouldIgnoreKey, L as client, M as createComponent, N as stop, O as createBlock, m as openBlock, p as withCtx, j as createVNode, P as createBaseVNode, l as createElementBlock, R as createStaticVNode, S as resolveComponent, U as createTextVNode, V as resolveDynamicComponent, F as Fragment, W as renderList } from "./index-DX0R6gT4.js";
-import { u as useDarkProps, a as useDark } from "./use-dark-Bvzck9D0.js";
+import { q as isRuntimeSsrPreHydration, r as ref, o as onMounted, w as watch, c as computed, a as getCurrentInstance, t as onBeforeUpdate, b as inject, v as formKey, x as onBeforeUnmount, y as debounce, z as injectProp, B as stopAndPrevent, C as nextTick, D as onDeactivated, E as onActivated, h, G as prevent, Q as QIcon, H as QSpinner, I as hSlot, J as Transition, K as shouldIgnoreKey, L as client, M as createComponent, N as stop, O as createBlock, m as openBlock, p as withCtx, j as createVNode, P as createBaseVNode, l as createElementBlock, R as createStaticVNode, S as resolveComponent, U as createTextVNode, V as resolveDynamicComponent, F as Fragment, W as renderList } from "./index-BKTvw04u.js";
+import { u as useDarkProps, a as useDark } from "./use-dark-B4DVUUtY.js";
 import { a as addFocusFn, r as removeFocusFn } from "./focus-manager-TfMniKh0.js";
-import { Q as QPage } from "./QPage-C0xGqcKF.js";
+import { Q as QPage } from "./QPage-BCs78oXr.js";
 import { _ as _export_sfc } from "./_plugin-vue_export-helper-1tPrXgE0.js";
-import { m as md_obj } from "./readme-CMS9z2fI.js";
+import { m as md_obj } from "./readme-BSxfjbZR.js";
 let buf, bufIdx = 0;
 const hexBytes = new Array(256);
 for (let i = 0; i < 256; i++) {
@@ -1625,6 +1625,31 @@ const __vite_glob_0_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.def
   tags: tags$a,
   title: title$7
 }, Symbol.toStringTag, { value: "Module" }));
+const readme$f = "---\ntitel: Entfernung\ntags: [entfernung, input]\nid: 17\n---\n\n# Entfernung\n\n![Maßband](./Yellow%20Tape%20Measure.svg)\n\n## Funktionen\n\nSensoren die Entfernungen Messen können.\n\n<!-- more_details -->\n\nhier ist unter anderem Wichtig in welchem Bereich der jeweilige Sensor messen kann.\nes kann z.B. sein das der minimale Abstand durch aus 5cm beträgt.\nauch sind die Genauigkeit sehr unterschiedlich - von wenigen Millimetern Abweichungen bis zu mehreren Centimeter.\n\n## Relevante Größen:\n\n-   Messbereich (mm, cm, m)\n-   Genauigkeit (z.B. `+- n cm`)\n\n## Siehe Auch\n\n-   ToDo\n";
+const __vite_glob_1_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: readme$f
+}, Symbol.toStringTag, { value: "Module" }));
+const readme$e = "---\ntitle: LEDs\ntags: [output, led, licht, Farbe]\n---\n\n# LEDs\n\n![LED](./led-lamp-green-on.svg)\n\n## Funktionen\n\nEine LED kann verwendet werden um zustände zu signalisieren oder auch um Licht im sinne von Beleuchtung zu erzeugen.\n\nes gibt sehr viele verschiedene formen und ausführungen von LEDs.\n\n<!-- more_details -->\n\n## Siehe Auch\n\n-   x\n";
+const __vite_glob_1_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: readme$e
+}, Symbol.toStringTag, { value: "Module" }));
+const readme$d = "---\ntags: [motor, output]\n---\n\n# Motoren\n\n![Motor allgemein](./cyberscooty-motor-stepper.svg)\n\nTODO: CONTENT change image to general\n\n## Funktion\n\nDer Motortreiber übersetzt die schwachen Signale & Spannungen des micro-controllers (Arduino / RaspberryPi)\nin Starke Spannungen & Ströme um die verschiedenen [Motoren](#motor) anzusteuern (zu _treiben_).\n\n<!-- more_details -->\n\n## Siehe Auch\n\n-   [Motoren](#motor)\n";
+const __vite_glob_1_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: readme$d
+}, Symbol.toStringTag, { value: "Module" }));
+const readme$c = "---\ntitle: Motortreiber\ntags: [motor, motortreiber, output]\nid: 70\n---\n\n# Motortreiber\n\n![Motortreiber allgemein](https://makeyourschool.de/wp-content/uploads/2018/10/70_motortreiber-1024x1024.jpg)\n\nTODO: CONTENT change image to general\n\n## Funktion\n\nWandelt Elektrische Signale in Dreh-Bewegung um.\n\n<!-- more_details -->\n\nEs gibt soooo viele verschiedene Motoren...\n\n## Siehe Auch\n\n-   [Motortreiber](#motortreiber)\n";
+const __vite_glob_1_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: readme$c
+}, Symbol.toStringTag, { value: "Module" }));
+const readme$b = "---\ntitle: Taster & Schalter\ntags: [input]\nid: 261\n---\n\n# Taster & Schalter\n\n![Taster allgemein](https://makeyourschool.de/wp-content/uploads/2018/10/59_taster_knopf-1024x1024.jpg)\n\n<!-- TODO: CONTENT change image to general -->\n\n## Funktionen\n\nDer Taster / Schalter ist ein _Input_.\n\nDer Unterschied zwischen Taster und Schalter:\n\n-   Taster: nur solange _an_ wie er Betätigt (z.B: gedrückt) wird\n-   Schalter: Betätigung/Aktion wechselt den Zustand zwischen an und aus\n\nes gibt diese in sehr vielen verschiedenen Ausführungen.\n\n<!-- more_details -->\n\nwenn ein Taster/Schalter **an** ist sind die Kontakte verbunden.\nwenn er **aus** ist sind die kontakte unverbunden.\ndiesen unterschied kann ein uC _messen_.\n\n## Anschlüsse\n\n### Eingang\n\n-   Mechanische Betätigung\n\n### Ausgang\n\n-   Zwei _Pins_ werden \\*verbunden\n\n## Kurz-Datenblatt\n\nsiehe bauteile\n\n## Siehe Auch\n\n-   _-_\n\n## Weiterführende Informationen:\n\n-   [Schalter (Elektrotechnik) – Wikipedia Artikel](<https://de.wikipedia.org/wiki/Schalter_(Elektrotechnik)>)\n-   [Positionsschalter – Wikipedia Artikel](https://de.wikipedia.org/wiki/Positionsschalter)\n-   [GPIO – Wikipedia Artikel](https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe)\n-   library für _tasten-events_ [slight_ButtonInput](https://github.com/s-light/slight_ButtonInput/) (kann direkt in der IDE installiert werden)\n";
+const __vite_glob_1_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: readme$b
+}, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$b = { class: "markdown-body" };
 const _hoisted_2$2 = { href: "https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter" };
 const excerpt$a = '<h1 id="rfid-leser" tabindex="-1">RFID-Leser</h1>\n<!-- ![Bauteil](./bauteil.png) -->\n<p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/52_rfid_leser-1024x1024.jpg" alt="RFID-Leser"></p>\n<h2 id="beschreibung" tabindex="-1">Beschreibung</h2>\n<p>RFID bezeichnet ein Sender-Empfänger-System, das vor allem zur eindeutigen Identifizierung von Objekten, Einkaufswaren oder auch Lebewesen eingesetzt wird.\nDer RFID-Transponder besitzt eine eindeutige Identifikationsnummer.\nDas Lesegerät liest diese aus, sobald der Transponder in unmittelbarer Nähe ist.\nDer Transponder benötigt dabei keine Stromversorgung, da das Auslesegerät ihn kontaktlos mit Energie versorgt.</p>\n';
@@ -1759,7 +1784,7 @@ const _sfc_main$b = {
     };
   }
 };
-const __vite_glob_1_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_2_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$b,
   excerpt: excerpt$a
@@ -1815,7 +1840,7 @@ const _sfc_main$a = {
     };
   }
 };
-const __vite_glob_1_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_2_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$a,
   excerpt: excerpt$9,
@@ -1874,7 +1899,7 @@ const _sfc_main$9 = {
     };
   }
 };
-const __vite_glob_1_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_2_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$9,
   excerpt: excerpt$8,
@@ -1979,7 +2004,7 @@ const _sfc_main$8 = {
     };
   }
 };
-const __vite_glob_1_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_2_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$8,
   excerpt: excerpt$7,
@@ -2038,7 +2063,7 @@ const _sfc_main$7 = {
     };
   }
 };
-const __vite_glob_1_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_2_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$7,
   excerpt: excerpt$6,
@@ -2191,7 +2216,7 @@ void loop() {
     };
   }
 };
-const __vite_glob_1_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_2_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$6,
   excerpt: excerpt$5,
@@ -2225,7 +2250,7 @@ const _sfc_main$5 = {
     };
   }
 };
-const __vite_glob_1_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_2_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$5,
   excerpt: excerpt$4,
@@ -2284,7 +2309,7 @@ const _sfc_main$4 = {
     };
   }
 };
-const __vite_glob_1_8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_2_8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$4,
   excerpt: excerpt$3,
@@ -2321,7 +2346,7 @@ const _sfc_main$3 = {
     };
   }
 };
-const __vite_glob_1_9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_2_9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$3,
   excerpt: excerpt$2,
@@ -2354,13 +2379,68 @@ const _sfc_main$2 = {
     };
   }
 };
-const __vite_glob_1_10 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_2_10 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$2,
   excerpt: excerpt$1,
   id,
   tags: tags$1,
   title
+}, Symbol.toStringTag, { value: "Module" }));
+const readme$a = "---\ntitle: Endschalter\ntags: [taster_schalter, schalter, taster_taster_schalter, schalter, taster, motor, input]\nid: 25\n---\n\n# Endschalter\n\n![Endschalter](./bauteil.png)\n\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nDer Endschalter funktioniert wie ein normaler Schalter und kann als Eingabe für einen Mikrocontroller verwendet werden.\nDer Schalter besitzt einen elastischen Schaltarm, der einen elektrischen Kontakt zwischen den Anschlusspins herstellt, wenn der Arm gedrückt wird.\n\n<!-- more_details -->\n\nDer Endschalter kommt vor allem bei Robotern oder anderen bewegten Maschinen zum Einsatz, um Kollisionen zu erkennen und zu vermeiden.\nSo kann dieser zum Beispiel an einem Roboter angebaut werden - wenn der Roboter dann gegen ein Hindernis fährt,\nwird der Endschalter betätigt bevor der Roboter das Hindernis wirklich berührt.\nSo wird die bevorstehende Kollision erkannt und kann vermieden werden. (z.B. fährt der Roboter dann Rückwärts vom Hindernis weg.)\n\n## Anschlüsse\n\n### Eingang\n\n-   Mechanische Betätigung\n\n### Ausgang\n\n-   3 Kontakte (NC-C-NO)\n    -   C = Common (gemeinsamer Anschluss)\n    -   NC = Normal Closed (im ungedürckten zustand mit C verbunden)\n    -   NO = Normal Open (im gedürckten zustand mit C verbunden)\n\n## Kurz-Datenblatt\n\n-   Schaltleistung: 5A 125VAC\n\n[Hersteller Datenblatt](https://asset.conrad.com/media10/add/160267/c1/-/de/000707243DS01/datenblatt-707243-hartmann-mikroschalter-mbb1-01-a-01-c-09-a-250-vac-5-a-1-x-einein-tastend-1-st.pdf)\n\n## Siehe Auch\n\n-   -\n\n## library\n\nkeine library nötig.\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/Endschalter_minimal/Endschalter_minimal.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n-   schließe den Endschalter wie folgt an:\n    -   C an GND\n    -   NO an D2\n-   nehm Beispiel Code\n    -   kopiere von hier drüber in neuen leeren arduino sketch\n    -   oder direkt über das Menü der Arduino IDE \\*1:\n        `Datei-Beispiele-MakeYourSchool-Taster-Endschalter-Endschalter_Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   Öffne den Serial-Monitor (Symbol ganz rechts oben in der IDE)\n    -   Wenn du nun den Endschalter drückst sollte `Endschalter wurde gerade gedrückt!` angezeigt werden.\n    -   Wenn du ihn wieder los lässt sollte `Endschalter wurde wieder geöffnet` angezeigt werden.\n\n\\*1: dafür musst du einmalig die `MakeYourSchool` library installiert haben.\ndiese bringt alle hier im system vorhandenen Beispielcodes in die IDE..\n";
+const __vite_glob_3_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: readme$a
+}, Symbol.toStringTag, { value: "Module" }));
+const readme$9 = '# RFID-Leser\n\n<!-- ![Bauteil](./bauteil.png) -->\n\n![RFID-Leser](https://makeyourschool.de/wp-content/uploads/2018/10/52_rfid_leser-1024x1024.jpg)\n\n## Beschreibung\n\nRFID bezeichnet ein Sender-Empfänger-System, das vor allem zur eindeutigen Identifizierung von Objekten, Einkaufswaren oder auch Lebewesen eingesetzt wird.\nDer RFID-Transponder besitzt eine eindeutige Identifikationsnummer.\nDas Lesegerät liest diese aus, sobald der Transponder in unmittelbarer Nähe ist.\nDer Transponder benötigt dabei keine Stromversorgung, da das Auslesegerät ihn kontaktlos mit Energie versorgt.\n\n<!-- more_details -->\n\nDer RFID-Leser lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über die serielle Schnittstelle UART anschließen.\n\nMit der RFID-Technologie lässt sich beispielsweise ein Haustür-Schloss automatisieren.\nIndividuelle RFID-Transponder müssen dann an das entsprechende Lesegerät gehalten werden und könnten so einen Schlüssel ersetzen.\nBei Verlust eines Transponders ließe sich dieser nachträglich ohne Austausch des Schlosses aus dem System sperren.\n\nSchaue dir die Beispiele im Ordner [`examples`](./examples/) an.\nDort haben wir verschiedene Szenarien hinterlegt.\n\nAlle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst.\nZusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.\n\n## Anschlüsse\n\n### Eingang\n\n- UART\n\n### Ausgang\n\n- 125kHz RFID\n\n## Kurz-Datenblatt\n\n- Signal Eingang: 5V\n- Betriebsspannung: 5V\n- Auslese Abstand (maximal): 70mm\n- TTL Output 9600 baudrate, 8 data bits, 1 stop bit, and no verify bit\n- Wiegand Output 26 bits Wiegand format, 1 even verify bit, 24 data bits, and 1 odd verify bit\n- Chip [`RDM630`](http://www.datarfid.com/product/showproduct.php?id=14) ([Datenblatt](https://github.com/SeeedDocument/125Khz_RFID_module-UART/blob/master/res/RDM630-Spec.pdf))\n- Lesbare Karten Typen:  EM4100/TK4200/EM4200\n\n\n## library\n\nUm dieses Bauteil zu verwenden, wird lediglich die Bibliothek "SoftwareSerial" benötigt.\n(diese ist schon fest in die Arduino IDE integriert - du musst nichts installieren.)\n\n## Beispiel\n\nDer Beispiel-Code ist (vorerst) im Ordner "examples" zu finden.\n\n```c++:./examples/GroveSerialBluetoothV3.0_minimal/GroveSerialBluetoothV3.0_minimal.ino\n./examples/GroveSerialBluetoothV3.0_minimal/GroveSerialBluetoothV3.0_minimal.ino\n```\n\n<!-- TODO:  include example *_minimal.ino-->\n\n## Anleitung\n\n\n### Grundsätzlich:\n\n- RFID-Modul am Arduino anschließen (am besten über das Grove Shield).\n  Den richtigen Port entnehmt ihr dem Beispiel-Code\n- Sobald der Arduino mit Strom versorgt wird, sollte das RFID-Modul rot blinken wenn du eine Karte an die Antenne hältst.\n\n### Video\n\n<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dJXTgtIMUPw?si=BcOwoU9WhtPMKLse" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>\n\n## Siehe Auch\n\n- [Seeed Studio Wiki – RFID Reader](https://wiki.seeedstudio.com/Grove-125KHz_RFID_Reader/)\n\n## Projektbeispiele\n\n- [Hackster – Haus-Sicherheitssystem](https://www.hackster.io/ArduinoBasics/arduino-based-security-project-using-cayenne-eb379b)\n\n## Weiterführende Hintergrundinformationen\n\n- [UART – Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)\n- [RFID – Wikipedia Artikel](https://de.wikipedia.org/wiki/RFID)\n';
+const __vite_glob_3_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: readme$9
+}, Symbol.toStringTag, { value: "Module" }));
+const readme$8 = "---\ntitle: Kippschalter\ntags: [input, taster_schalter, schalter, lage, orientierung, position]\nid: 24\n---\n\n# Kippschalter\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/24_kippschalter-1024x1024.jpg)\n\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nkurz-Beschreibung\n\n<!-- more_details -->\n\nmehr details\n\n## Anschlüsse\n\n### Eingang\n\n-   I2C\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugehörigem part\n\n## library\n\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: keine library benötigt.\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/grove_kippschalter_minimal/grove_kippschalter_minimal.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schließe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier drüber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n";
+const __vite_glob_3_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: readme$8
+}, Symbol.toStringTag, { value: "Module" }));
+const readme$7 = "---\ntitle: Magnetschalter\ntags: [input, taster_schalter, schalter, taster_taster_schalter, schalter, taster, magnet]\nid: 28\n---\n\n# Magnetschalter\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/28_magnetschalter-1024x1024.jpg)\n\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nkurz-Beschreibung\n\n<!-- more_details -->\n\nmehr details\n\n## Anschlüsse\n\n### Eingang\n\n-   I2C\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugehörigem part\n\n## library\n\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName\n\n<!-- TODO: CONTENT change library name -->\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/grove_magnetschalter_minimal/grove_magnetschalter_minimal.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schließe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier drüber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n";
+const __vite_glob_3_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: readme$7
+}, Symbol.toStringTag, { value: "Module" }));
+const readme$6 = "---\ntitle: Grove Motortreiber (I2C)\ntags: [output, aktor, motortreiber, motor, i2c]\nid: 70\n---\n\n# Grove motortreiber I2C\n\nmks Nr 70\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/70_motortreiber-1024x1024.jpg)\n\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nkurz-Beschreibung\n\n<!-- more_details -->\n\nmehr details\n\n## Anschlüsse\n\n### Eingang\n\n-   I2C\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 1A\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugehörigem part\n\n## library\n\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName\n\n<!-- TODO: CONTENT change library name -->\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/grove_motortreiber_minimal/grove_motortreiber_minimal.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schließe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier drüber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n";
+const __vite_glob_3_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: readme$6
+}, Symbol.toStringTag, { value: "Module" }));
+const readme$5 = "---\ntitle: Grove Schalter\ntags: [input, taster_schalter, schalter, grove]\nid: 61\n---\n\n# Schalter\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/61_schalter-1024x1024.jpg)\n\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nkurz-Beschreibung\n\n<!-- more_details -->\n\nmehr details\n\n## Anschlüsse\n\n### Eingang\n\n-   I2C\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugehörigem part\n\n## library\n\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName\n\n<!-- TODO: CONTENT change library name -->\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/grove_schalter_minimal/grove_schalter_minimal.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schließe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier drüber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n";
+const __vite_glob_3_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: readme$5
+}, Symbol.toStringTag, { value: "Module" }));
+const readme$4 = '---\ntitle: Grove – Serial Bluetooth V3.0\ntags: [input, output, kommunikation, UART, funk, bluetooth]\nid: 53\n---\n\n# Grove – Serial Bluetooth V3.0\n\n![Seeed Studio Grove – Serial Bluetooth V3.0](https://makeyourschool.de/wp-content/uploads/2018/10/53_bluetooth-modul-1024x1024.jpg)\n\n## Beschreibung\n\nDas Bluetooth-Modul ermöglicht es Informationen, Befehle und Daten kabellos zwischen mehreren Endgeräten oder Mikrocontrollern zu übertragen.\nSo können beispielsweise zwei Arduinos untereinander oder auch ein Arduino mit einem Smartphone / Laptop kommunizieren.\n\n<!-- more_details -->\n\nDamit das funktioniert, wird auf dem Smartphone eine App benötigt, über die Befehle empfangen und gesendet werden können. Empfehlungen findet ihr weiter unten.\nDas Bluetooth-Modul lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über die serielle Schnittstelle UART anschließen und zusätzlich über bestimmte Befehle programmieren.\nSo kann beispielsweise eine Pin oder der angezeigte Bluetooth-Name eingestellt werden.\n\n## Anschlüsse\n\n### Eingang\n\n- UART\n\n### Ausgang\n\n- Bluetooth\n\n## Kurz-Datenblatt\n\n- Signal Eingang: 5V\n- Betriebsspannung: 5V\n- Fully Qualified Bluetooth `V2.1+EDR`\n- Modul-Bezeichnung `HM-01`\n- Chip `BC417143`\n\n## library\n\nUm dieses Bauteil zu verwenden, wird lediglich die Bibliothek "SoftwareSerial" benötigt.\n(diese ist schon fest in die Arduino IDE integriert - du musst nichts installieren.)\n\n## Beispiel\n\nDer Beispiel-Code ist (vorerst) im Ordner "examples" zu finden.\n\n```c++:./examples/GroveSerialBluetoothV3.0_minimal/GroveSerialBluetoothV3.0_minimal.ino\n./examples/GroveSerialBluetoothV3.0_minimal/GroveSerialBluetoothV3.0_minimal.ino\n```\n\n## Anleitungen\n\nGrundsätzlich:\n\n- Bluetooth-Modul am Arduino anschließen (am besten über das Grove Shield).\n  Den richtigen Port entnehmt ihr dem Beispiel-Code\n- Sobald der Arduino mit Strom versorgt wird, sollte das Bluetooth-Modul anfangen zu blinken.\n\n### Bluetooth-Modul konfigurieren\n\nDas BT-Modul kann über sogenannte AT-Befehle konfiguriert werden. Diese können händisch in der Arduino IDE über den seriellen Monitor verschickt werden. Dies muss nur einmalig gemacht werden. Das Modul speichert die Konfiguration dauerhaft.\nDamit das BT-Modul AT-Befehle korrekt verarbeitet müssen drei Bedingungen erfüllt sein:\n\n- Der Beispiel-Code (oder ein vergleichbarer Sketch) muss auf den Arduino aufgespielt sein.\n- Der serielle Monitor auf dem PC muss auf "No line ending" eingestellt sein.\n- Es darf keine aktive Bluetoothverbindung bestehen (LED muss blinken).\n\nWenn alles korrekt funktioniert, antwortet das Bluetooth-Modul auf jeden AT-Befehl mit "OK".\n\nListe der wichtigsten AT-Befehle (Optionen sind in [ ] angegeben (keine Leerzeichen einfügen!)):\n\n| Befehl         | Funktion                                                                          |\n| -------------- | --------------------------------------------------------------------------------- |\n| AT             | Verbindung testen                                                                 |\n| AT+DEFAULT     | Auf Werkszustand zurücksetzen                                                     |\n| AT+ROLE[S/M/?] | Slave oder Master aktivieren bzw. aktuelle Einstellung abfragen (Standard: Slave) |\n| AT+NAME[.../?] | Name einstellen/abfragen (Standard: HMSoft max. 12 Zeichen)                       |\n| AT+PIN[.../?]  | Pin einstellen/abfragen (Standard: 1234)                                          |\n| AT+CLEAR       | Letzte Bluetooth-Verbindung löschen                                               |\n| AT+TEMP?       | Temperatur des BT-Moduls ausgeben                                                 |\n| AT+AUTH[0/1/?] | Authentifizierung einstellen bzw. abfragen (Standard: 0)                          |\n| AT+VERSION     | Firmware-Version ausgeben                                                         |\n| AT+RESTART     | BT-Modul neu starten                                                              |\n| AT+HELP?       | _Hilfe_ anzeigen                                                                  |\n\n#### Beispiele\n\n- Namen abfragen `AT+NAME?`\n    - modul antwortet mit `OK+NAME deraktuelle`\n- Namen setzen `AT+NAMEFrosch`\n\n### Zwei Bluetooth-Module miteinander verbinden\n\n- Beide Module auf Werkszustand zurücksetzen (oder wie gewünscht konfigurieren. Name, Pin etc. müssen auf beiden Modulen identisch sein!)\n- Eines der beiden Module als Master konfigurieren\n- Warten. Die beiden Module verbinden sich nun automatisch\n\n### Bluetooth-Modul und Smartphone verbinden\n\n- Bluetooth-Modul auf Werkszustand zurücksetzen (oder wie gewünscht konfigurieren)\n- Auf dem Smartphone in die Bluetooth-Einstellungen gehen und nach neuen Geräten suchen. Nach einigen Sekunden sollte das Bluetooth-Modul als "HMSoft" auftauchen.\n- "HMSoft" auswählen und PIN eingeben (Standard: 1234)\n- In vielen Fällen wird sich das Smartphone zwar koppeln aber keine Verbindung aufbauen können. Das ist nicht schlimm.\n- Eine der empfohlenen Bluetooth-Apps öffnen (s. Links zum Google Play Store) und innerhalb der App mit HMSoft verbinden\n\n#### Bluetooth-Apps\n\n- [Google Play Store – Bluetooth Arduino Control](https://play.google.com/store/apps/details?id=com.giristudio.hc05.bluetooth.arduino.control)\n- [Google Play Store – Serial Bluetooth Terminal](https://play.google.com/store/apps/details?id=de.kai_morich.serial_bluetooth_terminal&hl=de)\n- [F-Droid - Bluetooth Viewer (LITE)](https://f-droid.org/en/packages/net.bluetoothviewer/)\n- [F-Droid - SerialTest (kann auch Bluetooth)](https://f-droid.org/en/packages/priv.wh201906.serialtest/)\n\n## Siehe Auch\n\n- [Seeed Studio Wiki – Bluetooth](http://wiki.seeedstudio.com/Grove-Serial_Bluetooth_v3.0/)\n\n## Projektbeispiele\n\n- [Funduino – Bluetooth (nur ein anderes Modul)](https://funduino.de/tutorial-hc-05-und-hc-06-bluetooth)\n\n## Weiterführende Hintergrundinformationen\n\n- [UART – Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)\n- [Bluetooth – Wikipedia Artikel](https://de.wikipedia.org/wiki/Bluetooth)\n- [Bluetooth-Chip Software Datasheet](https://files.seeedstudio.com/wiki/Bluetooth_Shield_V2/res/Bluetooth_en.pdf)\n';
+const __vite_glob_3_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: readme$4
+}, Symbol.toStringTag, { value: "Module" }));
+const readme$3 = "---\ntitle: Grove Taster\ntags: [input, taster_taster_schalter, schalter, taster, grove]\nid: 60\n---\n\n# Taster (Grove)\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/60_taster_knopf_platine-1024x1024.jpg)\n\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nein einfacher Taster.\nauf einer Platine mit einem Grove-Buchse verlötete.\ndadurch ist der Anschluss super einfach :-)\n\n<!-- more_details -->\n\nmehr details\n\n## Anschlüsse\n\n### Eingang\n\n-   Mechanische Betätigung\n\n### Ausgang\n\n-   5V Signal (auf Grove Buchse)\n\n## Kurz-Datenblatt\n\n-   Betriebsspannung: 3.3-5V\n\n## Siehe Auch\n\n-   -\n\n## library\n\nkeine library nötig.\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/taster/taster.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schließe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier drüber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n";
+const __vite_glob_3_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: readme$3
+}, Symbol.toStringTag, { value: "Module" }));
+const readme$2 = "---\ntitel: Grove Ultraschall Entfernungsmesser\ntags: [input, entfernung, grove]\nid: 17\n---\n\n# Grove Ultraschall Entfernungsmesser\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/17_ultraschallentfernungssensor-1024x1024.jpg)\n\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nkurz-Beschreibung\n\n<!-- more_details -->\n\nmehr details\n\n## Anschlüsse\n\n### Eingang\n\n-   I2C\n\n### Ausgang\n\n-   High Power / High Voltage\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 5-12V\n-   Ausgang Strom Max: 2A\n\n## Siehe Auch\n\n-   x\n\n## library\n\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName\n\n<!-- TODO: CONTENT change library name -->\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an\n\n```c++ :./examples/BauteilTemplate_minimal/BauteilTemplate_minimal.ino\n\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schließe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier drüber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n";
+const __vite_glob_3_8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: readme$2
+}, Symbol.toStringTag, { value: "Module" }));
+const readme$1 = "---\ntags: [output, leds, licht]\nid: 65\n---\n\n# Pixel LED-Streifen\n\n![LED-Streifen](https://makeyourschool.de/wp-content/uploads/2018/08/65_led-streifen-1024x1024.jpg)\n\n## Beschreibung\nLED-Streifen sind Flexible Bänder auf denen in bestimmtem Abstand `Adresierbare LED's` aufgelötete sind.\n\n<!-- more_details -->\n\njeder *Pixel* beinhaltet einen kleinen controller chip (meist schwarzen - dem LED-Treiber) und den meist drei eigentlichen LEDs in den Licht-Grundfarben Rot, Grün und Blau.\nJeder *Pixel* kann einzeln *Adressiert* werden (Entspricht einem Haus in einer Straße).\ndabei können alle drei Grundfarben einzeln in ihrere Helligkeit (255 Stufen) eingestellt werden -\ndadurch können alle Regenbogen Farben + Weiß erzeugt werden.\n\n\nAndere Namen:\n- Neopixel\n- WS2811\n- Dotstar\n- APA102\n\n## Anschlüsse\n\n### Eingang\n\n-   Serielle Daten\n\n### Ausgang\n\n-   Licht\n\n## Kurz-Datenblatt\n\n-   Signal Eingang: 3-5V\n-   Betriebsspannung: 3-5V\n-   benötigter Strom: 20mA-60mA pro Pixel\n\nBeispiel:\n10 Pixel * 60mA = 600mA = 0,6A\n\n\n## Siehe Auch\n\n-   falls vorhanden link zu anderem Bauteil / zugehörigem part\n\n## library\n\num dieses Bauteil zu benutzen verwende / installiere bitte diese Library: [fastled](https://fastled.io/)\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/pixel_minimal/pixel_minimal.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schließe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier drüber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n";
+const __vite_glob_3_9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: readme$1
+}, Symbol.toStringTag, { value: "Module" }));
+const readme = "---\ntitle: Taster\ntags: [input, taster, taster_schalter,]\nid: 59\n---\n\n# Taster\n\n![Bauteil](https://makeyourschool.de/wp-content/uploads/2018/10/59_taster_knopf-1024x1024.jpg)\n\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n\n## Beschreibung\n\nein einfacher Taster\n\n<!-- more_details -->\n\nmehr details\n\n## Anschlüsse\n\n### Eingang\n\n-   Mechanische Betätigung\n\n### Ausgang\n\n-   ...\n\n## Kurz-Datenblatt\n\n-   Betriebsspannung: 3.3-5V\n\n## Siehe Auch\n\n-   https://makeyourschool.de/maker-ecke/material/taster-knopf/\n\n## library\n\nkeine library nötig\n\n<!-- TODO: CONTENT change library name -->\n\n## Beispiel\n\nschau dir das Minimal-Beispiel an:\n\n```c++:./examples/taster/taster.ino\n// this should be overwritten!\n```\n\n## Anleitung\n\n<!-- TODO: CONTENT change guide -->\n\n-   nimm Bauteil\n-   Schließe an Port D2 an\n-   nehm Beispiel Code\n    -   kopiere von hier drüber\n    -   oder direkt in der Arduino IDE:\n        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`\n-   Sketch Hochladen\n-   Das Sollte nun passieren:\n    -   die LED Blinkt im 1 Sekunden Takt\n";
+const __vite_glob_3_10 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: readme
 }, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$1 = { class: "markdown-body" };
 const titel = "MYS Material";
@@ -2390,7 +2470,7 @@ const _sfc_main$1 = {
     };
   }
 };
-const __vite_glob_2_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const __vite_glob_4_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$1,
   excerpt,
@@ -2429,19 +2509,43 @@ const getTagsContent = () => {
     "../../public/mks/tags/Taster_Schalter/readme.md": __vite_glob_0_4
   });
 };
+const getTagsContentText = () => {
+  return /* @__PURE__ */ Object.assign({
+    "../../public/mks/tags/Entfernung/readme.md": __vite_glob_1_0,
+    "../../public/mks/tags/LEDs/readme.md": __vite_glob_1_1,
+    "../../public/mks/tags/Motor/readme.md": __vite_glob_1_2,
+    "../../public/mks/tags/Motortreiber/readme.md": __vite_glob_1_3,
+    "../../public/mks/tags/Taster_Schalter/readme.md": __vite_glob_1_4
+  });
+};
 const getPartsContent = () => {
   return /* @__PURE__ */ Object.assign({
     "../../public/mks/parts/mks-Endschalter/readme.md": md_obj,
-    "../../public/mks/parts/mks-Grove125KHzRFIDReader-V1.0/readme.md": __vite_glob_1_1,
-    "../../public/mks/parts/mks-GroveKippschalter/readme.md": __vite_glob_1_2,
-    "../../public/mks/parts/mks-GroveMagnetschalter/readme.md": __vite_glob_1_3,
-    "../../public/mks/parts/mks-GroveMotortreiberI2C/readme.md": __vite_glob_1_4,
-    "../../public/mks/parts/mks-GroveSchalter/readme.md": __vite_glob_1_5,
-    "../../public/mks/parts/mks-GroveSerialBluetoothV3.0/readme.md": __vite_glob_1_6,
-    "../../public/mks/parts/mks-GroveTaster/readme.md": __vite_glob_1_7,
-    "../../public/mks/parts/mks-GroveUltraschall/readme.md": __vite_glob_1_8,
-    "../../public/mks/parts/mks-Pixel-LED-Streifen/readme.md": __vite_glob_1_9,
-    "../../public/mks/parts/mks-Taster/readme.md": __vite_glob_1_10
+    "../../public/mks/parts/mks-Grove125KHzRFIDReader-V1.0/readme.md": __vite_glob_2_1,
+    "../../public/mks/parts/mks-GroveKippschalter/readme.md": __vite_glob_2_2,
+    "../../public/mks/parts/mks-GroveMagnetschalter/readme.md": __vite_glob_2_3,
+    "../../public/mks/parts/mks-GroveMotortreiberI2C/readme.md": __vite_glob_2_4,
+    "../../public/mks/parts/mks-GroveSchalter/readme.md": __vite_glob_2_5,
+    "../../public/mks/parts/mks-GroveSerialBluetoothV3.0/readme.md": __vite_glob_2_6,
+    "../../public/mks/parts/mks-GroveTaster/readme.md": __vite_glob_2_7,
+    "../../public/mks/parts/mks-GroveUltraschall/readme.md": __vite_glob_2_8,
+    "../../public/mks/parts/mks-Pixel-LED-Streifen/readme.md": __vite_glob_2_9,
+    "../../public/mks/parts/mks-Taster/readme.md": __vite_glob_2_10
+  });
+};
+const getPartsContentText = () => {
+  return /* @__PURE__ */ Object.assign({
+    "../../public/mks/parts/mks-Endschalter/readme.md": __vite_glob_3_0,
+    "../../public/mks/parts/mks-Grove125KHzRFIDReader-V1.0/readme.md": __vite_glob_3_1,
+    "../../public/mks/parts/mks-GroveKippschalter/readme.md": __vite_glob_3_2,
+    "../../public/mks/parts/mks-GroveMagnetschalter/readme.md": __vite_glob_3_3,
+    "../../public/mks/parts/mks-GroveMotortreiberI2C/readme.md": __vite_glob_3_4,
+    "../../public/mks/parts/mks-GroveSchalter/readme.md": __vite_glob_3_5,
+    "../../public/mks/parts/mks-GroveSerialBluetoothV3.0/readme.md": __vite_glob_3_6,
+    "../../public/mks/parts/mks-GroveTaster/readme.md": __vite_glob_3_7,
+    "../../public/mks/parts/mks-GroveUltraschall/readme.md": __vite_glob_3_8,
+    "../../public/mks/parts/mks-Pixel-LED-Streifen/readme.md": __vite_glob_3_9,
+    "../../public/mks/parts/mks-Taster/readme.md": __vite_glob_3_10
   });
 };
 const extractFrontmatterImports = (item) => {
@@ -2452,7 +2556,7 @@ const extractFrontmatterImports = (item) => {
     return obj;
   }, {});
 };
-const mksGetItems = (mksContent2, folderName, items_dir) => {
+const mksGetItems = (mksContent2, folderName, items_dir, items_dir_text) => {
   console.groupCollapsed("mksGetItems");
   if (mksContent2[folderName] == void 0) {
     mksContent2[folderName] = {};
@@ -2470,6 +2574,7 @@ const mksGetItems = (mksContent2, folderName, items_dir) => {
     mksItems[item_name_lc].path_base = `mks/${folderName}/${item_name}/`;
     mksItems[item_name_lc].readme = importedObj;
     mksItems[item_name_lc].content = importedObj.default;
+    mksItems[item_name_lc].content_text = items_dir_text[path].default;
     mksItems[item_name_lc].excerpt = importedObj.excerpt;
     mksItems[item_name_lc].meta = extractFrontmatterImports(importedObj);
     console.log(`${item_name} '${mksItems[item_name_lc].path_base}'`);
@@ -2487,7 +2592,7 @@ const mksGetContent = () => {
   const path_base = "../../public/mks/";
   console.log("load welcome readme");
   const importedObj = Object.assign({
-    "../../public/mks/readme.md": __vite_glob_2_0
+    "../../public/mks/readme.md": __vite_glob_4_0
   })["../../public/mks/readme.md"];
   console.log("importedObj", importedObj);
   mksContent2.welcome.path_base = path_base;
@@ -2496,8 +2601,8 @@ const mksGetContent = () => {
   mksContent2.welcome.excerpt = importedObj.excerpt;
   mksContent2.welcome.meta = extractFrontmatterImports(importedObj);
   console.log("welcome done.");
-  mksGetItems(mksContent2, "tags", getTagsContent());
-  mksGetItems(mksContent2, "parts", getPartsContent());
+  mksGetItems(mksContent2, "tags", getTagsContent(), getTagsContentText());
+  mksGetItems(mksContent2, "parts", getPartsContent(), getPartsContentText());
   mksAddPartsToTags(mksContent2);
   console.log("mksContent:", mksContent2);
   console.groupEnd();
@@ -2511,14 +2616,16 @@ const _sfc_main = {
     console.log("mksContent", mksContent);
     const mks_welcome = ref(mksContent.welcome);
     const mks_parts = ref(mksContent.parts);
-    const check_searchTextInReadme = (readme, item_name) => {
+    const check_searchTextInReadme = (readme2, item_name) => {
       var _a, _b;
-      return (item_name == null ? void 0 : item_name.toLowerCase().includes(searchText.value.toLowerCase())) || readme.content.toLowerCase().includes(searchText.value.toLowerCase()) || ((_b = (_a = readme.data) == null ? void 0 : _a.tags) == null ? void 0 : _b.join(", ").toLowerCase().includes(searchText.value.toLowerCase()));
+      return (item_name == null ? void 0 : item_name.toLowerCase().includes(searchText.value.toLowerCase())) || readme2.content_text.toLowerCase().includes(searchText.value.toLowerCase()) || // TODO: find a better way to search for text in rendered output..
+      ((_b = (_a = readme2.data) == null ? void 0 : _a.tags) == null ? void 0 : _b.join(", ").toLowerCase().includes(searchText.value.toLowerCase()));
     };
     const getObjItemsWithSearchTextInReadme = (obj) => {
       const result = {};
       for (const [item_name, item] of Object.entries(obj)) {
-        if (check_searchTextInReadme(item.readme, item_name)) {
+        console.log(`item_name`, item_name, `item`, item);
+        if (check_searchTextInReadme(item, item_name)) {
           result[item_name] = item;
         }
       }
@@ -2566,7 +2673,7 @@ const _sfc_main = {
     };
   }
 };
-const MKS_Parts = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-14000118"]]);
+const MKS_Parts = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-59bb7d71"]]);
 export {
   MKS_Parts as default
 };

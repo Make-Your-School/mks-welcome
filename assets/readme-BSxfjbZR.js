@@ -1,4 +1,4 @@
-import { S as resolveComponent, l as createElementBlock, m as openBlock, R as createStaticVNode, j as createVNode } from "./index-DX0R6gT4.js";
+import { S as resolveComponent, l as createElementBlock, m as openBlock, R as createStaticVNode, j as createVNode } from "./index-BKTvw04u.js";
 const _hoisted_1 = { class: "markdown-body" };
 const title = "Endschalter";
 const tags = ["taster_schalter", "schalter", "taster_taster_schalter", "schalter", "taster", "motor", "input"];

@@ -2,26 +2,26 @@
   width: 100%;
   height: 100%;
   overflow: scroll;
-}.my-page[data-v-14000118] {
+}.my-page[data-v-59bb7d71] {
   display: flex;
   flex-direction: column;
   min-height: 0;
   height: 100%;
 }
-.card-wrapper[data-v-14000118] {
+.card-wrapper[data-v-59bb7d71] {
   flex-grow: 1;
   overflow: auto;
   min-height: 0;
   list-style: none;
   padding: 0;
 }
-.card-wrapper li[data-v-14000118] {
+.card-wrapper li[data-v-59bb7d71] {
   margin: 0;
 }
-.q-card[data-v-14000118] {
+.q-card[data-v-59bb7d71] {
   background-color: #84cbd4;
 }
-.my-card[data-v-14000118] {
+.my-card[data-v-59bb7d71] {
   width: 100%;
   min-width: 25rem;
   max-width: 32.5vw;
@@ -31,7 +31,7 @@
   justify-content: center;
   align-items: center;
 }
-.clickable[data-v-14000118] {
+.clickable[data-v-59bb7d71] {
   cursor: pointer;
 }.my-card img {
   max-width: 100%;
