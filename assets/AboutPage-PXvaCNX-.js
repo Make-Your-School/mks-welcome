@@ -1,10 +1,10 @@
-import { Q as QPage } from "./QPage-BWNlXP7Z.js";
-import { r as ref, O as createBlock, m as openBlock, p as withCtx, P as createBaseVNode, X as toDisplayString, u as unref, U as createTextVNode, j as createVNode } from "./index-GdisMny6.js";
-import { m as matter, _ as _sfc_main$1 } from "./MyMarkdown-_ZUDTiLb.js";
+import { Q as QPage } from "./QPage-BhKAIjD9.js";
+import { r as ref, O as createBlock, m as openBlock, p as withCtx, P as createBaseVNode, X as toDisplayString, u as unref, U as createTextVNode, j as createVNode } from "./index-j8_ddN6m.js";
+import { m as matter, _ as _sfc_main$1 } from "./MyMarkdown-nFGlD4Gw.js";
 import "./_commonjsHelpers-CcAunmGO.js";
 import "./index-DXipyAWe.js";
 import "./core-CUVoAmL3.js";
-import "./cpp-DxF16jcj.js";
+import "./css-CBCnwQ5t.js";
 const about$2 = "# About\n\ndies ist die neuauflage der Material Koffer Set Hilfe-Seite.\n\nschau mal bei\nhttps://makeyourschool.de/maker-ecke/material/\nvorbei..\n\n";
 const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,

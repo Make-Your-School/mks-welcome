@@ -1,4 +1,4 @@
-import { b as inject, az as quasarKey } from "./index-GdisMny6.js";
+import { b as inject, az as quasarKey } from "./index-j8_ddN6m.js";
 function useQuasar() {
   return inject(quasarKey);
 }

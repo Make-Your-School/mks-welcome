@@ -1,12 +1,12 @@
-import { r as ref, w as watch, l as createElementBlock, j as createVNode, u as unref, m as openBlock, n as renderSlot, p as withCtx } from "./index-GdisMny6.js";
-import { u as useQuasar } from "./use-quasar-D3aoVIHP.js";
-import { U as Un } from "./vue-code-block.es-CroseFuH.js";
+import { r as ref, w as watch, l as createElementBlock, j as createVNode, u as unref, m as openBlock, n as renderSlot, p as withCtx } from "./index-j8_ddN6m.js";
+import { u as useQuasar } from "./use-quasar-BOi8HgZh.js";
+import { U as Un } from "./vue-code-block.es-CRvWGfqp.js";
 import { g as getDefaultExportFromCjs } from "./_commonjsHelpers-CcAunmGO.js";
 import { r as requireCore } from "./core-CUVoAmL3.js";
-import { c as cpp } from "./cpp-DxF16jcj.js";
-import { Q as QTooltip } from "./QTooltip-D_diXs2V.js";
+import { c as cpp, a as css } from "./css-CBCnwQ5t.js";
+import { Q as QTooltip } from "./QTooltip-DaO7tg5S.js";
 import { _ as _export_sfc } from "./_plugin-vue_export-helper-1tPrXgE0.js";
-import "./scroll-BbtnWxDP.js";
+import "./scroll-v_GPqoH8.js";
 import "./focus-manager-TfMniKh0.js";
 const wrapper = (callback) => callback;
 const defineBoot = wrapper;
@@ -25,6 +25,7 @@ const _sfc_main$1 = {
   setup(__props) {
     HighlightJS.registerLanguage("cpp", cpp);
     HighlightJS.registerLanguage("c++", cpp);
+    HighlightJS.registerLanguage("css", css);
     const theme = ref("base16/solarized-dark");
     const $q = useQuasar();
     watch(
