@@ -1,7 +1,7 @@
-import { g as global, e as effectScope, r as ref, s as shallowRef, c as computed, w as watch, i as isRef, d as defineComponent, a as getCurrentInstance, h, b as inject, o as onMounted, f as onUnmounted, F as Fragment, j as createVNode, T as Text } from "./index-j8_ddN6m.js";
+import { g as global, e as effectScope, r as ref, s as shallowRef, c as computed, w as watch, i as isRef, d as defineComponent, a as getCurrentInstance, h, b as inject, o as onMounted, f as onUnmounted, F as Fragment, j as createVNode, T as Text } from "./index-DX0R6gT4.js";
 /*!
-  * shared v10.0.5
-  * (c) 2024 kazuya kawaguchi
+  * shared v10.0.6
+  * (c) 2025 kazuya kawaguchi
   * Released under the MIT License.
   */
 const inBrowser = typeof window !== "undefined";
@@ -75,8 +75,8 @@ function deepCopy(src, des) {
   }
 }
 /*!
-  * message-compiler v10.0.5
-  * (c) 2024 kazuya kawaguchi
+  * message-compiler v10.0.6
+  * (c) 2025 kazuya kawaguchi
   * Released under the MIT License.
   */
 function createPosition(line, column, offset) {
@@ -1496,8 +1496,8 @@ function baseCompile$1(source, options = {}) {
   }
 }
 /*!
-  * core-base v10.0.5
-  * (c) 2024 kazuya kawaguchi
+  * core-base v10.0.6
+  * (c) 2025 kazuya kawaguchi
   * Released under the MIT License.
   */
 function initFeatureFlags$1() {
@@ -2233,7 +2233,7 @@ function resolveValue(obj, path) {
   }
   return last;
 }
-const VERSION$1 = "10.0.5";
+const VERSION$1 = "10.0.6";
 const NOT_REOSLVED = -1;
 const DEFAULT_LOCALE = "en-US";
 const MISSING_RESOLVE_VALUE = "";
@@ -2904,11 +2904,11 @@ function getMessageContextOptions(context, locale, message, options) {
   initFeatureFlags$1();
 }
 /*!
-  * vue-i18n v10.0.5
-  * (c) 2024 kazuya kawaguchi
+  * vue-i18n v10.0.6
+  * (c) 2025 kazuya kawaguchi
   * Released under the MIT License.
   */
-const VERSION = "10.0.5";
+const VERSION = "10.0.6";
 function initFeatureFlags() {
   if (typeof __INTLIFY_DROP_MESSAGE_COMPILER__ !== "boolean") {
     getGlobalThis().__INTLIFY_DROP_MESSAGE_COMPILER__ = false;
@@ -2957,6 +2957,9 @@ function handleFlatJson(obj) {
       let currentObj = obj;
       let hasStringValue = false;
       for (let i = 0; i < lastIndex; i++) {
+        if (subKeys[i] === "__proto__") {
+          throw new Error(`unsafe key: ${subKeys[i]}`);
+        }
         if (!(subKeys[i] in currentObj)) {
           currentObj[subKeys[i]] = create();
         }

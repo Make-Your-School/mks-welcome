@@ -1,9 +1,9 @@
-import { q as isRuntimeSsrPreHydration, r as ref, o as onMounted, w as watch, c as computed, a as getCurrentInstance, t as onBeforeUpdate, b as inject, v as formKey, x as onBeforeUnmount, y as debounce, z as injectProp, B as stopAndPrevent, C as nextTick, D as onDeactivated, E as onActivated, h, G as prevent, Q as QIcon, H as QSpinner, I as hSlot, J as Transition, K as shouldIgnoreKey, L as client, M as createComponent, N as stop, O as createBlock, m as openBlock, p as withCtx, j as createVNode, P as createBaseVNode, l as createElementBlock, R as createStaticVNode, S as resolveComponent, U as createTextVNode, V as resolveDynamicComponent, F as Fragment, W as renderList } from "./index-j8_ddN6m.js";
-import { u as useDarkProps, a as useDark } from "./use-dark-BmgNHGRo.js";
+import { q as isRuntimeSsrPreHydration, r as ref, o as onMounted, w as watch, c as computed, a as getCurrentInstance, t as onBeforeUpdate, b as inject, v as formKey, x as onBeforeUnmount, y as debounce, z as injectProp, B as stopAndPrevent, C as nextTick, D as onDeactivated, E as onActivated, h, G as prevent, Q as QIcon, H as QSpinner, I as hSlot, J as Transition, K as shouldIgnoreKey, L as client, M as createComponent, N as stop, O as createBlock, m as openBlock, p as withCtx, j as createVNode, P as createBaseVNode, l as createElementBlock, R as createStaticVNode, S as resolveComponent, U as createTextVNode, V as resolveDynamicComponent, F as Fragment, W as renderList } from "./index-DX0R6gT4.js";
+import { u as useDarkProps, a as useDark } from "./use-dark-Bvzck9D0.js";
 import { a as addFocusFn, r as removeFocusFn } from "./focus-manager-TfMniKh0.js";
-import { Q as QPage } from "./QPage-BhKAIjD9.js";
+import { Q as QPage } from "./QPage-C0xGqcKF.js";
 import { _ as _export_sfc } from "./_plugin-vue_export-helper-1tPrXgE0.js";
-import { m as md_obj } from "./readme-XKIAqpXw.js";
+import { m as md_obj } from "./readme-CMS9z2fI.js";
 let buf, bufIdx = 0;
 const hexBytes = new Array(256);
 for (let i = 0; i < 256; i++) {
@@ -50,18 +50,18 @@ function getId(val, required) {
 }
 function useId({ getValue, required = true } = {}) {
   if (isRuntimeSsrPreHydration.value === true) {
-    const id = getValue !== void 0 ? ref(parseValue(getValue())) : ref(null);
-    if (required === true && id.value === null) {
+    const id2 = getValue !== void 0 ? ref(parseValue(getValue())) : ref(null);
+    if (required === true && id2.value === null) {
       onMounted(() => {
-        id.value = `f_${uid()}`;
+        id2.value = `f_${uid()}`;
       });
     }
     if (getValue !== void 0) {
       watch(getValue, (newId) => {
-        id.value = getId(newId, required);
+        id2.value = getId(newId, required);
       });
     }
-    return id;
+    return id2;
   }
   return getValue !== void 0 ? computed(() => getId(getValue(), required)) : ref(`f_${uid()}`);
 }
@@ -1485,15 +1485,18 @@ const _sfc_main$h = {
 };
 const PartOverview = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["__scopeId", "data-v-d46b0f1c"]]);
 const _hoisted_1$g = { class: "markdown-body" };
-const excerpt$f = "";
+const titel$2 = "Entfernung";
+const tags$e = ["entfernung", "input"];
+const id$b = 17;
+const excerpt$f = '<h1 id="entfernung" tabindex="-1">Entfernung</h1>\n<p><img src="/mks-welcome/mks/tags/Entfernung/Yellow%20Tape%20Measure.svg" alt="Maßband"></p>\n<h2 id="funktionen" tabindex="-1">Funktionen</h2>\n<p>Sensoren die Entfernungen Messen können.</p>\n';
 const _sfc_main$g = {
   __name: "readme",
   setup(__props, { expose: __expose }) {
-    const frontmatter = {};
+    const frontmatter = { "titel": "Entfernung", "tags": ["entfernung", "input"], "id": 17 };
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1$g, _cache[0] || (_cache[0] = [
-        createStaticVNode('<hr><h2 id="titel%3A-entfernungtags%3A-%5Bentfernung%2C-input%5Did%3A-17" tabindex="-1">titel: Entfernung tags: [entfernung, input] id: 17</h2><h1 id="entfernung" tabindex="-1">Entfernung</h1><p><img src="/mks-welcome/mks/tags/Entfernung/Yellow%20Tape%20Measure.svg" alt="Maßband"></p><h2 id="funktionen" tabindex="-1">Funktionen</h2><p>Sensoren die Entfernungen Messen können.</p><p>hier ist unter anderem Wichtig in welchem Bereich der jeweilige Sensor messen kann. es kann z.B. sein das der minimale Abstand durch aus 5cm beträgt. auch sind die Genauigkeit sehr unterschiedlich - von wenigen Millimetern Abweichungen bis zu mehreren Centimeter.</p><h2 id="relevante-gr%C3%B6%C3%9Fen%3A" tabindex="-1">Relevante Größen:</h2><ul><li>Messbereich (mm, cm, m)</li><li>Genauigkeit (z.B. <code>+- n cm</code>)</li></ul><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li>ToDo</li></ul>', 11)
+        createStaticVNode('<h1 id="entfernung" tabindex="-1">Entfernung</h1><p><img src="/mks-welcome/mks/tags/Entfernung/Yellow%20Tape%20Measure.svg" alt="Maßband"></p><h2 id="funktionen" tabindex="-1">Funktionen</h2><p>Sensoren die Entfernungen Messen können.</p><p>hier ist unter anderem Wichtig in welchem Bereich der jeweilige Sensor messen kann. es kann z.B. sein das der minimale Abstand durch aus 5cm beträgt. auch sind die Genauigkeit sehr unterschiedlich - von wenigen Millimetern Abweichungen bis zu mehreren Centimeter.</p><h2 id="relevante-gr%C3%B6%C3%9Fen%3A" tabindex="-1">Relevante Größen:</h2><ul><li>Messbereich (mm, cm, m)</li><li>Genauigkeit (z.B. <code>+- n cm</code>)</li></ul><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li>ToDo</li></ul>', 9)
       ]));
     };
   }
@@ -1501,18 +1504,45 @@ const _sfc_main$g = {
 const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$g,
-  excerpt: excerpt$f
+  excerpt: excerpt$f,
+  id: id$b,
+  tags: tags$e,
+  titel: titel$2
 }, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$f = { class: "markdown-body" };
-const excerpt$e = "";
+const title$9 = "LEDs";
+const tags$d = ["output", "led", "licht", "Farbe"];
+const excerpt$e = '<h1 id="leds" tabindex="-1">LEDs</h1>\n<p><img src="/mks-welcome/mks/tags/LEDs/led-lamp-green-on.svg" alt="LED"></p>\n<h2 id="funktionen" tabindex="-1">Funktionen</h2>\n<p>Eine LED kann verwendet werden um zustände zu signalisieren oder auch um Licht im sinne von Beleuchtung zu erzeugen.</p>\n<p>es gibt sehr viele verschiedene formen und ausführungen von LEDs.</p>\n';
 const _sfc_main$f = {
   __name: "readme",
   setup(__props, { expose: __expose }) {
-    const frontmatter = {};
+    const frontmatter = { "title": "LEDs", "tags": ["output", "led", "licht", "Farbe"] };
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1$f, _cache[0] || (_cache[0] = [
-        createStaticVNode('<hr><h2 id="title%3A-ledstags%3A-%5Boutput%2C-led%2C-licht%2C-farbe%5D" tabindex="-1">title: LEDs tags: [output, led, licht, Farbe]</h2><h1 id="leds" tabindex="-1">LEDs</h1><p><img src="/mks-welcome/mks/tags/LEDs/led-lamp-green-on.svg" alt="LED"></p><h2 id="funktionen" tabindex="-1">Funktionen</h2><p>Eine LED kann verwendet werden um zustände zu signalisieren oder auch um Licht im sinne von Beleuchtung zu erzeugen.</p><p>es gibt sehr viele verschiedene formen und ausführungen von LEDs.</p><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li>x</li></ul>', 9)
+        createBaseVNode("h1", {
+          id: "leds",
+          tabindex: "-1"
+        }, "LEDs", -1),
+        createBaseVNode("p", null, [
+          createBaseVNode("img", {
+            src: "/mks-welcome/mks/tags/LEDs/led-lamp-green-on.svg",
+            alt: "LED"
+          })
+        ], -1),
+        createBaseVNode("h2", {
+          id: "funktionen",
+          tabindex: "-1"
+        }, "Funktionen", -1),
+        createBaseVNode("p", null, "Eine LED kann verwendet werden um zustände zu signalisieren oder auch um Licht im sinne von Beleuchtung zu erzeugen.", -1),
+        createBaseVNode("p", null, "es gibt sehr viele verschiedene formen und ausführungen von LEDs.", -1),
+        createBaseVNode("h2", {
+          id: "siehe-auch",
+          tabindex: "-1"
+        }, "Siehe Auch", -1),
+        createBaseVNode("ul", null, [
+          createBaseVNode("li", null, "x")
+        ], -1)
       ]));
     };
   }
@@ -1520,18 +1550,21 @@ const _sfc_main$f = {
 const __vite_glob_0_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$f,
-  excerpt: excerpt$e
+  excerpt: excerpt$e,
+  tags: tags$d,
+  title: title$9
 }, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$e = { class: "markdown-body" };
-const excerpt$d = "";
+const tags$c = ["motor", "output"];
+const excerpt$d = '<h1 id="motoren" tabindex="-1">Motoren</h1>\n<p><img src="/mks-welcome/mks/tags/Motor/cyberscooty-motor-stepper.svg" alt="Motor allgemein"></p>\n<p>TODO: CONTENT change image to general</p>\n<h2 id="funktion" tabindex="-1">Funktion</h2>\n<p>Der Motortreiber übersetzt die schwachen Signale &amp; Spannungen des micro-controllers (Arduino / RaspberryPi)\nin Starke Spannungen &amp; Ströme um die verschiedenen <a href="#motor">Motoren</a> anzusteuern (zu <em>treiben</em>).</p>\n';
 const _sfc_main$e = {
   __name: "readme",
   setup(__props, { expose: __expose }) {
-    const frontmatter = {};
+    const frontmatter = { "tags": ["motor", "output"] };
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1$e, _cache[0] || (_cache[0] = [
-        createStaticVNode('<hr><h2 id="tags%3A-%5Bmotor%2C-output%5D" tabindex="-1">tags: [motor, output]</h2><h1 id="motoren" tabindex="-1">Motoren</h1><p><img src="/mks-welcome/mks/tags/Motor/cyberscooty-motor-stepper.svg" alt="Motor allgemein"></p><p>TODO: CONTENT change image to general</p><h2 id="funktion" tabindex="-1">Funktion</h2><p>Der Motortreiber übersetzt die schwachen Signale &amp; Spannungen des micro-controllers (Arduino / RaspberryPi) in Starke Spannungen &amp; Ströme um die verschiedenen <a href="#motor">Motoren</a> anzusteuern (zu <em>treiben</em>).</p><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li><a href="#motor">Motoren</a></li></ul>', 9)
+        createStaticVNode('<h1 id="motoren" tabindex="-1">Motoren</h1><p><img src="/mks-welcome/mks/tags/Motor/cyberscooty-motor-stepper.svg" alt="Motor allgemein"></p><p>TODO: CONTENT change image to general</p><h2 id="funktion" tabindex="-1">Funktion</h2><p>Der Motortreiber übersetzt die schwachen Signale &amp; Spannungen des micro-controllers (Arduino / RaspberryPi) in Starke Spannungen &amp; Ströme um die verschiedenen <a href="#motor">Motoren</a> anzusteuern (zu <em>treiben</em>).</p><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li><a href="#motor">Motoren</a></li></ul>', 7)
       ]));
     };
   }
@@ -1539,18 +1572,22 @@ const _sfc_main$e = {
 const __vite_glob_0_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$e,
-  excerpt: excerpt$d
+  excerpt: excerpt$d,
+  tags: tags$c
 }, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$d = { class: "markdown-body" };
-const excerpt$c = "";
+const title$8 = "Motortreiber";
+const tags$b = ["motor", "motortreiber", "output"];
+const id$a = 70;
+const excerpt$c = '<h1 id="motortreiber" tabindex="-1">Motortreiber</h1>\n<p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/70_motortreiber-1024x1024.jpg" alt="Motortreiber allgemein"></p>\n<p>TODO: CONTENT change image to general</p>\n<h2 id="funktion" tabindex="-1">Funktion</h2>\n<p>Wandelt Elektrische Signale in Dreh-Bewegung um.</p>\n';
 const _sfc_main$d = {
   __name: "readme",
   setup(__props, { expose: __expose }) {
-    const frontmatter = {};
+    const frontmatter = { "title": "Motortreiber", "tags": ["motor", "motortreiber", "output"], "id": 70 };
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1$d, _cache[0] || (_cache[0] = [
-        createStaticVNode('<hr><h2 id="title%3A-motortreibertags%3A-%5Bmotor%2C-motortreiber%2C-output%5Did%3A-70" tabindex="-1">title: Motortreiber tags: [motor, motortreiber, output] id: 70</h2><h1 id="motortreiber" tabindex="-1">Motortreiber</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/70_motortreiber-1024x1024.jpg" alt="Motortreiber allgemein"></p><p>TODO: CONTENT change image to general</p><h2 id="funktion" tabindex="-1">Funktion</h2><p>Wandelt Elektrische Signale in Dreh-Bewegung um.</p><p>Es gibt soooo viele verschiedene Motoren…</p><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li><a href="#motortreiber">Motortreiber</a></li></ul>', 10)
+        createStaticVNode('<h1 id="motortreiber" tabindex="-1">Motortreiber</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/70_motortreiber-1024x1024.jpg" alt="Motortreiber allgemein"></p><p>TODO: CONTENT change image to general</p><h2 id="funktion" tabindex="-1">Funktion</h2><p>Wandelt Elektrische Signale in Dreh-Bewegung um.</p><p>Es gibt soooo viele verschiedene Motoren…</p><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li><a href="#motortreiber">Motortreiber</a></li></ul>', 8)
       ]));
     };
   }
@@ -1558,18 +1595,24 @@ const _sfc_main$d = {
 const __vite_glob_0_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$d,
-  excerpt: excerpt$c
+  excerpt: excerpt$c,
+  id: id$a,
+  tags: tags$b,
+  title: title$8
 }, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$c = { class: "markdown-body" };
-const excerpt$b = "";
+const title$7 = "Taster & Schalter";
+const tags$a = ["input"];
+const id$9 = 261;
+const excerpt$b = '<h1 id="taster-%26-schalter" tabindex="-1">Taster &amp; Schalter</h1>\n<p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/59_taster_knopf-1024x1024.jpg" alt="Taster allgemein"></p>\n<!-- TODO: CONTENT change image to general -->\n<h2 id="funktionen" tabindex="-1">Funktionen</h2>\n<p>Der Taster / Schalter ist ein <em>Input</em>.</p>\n<p>Der Unterschied zwischen Taster und Schalter:</p>\n<ul>\n<li>Taster: nur solange <em>an</em> wie er Betätigt (z.B: gedrückt) wird</li>\n<li>Schalter: Betätigung/Aktion wechselt den Zustand zwischen an und aus</li>\n</ul>\n<p>es gibt diese in sehr vielen verschiedenen Ausführungen.</p>\n';
 const _sfc_main$c = {
   __name: "readme",
   setup(__props, { expose: __expose }) {
-    const frontmatter = {};
+    const frontmatter = { "title": "Taster & Schalter", "tags": ["input"], "id": 261 };
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1$c, _cache[0] || (_cache[0] = [
-        createStaticVNode('<hr><h2 id="title%3A-taster-%26-schaltertags%3A-%5Binput%5Did%3A-261" tabindex="-1">title: Taster &amp; Schalter tags: [input] id: 261</h2><h1 id="taster-%26-schalter" tabindex="-1">Taster &amp; Schalter</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/59_taster_knopf-1024x1024.jpg" alt="Taster allgemein"></p><h2 id="funktionen" tabindex="-1">Funktionen</h2><p>Der Taster / Schalter ist ein <em>Input</em>.</p><p>Der Unterschied zwischen Taster und Schalter:</p><ul><li>Taster: nur solange <em>an</em> wie er Betätigt (z.B: gedrückt) wird</li><li>Schalter: Betätigung/Aktion wechselt den Zustand zwischen an und aus</li></ul><p>es gibt diese in sehr vielen verschiedenen Ausführungen.</p><p>wenn ein Taster/Schalter <strong>an</strong> ist sind die Kontakte verbunden. wenn er <strong>aus</strong> ist sind die kontakte unverbunden. diesen unterschied kann ein uC <em>messen</em>.</p><h2 id="anschl%C3%BCsse" tabindex="-1">Anschlüsse</h2><h3 id="eingang" tabindex="-1">Eingang</h3><ul><li>Mechanische Betätigung</li></ul><h3 id="ausgang" tabindex="-1">Ausgang</h3><ul><li>Zwei <em>Pins</em> werden *verbunden</li></ul><h2 id="kurz-datenblatt" tabindex="-1">Kurz-Datenblatt</h2><p>siehe bauteile</p><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li><em>-</em></li></ul><h2 id="weiterf%C3%BChrende-informationen%3A" tabindex="-1">Weiterführende Informationen:</h2><ul><li><a href="https://de.wikipedia.org/wiki/Schalter_(Elektrotechnik)">Schalter (Elektrotechnik) – Wikipedia Artikel</a></li><li><a href="https://de.wikipedia.org/wiki/Positionsschalter">Positionsschalter – Wikipedia Artikel</a></li><li><a href="https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe">GPIO – Wikipedia Artikel</a></li><li>library für <em>tasten-events</em> <a href="https://github.com/s-light/slight_ButtonInput/">slight_ButtonInput</a> (kann direkt in der IDE installiert werden)</li></ul>', 21)
+        createStaticVNode('<h1 id="taster-%26-schalter" tabindex="-1">Taster &amp; Schalter</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/59_taster_knopf-1024x1024.jpg" alt="Taster allgemein"></p><h2 id="funktionen" tabindex="-1">Funktionen</h2><p>Der Taster / Schalter ist ein <em>Input</em>.</p><p>Der Unterschied zwischen Taster und Schalter:</p><ul><li>Taster: nur solange <em>an</em> wie er Betätigt (z.B: gedrückt) wird</li><li>Schalter: Betätigung/Aktion wechselt den Zustand zwischen an und aus</li></ul><p>es gibt diese in sehr vielen verschiedenen Ausführungen.</p><p>wenn ein Taster/Schalter <strong>an</strong> ist sind die Kontakte verbunden. wenn er <strong>aus</strong> ist sind die kontakte unverbunden. diesen unterschied kann ein uC <em>messen</em>.</p><h2 id="anschl%C3%BCsse" tabindex="-1">Anschlüsse</h2><h3 id="eingang" tabindex="-1">Eingang</h3><ul><li>Mechanische Betätigung</li></ul><h3 id="ausgang" tabindex="-1">Ausgang</h3><ul><li>Zwei <em>Pins</em> werden *verbunden</li></ul><h2 id="kurz-datenblatt" tabindex="-1">Kurz-Datenblatt</h2><p>siehe bauteile</p><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li><em>-</em></li></ul><h2 id="weiterf%C3%BChrende-informationen%3A" tabindex="-1">Weiterführende Informationen:</h2><ul><li><a href="https://de.wikipedia.org/wiki/Schalter_(Elektrotechnik)">Schalter (Elektrotechnik) – Wikipedia Artikel</a></li><li><a href="https://de.wikipedia.org/wiki/Positionsschalter">Positionsschalter – Wikipedia Artikel</a></li><li><a href="https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe">GPIO – Wikipedia Artikel</a></li><li>library für <em>tasten-events</em> <a href="https://github.com/s-light/slight_ButtonInput/">slight_ButtonInput</a> (kann direkt in der IDE installiert werden)</li></ul>', 19)
       ]));
     };
   }
@@ -1577,11 +1620,14 @@ const _sfc_main$c = {
 const __vite_glob_0_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$c,
-  excerpt: excerpt$b
+  excerpt: excerpt$b,
+  id: id$9,
+  tags: tags$a,
+  title: title$7
 }, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$b = { class: "markdown-body" };
 const _hoisted_2$2 = { href: "https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter" };
-const excerpt$a = "";
+const excerpt$a = '<h1 id="rfid-leser" tabindex="-1">RFID-Leser</h1>\n<!-- ![Bauteil](./bauteil.png) -->\n<p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/52_rfid_leser-1024x1024.jpg" alt="RFID-Leser"></p>\n<h2 id="beschreibung" tabindex="-1">Beschreibung</h2>\n<p>RFID bezeichnet ein Sender-Empfänger-System, das vor allem zur eindeutigen Identifizierung von Objekten, Einkaufswaren oder auch Lebewesen eingesetzt wird.\nDer RFID-Transponder besitzt eine eindeutige Identifikationsnummer.\nDas Lesegerät liest diese aus, sobald der Transponder in unmittelbarer Nähe ist.\nDer Transponder benötigt dabei keine Stromversorgung, da das Auslesegerät ihn kontaktlos mit Energie versorgt.</p>\n';
 const _sfc_main$b = {
   __name: "readme",
   setup(__props, { expose: __expose }) {
@@ -1719,17 +1765,20 @@ const __vite_glob_1_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.def
   excerpt: excerpt$a
 }, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$a = { class: "markdown-body" };
-const excerpt$9 = "";
+const title$6 = "Kippschalter";
+const tags$9 = ["input", "taster_schalter", "schalter", "lage", "orientierung", "position"];
+const id$8 = 24;
+const excerpt$9 = '<h1 id="kippschalter" tabindex="-1">Kippschalter</h1>\n<p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/24_kippschalter-1024x1024.jpg" alt="Bauteil"></p>\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n<h2 id="beschreibung" tabindex="-1">Beschreibung</h2>\n<p>kurz-Beschreibung</p>\n';
 const _sfc_main$a = {
   __name: "readme",
   setup(__props, { expose: __expose }) {
-    const frontmatter = {};
+    const frontmatter = { "title": "Kippschalter", "tags": ["input", "taster_schalter", "schalter", "lage", "orientierung", "position"], "id": 24 };
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       const _component_MDAbbr = resolveComponent("MDAbbr");
       const _component_MDCode = resolveComponent("MDCode");
       return openBlock(), createElementBlock("div", _hoisted_1$a, [
-        _cache[2] || (_cache[2] = createStaticVNode('<hr><h2 id="title%3A-kippschaltertags%3A-%5Binput%2C-taster_schalter%2C-schalter%2C-lage%2C-orientierung%2C-position%5Did%3A-24" tabindex="-1">title: Kippschalter tags: [input, taster_schalter, schalter, lage, orientierung, position] id: 24</h2><h1 id="kippschalter" tabindex="-1">Kippschalter</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/24_kippschalter-1024x1024.jpg" alt="Bauteil"></p><h2 id="beschreibung" tabindex="-1">Beschreibung</h2><p>kurz-Beschreibung</p><p>mehr details</p><h2 id="anschl%C3%BCsse" tabindex="-1">Anschlüsse</h2><h3 id="eingang" tabindex="-1">Eingang</h3>', 9)),
+        _cache[2] || (_cache[2] = createStaticVNode('<h1 id="kippschalter" tabindex="-1">Kippschalter</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/24_kippschalter-1024x1024.jpg" alt="Bauteil"></p><h2 id="beschreibung" tabindex="-1">Beschreibung</h2><p>kurz-Beschreibung</p><p>mehr details</p><h2 id="anschl%C3%BCsse" tabindex="-1">Anschlüsse</h2><h3 id="eingang" tabindex="-1">Eingang</h3>', 7)),
         createBaseVNode("ul", null, [
           createBaseVNode("li", null, [
             createVNode(_component_MDAbbr, null, {
@@ -1769,20 +1818,26 @@ const _sfc_main$a = {
 const __vite_glob_1_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$a,
-  excerpt: excerpt$9
+  excerpt: excerpt$9,
+  id: id$8,
+  tags: tags$9,
+  title: title$6
 }, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$9 = { class: "markdown-body" };
-const excerpt$8 = "";
+const title$5 = "Magnetschalter";
+const tags$8 = ["input", "taster_schalter", "schalter", "taster_taster_schalter", "schalter", "taster", "magnet"];
+const id$7 = 28;
+const excerpt$8 = '<h1 id="magnetschalter" tabindex="-1">Magnetschalter</h1>\n<p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/28_magnetschalter-1024x1024.jpg" alt="Bauteil"></p>\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n<h2 id="beschreibung" tabindex="-1">Beschreibung</h2>\n<p>kurz-Beschreibung</p>\n';
 const _sfc_main$9 = {
   __name: "readme",
   setup(__props, { expose: __expose }) {
-    const frontmatter = {};
+    const frontmatter = { "title": "Magnetschalter", "tags": ["input", "taster_schalter", "schalter", "taster_taster_schalter", "schalter", "taster", "magnet"], "id": 28 };
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       const _component_MDAbbr = resolveComponent("MDAbbr");
       const _component_MDCode = resolveComponent("MDCode");
       return openBlock(), createElementBlock("div", _hoisted_1$9, [
-        _cache[2] || (_cache[2] = createStaticVNode('<hr><h2 id="title%3A-magnetschaltertags%3A-%5Binput%2C-taster_schalter%2C-schalter%2C-taster_taster_schalter%2C-schalter%2C-taster%2C-magnet%5Did%3A-28" tabindex="-1">title: Magnetschalter tags: [input, taster_schalter, schalter, taster_taster_schalter, schalter, taster, magnet] id: 28</h2><h1 id="magnetschalter" tabindex="-1">Magnetschalter</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/28_magnetschalter-1024x1024.jpg" alt="Bauteil"></p><h2 id="beschreibung" tabindex="-1">Beschreibung</h2><p>kurz-Beschreibung</p><p>mehr details</p><h2 id="anschl%C3%BCsse" tabindex="-1">Anschlüsse</h2><h3 id="eingang" tabindex="-1">Eingang</h3>', 9)),
+        _cache[2] || (_cache[2] = createStaticVNode('<h1 id="magnetschalter" tabindex="-1">Magnetschalter</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/28_magnetschalter-1024x1024.jpg" alt="Bauteil"></p><h2 id="beschreibung" tabindex="-1">Beschreibung</h2><p>kurz-Beschreibung</p><p>mehr details</p><h2 id="anschl%C3%BCsse" tabindex="-1">Anschlüsse</h2><h3 id="eingang" tabindex="-1">Eingang</h3>', 7)),
         createBaseVNode("ul", null, [
           createBaseVNode("li", null, [
             createVNode(_component_MDAbbr, null, {
@@ -1822,30 +1877,31 @@ const _sfc_main$9 = {
 const __vite_glob_1_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$9,
-  excerpt: excerpt$8
+  excerpt: excerpt$8,
+  id: id$7,
+  tags: tags$8,
+  title: title$5
 }, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$8 = { class: "markdown-body" };
 const _hoisted_2$1 = {
-  id: "title%3A-grove-motortreiber-()tags%3A-%5Boutput%2C-aktor%2C-motortreiber%2C-motor%2C-i2c%5Did%3A-70",
-  tabindex: "-1"
-};
-const _hoisted_3$1 = {
   id: "grove-motortreiber",
   tabindex: "-1"
 };
-const excerpt$7 = "";
+const title$4 = "Grove Motortreiber (I2C)";
+const tags$7 = ["output", "aktor", "motortreiber", "motor", "i2c"];
+const id$6 = 70;
+const excerpt$7 = '<h1 id="grove-motortreiber" tabindex="-1">Grove motortreiber <MDAbbr >\n        <template #default>I2C</template>\n        <template #abbrDescription><h1>I²C</h1>\n<p>I²C InterInterCircuit</p>\n<p>Serielle Schnittstelle\n2Pins: SDA, SCL\nes gibt immer einen <em>Controller</em> (z.B. Arduino oder RaspberryPi) und viele <em>Geräte</em> (z.B. Sensoren)\ndie Geräte werden über eine Adresse (<em>Hausnummer</em>) angesprochen.\nDiese kann Teils auch beim Gerät Eingestellt werden.</p>\n</template>\n        </MDAbbr></h1>\n<p>mks Nr 70</p>\n<p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/70_motortreiber-1024x1024.jpg" alt="Bauteil"></p>\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n<h2 id="beschreibung" tabindex="-1">Beschreibung</h2>\n<p>kurz-Beschreibung</p>\n';
 const _sfc_main$8 = {
   __name: "readme",
   setup(__props, { expose: __expose }) {
-    const frontmatter = {};
+    const frontmatter = { "title": "Grove Motortreiber (I2C)", "tags": ["output", "aktor", "motortreiber", "motor", "i2c"], "id": 70 };
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       const _component_MDAbbr = resolveComponent("MDAbbr");
       const _component_MDCode = resolveComponent("MDCode");
       return openBlock(), createElementBlock("div", _hoisted_1$8, [
-        _cache[9] || (_cache[9] = createBaseVNode("hr", null, null, -1)),
-        createBaseVNode("h2", _hoisted_2$1, [
-          _cache[2] || (_cache[2] = createTextVNode("title: Grove Motortreiber (")),
+        createBaseVNode("h1", _hoisted_2$1, [
+          _cache[2] || (_cache[2] = createTextVNode("Grove motortreiber ")),
           createVNode(_component_MDAbbr, null, {
             default: withCtx(() => _cache[0] || (_cache[0] = [
               createTextVNode("I2C")
@@ -1864,59 +1920,36 @@ const _sfc_main$8 = {
               ], -1)
             ])),
             _: 1
-          }),
-          _cache[3] || (_cache[3] = createTextVNode(") tags: [output, aktor, motortreiber, motor, i2c] id: 70"))
-        ]),
-        createBaseVNode("h1", _hoisted_3$1, [
-          _cache[6] || (_cache[6] = createTextVNode("Grove motortreiber ")),
-          createVNode(_component_MDAbbr, null, {
-            default: withCtx(() => _cache[4] || (_cache[4] = [
-              createTextVNode("I2C")
-            ])),
-            abbrDescription: withCtx(() => _cache[5] || (_cache[5] = [
-              createBaseVNode("h1", null, "I²C", -1),
-              createBaseVNode("p", null, "I²C InterInterCircuit", -1),
-              createBaseVNode("p", null, [
-                createTextVNode("Serielle Schnittstelle 2Pins: SDA, SCL es gibt immer einen "),
-                createBaseVNode("em", null, "Controller"),
-                createTextVNode(" (z.B. Arduino oder RaspberryPi) und viele "),
-                createBaseVNode("em", null, "Geräte"),
-                createTextVNode(" (z.B. Sensoren) die Geräte werden über eine Adresse ("),
-                createBaseVNode("em", null, "Hausnummer"),
-                createTextVNode(") angesprochen. Diese kann Teils auch beim Gerät Eingestellt werden.")
-              ], -1)
-            ])),
-            _: 1
           })
         ]),
-        _cache[10] || (_cache[10] = createBaseVNode("p", null, "mks Nr 70", -1)),
-        _cache[11] || (_cache[11] = createBaseVNode("p", null, [
+        _cache[5] || (_cache[5] = createBaseVNode("p", null, "mks Nr 70", -1)),
+        _cache[6] || (_cache[6] = createBaseVNode("p", null, [
           createBaseVNode("img", {
             src: "https://makeyourschool.de/wp-content/uploads/2018/10/70_motortreiber-1024x1024.jpg",
             alt: "Bauteil"
           })
         ], -1)),
-        _cache[12] || (_cache[12] = createBaseVNode("h2", {
+        _cache[7] || (_cache[7] = createBaseVNode("h2", {
           id: "beschreibung",
           tabindex: "-1"
         }, "Beschreibung", -1)),
-        _cache[13] || (_cache[13] = createBaseVNode("p", null, "kurz-Beschreibung", -1)),
-        _cache[14] || (_cache[14] = createBaseVNode("p", null, "mehr details", -1)),
-        _cache[15] || (_cache[15] = createBaseVNode("h2", {
+        _cache[8] || (_cache[8] = createBaseVNode("p", null, "kurz-Beschreibung", -1)),
+        _cache[9] || (_cache[9] = createBaseVNode("p", null, "mehr details", -1)),
+        _cache[10] || (_cache[10] = createBaseVNode("h2", {
           id: "anschl%C3%BCsse",
           tabindex: "-1"
         }, "Anschlüsse", -1)),
-        _cache[16] || (_cache[16] = createBaseVNode("h3", {
+        _cache[11] || (_cache[11] = createBaseVNode("h3", {
           id: "eingang",
           tabindex: "-1"
         }, "Eingang", -1)),
         createBaseVNode("ul", null, [
           createBaseVNode("li", null, [
             createVNode(_component_MDAbbr, null, {
-              default: withCtx(() => _cache[7] || (_cache[7] = [
+              default: withCtx(() => _cache[3] || (_cache[3] = [
                 createTextVNode("I2C")
               ])),
-              abbrDescription: withCtx(() => _cache[8] || (_cache[8] = [
+              abbrDescription: withCtx(() => _cache[4] || (_cache[4] = [
                 createBaseVNode("h1", null, "I²C", -1),
                 createBaseVNode("p", null, "I²C InterInterCircuit", -1),
                 createBaseVNode("p", null, [
@@ -1933,7 +1966,7 @@ const _sfc_main$8 = {
             })
           ])
         ]),
-        _cache[17] || (_cache[17] = createStaticVNode('<h3 id="ausgang" tabindex="-1">Ausgang</h3><ul><li>High Power / High Voltage</li></ul><h2 id="kurz-datenblatt" tabindex="-1">Kurz-Datenblatt</h2><ul><li>Signal Eingang: 3-5V</li><li>Betriebsspannung: 5-12V</li><li>Ausgang Strom Max: 1A</li></ul><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li>falls vorhanden link zu anderem Bauteil / zugehörigem part</li></ul><h2 id="library" tabindex="-1">library</h2><p>um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName</p><h2 id="beispiel" tabindex="-1">Beispiel</h2><p>schau dir das Minimal-Beispiel an:</p>', 10)),
+        _cache[12] || (_cache[12] = createStaticVNode('<h3 id="ausgang" tabindex="-1">Ausgang</h3><ul><li>High Power / High Voltage</li></ul><h2 id="kurz-datenblatt" tabindex="-1">Kurz-Datenblatt</h2><ul><li>Signal Eingang: 3-5V</li><li>Betriebsspannung: 5-12V</li><li>Ausgang Strom Max: 1A</li></ul><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li>falls vorhanden link zu anderem Bauteil / zugehörigem part</li></ul><h2 id="library" tabindex="-1">library</h2><p>um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName</p><h2 id="beispiel" tabindex="-1">Beispiel</h2><p>schau dir das Minimal-Beispiel an:</p>', 10)),
         createVNode(_component_MDCode, {
           content: "// this should be overwritten!\n",
           codeLanguage: "c++",
@@ -1941,7 +1974,7 @@ const _sfc_main$8 = {
           codeFilePath: "./examples/grove_motortreiber_minimal/grove_motortreiber_minimal.ino",
           fileExists: "undefined"
         }),
-        _cache[18] || (_cache[18] = createStaticVNode('<h2 id="anleitung" tabindex="-1">Anleitung</h2><ul><li>nimm Bauteil</li><li>Schließe an Port D2 an</li><li>nehm Beispiel Code <ul><li>kopiere von hier drüber</li><li>oder direkt in der Arduino IDE: <code>Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal</code></li></ul></li><li>Sketch Hochladen</li><li>Das Sollte nun passieren: <ul><li>die LED Blinkt im 1 Sekunden Takt</li></ul></li></ul>', 2))
+        _cache[13] || (_cache[13] = createStaticVNode('<h2 id="anleitung" tabindex="-1">Anleitung</h2><ul><li>nimm Bauteil</li><li>Schließe an Port D2 an</li><li>nehm Beispiel Code <ul><li>kopiere von hier drüber</li><li>oder direkt in der Arduino IDE: <code>Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal</code></li></ul></li><li>Sketch Hochladen</li><li>Das Sollte nun passieren: <ul><li>die LED Blinkt im 1 Sekunden Takt</li></ul></li></ul>', 2))
       ]);
     };
   }
@@ -1949,20 +1982,26 @@ const _sfc_main$8 = {
 const __vite_glob_1_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$8,
-  excerpt: excerpt$7
+  excerpt: excerpt$7,
+  id: id$6,
+  tags: tags$7,
+  title: title$4
 }, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$7 = { class: "markdown-body" };
-const excerpt$6 = "";
+const title$3 = "Grove Schalter";
+const tags$6 = ["input", "taster_schalter", "schalter", "grove"];
+const id$5 = 61;
+const excerpt$6 = '<h1 id="schalter" tabindex="-1">Schalter</h1>\n<p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/61_schalter-1024x1024.jpg" alt="Bauteil"></p>\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n<h2 id="beschreibung" tabindex="-1">Beschreibung</h2>\n<p>kurz-Beschreibung</p>\n';
 const _sfc_main$7 = {
   __name: "readme",
   setup(__props, { expose: __expose }) {
-    const frontmatter = {};
+    const frontmatter = { "title": "Grove Schalter", "tags": ["input", "taster_schalter", "schalter", "grove"], "id": 61 };
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       const _component_MDAbbr = resolveComponent("MDAbbr");
       const _component_MDCode = resolveComponent("MDCode");
       return openBlock(), createElementBlock("div", _hoisted_1$7, [
-        _cache[2] || (_cache[2] = createStaticVNode('<hr><h2 id="title%3A-grove-schaltertags%3A-%5Binput%2C-taster_schalter%2C-schalter%2C-grove%5Did%3A-61" tabindex="-1">title: Grove Schalter tags: [input, taster_schalter, schalter, grove] id: 61</h2><h1 id="schalter" tabindex="-1">Schalter</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/61_schalter-1024x1024.jpg" alt="Bauteil"></p><h2 id="beschreibung" tabindex="-1">Beschreibung</h2><p>kurz-Beschreibung</p><p>mehr details</p><h2 id="anschl%C3%BCsse" tabindex="-1">Anschlüsse</h2><h3 id="eingang" tabindex="-1">Eingang</h3>', 9)),
+        _cache[2] || (_cache[2] = createStaticVNode('<h1 id="schalter" tabindex="-1">Schalter</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/61_schalter-1024x1024.jpg" alt="Bauteil"></p><h2 id="beschreibung" tabindex="-1">Beschreibung</h2><p>kurz-Beschreibung</p><p>mehr details</p><h2 id="anschl%C3%BCsse" tabindex="-1">Anschlüsse</h2><h3 id="eingang" tabindex="-1">Eingang</h3>', 7)),
         createBaseVNode("ul", null, [
           createBaseVNode("li", null, [
             createVNode(_component_MDAbbr, null, {
@@ -2002,27 +2041,43 @@ const _sfc_main$7 = {
 const __vite_glob_1_5 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$7,
-  excerpt: excerpt$6
+  excerpt: excerpt$6,
+  id: id$5,
+  tags: tags$6,
+  title: title$3
 }, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$6 = { class: "markdown-body" };
-const _hoisted_2 = {
-  id: "title%3A-grove-%E2%80%93-serial-bluetooth-v3.0tags%3A-%5Binput%2C-output%2C-kommunikation%2C-%2C-funk%2C-bluetooth%5Did%3A-53",
-  tabindex: "-1"
-};
-const _hoisted_3 = { href: "https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter" };
-const excerpt$5 = "";
+const _hoisted_2 = { href: "https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter" };
+const title$2 = "Grove – Serial Bluetooth V3.0";
+const tags$5 = ["input", "output", "kommunikation", "UART", "funk", "bluetooth"];
+const id$4 = 53;
+const excerpt$5 = '<h1 id="grove-%E2%80%93-serial-bluetooth-v3.0" tabindex="-1">Grove – Serial Bluetooth V3.0</h1>\n<p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/53_bluetooth-modul-1024x1024.jpg" alt="Seeed Studio Grove – Serial Bluetooth V3.0"></p>\n<h2 id="beschreibung" tabindex="-1">Beschreibung</h2>\n<p>Das Bluetooth-Modul ermöglicht es Informationen, Befehle und Daten kabellos zwischen mehreren Endgeräten oder Mikrocontrollern zu übertragen.\nSo können beispielsweise zwei Arduinos untereinander oder auch ein Arduino mit einem Smartphone / Laptop kommunizieren.</p>\n';
 const _sfc_main$6 = {
   __name: "readme",
   setup(__props, { expose: __expose }) {
-    const frontmatter = {};
+    const frontmatter = { "title": "Grove – Serial Bluetooth V3.0", "tags": ["input", "output", "kommunikation", "UART", "funk", "bluetooth"], "id": 53 };
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       const _component_MDAbbr = resolveComponent("MDAbbr");
       const _component_MDCode = resolveComponent("MDCode");
       return openBlock(), createElementBlock("div", _hoisted_1$6, [
-        _cache[15] || (_cache[15] = createBaseVNode("hr", null, null, -1)),
-        createBaseVNode("h2", _hoisted_2, [
-          _cache[2] || (_cache[2] = createTextVNode("title: Grove – Serial Bluetooth V3.0 tags: [input, output, kommunikation, ")),
+        _cache[11] || (_cache[11] = createBaseVNode("h1", {
+          id: "grove-%E2%80%93-serial-bluetooth-v3.0",
+          tabindex: "-1"
+        }, "Grove – Serial Bluetooth V3.0", -1)),
+        _cache[12] || (_cache[12] = createBaseVNode("p", null, [
+          createBaseVNode("img", {
+            src: "https://makeyourschool.de/wp-content/uploads/2018/10/53_bluetooth-modul-1024x1024.jpg",
+            alt: "Seeed Studio Grove – Serial Bluetooth V3.0"
+          })
+        ], -1)),
+        _cache[13] || (_cache[13] = createBaseVNode("h2", {
+          id: "beschreibung",
+          tabindex: "-1"
+        }, "Beschreibung", -1)),
+        _cache[14] || (_cache[14] = createBaseVNode("p", null, "Das Bluetooth-Modul ermöglicht es Informationen, Befehle und Daten kabellos zwischen mehreren Endgeräten oder Mikrocontrollern zu übertragen. So können beispielsweise zwei Arduinos untereinander oder auch ein Arduino mit einem Smartphone / Laptop kommunizieren.", -1)),
+        createBaseVNode("p", null, [
+          _cache[2] || (_cache[2] = createTextVNode("Damit das funktioniert, wird auf dem Smartphone eine App benötigt, über die Befehle empfangen und gesendet werden können. Empfehlungen findet ihr weiter unten. Das Bluetooth-Modul lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über die serielle Schnittstelle ")),
           createVNode(_component_MDAbbr, null, {
             default: withCtx(() => _cache[0] || (_cache[0] = [
               createTextVNode("UART")
@@ -2034,53 +2089,23 @@ const _sfc_main$6 = {
             ])),
             _: 1
           }),
-          _cache[3] || (_cache[3] = createTextVNode(", funk, bluetooth] id: 53"))
+          _cache[3] || (_cache[3] = createTextVNode(" anschließen und zusätzlich über bestimmte Befehle programmieren. So kann beispielsweise eine Pin oder der angezeigte Bluetooth-Name eingestellt werden."))
         ]),
-        _cache[16] || (_cache[16] = createBaseVNode("h1", {
-          id: "grove-%E2%80%93-serial-bluetooth-v3.0",
-          tabindex: "-1"
-        }, "Grove – Serial Bluetooth V3.0", -1)),
-        _cache[17] || (_cache[17] = createBaseVNode("p", null, [
-          createBaseVNode("img", {
-            src: "https://makeyourschool.de/wp-content/uploads/2018/10/53_bluetooth-modul-1024x1024.jpg",
-            alt: "Seeed Studio Grove – Serial Bluetooth V3.0"
-          })
-        ], -1)),
-        _cache[18] || (_cache[18] = createBaseVNode("h2", {
-          id: "beschreibung",
-          tabindex: "-1"
-        }, "Beschreibung", -1)),
-        _cache[19] || (_cache[19] = createBaseVNode("p", null, "Das Bluetooth-Modul ermöglicht es Informationen, Befehle und Daten kabellos zwischen mehreren Endgeräten oder Mikrocontrollern zu übertragen. So können beispielsweise zwei Arduinos untereinander oder auch ein Arduino mit einem Smartphone / Laptop kommunizieren.", -1)),
-        createBaseVNode("p", null, [
-          _cache[6] || (_cache[6] = createTextVNode("Damit das funktioniert, wird auf dem Smartphone eine App benötigt, über die Befehle empfangen und gesendet werden können. Empfehlungen findet ihr weiter unten. Das Bluetooth-Modul lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über die serielle Schnittstelle ")),
-          createVNode(_component_MDAbbr, null, {
-            default: withCtx(() => _cache[4] || (_cache[4] = [
-              createTextVNode("UART")
-            ])),
-            abbrDescription: withCtx(() => _cache[5] || (_cache[5] = [
-              createBaseVNode("h1", null, "Serielle Schnittstelle", -1),
-              createBaseVNode("p", null, "UART = Universal Asynchronous Receiver Transmitter", -1),
-              createBaseVNode("p", null, "meist 2Pins: TX (Senden) und RX (Empfangen) der TX Pin des Sendenden Geräts muss an den RX-Pin des Empfangenen Gerätes angeschlossen werden.", -1)
-            ])),
-            _: 1
-          }),
-          _cache[7] || (_cache[7] = createTextVNode(" anschließen und zusätzlich über bestimmte Befehle programmieren. So kann beispielsweise eine Pin oder der angezeigte Bluetooth-Name eingestellt werden."))
-        ]),
-        _cache[20] || (_cache[20] = createBaseVNode("h2", {
+        _cache[15] || (_cache[15] = createBaseVNode("h2", {
           id: "anschl%C3%BCsse",
           tabindex: "-1"
         }, "Anschlüsse", -1)),
-        _cache[21] || (_cache[21] = createBaseVNode("h3", {
+        _cache[16] || (_cache[16] = createBaseVNode("h3", {
           id: "eingang",
           tabindex: "-1"
         }, "Eingang", -1)),
         createBaseVNode("ul", null, [
           createBaseVNode("li", null, [
             createVNode(_component_MDAbbr, null, {
-              default: withCtx(() => _cache[8] || (_cache[8] = [
+              default: withCtx(() => _cache[4] || (_cache[4] = [
                 createTextVNode("UART")
               ])),
-              abbrDescription: withCtx(() => _cache[9] || (_cache[9] = [
+              abbrDescription: withCtx(() => _cache[5] || (_cache[5] = [
                 createBaseVNode("h1", null, "Serielle Schnittstelle", -1),
                 createBaseVNode("p", null, "UART = Universal Asynchronous Receiver Transmitter", -1),
                 createBaseVNode("p", null, "meist 2Pins: TX (Senden) und RX (Empfangen) der TX Pin des Sendenden Geräts muss an den RX-Pin des Empfangenen Gerätes angeschlossen werden.", -1)
@@ -2089,7 +2114,7 @@ const _sfc_main$6 = {
             })
           ])
         ]),
-        _cache[22] || (_cache[22] = createStaticVNode('<h3 id="ausgang" tabindex="-1">Ausgang</h3><ul><li>Bluetooth</li></ul><h2 id="kurz-datenblatt" tabindex="-1">Kurz-Datenblatt</h2><ul><li>Signal Eingang: 5V</li><li>Betriebsspannung: 5V</li><li>Fully Qualified Bluetooth <code>V2.1+EDR</code></li><li>Modul-Bezeichnung <code>HM-01</code></li><li>Chip <code>BC417143</code></li></ul><h2 id="library" tabindex="-1">library</h2><p>Um dieses Bauteil zu verwenden, wird lediglich die Bibliothek “SoftwareSerial” benötigt. (diese ist schon fest in die Arduino IDE integriert - du musst nichts installieren.)</p><h2 id="beispiel" tabindex="-1">Beispiel</h2><p>Der Beispiel-Code ist (vorerst) im Ordner “examples” zu finden.</p>', 8)),
+        _cache[17] || (_cache[17] = createStaticVNode('<h3 id="ausgang" tabindex="-1">Ausgang</h3><ul><li>Bluetooth</li></ul><h2 id="kurz-datenblatt" tabindex="-1">Kurz-Datenblatt</h2><ul><li>Signal Eingang: 5V</li><li>Betriebsspannung: 5V</li><li>Fully Qualified Bluetooth <code>V2.1+EDR</code></li><li>Modul-Bezeichnung <code>HM-01</code></li><li>Chip <code>BC417143</code></li></ul><h2 id="library" tabindex="-1">library</h2><p>Um dieses Bauteil zu verwenden, wird lediglich die Bibliothek “SoftwareSerial” benötigt. (diese ist schon fest in die Arduino IDE integriert - du musst nichts installieren.)</p><h2 id="beispiel" tabindex="-1">Beispiel</h2><p>Der Beispiel-Code ist (vorerst) im Ordner “examples” zu finden.</p>', 8)),
         createVNode(_component_MDCode, {
           content: `// Einfacher Test: Sende Daten des Seriellen-Ports an das Bluetooth module
 
@@ -2137,28 +2162,28 @@ void loop() {
           codeFilePath: "./examples/GroveSerialBluetoothV3.0_minimal/GroveSerialBluetoothV3.0_minimal.ino",
           fileExists: "true"
         }),
-        _cache[23] || (_cache[23] = createStaticVNode('<h2 id="anleitungen" tabindex="-1">Anleitungen</h2><p>Grundsätzlich:</p><ul><li>Bluetooth-Modul am Arduino anschließen (am besten über das Grove Shield). Den richtigen Port entnehmt ihr dem Beispiel-Code</li><li>Sobald der Arduino mit Strom versorgt wird, sollte das Bluetooth-Modul anfangen zu blinken.</li></ul><h3 id="bluetooth-modul-konfigurieren" tabindex="-1">Bluetooth-Modul konfigurieren</h3><p>Das BT-Modul kann über sogenannte AT-Befehle konfiguriert werden. Diese können händisch in der Arduino IDE über den seriellen Monitor verschickt werden. Dies muss nur einmalig gemacht werden. Das Modul speichert die Konfiguration dauerhaft. Damit das BT-Modul AT-Befehle korrekt verarbeitet müssen drei Bedingungen erfüllt sein:</p><ul><li>Der Beispiel-Code (oder ein vergleichbarer Sketch) muss auf den Arduino aufgespielt sein.</li><li>Der serielle Monitor auf dem PC muss auf “No line ending” eingestellt sein.</li><li>Es darf keine aktive Bluetoothverbindung bestehen (LED muss blinken).</li></ul><p>Wenn alles korrekt funktioniert, antwortet das Bluetooth-Modul auf jeden AT-Befehl mit “OK”.</p><p>Liste der wichtigsten AT-Befehle (Optionen sind in [ ] angegeben (keine Leerzeichen einfügen!)):</p><table><thead><tr><th>Befehl</th><th>Funktion</th></tr></thead><tbody><tr><td>AT</td><td>Verbindung testen</td></tr><tr><td>AT+DEFAULT</td><td>Auf Werkszustand zurücksetzen</td></tr><tr><td>AT+ROLE[S/M/?]</td><td>Slave oder Master aktivieren bzw. aktuelle Einstellung abfragen (Standard: Slave)</td></tr><tr><td>AT+NAME[…/?]</td><td>Name einstellen/abfragen (Standard: HMSoft max. 12 Zeichen)</td></tr><tr><td>AT+PIN[…/?]</td><td>Pin einstellen/abfragen (Standard: 1234)</td></tr><tr><td>AT+CLEAR</td><td>Letzte Bluetooth-Verbindung löschen</td></tr><tr><td>AT+TEMP?</td><td>Temperatur des BT-Moduls ausgeben</td></tr><tr><td>AT+AUTH[0/1/?]</td><td>Authentifizierung einstellen bzw. abfragen (Standard: 0)</td></tr><tr><td>AT+VERSION</td><td>Firmware-Version ausgeben</td></tr><tr><td>AT+RESTART</td><td>BT-Modul neu starten</td></tr><tr><td>AT+HELP?</td><td><em>Hilfe</em> anzeigen</td></tr></tbody></table><h4 id="beispiele" tabindex="-1">Beispiele</h4><ul><li>Namen abfragen <code>AT+NAME?</code><ul><li>modul antwortet mit <code>OK+NAME deraktuelle</code></li></ul></li><li>Namen setzen <code>AT+NAMEFrosch</code></li></ul><h3 id="zwei-bluetooth-module-miteinander-verbinden" tabindex="-1">Zwei Bluetooth-Module miteinander verbinden</h3><ul><li>Beide Module auf Werkszustand zurücksetzen (oder wie gewünscht konfigurieren. Name, Pin etc. müssen auf beiden Modulen identisch sein!)</li><li>Eines der beiden Module als Master konfigurieren</li><li>Warten. Die beiden Module verbinden sich nun automatisch</li></ul><h3 id="bluetooth-modul-und-smartphone-verbinden" tabindex="-1">Bluetooth-Modul und Smartphone verbinden</h3><ul><li>Bluetooth-Modul auf Werkszustand zurücksetzen (oder wie gewünscht konfigurieren)</li><li>Auf dem Smartphone in die Bluetooth-Einstellungen gehen und nach neuen Geräten suchen. Nach einigen Sekunden sollte das Bluetooth-Modul als “HMSoft” auftauchen.</li><li>“HMSoft” auswählen und PIN eingeben (Standard: 1234)</li><li>In vielen Fällen wird sich das Smartphone zwar koppeln aber keine Verbindung aufbauen können. Das ist nicht schlimm.</li><li>Eine der empfohlenen Bluetooth-Apps öffnen (s. Links zum Google Play Store) und innerhalb der App mit HMSoft verbinden</li></ul><h4 id="bluetooth-apps" tabindex="-1">Bluetooth-Apps</h4><ul><li><a href="https://play.google.com/store/apps/details?id=com.giristudio.hc05.bluetooth.arduino.control">Google Play Store – Bluetooth Arduino Control</a></li><li><a href="https://play.google.com/store/apps/details?id=de.kai_morich.serial_bluetooth_terminal&amp;hl=de">Google Play Store – Serial Bluetooth Terminal</a></li><li><a href="https://f-droid.org/en/packages/net.bluetoothviewer/">F-Droid - Bluetooth Viewer (LITE)</a></li><li><a href="https://f-droid.org/en/packages/priv.wh201906.serialtest/">F-Droid - SerialTest (kann auch Bluetooth)</a></li></ul><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li><a href="http://wiki.seeedstudio.com/Grove-Serial_Bluetooth_v3.0/">Seeed Studio Wiki – Bluetooth</a></li></ul><h2 id="projektbeispiele" tabindex="-1">Projektbeispiele</h2><ul><li><a href="https://funduino.de/tutorial-hc-05-und-hc-06-bluetooth">Funduino – Bluetooth (nur ein anderes Modul)</a></li></ul><h2 id="weiterf%C3%BChrende-hintergrundinformationen" tabindex="-1">Weiterführende Hintergrundinformationen</h2>', 22)),
+        _cache[18] || (_cache[18] = createStaticVNode('<h2 id="anleitungen" tabindex="-1">Anleitungen</h2><p>Grundsätzlich:</p><ul><li>Bluetooth-Modul am Arduino anschließen (am besten über das Grove Shield). Den richtigen Port entnehmt ihr dem Beispiel-Code</li><li>Sobald der Arduino mit Strom versorgt wird, sollte das Bluetooth-Modul anfangen zu blinken.</li></ul><h3 id="bluetooth-modul-konfigurieren" tabindex="-1">Bluetooth-Modul konfigurieren</h3><p>Das BT-Modul kann über sogenannte AT-Befehle konfiguriert werden. Diese können händisch in der Arduino IDE über den seriellen Monitor verschickt werden. Dies muss nur einmalig gemacht werden. Das Modul speichert die Konfiguration dauerhaft. Damit das BT-Modul AT-Befehle korrekt verarbeitet müssen drei Bedingungen erfüllt sein:</p><ul><li>Der Beispiel-Code (oder ein vergleichbarer Sketch) muss auf den Arduino aufgespielt sein.</li><li>Der serielle Monitor auf dem PC muss auf “No line ending” eingestellt sein.</li><li>Es darf keine aktive Bluetoothverbindung bestehen (LED muss blinken).</li></ul><p>Wenn alles korrekt funktioniert, antwortet das Bluetooth-Modul auf jeden AT-Befehl mit “OK”.</p><p>Liste der wichtigsten AT-Befehle (Optionen sind in [ ] angegeben (keine Leerzeichen einfügen!)):</p><table><thead><tr><th>Befehl</th><th>Funktion</th></tr></thead><tbody><tr><td>AT</td><td>Verbindung testen</td></tr><tr><td>AT+DEFAULT</td><td>Auf Werkszustand zurücksetzen</td></tr><tr><td>AT+ROLE[S/M/?]</td><td>Slave oder Master aktivieren bzw. aktuelle Einstellung abfragen (Standard: Slave)</td></tr><tr><td>AT+NAME[…/?]</td><td>Name einstellen/abfragen (Standard: HMSoft max. 12 Zeichen)</td></tr><tr><td>AT+PIN[…/?]</td><td>Pin einstellen/abfragen (Standard: 1234)</td></tr><tr><td>AT+CLEAR</td><td>Letzte Bluetooth-Verbindung löschen</td></tr><tr><td>AT+TEMP?</td><td>Temperatur des BT-Moduls ausgeben</td></tr><tr><td>AT+AUTH[0/1/?]</td><td>Authentifizierung einstellen bzw. abfragen (Standard: 0)</td></tr><tr><td>AT+VERSION</td><td>Firmware-Version ausgeben</td></tr><tr><td>AT+RESTART</td><td>BT-Modul neu starten</td></tr><tr><td>AT+HELP?</td><td><em>Hilfe</em> anzeigen</td></tr></tbody></table><h4 id="beispiele" tabindex="-1">Beispiele</h4><ul><li>Namen abfragen <code>AT+NAME?</code><ul><li>modul antwortet mit <code>OK+NAME deraktuelle</code></li></ul></li><li>Namen setzen <code>AT+NAMEFrosch</code></li></ul><h3 id="zwei-bluetooth-module-miteinander-verbinden" tabindex="-1">Zwei Bluetooth-Module miteinander verbinden</h3><ul><li>Beide Module auf Werkszustand zurücksetzen (oder wie gewünscht konfigurieren. Name, Pin etc. müssen auf beiden Modulen identisch sein!)</li><li>Eines der beiden Module als Master konfigurieren</li><li>Warten. Die beiden Module verbinden sich nun automatisch</li></ul><h3 id="bluetooth-modul-und-smartphone-verbinden" tabindex="-1">Bluetooth-Modul und Smartphone verbinden</h3><ul><li>Bluetooth-Modul auf Werkszustand zurücksetzen (oder wie gewünscht konfigurieren)</li><li>Auf dem Smartphone in die Bluetooth-Einstellungen gehen und nach neuen Geräten suchen. Nach einigen Sekunden sollte das Bluetooth-Modul als “HMSoft” auftauchen.</li><li>“HMSoft” auswählen und PIN eingeben (Standard: 1234)</li><li>In vielen Fällen wird sich das Smartphone zwar koppeln aber keine Verbindung aufbauen können. Das ist nicht schlimm.</li><li>Eine der empfohlenen Bluetooth-Apps öffnen (s. Links zum Google Play Store) und innerhalb der App mit HMSoft verbinden</li></ul><h4 id="bluetooth-apps" tabindex="-1">Bluetooth-Apps</h4><ul><li><a href="https://play.google.com/store/apps/details?id=com.giristudio.hc05.bluetooth.arduino.control">Google Play Store – Bluetooth Arduino Control</a></li><li><a href="https://play.google.com/store/apps/details?id=de.kai_morich.serial_bluetooth_terminal&amp;hl=de">Google Play Store – Serial Bluetooth Terminal</a></li><li><a href="https://f-droid.org/en/packages/net.bluetoothviewer/">F-Droid - Bluetooth Viewer (LITE)</a></li><li><a href="https://f-droid.org/en/packages/priv.wh201906.serialtest/">F-Droid - SerialTest (kann auch Bluetooth)</a></li></ul><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li><a href="http://wiki.seeedstudio.com/Grove-Serial_Bluetooth_v3.0/">Seeed Studio Wiki – Bluetooth</a></li></ul><h2 id="projektbeispiele" tabindex="-1">Projektbeispiele</h2><ul><li><a href="https://funduino.de/tutorial-hc-05-und-hc-06-bluetooth">Funduino – Bluetooth (nur ein anderes Modul)</a></li></ul><h2 id="weiterf%C3%BChrende-hintergrundinformationen" tabindex="-1">Weiterführende Hintergrundinformationen</h2>', 22)),
         createBaseVNode("ul", null, [
           createBaseVNode("li", null, [
-            createBaseVNode("a", _hoisted_3, [
+            createBaseVNode("a", _hoisted_2, [
               createVNode(_component_MDAbbr, null, {
-                default: withCtx(() => _cache[10] || (_cache[10] = [
+                default: withCtx(() => _cache[6] || (_cache[6] = [
                   createTextVNode("UART")
                 ])),
-                abbrDescription: withCtx(() => _cache[11] || (_cache[11] = [
+                abbrDescription: withCtx(() => _cache[7] || (_cache[7] = [
                   createBaseVNode("h1", null, "Serielle Schnittstelle", -1),
                   createBaseVNode("p", null, "UART = Universal Asynchronous Receiver Transmitter", -1),
                   createBaseVNode("p", null, "meist 2Pins: TX (Senden) und RX (Empfangen) der TX Pin des Sendenden Geräts muss an den RX-Pin des Empfangenen Gerätes angeschlossen werden.", -1)
                 ])),
                 _: 1
               }),
-              _cache[12] || (_cache[12] = createTextVNode(" – Wikipedia Artikel"))
+              _cache[8] || (_cache[8] = createTextVNode(" – Wikipedia Artikel"))
             ])
           ]),
-          _cache[13] || (_cache[13] = createBaseVNode("li", null, [
+          _cache[9] || (_cache[9] = createBaseVNode("li", null, [
             createBaseVNode("a", { href: "https://de.wikipedia.org/wiki/Bluetooth" }, "Bluetooth – Wikipedia Artikel")
           ], -1)),
-          _cache[14] || (_cache[14] = createBaseVNode("li", null, [
+          _cache[10] || (_cache[10] = createBaseVNode("li", null, [
             createBaseVNode("a", { href: "https://files.seeedstudio.com/wiki/Bluetooth_Shield_V2/res/Bluetooth_en.pdf" }, "Bluetooth-Chip Software Datasheet")
           ], -1))
         ])
@@ -2169,19 +2194,25 @@ void loop() {
 const __vite_glob_1_6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$6,
-  excerpt: excerpt$5
+  excerpt: excerpt$5,
+  id: id$4,
+  tags: tags$5,
+  title: title$2
 }, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$5 = { class: "markdown-body" };
-const excerpt$4 = "";
+const title$1 = "Grove Taster";
+const tags$4 = ["input", "taster_taster_schalter", "schalter", "taster", "grove"];
+const id$3 = 60;
+const excerpt$4 = '<h1 id="taster-(grove)" tabindex="-1">Taster (Grove)</h1>\n<p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/60_taster_knopf_platine-1024x1024.jpg" alt="Bauteil"></p>\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n<h2 id="beschreibung" tabindex="-1">Beschreibung</h2>\n<p>ein einfacher Taster.\nauf einer Platine mit einem Grove-Buchse verlötete.\ndadurch ist der Anschluss super einfach 😃</p>\n';
 const _sfc_main$5 = {
   __name: "readme",
   setup(__props, { expose: __expose }) {
-    const frontmatter = {};
+    const frontmatter = { "title": "Grove Taster", "tags": ["input", "taster_taster_schalter", "schalter", "taster", "grove"], "id": 60 };
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       const _component_MDCode = resolveComponent("MDCode");
       return openBlock(), createElementBlock("div", _hoisted_1$5, [
-        _cache[0] || (_cache[0] = createStaticVNode('<hr><h2 id="title%3A-grove-tastertags%3A-%5Binput%2C-taster_taster_schalter%2C-schalter%2C-taster%2C-grove%5Did%3A-60" tabindex="-1">title: Grove Taster tags: [input, taster_taster_schalter, schalter, taster, grove] id: 60</h2><h1 id="taster-(grove)" tabindex="-1">Taster (Grove)</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/60_taster_knopf_platine-1024x1024.jpg" alt="Bauteil"></p><h2 id="beschreibung" tabindex="-1">Beschreibung</h2><p>ein einfacher Taster. auf einer Platine mit einem Grove-Buchse verlötete. dadurch ist der Anschluss super einfach 😃</p><p>mehr details</p><h2 id="anschl%C3%BCsse" tabindex="-1">Anschlüsse</h2><h3 id="eingang" tabindex="-1">Eingang</h3><ul><li>Mechanische Betätigung</li></ul><h3 id="ausgang" tabindex="-1">Ausgang</h3><ul><li>5V Signal (auf Grove Buchse)</li></ul><h2 id="kurz-datenblatt" tabindex="-1">Kurz-Datenblatt</h2><ul><li>Betriebsspannung: 3.3-5V</li></ul><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li><ul><li></li></ul></li></ul><h2 id="library" tabindex="-1">library</h2><p>keine library nötig.</p><h2 id="beispiel" tabindex="-1">Beispiel</h2><p>schau dir das Minimal-Beispiel an:</p>', 20)),
+        _cache[0] || (_cache[0] = createStaticVNode('<h1 id="taster-(grove)" tabindex="-1">Taster (Grove)</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/60_taster_knopf_platine-1024x1024.jpg" alt="Bauteil"></p><h2 id="beschreibung" tabindex="-1">Beschreibung</h2><p>ein einfacher Taster. auf einer Platine mit einem Grove-Buchse verlötete. dadurch ist der Anschluss super einfach 😃</p><p>mehr details</p><h2 id="anschl%C3%BCsse" tabindex="-1">Anschlüsse</h2><h3 id="eingang" tabindex="-1">Eingang</h3><ul><li>Mechanische Betätigung</li></ul><h3 id="ausgang" tabindex="-1">Ausgang</h3><ul><li>5V Signal (auf Grove Buchse)</li></ul><h2 id="kurz-datenblatt" tabindex="-1">Kurz-Datenblatt</h2><ul><li>Betriebsspannung: 3.3-5V</li></ul><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li><ul><li></li></ul></li></ul><h2 id="library" tabindex="-1">library</h2><p>keine library nötig.</p><h2 id="beispiel" tabindex="-1">Beispiel</h2><p>schau dir das Minimal-Beispiel an:</p>', 18)),
         createVNode(_component_MDCode, {
           content: "const int tasterPin = 2;\n\nvoid setup() {\n    Serial.begin(115200);\n    pinMode(tasterPin, INPUT);\n    delay(10);\n}\n\nvoid loop() {\n    Serial.println(digitalRead(tasterPin));\n    delay(500);\n}\n",
           codeLanguage: "c++",
@@ -2197,20 +2228,26 @@ const _sfc_main$5 = {
 const __vite_glob_1_7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$5,
-  excerpt: excerpt$4
+  excerpt: excerpt$4,
+  id: id$3,
+  tags: tags$4,
+  title: title$1
 }, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$4 = { class: "markdown-body" };
-const excerpt$3 = "";
+const titel$1 = "Grove Ultraschall Entfernungsmesser";
+const tags$3 = ["input", "entfernung", "grove"];
+const id$2 = 17;
+const excerpt$3 = '<h1 id="grove-ultraschall-entfernungsmesser" tabindex="-1">Grove Ultraschall Entfernungsmesser</h1>\n<p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/17_ultraschallentfernungssensor-1024x1024.jpg" alt="Bauteil"></p>\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n<h2 id="beschreibung" tabindex="-1">Beschreibung</h2>\n<p>kurz-Beschreibung</p>\n';
 const _sfc_main$4 = {
   __name: "readme",
   setup(__props, { expose: __expose }) {
-    const frontmatter = {};
+    const frontmatter = { "titel": "Grove Ultraschall Entfernungsmesser", "tags": ["input", "entfernung", "grove"], "id": 17 };
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       const _component_MDAbbr = resolveComponent("MDAbbr");
       const _component_MDCode = resolveComponent("MDCode");
       return openBlock(), createElementBlock("div", _hoisted_1$4, [
-        _cache[2] || (_cache[2] = createStaticVNode('<hr><h2 id="titel%3A-grove-ultraschall-entfernungsmessertags%3A-%5Binput%2C-entfernung%2C-grove%5Did%3A-17" tabindex="-1">titel: Grove Ultraschall Entfernungsmesser tags: [input, entfernung, grove] id: 17</h2><h1 id="grove-ultraschall-entfernungsmesser" tabindex="-1">Grove Ultraschall Entfernungsmesser</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/17_ultraschallentfernungssensor-1024x1024.jpg" alt="Bauteil"></p><h2 id="beschreibung" tabindex="-1">Beschreibung</h2><p>kurz-Beschreibung</p><p>mehr details</p><h2 id="anschl%C3%BCsse" tabindex="-1">Anschlüsse</h2><h3 id="eingang" tabindex="-1">Eingang</h3>', 9)),
+        _cache[2] || (_cache[2] = createStaticVNode('<h1 id="grove-ultraschall-entfernungsmesser" tabindex="-1">Grove Ultraschall Entfernungsmesser</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/17_ultraschallentfernungssensor-1024x1024.jpg" alt="Bauteil"></p><h2 id="beschreibung" tabindex="-1">Beschreibung</h2><p>kurz-Beschreibung</p><p>mehr details</p><h2 id="anschl%C3%BCsse" tabindex="-1">Anschlüsse</h2><h3 id="eingang" tabindex="-1">Eingang</h3>', 7)),
         createBaseVNode("ul", null, [
           createBaseVNode("li", null, [
             createVNode(_component_MDAbbr, null, {
@@ -2250,19 +2287,28 @@ const _sfc_main$4 = {
 const __vite_glob_1_8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$4,
-  excerpt: excerpt$3
+  excerpt: excerpt$3,
+  id: id$2,
+  tags: tags$3,
+  titel: titel$1
 }, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$3 = { class: "markdown-body" };
-const excerpt$2 = "";
+const tags$2 = ["output", "leds", "licht"];
+const id$1 = 65;
+const excerpt$2 = `<h1 id="pixel-led-streifen" tabindex="-1">Pixel LED-Streifen</h1>
+<p><img src="https://makeyourschool.de/wp-content/uploads/2018/08/65_led-streifen-1024x1024.jpg" alt="LED-Streifen"></p>
+<h2 id="beschreibung" tabindex="-1">Beschreibung</h2>
+<p>LED-Streifen sind Flexible Bänder auf denen in bestimmtem Abstand <code>Adresierbare LED's</code> aufgelötete sind.</p>
+`;
 const _sfc_main$3 = {
   __name: "readme",
   setup(__props, { expose: __expose }) {
-    const frontmatter = {};
+    const frontmatter = { "tags": ["output", "leds", "licht"], "id": 65 };
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       const _component_MDCode = resolveComponent("MDCode");
       return openBlock(), createElementBlock("div", _hoisted_1$3, [
-        _cache[0] || (_cache[0] = createStaticVNode('<hr><h2 id="tags%3A-%5Boutput%2C-leds%2C-licht%5Did%3A-65" tabindex="-1">tags: [output, leds, licht] id: 65</h2><h1 id="pixel-led-streifen" tabindex="-1">Pixel LED-Streifen</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/08/65_led-streifen-1024x1024.jpg" alt="LED-Streifen"></p><h2 id="beschreibung" tabindex="-1">Beschreibung</h2><p>LED-Streifen sind Flexible Bänder auf denen in bestimmtem Abstand <code>Adresierbare LED&#39;s</code> aufgelötete sind.</p><p>jeder <em>Pixel</em> beinhaltet einen kleinen controller chip (meist schwarzen - dem LED-Treiber) und den meist drei eigentlichen LEDs in den Licht-Grundfarben Rot, Grün und Blau. Jeder <em>Pixel</em> kann einzeln <em>Adressiert</em> werden (Entspricht einem Haus in einer Straße). dabei können alle drei Grundfarben einzeln in ihrere Helligkeit (255 Stufen) eingestellt werden - dadurch können alle Regenbogen Farben + Weiß erzeugt werden.</p><p>Andere Namen:</p><ul><li>Neopixel</li><li>WS2811</li><li>Dotstar</li><li>APA102</li></ul><h2 id="anschl%C3%BCsse" tabindex="-1">Anschlüsse</h2><h3 id="eingang" tabindex="-1">Eingang</h3><ul><li>Serielle Daten</li></ul><h3 id="ausgang" tabindex="-1">Ausgang</h3><ul><li>Licht</li></ul><h2 id="kurz-datenblatt" tabindex="-1">Kurz-Datenblatt</h2><ul><li>Signal Eingang: 3-5V</li><li>Betriebsspannung: 3-5V</li><li>benötigter Strom: 20mA-60mA pro Pixel</li></ul><p>Beispiel: 10 Pixel * 60mA = 600mA = 0,6A</p><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li>falls vorhanden link zu anderem Bauteil / zugehörigem part</li></ul><h2 id="library" tabindex="-1">library</h2><p>um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: <a href="https://fastled.io/">fastled</a></p><h2 id="beispiel" tabindex="-1">Beispiel</h2><p>schau dir das Minimal-Beispiel an:</p>', 23)),
+        _cache[0] || (_cache[0] = createStaticVNode('<h1 id="pixel-led-streifen" tabindex="-1">Pixel LED-Streifen</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/08/65_led-streifen-1024x1024.jpg" alt="LED-Streifen"></p><h2 id="beschreibung" tabindex="-1">Beschreibung</h2><p>LED-Streifen sind Flexible Bänder auf denen in bestimmtem Abstand <code>Adresierbare LED&#39;s</code> aufgelötete sind.</p><p>jeder <em>Pixel</em> beinhaltet einen kleinen controller chip (meist schwarzen - dem LED-Treiber) und den meist drei eigentlichen LEDs in den Licht-Grundfarben Rot, Grün und Blau. Jeder <em>Pixel</em> kann einzeln <em>Adressiert</em> werden (Entspricht einem Haus in einer Straße). dabei können alle drei Grundfarben einzeln in ihrere Helligkeit (255 Stufen) eingestellt werden - dadurch können alle Regenbogen Farben + Weiß erzeugt werden.</p><p>Andere Namen:</p><ul><li>Neopixel</li><li>WS2811</li><li>Dotstar</li><li>APA102</li></ul><h2 id="anschl%C3%BCsse" tabindex="-1">Anschlüsse</h2><h3 id="eingang" tabindex="-1">Eingang</h3><ul><li>Serielle Daten</li></ul><h3 id="ausgang" tabindex="-1">Ausgang</h3><ul><li>Licht</li></ul><h2 id="kurz-datenblatt" tabindex="-1">Kurz-Datenblatt</h2><ul><li>Signal Eingang: 3-5V</li><li>Betriebsspannung: 3-5V</li><li>benötigter Strom: 20mA-60mA pro Pixel</li></ul><p>Beispiel: 10 Pixel * 60mA = 600mA = 0,6A</p><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li>falls vorhanden link zu anderem Bauteil / zugehörigem part</li></ul><h2 id="library" tabindex="-1">library</h2><p>um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: <a href="https://fastled.io/">fastled</a></p><h2 id="beispiel" tabindex="-1">Beispiel</h2><p>schau dir das Minimal-Beispiel an:</p>', 21)),
         createVNode(_component_MDCode, {
           content: "// TODO: CONTENT: füge minimal beispiel ein\n\nvoid setup() {\n    // schreibe alle aufrufe hier rein die ein einziges mal beim starten ausgeführt werden sollen.\n}\n\nvoid loop() {\n    // aller code hier wird sehr schnell und unendlich oft wiederholt.\n}\n",
           codeLanguage: "c++",
@@ -2278,19 +2324,24 @@ const _sfc_main$3 = {
 const __vite_glob_1_9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$3,
-  excerpt: excerpt$2
+  excerpt: excerpt$2,
+  id: id$1,
+  tags: tags$2
 }, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$2 = { class: "markdown-body" };
-const excerpt$1 = "";
+const title = "Taster";
+const tags$1 = ["input", "taster", "taster_schalter"];
+const id = 59;
+const excerpt$1 = '<h1 id="taster" tabindex="-1">Taster</h1>\n<p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/59_taster_knopf-1024x1024.jpg" alt="Bauteil"></p>\n<!-- TODO: CONTENT change image -->\n<!-- TODO: ARCHITECTURE multiple images? -->\n<!-- do we need multiple images per part?-->\n<!-- and if do we need a slider? -->\n<h2 id="beschreibung" tabindex="-1">Beschreibung</h2>\n<p>ein einfacher Taster</p>\n';
 const _sfc_main$2 = {
   __name: "readme",
   setup(__props, { expose: __expose }) {
-    const frontmatter = {};
+    const frontmatter = { "title": "Taster", "tags": ["input", "taster", "taster_schalter"], "id": 59 };
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       const _component_MDCode = resolveComponent("MDCode");
       return openBlock(), createElementBlock("div", _hoisted_1$2, [
-        _cache[0] || (_cache[0] = createStaticVNode('<hr><h2 id="title%3A-tastertags%3A-%5Binput%2C-taster%2C-taster_schalter%2C%5Did%3A-59" tabindex="-1">title: Taster tags: [input, taster, taster_schalter,] id: 59</h2><h1 id="taster" tabindex="-1">Taster</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/59_taster_knopf-1024x1024.jpg" alt="Bauteil"></p><h2 id="beschreibung" tabindex="-1">Beschreibung</h2><p>ein einfacher Taster</p><p>mehr details</p><h2 id="anschl%C3%BCsse" tabindex="-1">Anschlüsse</h2><h3 id="eingang" tabindex="-1">Eingang</h3><ul><li>Mechanische Betätigung</li></ul><h3 id="ausgang" tabindex="-1">Ausgang</h3><ul><li>…</li></ul><h2 id="kurz-datenblatt" tabindex="-1">Kurz-Datenblatt</h2><ul><li>Betriebsspannung: 3.3-5V</li></ul><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li><a href="https://makeyourschool.de/maker-ecke/material/taster-knopf/">https://makeyourschool.de/maker-ecke/material/taster-knopf/</a></li></ul><h2 id="library" tabindex="-1">library</h2><p>keine library nötig</p><h2 id="beispiel" tabindex="-1">Beispiel</h2><p>schau dir das Minimal-Beispiel an:</p>', 20)),
+        _cache[0] || (_cache[0] = createStaticVNode('<h1 id="taster" tabindex="-1">Taster</h1><p><img src="https://makeyourschool.de/wp-content/uploads/2018/10/59_taster_knopf-1024x1024.jpg" alt="Bauteil"></p><h2 id="beschreibung" tabindex="-1">Beschreibung</h2><p>ein einfacher Taster</p><p>mehr details</p><h2 id="anschl%C3%BCsse" tabindex="-1">Anschlüsse</h2><h3 id="eingang" tabindex="-1">Eingang</h3><ul><li>Mechanische Betätigung</li></ul><h3 id="ausgang" tabindex="-1">Ausgang</h3><ul><li>…</li></ul><h2 id="kurz-datenblatt" tabindex="-1">Kurz-Datenblatt</h2><ul><li>Betriebsspannung: 3.3-5V</li></ul><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li><a href="https://makeyourschool.de/maker-ecke/material/taster-knopf/">https://makeyourschool.de/maker-ecke/material/taster-knopf/</a></li></ul><h2 id="library" tabindex="-1">library</h2><p>keine library nötig</p><h2 id="beispiel" tabindex="-1">Beispiel</h2><p>schau dir das Minimal-Beispiel an:</p>', 18)),
         createVNode(_component_MDCode, {
           content: "const int tasterPin = 2;\n\nvoid setup() {\n    Serial.begin(115200);\n    pinMode(tasterPin, INPUT_PULLUP);\n    delay(10);\n}\n\nvoid loop() {\n    Serial.println(digitalRead(tasterPin));\n    delay(500);\n}\n",
           codeLanguage: "c++",
@@ -2306,22 +2357,22 @@ const _sfc_main$2 = {
 const __vite_glob_1_10 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$2,
-  excerpt: excerpt$1
+  excerpt: excerpt$1,
+  id,
+  tags: tags$1,
+  title
 }, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$1 = { class: "markdown-body" };
+const titel = "MYS Material";
+const tags = ["welcome"];
 const excerpt = "";
 const _sfc_main$1 = {
   __name: "readme",
   setup(__props, { expose: __expose }) {
-    const frontmatter = {};
+    const frontmatter = { "titel": "MYS Material", "tags": ["welcome"] };
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1$1, _cache[0] || (_cache[0] = [
-        createBaseVNode("hr", null, null, -1),
-        createBaseVNode("h2", {
-          id: "titel%3A-mys-materialtags%3A-%5Bwelcome%2C-%5D",
-          tabindex: "-1"
-        }, "titel: MYS Material tags: [welcome, ]", -1),
         createBaseVNode("h1", {
           id: "mys-material",
           tabindex: "-1"
@@ -2342,7 +2393,9 @@ const _sfc_main$1 = {
 const __vite_glob_2_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$1,
-  excerpt
+  excerpt,
+  tags,
+  titel
 }, Symbol.toStringTag, { value: "Module" }));
 const mksAddPartsToTags = (mksContent2) => {
   console.group("mksAddPartsToTags");

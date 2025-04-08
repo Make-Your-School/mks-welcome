@@ -1,19 +1,22 @@
-import { S as resolveComponent, l as createElementBlock, m as openBlock, R as createStaticVNode, P as createBaseVNode, U as createTextVNode, j as createVNode, p as withCtx, u as unref, O as createBlock, F as Fragment, W as renderList, X as toDisplayString, V as resolveDynamicComponent } from "./index-j8_ddN6m.js";
-import { Q as QTooltip } from "./QTooltip-DaO7tg5S.js";
-import { Q as QPage } from "./QPage-BhKAIjD9.js";
-import "./scroll-v_GPqoH8.js";
+import { S as resolveComponent, l as createElementBlock, m as openBlock, R as createStaticVNode, P as createBaseVNode, U as createTextVNode, j as createVNode, p as withCtx, u as unref, O as createBlock, F as Fragment, W as renderList, X as toDisplayString, V as resolveDynamicComponent } from "./index-DX0R6gT4.js";
+import { Q as QTooltip } from "./QTooltip-DyH0lW6n.js";
+import { Q as QPage } from "./QPage-C0xGqcKF.js";
+import "./scroll-B-f6DJNY.js";
 import "./focus-manager-TfMniKh0.js";
 const _hoisted_1$5 = { class: "markdown-body" };
+const title$4 = "Testing Abbreviations";
+const tags$4 = ["rendering", "abbr", "style"];
+const id$4 = 1024;
 const excerpt$4 = "";
 const _sfc_main$5 = {
   __name: "abbr_test",
   setup(__props, { expose: __expose }) {
-    const frontmatter = {};
+    const frontmatter = { "title": "Testing Abbreviations", "tags": ["rendering", "abbr", "style"], "id": 1024 };
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       const _component_MDAbbr = resolveComponent("MDAbbr");
       return openBlock(), createElementBlock("div", _hoisted_1$5, [
-        _cache[15] || (_cache[15] = createStaticVNode('<hr><h2 id="title%3A-testing-abbreviationstags%3A-%5Brendering%2C-abbr%2C-style%5Did%3A-1024" tabindex="-1">title: Testing Abbreviations tags: [rendering, abbr, style] id: 1024</h2><h1 id="test-abbreviations" tabindex="-1">Test Abbreviations</h1><p>In this document there are two abbr defined - <code>SUN</code> and <code>pp</code>.</p><p>from the global space should be enabled: <code>HTML</code>, <code>W3C</code>, <code>I2C</code>, <code>UART</code>.</p>', 5)),
+        _cache[15] || (_cache[15] = createStaticVNode('<h1 id="test-abbreviations" tabindex="-1">Test Abbreviations</h1><p>In this document there are two abbr defined - <code>SUN</code> and <code>pp</code>.</p><p>from the global space should be enabled: <code>HTML</code>, <code>W3C</code>, <code>I2C</code>, <code>UART</code>.</p>', 3)),
         createBaseVNode("p", null, [
           _cache[2] || (_cache[2] = createTextVNode("Mikrocontroller often use ")),
           createVNode(_component_MDAbbr, null, {
@@ -84,28 +87,29 @@ const _sfc_main$5 = {
 const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$5,
-  excerpt: excerpt$4
+  excerpt: excerpt$4,
+  id: id$4,
+  tags: tags$4,
+  title: title$4
 }, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$4 = { class: "markdown-body" };
+const title$3 = "Testing Code-Blocks";
+const tags$3 = ["sw", "code", "style"];
+const id$3 = 127;
 const excerpt$3 = "";
 const _sfc_main$4 = {
   __name: "code_test",
   setup(__props, { expose: __expose }) {
-    const frontmatter = {};
+    const frontmatter = { "title": "Testing Code-Blocks", "tags": ["sw", "code", "style"], "id": 127 };
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       const _component_MDCode = resolveComponent("MDCode");
       return openBlock(), createElementBlock("div", _hoisted_1$4, [
-        _cache[0] || (_cache[0] = createBaseVNode("hr", null, null, -1)),
-        _cache[1] || (_cache[1] = createBaseVNode("h2", {
-          id: "title%3A-testing-code-blockstags%3A-%5Bsw%2C-code%2C-style%5Did%3A-127",
-          tabindex: "-1"
-        }, "title: Testing Code-Blocks tags: [sw, code, style] id: 127", -1)),
-        _cache[2] || (_cache[2] = createBaseVNode("h1", {
+        _cache[0] || (_cache[0] = createBaseVNode("h1", {
           id: "code-test",
           tabindex: "-1"
         }, "Code Test", -1)),
-        _cache[3] || (_cache[3] = createBaseVNode("p", null, "some default…", -1)),
+        _cache[1] || (_cache[1] = createBaseVNode("p", null, "some default…", -1)),
         createVNode(_component_MDCode, {
           content: "const xyz = 42\n",
           codeLanguage: "js",
@@ -113,7 +117,7 @@ const _sfc_main$4 = {
           codeFilePath: "",
           fileExists: "undefined"
         }),
-        _cache[4] || (_cache[4] = createBaseVNode("p", null, "the following code block should be filled with a good example.ino code…", -1)),
+        _cache[2] || (_cache[2] = createBaseVNode("p", null, "the following code block should be filled with a good example.ino code…", -1)),
         createVNode(_component_MDCode, {
           content: "html {\n    color: orange;\n    background-color: hsl(219, 100%, 18%);\n    box-shadow: 0 0 10px black;\n}\n",
           codeLanguage: "css",
@@ -121,7 +125,7 @@ const _sfc_main$4 = {
           codeFilePath: "./example.css",
           fileExists: "true"
         }),
-        _cache[5] || (_cache[5] = createBaseVNode("p", null, "the end.", -1))
+        _cache[3] || (_cache[3] = createBaseVNode("p", null, "the end.", -1))
       ]);
     };
   }
@@ -129,22 +133,23 @@ const _sfc_main$4 = {
 const __vite_glob_0_1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$4,
-  excerpt: excerpt$3
+  excerpt: excerpt$3,
+  id: id$3,
+  tags: tags$3,
+  title: title$3
 }, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$3 = { class: "markdown-body" };
-const excerpt$2 = "";
+const title$2 = "World Hello!!";
+const tags$2 = ["hello"];
+const id$2 = 12345;
+const excerpt$2 = '<h1 id="hello-world" tabindex="-1">Hello World</h1>\n<p>some intro text…</p>\n';
 const _sfc_main$3 = {
   __name: "hello",
   setup(__props, { expose: __expose }) {
-    const frontmatter = {};
+    const frontmatter = { "title": "World Hello!!", "tags": ["hello"], "id": 12345 };
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1$3, _cache[0] || (_cache[0] = [
-        createBaseVNode("hr", null, null, -1),
-        createBaseVNode("h2", {
-          id: "title%3A-world-hello!!tags%3A-%5Bhello%5Did%3A-12345",
-          tabindex: "-1"
-        }, "title: World Hello!! tags: [hello] id: 12345", -1),
         createBaseVNode("h1", {
           id: "hello-world",
           tabindex: "-1"
@@ -159,27 +164,28 @@ const _sfc_main$3 = {
 const __vite_glob_0_2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$3,
-  excerpt: excerpt$2
+  excerpt: excerpt$2,
+  id: id$2,
+  tags: tags$2,
+  title: title$2
 }, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$2 = { class: "markdown-body" };
-const excerpt$1 = "";
+const title$1 = "my special title...";
+const tags$1 = ["output", "aktor", "motor", "i2c"];
+const id$1 = 70;
+const excerpt$1 = '<h1 id="readme.md" tabindex="-1">Readme.md</h1>\n<p>this is a test 😃</p>\n';
 const _sfc_main$2 = {
   __name: "readme",
   setup(__props, { expose: __expose }) {
-    const frontmatter = {};
+    const frontmatter = { "title": "my special title...", "tags": ["output", "aktor", "motor", "i2c"], "id": 70 };
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1$2, [
-        _cache[2] || (_cache[2] = createBaseVNode("hr", null, null, -1)),
-        _cache[3] || (_cache[3] = createBaseVNode("h2", {
-          id: "title%3A-my-special-title%E2%80%A6tags%3A-%5Boutput%2C-aktor%2C-motor%2C-i2c%5Did%3A-70",
-          tabindex: "-1"
-        }, "title: my special title… tags: [output, aktor, motor, i2c] id: 70", -1)),
-        _cache[4] || (_cache[4] = createBaseVNode("h1", {
+        _cache[2] || (_cache[2] = createBaseVNode("h1", {
           id: "readme.md",
           tabindex: "-1"
         }, "Readme.md", -1)),
-        _cache[5] || (_cache[5] = createBaseVNode("p", null, "this is a test 😃", -1)),
+        _cache[3] || (_cache[3] = createBaseVNode("p", null, "this is a test 😃", -1)),
         createBaseVNode("p", null, [
           _cache[1] || (_cache[1] = createTextVNode("PING")),
           createVNode(unref(QTooltip), null, {
@@ -196,22 +202,23 @@ const _sfc_main$2 = {
 const __vite_glob_0_3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$2,
-  excerpt: excerpt$1
+  excerpt: excerpt$1,
+  id: id$1,
+  tags: tags$1,
+  title: title$1
 }, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1$1 = { class: "markdown-body" };
+const title = "ping pong..";
+const tags = ["input"];
+const id = 42;
 const excerpt = "";
 const _sfc_main$1 = {
   __name: "test",
   setup(__props, { expose: __expose }) {
-    const frontmatter = {};
+    const frontmatter = { "title": "ping pong..", "tags": ["input"], "id": 42 };
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1$1, _cache[0] || (_cache[0] = [
-        createBaseVNode("hr", null, null, -1),
-        createBaseVNode("h2", {
-          id: "title%3A-ping-pong%E2%80%A6tags%3A-%5Binput%5Did%3A-42",
-          tabindex: "-1"
-        }, "title: ping pong… tags: [input] id: 42", -1),
         createBaseVNode("h1", {
           id: "some-more-content%E2%80%A6",
           tabindex: "-1"
@@ -231,7 +238,10 @@ const _sfc_main$1 = {
 const __vite_glob_0_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: _sfc_main$1,
-  excerpt
+  excerpt,
+  id,
+  tags,
+  title
 }, Symbol.toStringTag, { value: "Module" }));
 const _hoisted_1 = { for: "" };
 const _sfc_main = {
