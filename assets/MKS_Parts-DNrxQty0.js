@@ -1,9 +1,9 @@
-import { q as isRuntimeSsrPreHydration, r as ref, o as onMounted, w as watch, c as computed, a as getCurrentInstance, t as onBeforeUpdate, b as inject, v as formKey, x as onBeforeUnmount, y as debounce, z as injectProp, B as stopAndPrevent, C as nextTick, D as onDeactivated, E as onActivated, h, G as prevent, Q as QIcon, H as QSpinner, I as hSlot, J as Transition, K as shouldIgnoreKey, L as client, M as createComponent, N as stop, O as createBlock, m as openBlock, p as withCtx, j as createVNode, P as createBaseVNode, l as createElementBlock, R as createStaticVNode, S as resolveComponent, U as createTextVNode, V as resolveDynamicComponent, F as Fragment, W as renderList } from "./index-BKTvw04u.js";
-import { u as useDarkProps, a as useDark } from "./use-dark-B4DVUUtY.js";
+import { q as isRuntimeSsrPreHydration, r as ref, o as onMounted, w as watch, c as computed, a as getCurrentInstance, t as onBeforeUpdate, b as inject, v as formKey, x as onBeforeUnmount, y as debounce, z as injectProp, B as stopAndPrevent, C as nextTick, D as onDeactivated, E as onActivated, h, G as prevent, Q as QIcon, H as QSpinner, I as hSlot, J as Transition, K as shouldIgnoreKey, L as client, M as createComponent, N as stop, O as createBlock, m as openBlock, p as withCtx, j as createVNode, P as createBaseVNode, l as createElementBlock, R as createStaticVNode, S as resolveComponent, U as createTextVNode, V as resolveDynamicComponent, F as Fragment, W as renderList } from "./index-Be0Uqxpc.js";
+import { u as useDarkProps, a as useDark } from "./use-dark-EyJnVcM3.js";
 import { a as addFocusFn, r as removeFocusFn } from "./focus-manager-TfMniKh0.js";
-import { Q as QPage } from "./QPage-BCs78oXr.js";
+import { Q as QPage } from "./QPage-CEeEWEi9.js";
 import { _ as _export_sfc } from "./_plugin-vue_export-helper-1tPrXgE0.js";
-import { m as md_obj } from "./readme-BSxfjbZR.js";
+import { m as md_obj } from "./readme-Db3KJe5l.js";
 let buf, bufIdx = 0;
 const hexBytes = new Array(256);
 for (let i = 0; i < 256; i++) {
@@ -2661,7 +2661,7 @@ const _sfc_main = {
                 createVNode(PartOverview, {
                   mks_item,
                   mks_parts: mks_parts.value,
-                  onClick: ($event) => mks_item.showDetails = true,
+                  onClick: ($event) => _ctx.$router.push(`part/${mks_item_name}`),
                   class: "clickable"
                 }, null, 8, ["mks_item", "mks_parts", "onClick"])
               ]);
@@ -2673,7 +2673,7 @@ const _sfc_main = {
     };
   }
 };
-const MKS_Parts = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-59bb7d71"]]);
+const MKS_Parts = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-236dd332"]]);
 export {
   MKS_Parts as default
 };

@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/MKS_Parts-dFT5YLwQ.js","assets/use-dark-B4DVUUtY.js","assets/focus-manager-TfMniKh0.js","assets/QPage-BCs78oXr.js","assets/_plugin-vue_export-helper-1tPrXgE0.js","assets/readme-BSxfjbZR.js","assets/MKS_Parts-CH-pybj-.css","assets/AboutPage-nMy7XFYz.js","assets/MyMarkdown-DmkYmfwb.js","assets/_commonjsHelpers-CcAunmGO.js","assets/index-DXipyAWe.js","assets/core-CUVoAmL3.js","assets/css-CBCnwQ5t.js","assets/SettingsPage-CJ8tAk59.js","assets/MDDemo-fH1D051-.js","assets/MDDev-DPgQASBr.js","assets/MDGlob-Cwg_nU1B.js","assets/QTooltip-BBQ60Smb.js","assets/scroll-034vCdQO.js","assets/MDDevImported-D8ODTXKz.js","assets/MDManualRendering-CVllZoGQ.js","assets/MDDevTooltip-CQM7UhWg.js","assets/MDDevTooltip-BZN4zBpw.css","assets/FormattingExperiments-CE8wr_lM.js","assets/vue-code-block.es-BRSfQfeP.js","assets/MainLayout-C6rEk7Pq.js","assets/use-quasar-DOYYlyir.js","assets/MainLayout-BvSd311F.css","assets/register-global-components-qQALJktq.js","assets/register-global-components-DIW3Pasc.css","assets/markdown-load-css-Ld-8w1cp.css"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/MKS_Parts-DNrxQty0.js","assets/use-dark-EyJnVcM3.js","assets/focus-manager-TfMniKh0.js","assets/QPage-CEeEWEi9.js","assets/_plugin-vue_export-helper-1tPrXgE0.js","assets/readme-Db3KJe5l.js","assets/MKS_Parts-L5pcLaLP.css","assets/AboutPage-BBhHk8Fi.js","assets/MyMarkdown-CXGeZBGx.js","assets/_commonjsHelpers-CcAunmGO.js","assets/index-DXipyAWe.js","assets/core-CUVoAmL3.js","assets/css-CBCnwQ5t.js","assets/SettingsPage-3eiACgQv.js","assets/MDDemo-Qvr0f3sY.js","assets/MDDev-C7sAaCUL.js","assets/MDGlob-B9gw978P.js","assets/QTooltip-GKpRl6Ml.js","assets/scroll-B7wPWEkC.js","assets/MDDevImported-D44HstSq.js","assets/MDManualRendering-Bw0swG77.js","assets/MDDevTooltip-BvJ3EfDq.js","assets/MDDevTooltip-BZN4zBpw.css","assets/FormattingExperiments-FttdyzZv.js","assets/vue-code-block.es-CUGD9Fux.js","assets/MainLayout-B9X8jW2l.js","assets/use-quasar-8Q5zVUN5.js","assets/MainLayout-BvSd311F.css","assets/MKS_Part_Details-BagVQzMS.js","assets/register-global-components-BqRm_NRU.js","assets/register-global-components-DIW3Pasc.css","assets/markdown-load-css-Ld-8w1cp.css"])))=>i.map(i=>d[i]);
 const scriptRel = /* @__PURE__ */ function detectScriptRel() {
   const relList = typeof document !== "undefined" && document.createElement("link").relList;
   return relList && relList.supports && relList.supports("modulepreload") ? "modulepreload" : "preload";
@@ -18770,69 +18770,79 @@ const childrenCommon = [
     title: "home",
     icon: "precision_manufacturing",
     path: "/",
-    component: () => __vitePreload(() => import("./MKS_Parts-dFT5YLwQ.js"), true ? __vite__mapDeps([0,1,2,3,4,5,6]) : void 0)
+    component: () => __vitePreload(() => import("./MKS_Parts-DNrxQty0.js"), true ? __vite__mapDeps([0,1,2,3,4,5,6]) : void 0)
   },
   {
     title: "About",
     // icon: 'mdi-information-variant',
     icon: "info",
     path: "about",
-    component: () => __vitePreload(() => import("./AboutPage-nMy7XFYz.js"), true ? __vite__mapDeps([7,3,8,9,10,11,12]) : void 0)
+    component: () => __vitePreload(() => import("./AboutPage-BBhHk8Fi.js"), true ? __vite__mapDeps([7,3,8,9,10,11,12]) : void 0)
   },
   {
     title: "Settings",
     icon: "settings",
     path: "settings",
-    component: () => __vitePreload(() => import("./SettingsPage-CJ8tAk59.js"), true ? __vite__mapDeps([13,3]) : void 0)
+    component: () => __vitePreload(() => import("./SettingsPage-3eiACgQv.js"), true ? __vite__mapDeps([13,3]) : void 0)
   },
   {
     title: "MD-Demo",
     icon: "brush",
     path: "md-demo",
-    component: () => __vitePreload(() => import("./MDDemo-fH1D051-.js"), true ? __vite__mapDeps([14,3]) : void 0)
+    component: () => __vitePreload(() => import("./MDDemo-Qvr0f3sY.js"), true ? __vite__mapDeps([14,3]) : void 0)
   },
   {
     title: "MD-Dev",
     icon: "brush",
     path: "md-dev",
-    component: () => __vitePreload(() => import("./MDDev-DPgQASBr.js"), true ? __vite__mapDeps([15,3,5]) : void 0)
+    component: () => __vitePreload(() => import("./MDDev-C7sAaCUL.js"), true ? __vite__mapDeps([15,3,5]) : void 0)
   },
   {
     title: "MDGlob",
     icon: "precision_manufacturing",
     path: "md-glob",
-    component: () => __vitePreload(() => import("./MDGlob-Cwg_nU1B.js"), true ? __vite__mapDeps([16,17,18,2,3]) : void 0)
+    component: () => __vitePreload(() => import("./MDGlob-B9gw978P.js"), true ? __vite__mapDeps([16,17,18,2,3]) : void 0)
   },
   {
     title: "MD-Dev-Imported",
     icon: "brush",
     path: "md-dev-imported",
-    component: () => __vitePreload(() => import("./MDDevImported-D8ODTXKz.js"), true ? __vite__mapDeps([19,3]) : void 0)
+    component: () => __vitePreload(() => import("./MDDevImported-D44HstSq.js"), true ? __vite__mapDeps([19,3]) : void 0)
   },
   {
     title: "MD-ManualRendering",
     icon: "brush",
     path: "md-manual-rendering",
-    component: () => __vitePreload(() => import("./MDManualRendering-CVllZoGQ.js"), true ? __vite__mapDeps([20,3,8,9,10,11,12]) : void 0)
+    component: () => __vitePreload(() => import("./MDManualRendering-Bw0swG77.js"), true ? __vite__mapDeps([20,3,8,9,10,11,12]) : void 0)
   },
   {
     title: "MD-DevTooltip",
     icon: "brush",
     path: "md-dev-tooltip",
-    component: () => __vitePreload(() => import("./MDDevTooltip-CQM7UhWg.js"), true ? __vite__mapDeps([21,17,18,2,3,8,9,10,11,12,22]) : void 0)
+    component: () => __vitePreload(() => import("./MDDevTooltip-BvJ3EfDq.js"), true ? __vite__mapDeps([21,17,18,2,3,8,9,10,11,12,22]) : void 0)
   },
   {
     title: "Formatting Experiments",
     icon: "brush",
     path: "formatting-experiments",
-    component: () => __vitePreload(() => import("./FormattingExperiments-CE8wr_lM.js"), true ? __vite__mapDeps([23,17,18,2,3,24,9]) : void 0)
+    component: () => __vitePreload(() => import("./FormattingExperiments-FttdyzZv.js"), true ? __vite__mapDeps([23,17,18,2,3,24,9]) : void 0)
   }
 ];
 const routes = [
   {
     path: "/",
-    component: () => __vitePreload(() => import("./MainLayout-C6rEk7Pq.js"), true ? __vite__mapDeps([25,1,18,26,4,27]) : void 0),
+    component: () => __vitePreload(() => import("./MainLayout-B9X8jW2l.js"), true ? __vite__mapDeps([25,1,18,26,4,27]) : void 0),
     children: [
+      // {
+      //     path: 'part',
+      //     component: () => import('pages/MKS_Part_Details.vue')
+      // },
+      {
+        // path: 'parts/:mks_item_name',
+        path: "part/:part_name?",
+        component: () => __vitePreload(() => import("./MKS_Part_Details-BagVQzMS.js"), true ? __vite__mapDeps([28,3]) : void 0),
+        props: true
+      },
       // { path: '', component: () => import('pages/Index.vue') },
       // { path: 'about', component: () => import('pages/About.vue') }
       ...childrenCommon
@@ -18845,7 +18855,7 @@ const routes = [
   // but you can also remove it
   {
     path: "/:catchAll(.*)*",
-    component: () => __vitePreload(() => import("./ErrorNotFound-BCCfI-VL.js"), true ? [] : void 0)
+    component: () => __vitePreload(() => import("./ErrorNotFound-DcFDGH_n.js"), true ? [] : void 0)
   }
 ];
 const createRouter = route(function() {
@@ -20677,10 +20687,10 @@ createQuasarApp(createApp, quasarUserOptions).then((app) => {
     (bootFiles) => bootFiles.map((entry) => entry.default)
   ];
   return Promise[method]([
-    __vitePreload(() => import("./i18n-8iTWAxAP.js"), true ? [] : void 0),
-    __vitePreload(() => import("./addressbar-color-BP7BQHGq.js"), true ? [] : void 0),
-    __vitePreload(() => import("./register-global-components-qQALJktq.js"), true ? __vite__mapDeps([28,26,24,9,11,12,17,18,2,4,29]) : void 0),
-    __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([30]) : void 0)
+    __vitePreload(() => import("./i18n-peDe2Yko.js"), true ? [] : void 0),
+    __vitePreload(() => import("./addressbar-color-NLpfIVSv.js"), true ? [] : void 0),
+    __vitePreload(() => import("./register-global-components-BqRm_NRU.js"), true ? __vite__mapDeps([29,26,24,9,11,12,17,18,2,4,30]) : void 0),
+    __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([31]) : void 0)
   ]).then((bootFiles) => {
     const boot2 = mapFn(bootFiles).filter((entry) => typeof entry === "function");
     start(app, boot2);
@@ -20736,22 +20746,22 @@ export {
   createGlobalNode as ad,
   removeGlobalNode as ae,
   vmIsDestroyed as af,
-  emptyRenderFn as ag,
-  layoutKey as ah,
-  pageContainerKey as ai,
-  useRouterLinkProps as aj,
-  useRouterLink as ak,
-  hUniqueSlot as al,
-  History as am,
-  getEventPath as an,
-  createDirective as ao,
-  preventDraggable as ap,
-  noop$1 as aq,
-  position as ar,
-  leftClick as as,
-  withDirectives as at,
-  hDir as au,
-  provide as av,
+  useRouterLinkProps as ag,
+  useRouterLink as ah,
+  hUniqueSlot as ai,
+  History as aj,
+  getEventPath as ak,
+  createDirective as al,
+  preventDraggable as am,
+  noop$1 as an,
+  position as ao,
+  leftClick as ap,
+  emptyRenderFn as aq,
+  layoutKey as ar,
+  withDirectives as as,
+  hDir as at,
+  provide as au,
+  pageContainerKey as av,
   reactive as aw,
   hMergeSlot as ax,
   childrenCommon as ay,
