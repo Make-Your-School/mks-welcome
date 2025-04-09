@@ -3,7 +3,7 @@
 export const mksAbbrCollection = {};
 
 export const mksAbbrLoad = () => {
-    console.group("mksAbbrLoad");
+    console.groupCollapsed("mksAbbrLoad");
 
     let mksAbbrList = {};
     const items_dir = import.meta.glob(`../../public/mks/abbr/*.md`, {
@@ -25,13 +25,6 @@ export const mksAbbrLoad = () => {
         mksAbbrList[item_name].path_readme = path;
         mksAbbrList[item_name].path_base = `mks/abbr/`;
         mksAbbrList[item_name].content = items_dir[path].default;
-        // const content = preProcessingMD(
-        //     items_dir[path].default,
-        //     mksAbbrList[item_name].path_base
-        // );
-        // console.log(`mksAbbrList['${item_name}'] content:`, content);
-        // mksAbbrList[item_name].content = content;
-        // console.log(`${item_name} '${mksAbbrList[item_name].path_base}'`);
     }
     console.log("mksAbbrList:", mksAbbrList);
     // console.log("mksAbbrList:", Object.keys(mksAbbrList));

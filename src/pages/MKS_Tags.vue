@@ -2,28 +2,21 @@
     <!-- <q-page class="flex flex-center content-stretch"> -->
     <!-- class="col" style="min-height: 0" -->
     <q-page class="my-page">
-        <my-markdown :source="mks_welcome.readme.content" :file-path="mks_welcome.path_base" />
-        <!-- class="col-auto" -->
-        <!-- -->
-        <!-- <div class="scroll-wrapper col"> -->
         <div>
             <q-input rounded outlined v-model="searchText" label="Suche:"> </q-input>
         </div>
         <ul class="card-wrapper row items-stretch">
             <li
-                v-for="(fn_item, fn_name) in mks_items_filtered"
-                :key="fn_name"
+                v-for="(mks_item, mks_item_name) in mks_items_filtered"
+                :key="mks_item_name"
                 class="my-card q-pa-md"
             >
-                <TagOverview
-                    :fn_item="fn_item"
-                    :mks_parts="mks_parts"
-                    @click="fn_item.showDetails = true"
-                    class="clickable"
-                />
-                <q-dialog v-model="fn_item.showDetails" full-height full-width>
-                    <TagDetails :fn_item="fn_item" :mks_parts="mks_parts" />
-                </q-dialog>
+                <router-link :to="`tag/${mks_item_name}`" class="clickable">
+                    <!--
+                    @click="$router.push({ name: 'parts', params: { 'part_name':mks_item_name } }) "
+                -->
+                    <TagOverview :mks_item="mks_item" :mks_tags="mks_tags" />
+                </router-link>
             </li>
         </ul>
         <!-- </div> -->
@@ -31,47 +24,53 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed } from 'vue'
 // import { useQuasar } from "quasar";
 
-import MyMarkdown from "src/components/MDComponents/MyMarkdown.vue";
-import TagOverview from "src/components/TagOverview.vue";
-import TagDetails from "src/components/TagDetails.vue";
+import TagOverview from 'src/components/TagOverview.vue'
 
-import mksContent from "../../public/mks/";
+// import mksContent from "../../public/mks/";
+// import mksContent from "../content_md/mksContent";
 // console.log("mksContent", mksContent);
-console.log("mksContent", mksContent);
-const mks_welcome = ref(mksContent.welcome);
-// console.log(`mksContent['welcome']['./readme.md']['content']`, mksContent['welcome']['./readme.md']['content']);
-// console.log(`mksContent.welcome`, mksContent.welcome);
-// console.log(`mksContent.welcome['./readme.md'].content`, mksContent.welcome['./readme.md'].content);
-// console.log(`mksContent.welcome['./readme.md'].path_base`, mksContent.welcome['./readme.md'].path_base);
-const mks_tags = ref(mksContent.tags);
-const mks_parts = ref(mksContent.parts);
+// const mks_welcome = ref(mksContent.welcome);
+// const mks_parts = ref(mksContent.parts);
 
+import { useMksContentStore } from 'src/stores/mksContent'
+const mksContent = useMksContentStore()
+console.log('mksContent', mksContent)
+const mks_tags = ref(mksContent.tags)
+
+// const check_searchTextInReadme = (readme, item_name) => {
+//     return (
+//         item_name?.toLowerCase().includes(searchText.value.toLowerCase()) ||
+//         readme.content.toLowerCase().includes(searchText.value.toLowerCase()) ||
+//         readme.data?.tags?.join(", ").toLowerCase().includes(searchText.value.toLowerCase())
+//     );
+// };
 const check_searchTextInReadme = (readme, item_name) => {
     return (
         item_name?.toLowerCase().includes(searchText.value.toLowerCase()) ||
-        readme.content.toLowerCase().includes(searchText.value.toLowerCase()) ||
-        readme.data?.tags?.join(", ").toLowerCase().includes(searchText.value.toLowerCase())
-    );
-};
+        readme.content_text.toLowerCase().includes(searchText.value.toLowerCase()) ||
+        // TODO: find a better way to search for text in rendered output..
+        readme.data?.tags?.join(', ').toLowerCase().includes(searchText.value.toLowerCase())
+    )
+}
 
 const getObjItemsWithSearchTextInReadme = (obj) => {
-    const result = {};
+    const result = {}
     for (const [item_name, item] of Object.entries(obj)) {
-        // console.log(`item_name`, item_name, `item`, item);
-        if (check_searchTextInReadme(item.readme, item_name)) {
-            result[item_name] = item;
+        console.log(`item_name`, item_name, `item`, item)
+        if (check_searchTextInReadme(item, item_name)) {
+            result[item_name] = item
         }
     }
-    return result;
-};
+    return result
+}
 
 const mks_items_filtered = computed(() => {
     // const result = {};
-    // for (const [fn_name, fn_item] of Object.entries(mks_tags.value)) {
-    //     console.log(`fn_name`, fn_name, `fn_item`, fn_item);
+    // for (const [mks_item_name, mks_item] of Object.entries(mks_tags.value)) {
+    //     console.log(`mks_item_name`, mks_item_name, `mks_item`, fn_item);
     //     // only include in result if search text is somewhere in the content..
     //     // check bauteile
     //     // const bauteile_includes = getObjItemsWithSearchTextInReadme(mks_parts.);
@@ -90,12 +89,11 @@ const mks_items_filtered = computed(() => {
     // }
     const result = {
         ...getObjItemsWithSearchTextInReadme(mks_tags.value),
-        ...getObjItemsWithSearchTextInReadme(mks_parts.value),
-    };
-    return result;
-});
+    }
+    return result
+})
 
-const searchText = ref("");
+const searchText = ref('')
 
 // $q.notify('Message')
 
@@ -129,6 +127,11 @@ const searchText = ref("");
     align-items: center
 .clickable
     cursor: pointer
+    text-decoration: none
+    display: block
+    width: 100%
+    height: 100%
+    overflow: scroll
 </style>
 
 <style lang="sass">
@@ -138,7 +141,7 @@ const searchText = ref("");
         max-height: 20vh
         display: block
         margin: auto
-        background-color: white
+        background-color: transparent
     h1
         color: white
         display: flex
