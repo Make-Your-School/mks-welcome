@@ -1,5 +1,5 @@
-import { Q as QPage } from "./QPage-BxzcIzVY.js";
-import { a1 as resolveComponent, p as createElementBlock, v as openBlock, l as createBaseVNode, ak as createStaticVNode, j as createVNode, D as createTextVNode, a0 as withCtx, H as createBlock, n as unref } from "./index-CG0pRGuw.js";
+import { Q as QPage } from "./QPage-BPE97abM.js";
+import { a1 as resolveComponent, p as createElementBlock, v as openBlock, l as createBaseVNode, ak as createStaticVNode, j as createVNode, D as createTextVNode, a0 as withCtx, H as createBlock, n as unref } from "./index-BPaER5cP.js";
 const _hoisted_1$1 = { class: "markdown-body" };
 const titel = "MD Test";
 const tags = ["test", "mock"];

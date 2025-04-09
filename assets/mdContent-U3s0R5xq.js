@@ -1,5 +1,6 @@
-import { p as createElementBlock, v as openBlock, ak as createStaticVNode, l as createBaseVNode, a1 as resolveComponent, j as createVNode, D as createTextVNode, a0 as withCtx, aI as defineStore } from "./index-CG0pRGuw.js";
-import { m as md_obj } from "./readme-DUJKAgpv.js";
+import { p as createElementBlock, v as openBlock, ak as createStaticVNode, l as createBaseVNode, a1 as resolveComponent, j as createVNode, D as createTextVNode, a0 as withCtx, aI as defineStore } from "./index-BPaER5cP.js";
+import { m as md_obj } from "./readme-CkiZ_tnD.js";
+import { i as importSingleFile, a as about } from "./about-BM-OFklx.js";
 const _hoisted_1$f = { class: "markdown-body" };
 const titel$2 = "Entfernung";
 const tags$e = ["entfernung", "input"];
@@ -12,7 +13,7 @@ const _sfc_main$f = {
     __expose({ frontmatter });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", _hoisted_1$f, _cache[0] || (_cache[0] = [
-        createStaticVNode('<h1 id="entfernung" tabindex="-1">Entfernung</h1><p><img src="/mks-welcome/mks/tags/Entfernung/Yellow%20Tape%20Measure.svg" alt="Maßband"></p><h2 id="funktionen" tabindex="-1">Funktionen</h2><p>Sensoren die Entfernungen Messen können.</p><p>hier ist unter anderem Wichtig in welchem Bereich der jeweilige Sensor messen kann. es kann z.B. sein das der minimale Abstand durch aus 5cm beträgt. auch sind die Genauigkeit sehr unterschiedlich - von wenigen Millimetern Abweichungen bis zu mehreren Centimeter.</p><h2 id="relevante-gr%C3%B6%C3%9Fen%3A" tabindex="-1">Relevante Größen:</h2><ul><li>Messbereich (mm, cm, m)</li><li>Genauigkeit (z.B. <code>+- n cm</code>)</li></ul><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li>ToDo</li></ul>', 9)
+        createStaticVNode('<h1 id="entfernung" tabindex="-1">Entfernung</h1><p><img src="/mks-welcome/mks/tags/Entfernung/Yellow%20Tape%20Measure.svg" alt="Maßband"></p><h2 id="funktionen" tabindex="-1">Funktionen</h2><p>Sensoren die Entfernungen Messen können.</p><p>hier ist unter anderem Wichtig, in welchem <em>Bereich</em> der jeweilige Sensor messen kann. es kann z.B. sein das der minimale Abstand mehr als 5cm beträgt. auch sind die Genauigkeit sehr unterschiedlich - von wenigen Millimetern Abweichungen bis zu mehreren Centimeter.</p><h2 id="relevante-gr%C3%B6%C3%9Fen%3A" tabindex="-1">Relevante Größen:</h2><ul><li>Messbereich (mm, cm, m)</li><li>Genauigkeit (z.B. <code>+- N cm</code>)</li></ul><h2 id="siehe-auch" tabindex="-1">Siehe Auch</h2><ul><li>ToDo</li></ul>', 9)
       ]));
     };
   }
@@ -141,7 +142,7 @@ const __vite_glob_0_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.def
   tags: tags$a,
   title: title$7
 }, Symbol.toStringTag, { value: "Module" }));
-const readme$f = "---\ntitel: Entfernung\ntags: [entfernung, input]\nid: 17\n---\n\n# Entfernung\n\n![Maßband](./Yellow%20Tape%20Measure.svg)\n\n## Funktionen\n\nSensoren die Entfernungen Messen können.\n\n<!-- more_details -->\n\nhier ist unter anderem Wichtig in welchem Bereich der jeweilige Sensor messen kann.\nes kann z.B. sein das der minimale Abstand durch aus 5cm beträgt.\nauch sind die Genauigkeit sehr unterschiedlich - von wenigen Millimetern Abweichungen bis zu mehreren Centimeter.\n\n## Relevante Größen:\n\n-   Messbereich (mm, cm, m)\n-   Genauigkeit (z.B. `+- n cm`)\n\n## Siehe Auch\n\n-   ToDo\n";
+const readme$f = "---\ntitel: Entfernung\ntags: [entfernung, input]\nid: 17\n---\n\n# Entfernung\n\n![Maßband](./Yellow%20Tape%20Measure.svg)\n\n## Funktionen\n\nSensoren die Entfernungen Messen können.\n\n<!-- more_details -->\n\nhier ist unter anderem Wichtig, in welchem *Bereich* der jeweilige Sensor messen kann.\nes kann z.B. sein das der minimale Abstand mehr als 5cm beträgt.\nauch sind die Genauigkeit sehr unterschiedlich - von wenigen Millimetern Abweichungen bis zu mehreren Centimeter.\n\n## Relevante Größen:\n\n-   Messbereich (mm, cm, m)\n-   Genauigkeit (z.B. `+- N cm`)\n\n## Siehe Auch\n\n-   ToDo\n";
 const __vite_glob_1_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: readme$f
@@ -976,12 +977,7 @@ const _sfc_main = {
         createBaseVNode("p", null, [
           createTextVNode("hier findet ihr eine Liste aller MYS Materialien… 🎉 "),
           createBaseVNode("a", { href: "https://makeyourschool.de/maker-ecke/material/" }, "mks")
-        ], -1),
-        createBaseVNode("p", null, "TODO: implement deep-linking to directly jump to Funktionen und Bauteilen maybe with router-view?!", -1),
-        createBaseVNode("h1", {
-          id: "funktionen",
-          tabindex: "-1"
-        }, "Funktionen", -1)
+        ], -1)
       ]));
     };
   }
@@ -997,7 +993,6 @@ const mksAddPartsToTags = (mksContent2) => {
   console.group("mksAddPartsToTags");
   const mksTags = mksContent2.tags;
   const mksParts = mksContent2.parts;
-  console.log("mksTags", mksTags);
   for (const [tagname, tag] of Object.entries(mksTags)) {
     console.log(`tag '${tagname}':`, tag);
     if (tag.parts == void 0) {
@@ -1064,14 +1059,6 @@ const getPartsContentText = () => {
     "../../public/mks/parts/mks-Taster/readme.md": __vite_glob_3_10
   });
 };
-const extractFrontmatterImports = (item) => {
-  const exclude = ["default", "excerpt"];
-  const frontmatterKeys = Object.keys(item).filter((key) => !exclude.includes(key));
-  return frontmatterKeys.reduce((obj, key) => {
-    obj[key] = item[key];
-    return obj;
-  }, {});
-};
 const mksGetItems = (mksContent2, folderName, items_dir, items_dir_text) => {
   console.groupCollapsed("mksGetItems");
   if (mksContent2[folderName] == void 0) {
@@ -1084,22 +1071,20 @@ const mksGetItems = (mksContent2, folderName, items_dir, items_dir_text) => {
     console.log("importedObj", importedObj);
     const { item_name } = path_regex.exec(path).groups;
     const item_name_lc = item_name.toLowerCase();
-    mksItems[item_name_lc] = {};
-    mksItems[item_name_lc].name = item_name;
-    mksItems[item_name_lc].path_readme = path;
-    mksItems[item_name_lc].path_base = `mks/${folderName}/${item_name}/`;
-    mksItems[item_name_lc].readme = importedObj;
-    mksItems[item_name_lc].content = importedObj.default;
+    mksItems[item_name_lc] = importSingleFile(
+      importedObj,
+      `mks/${folderName}/${item_name}/`,
+      path,
+      item_name
+    );
     mksItems[item_name_lc].content_text = items_dir_text[path].default;
-    mksItems[item_name_lc].excerpt = importedObj.excerpt;
-    mksItems[item_name_lc].meta = extractFrontmatterImports(importedObj);
     console.log(`${item_name} '${mksItems[item_name_lc].path_base}'`);
   }
   console.log("mksItems", mksItems);
   console.groupEnd();
 };
 const mksGetContent = () => {
-  console.group("mksContent");
+  console.groupCollapsed("mksContent");
   let mksContent2 = {
     welcome: {},
     tags: {},
@@ -1111,11 +1096,7 @@ const mksGetContent = () => {
     "../../public/mks/readme.md": __vite_glob_4_0
   })["../../public/mks/readme.md"];
   console.log("importedObj", importedObj);
-  mksContent2.welcome.path_base = path_base;
-  mksContent2.welcome.readme = importedObj;
-  mksContent2.welcome.content = importedObj.default;
-  mksContent2.welcome.excerpt = importedObj.excerpt;
-  mksContent2.welcome.meta = extractFrontmatterImports(importedObj);
+  mksContent2.welcome = importSingleFile(importedObj, path_base);
   console.log("welcome done.");
   mksGetItems(mksContent2, "tags", getTagsContent(), getTagsContentText());
   mksGetItems(mksContent2, "parts", getPartsContent(), getPartsContentText());
@@ -1125,17 +1106,21 @@ const mksGetContent = () => {
   return mksContent2;
 };
 const mksContent = mksGetContent();
-console.log("mksContent", mksContent);
-const useMksContentStore = defineStore("mksContent", {
+const useMDContentStore = defineStore("MDContent", {
   state: () => ({
-    welcome: mksContent.welcome,
-    parts: mksContent.parts,
-    tags: mksContent.tags
+    mks: {
+      welcome: mksContent.welcome,
+      parts: mksContent.parts,
+      tags: mksContent.tags
+      // abbr: mksAbbr,
+    },
+    about
+    // demo: demo,
     // abbr: {abbr:mksAbbrLoad()},
   }),
   getters: {},
   actions: {}
 });
 export {
-  useMksContentStore as u
+  useMDContentStore as u
 };

@@ -14,14 +14,14 @@ Sensoren die Entfernungen Messen können.
 
 <!-- more_details -->
 
-hier ist unter anderem Wichtig in welchem Bereich der jeweilige Sensor messen kann.
-es kann z.B. sein das der minimale Abstand durch aus 5cm beträgt.
+hier ist unter anderem Wichtig, in welchem *Bereich* der jeweilige Sensor messen kann.
+es kann z.B. sein das der minimale Abstand mehr als 5cm beträgt.
 auch sind die Genauigkeit sehr unterschiedlich - von wenigen Millimetern Abweichungen bis zu mehreren Centimeter.
 
 ## Relevante Größen:
 
 -   Messbereich (mm, cm, m)
--   Genauigkeit (z.B. `+- n cm`)
+-   Genauigkeit (z.B. `+- N cm`)
 
 ## Siehe Auch
 

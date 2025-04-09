@@ -1,4 +1,9 @@
-import { r as requireCore, g as getDefaultExportFromCjs } from "./css-dDMgxRl5.js";
+import { r as requireCore, g as getDefaultExportFromCjs } from "./register-global-components-BOkZ5Zii.js";
+import "./index-BPaER5cP.js";
+import "./use-quasar-Cnteyock.js";
+import "./scroll-BdQgKQ66.js";
+import "./focus-manager-DXzUojAp.js";
+import "./_plugin-vue_export-helper-1tPrXgE0.js";
 var _1c_1;
 var hasRequired_1c;
 function require_1c() {
@@ -50427,5 +50432,6 @@ function requireLib() {
 var libExports = /* @__PURE__ */ requireLib();
 const HighlightJS = /* @__PURE__ */ getDefaultExportFromCjs(libExports);
 export {
-  HighlightJS as H
+  HighlightJS,
+  HighlightJS as default
 };
