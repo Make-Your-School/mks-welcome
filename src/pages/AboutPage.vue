@@ -17,21 +17,20 @@
                 </a>
             </p>
         </section>
+        <section>
+            <component :is="about.content" />
+        </section>
         <!-- <section>
             <h4>How it Works</h4>
         </section> -->
-        <section>
-            <my-markdown :source="md_content.readme.content" :file-path="md_content.path_base" />
-        </section>
     </q-page>
 </template>
 
 <script setup>
-import { ref} from "vue";
-import MyMarkdown from "src/components/MDComponents/MyMarkdown.vue";
+// import { ref} from "vue";
 
 const appinfo = process.env.appinfo;
 import about from "src/content_md/about";
 console.log("about", about);
-const md_content = ref(about);
+// const md_content = ref(about);
 </script>

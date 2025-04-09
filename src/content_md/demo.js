@@ -1,31 +1,24 @@
-import preProcessingMD from "./preprocessMD";
+import { importSingleFile } from './helperFn'
 
 const demo = () => {
-    console.group("demo.js - loading content");
-    let content = {};
-    const path_base = "../../public/demo/";
-    const fileURL = "../../public/demo/readme.md";
-    let temp = import.meta.glob("../../public/demo/readme.md", {
-        // let temp = import.meta.glob("/demo/readme.md", {
-        query: "?url&raw",
-        eager: true,
-    });
-    // console.log("temp", temp);
-    // console.log("temp[fileURL].default", temp[fileURL].default);
-    if (temp[fileURL].default) {
-        content.readme = preProcessingMD(temp[fileURL].default, path_base);
-        content.path_base = path_base;
-        console.log("demo done.");
-        console.log("content:", content);
-    } else {
-        console.error(
-            `something with the import failed.. \n temp `,
-            temp,
-            ` does not contain file '${fileURL}'`,
-        );
-    }
-    console.groupEnd();
-    return content;
-};
+    console.groupCollapsed('demo.js - import demo.md')
+    let mdObj = {}
 
-export default demo();
+    const path_base = '../../public/'
+    console.log('load demo readme')
+    const importedObj = import.meta.glob('../../public//demo/readme.md', {
+        eager: true,
+    })['../../public//demo/readme.md']
+    // console.log('importedObj', importedObj)
+    mdObj.readme = importSingleFile(importedObj, path_base)
+    const importedObj_dev = import.meta.glob('../../public//demo/readme.md', {
+        eager: true,
+    })['../../public//demo/readme.md']
+    // console.log('importedObj', importedObj)
+    mdObj.dev = importSingleFile(importedObj_dev, path_base)
+    console.log('demo done.', mdObj)
+    console.groupEnd()
+    return mdObj
+}
+
+export default demo()

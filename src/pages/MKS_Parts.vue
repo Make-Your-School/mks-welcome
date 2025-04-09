@@ -2,7 +2,7 @@
     <!-- <q-page class="flex flex-center content-stretch"> -->
     <!-- class="col" style="min-height: 0" -->
     <q-page class="my-page">
-        <component :is="mks_welcome.readme.default" />
+        <component :is="mks_welcome.content" />
         <!-- class="col-auto" -->
         <!-- -->
         <!-- <div class="scroll-wrapper col"> -->
@@ -15,8 +15,9 @@
                 :key="mks_item_name"
                 class="my-card q-pa-md"
             >
-                <router-link :to="`part/${mks_item_name}`" class="clickable">
+                <router-link :to="`/part/${mks_item_name}`" class="clickable">
                     <!--
+                        <router-link :to="{ name: 'part', params: { 'part_name':mks_item_name } }" class="clickable">
                     @click="$router.push({ name: 'parts', params: { 'part_name':mks_item_name } }) "
                 -->
                     <PartOverview :mks_item="mks_item" :mks_parts="mks_parts" />
@@ -40,11 +41,11 @@ import PartOverview from 'src/components/PartOverview.vue'
 // const mks_welcome = ref(mksContent.welcome);
 // const mks_parts = ref(mksContent.parts);
 
-import { useMksContentStore } from 'src/stores/mksContent'
-const mksContent = useMksContentStore()
-console.log('mksContent', mksContent)
-const mks_welcome = ref(mksContent.welcome)
-const mks_parts = ref(mksContent.parts)
+import { useMDContentStore } from 'src/stores/mdContent'
+const mdContent = useMDContentStore()
+console.log('mdContent', mdContent)
+const mks_welcome = mdContent.mks.welcome
+const mks_parts = ref(mdContent.mks.parts)
 
 // const check_searchTextInReadme = (readme, item_name) => {
 //     return (
@@ -65,7 +66,7 @@ const check_searchTextInReadme = (readme, item_name) => {
 const getObjItemsWithSearchTextInReadme = (obj) => {
     const result = {}
     for (const [item_name, item] of Object.entries(obj)) {
-        console.log(`item_name`, item_name, `item`, item)
+        // console.log(`item_name`, item_name, `item`, item)
         if (check_searchTextInReadme(item, item_name)) {
             result[item_name] = item
         }
@@ -157,3 +158,4 @@ const searchText = ref('')
         width: 100%
         text-align: center
 </style>
+useMDContentStoreuseMDContentStore

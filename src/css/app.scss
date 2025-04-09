@@ -10,3 +10,15 @@ body.body--dark {
 body.body--dark .q-dark {
     color: $text-on-dark
 }
+
+body.body--dark code:not(.hljs) {
+    color: hsl(180, 6.9%, 60.4%);
+	background: hsl(192.2, 100%, 10.6%);
+	padding: 0.1em 0.5em;
+}
+
+body.body--light code:not(.hljs) {
+    color: hsl(194, 14%, 40%);
+	background: hsl(44, 87%, 94%);
+    padding: 0.1em 0.5em;
+}

@@ -11,11 +11,11 @@
                 :key="mks_item_name"
                 class="my-card q-pa-md"
             >
-                <router-link :to="`tag/${mks_item_name}`" class="clickable">
+                <router-link :to="`/tag/${mks_item_name}`" class="clickable">
                     <!--
                     @click="$router.push({ name: 'parts', params: { 'part_name':mks_item_name } }) "
                 -->
-                    <TagOverview :mks_item="mks_item" :mks_tags="mks_tags" />
+                    <TagOverview :tag="mks_item"/>
                 </router-link>
             </li>
         </ul>
@@ -35,11 +35,14 @@ import TagOverview from 'src/components/TagOverview.vue'
 // const mks_welcome = ref(mksContent.welcome);
 // const mks_parts = ref(mksContent.parts);
 
-import { useMksContentStore } from 'src/stores/mksContent'
-const mksContent = useMksContentStore()
-console.log('mksContent', mksContent)
-const mks_tags = ref(mksContent.tags)
+import { useMDContentStore } from 'src/stores/mdContent'
+const mdContent = useMDContentStore()
+console.log('mdContent', mdContent)
+const mks_tags = ref(mdContent.mks.tags)
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// search
+const searchText = ref('')
 // const check_searchTextInReadme = (readme, item_name) => {
 //     return (
 //         item_name?.toLowerCase().includes(searchText.value.toLowerCase()) ||
@@ -59,7 +62,7 @@ const check_searchTextInReadme = (readme, item_name) => {
 const getObjItemsWithSearchTextInReadme = (obj) => {
     const result = {}
     for (const [item_name, item] of Object.entries(obj)) {
-        console.log(`item_name`, item_name, `item`, item)
+        // console.log(`item_name`, item_name, `item`, item)
         if (check_searchTextInReadme(item, item_name)) {
             result[item_name] = item
         }
@@ -93,7 +96,7 @@ const mks_items_filtered = computed(() => {
     return result
 })
 
-const searchText = ref('')
+
 
 // $q.notify('Message')
 
@@ -150,3 +153,4 @@ const searchText = ref('')
         width: 100%
         text-align: center
 </style>
+useMDContentStoreuseMDContentStore

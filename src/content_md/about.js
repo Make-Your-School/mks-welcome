@@ -1,21 +1,19 @@
-import preProcessingMD from "./preprocessMD";
+import { importSingleFile } from './helperFn'
 
 const about = () => {
-    console.group("mksContent");
-    let content = {};
+    console.groupCollapsed('about.js - import about.md')
+    let mdObj = {}
 
-    const path_base = "../../public/";
-    console.log("load about readme");
-    let temp = import.meta.glob("../../public/about.md", {
-        query: "?url&raw",
+    const path_base = '../../public/'
+    console.log('load about readme')
+    const importedObj = import.meta.glob('../../public/about.md', {
         eager: true,
-    });
-    content.readme = preProcessingMD(temp["../../public/about.md"], path_base);
-    content.path_base = path_base;
-    console.log("about done.");
-    console.log("content:", content);
-    console.groupEnd();
-    return content;
-};
+    })['../../public/about.md']
+    // console.log('importedObj', importedObj)
+    mdObj = importSingleFile(importedObj, path_base)
+    console.log('about done.', mdObj)
+    console.groupEnd()
+    return mdObj
+}
 
-export default about();
+export default about()

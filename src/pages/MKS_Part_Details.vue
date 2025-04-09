@@ -9,7 +9,7 @@
 
 <script setup>
 // import { watch } from 'vue'
-import { shallowRef } from 'vue'
+// import { shallowRef } from 'vue'
 // import { useRoute } from 'vue-router'
 // import { useQuasar } from "quasar";
 
@@ -21,10 +21,10 @@ const props = defineProps({
 
 console.log("props.part_name", props.part_name);
 
-import { useMksContentStore } from 'src/stores/mksContent'
-const mksContent = useMksContentStore();
-console.log("mksContent", mksContent);
-const part = shallowRef(mksContent.parts[props.part_name]);
+import { useMDContentStore } from 'src/stores/mdContent'
+const mdContent = useMDContentStore();
+console.log("mdContent", mdContent);
+const part = mdContent.mks.parts[props.part_name];
 console.log("part", part);
 
 // const route = useRoute()
@@ -38,3 +38,4 @@ console.log("part", part);
 //     },
 // )
 </script>
+useMDContentStoreuseMDContentStore
