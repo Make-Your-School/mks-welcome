@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/MKS_Parts-DNrxQty0.js","assets/use-dark-EyJnVcM3.js","assets/focus-manager-TfMniKh0.js","assets/QPage-CEeEWEi9.js","assets/_plugin-vue_export-helper-1tPrXgE0.js","assets/readme-Db3KJe5l.js","assets/MKS_Parts-L5pcLaLP.css","assets/AboutPage-BBhHk8Fi.js","assets/MyMarkdown-CXGeZBGx.js","assets/_commonjsHelpers-CcAunmGO.js","assets/index-DXipyAWe.js","assets/core-CUVoAmL3.js","assets/css-CBCnwQ5t.js","assets/SettingsPage-3eiACgQv.js","assets/MDDemo-Qvr0f3sY.js","assets/MDDev-C7sAaCUL.js","assets/MDGlob-B9gw978P.js","assets/QTooltip-GKpRl6Ml.js","assets/scroll-B7wPWEkC.js","assets/MDDevImported-D44HstSq.js","assets/MDManualRendering-Bw0swG77.js","assets/MDDevTooltip-BvJ3EfDq.js","assets/MDDevTooltip-BZN4zBpw.css","assets/FormattingExperiments-FttdyzZv.js","assets/vue-code-block.es-CUGD9Fux.js","assets/MainLayout-B9X8jW2l.js","assets/use-quasar-8Q5zVUN5.js","assets/MainLayout-BvSd311F.css","assets/MKS_Part_Details-BagVQzMS.js","assets/register-global-components-BqRm_NRU.js","assets/register-global-components-DIW3Pasc.css","assets/markdown-load-css-Ld-8w1cp.css"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/MKS_Parts-BWwd6euH.js","assets/use-dark-pQiUfNMa.js","assets/focus-manager-TfMniKh0.js","assets/QPage-Dbopgmmp.js","assets/_plugin-vue_export-helper-1tPrXgE0.js","assets/mksContent-Bq7sov1p.js","assets/readme-De-mjvlM.js","assets/MKS_Parts-DnhOliNc.css","assets/AboutPage-BGzW2PtW.js","assets/MyMarkdown-D0XxnY58.js","assets/_commonjsHelpers-CcAunmGO.js","assets/index-DXipyAWe.js","assets/core-CUVoAmL3.js","assets/css-CBCnwQ5t.js","assets/SettingsPage-59T4i9RU.js","assets/MDDemo-D7HbjLiM.js","assets/MDDev-CuKEkb1D.js","assets/MDGlob-nuZzjQA8.js","assets/QTooltip-D0i5_BoW.js","assets/scroll-Cb2U4gjC.js","assets/MDDevImported-B6S4Q2qL.js","assets/MDManualRendering-UPb852ha.js","assets/MDDevTooltip-D0X7zHdM.js","assets/MDDevTooltip-BZN4zBpw.css","assets/FormattingExperiments-g-vPuo8y.js","assets/vue-code-block.es-BX8eDjaL.js","assets/MainLayout-uX9aU-6w.js","assets/use-quasar-Dc_6CYMJ.js","assets/MainLayout-BvSd311F.css","assets/MKS_Part_Details-CQiUFwBC.js","assets/MKS_Tag_Details-Na1i736E.js","assets/register-global-components-BYpfUxah.js","assets/register-global-components-DIW3Pasc.css","assets/markdown-load-css-Ld-8w1cp.css"])))=>i.map(i=>d[i]);
 const scriptRel = /* @__PURE__ */ function detectScriptRel() {
   const relList = typeof document !== "undefined" && document.createElement("link").relList;
   return relList && relList.supports && relList.supports("modulepreload") ? "modulepreload" : "preload";
@@ -113,7 +113,7 @@ const toTypeString = (value) => objectToString.call(value);
 const toRawType = (value) => {
   return toTypeString(value).slice(8, -1);
 };
-const isPlainObject = (val) => toTypeString(val) === "[object Object]";
+const isPlainObject$1 = (val) => toTypeString(val) === "[object Object]";
 const isIntegerKey = (key) => isString(key) && key !== "NaN" && key[0] !== "-" && "" + parseInt(key, 10) === key;
 const isReservedProp = /* @__PURE__ */ makeMap(
   // the leading comma is intentional so empty string "" is also included
@@ -330,7 +330,7 @@ const replacer = (_key, val) => {
     };
   } else if (isSymbol(val)) {
     return stringifySymbol(val);
-  } else if (isObject$1(val) && !isArray$1(val) && !isPlainObject(val)) {
+  } else if (isObject$1(val) && !isArray$1(val) && !isPlainObject$1(val)) {
     return String(val);
   }
   return val;
@@ -557,9 +557,9 @@ class ReactiveEffect {
 let batchDepth = 0;
 let batchedSub;
 let batchedComputed;
-function batch(sub, isComputed = false) {
+function batch(sub, isComputed2 = false) {
   sub.flags |= 8;
-  if (isComputed) {
+  if (isComputed2) {
     sub.next = batchedComputed;
     batchedComputed = sub;
     return;
@@ -1950,7 +1950,7 @@ function traverse(value, depth = Infinity, seen2) {
     value.forEach((v) => {
       traverse(v, depth, seen2);
     });
-  } else if (isPlainObject(value)) {
+  } else if (isPlainObject$1(value)) {
     for (const key in value) {
       traverse(value[key], depth, seen2);
     }
@@ -9416,7 +9416,7 @@ const REMOVAL = {};
 // @__NO_SIDE_EFFECTS__
 function defineCustomElement(options, extraOptions, _createApp) {
   const Comp = /* @__PURE__ */ defineComponent(options, extraOptions);
-  if (isPlainObject(Comp)) extend(Comp, extraOptions);
+  if (isPlainObject$1(Comp)) extend(Comp, extraOptions);
   class VueCustomElement extends VueElement {
     constructor(initialProps) {
       super(Comp, initialProps, _createApp);
@@ -9660,7 +9660,7 @@ class VueElement extends BaseClass {
           this.dispatchEvent(
             new CustomEvent(
               event,
-              isPlainObject(args[0]) ? extend({ detail: args }, args[0]) : { detail: args }
+              isPlainObject$1(args[0]) ? extend({ detail: args }, args[0]) : { detail: args }
             )
           );
         };
@@ -15986,7 +15986,7 @@ try {
   window.removeEventListener("qtest", null, opts);
 } catch (_) {
 }
-function noop$1() {
+function noop$2() {
 }
 function leftClick(e) {
   return e.button === 0;
@@ -16112,8 +16112,8 @@ const Screen = createReactivePlugin({
   lg: false,
   xl: false
 }, {
-  setSizes: noop$1,
-  setDebounce: noop$1,
+  setSizes: noop$2,
+  setDebounce: noop$2,
   install({ $q, onSSRHydrated }) {
     $q.screen = this;
     if (this.__installed === true) {
@@ -16354,7 +16354,7 @@ const Body = {
       document.body.classList.add.apply(document.body.classList, cls);
     }
     if (client.is.ios === true) {
-      document.body.addEventListener("touchstart", noop$1);
+      document.body.addEventListener("touchstart", noop$2);
     }
     window.addEventListener("keydown", onKeyDownComposition, true);
   }
@@ -16384,8 +16384,8 @@ function getShouldExitFn(cfg) {
 }
 const History = {
   __history: [],
-  add: noop$1,
-  remove: noop$1,
+  add: noop$2,
+  remove: noop$2,
   install({ $q }) {
     if (this.__installed === true) return;
     const { cordova, capacitor } = client.is;
@@ -16861,10 +16861,15 @@ function route(callback) {
 function store(callback) {
   return callback;
 }
+let activePinia;
+const setActivePinia = (pinia) => activePinia = pinia;
 const piniaSymbol = (
   /* istanbul ignore next */
   Symbol()
 );
+function isPlainObject(o) {
+  return o && typeof o === "object" && Object.prototype.toString.call(o) === "[object Object]" && typeof o.toJSON !== "function";
+}
 var MutationType;
 (function(MutationType2) {
   MutationType2["direct"] = "direct";
@@ -16878,6 +16883,7 @@ function createPinia() {
   let toBeInstalled = [];
   const pinia = markRaw({
     install(app) {
+      setActivePinia(pinia);
       {
         pinia._a = app;
         app.provide(piniaSymbol, pinia);
@@ -16903,6 +16909,299 @@ function createPinia() {
     state
   });
   return pinia;
+}
+const noop$1 = () => {
+};
+function addSubscription(subscriptions, callback, detached, onCleanup = noop$1) {
+  subscriptions.push(callback);
+  const removeSubscription = () => {
+    const idx = subscriptions.indexOf(callback);
+    if (idx > -1) {
+      subscriptions.splice(idx, 1);
+      onCleanup();
+    }
+  };
+  if (!detached && getCurrentScope()) {
+    onScopeDispose(removeSubscription);
+  }
+  return removeSubscription;
+}
+function triggerSubscriptions(subscriptions, ...args) {
+  subscriptions.slice().forEach((callback) => {
+    callback(...args);
+  });
+}
+const fallbackRunWithContext = (fn) => fn();
+const ACTION_MARKER = Symbol();
+const ACTION_NAME = Symbol();
+function mergeReactiveObjects(target2, patchToApply) {
+  if (target2 instanceof Map && patchToApply instanceof Map) {
+    patchToApply.forEach((value, key) => target2.set(key, value));
+  } else if (target2 instanceof Set && patchToApply instanceof Set) {
+    patchToApply.forEach(target2.add, target2);
+  }
+  for (const key in patchToApply) {
+    if (!patchToApply.hasOwnProperty(key))
+      continue;
+    const subPatch = patchToApply[key];
+    const targetValue = target2[key];
+    if (isPlainObject(targetValue) && isPlainObject(subPatch) && target2.hasOwnProperty(key) && !isRef(subPatch) && !isReactive(subPatch)) {
+      target2[key] = mergeReactiveObjects(targetValue, subPatch);
+    } else {
+      target2[key] = subPatch;
+    }
+  }
+  return target2;
+}
+const skipHydrateSymbol = (
+  /* istanbul ignore next */
+  Symbol()
+);
+function shouldHydrate(obj) {
+  return !isPlainObject(obj) || !obj.hasOwnProperty(skipHydrateSymbol);
+}
+const { assign: assign$1 } = Object;
+function isComputed(o) {
+  return !!(isRef(o) && o.effect);
+}
+function createOptionsStore(id, options, pinia, hot) {
+  const { state, actions, getters } = options;
+  const initialState = pinia.state.value[id];
+  let store2;
+  function setup() {
+    if (!initialState && true) {
+      {
+        pinia.state.value[id] = state ? state() : {};
+      }
+    }
+    const localState = toRefs(pinia.state.value[id]);
+    return assign$1(localState, actions, Object.keys(getters || {}).reduce((computedGetters, name) => {
+      computedGetters[name] = markRaw(computed(() => {
+        setActivePinia(pinia);
+        const store22 = pinia._s.get(id);
+        return getters[name].call(store22, store22);
+      }));
+      return computedGetters;
+    }, {}));
+  }
+  store2 = createSetupStore(id, setup, options, pinia, hot, true);
+  return store2;
+}
+function createSetupStore($id, setup, options = {}, pinia, hot, isOptionsStore) {
+  let scope;
+  const optionsForPlugin = assign$1({ actions: {} }, options);
+  const $subscribeOptions = { deep: true };
+  let isListening;
+  let isSyncListening;
+  let subscriptions = [];
+  let actionSubscriptions = [];
+  let debuggerEvents;
+  const initialState = pinia.state.value[$id];
+  if (!isOptionsStore && !initialState && true) {
+    {
+      pinia.state.value[$id] = {};
+    }
+  }
+  ref({});
+  let activeListener;
+  function $patch(partialStateOrMutator) {
+    let subscriptionMutation;
+    isListening = isSyncListening = false;
+    if (typeof partialStateOrMutator === "function") {
+      partialStateOrMutator(pinia.state.value[$id]);
+      subscriptionMutation = {
+        type: MutationType.patchFunction,
+        storeId: $id,
+        events: debuggerEvents
+      };
+    } else {
+      mergeReactiveObjects(pinia.state.value[$id], partialStateOrMutator);
+      subscriptionMutation = {
+        type: MutationType.patchObject,
+        payload: partialStateOrMutator,
+        storeId: $id,
+        events: debuggerEvents
+      };
+    }
+    const myListenerId = activeListener = Symbol();
+    nextTick().then(() => {
+      if (activeListener === myListenerId) {
+        isListening = true;
+      }
+    });
+    isSyncListening = true;
+    triggerSubscriptions(subscriptions, subscriptionMutation, pinia.state.value[$id]);
+  }
+  const $reset = isOptionsStore ? function $reset2() {
+    const { state } = options;
+    const newState = state ? state() : {};
+    this.$patch(($state) => {
+      assign$1($state, newState);
+    });
+  } : (
+    /* istanbul ignore next */
+    noop$1
+  );
+  function $dispose() {
+    scope.stop();
+    subscriptions = [];
+    actionSubscriptions = [];
+    pinia._s.delete($id);
+  }
+  const action = (fn, name = "") => {
+    if (ACTION_MARKER in fn) {
+      fn[ACTION_NAME] = name;
+      return fn;
+    }
+    const wrappedAction = function() {
+      setActivePinia(pinia);
+      const args = Array.from(arguments);
+      const afterCallbackList = [];
+      const onErrorCallbackList = [];
+      function after(callback) {
+        afterCallbackList.push(callback);
+      }
+      function onError(callback) {
+        onErrorCallbackList.push(callback);
+      }
+      triggerSubscriptions(actionSubscriptions, {
+        args,
+        name: wrappedAction[ACTION_NAME],
+        store: store2,
+        after,
+        onError
+      });
+      let ret;
+      try {
+        ret = fn.apply(this && this.$id === $id ? this : store2, args);
+      } catch (error) {
+        triggerSubscriptions(onErrorCallbackList, error);
+        throw error;
+      }
+      if (ret instanceof Promise) {
+        return ret.then((value) => {
+          triggerSubscriptions(afterCallbackList, value);
+          return value;
+        }).catch((error) => {
+          triggerSubscriptions(onErrorCallbackList, error);
+          return Promise.reject(error);
+        });
+      }
+      triggerSubscriptions(afterCallbackList, ret);
+      return ret;
+    };
+    wrappedAction[ACTION_MARKER] = true;
+    wrappedAction[ACTION_NAME] = name;
+    return wrappedAction;
+  };
+  const partialStore = {
+    _p: pinia,
+    // _s: scope,
+    $id,
+    $onAction: addSubscription.bind(null, actionSubscriptions),
+    $patch,
+    $reset,
+    $subscribe(callback, options2 = {}) {
+      const removeSubscription = addSubscription(subscriptions, callback, options2.detached, () => stopWatcher());
+      const stopWatcher = scope.run(() => watch(() => pinia.state.value[$id], (state) => {
+        if (options2.flush === "sync" ? isSyncListening : isListening) {
+          callback({
+            storeId: $id,
+            type: MutationType.direct,
+            events: debuggerEvents
+          }, state);
+        }
+      }, assign$1({}, $subscribeOptions, options2)));
+      return removeSubscription;
+    },
+    $dispose
+  };
+  const store2 = reactive(partialStore);
+  pinia._s.set($id, store2);
+  const runWithContext = pinia._a && pinia._a.runWithContext || fallbackRunWithContext;
+  const setupStore = runWithContext(() => pinia._e.run(() => (scope = effectScope()).run(() => setup({ action }))));
+  for (const key in setupStore) {
+    const prop = setupStore[key];
+    if (isRef(prop) && !isComputed(prop) || isReactive(prop)) {
+      if (!isOptionsStore) {
+        if (initialState && shouldHydrate(prop)) {
+          if (isRef(prop)) {
+            prop.value = initialState[key];
+          } else {
+            mergeReactiveObjects(prop, initialState[key]);
+          }
+        }
+        {
+          pinia.state.value[$id][key] = prop;
+        }
+      }
+    } else if (typeof prop === "function") {
+      const actionValue = action(prop, key);
+      {
+        setupStore[key] = actionValue;
+      }
+      optionsForPlugin.actions[key] = prop;
+    } else ;
+  }
+  {
+    assign$1(store2, setupStore);
+    assign$1(toRaw(store2), setupStore);
+  }
+  Object.defineProperty(store2, "$state", {
+    get: () => pinia.state.value[$id],
+    set: (state) => {
+      $patch(($state) => {
+        assign$1($state, state);
+      });
+    }
+  });
+  pinia._p.forEach((extender) => {
+    {
+      assign$1(store2, scope.run(() => extender({
+        store: store2,
+        app: pinia._a,
+        pinia,
+        options: optionsForPlugin
+      })));
+    }
+  });
+  if (initialState && isOptionsStore && options.hydrate) {
+    options.hydrate(store2.$state, initialState);
+  }
+  isListening = true;
+  isSyncListening = true;
+  return store2;
+}
+/*! #__NO_SIDE_EFFECTS__ */
+// @__NO_SIDE_EFFECTS__
+function defineStore(idOrOptions, setup, setupOptions) {
+  let id;
+  let options;
+  const isSetupStore = typeof setup === "function";
+  {
+    id = idOrOptions;
+    options = isSetupStore ? setupOptions : setup;
+  }
+  function useStore(pinia, hot) {
+    const hasContext = hasInjectionContext();
+    pinia = // in test mode, ignore the argument provided as we can always retrieve a
+    // pinia instance with getActivePinia()
+    pinia || (hasContext ? inject(piniaSymbol, null) : null);
+    if (pinia)
+      setActivePinia(pinia);
+    pinia = activePinia;
+    if (!pinia._s.has(id)) {
+      if (isSetupStore) {
+        createSetupStore(id, setup, options, pinia);
+      } else {
+        createOptionsStore(id, options, pinia);
+      }
+    }
+    const store2 = pinia._s.get(id);
+    return store2;
+  }
+  useStore.$id = id;
+  return useStore;
 }
 const createStore = store(() => {
   const pinia = createPinia();
@@ -18770,68 +19069,68 @@ const childrenCommon = [
     title: "home",
     icon: "precision_manufacturing",
     path: "/",
-    component: () => __vitePreload(() => import("./MKS_Parts-DNrxQty0.js"), true ? __vite__mapDeps([0,1,2,3,4,5,6]) : void 0)
+    component: () => __vitePreload(() => import("./MKS_Parts-BWwd6euH.js"), true ? __vite__mapDeps([0,1,2,3,4,5,6,7]) : void 0)
   },
   {
     title: "About",
     // icon: 'mdi-information-variant',
     icon: "info",
     path: "about",
-    component: () => __vitePreload(() => import("./AboutPage-BBhHk8Fi.js"), true ? __vite__mapDeps([7,3,8,9,10,11,12]) : void 0)
+    component: () => __vitePreload(() => import("./AboutPage-BGzW2PtW.js"), true ? __vite__mapDeps([8,3,9,10,11,12,13]) : void 0)
   },
   {
     title: "Settings",
     icon: "settings",
     path: "settings",
-    component: () => __vitePreload(() => import("./SettingsPage-3eiACgQv.js"), true ? __vite__mapDeps([13,3]) : void 0)
+    component: () => __vitePreload(() => import("./SettingsPage-59T4i9RU.js"), true ? __vite__mapDeps([14,3]) : void 0)
   },
   {
     title: "MD-Demo",
     icon: "brush",
     path: "md-demo",
-    component: () => __vitePreload(() => import("./MDDemo-Qvr0f3sY.js"), true ? __vite__mapDeps([14,3]) : void 0)
+    component: () => __vitePreload(() => import("./MDDemo-D7HbjLiM.js"), true ? __vite__mapDeps([15,3]) : void 0)
   },
   {
     title: "MD-Dev",
     icon: "brush",
     path: "md-dev",
-    component: () => __vitePreload(() => import("./MDDev-C7sAaCUL.js"), true ? __vite__mapDeps([15,3,5]) : void 0)
+    component: () => __vitePreload(() => import("./MDDev-CuKEkb1D.js"), true ? __vite__mapDeps([16,3,6]) : void 0)
   },
   {
     title: "MDGlob",
     icon: "precision_manufacturing",
     path: "md-glob",
-    component: () => __vitePreload(() => import("./MDGlob-B9gw978P.js"), true ? __vite__mapDeps([16,17,18,2,3]) : void 0)
+    component: () => __vitePreload(() => import("./MDGlob-nuZzjQA8.js"), true ? __vite__mapDeps([17,18,19,2,3]) : void 0)
   },
   {
     title: "MD-Dev-Imported",
     icon: "brush",
     path: "md-dev-imported",
-    component: () => __vitePreload(() => import("./MDDevImported-D44HstSq.js"), true ? __vite__mapDeps([19,3]) : void 0)
+    component: () => __vitePreload(() => import("./MDDevImported-B6S4Q2qL.js"), true ? __vite__mapDeps([20,3]) : void 0)
   },
   {
     title: "MD-ManualRendering",
     icon: "brush",
     path: "md-manual-rendering",
-    component: () => __vitePreload(() => import("./MDManualRendering-Bw0swG77.js"), true ? __vite__mapDeps([20,3,8,9,10,11,12]) : void 0)
+    component: () => __vitePreload(() => import("./MDManualRendering-UPb852ha.js"), true ? __vite__mapDeps([21,3,9,10,11,12,13]) : void 0)
   },
   {
     title: "MD-DevTooltip",
     icon: "brush",
     path: "md-dev-tooltip",
-    component: () => __vitePreload(() => import("./MDDevTooltip-BvJ3EfDq.js"), true ? __vite__mapDeps([21,17,18,2,3,8,9,10,11,12,22]) : void 0)
+    component: () => __vitePreload(() => import("./MDDevTooltip-D0X7zHdM.js"), true ? __vite__mapDeps([22,18,19,2,3,9,10,11,12,13,23]) : void 0)
   },
   {
     title: "Formatting Experiments",
     icon: "brush",
     path: "formatting-experiments",
-    component: () => __vitePreload(() => import("./FormattingExperiments-FttdyzZv.js"), true ? __vite__mapDeps([23,17,18,2,3,24,9]) : void 0)
+    component: () => __vitePreload(() => import("./FormattingExperiments-g-vPuo8y.js"), true ? __vite__mapDeps([24,18,19,2,3,25,10]) : void 0)
   }
 ];
 const routes = [
   {
     path: "/",
-    component: () => __vitePreload(() => import("./MainLayout-B9X8jW2l.js"), true ? __vite__mapDeps([25,1,18,26,4,27]) : void 0),
+    component: () => __vitePreload(() => import("./MainLayout-uX9aU-6w.js"), true ? __vite__mapDeps([26,1,19,27,4,28]) : void 0),
     children: [
       // {
       //     path: 'part',
@@ -18840,7 +19139,12 @@ const routes = [
       {
         // path: 'parts/:mks_item_name',
         path: "part/:part_name?",
-        component: () => __vitePreload(() => import("./MKS_Part_Details-BagVQzMS.js"), true ? __vite__mapDeps([28,3]) : void 0),
+        component: () => __vitePreload(() => import("./MKS_Part_Details-CQiUFwBC.js"), true ? __vite__mapDeps([29,3,5,6]) : void 0),
+        props: true
+      },
+      {
+        path: "tag/:tag_name?",
+        component: () => __vitePreload(() => import("./MKS_Tag_Details-Na1i736E.js"), true ? __vite__mapDeps([30,3]) : void 0),
         props: true
       },
       // { path: '', component: () => import('pages/Index.vue') },
@@ -18855,7 +19159,7 @@ const routes = [
   // but you can also remove it
   {
     path: "/:catchAll(.*)*",
-    component: () => __vitePreload(() => import("./ErrorNotFound-DcFDGH_n.js"), true ? [] : void 0)
+    component: () => __vitePreload(() => import("./ErrorNotFound-7kJYFeb8.js"), true ? [] : void 0)
   }
 ];
 const createRouter = route(function() {
@@ -18928,7 +19232,7 @@ const AddressbarColor = {
     } else {
       setColor(val);
     }
-  } : noop$1,
+  } : noop$2,
   install({ $q }) {
     $q.addressbarColor = this;
     $q.config.addressbarColor && this.set($q.config.addressbarColor);
@@ -19122,13 +19426,13 @@ function getEmptyStorage() {
     getAll: () => {
     },
     getAllKeys: () => [],
-    set: noop$1,
+    set: noop$2,
     // alias for setItem; TODO: remove in Qv3
-    setItem: noop$1,
-    remove: noop$1,
+    setItem: noop$2,
+    remove: noop$2,
     // alias for removeItem; TODO: remove in Qv3
-    removeItem: noop$1,
-    clear: noop$1,
+    removeItem: noop$2,
+    clear: noop$2,
     isEmpty: () => true
   };
 }
@@ -20687,10 +20991,10 @@ createQuasarApp(createApp, quasarUserOptions).then((app) => {
     (bootFiles) => bootFiles.map((entry) => entry.default)
   ];
   return Promise[method]([
-    __vitePreload(() => import("./i18n-peDe2Yko.js"), true ? [] : void 0),
-    __vitePreload(() => import("./addressbar-color-NLpfIVSv.js"), true ? [] : void 0),
-    __vitePreload(() => import("./register-global-components-BqRm_NRU.js"), true ? __vite__mapDeps([29,26,24,9,11,12,17,18,2,4,30]) : void 0),
-    __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([31]) : void 0)
+    __vitePreload(() => import("./i18n-4gCY-SAP.js"), true ? [] : void 0),
+    __vitePreload(() => import("./addressbar-color-DYh-yeYX.js"), true ? [] : void 0),
+    __vitePreload(() => import("./register-global-components-BYpfUxah.js"), true ? __vite__mapDeps([31,27,25,10,12,13,18,19,2,4,32]) : void 0),
+    __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([33]) : void 0)
   ]).then((bootFiles) => {
     const boot2 = mapFn(bootFiles).filter((entry) => typeof entry === "function");
     start(app, boot2);
@@ -20715,13 +21019,13 @@ export {
   createBlock as O,
   createBaseVNode as P,
   QIcon as Q,
-  createStaticVNode as R,
-  resolveComponent as S,
+  resolveComponent as R,
+  resolveDynamicComponent as S,
   Text as T,
-  createTextVNode as U,
-  resolveDynamicComponent as V,
-  renderList as W,
-  toDisplayString as X,
+  renderList as U,
+  toDisplayString as V,
+  createTextVNode as W,
+  createStaticVNode as X,
   QBtn as Y,
   watchEffect as Z,
   createCommentVNode as _,
@@ -20740,6 +21044,7 @@ export {
   vmHasRouter as aB,
   css as aC,
   getElement as aD,
+  defineStore as aE,
   cleanEvt as aa,
   listenOpts as ab,
   Teleport as ac,
@@ -20753,7 +21058,7 @@ export {
   getEventPath as ak,
   createDirective as al,
   preventDraggable as am,
-  noop$1 as an,
+  noop$2 as an,
   position as ao,
   leftClick as ap,
   emptyRenderFn as aq,
