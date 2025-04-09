@@ -79,6 +79,11 @@ const routes = [
                 component: () => import('pages/MKS_Part_Details.vue'),
                 props: true
             },
+            {
+                path: 'tag/:tag_name?',
+                component: () => import('pages/MKS_Tag_Details.vue'),
+                props: true
+            },
             // { path: '', component: () => import('pages/Index.vue') },
             // { path: 'about', component: () => import('pages/About.vue') }
             ...childrenCommon,

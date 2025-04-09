@@ -2,7 +2,7 @@
     <!-- <q-page class="flex flex-center content-stretch"> -->
     <!-- class="col" style="min-height: 0" -->
     <q-page class="my-page">
-        <component :is="mks_welcome.readme.default"/>
+        <component :is="mks_welcome.readme.default" />
         <!-- class="col-auto" -->
         <!-- -->
         <!-- <div class="scroll-wrapper col"> -->
@@ -15,20 +15,12 @@
                 :key="mks_item_name"
                 class="my-card q-pa-md"
             >
-                <PartOverview
-                    :mks_item="mks_item"
-                    :mks_parts="mks_parts"
-                    @click="$router.push(`part/${mks_item_name}`)"
-                    class="clickable"
-                    />
+                <router-link :to="`part/${mks_item_name}`" class="clickable">
                     <!--
-                        @click="$router.push({ name: 'part'}) "
                     @click="$router.push({ name: 'parts', params: { 'part_name':mks_item_name } }) "
-                    @click="mks_item.showDetails = true"
                 -->
-                <!-- <q-dialog v-model="mks_item.showDetails" full-height full-width>
-                    <PartDetails :mks_item="mks_item" :mks_parts="mks_parts" />
-                </q-dialog> -->
+                    <PartOverview :mks_item="mks_item" :mks_parts="mks_parts" />
+                </router-link>
             </li>
         </ul>
         <!-- </div> -->
@@ -36,17 +28,23 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed } from 'vue'
 // import { useQuasar } from "quasar";
 
-import PartOverview from "src/components/PartOverview.vue";
+import PartOverview from 'src/components/PartOverview.vue'
 // import PartDetails from "src/components/PartDetails.vue";
 
 // import mksContent from "../../public/mks/";
-import mksContent from "../content_md/mksContent";
-console.log("mksContent", mksContent);
-const mks_welcome = ref(mksContent.welcome);
-const mks_parts = ref(mksContent.parts);
+// import mksContent from "../content_md/mksContent";
+// console.log("mksContent", mksContent);
+// const mks_welcome = ref(mksContent.welcome);
+// const mks_parts = ref(mksContent.parts);
+
+import { useMksContentStore } from 'src/stores/mksContent'
+const mksContent = useMksContentStore()
+console.log('mksContent', mksContent)
+const mks_welcome = ref(mksContent.welcome)
+const mks_parts = ref(mksContent.parts)
 
 // const check_searchTextInReadme = (readme, item_name) => {
 //     return (
@@ -60,20 +58,20 @@ const check_searchTextInReadme = (readme, item_name) => {
         item_name?.toLowerCase().includes(searchText.value.toLowerCase()) ||
         readme.content_text.toLowerCase().includes(searchText.value.toLowerCase()) ||
         // TODO: find a better way to search for text in rendered output..
-        readme.data?.tags?.join(", ").toLowerCase().includes(searchText.value.toLowerCase())
-    );
-};
+        readme.data?.tags?.join(', ').toLowerCase().includes(searchText.value.toLowerCase())
+    )
+}
 
 const getObjItemsWithSearchTextInReadme = (obj) => {
-    const result = {};
+    const result = {}
     for (const [item_name, item] of Object.entries(obj)) {
-        console.log(`item_name`, item_name, `item`, item);
+        console.log(`item_name`, item_name, `item`, item)
         if (check_searchTextInReadme(item, item_name)) {
-            result[item_name] = item;
+            result[item_name] = item
         }
     }
-    return result;
-};
+    return result
+}
 
 const mks_items_filtered = computed(() => {
     // const result = {};
@@ -98,11 +96,11 @@ const mks_items_filtered = computed(() => {
     const result = {
         // ...getObjItemsWithSearchTextInReadme(mks_tags.value),
         ...getObjItemsWithSearchTextInReadme(mks_parts.value),
-    };
-    return result;
-});
+    }
+    return result
+})
 
-const searchText = ref("");
+const searchText = ref('')
 
 // $q.notify('Message')
 
@@ -136,6 +134,11 @@ const searchText = ref("");
     align-items: center
 .clickable
     cursor: pointer
+    text-decoration: none
+    display: block
+    width: 100%
+    height: 100%
+    overflow: scroll
 </style>
 
 <style lang="sass">
