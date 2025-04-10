@@ -3,13 +3,20 @@
 
     <title>404 Redirect</title>
 
+    <style>
+        html, body {
+            background-color: black;
+            color: orange;
+        }
+    </style>
+
     <script>
         sessionStorage.redirect = location.href;
     </script>
 
     <meta
         http-equiv="refresh"
-        content="0;URL='/mks-welcome'"
+        content="0;URL='/mks-welcome/'"
     >
     </meta>
 </head>
