@@ -3725,6 +3725,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ini@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "ini@npm:5.0.0"
+  checksum: a1cd2a06bf4d995b072ebe97132d8d50a6630798cc3a1c56d325d7b3aaf1f236b3301816f0079e4d47a9887f08e60a6fb95673f19bcafe4f0f9c4a5b5e30aff4
+  languageName: node
+  linkType: hard
+
 "inquirer@npm:^9.3.7":
   version: 9.3.7
   resolution: "inquirer@npm:9.3.7"
@@ -4537,6 +4544,7 @@ __metadata:
     globals: ^15.15.0
     gray-matter: ^4.0.3
     highlight.js: ^11.10.0
+    ini: ^5.0.0
     markdown-it: ^14.1.0
     markdown-it-abbr: ^2.0.0
     markdown-it-anchor: ^9.2.0

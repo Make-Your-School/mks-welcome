@@ -3,7 +3,7 @@
 import { importSingleFile } from './helperFn'
 
 const mksAddPartsToTags = (mksContent) => {
-    console.group('mksAddPartsToTags')
+    console.groupCollapsed('mksAddPartsToTags')
     const mksTags = mksContent.tags
     const mksParts = mksContent.parts
     // console.log("mksTags", mksTags);
@@ -26,6 +26,25 @@ const mksAddPartsToTags = (mksContent) => {
                     mksTags[part_tag].parts[part_name] = part
                 }
             }
+        }
+    }
+    console.groupEnd()
+}
+
+const mksAddURLToParts = (mksContent) => {
+    console.group('mksAddURLToParts')
+    const mksParts = mksContent.parts
+    // const submodules = getsubmodules()
+    const submodules = process.env.submodules
+    // console.log(submodules)
+    for (const [part_name, part] of Object.entries(mksParts)) {
+        // console.log(`part '${part_name}':`, part.path_base)
+        const path = `public/${part.path_base}`.replace(/\/$/, '')
+        // console.log(path)
+        const submodule = submodules[path]
+        if (submodule) {
+            console.log(`part '${part_name}':`, submodule)
+            part.submodule = submodules
         }
     }
     console.groupEnd()
@@ -110,6 +129,7 @@ const mksGetContent = () => {
 
     mksGetItems(mksContent, 'tags', getTagsContent(), getTagsContentText())
     mksGetItems(mksContent, 'parts', getPartsContent(), getPartsContentText())
+    mksAddURLToParts(mksContent)
     mksAddPartsToTags(mksContent)
 
     console.log('mksContent:', mksContent)

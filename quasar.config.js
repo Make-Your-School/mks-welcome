@@ -6,11 +6,13 @@
  * the ES6 features that are supported by your Node version. https://node.green/
  */
 
-import packageInfo from "./package.json";
+import packageInfo from './package.json'
+
+import { getsubmodules } from './getsubmodules'
 
 // const { viteSingleFile } = require("vite-plugin-singlefile");
 
-import { defineConfig } from "#q-app/wrappers";
+import { defineConfig } from '#q-app/wrappers'
 // import { defineBoot } from "#q-app/wrappers";
 // import { definePreFetch } from "#q-app/wrappers";
 // import { defineRouter } from "#q-app/wrappers";
@@ -22,15 +24,15 @@ import { defineConfig } from "#q-app/wrappers";
 // import { defineSsrServeStaticContent } from "#q-app/wrappers";
 // import { defineSsrRenderPreloadTag } from "#q-app/wrappers";
 
-import path from "path";
+import path from 'path'
 // console.log("__dirname", __dirname);
 
 // required for the gray-matter plugin.
 // https://github.com/davidmyersdev/vite-plugin-node-polyfills
-import { nodePolyfills } from "vite-plugin-node-polyfills";
+import { nodePolyfills } from 'vite-plugin-node-polyfills'
 
-import Markdown from "unplugin-vue-markdown/vite";
-import markdownItConfig from "./markdown-it-config";
+import Markdown from 'unplugin-vue-markdown/vite'
+import markdownItConfig from './markdown-it-config'
 
 // export default defineConfig((ctx) => {
 export default defineConfig(() => {
@@ -74,7 +76,7 @@ export default defineConfig(() => {
 
             // publicPath: '/',
             // publicPath: "/quasar_lightpaint/dist/spa/",
-            publicPath: "/mks-welcome/",
+            publicPath: '/mks-welcome/',
             // analyze: true,
             env: {
                 //https://forum.quasar-framework.org/topic/6853/auto-generate-a-build-number-in-spa/15?_=1653270667151
@@ -87,6 +89,7 @@ export default defineConfig(() => {
                     projectUrl: packageInfo.projectUrl,
                     previewUrl: packageInfo.previewUrl,
                 },
+                submodules: getsubmodules(),
             },
             // rawDefine: {}
             // ignorePublicFolder: true,
@@ -308,7 +311,7 @@ export default defineConfig(() => {
             builder: {
                 // https://www.electron.build/configuration/configuration
 
-                appId: "mks-welcome",
+                appId: 'mks-welcome',
             },
         },
 
@@ -320,4 +323,4 @@ export default defineConfig(() => {
             // extendBexManifestJson (json) {}
         },
     }
-});
+})
