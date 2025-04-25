@@ -1,6 +1,6 @@
-import { p as createElementBlock, v as openBlock, ak as createStaticVNode, l as createBaseVNode, a1 as resolveComponent, j as createVNode, D as createTextVNode, a0 as withCtx, aI as defineStore } from "./index-BPaER5cP.js";
-import { m as md_obj } from "./readme-CkiZ_tnD.js";
-import { i as importSingleFile, a as about } from "./about-BM-OFklx.js";
+import { p as createElementBlock, v as openBlock, ak as createStaticVNode, l as createBaseVNode, a1 as resolveComponent, j as createVNode, D as createTextVNode, a0 as withCtx, aI as defineStore } from "./index-DfoPz00z.js";
+import { m as md_obj } from "./readme-DVsIW6mW.js";
+import { i as importSingleFile, a as about } from "./about-B0LOSTo1.js";
 const _hoisted_1$f = { class: "markdown-body" };
 const titel$2 = "Entfernung";
 const tags$e = ["entfernung", "input"];
@@ -990,7 +990,7 @@ const __vite_glob_4_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.def
   titel
 }, Symbol.toStringTag, { value: "Module" }));
 const mksAddPartsToTags = (mksContent2) => {
-  console.group("mksAddPartsToTags");
+  console.groupCollapsed("mksAddPartsToTags");
   const mksTags = mksContent2.tags;
   const mksParts = mksContent2.parts;
   for (const [tagname, tag] of Object.entries(mksTags)) {
@@ -1007,6 +1007,21 @@ const mksAddPartsToTags = (mksContent2) => {
           mksTags[part_tag].parts[part_name] = part;
         }
       }
+    }
+  }
+  console.groupEnd();
+};
+const mksAddURLToParts = (mksContent2) => {
+  console.group("mksAddURLToParts");
+  const mksParts = mksContent2.parts;
+  const submodules = JSON.parse('{"public/mks/parts/mks-GroveUltraschall":{"submodule":"public/mks/mks-GroveUltraschall","path":"public/mks/parts/mks-GroveUltraschall","url":"https://github.com/Make-Your-School/mks-GroveUltraschall.git","urlWeb":"https://github.com/Make-Your-School/mks-GroveUltraschall"},"public/mks/parts/mks-GroveMotortreiberI2C":{"submodule":"public/mks/mks-GroveMotortreiberI2C","path":"public/mks/parts/mks-GroveMotortreiberI2C","url":"https://github.com/Make-Your-School/mks-GroveMotortreiberI2C.git","urlWeb":"https://github.com/Make-Your-School/mks-GroveMotortreiberI2C"},"public/mks/parts/mks-GroveMagnetschalter":{"submodule":"public/mks/mks-GroveMagnetschalter","path":"public/mks/parts/mks-GroveMagnetschalter","url":"https://github.com/Make-Your-School/mks-GroveMagnetschalter.git","urlWeb":"https://github.com/Make-Your-School/mks-GroveMagnetschalter"},"public/mks/parts/mks-GroveKippschalter":{"submodule":"public/mks/mks-GroveKippschalter","path":"public/mks/parts/mks-GroveKippschalter","url":"https://github.com/Make-Your-School/mks-GroveKippschalter.git","urlWeb":"https://github.com/Make-Your-School/mks-GroveKippschalter"},"public/mks/parts/mks-GroveTaster":{"submodule":"public/mks/mks-GroveTaster","path":"public/mks/parts/mks-GroveTaster","url":"https://github.com/Make-Your-School/mks-GroveTaster.git","urlWeb":"https://github.com/Make-Your-School/mks-GroveTaster"},"public/mks/parts/mks-GroveSchalter":{"submodule":"public/mks/mks-GroveSchalter","path":"public/mks/parts/mks-GroveSchalter","url":"https://github.com/Make-Your-School/mks-GroveSchalter.git","urlWeb":"https://github.com/Make-Your-School/mks-GroveSchalter"},"public/mks/parts/mks-Endschalter":{"submodule":"public/mks/parts/mks-Endschalter","path":"public/mks/parts/mks-Endschalter","url":"https://github.com/Make-Your-School/mks-Endschalter.git","urlWeb":"https://github.com/Make-Your-School/mks-Endschalter"},"public/mks/parts/mks-Taster":{"submodule":"public/mks/mks-Taster","path":"public/mks/parts/mks-Taster","url":"https://github.com/Make-Your-School/mks-Taster.git","urlWeb":"https://github.com/Make-Your-School/mks-Taster"},"public/mks/parts/mks-GroveSerialBluetoothV3.0":{"submodule":"public/mks/parts/mks-GroveSerialBluetoothV3.0","path":"public/mks/parts/mks-GroveSerialBluetoothV3.0","url":"https://github.com/Make-Your-School/mks-GroveSerialBluetoothV3.0.git","urlWeb":"https://github.com/Make-Your-School/mks-GroveSerialBluetoothV3.0"},"public/mks/parts/mks-Grove125KHzRFIDReader-V1.0":{"submodule":"public/mks/parts/mks-Grove125KHzRFIDReader-V1.0","path":"public/mks/parts/mks-Grove125KHzRFIDReader-V1.0","url":"https://github.com/Make-Your-School/mks-Grove125KHzRFIDReader-V1.0.git","urlWeb":"https://github.com/Make-Your-School/mks-Grove125KHzRFIDReader-V1.0"}}');
+  console.log(submodules);
+  for (const [part_name, part] of Object.entries(mksParts)) {
+    const path = `public/${part.path_base}`.replace(/\/$/, "");
+    const submodule = submodules[path];
+    if (submodule) {
+      console.log(`part '${part_name}':`, submodule);
+      part.submodule = submodule;
     }
   }
   console.groupEnd();
@@ -1100,6 +1115,7 @@ const mksGetContent = () => {
   console.log("welcome done.");
   mksGetItems(mksContent2, "tags", getTagsContent(), getTagsContentText());
   mksGetItems(mksContent2, "parts", getPartsContent(), getPartsContentText());
+  mksAddURLToParts(mksContent2);
   mksAddPartsToTags(mksContent2);
   console.log("mksContent:", mksContent2);
   console.groupEnd();

@@ -1,9 +1,9 @@
-import { u as useId, b as uid, a as QCard, Q as QCardSection } from "./QCard-BIV2j01X.js";
-import { P as createComponent, M as onBeforeUnmount, h, Y as Transition, a as getCurrentInstance, c as computed, ac as useRouterLinkProps, r as ref, w as watch, ad as shallowReactive, ae as withDirectives, af as vShow, Z as hSlot, a8 as QIcon, $ as stopAndPrevent, p as createElementBlock, v as openBlock, l as createBaseVNode, D as createTextVNode, a1 as resolveComponent, j as createVNode, a0 as withCtx, ag as watchEffect, ah as useRoute, ai as useRouter, H as createBlock, F as Fragment, a3 as renderList, n as unref, a2 as resolveDynamicComponent } from "./index-BPaER5cP.js";
-import { Q as QItem, a as QItemLabel, b as QItemSection, c as QList } from "./QList-iCg5A-Kw.js";
-import { u as useDarkProps, a as useDark } from "./use-dark-C--rpE_g.js";
-import { u as useModelToggleEmits, a as useModelToggleProps, b as useModelToggle, d as scroll } from "./scroll-BdQgKQ66.js";
-import { Q as QPage } from "./QPage-BPE97abM.js";
+import { u as useId, b as uid, a as QCard, Q as QCardSection } from "./QCard-DYldn2Me.js";
+import { P as createComponent, M as onBeforeUnmount, h, Y as Transition, a as getCurrentInstance, c as computed, ac as useRouterLinkProps, r as ref, w as watch, ad as shallowReactive, ae as withDirectives, af as vShow, Z as hSlot, a8 as QIcon, $ as stopAndPrevent, p as createElementBlock, v as openBlock, l as createBaseVNode, D as createTextVNode, a1 as resolveComponent, j as createVNode, a0 as withCtx, ag as watchEffect, ah as useRoute, ai as useRouter, H as createBlock, F as Fragment, a3 as renderList, n as unref, a2 as resolveDynamicComponent } from "./index-DfoPz00z.js";
+import { Q as QItem, a as QItemLabel, b as QItemSection, c as QList } from "./QList-DPAXcqdo.js";
+import { u as useDarkProps, a as useDark } from "./use-dark-Cr7wNoLF.js";
+import { u as useModelToggleEmits, a as useModelToggleProps, b as useModelToggle, d as scroll } from "./scroll-D93908iT.js";
+import { Q as QPage } from "./QPage-B6dAnT2s.js";
 const QSlideTransition = createComponent({
   name: "QSlideTransition",
   props: {

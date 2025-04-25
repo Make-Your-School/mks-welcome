@@ -1,4 +1,4 @@
-import { aJ as markRaw, p as createElementBlock, v as openBlock, l as createBaseVNode, D as createTextVNode } from "./index-BPaER5cP.js";
+import { aJ as markRaw, p as createElementBlock, v as openBlock, l as createBaseVNode, D as createTextVNode } from "./index-DfoPz00z.js";
 const extractFrontmatterImports = (item) => {
   const exclude = ["default", "excerpt"];
   const frontmatterKeys = Object.keys(item).filter((key) => !exclude.includes(key));

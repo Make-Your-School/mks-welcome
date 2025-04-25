@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/MKS_Parts-BLeJu-hc.js","assets/QInput-BoNCtWoB.js","assets/QCard-BIV2j01X.js","assets/use-dark-C--rpE_g.js","assets/focus-manager-DXzUojAp.js","assets/QPage-BPE97abM.js","assets/_plugin-vue_export-helper-1tPrXgE0.js","assets/mdContent-U3s0R5xq.js","assets/readme-CkiZ_tnD.js","assets/about-BM-OFklx.js","assets/MKS_Parts-Br0ojRcd.css","assets/MKS_Tags-1kz-UAHE.js","assets/TagBauteilListe-Cdd2cGQP.js","assets/MKS_Tags-Byav8agq.css","assets/MKS_Abbr-BhfUy1yv.js","assets/QList-iCg5A-Kw.js","assets/scroll-BdQgKQ66.js","assets/AboutPage-AxRqNj_2.js","assets/SettingsPage-BIzR4nHH.js","assets/MDDemo-JHHQxbzA.js","assets/MDDev-PFIgXNxb.js","assets/MainLayout-CY26NmfC.js","assets/use-quasar-Cnteyock.js","assets/MainLayout-BvSd311F.css","assets/MKS_Part_Details-DIWzgipQ.js","assets/MKS_Tag_Details-xazcL146.js","assets/register-global-components-BOkZ5Zii.js","assets/register-global-components-DIW3Pasc.css","assets/markdown-load-css-Ld-8w1cp.css"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/MKS_Parts-B-PU4yBz.js","assets/QInput-BM767UO6.js","assets/QCard-DYldn2Me.js","assets/use-dark-Cr7wNoLF.js","assets/focus-manager-DXzUojAp.js","assets/QPage-B6dAnT2s.js","assets/_plugin-vue_export-helper-1tPrXgE0.js","assets/mdContent-qShCQj0l.js","assets/readme-DVsIW6mW.js","assets/about-B0LOSTo1.js","assets/MKS_Parts-Br0ojRcd.css","assets/MKS_Tags-Bi0r-eup.js","assets/TagBauteilListe-DUTrdmXJ.js","assets/MKS_Tags-Byav8agq.css","assets/MKS_Abbr-CqXooSts.js","assets/QList-DPAXcqdo.js","assets/scroll-D93908iT.js","assets/AboutPage-Cinn5HyR.js","assets/SettingsPage-BZT4pXvN.js","assets/MDDemo-CEkktu23.js","assets/MDDev-DlGGcA2c.js","assets/MainLayout-DAgJMxmr.js","assets/use-quasar-Bk_n86Wh.js","assets/MainLayout-BvSd311F.css","assets/MKS_Part_Details-eBS8P2RP.js","assets/MKS_Tag_Details-CMcsYrdg.js","assets/register-global-components-BgfQ5XJQ.js","assets/register-global-components-DIW3Pasc.css","assets/markdown-load-css-Ld-8w1cp.css"])))=>i.map(i=>d[i]);
 const scriptRel = /* @__PURE__ */ function detectScriptRel() {
   const relList = typeof document !== "undefined" && document.createElement("link").relList;
   return relList && relList.supports && relList.supports("modulepreload") ? "modulepreload" : "preload";
@@ -19075,19 +19075,19 @@ const childrenCommon = [
     title: "Parts",
     icon: "precision_manufacturing",
     path: "/",
-    component: () => __vitePreload(() => import("./MKS_Parts-BLeJu-hc.js"), true ? __vite__mapDeps([0,1,2,3,4,5,6,7,8,9,10]) : void 0)
+    component: () => __vitePreload(() => import("./MKS_Parts-B-PU4yBz.js"), true ? __vite__mapDeps([0,1,2,3,4,5,6,7,8,9,10]) : void 0)
   },
   {
     title: "Tags",
     icon: "precision_manufacturing",
     path: "/tags",
-    component: () => __vitePreload(() => import("./MKS_Tags-1kz-UAHE.js"), true ? __vite__mapDeps([11,1,2,3,4,5,12,6,7,8,9,13]) : void 0)
+    component: () => __vitePreload(() => import("./MKS_Tags-Bi0r-eup.js"), true ? __vite__mapDeps([11,1,2,3,4,5,12,6,7,8,9,13]) : void 0)
   },
   {
     title: "Glossar",
     icon: "precision_manufacturing",
     path: "/abbr/:id?",
-    component: () => __vitePreload(() => import("./MKS_Abbr-BhfUy1yv.js"), true ? __vite__mapDeps([14,2,3,15,16,5]) : void 0),
+    component: () => __vitePreload(() => import("./MKS_Abbr-CqXooSts.js"), true ? __vite__mapDeps([14,2,3,15,16,5]) : void 0),
     props: true
   },
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -19097,13 +19097,13 @@ const childrenCommon = [
     // icon: 'mdi-information-variant',
     icon: "info",
     path: "about",
-    component: () => __vitePreload(() => import("./AboutPage-AxRqNj_2.js"), true ? __vite__mapDeps([17,5,9]) : void 0)
+    component: () => __vitePreload(() => import("./AboutPage-Cinn5HyR.js"), true ? __vite__mapDeps([17,5,9]) : void 0)
   },
   {
     title: "Settings",
     icon: "settings",
     path: "settings",
-    component: () => __vitePreload(() => import("./SettingsPage-BIzR4nHH.js"), true ? __vite__mapDeps([18,5]) : void 0)
+    component: () => __vitePreload(() => import("./SettingsPage-BZT4pXvN.js"), true ? __vite__mapDeps([18,5]) : void 0)
   },
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   // dev
@@ -19111,13 +19111,13 @@ const childrenCommon = [
     title: "MD-Demo",
     icon: "brush",
     path: "md-demo",
-    component: () => __vitePreload(() => import("./MDDemo-JHHQxbzA.js"), true ? __vite__mapDeps([19,5]) : void 0)
+    component: () => __vitePreload(() => import("./MDDemo-CEkktu23.js"), true ? __vite__mapDeps([19,5]) : void 0)
   },
   {
     title: "MD-Dev",
     icon: "brush",
     path: "md-dev",
-    component: () => __vitePreload(() => import("./MDDev-PFIgXNxb.js"), true ? __vite__mapDeps([20,5,8]) : void 0)
+    component: () => __vitePreload(() => import("./MDDev-DlGGcA2c.js"), true ? __vite__mapDeps([20,5,8]) : void 0)
   }
   // {
   //     title: "MDGlob",
@@ -19153,7 +19153,7 @@ const childrenCommon = [
 const routes = [
   {
     path: "/",
-    component: () => __vitePreload(() => import("./MainLayout-CY26NmfC.js"), true ? __vite__mapDeps([21,15,3,16,22,6,23]) : void 0),
+    component: () => __vitePreload(() => import("./MainLayout-DAgJMxmr.js"), true ? __vite__mapDeps([21,15,3,16,22,6,23]) : void 0),
     children: [
       // {
       //     path: 'part',
@@ -19164,12 +19164,12 @@ const routes = [
       // routes wihtout menu entries
       {
         path: "part/:part_name",
-        component: () => __vitePreload(() => import("./MKS_Part_Details-DIWzgipQ.js"), true ? __vite__mapDeps([24,5,7,8,9]) : void 0),
+        component: () => __vitePreload(() => import("./MKS_Part_Details-eBS8P2RP.js"), true ? __vite__mapDeps([24,5,7,8,9]) : void 0),
         props: true
       },
       {
         path: "tag/:tag_name?",
-        component: () => __vitePreload(() => import("./MKS_Tag_Details-xazcL146.js"), true ? __vite__mapDeps([25,5,12,6,7,8,9]) : void 0),
+        component: () => __vitePreload(() => import("./MKS_Tag_Details-CMcsYrdg.js"), true ? __vite__mapDeps([25,5,12,6,7,8,9]) : void 0),
         props: true
       },
       // add children that with menu-entries
@@ -19183,7 +19183,7 @@ const routes = [
   // but you can also remove it
   {
     path: "/:catchAll(.*)*",
-    component: () => __vitePreload(() => import("./ErrorNotFound-CWec7ZiA.js"), true ? [] : void 0)
+    component: () => __vitePreload(() => import("./ErrorNotFound-DKOOf9Lm.js"), true ? [] : void 0)
   }
 ];
 const createRouter = route(function() {
@@ -21015,9 +21015,9 @@ createQuasarApp(createApp, quasarUserOptions).then((app) => {
     (bootFiles) => bootFiles.map((entry) => entry.default)
   ];
   return Promise[method]([
-    __vitePreload(() => import("./i18n-CwcLtyDL.js"), true ? [] : void 0),
-    __vitePreload(() => import("./addressbar-color-BKQGC-Ay.js"), true ? [] : void 0),
-    __vitePreload(() => import("./register-global-components-BOkZ5Zii.js").then((n) => n.a), true ? __vite__mapDeps([26,22,16,4,6,27]) : void 0),
+    __vitePreload(() => import("./i18n-Dysu84V5.js"), true ? [] : void 0),
+    __vitePreload(() => import("./addressbar-color-DKot50L2.js"), true ? [] : void 0),
+    __vitePreload(() => import("./register-global-components-BgfQ5XJQ.js").then((n) => n.a), true ? __vite__mapDeps([26,22,16,4,6,27]) : void 0),
     __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([28]) : void 0)
   ]).then((bootFiles) => {
     const boot2 = mapFn(bootFiles).filter((entry) => typeof entry === "function");
