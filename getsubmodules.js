@@ -7,6 +7,7 @@ export const getsubmodules = function () {
     //     encoding: 'utf-8',
     // })
     const text = fs.readFileSync(filePath, 'utf8')
+    // console.log('text', text)
 
     const regex =
         /\[submodule "(?<submodule>.*?)"\]\n.*?path = (?<path>.*?)\n.*?url = (?<url>.*?)\n/gm
@@ -26,7 +27,7 @@ export const getsubmodules = function () {
         }
     }
 
-    // console.log(submodules)
+    // console.log('submodules', submodules)
 
     return submodules
 }

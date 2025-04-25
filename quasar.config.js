@@ -89,7 +89,7 @@ export default defineConfig(() => {
                     projectUrl: packageInfo.projectUrl,
                     previewUrl: packageInfo.previewUrl,
                 },
-                submodules: getsubmodules(),
+                submodules: JSON.stringify(getsubmodules()),
             },
             // rawDefine: {}
             // ignorePublicFolder: true,

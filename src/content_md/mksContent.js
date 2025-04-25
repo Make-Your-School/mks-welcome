@@ -2,6 +2,8 @@
 
 import { importSingleFile } from './helperFn'
 
+// import { getsubmodules } from '/getsubmodules.js'
+
 const mksAddPartsToTags = (mksContent) => {
     console.groupCollapsed('mksAddPartsToTags')
     const mksTags = mksContent.tags
@@ -35,8 +37,8 @@ const mksAddURLToParts = (mksContent) => {
     console.group('mksAddURLToParts')
     const mksParts = mksContent.parts
     // const submodules = getsubmodules()
-    const submodules = process.env.submodules
-    // console.log(submodules)
+    const submodules = JSON.parse(process.env.submodules)
+    console.log(submodules)
     for (const [part_name, part] of Object.entries(mksParts)) {
         // console.log(`part '${part_name}':`, part.path_base)
         const path = `public/${part.path_base}`.replace(/\/$/, '')
