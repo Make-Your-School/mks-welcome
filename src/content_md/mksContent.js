@@ -44,7 +44,7 @@ const mksAddURLToParts = (mksContent) => {
         const submodule = submodules[path]
         if (submodule) {
             console.log(`part '${part_name}':`, submodule)
-            part.submodule = submodules
+            part.submodule = submodule
         }
     }
     console.groupEnd()

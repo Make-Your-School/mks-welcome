@@ -4,6 +4,8 @@
     <q-page>
         <!-- {{ part_name }} -->
         <component :is="part.content" />
+        <hr />
+        <a :href="part.submodule.urlWeb" target="_blank">edit source</a>
     </q-page>
 </template>
 
@@ -16,16 +18,16 @@
 // import PartDetails from 'src/components/PartDetails.vue'
 
 const props = defineProps({
-  part_name: String
+    part_name: String,
 })
 
-console.log("props.part_name", props.part_name);
+console.log('props.part_name', props.part_name)
 
 import { useMDContentStore } from 'src/stores/mdContent'
-const mdContent = useMDContentStore();
-console.log("mdContent", mdContent);
-const part = mdContent.mks.parts[props.part_name];
-console.log("part", part);
+const mdContent = useMDContentStore()
+console.log('mdContent', mdContent)
+const part = mdContent.mks.parts[props.part_name]
+console.log('part', part)
 
 // const route = useRoute()
 // console.log('route', route);
@@ -38,4 +40,3 @@ console.log("part", part);
 //     },
 // )
 </script>
-useMDContentStoreuseMDContentStore
