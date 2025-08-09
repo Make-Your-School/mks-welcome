@@ -43,9 +43,11 @@
     },
     "devDependencies": {
         "@eslint/js": "^9.20.0",
+        "@octokit/core": "^7.0.3",
         "@quasar/app-vite": "^2.0.0",
         "@vue/eslint-config-prettier": "^10.2.0",
         "autoprefixer": "^10.4.2",
+        "dotenv": "^17.2.1",
         "eslint": "9",
         "eslint-plugin-vue": "^9.32.0",
         "globals": "^15.15.0",
@@ -54,7 +56,8 @@
         "prettier": "3",
         "vite": "^6.2.0",
         "vite-plugin-checker": "^0.8.0",
-        "vite-plugin-node-polyfills": "^0.23.0"
+        "vite-plugin-node-polyfills": "^0.23.0",
+        "xml2js": "^0.6.2"
     },
     "engines": {
         "node": "^22",
