@@ -37,29 +37,28 @@ Der Arduino UNO ist ein Mikrocontroller, der ursprünglich speziell für Bildung
 
 ## Wichtige Links für die ersten Schritte:
 
-- Arduino Webseite
-- Arduino IDE
-- Technische Daten zum Arduino UNO
-- Programmiersprache
-- Instructables Arduino Class (englisch)
+-   [Arduino Webseite](https://www.arduino.cc/)
+-   [Arduino IDE](https://www.arduino.cc/en/Main/Software)
+-   [Technische Daten zum Arduino UNO](https://store.arduino.cc/arduino-uno-rev3)
+-   [Programmiersprache](https://www.arduino.cc/reference/de/)
+-   [Instructables Arduino Class (englisch)](https://www.instructables.com/class/Arduino-Class/)
 
 ## Projektbeispiele:
 
-- Arduino Project HUB (englisch)
-- Hackster (englisch)
-- Arduino Tutorial (deutsch)
+-   [Arduino Project HUB (englisch)](https://create.arduino.cc/projecthub)
+-   [Hackster (englisch)](https://www.hackster.io/arduino/projects)
+-   [Arduino Tutorial (deutsch)](https://www.arduino-tutorial.de/arduino-projekte/)
 
 ## Weiterführende Hintergrundinformationen:
 
-- Arduino – Wikipedia Artikel
-- Mikrocontroller – Wikipedia Artikel
-- DIY – Wikipedia Artikel
-- GPIO – Wikipedia Artikel
-- I2C – Wikipedia Artikel
-- SPI – Wikipedia Artikel
-- UART – Wikipedia Artikel
+-   [Arduino – Wikipedia Artikel](https://de.wikipedia.org/wiki/Arduino_\(Plattform\))
+-   [Mikrocontroller – Wikipedia Artikel](https://de.wikipedia.org/wiki/Mikrocontroller)
+-   [DIY – Wikipedia Artikel](https://de.wikipedia.org/wiki/Do_it_yourself)
+-   [GPIO – Wikipedia Artikel](https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe)
+-   [I2C – Wikipedia Artikel](https://de.wikipedia.org/wiki/I%C2%B2C)
+-   [SPI – Wikipedia Artikel](https://de.wikipedia.org/wiki/Serial_Peripheral_Interface)
+-   [UART – Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)
 `,
-        },
     },
 ]
 
