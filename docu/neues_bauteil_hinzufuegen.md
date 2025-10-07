@@ -23,7 +23,7 @@ erzeuge neues repo auf grundlage von [mks-BauteilTemplate](https://github.com/Ma
 #### Name des Repositories
 
     - prefix
-        - Offiziellen (von MYS verwalteten): `mks-`
+        - Offiziellen (im MYS MKS enthalten): `mks-`
         - _third-party_: `organisationsName-`
     - genaue Hersteller & Bauteil/Modul Bezeichnung
     - inkl. Versionsnummer (falls vorhanden)
