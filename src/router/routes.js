@@ -49,6 +49,13 @@ export const childrenCommon = [
         path: 'md-dev',
         component: () => import('pages/dev/MDDev.vue'),
     },
+
+    {
+        title: 'Convert `posts.json` to `reposData.json`',
+        icon: 'brush',
+        path: 'tools-convert-posts-to-reposData',
+        component: () => import('pages/tools/convert-posts-to-repos.vue'),
+    },
     // {
     //     title: "MDGlob",
     //     icon: "precision_manufacturing",

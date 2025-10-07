@@ -114,7 +114,7 @@ export async function main() {
         // // console.log(`git_url`, git_url)
         // const clone_url = result.data.clone_url
         const clone_url = 'https://github.com/Make-Your-School/mks-Arduino-UNO_R3.git'
-        addSubmodule(localRepoPath, submodulePathBase + repoData.repoName, clone_url)
+        // addSubmodule(localRepoPath, submodulePathBase + repoData.repoName, clone_url)
     }
 }
 

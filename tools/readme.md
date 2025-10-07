@@ -25,3 +25,17 @@ containing a `posts.json` file and a subfolder `custom/cpt_material/` with than 
 
 
 ### convert posts.json to reposData.json
+
+start up mks-welcome app
+```bash
+/mks-welcome (main *)$ quasar dev
+```
+navigate to
+https://localhost:9000/mks-welcome/tools/convert-posts-to-reposData
+
+
+### use `setup_github_repos`
+
+```bash
+/mks-welcome (main *)$ node ./tools/setup_github_repos/index.mjs
+```
