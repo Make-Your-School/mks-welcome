@@ -1,3 +1,4 @@
+#include "Stream.h"
 /*
 RDM6300-125KHz-RFID
 
@@ -11,75 +12,120 @@ https://electropeak.com/learn/interfacing-rdm6300-125khz-rfid-reader-module-with
 20220531 s-light.eu stefan krüger
 extracted RFID code into extra file and some light tweaks.
 https://github.com/s-light/MYS__52-RFID-Leser/blob/master/examples/RFID_125kHz_RDM6300__withIdDecoding/RFID_125kHz_RDM6300__withIdDecoding.ino
+
+24.05.2025 s-light.eu stefan krüger
+tweaked converting tag and checksum
+
+
 */
 
-const int BUFFER_SIZE = 14; // RFID DATA FRAME FORMAT: 1byte head (value: 2), 10byte data (2byte version + 8byte tag), 2byte checksum, 1byte tail (value: 3)
-const int DATA_SIZE = 10; // 10byte data (2byte version + 8byte tag)
-const int DATA_VERSION_SIZE = 2; // 2byte version (actual meaning of these two bytes may vary)
-const int DATA_TAG_SIZE = 8; // 8byte tag
-const int CHECKSUM_SIZE = 2; // 2byte checksum
+// decoding info
+// https://forum.arduino.cc/t/rdm6300-reading-format/1072597/10
+// https://elty.pl/upload/download/RFID/RDM630-Spec.pdf
+// RFID DATA FRAME FORMAT:
+//      1byte head (value: 2),
+//      10byte data (2byte version + 8byte tag),
+//      2byte checksum,
+//      1byte tail (value: 3)
+const int BUFFER_SIZE = 14;
+// 2byte version (actual meaning of these two bytes may vary)
+const int DATA_VERSION_SIZE = 2;
+// 8byte tag
+const int DATA_TAG_SIZE = 8;
+// 10byte data (2byte version + 8byte tag)
+const int DATA_SIZE = DATA_VERSION_SIZE + DATA_TAG_SIZE;
+// 2byte checksum
+const int CHECKSUM_SIZE = 2;
+const int PAYLOAD_SIZE = DATA_SIZE + CHECKSUM_SIZE;
 
-uint8_t buffer[BUFFER_SIZE]; // used to store an incoming data frame
+const int MSG_HEAD = 0x02;
+const int MSG_TAIL = 0x03;
+
+// union
+// https://legacy.cplusplus.com/doc/tutorial/other_data_types/
+union data_t {
+    char raw[DATA_SIZE];
+    struct {
+        char version[DATA_VERSION_SIZE];
+        char tag[DATA_TAG_SIZE];
+    };
+};
+union message_t {
+    char raw[PAYLOAD_SIZE];
+    struct {
+        // char head;
+        data_t data;
+        char checksum[CHECKSUM_SIZE];
+        // char tail;
+    };
+};
+
+// used to store an incoming data frame
+message_t buffer; 
 int buffer_index = 0;
 
-
 #include <SoftwareSerial.h>
-
-SoftwareSerial ssrfid = SoftwareSerial(2, 3);
-
+SoftwareSerial swSerialRFID = SoftwareSerial(2, 3);
 
 // ******************************************
 // declare functions
 // this way we are free in the implementation order...
 
 void RFID_setup();
-int32_t RFID_update(bool detailed_output = false);
-int32_t extract_tag(bool detailed_output = false);
-int32_t hexstr_to_value(char *str, unsigned int length);
-
+uint32_t RFID_update(bool detailed_output = false);
+uint32_t extract_tag(bool detailed_output = false);
+uint32_t hexstr_to_value(char *str, unsigned int length);
+String tagDecimalToString(uint32_t decimal);
 
 // ******************************************
 // implementation
 
 void RFID_setup(void) {
-  ssrfid.begin(9600);
-  ssrfid.listen();
+    swSerialRFID.begin(9600);
+    swSerialRFID.listen();
 }
 
-int32_t RFID_update(bool detailed_output = false) {
-    // returns tag id if tag is read. otherwise -1
-    int32_t tag = -1;
-    if (ssrfid.available() > 0){
+uint32_t RFID_update(bool detailed_output = false) {
+    // returns tag id if tag is read. 0 otherwise.
+    int32_t tag = 0;
+    if (swSerialRFID.available() > 0) {
         bool call_extract_tag = false;
 
-        int ssvalue = ssrfid.read(); // read
-        // Serial.print("ssvalue : '");
-        // Serial.print(ssvalue);
-        // Serial.println("'");
+        int ssvalue = swSerialRFID.read(); // read
+        // Serial.print("ssvalue : ");
+        // Serial.print(ssvalue, DEC);
+        // Serial.print(" - 0x");
+        // Serial.print(ssvalue, HEX);
+        // Serial.print(" - ");
+        // Serial.print(char(ssvalue));
+        // Serial.println("");
         if (ssvalue == -1) {
             // no data was read
         } else {
             // RDM630/RDM6300 found a tag => tag incoming
-            if (ssvalue == 2) {
+            if (ssvalue == MSG_HEAD) {
                 buffer_index = 0;
-            } else if (ssvalue == 3) {
+            } else if (ssvalue == MSG_TAIL) {
                 // tag has been fully transmitted
                 // extract tag at the end of the function call
                 call_extract_tag = true;
             } else {
-                // checking for a buffer overflow (It's very unlikely that an buffer overflow comes up!)
+                // checking for a buffer overflow (It's very unlikely that
+                // an buffer overflow comes up!)
                 if (buffer_index >= BUFFER_SIZE) {
                     Serial.println("Error: Buffer overflow detected! ");
                 } else {
                     // everything is alright => copy current value to buffer
-                    buffer[buffer_index++] = ssvalue;
+                    buffer.raw[buffer_index++] = ssvalue;
                 }
             }
 
             if (call_extract_tag == true) {
-                if (buffer_index == (BUFFER_SIZE - 2) ) {
+                if (buffer_index == PAYLOAD_SIZE) {
                     tag = extract_tag(detailed_output);
-                } else { // something is wrong... start again looking for preamble (value: 2)
+                } else {
+                    // something is wrong...
+                    // start again looking for MSG_HEAD
                     buffer_index = 0;
                     return;
                 }
@@ -89,81 +135,160 @@ int32_t RFID_update(bool detailed_output = false) {
     return tag;
 }
 
-int32_t extract_tag(bool detailed_output = false) {
-    uint8_t msg_head = buffer[0];
-    uint8_t *msg_data = buffer + 1; // 10 byte => data contains 2byte version + 8byte tag
-    uint8_t *msg_data_version = msg_data;
-    uint8_t *msg_data_tag = msg_data + 2;
-    uint8_t *msg_checksum = buffer + 11; // 2 byte
-    uint8_t msg_tail = buffer[13];
+uint32_t extract_tag(bool detailed_output = false) {
+    uint32_t tagDecimal = hexstr_to_value(buffer.data.tag, DATA_TAG_SIZE);
+    uint32_t checksumDecimal = hexstr_to_value(buffer.checksum, CHECKSUM_SIZE);
 
-    int32_t tag = hexstr_to_value(msg_data_tag, DATA_TAG_SIZE);
+    // Serial.println("calculate decimal checksum: ");
+    uint32_t checksumDecimalCalculated = 0;
+    for (int i = 0; i < DATA_SIZE; i += 2) {
+        // why ever - this does not work..
+        // uint32_t val = hexstr_to_value(buffer.data.raw[i], 2);
+        // this AI generated code snippet works as expected.
+        char byteStr[3];
+        byteStr[0] = buffer.data.raw[i];
+        byteStr[1] = buffer.data.raw[i + 1];
+        byteStr[2] = '\0'; // null-terminate the string
+        uint8_t byteValue = (uint8_t)strtol(byteStr, NULL, 16);
 
-    long checksum = 0;
-    for (int i = 0; i < DATA_SIZE; i+= CHECKSUM_SIZE) {
-        long val = hexstr_to_value(msg_data + i, CHECKSUM_SIZE);
-        checksum ^= val;
+        // Serial.print("  ");
+        // Serial.print(i);
+        // Serial.print(" ");
+        // Serial.print("'");
+        // Serial.print(char(buffer.data.raw[i]));
+        // Serial.print("'");
+        // Serial.print(" → ");
+        // Serial.print(val);
+        // Serial.print(" → ");
+        // Serial.print(byteValue);
+        // Serial.println();
+        checksumDecimalCalculated ^= byteValue;
     }
-
-    long msg_checksum_int = hexstr_to_value(msg_checksum, CHECKSUM_SIZE);
 
     // print message that was sent from RDM630/RDM6300
     if (detailed_output) {
-        Serial.println("--------");
+        Serial.println("------------------------------------------");
 
-        Serial.print("Message-Head: ");
-        Serial.println(msg_head);
+        Serial.println("Buffer content:");
+        Serial.print("HEX  : ");
+        for (int i = 0; i < BUFFER_SIZE; ++i) {
+            Serial.print(buffer.raw[i]);
+            Serial.print(" ");
+        }
+        Serial.println(";");
+        Serial.print("char  : ");
+        for (int i = 0; i < BUFFER_SIZE; ++i) {
+            Serial.print(char(buffer.raw[i]));
+            Serial.print(" ");
+        }
+        Serial.println(";");
 
-        Serial.println("Message-Data (HEX): ");
+        Serial.println("------------------------------------------");
+
+        Serial.println("DATA content:");
+
+        Serial.print("ASCII: ");
+        for (int i = DATA_VERSION_SIZE; i < DATA_SIZE; ++i) {
+            Serial.print(char(buffer.raw[i]));
+            Serial.print(" ");
+        }
+        Serial.println("; char()");
+
+        Serial.print("ASCII: ");
+        for (int i = 0; i < DATA_SIZE; ++i) {
+            Serial.print(char(buffer.data.raw[i]));
+            Serial.print(".");
+        }
+        Serial.println("; char()");
+
+        Serial.println("------------------------------------------");
+        // Serial.print("hexCStrToString: ");
+        // Serial.print(hexCStrToString(buffer));
+
+        Serial.println("Message (HEX): ");
+
+        // Serial.print("  head    : ");
+        // Serial.print(char(buffer.head));
+        // Serial.println("");
+
+        Serial.print("  version : ");
         for (int i = 0; i < DATA_VERSION_SIZE; ++i) {
-            Serial.print(char(msg_data_version[i]));
-        }
-        Serial.println(" (version)");
-        for (int i = 0; i < DATA_TAG_SIZE; ++i) {
-            Serial.print(char(msg_data_tag[i]));
-        }
-        Serial.println(" (tag)");
-
-        Serial.print("Message-Checksum (HEX): ");
-        for (int i = 0; i < CHECKSUM_SIZE; ++i) {
-            Serial.print(char(msg_checksum[i]));
+            Serial.print(char(buffer.data.version[i]));
+            Serial.print(" ");
         }
         Serial.println("");
 
-        Serial.print("Message-Tail: ");
-        Serial.println(msg_tail);
+        Serial.print("  tag     : ");
+        for (int i = 0; i < DATA_TAG_SIZE; ++i) {
+            Serial.print(char(buffer.data.tag[i]));
+            Serial.print(" ");
+        }
+        Serial.println("");
 
-        Serial.println("--");
+        Serial.print("  checksum: ");
+        for (int i = 0; i < CHECKSUM_SIZE; ++i) {
+            Serial.print(char(buffer.checksum[i]));
+        }
+        Serial.println("");
+
+        // Serial.print("  tail    : ");
+        // Serial.print(char(buffer.tail));
+        // Serial.println("");
+
+        Serial.println("------------------------------------------");
 
         Serial.print("Extracted Tag: ");
-        Serial.println(tag);
+        Serial.println(tagDecimal);
 
-        Serial.print("Extracted Checksum (HEX): ");
-        Serial.print(checksum, HEX);
+        Serial.println(tagDecimalToString(tagDecimal));
 
-        if (checksum == msg_checksum_int) { // compare calculated checksum to retrieved checksum
-            Serial.print(" (OK)"); // calculated checksum corresponds to transmitted checksum!
+        Serial.println("checksum: ");
+        Serial.print("  ");
+        // compare calculated checksum to retrieved checksum
+        if (checksumDecimalCalculated == checksumDecimal) {
+            // checksum matches.
+            Serial.print("OK");
         } else {
-            Serial.print(" (NOT OK)"); // checksums do not match
+            // checksums mismatch
+            Serial.print("mismatch");
+            Serial.println();
+            Serial.print("  checksumDecimal: ");
+            Serial.println(checksumDecimal);
+            Serial.print("  checksumDecimalCalculated: ");
+            Serial.println(checksumDecimalCalculated);
         }
+        Serial.println();
 
-        Serial.println("");
-        Serial.println("--------");
+        Serial.println("------------------------------------------");
     }
 
-    return tag;
+    if (checksumDecimalCalculated != checksumDecimal) {
+        // checksum mismatch
+        // so we return 0.
+        tagDecimal = 0;
+    }
+    return tagDecimal;
 }
 
-int32_t hexstr_to_value(char *str, unsigned int length) {
+uint32_t hexstr_to_value(char *str, unsigned int length) {
     // converts a hexadecimal value (encoded as ASCII string) to a numeric value
-    char* copy = malloc((sizeof(char) * length) + 1);
+    char *copy = malloc((sizeof(char) * length) + 1);
     // the variable "copy" is a copy of the parameter "str".
     memcpy(copy, str, sizeof(char) * length);
-    // "copy" has an additional '\0' element to make sure that "str" is null-terminated.
+    // "copy" has an additional '\0' element to make sure that "str" is
+    // null-terminated.
     copy[length] = '\0';
     // strtol converts a null-terminated string to a long value
-    int32_t value = strtol(copy, NULL, 16);
+    uint32_t value = strtol(copy, NULL, 16);
     // clean up
     free(copy);
     return value;
+}
+
+String tagDecimalToString(uint32_t decimal) {
+    String decimalStr = String(decimal);
+    while (decimalStr.length() < 10) {
+        decimalStr = "0" + decimalStr;
+    }
+    return decimalStr;
 }

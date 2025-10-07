@@ -23,14 +23,14 @@ void setup() {
 }
 
 void loop() {
-  int32_t tag = RFID_update(true);
-  if (tag > -1) {
+  uint32_t tag = RFID_update();
+  if (tag > 0) {
       tag_found(tag);
   }
 }
 
 
-void tag_found(int32_t tag) {
+void tag_found(uint32_t tag) {
   Serial.print("Found Tag: ");
   Serial.print(tag);
   Serial.println();

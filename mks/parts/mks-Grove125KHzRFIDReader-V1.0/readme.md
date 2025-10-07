@@ -43,7 +43,7 @@ Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eing
 - TTL Output 9600 baudrate, 8 data bits, 1 stop bit, and no verify bit
 - Wiegand Output 26 bits Wiegand format, 1 even verify bit, 24 data bits, and 1 odd verify bit
 - Chip [`RDM630`](http://www.datarfid.com/product/showproduct.php?id=14) ([Datenblatt](https://github.com/SeeedDocument/125Khz_RFID_module-UART/blob/master/res/RDM630-Spec.pdf))
-- Lesbare Karten Typen:  EM4100/TK4200/EM4200
+- Lesbare Karten Typen:  EM4100, TK4200, EM4200
 
 
 ## library
