@@ -23,7 +23,7 @@ erzeuge neues repo auf grundlage von [mks-BauteilTemplate](https://github.com/Ma
 #### Name des Repositories
 
     - prefix
-        - Offiziellen (im MYS MKS enthalten): `mks-`
+        - Offiziell (im MYS MKS enthalten): `mks-`
         - _third-party_: `organisationsName-`
     - genaue Hersteller & Bauteil/Modul Bezeichnung
     - inkl. Versionsnummer (falls vorhanden)
@@ -35,7 +35,16 @@ erzeuge neues repo auf grundlage von [mks-BauteilTemplate](https://github.com/Ma
 
 ### content anpassen
 
-in diesem Repository - passe alle Informationen in der readme.md entsprechend an. - füge beispiel Sketche hinzu - TODO: define style - used language (easy youth friendly german) - code style .... - have a look at the arduino library guide - have a look at the circuit python library guide (its very consistent and beginner friendly too!) - ....
+in diesem Repository
+
+- passe alle Informationen in der readme.md entsprechend an.
+- füge beispiel Sketche hinzu
+- TODO: define style
+- used language (easy youth friendly german)
+- code style ....
+- have a look at the arduino library guide
+- have a look at the circuit python library guide (its very consistent and beginner friendly too!)
+- ....
 
 - merke dir die git addresse des neu erstellten repository
     - zb `https://github.com/dgreiser/kidslab-Adafruit-APDS9960-v1`
