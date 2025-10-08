@@ -10,9 +10,11 @@ import { exec } from 'child_process'
 import { Octokit } from '@octokit/core'
 import dotenv from 'dotenv'
 
-import { data as reposData } from './reposData.mjs'
+// import { data as reposData } from './reposData.mjs'
+import reposData from './reposData.json' with { type: 'json' }
 // import { readFileSync } from 'fs'
 import { resolve } from 'path'
+import { log } from 'console'
 // import { fileURLToPath } from 'url'
 // const __dirname = dirname(fileURLToPath(import.meta.url))
 // // console.log('__dirname', __dirname)
@@ -23,7 +25,8 @@ import { resolve } from 'path'
 const localRepoPath = resolve(process.cwd(), '..')
 console.log('localRepoPath', localRepoPath)
 // Load environment variables from .env file
-dotenv.config({ path: `${localRepoPath}/tools/setup_github_repos/.env` })
+// dotenv.config({ path: `${localRepoPath}/tools/setup_github_repos/.env` })
+dotenv.config({ path: `.env` })
 
 async function createRepoFromTemplate(octokit, name, description) {
     const result = await octokit.request('POST /repos/{template_owner}/{template_repo}/generate', {
@@ -41,7 +44,7 @@ async function createRepoFromTemplate(octokit, name, description) {
     return result
 }
 
-async function testOctokitRequest(octokit) {
+async function listMYSRepos(octokit) {
     try {
         const response = await octokit.request('GET /users/{username}/repos', {
             username: 'Make-Your-School',
@@ -49,7 +52,23 @@ async function testOctokitRequest(octokit) {
                 'X-GitHub-Api-Version': '2022-11-28',
             },
         })
-        console.log('Response Data:', response.data)
+        // console.log('Response Data:', response.data)
+        console.log('Response Data:')
+        // for (const repo of response.data) {
+        //     console.log(repo.name)
+        // }
+        const repoNames = response.data.map((item) => item.name)
+        // console.log("repoNames", repoNames)
+        return repoNames
+    } catch (error) {
+        console.error('Error making Octokit request:', error)
+    }
+}
+
+async function testOctokitRequest(octokit) {
+    try {
+        const { data } = await octokit.request('/user')
+        console.log('data', data)
     } catch (error) {
         console.error('Error making Octokit request:', error)
     }
@@ -89,32 +108,40 @@ async function addSubmodule(localRepoPath, submodulePath, remoteRepoUrl) {
 
 export async function main() {
     // fixed configuration
-
-    // console.log(reposData)
-
     // Octokit.js
     // https://github.com/octokit/core.js#readme
     const octokit = new Octokit({
         auth: process.env.GITHUB_PAC,
     })
 
-    // testOctokitRequest(octokit)
+    await testOctokitRequest(octokit)
+    console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    console.log("");
+    const knowRepos = await listMYSRepos(octokit);
+    console.log('knowRepos', knowRepos)
+    console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    console.log("");
+    console.log("");
+    // const submodulePathBase = './public/mks/parts/'
 
-    const submodulePathBase = './public/mks/parts/'
-
+    console.log(`found '${reposData.length}' repos to process..`)
     for (const repoData of reposData) {
-        console.log(`creating repo for '${repoData.repoName}'`)
-        // const result = await createRepoFromTemplate(
-        //     octokit,
-        //     repoData.repoName,
-        //     repoData.description,
-        // )
-        // console.log(`result`, result)
-        // // const git_url = result.git_url
-        // // console.log(`git_url`, git_url)
-        // const clone_url = result.data.clone_url
-        const clone_url = 'https://github.com/Make-Your-School/mks-Arduino-UNO_R3.git'
-        // addSubmodule(localRepoPath, submodulePathBase + repoData.repoName, clone_url)
+        if (repoData.repoName in knowRepos) {
+            console.log(`skipping '${repoData.repoName}'. already known..`)
+        } else {
+            console.log(`creating repo for '${repoData.repoName}'`)
+            const result = await createRepoFromTemplate(
+                octokit,
+                repoData.repoName,
+                repoData.description,
+            )
+            console.log(`result`, result)
+            // // const git_url = result.git_url
+            // // console.log(`git_url`, git_url)
+            const clone_url = result.data.clone_url
+            // const clone_url = 'https://github.com/Make-Your-School/mks-Arduino-UNO_R3.git'
+            addSubmodule(localRepoPath, submodulePathBase + repoData.repoName, clone_url)
+        }
     }
 }
 
