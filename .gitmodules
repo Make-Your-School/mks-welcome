@@ -31,3 +31,225 @@
 [submodule "public/mks/parts/mks-Arduino-UNO_R3"]
 	path = public/mks/parts/mks-Arduino-UNO_R3
 	url = https://github.com/Make-Your-School/mks-Arduino-UNO_R3.git
+[submodule "public/mks/parts/mks-Raspberry_Pi-4B"]
+	path = public/mks/parts/mks-Raspberry_Pi-4B
+	url = https://github.com/Make-Your-School/mks-Raspberry_Pi-4B.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_DHT11"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_DHT11
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_DHT11.git
+[submodule "public/mks/parts/mks-generic-Neopixel"]
+	path = public/mks/parts/mks-generic-Neopixel
+	url = https://github.com/Make-Your-School/mks-generic-Neopixel.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Base_Shield_V2"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Base_Shield_V2
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Base_Shield_V2.git
+[submodule "public/mks/parts/mks-Calliope-Calliope_mini"]
+	path = public/mks/parts/mks-Calliope-Calliope_mini
+	url = https://github.com/Make-Your-School/mks-Calliope-Calliope_mini.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Temperature_Sensor_V1.2"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Temperature_Sensor_V1.2
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Temperature_Sensor_V1.2.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_UV_Sensor"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_UV_Sensor
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_UV_Sensor.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Barometer_Sensor-BMP280"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Barometer_Sensor-BMP280
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Barometer_Sensor-BMP280.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Dust_Sensor"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Dust_Sensor
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Dust_Sensor.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Air_Quality_Sensor_v1.3"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Air_Quality_Sensor_v1.3
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Air_Quality_Sensor_v1.3.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Moisture_Sensor"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Moisture_Sensor
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Moisture_Sensor.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Gas_Sensor-MQ2"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Gas_Sensor-MQ2
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Gas_Sensor-MQ2.git
+[submodule "public/mks/parts/mks-Adafruit-Adafruit_ICM-20948"]
+	path = public/mks/parts/mks-Adafruit-Adafruit_ICM-20948
+	url = https://github.com/Make-Your-School/mks-Adafruit-Adafruit_ICM-20948.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Piezo_Vibration_Sensor"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Piezo_Vibration_Sensor
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Piezo_Vibration_Sensor.git
+[submodule "public/mks/parts/mks-VISHAY-TCST_2103"]
+	path = public/mks/parts/mks-VISHAY-TCST_2103
+	url = https://github.com/Make-Your-School/mks-VISHAY-TCST_2103.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Infrared_Emitter"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Infrared_Emitter
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Infrared_Emitter.git
+[submodule "public/mks/parts/mks-SenseBox-Shield"]
+	path = public/mks/parts/mks-SenseBox-Shield
+	url = https://github.com/Make-Your-School/mks-SenseBox-Shield.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Q_Touch_Sensor"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Q_Touch_Sensor
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Q_Touch_Sensor.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Infrared_Receiver"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Infrared_Receiver
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Infrared_Receiver.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Ultrasonic_Ranger"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Ultrasonic_Ranger
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Ultrasonic_Ranger.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_PIR_Motion_Sensor"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_PIR_Motion_Sensor
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_PIR_Motion_Sensor.git
+[submodule "public/mks/parts/mks-SpectraSymbol-Flex_Sensor_v1"]
+	path = public/mks/parts/mks-SpectraSymbol-Flex_Sensor_v1
+	url = https://github.com/Make-Your-School/mks-SpectraSymbol-Flex_Sensor_v1.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Rotary_Angle_Sensor"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Rotary_Angle_Sensor
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Rotary_Angle_Sensor.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Mouse_Encoder"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Mouse_Encoder
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Mouse_Encoder.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Slide_Potentiometer"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Slide_Potentiometer
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Slide_Potentiometer.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Tilt_Switch"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Tilt_Switch
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Tilt_Switch.git
+[submodule "public/mks/parts/mks-generic-Endschalter"]
+	path = public/mks/parts/mks-generic-Endschalter
+	url = https://github.com/Make-Your-School/mks-generic-Endschalter.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Electricity_Sensor"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Electricity_Sensor
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Electricity_Sensor.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Digital_Infrared_Temperature_Sensor"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Digital_Infrared_Temperature_Sensor
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Digital_Infrared_Temperature_Sensor.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Magnetic_Switch"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Magnetic_Switch
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Magnetic_Switch.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Water_Sensor"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Water_Sensor
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Water_Sensor.git
+[submodule "public/mks/parts/mks-generic-Force_Sensitive_Resistor"]
+	path = public/mks/parts/mks-generic-Force_Sensitive_Resistor
+	url = https://github.com/Make-Your-School/mks-generic-Force_Sensitive_Resistor.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Ear-clip_Heart_Rate_Sensor"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Ear-clip_Heart_Rate_Sensor
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Ear-clip_Heart_Rate_Sensor.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Gesture_v1.0"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Gesture_v1.0
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Gesture_v1.0.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_I2C_Color_Sensor"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_I2C_Color_Sensor
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_I2C_Color_Sensor.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Loudness_Sensor"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Loudness_Sensor
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Loudness_Sensor.git
+[submodule "public/mks/parts/mks-Raspberry_Pi-camera_module_v2"]
+	path = public/mks/parts/mks-Raspberry_Pi-camera_module_v2
+	url = https://github.com/Make-Your-School/mks-Raspberry_Pi-camera_module_v2.git
+[submodule "public/mks/parts/mks-generic-mico_linear_servo"]
+	path = public/mks/parts/mks-generic-mico_linear_servo
+	url = https://github.com/Make-Your-School/mks-generic-mico_linear_servo.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Light_Sensor_v1.2"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Light_Sensor_v1.2
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Light_Sensor_v1.2.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_GSR_Sensor_v1.2"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_GSR_Sensor_v1.2
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_GSR_Sensor_v1.2.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Servo"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Servo
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Servo.git
+[submodule "public/mks/parts/mks-generic-DCMotor_130"]
+	path = public/mks/parts/mks-generic-DCMotor_130
+	url = https://github.com/Make-Your-School/mks-generic-DCMotor_130.git
+[submodule "public/mks/parts/mks-generic-DCGearMotor"]
+	path = public/mks/parts/mks-generic-DCGearMotor
+	url = https://github.com/Make-Your-School/mks-generic-DCGearMotor.git
+[submodule "public/mks/parts/mks-generic-PeristalticPump"]
+	path = public/mks/parts/mks-generic-PeristalticPump
+	url = https://github.com/Make-Your-School/mks-generic-PeristalticPump.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Mini_Fan"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Mini_Fan
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Mini_Fan.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Buzzer_v1.1"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Buzzer_v1.1
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Buzzer_v1.1.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Vibration_Motor_v1.2"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Vibration_Motor_v1.2
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Vibration_Motor_v1.2.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Relay"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Relay
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Relay.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Electromagnet"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Electromagnet
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Electromagnet.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_GPS_v1.2"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_GPS_v1.2
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_GPS_v1.2.git
+[submodule "public/mks/parts/mks-generic-RFID_Tag_125KHz"]
+	path = public/mks/parts/mks-generic-RFID_Tag_125KHz
+	url = https://github.com/Make-Your-School/mks-generic-RFID_Tag_125KHz.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_UART_Wifi"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_UART_Wifi
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_UART_Wifi.git
+[submodule "public/mks/parts/mks-JoyLabz-MakeyMakey"]
+	path = public/mks/parts/mks-JoyLabz-MakeyMakey
+	url = https://github.com/Make-Your-School/mks-JoyLabz-MakeyMakey.git
+[submodule "public/mks/parts/mks-Adafruit-Membrane_3x4_matrix_keypad"]
+	path = public/mks/parts/mks-Adafruit-Membrane_3x4_matrix_keypad
+	url = https://github.com/Make-Your-School/mks-Adafruit-Membrane_3x4_matrix_keypad.git
+[submodule "public/mks/parts/mks-generic-Taster"]
+	path = public/mks/parts/mks-generic-Taster
+	url = https://github.com/Make-Your-School/mks-generic-Taster.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Button"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Button
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Button.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Switch-P"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Switch-P
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Switch-P.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_LCD_RGB_Backlight"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_LCD_RGB_Backlight
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_LCD_RGB_Backlight.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_OLED_Display_1.12inch"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_OLED_Display_1.12inch
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_OLED_Display_1.12inch.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_LED_Socket"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_LED_Socket
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_LED_Socket.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Pi_Plus"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Pi_Plus
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Pi_Plus.git
+[submodule "public/mks/parts/mks-SeeedStudio-W5500_Ethernet_Shield_v1.0"]
+	path = public/mks/parts/mks-SeeedStudio-W5500_Ethernet_Shield_v1.0
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-W5500_Ethernet_Shield_v1.0.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_I2C_Motor_Driver_V1.3"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_I2C_Motor_Driver_V1.3
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_I2C_Motor_Driver_V1.3.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Differential_Amplifier_v1.0"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Differential_Amplifier_v1.0
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Differential_Amplifier_v1.0.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Voltage_Divider"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Voltage_Divider
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Voltage_Divider.git
+[submodule "public/mks/parts/mks-SeeedStudio-SD_Card_shield_V4.0"]
+	path = public/mks/parts/mks-SeeedStudio-SD_Card_shield_V4.0
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-SD_Card_shield_V4.0.git
+[submodule "public/mks/parts/mks-DFRobot-DFR0534"]
+	path = public/mks/parts/mks-DFRobot-DFR0534
+	url = https://github.com/Make-Your-School/mks-DFRobot-DFR0534.git
+[submodule "public/mks/parts/mks-SeeedStudio-Energy_Shield"]
+	path = public/mks/parts/mks-SeeedStudio-Energy_Shield
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Energy_Shield.git
+[submodule "public/mks/parts/mks-generic-steppermotor_5VDC_32-Step_1-16_Gearing"]
+	path = public/mks/parts/mks-generic-steppermotor_5VDC_32-Step_1-16_Gearing
+	url = https://github.com/Make-Your-School/mks-generic-steppermotor_5VDC_32-Step_1-16_Gearing.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Serial_Bluetooth_v3.0"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Serial_Bluetooth_v3.0
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Serial_Bluetooth_v3.0.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_Touch_Sensor"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_Touch_Sensor
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Touch_Sensor.git
+[submodule "public/mks/parts/mks-generic-speaker_4Ohm3W"]
+	path = public/mks/parts/mks-generic-speaker_4Ohm3W
+	url = https://github.com/Make-Your-School/mks-generic-speaker_4Ohm3W.git
+[submodule "public/mks/parts/mks-SeeedStudio-Grove_IR_Distance_Interrupter_v1.2"]
+	path = public/mks/parts/mks-SeeedStudio-Grove_IR_Distance_Interrupter_v1.2
+	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_IR_Distance_Interrupter_v1.2.git
