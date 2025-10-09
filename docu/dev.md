@@ -59,3 +59,24 @@ then there will be a _release_ that merges this into main and with this merge tr
 ### Customize the configuration
 
 See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+
+
+### git submodules magic
+for your locally:
+```
+[remote "origin"]
+	url = http://github.com/
+```
+replace with
+```
+[remote "origin"]
+	url = git@github.com:
+```
+
+```bash
+git submodule foreach "(git checkout main; git push)&"
+```
+
+```bash
+git submodule foreach "(git add .; git commit -a -m 'bulk-update readme.md')&"
+```

@@ -6,12 +6,10 @@ import path from 'path'
 import reposData from './reposData.json' with { type: 'json' }
 const reposDataFile = './reposData.json'
 
-const submodule_pathBase = './public/mks/parts/'
-
-async function buildMarkdownFileContent(repoData) {
+async function buildFrontmatter(repoData) {
     let output = '---\n'
 
-    Object.entries(post.frontmatter).forEach(([key, value]) => {
+    Object.entries(repoData.frontmatter).forEach(([key, value]) => {
         let outputValue
         if (Array.isArray(value)) {
             if (value.length > 0) {
@@ -21,16 +19,16 @@ async function buildMarkdownFileContent(repoData) {
         } else if (Number.isInteger(value)) {
             // output unquoted
             outputValue = value.toString()
-        } else if (value instanceof luxon.DateTime) {
-            if (shared.config.dateFormat) {
-                outputValue = value.toFormat(shared.config.dateFormat)
-            } else {
-                outputValue = shared.config.includeTime ? value.toISO() : value.toISODate()
-            }
+        // } else if (value instanceof luxon.DateTime) {
+        //     if (shared.config.dateFormat) {
+        //         outputValue = value.toFormat(shared.config.dateFormat)
+        //     } else {
+        //         outputValue = shared.config.includeTime ? value.toISO() : value.toISODate()
+        //     }
 
-            if (shared.config.quoteDate) {
-                outputValue = `"${outputValue}"`
-            }
+        //     if (shared.config.quoteDate) {
+        //         outputValue = `"${outputValue}"`
+        //     }
         } else if (typeof value === 'boolean') {
             // output unquoted
             outputValue = value.toString()
@@ -47,8 +45,30 @@ async function buildMarkdownFileContent(repoData) {
         }
     })
 
-    output += `---\n\n${post.content}\n`
+    output += `---\n`
     return output
+}
+
+async function buildMarkdownFileContent(repoData) {
+    const content_frontmatter = await buildFrontmatter(repoData)
+    const content_description = repoData.content_description
+    const content_infolist = repoData.content_infolist
+
+    const content = `
+${content_frontmatter}
+
+# ${repoData.frontmatter.title}
+
+![${repoData.frontmatter.title}](${repoData.frontmatter.coverImage})
+
+## Beschreibung
+${content_description}
+
+<!-- infolist -->
+${content_infolist}
+
+`
+    return content1
 }
 
 async function updateMarkdownFile(repoData) {
@@ -60,33 +80,12 @@ async function updateMarkdownFile(repoData) {
     // fs.writeFileSync(filepath, md)
 }
 
-async function createExample(repoData) {
-    const exampleName = repoData
-    const filepath = path.join(repoData.submodule_path, '${}')
-    await fs.promises.mkdir(filepath, { recursive: true })
-    console.log('filepath', filepath)
-    // TODO create example subdirectory
-    let example_content = repoData.example_code
-    if (!example_content) {
-        example_content = '// Noch nicht vorhanden.'
-    }
-    fs.writeFileSync(filepath, example_content)
-}
-
-async function removeDefaultExample(repoData) {
-    const filepath = path.join(repoData.submodule_path, 'BauteilTemplate_minimal')
-    // console.log('filepath', filepath)
-    fs.rm(filepath, { recursive: true, force: true })
-}
-
 export async function main() {
     console.log(`found '${reposData.length}' repos to process..`)
-    // const repoData = reposData[0]; {
+    const repoData = reposData[0]; {
     // for (const repoData of reposData) {
-        // repoData.submodule_path = path.join(submodule_pathBase, repoData.repo_name)
-    //     repoData.submodule_path = submodule_pathBase + repo_name
-    //     await updateMarkdownFile(repoData)
-    // }
+        await updateMarkdownFile(repoData)
+    }
 }
 
 main()
