@@ -33,6 +33,7 @@ async function prepareFrontmatter(repoData) {
     repoData.frontmatter.repo_prefix = repoData.repo_prefix
     repoData.frontmatter.repo_manufacture = repoData.repo_manufacture
     repoData.frontmatter.repo_part = repoData.repo_part
+    repoData.frontmatter.tags.push(repoData.frontmatter.material_type)
 }
 
 export async function main() {

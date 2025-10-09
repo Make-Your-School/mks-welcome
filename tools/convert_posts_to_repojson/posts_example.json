@@ -72,7 +72,7 @@
         "slug": "led-streifen",
         "meta": {
             "material_number": "65",
-            "material_type": "9",
+            "material_type": "output",,
             "material_short_description": "Adafruit NeoPixel Digital RGB LED Strip - White 60 LED"
         },
         "coverImageId": "863",
@@ -84,7 +84,7 @@
             "tags": [],
             "coverImage": "65_led-streifen.jpg",
             "material_number": "65",
-            "material_type": "9",
+            "material_type": "output",,
             "material_short_descr": "Adafruit NeoPixel Digital RGB LED Strip - White 60 LED"
         }
     }

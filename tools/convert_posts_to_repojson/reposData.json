@@ -178,7 +178,7 @@
         "date": "2018-08-28T23:41:38.000Z",
         "meta": {
             "material_number": "65",
-            "material_type": "9",
+            "material_type": "output",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -211,7 +211,7 @@
             "tags": [],
             "coverImage": "65_led-streifen.jpg",
             "material_number": "65",
-            "material_type": "9",
+            "material_type": "output",,
             "material_short_descr": "Adafruit NeoPixel Digital RGB LED Strip - White 60 LED"
         },
         "repo_name": "mks-generic-Neopixel",
@@ -229,7 +229,7 @@
         "date": "2018-08-28T23:43:51.000Z",
         "meta": {
             "material_number": "66",
-            "material_type": "41",
+            "material_type": "shield",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -258,7 +258,7 @@
             "tags": [],
             "coverImage": "66_grove_shield_arduino.jpg",
             "material_number": "66",
-            "material_type": "41",
+            "material_type": "shield",,
             "material_short_descr": "Seeed Studio Grove Base Shield v2"
         },
         "repo_name": "mks-SeeedStudio-Grove_Base_Shield_V2",
@@ -896,7 +896,7 @@
         "date": "2018-10-01T13:29:36.000Z",
         "meta": {
             "material_number": "15",
-            "material_type": "9",
+            "material_type": "output",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -930,7 +930,7 @@
             "tags": [],
             "coverImage": "15_infrarot_emitter.jpg",
             "material_number": "15",
-            "material_type": "9",
+            "material_type": "output",,
             "material_short_descr": "Seeed Studio Grove – Infrared Emitter"
         },
         "manufacture_url": "https://www.seeedstudio.com/",
@@ -950,7 +950,7 @@
         "date": "2018-10-01T15:02:45.000Z",
         "meta": {
             "material_number": "68",
-            "material_type": "41",
+            "material_type": "shield",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -979,7 +979,7 @@
             "tags": [],
             "coverImage": "68_sensebox_shield_arduino.jpg",
             "material_number": "68",
-            "material_type": "41",
+            "material_type": "shield",,
             "material_short_descr": "SenseBox – Home Shield"
         },
         "manufacture_url": "https://sensebox.de/",
@@ -2142,7 +2142,7 @@
         "date": "2018-10-01T14:01:22.000Z",
         "meta": {
             "material_number": "39",
-            "material_type": "9",
+            "material_type": "output",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2194,7 +2194,7 @@
             "tags": [],
             "coverImage": "39_linearservomotor.jpg",
             "material_number": "39",
-            "material_type": "9",
+            "material_type": "output",,
             "material_short_descr": "Micro-Servo S 15 linear Sol Expert S15JST 0.5 s"
         },
         "repo_name": "mks-generic-mico_linear_servo",
@@ -2324,7 +2324,7 @@
         "date": "2018-10-01T14:02:00.000Z",
         "meta": {
             "material_number": "38",
-            "material_type": "9",
+            "material_type": "output",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2358,7 +2358,7 @@
             "tags": [],
             "coverImage": "38_linearservomotor.jpg",
             "material_number": "38",
-            "material_type": "9",
+            "material_type": "output",,
             "material_short_descr": "Seeed Studio Grove – Servo"
         },
         "manufacture_url": "https://www.seeedstudio.com/",
@@ -2379,7 +2379,7 @@
         "date": "2018-10-01T14:21:00.000Z",
         "meta": {
             "material_number": "41",
-            "material_type": "9",
+            "material_type": "output",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2413,7 +2413,7 @@
             "tags": [],
             "coverImage": "41_gleichstrommotor.jpg",
             "material_number": "41",
-            "material_type": "9",
+            "material_type": "output",,
             "material_short_descr": "DC Toy/Hobby Motor – 130 Size"
         },
         "repo_name": "mks-generic-DCMotor_130",
@@ -2431,7 +2431,7 @@
         "date": "2018-10-01T14:21:43.000Z",
         "meta": {
             "material_number": "42",
-            "material_type": "9",
+            "material_type": "output",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2460,7 +2460,7 @@
             "tags": [],
             "coverImage": "42_gleichstrommotor_mit_getriebe.jpg",
             "material_number": "42",
-            "material_type": "9",
+            "material_type": "output",,
             "material_short_descr": "[Dagu DC Gear Motor Paar – 90 Degree Shaft]\r\n[380:1 Micro Metal Gearmotor HPCB 6V]"
         },
         "repo_name": "mks-generic-DCGearMotor",
@@ -2478,7 +2478,7 @@
         "date": "2018-10-01T14:24:30.000Z",
         "meta": {
             "material_number": "43",
-            "material_type": "9",
+            "material_type": "output",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2510,7 +2510,7 @@
             "tags": [],
             "coverImage": "43_peristaltikpumpe.jpg",
             "material_number": "43",
-            "material_type": "9",
+            "material_type": "output",,
             "material_short_descr": "Peristaltic Liquid Pump with Silicone Tubing"
         },
         "product_url": "https://www.adafruit.com/product/3910",
@@ -2529,7 +2529,7 @@
         "date": "2018-10-01T14:25:04.000Z",
         "meta": {
             "material_number": "44",
-            "material_type": "9",
+            "material_type": "output",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2558,7 +2558,7 @@
             "tags": [],
             "coverImage": "44_mini-ventilator.jpg",
             "material_number": "44",
-            "material_type": "9",
+            "material_type": "output",,
             "material_short_descr": "Seeed Studio Grove – Mini Fan"
         },
         "manufacture_url": "https://www.seeedstudio.com/",
@@ -2579,7 +2579,7 @@
         "date": "2018-10-01T14:25:41.000Z",
         "meta": {
             "material_number": "45",
-            "material_type": "9",
+            "material_type": "output",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2613,7 +2613,7 @@
             "tags": [],
             "coverImage": "45_summer.jpg",
             "material_number": "45",
-            "material_type": "9",
+            "material_type": "output",,
             "material_short_descr": "Seeed Studio Grove – Buzzer"
         },
         "manufacture_url": "https://www.seeedstudio.com/",
@@ -2634,7 +2634,7 @@
         "date": "2018-10-01T14:26:43.000Z",
         "meta": {
             "material_number": "47",
-            "material_type": "9",
+            "material_type": "output",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2668,7 +2668,7 @@
             "tags": [],
             "coverImage": "47_vibratonsmotor.jpg",
             "material_number": "47",
-            "material_type": "9",
+            "material_type": "output",,
             "material_short_descr": "Seeed Studio Grove – Vibration Motor"
         },
         "manufacture_url": "https://www.seeedstudio.com/",
@@ -2689,7 +2689,7 @@
         "date": "2018-10-01T14:28:00.000Z",
         "meta": {
             "material_number": "48",
-            "material_type": "9",
+            "material_type": "output",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2723,7 +2723,7 @@
             "tags": [],
             "coverImage": "48_relaiskarte.jpg",
             "material_number": "48",
-            "material_type": "9",
+            "material_type": "output",,
             "material_short_descr": "Seeed Studio Grove – Relay"
         },
         "manufacture_url": "https://www.seeedstudio.com/",
@@ -2744,7 +2744,7 @@
         "date": "2018-10-01T14:29:58.000Z",
         "meta": {
             "material_number": "49",
-            "material_type": "9",
+            "material_type": "output",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2778,7 +2778,7 @@
             "tags": [],
             "coverImage": "49_elektromagnet.jpg",
             "material_number": "49",
-            "material_type": "9",
+            "material_type": "output",,
             "material_short_descr": "Seeed Studio Grove – Electromagnet"
         },
         "manufacture_url": "https://www.seeedstudio.com/",
@@ -3272,7 +3272,7 @@
         "date": "2018-10-01T15:00:27.000Z",
         "meta": {
             "material_number": "62",
-            "material_type": "9",
+            "material_type": "output",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3306,7 +3306,7 @@
             "tags": [],
             "coverImage": "62_lcd-bildschirm.jpg",
             "material_number": "62",
-            "material_type": "9",
+            "material_type": "output",,
             "material_short_descr": "Seeed Studio Grove – LCD RGB Backlight"
         },
         "manufacture_url": "https://www.seeedstudio.com/",
@@ -3327,7 +3327,7 @@
         "date": "2018-10-01T15:01:02.000Z",
         "meta": {
             "material_number": "63",
-            "material_type": "9",
+            "material_type": "output",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3361,7 +3361,7 @@
             "tags": [],
             "coverImage": "63_oled_bildschirm.jpg",
             "material_number": "63",
-            "material_type": "9",
+            "material_type": "output",,
             "material_short_descr": "Seeed Studio Grove – OLED Display 1.12\""
         },
         "manufacture_url": "https://www.seeedstudio.com/",
@@ -3382,7 +3382,7 @@
         "date": "2018-10-01T15:01:56.000Z",
         "meta": {
             "material_number": "64",
-            "material_type": "9",
+            "material_type": "output",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3416,7 +3416,7 @@
             "tags": [],
             "coverImage": "64_led-sockel.jpg",
             "material_number": "64",
-            "material_type": "9",
+            "material_type": "output",,
             "material_short_descr": "Seeed Studio Grove – White LED"
         },
         "manufacture_url": "https://www.seeedstudio.com/",
@@ -3436,7 +3436,7 @@
         "date": "2018-10-01T15:03:37.000Z",
         "meta": {
             "material_number": "67",
-            "material_type": "41",
+            "material_type": "shield",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3465,7 +3465,7 @@
             "tags": [],
             "coverImage": "67_grove_shield_raspberrypi.jpg",
             "material_number": "67",
-            "material_type": "41",
+            "material_type": "shield",,
             "material_short_descr": "GrovePi+"
         },
         "manufacture_url": "https://www.seeedstudio.com/",
@@ -3485,7 +3485,7 @@
         "date": "2018-10-01T15:04:12.000Z",
         "meta": {
             "material_number": "69",
-            "material_type": "41",
+            "material_type": "shield",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3514,7 +3514,7 @@
             "tags": [],
             "coverImage": "69_ethernet_shield.jpg",
             "material_number": "69",
-            "material_type": "41",
+            "material_type": "shield",,
             "material_short_descr": "Seeed Studio W5500 Ethernet Shield v1.0"
         },
         "manufacture_url": "https://www.seeedstudio.com/",
@@ -3535,7 +3535,7 @@
         "date": "2018-10-01T15:07:22.000Z",
         "meta": {
             "material_number": "70",
-            "material_type": "9",
+            "material_type": "output",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3569,7 +3569,7 @@
             "tags": [],
             "coverImage": "70_motortreiber.jpg",
             "material_number": "70",
-            "material_type": "9",
+            "material_type": "output",,
             "material_short_descr": "Seeed Studio Grove – I2C Motor Driver V1.3"
         },
         "manufacture_url": "https://www.seeedstudio.com/",
@@ -3694,7 +3694,7 @@
         "date": "2018-10-01T15:19:28.000Z",
         "meta": {
             "material_number": "73",
-            "material_type": "41",
+            "material_type": "shield",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3723,7 +3723,7 @@
             "tags": [],
             "coverImage": "73_sd-karten_shield.jpg",
             "material_number": "73",
-            "material_type": "41",
+            "material_type": "shield",,
             "material_short_descr": "Seeed Studio Grove – SD Card Shield V4"
         },
         "manufacture_url": "https://www.seeedstudio.com/",
@@ -3744,7 +3744,7 @@
         "date": "2018-10-01T15:20:08.000Z",
         "meta": {
             "material_number": "68",
-            "material_type": "9",
+            "material_type": "output",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3780,7 +3780,7 @@
             "tags": [],
             "coverImage": "68_mp3-modul_rz.jpg",
             "material_number": "68",
-            "material_type": "9",
+            "material_type": "output",,
             "material_short_descr": "DFR0534"
         },
         "product_url": "https://wiki.dfrobot.com/Voice_Module_SKU__DFR0534#target_0",
@@ -3800,7 +3800,7 @@
         "date": "2018-10-01T15:22:30.000Z",
         "meta": {
             "material_number": "74",
-            "material_type": "41",
+            "material_type": "shield",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3829,7 +3829,7 @@
             "tags": [],
             "coverImage": "74_energie_shield.jpg",
             "material_number": "74",
-            "material_type": "41",
+            "material_type": "shield",,
             "material_short_descr": "Seeed Studio Energy Shield"
         },
         "manufacture_url": "https://www.seeedstudio.com/",
@@ -3850,7 +3850,7 @@
         "date": "2018-10-02T07:00:52.000Z",
         "meta": {
             "material_number": "40",
-            "material_type": "9",
+            "material_type": "output",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3884,7 +3884,7 @@
             "tags": [],
             "coverImage": "40_schrittmotor.jpg",
             "material_number": "40",
-            "material_type": "9",
+            "material_type": "output",,
             "material_short_descr": "Small reduction stepper Motor"
         },
         "repo_name": "mks-generic-steppermotor_5VDC_32-Step_1-16_Gearing",
@@ -4013,7 +4013,7 @@
         "date": "2018-10-02T07:03:42.000Z",
         "meta": {
             "material_number": "46",
-            "material_type": "9",
+            "material_type": "output",,
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -4045,7 +4045,7 @@
             "tags": [],
             "coverImage": "46_lautsprecher_rz.jpg",
             "material_number": "46",
-            "material_type": "9",
+            "material_type": "output",,
             "material_short_descr": "Mono Enclosed Speaker with Plain Wires - 3W 4 Ohm Lautsprecher"
         },
         "repo_name": "mks-generic-speaker_4Ohm3W",

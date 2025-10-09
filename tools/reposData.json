@@ -42,7 +42,9 @@
             "title": "Arduino UNO",
             "date": "2018-08-16T19:55:36.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "controller"
+            ],
             "coverImage": "1_arduino.jpg",
             "material_number": "1",
             "material_type": "controller",
@@ -111,7 +113,9 @@
             "title": "Raspberry Pi 4 B",
             "date": "2018-08-16T19:58:50.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "controller"
+            ],
             "coverImage": "3_raspberrypi4b.jpg",
             "material_number": "3",
             "material_type": "controller",
@@ -179,7 +183,9 @@
             "title": "Temperatur- und Luft­feuchtigkeits&amp;shy;sensor",
             "date": "2018-08-28T23:39:41.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "5_temperatur-und-luftfeuchtigkeitssensor.jpg",
             "material_number": "5",
             "material_type": "sensor",
@@ -215,7 +221,7 @@
         "date": "2018-08-28T23:41:38.000Z",
         "meta": {
             "material_number": "65",
-            "material_type": "9",
+            "material_type": "output",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -245,10 +251,12 @@
             "title": "LED-Streifen",
             "date": "2018-08-28T23:41:38.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "output"
+            ],
             "coverImage": "65_led-streifen.jpg",
             "material_number": "65",
-            "material_type": "9",
+            "material_type": "output",
             "material_short_descr": "Adafruit NeoPixel Digital RGB LED Strip - White 60 LED",
             "manufacture": "Generic",
             "repo_name": "mks-generic-Neopixel",
@@ -275,7 +283,7 @@
         "date": "2018-08-28T23:43:51.000Z",
         "meta": {
             "material_number": "66",
-            "material_type": "41",
+            "material_type": "shield",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -301,10 +309,12 @@
             "title": "Grove Shield (Arduino)",
             "date": "2018-08-28T23:43:51.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "shield"
+            ],
             "coverImage": "66_grove_shield_arduino.jpg",
             "material_number": "66",
-            "material_type": "41",
+            "material_type": "shield",
             "material_short_descr": "Seeed Studio Grove Base Shield v2",
             "manufacture": "Seeed Studio",
             "manufacture_url": "https://www.seeedstudio.com/",
@@ -363,7 +373,9 @@
             "title": "Calliope mini",
             "date": "2018-08-28T23:44:25.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "controller"
+            ],
             "coverImage": "2_calliope_mini.jpg",
             "material_number": "2",
             "material_type": "controller",
@@ -432,7 +444,9 @@
             "title": "Temperatursensor",
             "date": "2018-08-28T23:44:26.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "4_temperatursensor.jpg",
             "material_number": "4",
             "material_type": "sensor",
@@ -501,7 +515,9 @@
             "title": "UV-Lichtsensor",
             "date": "2018-10-01T12:49:38.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "mys_mk_6.jpg",
             "material_number": "6",
             "material_type": "sensor",
@@ -581,7 +597,9 @@
             "title": "Barometer und Temperatur Sensor",
             "date": "2018-10-01T12:52:13.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "7_barometer-und-temperatursensor.jpg",
             "material_number": "7",
             "material_type": "sensor",
@@ -649,7 +667,9 @@
             "title": "Feinstaubsensor",
             "date": "2018-10-01T12:55:53.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "8_feinstaubsensor.jpg",
             "material_number": "8",
             "material_type": "sensor",
@@ -715,7 +735,9 @@
             "title": "Luftqualitätssensor",
             "date": "2018-10-01T12:56:41.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "9_luftqualitaetssensor.jpg",
             "material_number": "9",
             "material_type": "sensor",
@@ -783,7 +805,9 @@
             "title": "Bodenfeuchtigkeitssensor",
             "date": "2018-10-01T12:57:44.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "10_bodenfeuchtigkeitssensor.jpg",
             "material_number": "10",
             "material_type": "sensor",
@@ -849,7 +873,9 @@
             "title": "Gassensor",
             "date": "2018-10-01T13:25:00.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "11_gassensor.jpg",
             "material_number": "11",
             "material_type": "sensor",
@@ -917,7 +943,9 @@
             "title": "Inertialsensor",
             "date": "2018-10-01T13:25:56.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "12_intertialsensor_rz.jpg",
             "material_number": "12",
             "material_type": "sensor",
@@ -983,7 +1011,9 @@
             "title": "Vibrationssensor",
             "date": "2018-10-01T13:28:09.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "13_vibrationssensor.jpg",
             "material_number": "13",
             "material_type": "sensor",
@@ -1051,7 +1081,9 @@
             "title": "Lichtschranke",
             "date": "2018-10-01T13:28:21.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "14_lichtschranke.jpg",
             "material_number": "14",
             "material_type": "sensor",
@@ -1086,7 +1118,7 @@
         "date": "2018-10-01T13:29:36.000Z",
         "meta": {
             "material_number": "15",
-            "material_type": "9",
+            "material_type": "output",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1117,10 +1149,12 @@
             "title": "Infrarot-Emitter",
             "date": "2018-10-01T13:29:36.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "output"
+            ],
             "coverImage": "15_infrarot_emitter.jpg",
             "material_number": "15",
-            "material_type": "9",
+            "material_type": "output",
             "material_short_descr": "Seeed Studio Grove – Infrared Emitter",
             "manufacture": "Seeed Studio",
             "manufacture_url": "https://www.seeedstudio.com/",
@@ -1153,7 +1187,7 @@
         "date": "2018-10-01T15:02:45.000Z",
         "meta": {
             "material_number": "68",
-            "material_type": "41",
+            "material_type": "shield",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1179,10 +1213,12 @@
             "title": "SenseBox Shield (Arduino)",
             "date": "2018-10-01T15:02:45.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "shield"
+            ],
             "coverImage": "68_sensebox_shield_arduino.jpg",
             "material_number": "68",
-            "material_type": "41",
+            "material_type": "shield",
             "material_short_descr": "SenseBox – Home Shield",
             "manufacture": "Reedu GmbH & Co. KG",
             "manufacture_url": "https://sensebox.de/",
@@ -1237,7 +1273,9 @@
             "title": "Berührungssensor",
             "date": "2018-10-02T07:02:32.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "57_beruehrungssensor_qtouch.jpg",
             "material_number": "57",
             "material_type": "sensor",
@@ -1305,7 +1343,9 @@
             "title": "Infrarot-Empfänger",
             "date": "2018-10-01T13:45:07.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "16_infrarot_empfaenger.jpg",
             "material_number": "16",
             "material_type": "sensor",
@@ -1371,7 +1411,9 @@
             "title": "Ultraschall-Entfernungssensor",
             "date": "2018-10-01T13:31:08.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "17_ultraschallentfernungssensor.jpg",
             "material_number": "17",
             "material_type": "sensor",
@@ -1439,7 +1481,9 @@
             "title": "Bewegungsmelder",
             "date": "2018-10-01T13:35:14.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "19_bewegungsmelder.jpg",
             "material_number": "19",
             "material_type": "sensor",
@@ -1505,7 +1549,9 @@
             "title": "Biegesensor",
             "date": "2018-10-01T13:36:00.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "20_biegesensor.jpg",
             "material_number": "20",
             "material_type": "sensor",
@@ -1592,7 +1638,9 @@
             "title": "Drehwinkelsensor",
             "date": "2018-10-01T13:37:36.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "21_drehwinkelsensor.jpg",
             "material_number": "21",
             "material_type": "sensor",
@@ -1658,7 +1706,9 @@
             "title": "Drehgeschwindigkeitssensor",
             "date": "2018-10-01T13:41:01.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "22_drehgeschwindigkeitssensor.jpg",
             "material_number": "22",
             "material_type": "sensor",
@@ -1726,7 +1776,9 @@
             "title": "Schiebepotentiometer",
             "date": "2018-10-01T13:41:55.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "23_schiebepotentiometer.jpg",
             "material_number": "23",
             "material_type": "sensor",
@@ -1792,7 +1844,9 @@
             "title": "Kippschalter",
             "date": "2018-10-01T13:42:53.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "24_kippschalter.jpg",
             "material_number": "24",
             "material_type": "sensor",
@@ -1863,7 +1917,9 @@
             "title": "Endschalter/Anschlag",
             "date": "2018-10-01T13:43:35.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "mys_mk_25.jpg",
             "material_number": "25",
             "material_type": "sensor",
@@ -1926,7 +1982,9 @@
             "title": "Stromsensor",
             "date": "2018-10-01T13:44:08.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "26_stromsensor.jpg",
             "material_number": "26",
             "material_type": "sensor",
@@ -1994,7 +2052,9 @@
             "title": "Infrarot-Temperatursensor",
             "date": "2018-10-01T13:46:26.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "27_infrarot_temperatursensor.jpg",
             "material_number": "27",
             "material_type": "sensor",
@@ -2060,7 +2120,9 @@
             "title": "Magnetschalter",
             "date": "2018-10-01T13:49:51.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "28_magnetschalter.jpg",
             "material_number": "28",
             "material_type": "sensor",
@@ -2128,7 +2190,9 @@
             "title": "Wasserspiegelsensor",
             "date": "2018-10-01T13:50:50.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "29_wasserspiegelsensor.jpg",
             "material_number": "29",
             "material_type": "sensor",
@@ -2194,7 +2258,9 @@
             "title": "Drucksensor",
             "date": "2018-10-01T13:54:33.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "31_drucksensor.jpg",
             "material_number": "31",
             "material_type": "sensor",
@@ -2259,7 +2325,9 @@
             "title": "Pulssensor",
             "date": "2018-10-01T13:55:21.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "mys_mk_32.jpg",
             "material_number": "32",
             "material_type": "sensor",
@@ -2325,7 +2393,9 @@
             "title": "Gestenerkennung",
             "date": "2018-10-01T13:56:33.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "34_gestenerkennung.jpg",
             "material_number": "34",
             "material_type": "sensor",
@@ -2393,7 +2463,9 @@
             "title": "Farbsensor",
             "date": "2018-10-01T13:57:05.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "35_farbsensor.jpg",
             "material_number": "35",
             "material_type": "sensor",
@@ -2459,7 +2531,9 @@
             "title": "Lautstärkesensor",
             "date": "2018-10-01T13:57:42.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "36_lautstaerkesensor.jpg",
             "material_number": "36",
             "material_type": "sensor",
@@ -2521,7 +2595,9 @@
             "title": "Kamera",
             "date": "2018-10-01T13:58:23.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "37_kamera.jpg",
             "material_number": "37",
             "material_type": "sensor",
@@ -2556,7 +2632,7 @@
         "date": "2018-10-01T14:01:22.000Z",
         "meta": {
             "material_number": "39",
-            "material_type": "9",
+            "material_type": "output",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2605,10 +2681,12 @@
             "title": "Linearservomotor",
             "date": "2018-10-01T14:01:22.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "output"
+            ],
             "coverImage": "39_linearservomotor.jpg",
             "material_number": "39",
-            "material_type": "9",
+            "material_type": "output",
             "material_short_descr": "Micro-Servo S 15 linear Sol Expert S15JST 0.5 s",
             "manufacture": "Generic",
             "repo_name": "mks-generic-mico_linear_servo",
@@ -2671,7 +2749,9 @@
             "title": "Helligkeitssensor",
             "date": "2018-10-01T14:15:12.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "30_helligkeitssensor.jpg",
             "material_number": "30",
             "material_type": "sensor",
@@ -2737,7 +2817,9 @@
             "title": "Hautleitwertsensor",
             "date": "2018-10-01T14:14:11.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "33_hautleitwertsensor.jpg",
             "material_number": "33",
             "material_type": "sensor",
@@ -2774,7 +2856,7 @@
         "date": "2018-10-01T14:02:00.000Z",
         "meta": {
             "material_number": "38",
-            "material_type": "9",
+            "material_type": "output",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2805,10 +2887,12 @@
             "title": "Servomotor",
             "date": "2018-10-01T14:02:00.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "output"
+            ],
             "coverImage": "38_linearservomotor.jpg",
             "material_number": "38",
-            "material_type": "9",
+            "material_type": "output",
             "material_short_descr": "Seeed Studio Grove – Servo",
             "manufacture": "Seeed Studio",
             "manufacture_url": "https://www.seeedstudio.com/",
@@ -2840,7 +2924,7 @@
         "date": "2018-10-01T14:21:00.000Z",
         "meta": {
             "material_number": "41",
-            "material_type": "9",
+            "material_type": "output",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2871,10 +2955,12 @@
             "title": "Gleichstrommotor",
             "date": "2018-10-01T14:21:00.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "output"
+            ],
             "coverImage": "41_gleichstrommotor.jpg",
             "material_number": "41",
-            "material_type": "9",
+            "material_type": "output",
             "material_short_descr": "DC Toy/Hobby Motor – 130 Size",
             "manufacture": "Generic",
             "repo_name": "mks-generic-DCMotor_130",
@@ -2903,7 +2989,7 @@
         "date": "2018-10-01T14:21:43.000Z",
         "meta": {
             "material_number": "42",
-            "material_type": "9",
+            "material_type": "output",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2929,10 +3015,12 @@
             "title": "Gleichstrommotor mit Getriebe",
             "date": "2018-10-01T14:21:43.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "output"
+            ],
             "coverImage": "42_gleichstrommotor_mit_getriebe.jpg",
             "material_number": "42",
-            "material_type": "9",
+            "material_type": "output",
             "material_short_descr": "[Dagu DC Gear Motor Paar – 90 Degree Shaft]\r\n[380:1 Micro Metal Gearmotor HPCB 6V]",
             "manufacture": "Generic",
             "repo_name": "mks-generic-DCGearMotor",
@@ -2959,7 +3047,7 @@
         "date": "2018-10-01T14:24:30.000Z",
         "meta": {
             "material_number": "43",
-            "material_type": "9",
+            "material_type": "output",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2988,10 +3076,12 @@
             "title": "Peristaltikpumpe",
             "date": "2018-10-01T14:24:30.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "output"
+            ],
             "coverImage": "43_peristaltikpumpe.jpg",
             "material_number": "43",
-            "material_type": "9",
+            "material_type": "output",
             "material_short_descr": "Peristaltic Liquid Pump with Silicone Tubing",
             "manufacture": "Generic",
             "repo_name": "mks-generic-PeristalticPump",
@@ -3022,7 +3112,7 @@
         "date": "2018-10-01T14:25:04.000Z",
         "meta": {
             "material_number": "44",
-            "material_type": "9",
+            "material_type": "output",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3048,10 +3138,12 @@
             "title": "Mini-Ventilator",
             "date": "2018-10-01T14:25:04.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "output"
+            ],
             "coverImage": "44_mini-ventilator.jpg",
             "material_number": "44",
-            "material_type": "9",
+            "material_type": "output",
             "material_short_descr": "Seeed Studio Grove – Mini Fan",
             "manufacture": "Seeed Studio",
             "manufacture_url": "https://www.seeedstudio.com/",
@@ -3083,7 +3175,7 @@
         "date": "2018-10-01T14:25:41.000Z",
         "meta": {
             "material_number": "45",
-            "material_type": "9",
+            "material_type": "output",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3114,10 +3206,12 @@
             "title": "Summer",
             "date": "2018-10-01T14:25:41.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "output"
+            ],
             "coverImage": "45_summer.jpg",
             "material_number": "45",
-            "material_type": "9",
+            "material_type": "output",
             "material_short_descr": "Seeed Studio Grove – Buzzer",
             "manufacture": "Seeed Studio",
             "manufacture_url": "https://www.seeedstudio.com/",
@@ -3151,7 +3245,7 @@
         "date": "2018-10-01T14:26:43.000Z",
         "meta": {
             "material_number": "47",
-            "material_type": "9",
+            "material_type": "output",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3182,10 +3276,12 @@
             "title": "Vibrationsmotor",
             "date": "2018-10-01T14:26:43.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "output"
+            ],
             "coverImage": "47_vibratonsmotor.jpg",
             "material_number": "47",
-            "material_type": "9",
+            "material_type": "output",
             "material_short_descr": "Seeed Studio Grove – Vibration Motor",
             "manufacture": "Seeed Studio",
             "manufacture_url": "https://www.seeedstudio.com/",
@@ -3217,7 +3313,7 @@
         "date": "2018-10-01T14:28:00.000Z",
         "meta": {
             "material_number": "48",
-            "material_type": "9",
+            "material_type": "output",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3248,10 +3344,12 @@
             "title": "Relaiskarte",
             "date": "2018-10-01T14:28:00.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "output"
+            ],
             "coverImage": "48_relaiskarte.jpg",
             "material_number": "48",
-            "material_type": "9",
+            "material_type": "output",
             "material_short_descr": "Seeed Studio Grove – Relay",
             "manufacture": "Seeed Studio",
             "manufacture_url": "https://www.seeedstudio.com/",
@@ -3285,7 +3383,7 @@
         "date": "2018-10-01T14:29:58.000Z",
         "meta": {
             "material_number": "49",
-            "material_type": "9",
+            "material_type": "output",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3316,10 +3414,12 @@
             "title": "Elektromagnet",
             "date": "2018-10-01T14:29:58.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "output"
+            ],
             "coverImage": "49_elektromagnet.jpg",
             "material_number": "49",
-            "material_type": "9",
+            "material_type": "output",
             "material_short_descr": "Seeed Studio Grove – Electromagnet",
             "manufacture": "Seeed Studio",
             "manufacture_url": "https://www.seeedstudio.com/",
@@ -3382,7 +3482,9 @@
             "title": "GPS",
             "date": "2018-10-01T14:32:35.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "50_gps.jpg",
             "material_number": "50",
             "material_type": "sensor",
@@ -3444,7 +3546,9 @@
             "title": "RFID-Transponder",
             "date": "2018-10-01T14:41:57.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "51_rfid_chip.jpg",
             "material_number": "51",
             "material_type": "sensor",
@@ -3510,7 +3614,9 @@
             "title": "RFID-Leser",
             "date": "2018-10-01T14:44:10.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "52_rfid_leser.jpg",
             "material_number": "52",
             "material_type": "sensor",
@@ -3572,7 +3678,9 @@
             "title": "WiFi-Modul",
             "date": "2018-10-01T14:44:57.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "54_wifi-modul.jpg",
             "material_number": "54",
             "material_type": "sensor",
@@ -3632,7 +3740,9 @@
             "title": "Makey-Makey",
             "date": "2018-10-01T14:46:28.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "55_makeymakey.jpg",
             "material_number": "55",
             "material_type": "sensor",
@@ -3696,7 +3806,9 @@
             "title": "Tastenfeld",
             "date": "2018-10-01T14:47:07.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "58_tastenfeld.jpg",
             "material_number": "58",
             "material_type": "sensor",
@@ -3756,7 +3868,9 @@
             "title": "Taster/Knopf",
             "date": "2018-10-01T14:48:30.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "59_taster_knopf.jpg",
             "material_number": "59",
             "material_type": "sensor",
@@ -3819,7 +3933,9 @@
             "title": "Taster/Knopf (Platine)",
             "date": "2018-10-01T14:49:00.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "60_taster_knopf_platine.jpg",
             "material_number": "60",
             "material_type": "sensor",
@@ -3894,7 +4010,9 @@
             "title": "Schalter",
             "date": "2018-10-01T14:58:25.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "61_schalter.jpg",
             "material_number": "61",
             "material_type": "sensor",
@@ -3931,7 +4049,7 @@
         "date": "2018-10-01T15:00:27.000Z",
         "meta": {
             "material_number": "62",
-            "material_type": "9",
+            "material_type": "output",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3962,10 +4080,12 @@
             "title": "LCD-Bildschirm",
             "date": "2018-10-01T15:00:27.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "output"
+            ],
             "coverImage": "62_lcd-bildschirm.jpg",
             "material_number": "62",
-            "material_type": "9",
+            "material_type": "output",
             "material_short_descr": "Seeed Studio Grove – LCD RGB Backlight",
             "manufacture": "Seeed Studio",
             "manufacture_url": "https://www.seeedstudio.com/",
@@ -3997,7 +4117,7 @@
         "date": "2018-10-01T15:01:02.000Z",
         "meta": {
             "material_number": "63",
-            "material_type": "9",
+            "material_type": "output",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -4028,10 +4148,12 @@
             "title": "OLED-Bildschirm",
             "date": "2018-10-01T15:01:02.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "output"
+            ],
             "coverImage": "63_oled_bildschirm.jpg",
             "material_number": "63",
-            "material_type": "9",
+            "material_type": "output",
             "material_short_descr": "Seeed Studio Grove – OLED Display 1.12\"",
             "manufacture": "Seeed Studio",
             "manufacture_url": "https://www.seeedstudio.com/",
@@ -4065,7 +4187,7 @@
         "date": "2018-10-01T15:01:56.000Z",
         "meta": {
             "material_number": "64",
-            "material_type": "9",
+            "material_type": "output",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -4096,10 +4218,12 @@
             "title": "LED-Sockel",
             "date": "2018-10-01T15:01:56.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "output"
+            ],
             "coverImage": "64_led-sockel.jpg",
             "material_number": "64",
-            "material_type": "9",
+            "material_type": "output",
             "material_short_descr": "Seeed Studio Grove – White LED",
             "manufacture": "Seeed Studio",
             "manufacture_url": "https://www.seeedstudio.com/",
@@ -4130,7 +4254,7 @@
         "date": "2018-10-01T15:03:37.000Z",
         "meta": {
             "material_number": "67",
-            "material_type": "41",
+            "material_type": "shield",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -4156,10 +4280,12 @@
             "title": "Grove-Shield (Raspberry Pi)",
             "date": "2018-10-01T15:03:37.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "shield"
+            ],
             "coverImage": "67_grove_shield_raspberrypi.jpg",
             "material_number": "67",
-            "material_type": "41",
+            "material_type": "shield",
             "material_short_descr": "GrovePi+",
             "manufacture": "Seeed Studio",
             "manufacture_url": "https://www.seeedstudio.com/",
@@ -4192,7 +4318,7 @@
         "date": "2018-10-01T15:04:12.000Z",
         "meta": {
             "material_number": "69",
-            "material_type": "41",
+            "material_type": "shield",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -4218,10 +4344,12 @@
             "title": "Ethernet Shield",
             "date": "2018-10-01T15:04:12.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "shield"
+            ],
             "coverImage": "69_ethernet_shield.jpg",
             "material_number": "69",
-            "material_type": "41",
+            "material_type": "shield",
             "material_short_descr": "Seeed Studio W5500 Ethernet Shield v1.0",
             "manufacture": "Seeed Studio",
             "manufacture_url": "https://www.seeedstudio.com/",
@@ -4253,7 +4381,7 @@
         "date": "2018-10-01T15:07:22.000Z",
         "meta": {
             "material_number": "70",
-            "material_type": "9",
+            "material_type": "output",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -4284,10 +4412,12 @@
             "title": "Motortreiber",
             "date": "2018-10-01T15:07:22.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "output"
+            ],
             "coverImage": "70_motortreiber.jpg",
             "material_number": "70",
-            "material_type": "9",
+            "material_type": "output",
             "material_short_descr": "Seeed Studio Grove – I2C Motor Driver V1.3",
             "manufacture": "Seeed Studio",
             "manufacture_url": "https://www.seeedstudio.com/",
@@ -4352,7 +4482,9 @@
             "title": "Verstärker",
             "date": "2018-10-01T15:15:46.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "71_verstaerker.jpg",
             "material_number": "71",
             "material_type": "sensor",
@@ -4413,7 +4545,9 @@
             "title": "Spannungsteiler",
             "date": "2018-10-01T15:18:11.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "72_spannungsteiler.jpg",
             "material_number": "72",
             "material_type": "sensor",
@@ -4449,7 +4583,7 @@
         "date": "2018-10-01T15:19:28.000Z",
         "meta": {
             "material_number": "73",
-            "material_type": "41",
+            "material_type": "shield",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -4475,10 +4609,12 @@
             "title": "SD-Karten-Shield",
             "date": "2018-10-01T15:19:28.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "shield"
+            ],
             "coverImage": "73_sd-karten_shield.jpg",
             "material_number": "73",
-            "material_type": "41",
+            "material_type": "shield",
             "material_short_descr": "Seeed Studio Grove – SD Card Shield V4",
             "manufacture": "Seeed Studio",
             "manufacture_url": "https://www.seeedstudio.com/",
@@ -4510,7 +4646,7 @@
         "date": "2018-10-01T15:20:08.000Z",
         "meta": {
             "material_number": "68",
-            "material_type": "9",
+            "material_type": "output",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -4543,10 +4679,12 @@
             "title": "MP3-Modul",
             "date": "2018-10-01T15:20:08.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "output"
+            ],
             "coverImage": "68_mp3-modul_rz.jpg",
             "material_number": "68",
-            "material_type": "9",
+            "material_type": "output",
             "material_short_descr": "DFR0534",
             "manufacture": "DFRobot",
             "manufacture_url": "https://dfrobot.com/",
@@ -4579,7 +4717,7 @@
         "date": "2018-10-01T15:22:30.000Z",
         "meta": {
             "material_number": "74",
-            "material_type": "41",
+            "material_type": "shield",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -4605,10 +4743,12 @@
             "title": "Energy Shield",
             "date": "2018-10-01T15:22:30.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "shield"
+            ],
             "coverImage": "74_energie_shield.jpg",
             "material_number": "74",
-            "material_type": "41",
+            "material_type": "shield",
             "material_short_descr": "Seeed Studio Energy Shield",
             "manufacture": "Seeed Studio",
             "manufacture_url": "https://www.seeedstudio.com/",
@@ -4640,7 +4780,7 @@
         "date": "2018-10-02T07:00:52.000Z",
         "meta": {
             "material_number": "40",
-            "material_type": "9",
+            "material_type": "output",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -4671,10 +4811,12 @@
             "title": "Schrittmotor",
             "date": "2018-10-02T07:00:52.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "output"
+            ],
             "coverImage": "40_schrittmotor.jpg",
             "material_number": "40",
-            "material_type": "9",
+            "material_type": "output",
             "material_short_descr": "Small reduction stepper Motor",
             "manufacture": "Generic",
             "repo_name": "mks-generic-steppermotor_5VDC_32-Step_1-16_Gearing",
@@ -4737,7 +4879,9 @@
             "title": "Bluetooth-Modul",
             "date": "2018-10-02T07:01:49.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "53_bluetooth-modul.jpg",
             "material_number": "53",
             "material_type": "sensor",
@@ -4803,7 +4947,9 @@
             "title": "Berührungssensor",
             "date": "2018-10-02T07:03:08.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "56_beruehrungssensor.jpg",
             "material_number": "56",
             "material_type": "sensor",
@@ -4840,7 +4986,7 @@
         "date": "2018-10-02T07:03:42.000Z",
         "meta": {
             "material_number": "46",
-            "material_type": "9",
+            "material_type": "output",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -4869,10 +5015,12 @@
             "title": "Lautsprecher",
             "date": "2018-10-02T07:03:42.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "output"
+            ],
             "coverImage": "46_lautsprecher_rz.jpg",
             "material_number": "46",
-            "material_type": "9",
+            "material_type": "output",
             "material_short_descr": "Mono Enclosed Speaker with Plain Wires - 3W 4 Ohm Lautsprecher",
             "manufacture": "Generic",
             "repo_name": "mks-generic-speaker_4Ohm3W",
@@ -4932,7 +5080,9 @@
             "title": "Infrarot-Entfernungsschalter",
             "date": "2018-10-12T14:53:06.000Z",
             "categories": [],
-            "tags": [],
+            "tags": [
+                "sensor"
+            ],
             "coverImage": "18_infrarot_entfernungsschalter.jpg",
             "material_number": "18",
             "material_type": "sensor",
