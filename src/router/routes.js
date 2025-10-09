@@ -56,6 +56,12 @@ export const childrenCommon = [
         path: 'tools-convert-posts-to-reposData',
         component: () => import('pages/tools/convert-posts-to-repos.vue'),
     },
+    {
+        title: 'edit `reposData.json`',
+        icon: 'brush',
+        path: 'tools-edit-data',
+        component: () => import('pages/tools/edit_data.vue'),
+    },
     // {
     //     title: "MDGlob",
     //     icon: "precision_manufacturing",

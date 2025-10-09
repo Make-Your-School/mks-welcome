@@ -138,19 +138,19 @@ export async function main() {
     console.log('')
     console.log(`found '${reposData.length}' repos to process..`)
     for (const repoData of reposData) {
-        if (knownRepos.some((repo) => repo.name == repoData.repoName)) {
-            console.log(`skipping '${repoData.repoName}'. already known..`)
-            repoData.clone_url = knownRepos.find((repo) => repo.name == repoData.repoName).clone_url
+        if (knownRepos.some((repo) => repo.name == repoData.repo_name)) {
+            console.log(`skipping '${repoData.repo_name}'. already known..`)
+            repoData.clone_url = knownRepos.find((repo) => repo.name == repoData.repo_name).clone_url
         } else {
-            console.log(`creating repo for '${repoData.repoName}'`)
+            console.log(`creating repo for '${repoData.repo_name}'`)
             repoData.description = `Bauteil des Make Your School Material Koffer Sets.`
             const result = await createRepoFromTemplate(
                 octokit,
-                repoData.repoName,
+                repoData.repo_name,
                 repoData.description,
             )
-            const homepage = `https://make-your-school.github.io/mks-welcome/part/${repoData.repoName}`
-            repoSetHomepage(octokit, repoData.repoName, homepage)
+            const homepage = `https://make-your-school.github.io/mks-welcome/part/${repoData.repo_name}`
+            repoSetHomepage(octokit, repoData.repo_name, homepage)
 
             // console.log(`result`, result)
             repoData.clone_url = result.data.clone_url

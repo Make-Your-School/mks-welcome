@@ -11,7 +11,7 @@
         "date": "2018-08-16T19:55:36.000Z",
         "meta": {
             "material_number": "1",
-            "material_type": "10",
+            "material_type": "controller",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -45,13 +45,13 @@
             "tags": [],
             "coverImage": "1_arduino.jpg",
             "material_number": "1",
-            "material_type": "10",
+            "material_type": "controller",
             "material_short_descr": "Arduino UNO R3"
         },
-        "repoName": "mks-Arduino-UNO_R3",
+        "repo_name": "mks-Arduino-UNO_R3",
         "manufacture": "Arduino",
-        "manufactureURL": "https://arduino.cc/",
-        "productURL": "https://store.arduino.cc/products/arduino-uno-rev3"
+        "manufacture_url": "https://arduino.cc/",
+        "product_url": "https://store.arduino.cc/products/arduino-uno-rev3"
     },
     {
         "data": {},
@@ -65,7 +65,7 @@
         "date": "2018-08-16T19:58:50.000Z",
         "meta": {
             "material_number": "3",
-            "material_type": "10",
+            "material_type": "controller",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -101,13 +101,13 @@
             "tags": [],
             "coverImage": "3_raspberrypi4b.jpg",
             "material_number": "3",
-            "material_type": "10",
+            "material_type": "controller",
             "material_short_descr": "Raspberry Pi 4 Model B – 1GB RAM"
         },
-        "repoName": "mks-Raspberry_Pi-4B",
+        "repo_name": "mks-Raspberry_Pi-4B",
         "manufacture": "Raspberry Pi",
-        "manufactureURL": "https://www.raspberrypi.org/",
-        "productURL": "https://www.raspberrypi.com/products/raspberry-pi-4-model-b/"
+        "manufacture_url": "https://www.raspberrypi.org/",
+        "product_url": "https://www.raspberrypi.com/products/raspberry-pi-4-model-b/"
     },
     {
         "data": {},
@@ -122,7 +122,7 @@
         "date": "2018-08-28T23:39:41.000Z",
         "meta": {
             "material_number": "5",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -158,12 +158,12 @@
             "tags": [],
             "coverImage": "5_temperatur-und-luftfeuchtigkeitssensor.jpg",
             "material_number": "5",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove - DHT11 Feuchte- und Temperatursensor"
         },
-        "repoName": "mks-SeeedStudio-Grove_DHT11",
-        "productURL": "https://www.seeedstudio.com/Grove-Temperature-Humidity-Sensor-DHT11.html",
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "repo_name": "mks-SeeedStudio-Grove_DHT11",
+        "product_url": "https://www.seeedstudio.com/Grove-Temperature-Humidity-Sensor-DHT11.html",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio"
     },
     {
@@ -214,7 +214,7 @@
             "material_type": "9",
             "material_short_descr": "Adafruit NeoPixel Digital RGB LED Strip - White 60 LED"
         },
-        "repoName": "mks-generic-Neopixel",
+        "repo_name": "mks-generic-Neopixel",
         "manufacture": "Generic"
     },
     {
@@ -261,9 +261,9 @@
             "material_type": "41",
             "material_short_descr": "Seeed Studio Grove Base Shield v2"
         },
-        "repoName": "mks-SeeedStudio-Grove_Base_Shield_V2",
-        "productURL": "https://wiki.seeedstudio.com/Base_Shield_V2/",
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "repo_name": "mks-SeeedStudio-Grove_Base_Shield_V2",
+        "product_url": "https://wiki.seeedstudio.com/Base_Shield_V2/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio"
     },
     {
@@ -278,7 +278,7 @@
         "date": "2018-08-28T23:44:25.000Z",
         "meta": {
             "material_number": "2",
-            "material_type": "10",
+            "material_type": "controller",
             "material_input_count": "4",
             "material_input_level": "l",
             "material_output_count": "3",
@@ -310,9 +310,9 @@
             "material_type": "10"
         },
         "manufacture": "Calliope gGmbH",
-        "manufactureURL": "https://calliope.cc/",
-        "productURL": "https://calliope.cc/calliope-mini/technische-daten",
-        "repoName": "mks-Calliope-Calliope_mini"
+        "manufacture_url": "https://calliope.cc/",
+        "product_url": "https://calliope.cc/calliope-mini/technische-daten",
+        "repo_name": "mks-Calliope-Calliope_mini"
     },
     {
         "data": {},
@@ -327,7 +327,7 @@
         "date": "2018-08-28T23:44:26.000Z",
         "meta": {
             "material_number": "4",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -365,13 +365,13 @@
             "tags": [],
             "coverImage": "4_temperatursensor.jpg",
             "material_number": "4",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove - Grove - Temperature Sensor V1.2"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Temperature_Sensor_V1.2",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Temperature_Sensor_V1.2/"
+        "repo_name": "mks-SeeedStudio-Grove_Temperature_Sensor_V1.2",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Temperature_Sensor_V1.2/"
     },
     {
         "data": {},
@@ -386,7 +386,7 @@
         "date": "2018-10-01T12:49:38.000Z",
         "meta": {
             "material_number": "6",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -421,13 +421,13 @@
             "tags": [],
             "coverImage": "mys_mk_6.jpg",
             "material_number": "6",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove - UV Sensor"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_UV_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-UV_Sensor/"
+        "repo_name": "mks-SeeedStudio-Grove_UV_Sensor",
+        "product_url": "https://wiki.seeedstudio.com/Grove-UV_Sensor/"
     },
     {
         "data": {},
@@ -442,7 +442,7 @@
         "date": "2018-10-01T12:52:13.000Z",
         "meta": {
             "material_number": "7",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -490,13 +490,13 @@
             "tags": [],
             "coverImage": "7_barometer-und-temperatursensor.jpg",
             "material_number": "7",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove - Barometer Sensor (BMP280)"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Barometer_Sensor-BMP280",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Barometer_Sensor-BMP280/"
+        "repo_name": "mks-SeeedStudio-Grove_Barometer_Sensor-BMP280",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Barometer_Sensor-BMP280/"
     },
     {
         "data": {},
@@ -511,7 +511,7 @@
         "date": "2018-10-01T12:55:53.000Z",
         "meta": {
             "material_number": "8",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -545,13 +545,13 @@
             "tags": [],
             "coverImage": "8_feinstaubsensor.jpg",
             "material_number": "8",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Dust sensor"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Dust_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Dust_Sensor/"
+        "repo_name": "mks-SeeedStudio-Grove_Dust_Sensor",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Dust_Sensor/"
     },
     {
         "data": {},
@@ -566,7 +566,7 @@
         "date": "2018-10-01T12:56:41.000Z",
         "meta": {
             "material_number": "9",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -600,13 +600,13 @@
             "tags": [],
             "coverImage": "9_luftqualitaetssensor.jpg",
             "material_number": "9",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Air quality sensor 1.3"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Air_Quality_Sensor_v1.3",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Air_Quality_Sensor_v1.3/"
+        "repo_name": "mks-SeeedStudio-Grove_Air_Quality_Sensor_v1.3",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Air_Quality_Sensor_v1.3/"
     },
     {
         "data": {},
@@ -621,7 +621,7 @@
         "date": "2018-10-01T12:57:44.000Z",
         "meta": {
             "material_number": "10",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -655,13 +655,13 @@
             "tags": [],
             "coverImage": "10_bodenfeuchtigkeitssensor.jpg",
             "material_number": "10",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Bodenfeuchtigkeitssensor"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Moisture_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Moisture_Sensor/"
+        "repo_name": "mks-SeeedStudio-Grove_Moisture_Sensor",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Moisture_Sensor/"
     },
     {
         "data": {},
@@ -676,7 +676,7 @@
         "date": "2018-10-01T13:25:00.000Z",
         "meta": {
             "material_number": "11",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -710,13 +710,13 @@
             "tags": [],
             "coverImage": "11_gassensor.jpg",
             "material_number": "11",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Gas Sensor (MQ2)"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Gas_Sensor-MQ2",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Gas_Sensor-MQ2/"
+        "repo_name": "mks-SeeedStudio-Grove_Gas_Sensor-MQ2",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Gas_Sensor-MQ2/"
     },
     {
         "data": {},
@@ -731,7 +731,7 @@
         "date": "2018-10-01T13:25:56.000Z",
         "meta": {
             "material_number": "12",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -765,13 +765,13 @@
             "tags": [],
             "coverImage": "12_intertialsensor_rz.jpg",
             "material_number": "12",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "ICM-20948"
         },
-        "productURL": "https://learn.adafruit.com/adafruit-tdk-invensense-icm-20948-9-dof-imu/arduino",
+        "product_url": "https://learn.adafruit.com/adafruit-tdk-invensense-icm-20948-9-dof-imu/arduino",
         "manufacture": "Adafruit",
-        "manufactureURL": "https://adafruit.com/",
-        "repoName": "mks-Adafruit-Adafruit_ICM-20948"
+        "manufacture_url": "https://adafruit.com/",
+        "repo_name": "mks-Adafruit-Adafruit_ICM-20948"
     },
     {
         "data": {},
@@ -786,7 +786,7 @@
         "date": "2018-10-01T13:28:09.000Z",
         "meta": {
             "material_number": "13",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -820,13 +820,13 @@
             "tags": [],
             "coverImage": "13_vibrationssensor.jpg",
             "material_number": "13",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Piezo Vibration Sensor"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Piezo_Vibration_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Piezo_Vibration_Sensor/"
+        "repo_name": "mks-SeeedStudio-Grove_Piezo_Vibration_Sensor",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Piezo_Vibration_Sensor/"
     },
     {
         "data": {},
@@ -841,7 +841,7 @@
         "date": "2018-10-01T13:28:21.000Z",
         "meta": {
             "material_number": "14",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -875,13 +875,13 @@
             "tags": [],
             "coverImage": "14_lichtschranke.jpg",
             "material_number": "14",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Gabel-Lichtschranke TCST 2103 Vishay"
         },
-        "repoName": "mks-VISHAY-TCST_2103",
+        "repo_name": "mks-VISHAY-TCST_2103",
         "manufacture": "VISCHAY",
-        "productURL": "https://www.vishay.com/en/product/81147/",
-        "manufactureURL": "https://www.vishay.com/"
+        "product_url": "https://www.vishay.com/en/product/81147/",
+        "manufacture_url": "https://www.vishay.com/"
     },
     {
         "data": {},
@@ -933,10 +933,10 @@
             "material_type": "9",
             "material_short_descr": "Seeed Studio Grove – Infrared Emitter"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Infrared_Emitter",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Infrared_Emitter/"
+        "repo_name": "mks-SeeedStudio-Grove_Infrared_Emitter",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Infrared_Emitter/"
     },
     {
         "data": {},
@@ -982,9 +982,9 @@
             "material_type": "41",
             "material_short_descr": "SenseBox – Home Shield"
         },
-        "manufactureURL": "https://sensebox.de/",
+        "manufacture_url": "https://sensebox.de/",
         "manufacture": "Reedu GmbH & Co. KG",
-        "repoName": "mks-SenseBox-Shield"
+        "repo_name": "mks-SenseBox-Shield"
     },
     {
         "data": {},
@@ -998,7 +998,7 @@
         "date": "2018-10-02T07:02:32.000Z",
         "meta": {
             "material_number": "57",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1027,13 +1027,13 @@
             "tags": [],
             "coverImage": "57_beruehrungssensor_qtouch.jpg",
             "material_number": "57",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – QTouch Sensor"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Q_Touch_Sensor",
-        "productURL": "http://wiki.seeedstudio.com/Grove-Q_Touch_Sensor/"
+        "repo_name": "mks-SeeedStudio-Grove_Q_Touch_Sensor",
+        "product_url": "http://wiki.seeedstudio.com/Grove-Q_Touch_Sensor/"
     },
     {
         "data": {},
@@ -1085,7 +1085,7 @@
         "date": "2018-10-01T13:45:07.000Z",
         "meta": {
             "material_number": "16",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1119,13 +1119,13 @@
             "tags": [],
             "coverImage": "16_infrarot_empfaenger.jpg",
             "material_number": "16",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Infrared Receiver"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Infrared_Receiver",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Infrared_Receiver/"
+        "repo_name": "mks-SeeedStudio-Grove_Infrared_Receiver",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Infrared_Receiver/"
     },
     {
         "data": {},
@@ -1140,7 +1140,7 @@
         "date": "2018-10-01T13:31:08.000Z",
         "meta": {
             "material_number": "17",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1174,13 +1174,13 @@
             "tags": [],
             "coverImage": "17_ultraschallentfernungssensor.jpg",
             "material_number": "17",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Ultrasonic Ranger"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Ultrasonic_Ranger",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Ultrasonic_Ranger/"
+        "repo_name": "mks-SeeedStudio-Grove_Ultrasonic_Ranger",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Ultrasonic_Ranger/"
     },
     {
         "data": {},
@@ -1195,7 +1195,7 @@
         "date": "2018-10-01T13:35:14.000Z",
         "meta": {
             "material_number": "19",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1229,13 +1229,13 @@
             "tags": [],
             "coverImage": "19_bewegungsmelder.jpg",
             "material_number": "19",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – PIR Motion Sensor"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_PIR_Motion_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-PIR_Motion_Sensor/"
+        "repo_name": "mks-SeeedStudio-Grove_PIR_Motion_Sensor",
+        "product_url": "https://wiki.seeedstudio.com/Grove-PIR_Motion_Sensor/"
     },
     {
         "data": {},
@@ -1250,7 +1250,7 @@
         "date": "2018-10-01T13:36:00.000Z",
         "meta": {
             "material_number": "20",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1284,13 +1284,13 @@
             "tags": [],
             "coverImage": "20_biegesensor.jpg",
             "material_number": "20",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Flex Sensor 2.2\""
         },
         "manufacture": "Spectra Symbol",
-        "repoName": "mks-SpectraSymbol-Flex_Sensor_v1",
-        "productURL": "https://store.spectrasymbol.com/products/spectraflex-flex-sensor?variant=40919797399667",
-        "manufactureURL": "https://www.spectrasymbol.com/"
+        "repo_name": "mks-SpectraSymbol-Flex_Sensor_v1",
+        "product_url": "https://store.spectrasymbol.com/products/spectraflex-flex-sensor?variant=40919797399667",
+        "manufacture_url": "https://www.spectrasymbol.com/"
     },
     {
         "data": {},
@@ -1305,7 +1305,7 @@
         "date": "2018-10-01T13:37:36.000Z",
         "meta": {
             "material_number": "21",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1358,13 +1358,13 @@
             "tags": [],
             "coverImage": "21_drehwinkelsensor.jpg",
             "material_number": "21",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove - Rotary Angle Sensor"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Rotary_Angle_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Rotary_Angle_Sensor/"
+        "repo_name": "mks-SeeedStudio-Grove_Rotary_Angle_Sensor",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Rotary_Angle_Sensor/"
     },
     {
         "data": {},
@@ -1379,7 +1379,7 @@
         "date": "2018-10-01T13:41:01.000Z",
         "meta": {
             "material_number": "22",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1413,13 +1413,13 @@
             "tags": [],
             "coverImage": "22_drehgeschwindigkeitssensor.jpg",
             "material_number": "22",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Mouse Encoder"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Mouse_Encoder",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Mouse_Encoder/"
+        "repo_name": "mks-SeeedStudio-Grove_Mouse_Encoder",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Mouse_Encoder/"
     },
     {
         "data": {},
@@ -1434,7 +1434,7 @@
         "date": "2018-10-01T13:41:55.000Z",
         "meta": {
             "material_number": "23",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1468,13 +1468,13 @@
             "tags": [],
             "coverImage": "23_schiebepotentiometer.jpg",
             "material_number": "23",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Slide Potentiometer"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Slide_Potentiometer",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Slide_Potentiometer/"
+        "repo_name": "mks-SeeedStudio-Grove_Slide_Potentiometer",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Slide_Potentiometer/"
     },
     {
         "data": {},
@@ -1489,7 +1489,7 @@
         "date": "2018-10-01T13:42:53.000Z",
         "meta": {
             "material_number": "24",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1523,13 +1523,13 @@
             "tags": [],
             "coverImage": "24_kippschalter.jpg",
             "material_number": "24",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Tilt Switch"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Tilt_Switch",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Tilt_Switch/"
+        "repo_name": "mks-SeeedStudio-Grove_Tilt_Switch",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Tilt_Switch/"
     },
     {
         "data": {},
@@ -1544,7 +1544,7 @@
         "date": "2018-10-01T13:43:35.000Z",
         "meta": {
             "material_number": "25",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1583,8 +1583,8 @@
             "material_number": "25",
             "material_type": "8"
         },
-        "repoName": "mks-generic-Endschalter",
-        "productURL": "https://www.reichelt.de/de/de/shop/kategorie/schnappschalter_endschalter-7599",
+        "repo_name": "mks-generic-Endschalter",
+        "product_url": "https://www.reichelt.de/de/de/shop/kategorie/schnappschalter_endschalter-7599",
         "manufacture": "Generic"
     },
     {
@@ -1600,7 +1600,7 @@
         "date": "2018-10-01T13:44:08.000Z",
         "meta": {
             "material_number": "26",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1634,13 +1634,13 @@
             "tags": [],
             "coverImage": "26_stromsensor.jpg",
             "material_number": "26",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Electricity Sensor"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Electricity_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Electricity_Sensor/"
+        "repo_name": "mks-SeeedStudio-Grove_Electricity_Sensor",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Electricity_Sensor/"
     },
     {
         "data": {},
@@ -1655,7 +1655,7 @@
         "date": "2018-10-01T13:46:26.000Z",
         "meta": {
             "material_number": "27",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1689,13 +1689,13 @@
             "tags": [],
             "coverImage": "27_infrarot_temperatursensor.jpg",
             "material_number": "27",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Digital Infrared Temperature Sensor"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Digital_Infrared_Temperature_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Digital_Infrared_Temperature_Sensor/"
+        "repo_name": "mks-SeeedStudio-Grove_Digital_Infrared_Temperature_Sensor",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Digital_Infrared_Temperature_Sensor/"
     },
     {
         "data": {},
@@ -1710,7 +1710,7 @@
         "date": "2018-10-01T13:49:51.000Z",
         "meta": {
             "material_number": "28",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1744,13 +1744,13 @@
             "tags": [],
             "coverImage": "28_magnetschalter.jpg",
             "material_number": "28",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Magnet Switch"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Magnetic_Switch",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Magnetic_Switch/"
+        "repo_name": "mks-SeeedStudio-Grove_Magnetic_Switch",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Magnetic_Switch/"
     },
     {
         "data": {},
@@ -1765,7 +1765,7 @@
         "date": "2018-10-01T13:50:50.000Z",
         "meta": {
             "material_number": "29",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1799,13 +1799,13 @@
             "tags": [],
             "coverImage": "29_wasserspiegelsensor.jpg",
             "material_number": "29",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Water Sensor"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Water_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Water_Sensor/"
+        "repo_name": "mks-SeeedStudio-Grove_Water_Sensor",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Water_Sensor/"
     },
     {
         "data": {},
@@ -1820,7 +1820,7 @@
         "date": "2018-10-01T13:54:33.000Z",
         "meta": {
             "material_number": "31",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1856,8 +1856,8 @@
             "material_number": "31",
             "material_type": "8"
         },
-        "productURL": "https://learn.adafruit.com/force-sensitive-resistor-fsr/using-an-fsr",
-        "repoName": "mks-generic-Force_Sensitive_Resistor",
+        "product_url": "https://learn.adafruit.com/force-sensitive-resistor-fsr/using-an-fsr",
+        "repo_name": "mks-generic-Force_Sensitive_Resistor",
         "manufacture": "Generic"
     },
     {
@@ -1873,7 +1873,7 @@
         "date": "2018-10-01T13:55:21.000Z",
         "meta": {
             "material_number": "32",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1907,13 +1907,13 @@
             "tags": [],
             "coverImage": "mys_mk_32.jpg",
             "material_number": "32",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Earclip Heart Rate Sensor"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Ear-clip_Heart_Rate_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Ear-clip_Heart_Rate_Sensor/"
+        "repo_name": "mks-SeeedStudio-Grove_Ear-clip_Heart_Rate_Sensor",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Ear-clip_Heart_Rate_Sensor/"
     },
     {
         "data": {},
@@ -1928,7 +1928,7 @@
         "date": "2018-10-01T13:56:33.000Z",
         "meta": {
             "material_number": "34",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1962,13 +1962,13 @@
             "tags": [],
             "coverImage": "34_gestenerkennung.jpg",
             "material_number": "34",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Gesture"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Gesture_v1.0",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Gesture_v1.0/"
+        "repo_name": "mks-SeeedStudio-Grove_Gesture_v1.0",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Gesture_v1.0/"
     },
     {
         "data": {},
@@ -1983,7 +1983,7 @@
         "date": "2018-10-01T13:57:05.000Z",
         "meta": {
             "material_number": "35",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2017,13 +2017,13 @@
             "tags": [],
             "coverImage": "35_farbsensor.jpg",
             "material_number": "35",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – I2C Color Sensor v2"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_I2C_Color_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-I2C_Color_Sensor/"
+        "repo_name": "mks-SeeedStudio-Grove_I2C_Color_Sensor",
+        "product_url": "https://wiki.seeedstudio.com/Grove-I2C_Color_Sensor/"
     },
     {
         "data": {},
@@ -2038,7 +2038,7 @@
         "date": "2018-10-01T13:57:42.000Z",
         "meta": {
             "material_number": "36",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2072,13 +2072,13 @@
             "tags": [],
             "coverImage": "36_lautstaerkesensor.jpg",
             "material_number": "36",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Loudness Sensor"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Loudness_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Loudness_Sensor/"
+        "repo_name": "mks-SeeedStudio-Grove_Loudness_Sensor",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Loudness_Sensor/"
     },
     {
         "data": {},
@@ -2092,7 +2092,7 @@
         "date": "2018-10-01T13:58:23.000Z",
         "meta": {
             "material_number": "37",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2121,13 +2121,13 @@
             "tags": [],
             "coverImage": "37_kamera.jpg",
             "material_number": "37",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Rasberry Kameramodul v2"
         },
-        "repoName": "mks-Raspberry_Pi-camera_module_v2",
+        "repo_name": "mks-Raspberry_Pi-camera_module_v2",
         "manufacture": "Raspberry Pi",
-        "productURL": "https://www.raspberrypi.com/products/camera-module-v2/",
-        "manufactureURL": "https://www.raspberrypi.com/"
+        "product_url": "https://www.raspberrypi.com/products/camera-module-v2/",
+        "manufacture_url": "https://www.raspberrypi.com/"
     },
     {
         "data": {},
@@ -2197,8 +2197,8 @@
             "material_type": "9",
             "material_short_descr": "Micro-Servo S 15 linear Sol Expert S15JST 0.5 s"
         },
-        "repoName": "mks-generic-mico_linear_servo",
-        "productURL": "https://www.conrad.de/de/micro-servo-s-15-linear-sol-expert-s15jst-05-s-404224.html",
+        "repo_name": "mks-generic-mico_linear_servo",
+        "product_url": "https://www.conrad.de/de/micro-servo-s-15-linear-sol-expert-s15jst-05-s-404224.html",
         "manufacture": "Generic"
     },
     {
@@ -2214,7 +2214,7 @@
         "date": "2018-10-01T14:15:12.000Z",
         "meta": {
             "material_number": "30",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2248,13 +2248,13 @@
             "tags": [],
             "coverImage": "30_helligkeitssensor.jpg",
             "material_number": "30",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Light Sensor v1.2"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Light_Sensor_v1.2",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Light_Sensor/"
+        "repo_name": "mks-SeeedStudio-Grove_Light_Sensor_v1.2",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Light_Sensor/"
     },
     {
         "data": {},
@@ -2269,7 +2269,7 @@
         "date": "2018-10-01T14:14:11.000Z",
         "meta": {
             "material_number": "33",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2303,13 +2303,13 @@
             "tags": [],
             "coverImage": "33_hautleitwertsensor.jpg",
             "material_number": "33",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – GSR Sensor"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_GSR_Sensor_v1.2",
-        "productURL": "https://wiki.seeedstudio.com/Grove-GSR_Sensor/"
+        "repo_name": "mks-SeeedStudio-Grove_GSR_Sensor_v1.2",
+        "product_url": "https://wiki.seeedstudio.com/Grove-GSR_Sensor/"
     },
     {
         "data": {},
@@ -2361,10 +2361,10 @@
             "material_type": "9",
             "material_short_descr": "Seeed Studio Grove – Servo"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Servo",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Servo/"
+        "repo_name": "mks-SeeedStudio-Grove_Servo",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Servo/"
     },
     {
         "data": {},
@@ -2416,7 +2416,7 @@
             "material_type": "9",
             "material_short_descr": "DC Toy/Hobby Motor – 130 Size"
         },
-        "repoName": "mks-generic-DCMotor_130",
+        "repo_name": "mks-generic-DCMotor_130",
         "manufacture": "Generic"
     },
     {
@@ -2463,7 +2463,7 @@
             "material_type": "9",
             "material_short_descr": "[Dagu DC Gear Motor Paar – 90 Degree Shaft]\r\n[380:1 Micro Metal Gearmotor HPCB 6V]"
         },
-        "repoName": "mks-generic-DCGearMotor",
+        "repo_name": "mks-generic-DCGearMotor",
         "manufacture": "Generic"
     },
     {
@@ -2513,8 +2513,8 @@
             "material_type": "9",
             "material_short_descr": "Peristaltic Liquid Pump with Silicone Tubing"
         },
-        "productURL": "https://www.adafruit.com/product/3910",
-        "repoName": "mks-generic-PeristalticPump",
+        "product_url": "https://www.adafruit.com/product/3910",
+        "repo_name": "mks-generic-PeristalticPump",
         "manufacture": "Generic"
     },
     {
@@ -2561,10 +2561,10 @@
             "material_type": "9",
             "material_short_descr": "Seeed Studio Grove – Mini Fan"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Mini_Fan",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Mini_Fan"
+        "repo_name": "mks-SeeedStudio-Grove_Mini_Fan",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Mini_Fan"
     },
     {
         "data": {},
@@ -2616,10 +2616,10 @@
             "material_type": "9",
             "material_short_descr": "Seeed Studio Grove – Buzzer"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Buzzer_v1.1",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Buzzer/"
+        "repo_name": "mks-SeeedStudio-Grove_Buzzer_v1.1",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Buzzer/"
     },
     {
         "data": {},
@@ -2671,10 +2671,10 @@
             "material_type": "9",
             "material_short_descr": "Seeed Studio Grove – Vibration Motor"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Vibration_Motor_v1.2",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Vibration_Motor"
+        "repo_name": "mks-SeeedStudio-Grove_Vibration_Motor_v1.2",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Vibration_Motor"
     },
     {
         "data": {},
@@ -2726,10 +2726,10 @@
             "material_type": "9",
             "material_short_descr": "Seeed Studio Grove – Relay"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Relay",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Relay/"
+        "repo_name": "mks-SeeedStudio-Grove_Relay",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Relay/"
     },
     {
         "data": {},
@@ -2781,10 +2781,10 @@
             "material_type": "9",
             "material_short_descr": "Seeed Studio Grove – Electromagnet"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Electromagnet",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Electromagnet/"
+        "repo_name": "mks-SeeedStudio-Grove_Electromagnet",
+        "product_url": "https://wiki.seeedstudio.com/Grove-Electromagnet/"
     },
     {
         "data": {},
@@ -2799,7 +2799,7 @@
         "date": "2018-10-01T14:32:35.000Z",
         "meta": {
             "material_number": "50",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2833,13 +2833,13 @@
             "tags": [],
             "coverImage": "50_gps.jpg",
             "material_number": "50",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – GPS"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_GPS_v1.2",
-        "productURL": "https://wiki.seeedstudio.com/Grove-GPS/"
+        "repo_name": "mks-SeeedStudio-Grove_GPS_v1.2",
+        "product_url": "https://wiki.seeedstudio.com/Grove-GPS/"
     },
     {
         "data": {},
@@ -2853,7 +2853,7 @@
         "date": "2018-10-01T14:41:57.000Z",
         "meta": {
             "material_number": "51",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2882,13 +2882,13 @@
             "tags": [],
             "coverImage": "51_rfid_chip.jpg",
             "material_number": "51",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio RFID tag combo (125khz)"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0",
-        "productURL": "https://wiki.seeedstudio.com/Grove-125KHz_RFID_Reader/"
+        "repo_name": "mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0",
+        "product_url": "https://wiki.seeedstudio.com/Grove-125KHz_RFID_Reader/"
     },
     {
         "data": {},
@@ -2903,7 +2903,7 @@
         "date": "2018-10-01T14:44:10.000Z",
         "meta": {
             "material_number": "52",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2937,13 +2937,13 @@
             "tags": [],
             "coverImage": "52_rfid_leser.jpg",
             "material_number": "52",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – 125KHz RFID Reader"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0",
-        "productURL": "https://wiki.seeedstudio.com/Grove-125KHz_RFID_Reader/"
+        "repo_name": "mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0",
+        "product_url": "https://wiki.seeedstudio.com/Grove-125KHz_RFID_Reader/"
     },
     {
         "data": {},
@@ -2957,7 +2957,7 @@
         "date": "2018-10-01T14:44:57.000Z",
         "meta": {
             "material_number": "54",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2986,13 +2986,13 @@
             "tags": [],
             "coverImage": "54_wifi-modul.jpg",
             "material_number": "54",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – UART Wi-Fi"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_UART_Wifi",
-        "productURL": "http://wiki.seeedstudio.com/Grove-UART_Wifi/"
+        "repo_name": "mks-SeeedStudio-Grove_UART_Wifi",
+        "product_url": "http://wiki.seeedstudio.com/Grove-UART_Wifi/"
     },
     {
         "data": {},
@@ -3006,7 +3006,7 @@
         "date": "2018-10-01T14:46:28.000Z",
         "meta": {
             "material_number": "55",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3035,13 +3035,13 @@
             "tags": [],
             "coverImage": "55_makeymakey.jpg",
             "material_number": "55",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Makey-Makey – Standard Kit"
         },
-        "productURL": "https://www.makeymakey.com/",
-        "manufactureURL": "https://www.makeymakey.com/",
+        "product_url": "https://www.makeymakey.com/",
+        "manufacture_url": "https://www.makeymakey.com/",
         "manufacture": "JoyLabz",
-        "repoName": "mks-JoyLabz-MakeyMakey"
+        "repo_name": "mks-JoyLabz-MakeyMakey"
     },
     {
         "data": {},
@@ -3055,7 +3055,7 @@
         "date": "2018-10-01T14:47:07.000Z",
         "meta": {
             "material_number": "58",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3086,13 +3086,13 @@
             "tags": [],
             "coverImage": "58_tastenfeld.jpg",
             "material_number": "58",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Membrane 3x4 Matrix Keypad + Extras 3x4"
         },
-        "repoName": "mks-Adafruit-Membrane_3x4_matrix_keypad",
-        "productURL": "www.adafruit.com/product/419",
+        "repo_name": "mks-Adafruit-Membrane_3x4_matrix_keypad",
+        "product_url": "www.adafruit.com/product/419",
         "manufacture": "Adafruit",
-        "manufactureURL": "https://www.adafruit.com/"
+        "manufacture_url": "https://www.adafruit.com/"
     },
     {
         "data": {},
@@ -3106,7 +3106,7 @@
         "date": "2018-10-01T14:48:30.000Z",
         "meta": {
             "material_number": "59",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3137,7 +3137,7 @@
             "material_number": "59",
             "material_type": "8"
         },
-        "repoName": "mks-generic-Taster",
+        "repo_name": "mks-generic-Taster",
         "manufacture": "Generic"
     },
     {
@@ -3153,7 +3153,7 @@
         "date": "2018-10-01T14:49:00.000Z",
         "meta": {
             "material_number": "60",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3187,13 +3187,13 @@
             "tags": [],
             "coverImage": "60_taster_knopf_platine.jpg",
             "material_number": "60",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Button"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Button",
-        "productURL": "http://wiki.seeedstudio.com/Grove-Button/"
+        "repo_name": "mks-SeeedStudio-Grove_Button",
+        "product_url": "http://wiki.seeedstudio.com/Grove-Button/"
     },
     {
         "data": {},
@@ -3208,7 +3208,7 @@
         "date": "2018-10-01T14:58:25.000Z",
         "meta": {
             "material_number": "61",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3251,13 +3251,13 @@
             "tags": [],
             "coverImage": "61_schalter.jpg",
             "material_number": "61",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Switch (P)"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Switch-P",
-        "productURL": "http://wiki.seeedstudio.com/Grove-Switch-P/"
+        "repo_name": "mks-SeeedStudio-Grove_Switch-P",
+        "product_url": "http://wiki.seeedstudio.com/Grove-Switch-P/"
     },
     {
         "data": {},
@@ -3309,10 +3309,10 @@
             "material_type": "9",
             "material_short_descr": "Seeed Studio Grove – LCD RGB Backlight"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_LCD_RGB_Backlight",
-        "productURL": "http://wiki.seeedstudio.com/Grove-LCD_RGB_Backlight/"
+        "repo_name": "mks-SeeedStudio-Grove_LCD_RGB_Backlight",
+        "product_url": "http://wiki.seeedstudio.com/Grove-LCD_RGB_Backlight/"
     },
     {
         "data": {},
@@ -3364,10 +3364,10 @@
             "material_type": "9",
             "material_short_descr": "Seeed Studio Grove – OLED Display 1.12\""
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_OLED_Display_1.12inch",
-        "productURL": "http://wiki.seeedstudio.com/Grove-OLED_Display_1.12inch/"
+        "repo_name": "mks-SeeedStudio-Grove_OLED_Display_1.12inch",
+        "product_url": "http://wiki.seeedstudio.com/Grove-OLED_Display_1.12inch/"
     },
     {
         "data": {},
@@ -3419,10 +3419,10 @@
             "material_type": "9",
             "material_short_descr": "Seeed Studio Grove – White LED"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_LED_Socket",
-        "productURL": "http://wiki.seeedstudio.com/Grove-LED_Socket_Kit/)"
+        "repo_name": "mks-SeeedStudio-Grove_LED_Socket",
+        "product_url": "http://wiki.seeedstudio.com/Grove-LED_Socket_Kit/)"
     },
     {
         "data": {},
@@ -3468,10 +3468,10 @@
             "material_type": "41",
             "material_short_descr": "GrovePi+"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Pi_Plus",
-        "productURL": "http://wiki.seeedstudio.com/GrovePi_Plus/"
+        "repo_name": "mks-SeeedStudio-Grove_Pi_Plus",
+        "product_url": "http://wiki.seeedstudio.com/GrovePi_Plus/"
     },
     {
         "data": {},
@@ -3517,10 +3517,10 @@
             "material_type": "41",
             "material_short_descr": "Seeed Studio W5500 Ethernet Shield v1.0"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-W5500_Ethernet_Shield_v1.0",
-        "productURL": "http://wiki.seeedstudio.com/W5500_Ethernet_Shield_v1.0/"
+        "repo_name": "mks-SeeedStudio-W5500_Ethernet_Shield_v1.0",
+        "product_url": "http://wiki.seeedstudio.com/W5500_Ethernet_Shield_v1.0/"
     },
     {
         "data": {},
@@ -3572,10 +3572,10 @@
             "material_type": "9",
             "material_short_descr": "Seeed Studio Grove – I2C Motor Driver V1.3"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_I2C_Motor_Driver_V1.3",
-        "productURL": "http://wiki.seeedstudio.com/Grove-I2C_Motor_Driver_V1.3/"
+        "repo_name": "mks-SeeedStudio-Grove_I2C_Motor_Driver_V1.3",
+        "product_url": "http://wiki.seeedstudio.com/Grove-I2C_Motor_Driver_V1.3/"
     },
     {
         "data": {},
@@ -3589,7 +3589,7 @@
         "date": "2018-10-01T15:15:46.000Z",
         "meta": {
             "material_number": "71",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3624,13 +3624,13 @@
             "tags": [],
             "coverImage": "71_verstaerker.jpg",
             "material_number": "71",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Differential Amplifier v1.0"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Differential_Amplifier_v1.0",
-        "productURL": "http://wiki.seeedstudio.com/Grove-Differential_Amplifier_v1.0/"
+        "repo_name": "mks-SeeedStudio-Grove_Differential_Amplifier_v1.0",
+        "product_url": "http://wiki.seeedstudio.com/Grove-Differential_Amplifier_v1.0/"
     },
     {
         "data": {},
@@ -3644,7 +3644,7 @@
         "date": "2018-10-01T15:18:11.000Z",
         "meta": {
             "material_number": "72",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3674,13 +3674,13 @@
             "tags": [],
             "coverImage": "72_spannungsteiler.jpg",
             "material_number": "72",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Voltage Divider"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Voltage_Divider",
-        "productURL": "http://wiki.seeedstudio.com/Grove-Voltage_Divider/)"
+        "repo_name": "mks-SeeedStudio-Grove_Voltage_Divider",
+        "product_url": "http://wiki.seeedstudio.com/Grove-Voltage_Divider/)"
     },
     {
         "data": {},
@@ -3726,10 +3726,10 @@
             "material_type": "41",
             "material_short_descr": "Seeed Studio Grove – SD Card Shield V4"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-SD_Card_shield_V4.0",
-        "productURL": "http://wiki.seeedstudio.com/SD_Card_shield_V4.0/"
+        "repo_name": "mks-SeeedStudio-SD_Card_shield_V4.0",
+        "product_url": "http://wiki.seeedstudio.com/SD_Card_shield_V4.0/"
     },
     {
         "data": {},
@@ -3783,10 +3783,10 @@
             "material_type": "9",
             "material_short_descr": "DFR0534"
         },
-        "productURL": "https://wiki.dfrobot.com/Voice_Module_SKU__DFR0534#target_0",
-        "manufactureURL": "https://dfrobot.com/",
+        "product_url": "https://wiki.dfrobot.com/Voice_Module_SKU__DFR0534#target_0",
+        "manufacture_url": "https://dfrobot.com/",
         "manufacture": "DFRobot",
-        "repoName": "mks-DFRobot-DFR0534"
+        "repo_name": "mks-DFRobot-DFR0534"
     },
     {
         "data": {},
@@ -3832,10 +3832,10 @@
             "material_type": "41",
             "material_short_descr": "Seeed Studio Energy Shield"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Energy_Shield",
-        "productURL": "http://wiki.seeedstudio.com/Energy_Shield/"
+        "repo_name": "mks-SeeedStudio-Energy_Shield",
+        "product_url": "http://wiki.seeedstudio.com/Energy_Shield/"
     },
     {
         "data": {},
@@ -3887,8 +3887,8 @@
             "material_type": "9",
             "material_short_descr": "Small reduction stepper Motor"
         },
-        "repoName": "mks-generic-steppermotor_5VDC_32-Step_1-16_Gearing",
-        "productURL": "https://www.adafruit.com/product/858",
+        "repo_name": "mks-generic-steppermotor_5VDC_32-Step_1-16_Gearing",
+        "product_url": "https://www.adafruit.com/product/858",
         "manufacture": "Generic"
     },
     {
@@ -3904,7 +3904,7 @@
         "date": "2018-10-02T07:01:49.000Z",
         "meta": {
             "material_number": "53",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3938,13 +3938,13 @@
             "tags": [],
             "coverImage": "53_bluetooth-modul.jpg",
             "material_number": "53",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Serial Bluetooth V3.0"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Serial_Bluetooth_v3.0",
-        "productURL": "http://wiki.seeedstudio.com/Grove-Serial_Bluetooth_v3.0/"
+        "repo_name": "mks-SeeedStudio-Grove_Serial_Bluetooth_v3.0",
+        "product_url": "http://wiki.seeedstudio.com/Grove-Serial_Bluetooth_v3.0/"
     },
     {
         "data": {},
@@ -3959,7 +3959,7 @@
         "date": "2018-10-02T07:03:08.000Z",
         "meta": {
             "material_number": "56",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3993,13 +3993,13 @@
             "tags": [],
             "coverImage": "56_beruehrungssensor.jpg",
             "material_number": "56",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Touch Sensor"
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_Touch_Sensor",
-        "productURL": "http://wiki.seeedstudio.com/Grove-Touch_Sensor"
+        "repo_name": "mks-SeeedStudio-Grove_Touch_Sensor",
+        "product_url": "http://wiki.seeedstudio.com/Grove-Touch_Sensor"
     },
     {
         "data": {},
@@ -4048,7 +4048,7 @@
             "material_type": "9",
             "material_short_descr": "Mono Enclosed Speaker with Plain Wires - 3W 4 Ohm Lautsprecher"
         },
-        "repoName": "mks-generic-speaker_4Ohm3W",
+        "repo_name": "mks-generic-speaker_4Ohm3W",
         "manufacture": "Generic"
     },
     {
@@ -4064,7 +4064,7 @@
         "date": "2018-10-12T14:53:06.000Z",
         "meta": {
             "material_number": "18",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_description": "Seeed Studio Grove – IR Distance Interrupter v1.2.",
             "material_input_count": "",
             "material_input_level": "l",
@@ -4098,12 +4098,12 @@
             "tags": [],
             "coverImage": "18_infrarot_entfernungsschalter.jpg",
             "material_number": "18",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – IR Distance Interrupter v1.2."
         },
-        "manufactureURL": "https://www.seeedstudio.com/",
+        "manufacture_url": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
-        "repoName": "mks-SeeedStudio-Grove_IR_Distance_Interrupter_v1.2",
-        "productURL": "http://wiki.seeedstudio.com/Grove-IR_Distance_Interrupter_v1.2/"
+        "repo_name": "mks-SeeedStudio-Grove_IR_Distance_Interrupter_v1.2",
+        "product_url": "http://wiki.seeedstudio.com/Grove-IR_Distance_Interrupter_v1.2/"
     }
 ]

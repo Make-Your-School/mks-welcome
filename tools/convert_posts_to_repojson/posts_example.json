@@ -5,7 +5,7 @@
         "slug": "arduino",
         "meta": {
             "material_number": "1",
-            "material_type": "10",
+            "material_type": "controller",
             "material_short_description": "Arduino UNO R3"
         },
         "coverImageId": "859",
@@ -17,7 +17,7 @@
             "tags": [],
             "coverImage": "1_arduino.jpg",
             "material_number": "1",
-            "material_type": "10",
+            "material_type": "controller",
             "material_short_descr": "Arduino UNO R3"
         }
     },
@@ -27,7 +27,7 @@
         "slug": "raspberrypi",
         "meta": {
             "material_number": "3",
-            "material_type": "10",
+            "material_type": "controller",
             "material_short_description": "Raspberry Pi 4 Model B – 1GB RAM"
         },
         "coverImageId": "3393",
@@ -39,7 +39,7 @@
             "tags": [],
             "coverImage": "3_raspberrypi4b.jpg",
             "material_number": "3",
-            "material_type": "10",
+            "material_type": "controller",
             "material_short_descr": "Raspberry Pi 4 Model B – 1GB RAM"
         }
     },
@@ -50,7 +50,7 @@
         "slug": "temperatur-luftfeuchtigkeitssensor",
         "meta": {
             "material_number": "5",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_description": "Seeed Studio Grove - DHT11 Feuchte- und Temperatursensor"
         },
         "coverImageId": "2648",
@@ -62,7 +62,7 @@
             "tags": [],
             "coverImage": "5_temperatur-und-luftfeuchtigkeitssensor.jpg",
             "material_number": "5",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove - DHT11 Feuchte- und Temperatursensor"
         }
     },

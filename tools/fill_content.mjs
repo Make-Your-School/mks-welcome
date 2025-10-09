@@ -2,9 +2,11 @@
 // node fill_content.mjs
 
 import fs from 'node:fs'
+import path from 'path'
 import reposData from './reposData.json' with { type: 'json' }
+const reposDataFile = './reposData.json'
 
-const submodulePathBase = './public/mks/parts/'
+const submodule_pathBase = './public/mks/parts/'
 
 async function buildMarkdownFileContent(repoData) {
     let output = '---\n'
@@ -49,41 +51,42 @@ async function buildMarkdownFileContent(repoData) {
     return output
 }
 
-
 async function updateMarkdownFile(repoData) {
-    console.log(`update '${repoData.repoName}' Readme.md.`)
+    console.log(`update '${repoData.repo_name}' Readme.md.`)
     const md = await buildMarkdownFileContent(repoData)
-    const filepath = repoData.submodulePath + 'readme.md'
+
+    const filepath = path.join(repoData.submodule_path, 'readme.md')
     console.log('filepath', filepath)
     // fs.writeFileSync(filepath, md)
 }
 
-
 async function createExample(repoData) {
-    const filepath = repoData.submodulePath + 'readme.ino'
+    const exampleName = repoData
+    const filepath = path.join(repoData.submodule_path, '${}')
     await fs.promises.mkdir(filepath, { recursive: true })
     console.log('filepath', filepath)
     // TODO create example subdirectory
     let example_content = repoData.example_code
-    if(! example_content) {
-        example_content = "// Noch nicht vorhanden."
+    if (!example_content) {
+        example_content = '// Noch nicht vorhanden.'
     }
     fs.writeFileSync(filepath, example_content)
 }
+
 async function removeDefaultExample(repoData) {
-    //
-    const filepath = repoData.submodulePath + 'BauteilTemplate_minimal'
-    fs.rm(path, { recursive: true, force: true })
-    console.log('filepath', filepath)
+    const filepath = path.join(repoData.submodule_path, 'BauteilTemplate_minimal')
+    // console.log('filepath', filepath)
+    fs.rm(filepath, { recursive: true, force: true })
 }
 
 export async function main() {
     console.log(`found '${reposData.length}' repos to process..`)
-    // const repoData = reposData[5]; {
-    for (const repoData of reposData) {
-        repoData.submodulePath = submodulePathBase + repoName
-        await updateMarkdownFile(repoData)
-    }
+    // const repoData = reposData[0]; {
+    // for (const repoData of reposData) {
+        // repoData.submodule_path = path.join(submodule_pathBase, repoData.repo_name)
+    //     repoData.submodule_path = submodule_pathBase + repo_name
+    //     await updateMarkdownFile(repoData)
+    // }
 }
 
 main()

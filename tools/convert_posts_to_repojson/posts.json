@@ -11,7 +11,7 @@
         "date": "2018-08-16T19:55:36.000Z",
         "meta": {
             "material_number": "1",
-            "material_type": "10",
+            "material_type": "controller",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -45,13 +45,13 @@
             "tags": [],
             "coverImage": "1_arduino.jpg",
             "material_number": "1",
-            "material_type": "10",
+            "material_type": "controller",
             "material_short_descr": "Arduino UNO R3"
         },
-        "repoName": "mks-Arduino-UNO_R3",
+        "repo_name": "mks-Arduino-UNO_R3",
         "manufacture": "Arduino",
-        "manufactureURL": "https://arduino.cc/",
-        "productURL": "https://store.arduino.cc/products/arduino-uno-rev3"
+        "manufacture_url": "https://arduino.cc/",
+        "product_url": "https://store.arduino.cc/products/arduino-uno-rev3"
     },
     {
         "data": {},
@@ -65,7 +65,7 @@
         "date": "2018-08-16T19:58:50.000Z",
         "meta": {
             "material_number": "3",
-            "material_type": "10",
+            "material_type": "controller",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -101,13 +101,13 @@
             "tags": [],
             "coverImage": "3_raspberrypi4b.jpg",
             "material_number": "3",
-            "material_type": "10",
+            "material_type": "controller",
             "material_short_descr": "Raspberry Pi 4 Model B – 1GB RAM"
         },
-        "repoName": "mks-Raspberry-Pi-4B",
+        "repo_name": "mks-Raspberry-Pi-4B",
         "manufacture": "Raspberry Pi",
-        "manufactureURL": "https://www.raspberrypi.org/",
-        "productURL": "https://www.raspberrypi.com/products/raspberry-pi-4-model-b/"
+        "manufacture_url": "https://www.raspberrypi.org/",
+        "product_url": "https://www.raspberrypi.com/products/raspberry-pi-4-model-b/"
     },
     {
         "data": {},
@@ -122,7 +122,7 @@
         "date": "2018-08-28T23:39:41.000Z",
         "meta": {
             "material_number": "5",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -158,7 +158,7 @@
             "tags": [],
             "coverImage": "5_temperatur-und-luftfeuchtigkeitssensor.jpg",
             "material_number": "5",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove - DHT11 Feuchte- und Temperatursensor"
         }
     },
@@ -268,7 +268,7 @@
         "date": "2018-08-28T23:44:25.000Z",
         "meta": {
             "material_number": "2",
-            "material_type": "10",
+            "material_type": "controller",
             "material_input_count": "4",
             "material_input_level": "l",
             "material_output_count": "3",
@@ -313,7 +313,7 @@
         "date": "2018-08-28T23:44:26.000Z",
         "meta": {
             "material_number": "4",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -351,7 +351,7 @@
             "tags": [],
             "coverImage": "4_temperatursensor.jpg",
             "material_number": "4",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove - Grove - Temperature Sensor V1.2"
         }
     },
@@ -368,7 +368,7 @@
         "date": "2018-10-01T12:49:38.000Z",
         "meta": {
             "material_number": "6",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -403,7 +403,7 @@
             "tags": [],
             "coverImage": "mys_mk_6.jpg",
             "material_number": "6",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove - UV Sensor"
         }
     },
@@ -420,7 +420,7 @@
         "date": "2018-10-01T12:52:13.000Z",
         "meta": {
             "material_number": "7",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -468,7 +468,7 @@
             "tags": [],
             "coverImage": "7_barometer-und-temperatursensor.jpg",
             "material_number": "7",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove - Barometer Sensor (BMP280)"
         }
     },
@@ -485,7 +485,7 @@
         "date": "2018-10-01T12:55:53.000Z",
         "meta": {
             "material_number": "8",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -519,7 +519,7 @@
             "tags": [],
             "coverImage": "8_feinstaubsensor.jpg",
             "material_number": "8",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Dust sensor"
         }
     },
@@ -536,7 +536,7 @@
         "date": "2018-10-01T12:56:41.000Z",
         "meta": {
             "material_number": "9",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -570,7 +570,7 @@
             "tags": [],
             "coverImage": "9_luftqualitaetssensor.jpg",
             "material_number": "9",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Air quality sensor 1.3"
         }
     },
@@ -587,7 +587,7 @@
         "date": "2018-10-01T12:57:44.000Z",
         "meta": {
             "material_number": "10",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -621,7 +621,7 @@
             "tags": [],
             "coverImage": "10_bodenfeuchtigkeitssensor.jpg",
             "material_number": "10",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Bodenfeuchtigkeitssensor"
         }
     },
@@ -638,7 +638,7 @@
         "date": "2018-10-01T13:25:00.000Z",
         "meta": {
             "material_number": "11",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -672,7 +672,7 @@
             "tags": [],
             "coverImage": "11_gassensor.jpg",
             "material_number": "11",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Gas Sensor (MQ2)"
         }
     },
@@ -689,7 +689,7 @@
         "date": "2018-10-01T13:25:56.000Z",
         "meta": {
             "material_number": "12",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -723,7 +723,7 @@
             "tags": [],
             "coverImage": "12_intertialsensor_rz.jpg",
             "material_number": "12",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "ICM-20948"
         }
     },
@@ -740,7 +740,7 @@
         "date": "2018-10-01T13:28:09.000Z",
         "meta": {
             "material_number": "13",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -774,7 +774,7 @@
             "tags": [],
             "coverImage": "13_vibrationssensor.jpg",
             "material_number": "13",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Piezo Vibration Sensor"
         }
     },
@@ -791,7 +791,7 @@
         "date": "2018-10-01T13:28:21.000Z",
         "meta": {
             "material_number": "14",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -825,7 +825,7 @@
             "tags": [],
             "coverImage": "14_lichtschranke.jpg",
             "material_number": "14",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Gabel-Lichtschranke TCST 2103 Vishay"
         }
     },
@@ -937,7 +937,7 @@
         "date": "2018-10-02T07:02:32.000Z",
         "meta": {
             "material_number": "57",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -966,7 +966,7 @@
             "tags": [],
             "coverImage": "57_beruehrungssensor_qtouch.jpg",
             "material_number": "57",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – QTouch Sensor"
         }
     },
@@ -1020,7 +1020,7 @@
         "date": "2018-10-01T13:45:07.000Z",
         "meta": {
             "material_number": "16",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1054,7 +1054,7 @@
             "tags": [],
             "coverImage": "16_infrarot_empfaenger.jpg",
             "material_number": "16",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Infrared Receiver"
         }
     },
@@ -1071,7 +1071,7 @@
         "date": "2018-10-01T13:31:08.000Z",
         "meta": {
             "material_number": "17",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1105,7 +1105,7 @@
             "tags": [],
             "coverImage": "17_ultraschallentfernungssensor.jpg",
             "material_number": "17",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Ultrasonic Ranger"
         }
     },
@@ -1122,7 +1122,7 @@
         "date": "2018-10-01T13:35:14.000Z",
         "meta": {
             "material_number": "19",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1156,7 +1156,7 @@
             "tags": [],
             "coverImage": "19_bewegungsmelder.jpg",
             "material_number": "19",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – PIR Motion Sensor"
         }
     },
@@ -1173,7 +1173,7 @@
         "date": "2018-10-01T13:36:00.000Z",
         "meta": {
             "material_number": "20",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1207,7 +1207,7 @@
             "tags": [],
             "coverImage": "20_biegesensor.jpg",
             "material_number": "20",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Flex Sensor 2.2\""
         }
     },
@@ -1224,7 +1224,7 @@
         "date": "2018-10-01T13:37:36.000Z",
         "meta": {
             "material_number": "21",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1277,7 +1277,7 @@
             "tags": [],
             "coverImage": "21_drehwinkelsensor.jpg",
             "material_number": "21",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove - Rotary Angle Sensor"
         }
     },
@@ -1294,7 +1294,7 @@
         "date": "2018-10-01T13:41:01.000Z",
         "meta": {
             "material_number": "22",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1328,7 +1328,7 @@
             "tags": [],
             "coverImage": "22_drehgeschwindigkeitssensor.jpg",
             "material_number": "22",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Mouse Encoder"
         }
     },
@@ -1345,7 +1345,7 @@
         "date": "2018-10-01T13:41:55.000Z",
         "meta": {
             "material_number": "23",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1379,7 +1379,7 @@
             "tags": [],
             "coverImage": "23_schiebepotentiometer.jpg",
             "material_number": "23",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Slide Potentiometer"
         }
     },
@@ -1396,7 +1396,7 @@
         "date": "2018-10-01T13:42:53.000Z",
         "meta": {
             "material_number": "24",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1430,7 +1430,7 @@
             "tags": [],
             "coverImage": "24_kippschalter.jpg",
             "material_number": "24",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Tilt Switch"
         }
     },
@@ -1447,7 +1447,7 @@
         "date": "2018-10-01T13:43:35.000Z",
         "meta": {
             "material_number": "25",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1500,7 +1500,7 @@
         "date": "2018-10-01T13:44:08.000Z",
         "meta": {
             "material_number": "26",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1534,7 +1534,7 @@
             "tags": [],
             "coverImage": "26_stromsensor.jpg",
             "material_number": "26",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Electricity Sensor"
         }
     },
@@ -1551,7 +1551,7 @@
         "date": "2018-10-01T13:46:26.000Z",
         "meta": {
             "material_number": "27",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1585,7 +1585,7 @@
             "tags": [],
             "coverImage": "27_infrarot_temperatursensor.jpg",
             "material_number": "27",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Digital Infrared Temperature Sensor"
         }
     },
@@ -1602,7 +1602,7 @@
         "date": "2018-10-01T13:49:51.000Z",
         "meta": {
             "material_number": "28",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1636,7 +1636,7 @@
             "tags": [],
             "coverImage": "28_magnetschalter.jpg",
             "material_number": "28",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Magnet Switch"
         }
     },
@@ -1653,7 +1653,7 @@
         "date": "2018-10-01T13:50:50.000Z",
         "meta": {
             "material_number": "29",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1687,7 +1687,7 @@
             "tags": [],
             "coverImage": "29_wasserspiegelsensor.jpg",
             "material_number": "29",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Water Sensor"
         }
     },
@@ -1704,7 +1704,7 @@
         "date": "2018-10-01T13:54:33.000Z",
         "meta": {
             "material_number": "31",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1754,7 +1754,7 @@
         "date": "2018-10-01T13:55:21.000Z",
         "meta": {
             "material_number": "32",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1788,7 +1788,7 @@
             "tags": [],
             "coverImage": "mys_mk_32.jpg",
             "material_number": "32",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Earclip Heart Rate Sensor"
         }
     },
@@ -1805,7 +1805,7 @@
         "date": "2018-10-01T13:56:33.000Z",
         "meta": {
             "material_number": "34",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1839,7 +1839,7 @@
             "tags": [],
             "coverImage": "34_gestenerkennung.jpg",
             "material_number": "34",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Gesture"
         }
     },
@@ -1856,7 +1856,7 @@
         "date": "2018-10-01T13:57:05.000Z",
         "meta": {
             "material_number": "35",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1890,7 +1890,7 @@
             "tags": [],
             "coverImage": "35_farbsensor.jpg",
             "material_number": "35",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – I2C Color Sensor v2"
         }
     },
@@ -1907,7 +1907,7 @@
         "date": "2018-10-01T13:57:42.000Z",
         "meta": {
             "material_number": "36",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1941,7 +1941,7 @@
             "tags": [],
             "coverImage": "36_lautstaerkesensor.jpg",
             "material_number": "36",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Loudness Sensor"
         }
     },
@@ -1957,7 +1957,7 @@
         "date": "2018-10-01T13:58:23.000Z",
         "meta": {
             "material_number": "37",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -1986,7 +1986,7 @@
             "tags": [],
             "coverImage": "37_kamera.jpg",
             "material_number": "37",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Rasberry Kameramodul v2"
         }
     },
@@ -2072,7 +2072,7 @@
         "date": "2018-10-01T14:15:12.000Z",
         "meta": {
             "material_number": "30",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2106,7 +2106,7 @@
             "tags": [],
             "coverImage": "30_helligkeitssensor.jpg",
             "material_number": "30",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Light Sensor v1.2"
         }
     },
@@ -2123,7 +2123,7 @@
         "date": "2018-10-01T14:14:11.000Z",
         "meta": {
             "material_number": "33",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2157,7 +2157,7 @@
             "tags": [],
             "coverImage": "33_hautleitwertsensor.jpg",
             "material_number": "33",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – GSR Sensor"
         }
     },
@@ -2618,7 +2618,7 @@
         "date": "2018-10-01T14:32:35.000Z",
         "meta": {
             "material_number": "50",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2652,7 +2652,7 @@
             "tags": [],
             "coverImage": "50_gps.jpg",
             "material_number": "50",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – GPS"
         }
     },
@@ -2668,7 +2668,7 @@
         "date": "2018-10-01T14:41:57.000Z",
         "meta": {
             "material_number": "51",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2697,7 +2697,7 @@
             "tags": [],
             "coverImage": "51_rfid_chip.jpg",
             "material_number": "51",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio RFID tag combo (125khz)"
         }
     },
@@ -2714,7 +2714,7 @@
         "date": "2018-10-01T14:44:10.000Z",
         "meta": {
             "material_number": "52",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2748,7 +2748,7 @@
             "tags": [],
             "coverImage": "52_rfid_leser.jpg",
             "material_number": "52",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – 125KHz RFID Reader"
         }
     },
@@ -2764,7 +2764,7 @@
         "date": "2018-10-01T14:44:57.000Z",
         "meta": {
             "material_number": "54",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2793,7 +2793,7 @@
             "tags": [],
             "coverImage": "54_wifi-modul.jpg",
             "material_number": "54",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – UART Wi-Fi"
         }
     },
@@ -2809,7 +2809,7 @@
         "date": "2018-10-01T14:46:28.000Z",
         "meta": {
             "material_number": "55",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2838,7 +2838,7 @@
             "tags": [],
             "coverImage": "55_makeymakey.jpg",
             "material_number": "55",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Makey-Makey – Standard Kit"
         }
     },
@@ -2854,7 +2854,7 @@
         "date": "2018-10-01T14:47:07.000Z",
         "meta": {
             "material_number": "58",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2885,7 +2885,7 @@
             "tags": [],
             "coverImage": "58_tastenfeld.jpg",
             "material_number": "58",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Membrane 3x4 Matrix Keypad + Extras 3x4"
         }
     },
@@ -2901,7 +2901,7 @@
         "date": "2018-10-01T14:48:30.000Z",
         "meta": {
             "material_number": "59",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2946,7 +2946,7 @@
         "date": "2018-10-01T14:49:00.000Z",
         "meta": {
             "material_number": "60",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -2980,7 +2980,7 @@
             "tags": [],
             "coverImage": "60_taster_knopf_platine.jpg",
             "material_number": "60",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Button"
         }
     },
@@ -2997,7 +2997,7 @@
         "date": "2018-10-01T14:58:25.000Z",
         "meta": {
             "material_number": "61",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3040,7 +3040,7 @@
             "tags": [],
             "coverImage": "61_schalter.jpg",
             "material_number": "61",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Switch (P)"
         }
     },
@@ -3350,7 +3350,7 @@
         "date": "2018-10-01T15:15:46.000Z",
         "meta": {
             "material_number": "71",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3385,7 +3385,7 @@
             "tags": [],
             "coverImage": "71_verstaerker.jpg",
             "material_number": "71",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Differential Amplifier v1.0"
         }
     },
@@ -3401,7 +3401,7 @@
         "date": "2018-10-01T15:18:11.000Z",
         "meta": {
             "material_number": "72",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3431,7 +3431,7 @@
             "tags": [],
             "coverImage": "72_spannungsteiler.jpg",
             "material_number": "72",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Voltage Divider"
         }
     },
@@ -3642,7 +3642,7 @@
         "date": "2018-10-02T07:01:49.000Z",
         "meta": {
             "material_number": "53",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3676,7 +3676,7 @@
             "tags": [],
             "coverImage": "53_bluetooth-modul.jpg",
             "material_number": "53",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Serial Bluetooth V3.0"
         }
     },
@@ -3693,7 +3693,7 @@
         "date": "2018-10-02T07:03:08.000Z",
         "meta": {
             "material_number": "56",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_input_count": "",
             "material_input_level": "l",
             "material_output_count": "",
@@ -3727,7 +3727,7 @@
             "tags": [],
             "coverImage": "56_beruehrungssensor.jpg",
             "material_number": "56",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – Touch Sensor"
         }
     },
@@ -3792,7 +3792,7 @@
         "date": "2018-10-12T14:53:06.000Z",
         "meta": {
             "material_number": "18",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_description": "Seeed Studio Grove – IR Distance Interrupter v1.2.",
             "material_input_count": "",
             "material_input_level": "l",
@@ -3826,7 +3826,7 @@
             "tags": [],
             "coverImage": "18_infrarot_entfernungsschalter.jpg",
             "material_number": "18",
-            "material_type": "8",
+            "material_type": "sensor",
             "material_short_descr": "Seeed Studio Grove – IR Distance Interrupter v1.2."
         }
     }

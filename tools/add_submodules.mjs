@@ -9,7 +9,7 @@ import { resolve } from 'path'
 
 const localRepoPath = resolve(process.cwd(), '..')
 console.log('localRepoPath', localRepoPath)
-const submodulePathBase = './public/mks/parts/'
+const submodule_pathBase = './public/mks/parts/'
 
 // Function to execute shell commands and return a Promise
 function runCommand(command) {
@@ -32,13 +32,13 @@ function runCommand(command) {
     })
 }
 
-async function addSubmodule(repoName, localRepoPath, submodulePathBase, remoteRepoUrl) {
+async function addSubmodule(repo_name, localRepoPath, submodule_pathBase, remoteRepoUrl) {
     try {
-        const submodulePath = submodulePathBase + repoName
+        const submodule_path = submodule_pathBase + repo_name
         console.log('    add..')
         let result = undefined
         result = await runCommand(
-            `cd ${localRepoPath} && git submodule add ${remoteRepoUrl} ${submodulePath}`,
+            `cd ${localRepoPath} && git submodule add ${remoteRepoUrl} ${submodule_path}`,
         )
         console.log("    ", result)
         console.log('    update --init --recursive')
@@ -49,7 +49,7 @@ async function addSubmodule(repoName, localRepoPath, submodulePathBase, remoteRe
         if (error.message.includes("already exists in the index")) {
                     console.log(`  skipping - already there.`)
         } else {
-            console.error(`Failed to add submodule: '${repoName}' \n`, error)
+            console.error(`Failed to add submodule: '${repo_name}' \n`, error)
         }
     }
 }
@@ -58,8 +58,8 @@ export async function main() {
     console.log(`found '${reposData.length}' repos to process..`)
     // const repoData = reposData[5]; {
     for (const repoData of reposData) {
-        console.log(`add s'${repoData.repoName}' as submodule.`)
-        await addSubmodule(repoData.repoName, localRepoPath, submodulePathBase, repoData.clone_url)
+        console.log(`add s'${repoData.repo_name}' as submodule.`)
+        await addSubmodule(repoData.repo_name, localRepoPath, submodule_pathBase, repoData.clone_url)
     }
 }
 
