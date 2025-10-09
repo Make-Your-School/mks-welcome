@@ -34,8 +34,14 @@ navigate to
 https://localhost:9000/mks-welcome/tools/convert-posts-to-reposData
 
 
-### use `setup_github_repos`
+### now
+
+maybe tweak the scripts to fix errors..
+;-)
 
 ```bash
-/mks-welcome (main *)$ node ./tools/setup_github_repos/index.mjs
+/mks-welcome/tools (main *)$ node setup_github_repos.mjs
+/mks-welcome/tools (main *)$ node add_submodules.mjs
+/mks-welcome/tools (main *)$ node prepare_frontmatter.mjs
+/mks-welcome/tools (main *)$ node fill_content.mjs
 ```
