@@ -51,7 +51,8 @@
         "repoName": "mks-Arduino-UNO_R3",
         "manufacture": "Arduino",
         "manufactureURL": "https://arduino.cc/",
-        "productURL": "https://store.arduino.cc/products/arduino-uno-rev3"
+        "productURL": "https://store.arduino.cc/products/arduino-uno-rev3",
+        "clone_url": "https://github.com/Make-Your-School/mks-Arduino-UNO_R3.git"
     },
     {
         "data": {},
@@ -107,7 +108,8 @@
         "repoName": "mks-Raspberry_Pi-4B",
         "manufacture": "Raspberry Pi",
         "manufactureURL": "https://www.raspberrypi.org/",
-        "productURL": "https://www.raspberrypi.com/products/raspberry-pi-4-model-b/"
+        "productURL": "https://www.raspberrypi.com/products/raspberry-pi-4-model-b/",
+        "clone_url": "https://github.com/Make-Your-School/mks-Raspberry_Pi-4B.git"
     },
     {
         "data": {},
@@ -164,7 +166,8 @@
         "repoName": "mks-SeeedStudio-Grove_DHT11",
         "productURL": "https://www.seeedstudio.com/Grove-Temperature-Humidity-Sensor-DHT11.html",
         "manufactureURL": "https://www.seeedstudio.com/",
-        "manufacture": "Seeed Studio"
+        "manufacture": "Seeed Studio",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_DHT11.git"
     },
     {
         "data": {},
@@ -215,7 +218,8 @@
             "material_short_descr": "Adafruit NeoPixel Digital RGB LED Strip - White 60 LED"
         },
         "repoName": "mks-generic-Neopixel",
-        "manufacture": "Generic"
+        "manufacture": "Generic",
+        "clone_url": "https://github.com/Make-Your-School/mks-generic-Neopixel.git"
     },
     {
         "data": {},
@@ -264,7 +268,8 @@
         "repoName": "mks-SeeedStudio-Grove_Base_Shield_V2",
         "productURL": "https://wiki.seeedstudio.com/Base_Shield_V2/",
         "manufactureURL": "https://www.seeedstudio.com/",
-        "manufacture": "Seeed Studio"
+        "manufacture": "Seeed Studio",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Base_Shield_V2.git"
     },
     {
         "data": {},
@@ -312,7 +317,8 @@
         "manufacture": "Calliope gGmbH",
         "manufactureURL": "https://calliope.cc/",
         "productURL": "https://calliope.cc/calliope-mini/technische-daten",
-        "repoName": "mks-Calliope-Calliope_mini"
+        "repoName": "mks-Calliope-Calliope_mini",
+        "clone_url": "https://github.com/Make-Your-School/mks-Calliope-Calliope_mini.git"
     },
     {
         "data": {},
@@ -371,7 +377,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Temperature_Sensor_V1.2",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Temperature_Sensor_V1.2/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Temperature_Sensor_V1.2/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Temperature_Sensor_V1.2.git"
     },
     {
         "data": {},
@@ -427,7 +434,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_UV_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-UV_Sensor/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-UV_Sensor/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_UV_Sensor.git"
     },
     {
         "data": {},
@@ -496,7 +504,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Barometer_Sensor-BMP280",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Barometer_Sensor-BMP280/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Barometer_Sensor-BMP280/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Barometer_Sensor-BMP280.git"
     },
     {
         "data": {},
@@ -551,7 +560,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Dust_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Dust_Sensor/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Dust_Sensor/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Dust_Sensor.git"
     },
     {
         "data": {},
@@ -606,7 +616,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Air_Quality_Sensor_v1.3",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Air_Quality_Sensor_v1.3/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Air_Quality_Sensor_v1.3/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Air_Quality_Sensor_v1.3.git"
     },
     {
         "data": {},
@@ -661,7 +672,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Moisture_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Moisture_Sensor/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Moisture_Sensor/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Moisture_Sensor.git"
     },
     {
         "data": {},
@@ -716,7 +728,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Gas_Sensor-MQ2",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Gas_Sensor-MQ2/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Gas_Sensor-MQ2/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Gas_Sensor-MQ2.git"
     },
     {
         "data": {},
@@ -771,7 +784,8 @@
         "productURL": "https://learn.adafruit.com/adafruit-tdk-invensense-icm-20948-9-dof-imu/arduino",
         "manufacture": "Adafruit",
         "manufactureURL": "https://adafruit.com/",
-        "repoName": "mks-Adafruit-Adafruit_ICM-20948"
+        "repoName": "mks-Adafruit-Adafruit_ICM-20948",
+        "clone_url": "https://github.com/Make-Your-School/mks-Adafruit-Adafruit_ICM-20948.git"
     },
     {
         "data": {},
@@ -826,7 +840,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Piezo_Vibration_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Piezo_Vibration_Sensor/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Piezo_Vibration_Sensor/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Piezo_Vibration_Sensor.git"
     },
     {
         "data": {},
@@ -881,7 +896,8 @@
         "repoName": "mks-VISHAY-TCST_2103",
         "manufacture": "VISCHAY",
         "productURL": "https://www.vishay.com/en/product/81147/",
-        "manufactureURL": "https://www.vishay.com/"
+        "manufactureURL": "https://www.vishay.com/",
+        "clone_url": "https://github.com/Make-Your-School/mks-VISHAY-TCST_2103.git"
     },
     {
         "data": {},
@@ -936,7 +952,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Infrared_Emitter",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Infrared_Emitter/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Infrared_Emitter/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Infrared_Emitter.git"
     },
     {
         "data": {},
@@ -984,7 +1001,8 @@
         },
         "manufactureURL": "https://sensebox.de/",
         "manufacture": "Reedu GmbH & Co. KG",
-        "repoName": "mks-SenseBox-Shield"
+        "repoName": "mks-SenseBox-Shield",
+        "clone_url": "https://github.com/Make-Your-School/mks-SenseBox-Shield.git"
     },
     {
         "data": {},
@@ -1033,7 +1051,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Q_Touch_Sensor",
-        "productURL": "http://wiki.seeedstudio.com/Grove-Q_Touch_Sensor/"
+        "productURL": "http://wiki.seeedstudio.com/Grove-Q_Touch_Sensor/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Q_Touch_Sensor.git"
     },
     {
         "data": {},
@@ -1088,7 +1107,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Infrared_Receiver",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Infrared_Receiver/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Infrared_Receiver/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Infrared_Receiver.git"
     },
     {
         "data": {},
@@ -1143,7 +1163,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Ultrasonic_Ranger",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Ultrasonic_Ranger/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Ultrasonic_Ranger/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Ultrasonic_Ranger.git"
     },
     {
         "data": {},
@@ -1198,7 +1219,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_PIR_Motion_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-PIR_Motion_Sensor/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-PIR_Motion_Sensor/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_PIR_Motion_Sensor.git"
     },
     {
         "data": {},
@@ -1253,7 +1275,8 @@
         "manufacture": "Spectra Symbol",
         "repoName": "mks-SpectraSymbol-Flex_Sensor_v1",
         "productURL": "https://store.spectrasymbol.com/products/spectraflex-flex-sensor?variant=40919797399667",
-        "manufactureURL": "https://www.spectrasymbol.com/"
+        "manufactureURL": "https://www.spectrasymbol.com/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SpectraSymbol-Flex_Sensor_v1.git"
     },
     {
         "data": {},
@@ -1327,7 +1350,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Rotary_Angle_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Rotary_Angle_Sensor/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Rotary_Angle_Sensor/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Rotary_Angle_Sensor.git"
     },
     {
         "data": {},
@@ -1382,7 +1406,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Mouse_Encoder",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Mouse_Encoder/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Mouse_Encoder/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Mouse_Encoder.git"
     },
     {
         "data": {},
@@ -1437,7 +1462,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Slide_Potentiometer",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Slide_Potentiometer/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Slide_Potentiometer/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Slide_Potentiometer.git"
     },
     {
         "data": {},
@@ -1492,7 +1518,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Tilt_Switch",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Tilt_Switch/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Tilt_Switch/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Tilt_Switch.git"
     },
     {
         "data": {},
@@ -1548,7 +1575,8 @@
         },
         "repoName": "mks-generic-Endschalter",
         "productURL": "https://www.reichelt.de/de/de/shop/kategorie/schnappschalter_endschalter-7599",
-        "manufacture": "Generic"
+        "manufacture": "Generic",
+        "clone_url": "https://github.com/Make-Your-School/mks-generic-Endschalter.git"
     },
     {
         "data": {},
@@ -1603,7 +1631,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Electricity_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Electricity_Sensor/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Electricity_Sensor/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Electricity_Sensor.git"
     },
     {
         "data": {},
@@ -1658,7 +1687,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Digital_Infrared_Temperature_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Digital_Infrared_Temperature_Sensor/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Digital_Infrared_Temperature_Sensor/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Digital_Infrared_Temperature_Sensor.git"
     },
     {
         "data": {},
@@ -1713,7 +1743,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Magnetic_Switch",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Magnetic_Switch/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Magnetic_Switch/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Magnetic_Switch.git"
     },
     {
         "data": {},
@@ -1768,7 +1799,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Water_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Water_Sensor/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Water_Sensor/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Water_Sensor.git"
     },
     {
         "data": {},
@@ -1821,7 +1853,8 @@
         },
         "productURL": "https://learn.adafruit.com/force-sensitive-resistor-fsr/using-an-fsr",
         "repoName": "mks-generic-Force_Sensitive_Resistor",
-        "manufacture": "Generic"
+        "manufacture": "Generic",
+        "clone_url": "https://github.com/Make-Your-School/mks-generic-Force_Sensitive_Resistor.git"
     },
     {
         "data": {},
@@ -1876,7 +1909,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Ear-clip_Heart_Rate_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Ear-clip_Heart_Rate_Sensor/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Ear-clip_Heart_Rate_Sensor/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Ear-clip_Heart_Rate_Sensor.git"
     },
     {
         "data": {},
@@ -1931,7 +1965,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Gesture_v1.0",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Gesture_v1.0/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Gesture_v1.0/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Gesture_v1.0.git"
     },
     {
         "data": {},
@@ -1986,7 +2021,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_I2C_Color_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-I2C_Color_Sensor/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-I2C_Color_Sensor/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_I2C_Color_Sensor.git"
     },
     {
         "data": {},
@@ -2041,7 +2077,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Loudness_Sensor",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Loudness_Sensor/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Loudness_Sensor/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Loudness_Sensor.git"
     },
     {
         "data": {},
@@ -2090,7 +2127,8 @@
         "repoName": "mks-Raspberry_Pi-camera_module_v2",
         "manufacture": "Raspberry Pi",
         "productURL": "https://www.raspberrypi.com/products/camera-module-v2/",
-        "manufactureURL": "https://www.raspberrypi.com/"
+        "manufactureURL": "https://www.raspberrypi.com/",
+        "clone_url": "https://github.com/Make-Your-School/mks-Raspberry_Pi-camera_module_v2.git"
     },
     {
         "data": {},
@@ -2162,7 +2200,8 @@
         },
         "repoName": "mks-generic-mico_linear_servo",
         "productURL": "https://www.conrad.de/de/micro-servo-s-15-linear-sol-expert-s15jst-05-s-404224.html",
-        "manufacture": "Generic"
+        "manufacture": "Generic",
+        "clone_url": "https://github.com/Make-Your-School/mks-generic-mico_linear_servo.git"
     },
     {
         "data": {},
@@ -2217,7 +2256,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Light_Sensor_v1.2",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Light_Sensor/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Light_Sensor/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Light_Sensor_v1.2.git"
     },
     {
         "data": {},
@@ -2272,7 +2312,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_GSR_Sensor_v1.2",
-        "productURL": "https://wiki.seeedstudio.com/Grove-GSR_Sensor/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-GSR_Sensor/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_GSR_Sensor_v1.2.git"
     },
     {
         "data": {},
@@ -2327,7 +2368,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Servo",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Servo/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Servo/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Servo.git"
     },
     {
         "data": {},
@@ -2380,7 +2422,8 @@
             "material_short_descr": "DC Toy/Hobby Motor – 130 Size"
         },
         "repoName": "mks-generic-DCMotor_130",
-        "manufacture": "Generic"
+        "manufacture": "Generic",
+        "clone_url": "https://github.com/Make-Your-School/mks-generic-DCMotor_130.git"
     },
     {
         "data": {},
@@ -2427,7 +2470,8 @@
             "material_short_descr": "[Dagu DC Gear Motor Paar – 90 Degree Shaft]\r\n[380:1 Micro Metal Gearmotor HPCB 6V]"
         },
         "repoName": "mks-generic-DCGearMotor",
-        "manufacture": "Generic"
+        "manufacture": "Generic",
+        "clone_url": "https://github.com/Make-Your-School/mks-generic-DCGearMotor.git"
     },
     {
         "data": {},
@@ -2478,7 +2522,8 @@
         },
         "productURL": "https://www.adafruit.com/product/3910",
         "repoName": "mks-generic-PeristalticPump",
-        "manufacture": "Generic"
+        "manufacture": "Generic",
+        "clone_url": "https://github.com/Make-Your-School/mks-generic-PeristalticPump.git"
     },
     {
         "data": {},
@@ -2527,7 +2572,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Mini_Fan",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Mini_Fan"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Mini_Fan",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Mini_Fan.git"
     },
     {
         "data": {},
@@ -2582,7 +2628,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Buzzer_v1.1",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Buzzer/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Buzzer/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Buzzer_v1.1.git"
     },
     {
         "data": {},
@@ -2637,7 +2684,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Vibration_Motor_v1.2",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Vibration_Motor"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Vibration_Motor",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Vibration_Motor_v1.2.git"
     },
     {
         "data": {},
@@ -2692,7 +2740,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Relay",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Relay/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Relay/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Relay.git"
     },
     {
         "data": {},
@@ -2747,7 +2796,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Electromagnet",
-        "productURL": "https://wiki.seeedstudio.com/Grove-Electromagnet/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-Electromagnet/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Electromagnet.git"
     },
     {
         "data": {},
@@ -2802,7 +2852,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_GPS_v1.2",
-        "productURL": "https://wiki.seeedstudio.com/Grove-GPS/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-GPS/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_GPS_v1.2.git"
     },
     {
         "data": {},
@@ -2851,7 +2902,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-generic-RFID_Tag_125KHz",
-        "productURL": "https://wiki.seeedstudio.com/Grove-125KHz_RFID_Reader/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-125KHz_RFID_Reader/",
+        "clone_url": "https://github.com/Make-Your-School/mks-generic-RFID_Tag_125KHz.git"
     },
     {
         "data": {},
@@ -2906,7 +2958,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0",
-        "productURL": "https://wiki.seeedstudio.com/Grove-125KHz_RFID_Reader/"
+        "productURL": "https://wiki.seeedstudio.com/Grove-125KHz_RFID_Reader/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0.git"
     },
     {
         "data": {},
@@ -2955,7 +3008,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_UART_Wifi",
-        "productURL": "http://wiki.seeedstudio.com/Grove-UART_Wifi/"
+        "productURL": "http://wiki.seeedstudio.com/Grove-UART_Wifi/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_UART_Wifi.git"
     },
     {
         "data": {},
@@ -3004,7 +3058,8 @@
         "productURL": "https://www.makeymakey.com/",
         "manufactureURL": "https://www.makeymakey.com/",
         "manufacture": "JoyLabz",
-        "repoName": "mks-JoyLabz-MakeyMakey"
+        "repoName": "mks-JoyLabz-MakeyMakey",
+        "clone_url": "https://github.com/Make-Your-School/mks-JoyLabz-MakeyMakey.git"
     },
     {
         "data": {},
@@ -3055,7 +3110,8 @@
         "repoName": "mks-Adafruit-Membrane_3x4_matrix_keypad",
         "productURL": "www.adafruit.com/product/419",
         "manufacture": "Adafruit",
-        "manufactureURL": "https://www.adafruit.com/"
+        "manufactureURL": "https://www.adafruit.com/",
+        "clone_url": "https://github.com/Make-Your-School/mks-Adafruit-Membrane_3x4_matrix_keypad.git"
     },
     {
         "data": {},
@@ -3101,7 +3157,8 @@
             "material_type": "8"
         },
         "repoName": "mks-generic-Taster",
-        "manufacture": "Generic"
+        "manufacture": "Generic",
+        "clone_url": "https://github.com/Make-Your-School/mks-generic-Taster.git"
     },
     {
         "data": {},
@@ -3156,7 +3213,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Button",
-        "productURL": "http://wiki.seeedstudio.com/Grove-Button/"
+        "productURL": "http://wiki.seeedstudio.com/Grove-Button/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Button.git"
     },
     {
         "data": {},
@@ -3220,7 +3278,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Switch-P",
-        "productURL": "http://wiki.seeedstudio.com/Grove-Switch-P/"
+        "productURL": "http://wiki.seeedstudio.com/Grove-Switch-P/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Switch-P.git"
     },
     {
         "data": {},
@@ -3275,7 +3334,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_LCD_RGB_Backlight",
-        "productURL": "http://wiki.seeedstudio.com/Grove-LCD_RGB_Backlight/"
+        "productURL": "http://wiki.seeedstudio.com/Grove-LCD_RGB_Backlight/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_LCD_RGB_Backlight.git"
     },
     {
         "data": {},
@@ -3330,7 +3390,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_OLED_Display_1.12inch",
-        "productURL": "http://wiki.seeedstudio.com/Grove-OLED_Display_1.12inch/"
+        "productURL": "http://wiki.seeedstudio.com/Grove-OLED_Display_1.12inch/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_OLED_Display_1.12inch.git"
     },
     {
         "data": {},
@@ -3385,7 +3446,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_LED_Socket",
-        "productURL": "http://wiki.seeedstudio.com/Grove-LED_Socket_Kit/)"
+        "productURL": "http://wiki.seeedstudio.com/Grove-LED_Socket_Kit/)",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_LED_Socket.git"
     },
     {
         "data": {},
@@ -3434,7 +3496,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Pi_Plus",
-        "productURL": "http://wiki.seeedstudio.com/GrovePi_Plus/"
+        "productURL": "http://wiki.seeedstudio.com/GrovePi_Plus/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Pi_Plus.git"
     },
     {
         "data": {},
@@ -3483,7 +3546,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-W5500_Ethernet_Shield_v1.0",
-        "productURL": "http://wiki.seeedstudio.com/W5500_Ethernet_Shield_v1.0/"
+        "productURL": "http://wiki.seeedstudio.com/W5500_Ethernet_Shield_v1.0/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-W5500_Ethernet_Shield_v1.0.git"
     },
     {
         "data": {},
@@ -3538,7 +3602,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_I2C_Motor_Driver_V1.3",
-        "productURL": "http://wiki.seeedstudio.com/Grove-I2C_Motor_Driver_V1.3/"
+        "productURL": "http://wiki.seeedstudio.com/Grove-I2C_Motor_Driver_V1.3/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_I2C_Motor_Driver_V1.3.git"
     },
     {
         "data": {},
@@ -3593,7 +3658,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Differential_Amplifier_v1.0",
-        "productURL": "http://wiki.seeedstudio.com/Grove-Differential_Amplifier_v1.0/"
+        "productURL": "http://wiki.seeedstudio.com/Grove-Differential_Amplifier_v1.0/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Differential_Amplifier_v1.0.git"
     },
     {
         "data": {},
@@ -3643,7 +3709,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Voltage_Divider",
-        "productURL": "http://wiki.seeedstudio.com/Grove-Voltage_Divider/)"
+        "productURL": "http://wiki.seeedstudio.com/Grove-Voltage_Divider/)",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Voltage_Divider.git"
     },
     {
         "data": {},
@@ -3692,7 +3759,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-SD_Card_shield_V4.0",
-        "productURL": "http://wiki.seeedstudio.com/SD_Card_shield_V4.0/"
+        "productURL": "http://wiki.seeedstudio.com/SD_Card_shield_V4.0/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-SD_Card_shield_V4.0.git"
     },
     {
         "data": {},
@@ -3749,7 +3817,8 @@
         "productURL": "https://wiki.dfrobot.com/Voice_Module_SKU__DFR0534#target_0",
         "manufactureURL": "https://dfrobot.com/",
         "manufacture": "DFRobot",
-        "repoName": "mks-DFRobot-DFR0534"
+        "repoName": "mks-DFRobot-DFR0534",
+        "clone_url": "https://github.com/Make-Your-School/mks-DFRobot-DFR0534.git"
     },
     {
         "data": {},
@@ -3798,7 +3867,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Energy_Shield",
-        "productURL": "http://wiki.seeedstudio.com/Energy_Shield/"
+        "productURL": "http://wiki.seeedstudio.com/Energy_Shield/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Energy_Shield.git"
     },
     {
         "data": {},
@@ -3850,9 +3920,10 @@
             "material_type": "9",
             "material_short_descr": "Small reduction stepper Motor"
         },
-        "repoName": "mks-generic-steppermotor_5VDC_32-Step_1/16_Gearing",
+        "repoName": "mks-generic-steppermotor_5VDC_32-Step_1-16_Gearing",
         "productURL": "https://www.adafruit.com/product/858",
-        "manufacture": "Generic"
+        "manufacture": "Generic",
+        "clone_url": "https://github.com/Make-Your-School/mks-generic-steppermotor_5VDC_32-Step_1-16_Gearing.git"
     },
     {
         "data": {},
@@ -3907,7 +3978,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Serial_Bluetooth_v3.0",
-        "productURL": "http://wiki.seeedstudio.com/Grove-Serial_Bluetooth_v3.0/"
+        "productURL": "http://wiki.seeedstudio.com/Grove-Serial_Bluetooth_v3.0/",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Serial_Bluetooth_v3.0.git"
     },
     {
         "data": {},
@@ -3962,7 +4034,9 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_Touch_Sensor",
-        "productURL": "http://wiki.seeedstudio.com/Grove-Touch_Sensor"
+        "productURL": "http://wiki.seeedstudio.com/Grove-Touch_Sensor",
+        "description": "Bauteil des Make Your School Material Koffer Sets.",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Touch_Sensor.git"
     },
     {
         "data": {},
@@ -4012,7 +4086,9 @@
             "material_short_descr": "Mono Enclosed Speaker with Plain Wires - 3W 4 Ohm Lautsprecher"
         },
         "repoName": "mks-generic-speaker_4Ohm3W",
-        "manufacture": "Generic"
+        "manufacture": "Generic",
+        "description": "Bauteil des Make Your School Material Koffer Sets.",
+        "clone_url": "https://github.com/Make-Your-School/mks-generic-speaker_4Ohm3W.git"
     },
     {
         "data": {},
@@ -4067,6 +4143,8 @@
         "manufactureURL": "https://www.seeedstudio.com/",
         "manufacture": "Seeed Studio",
         "repoName": "mks-SeeedStudio-Grove_IR_Distance_Interrupter_v1.2",
-        "productURL": "http://wiki.seeedstudio.com/Grove-IR_Distance_Interrupter_v1.2/"
+        "productURL": "http://wiki.seeedstudio.com/Grove-IR_Distance_Interrupter_v1.2/",
+        "description": "Bauteil des Make Your School Material Koffer Sets.",
+        "clone_url": "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_IR_Distance_Interrupter_v1.2.git"
     }
 ]

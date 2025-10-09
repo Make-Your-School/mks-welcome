@@ -3887,7 +3887,7 @@
             "material_type": "9",
             "material_short_descr": "Small reduction stepper Motor"
         },
-        "repoName": "mks-generic-steppermotor_5VDC_32-Step_1/16_Gearing",
+        "repoName": "mks-generic-steppermotor_5VDC_32-Step_1-16_Gearing",
         "productURL": "https://www.adafruit.com/product/858",
         "manufacture": "Generic"
     },

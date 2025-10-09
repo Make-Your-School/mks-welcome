@@ -136,8 +136,6 @@ export async function main() {
     console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
     console.log('')
     console.log('')
-    // const submodulePathBase = './public/mks/parts/'
-
     console.log(`found '${reposData.length}' repos to process..`)
     for (const repoData of reposData) {
         if (knownRepos.some((repo) => repo.name == repoData.repoName)) {
