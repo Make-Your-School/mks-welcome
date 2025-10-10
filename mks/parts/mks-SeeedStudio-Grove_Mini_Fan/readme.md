@@ -1,55 +1,41 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "Mini-Ventilator"
+date: "2018-10-01T14:25:04.000Z"
+tags: 
+  - "output"
+coverImage: "44_mini-ventilator.jpg"
+material_number: "44"
+material_type: "output"
+material_short_descr: "Seeed Studio Grove – Mini Fan"
+manufacture: "Seeed Studio"
+manufacture_url: "https://www.seeedstudio.com/"
+repo_name: "mks-SeeedStudio-Grove_Mini_Fan"
+product_url: "https://wiki.seeedstudio.com/Grove-Mini_Fan"
+clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Mini_Fan.git"
+repo_prefix: "mks"
+repo_part: "Grove_Mini_Fan"
+embedded_example_file: "examples/Grove_Mini_Fan_minimal/Grove_Mini_Fan_minimal.ino"
+---
+
+
+# Mini-Ventilator
+
+![Mini-Ventilator](44_mini-ventilator.jpg)
 
 ## Beschreibung
+Der Mini-Ventilator vereint einen Gleichstrommotor, einen kleinen Schaumstoff-Ventilator und die entsprechende Steuerung direkt in einem Paket. Die Steuerungseinheit übernimmt alle Funktionen und muss nicht zwingend an einen Mikrocontroller angeschlossen werden. Man kann beispielsweise mit einem an die Steuerung angeschlossenen Potentiometer direkt die Geschwindigkeit des Ventilators bestimmen. Alternativ kann der Ventilator ohne Steuerung über einen anderen Motortreiber an einen Mikrocontroller angeschlossen und bedient werden. Der Ventilator ist aus sehr weichem Material, sodass Verletzungen quasi unmöglich sind, selbst bei voller Drehzahl des Motors.
 
-kurz-Beschreibung
-
-## Anschlüsse
-
-### Eingang
-
--   I2C
-
-### Ausgang
-
--   High Power / High Voltage
-
-## Kurz-Datenblatt
-
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
-
-## Siehe Auch
-
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
+Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponentenbezeichnung entsprechende Projektbeispiele und Tutorials.
 
 
+<!-- infolist -->
+## Wichtige Links für die ersten Schritte:
 
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
+- [Seeed Studio Wiki](http://wiki.seeedstudio.com/Grove-Mini_Fan/) [- Mini Ventilator](http://wiki.seeedstudio.com/Grove-Mini_Fan/)
 
-## Beispiel
+## Weiterführende Hintergrundinformationen:
 
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
+- [GPIO - Wikipedia Artikel](https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe)
+- [GitHub-Repository: Mini-Ventilator](https://github.com/MakeYourSchool/44-Mini-Ventilator)
 
-## Anleitung
-
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt

@@ -1,55 +1,62 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "Servomotor"
+date: "2018-10-01T14:02:00.000Z"
+tags: 
+  - "output"
+coverImage: "38_linearservomotor.jpg"
+material_number: "38"
+material_type: "output"
+material_short_descr: "Seeed Studio Grove – Servo"
+manufacture: "Seeed Studio"
+manufacture_url: "https://www.seeedstudio.com/"
+repo_name: "mks-SeeedStudio-Grove_Servo"
+product_url: "https://wiki.seeedstudio.com/Grove-Servo/"
+clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Servo.git"
+repo_prefix: "mks"
+repo_part: "Grove_Servo"
+embedded_example_file: "examples/Grove_Servo_minimal/Grove_Servo_minimal.ino"
+---
+
+
+# Servomotor
+
+![Servomotor](38_linearservomotor.jpg)
 
 ## Beschreibung
+Ein Servomotor verfügt über eine interne Regelung, sodass von außen nur eine Position angeben werden muss, die er selbstständig anfährt und hält (trotz Krafteinwirkung). Er kann dadurch sehr genaue Positionen anfahren, ist aber nicht für endloses Drehen ausgelegt. Der Motor wird direkt oder mit Hilfe des Grove Shields an einen Arduino angeschlossen und über \[simple\_tooltip content='Pulsweitenmodulation ist eine Methode zur Simulierung von analogen Informationen mittels digitalen Signalen. Der Informationsinhalt wird hier durch die Pulsweite (zeitliche Länge eines Impulses) definiert und erzeugt, nicht durch dessen Intensität. Zu dieser Kategorie gehören auch andere Signalarten, die regelmäßig aufeinander folgende Spannungsimpulse nutzen, um die gewünschten Informationen zu übertragen.'\]Pulsweitenmodulation (PWM)\[/simple\_tooltip\] angesteuert.
 
-kurz-Beschreibung
+Der hier abgebildete Servomotor kann in einem begrenzten Winkelbereich rotieren und somit unter anderem Zeiger oder Hebel bewegen. So kann beispielsweise die Lenkung eines ferngesteuerten Autos mithilfe von Servomotoren bewegt werden.
 
-## Anschlüsse
+Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen entsprechende Projektbeispiele und Tutorials.
 
-### Eingang
+**Wichtige Hinweise:**
 
--   I2C
+Je nach Motoraufbau kann der maximale Aktionsradius des Motors variieren. In vielen Fällen erreicht der Motor nicht die angegebene Gesamtrotation von 180°. Ist dies der Fall, kann es zu unerwartetem Verhalten (Zucken, Rattern, Spannungsabfall, Wärmeentwicklung…) führen, wenn der Motor in die Extrempositionen gedreht wird. Aus diesem Grund wird empfohlen, den Motor nur in einem Bereich von ca. 10° bis 170° zu bewegen.
 
-### Ausgang
+<!-- infolist -->
 
--   High Power / High Voltage
+<!-- infolists -->
+ 
 
-## Kurz-Datenblatt
+https://www.youtube.com/watch?v=wVxcmO2YuxA
 
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
+ 
 
-## Siehe Auch
+## Wichtige Links für die ersten Schritte:
 
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
+- [Seeed Studio Wiki](http://wiki.seeedstudio.com/Grove-Servo/) [- Servomotor](http://wiki.seeedstudio.com/Grove-Servo/)
+
+## Projektbeispiele:
+
+- [Makerblog - Farberkennung mit Servomotoranzeige](https://www.makerblog.at/2015/01/farben-erkennen-mit-dem-rgb-sensor-tcs34725-und-dem-arduino/)
+- [Arduino Tutorial - Servo](https://www.arduino-tutorial.de/servo/)
+
+## Weiterführende Hintergrundinformationen:
+
+- [Pulsweitenmodulation - Wikipedia Artikel](https://de.wikipedia.org/wiki/Pulsweitenmodulation)
+- [GPIO - Wikipedia Artikel](https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe)
+- [Servomotor - Wikipedia Artikel](https://de.wikipedia.org/wiki/Servomotor)
 
 
 
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
-
-## Beispiel
-
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
-
-## Anleitung
-
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt

@@ -1,55 +1,64 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "RFID-Leser"
+date: "2018-10-01T14:44:10.000Z"
+tags: 
+  - "sensor"
+coverImage: "52_rfid_leser.jpg"
+material_number: "52"
+material_type: "sensor"
+material_short_descr: "Seeed Studio Grove – 125KHz RFID Reader"
+manufacture: "Seeed Studio"
+manufacture_url: "https://www.seeedstudio.com/"
+repo_name: "mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0"
+repo_prefix: "mks"
+repo_manufacture: "SeeedStudio"
+repo_part: "Grove_125KHz_RFID_Reader_v1.0"
+product_url: "https://wiki.seeedstudio.com/Grove-125KHz_RFID_Reader/"
+clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0.git"
+embedded_example_file: "examples/Grove_125KHz_RFID_Reader_v1.0_minimal/Grove_125KHz_RFID_Reader_v1.0_minimal.ino"
+---
+
+
+# RFID-Leser
+
+![RFID-Leser](52_rfid_leser.jpg)
 
 ## Beschreibung
+RFID bezeichnet ein Sender-Empfänger-System, das vor allem zur eindeutigen Identifizierung von Objekten, Einkaufswaren oder auch Lebewesen eingesetzt wird. Der RFID-Transponder besitzt eine eindeutige Identifikationsnummer. Das Lesegerät liest diese aus, sobald der Transponder in unmittelbarer Nähe ist. Der Transponder benötigt dabei keine Stromversorgung, da das Auslesegerät ihn kontaktlost mit Energie versorgt.
 
-kurz-Beschreibung
+Der RFID-Leser lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über \[simple\_tooltip content='Bei einer seriellen Datenübertragung werden die Bits (Informationen / Kommandos) nacheinander (seriell) über eine Leitung übertragen. Die wichtigsten seriellen Standards im Rahmen der Microcontroller sind I2C (Inter-Integrated Circuit), SPI (Serial Peripheral Interface) und UART (Universal Asynchronous Receiver Transmitter). Die genaue Funktionsweise ist für die reine Nutzung vorerst irrelevant. Es muss allerdings immer geprüft werden an welchen Pins oder an welchen Steckplätzen der jeweilige serielle Anschluss genutzt werden kann. Dies wird in den Datenblättern der Mikrocontroller normalerweise immer mit angegeben.'\]die serielle Schnittstelle UART \[/simple\_tooltip\]anschließen.
 
-## Anschlüsse
+Mit der RFID-Technologie lässt sich beispielsweise ein Haustür-Schloss automatisieren. Individuelle RFID-Transponder müssen dann an das entsprechende Lesegerät gehalten werden und könnten so einen Schlüssel ersetzen. Bei Verlust eines Transponders ließe sich dieser nachträglich ohne Austausch des Schlosses aus dem System sperren.
 
-### Eingang
+Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.
 
--   I2C
+<!-- infolist -->
 
-### Ausgang
+<!-- infolists -->
+ 
 
--   High Power / High Voltage
+https://www.youtube.com/watch?v=dJXTgtIMUPw
 
-## Kurz-Datenblatt
+ 
 
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
+## Wichtige Links für die ersten Schritte:
 
-## Siehe Auch
+- [Seeed Studio Wiki - RFID Lesegerät](http://wiki.seeedstudio.com/Grove-125KHz_RFID_Reader/)
+- [Produktseite - RFID Chip](https://www.seeedstudio.com/rfid-tag-combo-125khz-5-pcs-p-700.html?cPath=19_24)
 
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
+## Projektbeispiele:
+
+- [Hackster - Haus-Sicherheitssystem](https://www.hackster.io/ArduinoBasics/arduino-based-security-project-using-cayenne-eb379b)
+
+## Weiterführende Hintergrundinformationen:
+
+- [Arduino Tutorial - RFID, Tronixstuff (englisch)](https://tronixstuff.com/2013/11/19/arduino-tutorials-chapter-15-rfid/)
+- [I2C - Wikipedia Artikel](https://de.wikipedia.org/wiki/I%C2%B2C)
+- [SPI - Wikipedia Artikel](https://de.wikipedia.org/wiki/Serial_Peripheral_Interface)
+- [UART - Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)
+- [RFID - Wikipedia Artikel](https://de.wikipedia.org/wiki/RFID)
+- [GitHub-Repository: RFID-Leser](https://github.com/MakeYourSchool/52-RFID-Leser)
 
 
 
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
-
-## Beispiel
-
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
-
-## Anleitung
-
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt

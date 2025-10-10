@@ -1,55 +1,57 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "Gestenerkennung"
+date: "2018-10-01T13:56:33.000Z"
+tags: 
+  - "sensor"
+coverImage: "34_gestenerkennung.jpg"
+material_number: "34"
+material_type: "sensor"
+material_short_descr: "Seeed Studio Grove – Gesture"
+manufacture: "Seeed Studio"
+manufacture_url: "https://www.seeedstudio.com/"
+repo_name: "mks-SeeedStudio-Grove_Gesture_v1.0"
+repo_prefix: "mks"
+repo_manufacture: "SeeedStudio"
+repo_part: "Grove_Gesture_v1.0"
+product_url: "https://wiki.seeedstudio.com/Grove-Gesture_v1.0/"
+clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Gesture_v1.0.git"
+embedded_example_file: "examples/Grove_Gesture_v1.0_minimal/Grove_Gesture_v1.0_minimal.ino"
+---
+
+
+# Gestenerkennung
+
+![Gestenerkennung](34_gestenerkennung.jpg)
 
 ## Beschreibung
+Der Sensor für Gestenerkennung erkennt bis zu neun vorprogrammierte Handbewegungen, die unmittelbar vor oder über ihm ausgeführt werden. Als mögliche Handbewegung ist beispielsweise ein Wischen oder eine Drehbewegung der Finger denkbar. So lässt sich ein angeschlossener Mikrocontroller steuern.
 
-kurz-Beschreibung
+Der Sensor kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen werden. Er kommuniziert hierbei über \[simple\_tooltip content='Bei einer seriellen Datenübertragung werden die Bits (Informationen/Kommandos) nacheinander (seriell) über eine Leitung übertragen. Die wichtigsten seriellen Standards im Rahmen der Microcontroller sind I2C (Inter-Integrated Circuit), SPI (Serial Peripheral Interface) und UART (Universal Asynchronous Receiver Transmitter). Die genaue Funktionsweise ist für die reine Nutzung vorerst irrelevant. Es muss allerdings immer geprüft werden an welchen Pins oder an welchen Steckplätzen der jeweilige serielle Anschluss genutzt werden kann. Dies wird in den Datenblättern der Mikrocontroller normalerweise immer mit angegeben.'\]die serielle Schnittstelle I2C\[/simple\_tooltip\].
 
-## Anschlüsse
+Das Modul kann beispielsweise zum Auslösen eines automatischen Seifenspenders eingesetzt werden.
 
-### Eingang
+Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen entsprechende Projektbeispiele und Tutorials.
 
--   I2C
+Die genaue Bezeichnung des Sensors, die bei der Suche von Beschreibungen und Anleitungen wichtig sein kann, lautet PAJ7620U2.
 
-### Ausgang
+<!-- infolist -->
 
--   High Power / High Voltage
+<!-- infolists -->
+## Wichtige Links für die ersten Schritte:
 
-## Kurz-Datenblatt
+- [Seeed Studio Wiki](http://wiki.seeedstudio.com/Grove-Gesture_v1.0/) [- Gestenerkennung](http://wiki.seeedstudio.com/Grove-Gesture_v1.0/)
 
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
+## Projektbeispiele:
 
-## Siehe Auch
+- [Hackster - PC per Gestensteuerung kontrollieren](https://www.hackster.io/Momy93/jesty-control-your-pc-with-gestures-5d4a3e)
 
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
+## Weiterführende Hintergrundinformationen:
+
+- [I2C - Wikipedia Artikel](https://de.wikipedia.org/wiki/I%C2%B2C)
+- [SPI - Wikipedia Artikel](https://de.wikipedia.org/wiki/Serial_Peripheral_Interface)
+- [UART - Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)
+- [GitHub-Repository: Gestenerkennung](https://github.com/MakeYourSchool/34-Gestenerkennung)
 
 
 
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
-
-## Beispiel
-
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
-
-## Anleitung
-
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt

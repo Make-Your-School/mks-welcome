@@ -1,55 +1,57 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "LED-Streifen"
+date: "2018-08-28T23:41:38.000Z"
+tags: 
+  - "output"
+coverImage: "65_led-streifen.jpg"
+material_number: "65"
+material_type: "output"
+material_short_descr: "Adafruit NeoPixel Digital RGB LED Strip - White 60 LED"
+manufacture: "Generic"
+repo_name: "mks-generic-Neopixel"
+clone_url: "https://github.com/Make-Your-School/mks-generic-Neopixel.git"
+repo_prefix: "mks"
+repo_part: "Neopixel"
+embedded_example_file: "examples/Neopixel_minimal/Neopixel_minimal.ino"
+---
+
+
+# LED-Streifen
+
+![LED-Streifen](65_led-streifen.jpg)
 
 ## Beschreibung
+Der LED-Streifen kann Lichteffekte und -animationen erzeugen oder kommt auch einfach zur Beleuchtung zum Einsatz. Er lässt sich dabei beliebig zuschneiden und wieder zusammenlöten. Weiterhin kann jede einzelne LED in Farbe und Helligkeit individuell gesteuert werden. Dadurch ist es möglich, komplexe Lichteffekte zu realisieren.
 
-kurz-Beschreibung
+Der LED-Streifen kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen werden. Da der Streifen über ein \[simple\_tooltip content='Pulsweitenmodulation (PWM): Pulsweitenmodulation ist eine Methode zur Simulierung von analogen Informationen mittels digitaler Signale. Der Informationsinhalt wird hier durch die Pulsweite (zeitliche Länge eines Impulses) definiert und erzeugt, nicht durch dessen Intensität. Zu dieser Kategorie gehören auch andere Signalarten, die regelmäßig aufeinander folgende Spannungsimpulse nutzen, um die gewünschten Informationen zu übertragen.'\]PWM-Signal\[/simple\_tooltip\] gesteuert wird, wird nur ein \[simple\_tooltip content='Anschlüsse / Pins / Ein- und Ausgänge:  Die Mikrocontroller besitzen kleine metallische Kontakte, an die Komponenten, Shields oder andere Platinen angeschlossen werden können. Diese Kontakte werden Pins genannt und können oft als sogenannte GPIO’s (Allzweck Ein- und Ausgabe) eingesetzt werden. Dies bedeutet, dass diese Pins direkt über die Programmierung des Mikrocontrollers angesprochen werden können und hierbei sogar bestimmt werden kann, ob dieser Pin als Eingang (beispielsweise zum Auslesen eines Sensors) oder als Ausgang (beispielsweise zur Steuerung eines Motors) genutzt werden kann. Praktisches Beispiel: Wird am Arduino eine LED an Pin 1 angeschlossen, kann im Programm direkt der Pin 1 als „An“ oder „Aus“ definiert werden und damit die LED an- oder ausgeschaltet werden.'\]digitaler Pin\[/simple\_tooltip\] am Mikrocontroller benötigt.
 
-## Anschlüsse
+Ab einer Länge von fünf LEDs wird empfohlen, den LED-Streifen an eine externe Stromquelle anzuschließen. Werden längere LED-Streifen in Betracht gezogen so sollte eine Stromeinspeisung mindestens jeden Meter erfolgen, um alle LEDs gleichmäßig mit Strom zu versorgen.
 
-### Eingang
+Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau sind auf der Produktseite zu finden. Eine ausführliche Anleitung zu NeoPixel-LED-Streifen ist weiter unten verlinkt. Die Anleitung sollte mit größter Sorgfalt Schritt für Schritt abgearbeitet werden, um Schäden am LED-Streifen zu vermeiden. Zusätzliche Informationen findet man über alle gängigen Suchmaschinen, indem nach „NeoPixel LED-Streifen“ und „Arduino“ gesucht wird.
 
--   I2C
+https://youtu.be/e0CBo3xn858?feature=shared
 
-### Ausgang
-
--   High Power / High Voltage
-
-## Kurz-Datenblatt
-
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
-
-## Siehe Auch
-
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
+ 
 
 
+<!-- infolist -->
 
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
 
-## Beispiel
+## Wichtige Links für die ersten Schritte:
 
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
+- [Adafruit NeoPixel LED-Streifen - Produktseite](https://www.adafruit.com/product/1138?length=1)
+- [Adafruit NeoPixel – Ausführliche Anleitung](https://learn.adafruit.com/adafruit-neopixel-uberguide)
+- [FastLED – NeoPixel LED-Streifen Animations-Bibliotheken](http://fastled.io/)
 
-## Anleitung
+## Projektbeispiele:
 
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt
+- [Hackster – Indoor NeoPixel Thermometer](https://www.hackster.io/hackerEsk/indoor-neopixel-thermometer-64f22e)
+
+## Weiterführende Hintergrundinformationen:
+
+- [I2C - Wikipedia Artikel](https://de.wikipedia.org/wiki/I%C2%B2C)
+- [SPI - Wikipedia Artikel](https://de.wikipedia.org/wiki/Serial_Peripheral_Interface)
+- [UART - Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)
+- [GitHub-Repository: LED-Streifen](https://github.com/MakeYourSchool/65-LED-Streifen)
+

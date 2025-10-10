@@ -1,55 +1,59 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "WiFi-Modul"
+date: "2018-10-01T14:44:57.000Z"
+tags: 
+  - "sensor"
+coverImage: "54_wifi-modul.jpg"
+material_number: "54"
+material_type: "sensor"
+material_short_descr: "Seeed Studio Grove – UART Wi-Fi"
+manufacture: "Seeed Studio"
+manufacture_url: "https://www.seeedstudio.com/"
+repo_name: "mks-SeeedStudio-Grove_UART_Wifi"
+product_url: "http://wiki.seeedstudio.com/Grove-UART_Wifi/"
+clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_UART_Wifi.git"
+repo_prefix: "mks"
+repo_part: "Grove_UART_Wifi"
+embedded_example_file: "examples/Grove_UART_Wifi_minimal/Grove_UART_Wifi_minimal.ino"
+---
+
+
+# WiFi-Modul
+
+![WiFi-Modul](54_wifi-modul.jpg)
 
 ## Beschreibung
+Das WiFi-Modul ermöglicht es Informationen, Befehle und Daten kabellos zwischen mehreren Endgeräten oder Mikrocontrollern innerhalb eines Netzwerkes zu übertragen. So lassen sich beispielsweise Sensordaten von einem Arduino in ein lokales Netzwerk stellen und damit an PCs oder Smartphones übertragen oder sogar über einen Router ins Internet stellen und von überall auf der Welt abrufen. Das Modul kann über bestimmte Befehle programmiert werden. So kann unter anderem das Modul selbst einen Zugangspunkt für andere Netzwerk-Clients darstellen oder sich in ein bestehendes WLAN einwählen. Das Modul kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über die \[simple\_tooltip content='Bei einer seriellen Datenübertragung werden die Bits (Informationen / Kommandos) nacheinander (seriell) über eine Leitung übertragen. Die wichtigsten seriellen Standards im Rahmen der Microcontroller sind I2C (Inter-Integrated Circuit), SPI (Serial Peripheral Interface) und UART (Universal Asynchronous Receiver Transmitter). Die genaue Funktionsweise ist für die reine Nutzung vorerst irrelevant. Es muss allerdings immer geprüft werden an welchen Pins oder an welchen Steckplätzen der jeweilige serielle Anschluss genutzt werden kann. Dies wird in den Datenblättern der Mikrocontroller normalerweise immer mit angegeben.'\]serielle Schnittstelle UART\[/simple\_tooltip\] angeschlossen werden.
 
-kurz-Beschreibung
+Das WiFi-Modul ist eines der Grundsteine für alle vernetzte Projekte und Internet-of-Things-Projekte.
 
-## Anschlüsse
+Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.
 
-### Eingang
+Die genaue Bezeichnung des Moduls, die bei der Suche von Beschreibungen und Anleitungen wichtig sein kann, lautet ESP8266.
 
--   I2C
+<!-- infolist -->
+## Wichtige Links für die ersten Schritte:
 
-### Ausgang
+- [Seeed Studio Wiki](http://wiki.seeedstudio.com/Grove-UART_Wifi/) [- WiFi](http://wiki.seeedstudio.com/Grove-UART_Wifi/)
+- [Seeed Studio Youtube Kanal – Wirelessproducts comparison](https://www.youtube.com/watch?v=5hg0lllDTLk)
+- [nl – Befehlsliste](https://nurdspace.nl/ESP8266)
+- [GitHub – esp8266 Wiki](https://github.com/esp8266/esp8266-wiki/wiki)
+- [ESP8266 Community Forum](https://www.esp8266.com/viewforum.php?f=25)
 
--   High Power / High Voltage
+## Projektbeispiele:
 
-## Kurz-Datenblatt
+- [msxfaq - ESP8266 Beispiel Projekte](https://www.msxfaq.de/sonst/bastelbude/esp8266/esp8266-projekte.htm)
+- [GitHub – Demo Sketch](https://github.com/allthingstalk/arduino-UART-client/blob/master/libraries/ATT_IOT_UART/examples/genuino101/led/led.ino)
+- [Instructables – Getting Started with ESP8285](https://www.instructables.com/id/How-to-Get-Started-With-ESP8285-Module-/)
 
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
+## Weiterführende Hintergrundinformationen:
 
-## Siehe Auch
+- [I2C - Wikipedia Artikel](https://de.wikipedia.org/wiki/I%C2%B2C)
+- [SPI - Wikipedia Artikel](https://de.wikipedia.org/wiki/Serial_Peripheral_Interface)
+- [UART - Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)
+- [WiFi - Wikipedia Artikel](https://de.wikipedia.org/wiki/Wi-Fi)
+- [Internet der Dinge](https://de.wikipedia.org/wiki/Internet_der_Dinge) [(IoT)](https://de.wikipedia.org/wiki/Internet_der_Dinge) [- Wikipedia Artikel](https://de.wikipedia.org/wiki/Internet_der_Dinge)
+- [Access Point - Wikipedia Artikel](https://de.wikipedia.org/wiki/Wireless_Access_Point)
+- [GitHub-Repository: WiFi-Modul](https://github.com/MakeYourSchool/54-Wifi-Modul)
 
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
-
-
-
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
-
-## Beispiel
-
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
-
-## Anleitung
-
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt

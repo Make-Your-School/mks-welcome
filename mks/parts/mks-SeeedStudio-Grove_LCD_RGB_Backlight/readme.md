@@ -1,55 +1,54 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "LCD-Bildschirm"
+date: "2018-10-01T15:00:27.000Z"
+tags: 
+  - "output"
+coverImage: "62_lcd-bildschirm.jpg"
+material_number: "62"
+material_type: "output"
+material_short_descr: "Seeed Studio Grove – LCD RGB Backlight"
+manufacture: "Seeed Studio"
+manufacture_url: "https://www.seeedstudio.com/"
+repo_name: "mks-SeeedStudio-Grove_LCD_RGB_Backlight"
+product_url: "http://wiki.seeedstudio.com/Grove-LCD_RGB_Backlight/"
+clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_LCD_RGB_Backlight.git"
+repo_prefix: "mks"
+repo_part: "Grove_LCD_RGB_Backlight"
+embedded_example_file: "examples/Grove_LCD_RGB_Backlight_minimal/Grove_LCD_RGB_Backlight_minimal.ino"
+---
+
+
+# LCD-Bildschirm
+
+![LCD-Bildschirm](62_lcd-bildschirm.jpg)
 
 ## Beschreibung
+Der LCD Bildschirm dient hautpsächlich zum Anzeigen von Informationen. Er verfügt über zwei Zeilen, auf denen jeweils 16 Zeichen (Buchstaben, Zahlen und Sonderzeichen) dargestellt werden können. Zusätzlich lässt sich die Farbe der Hintergrundbeleuchtung steuern, um einen besonderen Effekt zu erzeugen. Der Bildschirm kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über \[simple\_tooltip content='Bei einer seriellen Datenübertragung werden die Bits (Informationen / Kommandos) nacheinander (seriell) über eine Leitung übertragen. Die wichtigsten seriellen Standards im Rahmen der Microcontroller sind I2C (Inter-Integrated Circuit), SPI (Serial Peripheral Interface) und UART (Universal Asynchronous Receiver Transmitter). Die genaue Funktionsweise ist für die reine Nutzung vorerst irrelevant. Es muss allerdings immer geprüft werden an welchen Pins oder an welchen Steckplätzen der jeweilige serielle Anschluss genutzt werden kann. Dies wird in den Datenblättern der Mikrocontroller normalerweise immer mit angegeben.'\]die serielle Schnittstelle I2C\[/simple\_tooltip\] angeschlossen werden.
 
-kurz-Beschreibung
+Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.
 
-## Anschlüsse
+<!-- infolist -->
 
-### Eingang
+<!-- infolists -->
+https://www.youtube.com/watch?v=PWh7wkT2Dog
 
--   I2C
+ 
 
-### Ausgang
+## Wichtige Links für die ersten Schritte:
 
--   High Power / High Voltage
+- [Seeed Studio Wiki](http://wiki.seeedstudio.com/Grove-LCD_RGB_Backlight/) [- LCD Display](http://wiki.seeedstudio.com/Grove-LCD_RGB_Backlight/)
 
-## Kurz-Datenblatt
+## Projektbeispiele:
 
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
+- [Funduino - I2C Display](https://funduino.de/nr-19-i%C2%B2c-display)
 
-## Siehe Auch
+## Weiterführende Hintergrundinformationen:
 
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
+- [I2C - Wikipedia Artikel](https://de.wikipedia.org/wiki/I%C2%B2C)
+- [SPI - Wikipedia Artikel](https://de.wikipedia.org/wiki/Serial_Peripheral_Interface)
+- [UART - Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)
+- [GitHub-Repository: LCD-Bildschirm](https://github.com/MakeYourSchool/62-LCD-Bildschirm)
 
 
 
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
-
-## Beispiel
-
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
-
-## Anleitung
-
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt

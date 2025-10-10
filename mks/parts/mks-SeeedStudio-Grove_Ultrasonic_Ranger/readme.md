@@ -1,55 +1,65 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "Ultraschall-Entfernungssensor"
+date: "2018-10-01T13:31:08.000Z"
+tags: 
+  - "sensor"
+coverImage: "17_ultraschallentfernungssensor.jpg"
+material_number: "17"
+material_type: "sensor"
+material_short_descr: "Seeed Studio Grove – Ultrasonic Ranger"
+manufacture: "Seeed Studio"
+manufacture_url: "https://www.seeedstudio.com/"
+repo_name: "mks-SeeedStudio-Grove_Ultrasonic_Ranger"
+repo_prefix: "mks"
+repo_manufacture: "SeeedStudio"
+repo_part: "Grove_Ultrasonic_Ranger"
+product_url: "https://wiki.seeedstudio.com/Grove-Ultrasonic_Ranger/"
+clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Ultrasonic_Ranger.git"
+embedded_example_file: "examples/Grove_Ultrasonic_Ranger_minimal/Grove_Ultrasonic_Ranger_minimal.ino"
+---
+
+
+# Ultraschall-Entfernungssensor
+
+![Ultraschall-Entfernungssensor](17_ultraschallentfernungssensor.jpg)
 
 ## Beschreibung
+Der Ultraschall-Entfernungssensor misst die Entfernung zwischen sich und einem vor ihm positionierten Gegenstand. Der Sensor strahlt eigene Ultraschall-Signale aus und analysiert das vom Objekt reflektierte Echo. So lassen sich Entfernungen zwischen 2cm und 350cm erfassen. Die Genauigkeit liegt hierbei bei  1cm.
 
-kurz-Beschreibung
+Der Sensor kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi \[simple\_tooltip content='Die Mikrocontroller besitzen kleine metallische Kontakte, an die Komponenten, Shields oder andere Platinen angeschlossen werden können. Diese Kontakte werden Pins genannt und können oft als sogenannte GPIO’s (Allzweck Ein- und Ausgabe) eingesetzt werden. Dies bedeutet, dass diese Pins direkt über die Programmierung des Mikrocontrollers angesprochen werden können und hierbei sogar bestimmt werden kann, ob dieser Pin als Eingang (beispielsweise zum Auslesen eines Sensors) oder als Ausgang (beispielsweise zur Steuerung eines Motors) genutzt werden kann. Praktisches Beispiel: Wird am Arduino eine LED an Pin 1 angeschlossen, kann im Programm direkt der Pin 1 als „An“ oder „Aus“ definiert werden und damit die LED an- oder ausgeschaltet werden.'\]angeschlossen werden\[/simple\_tooltip\]. Der Sensor kommuniziert über ein \[simple\_tooltip content='Digital vs. analog: Analoge Signale können beliebige kontinuierliche Werte annehmen. Sie verändern sich stufenlos. Dadurch können theoretisch unendlich viele kleine Änderungen (und damit ein unendlicher Informationsinhalt) übertragen werden. Einschränkend wirkt die Genauigkeit, mit der das analoge Signal ausgelesen/erfasst wird. Das digitale Signal nimmt nur diskrete Werte an und springt bei einer etwaigen Änderung von einem Wert zum nächsten. Es kann nur eine definierte Anzahl an Informationsinhalten übertragen werden. Vorteilhaft ist dagegen die damit verbundene Fehlerfreiheit bei minimalsten, ungewollten Schwankungen. Oftmals werden nur zwei Werte HIGH und LOW (Ein/Aus oder 1/0) übermittelt.'\]digitales Signal\[/simple\_tooltip\].
 
-## Anschlüsse
+Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen. Diese ist normalerweise direkt auf der Platine des Sensors markiert. Im Folgenden sind zwei Anleitungen zu den zwei gängigsten Sensortypen zusammengefasst.
 
-### Eingang
+<!-- infolist -->
 
--   I2C
+<!-- infolists -->
+https://www.youtube.com/watch?v=J8BHAVSdJe0&t=16s
 
-### Ausgang
+ 
 
--   High Power / High Voltage
+## Wichtige Hinweise:
 
-## Kurz-Datenblatt
+- Es gibt zwei Arten von Ultraschall-Entfernungssensoren, die unterschiedlich verwendet werden müssen. Je nach Sensortyp kann der Anschluss und die Verwendung des Sensors leicht variieren.
+- Der allgemeine Ultraschall-Entfernungssensor bezieht sich auf den Sensortyp HC-SR04. Man erkennt diesen an der roten Farbe und den vier folgenden Anschlüssen: VCC, Trig, Echo und GND.
+- Der Grove Ultraschall-Entfernungssensor bezieht sich nur auf den speziellen Sensor von der Firma Seeed Studio. Man erkennt diesen an der blauen Platine und am Steckplatz mit den drei belegten Anschlüssen: GND, VCC und SIG. Der vierte Anschluss ist mit „NC“ beschriftet und bedeutet „not connected“ (deutsch: nicht belegt).
+- Im Rahmen von _Make-Your-School-_Hackdays wird der im Bild gezeigte Grove Sensor von Seeed eingesetzt. Ihr findet die entsprechende Anleitung unter dem Link bei "Wichtige Links für die ersten Schritte". Für alle anderen Ultraschall-Entfernungssensoren (HC-SR04) könnt ihr die Projektbeispiele "Instructables - Arduino Ultrasonic Sensor" und "Arduino Project Hub - Blindenstock" als Einführung nutzen.
 
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
+## Wichtige Links für die ersten Schritte:
 
-## Siehe Auch
+- [Seeed Studio Wiki - Ultraschall Entfernungssensor](http://wiki.seeedstudio.com/Grove-Ultrasonic_Ranger/)
 
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
+## Projektbeispiele:
+
+- [Ultraschall-Entfernungssensor mit einem LCD-Bildschirm verbinden](https://simple-circuit.com/arduino-grove-ultrasonic-ranger-distance-meter-lcd/) 
+- [Instructables – Arduino Ultrasonic Sensor](https://www.instructables.com/id/Arduino-Ultrasonic-Sensor/)
+- [Arduino Project Hub – Blindenstock](https://create.arduino.cc/projecthub/hadi1234/arduino-blind-stick-19d865?ref=tag&ref_id=ultrasonic&offset=19)
+
+## Weiterführende Hintergrundinformationen:
+
+- [GPIO - Wikipedia Artikel](https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe)
+- [Schallgeschwindigkeit – Wikipedia Artikel](https://de.wikipedia.org/wiki/Schallgeschwindigkeit)
+- [GitHub-Repository: Ultraschall-Entfernungssensor](https://github.com/MakeYourSchool/17-Ultraschall-Entfernungssensor)
 
 
 
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
-
-## Beispiel
-
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
-
-## Anleitung
-
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt

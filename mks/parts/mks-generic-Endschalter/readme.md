@@ -1,55 +1,60 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "Endschalter/Anschlag"
+date: "2018-10-01T13:43:35.000Z"
+tags: 
+  - "sensor"
+coverImage: "mys_mk_25.jpg"
+material_number: "25"
+material_type: "sensor"
+manufacture: "Generic"
+repo_name: "mks-generic-Endschalter"
+product_url: "https://www.reichelt.de/de/de/shop/kategorie/schnappschalter_endschalter-7599"
+clone_url: "https://github.com/Make-Your-School/mks-generic-Endschalter.git"
+repo_prefix: "mks"
+repo_part: "Endschalter"
+embedded_example_file: "examples/Endschalter_minimal/Endschalter_minimal.ino"
+---
+
+
+# Endschalter/Anschlag
+
+![Endschalter/Anschlag](mys_mk_25.jpg)
 
 ## Beschreibung
+Der Endschalter funktioniert wie ein normaler Schalter und kann als Eingabe für einen Mikrocontroller verwendet werden. Der Schalter besitzt einen elastischen Schaltarm, der einen elektrischen Kontakt zwischen den Anschlusspins herstellt, wenn der Arm gedrückt wird.
 
-kurz-Beschreibung
+Um den Schaltvorgang mit einem Mikrocontroller zu erfassen, wird ein \[simple\_tooltip content='
 
-## Anschlüsse
+Digital vs. analog:
 
-### Eingang
+- Analoge Signale können beliebige kontinuierliche Werte annehmen. Sie verändern sich stufenlos. Dadurch können theoretisch unendlich viele kleine Änderungen (und damit ein unendlicher Informationsinhalt) übertragen werden. Einschränkend wirkt die Genauigkeit, mit der das analoge Signal ausgelesen/erfasst wird.
+- Das digitale Signal nimmt nur diskrete Werte an und springt bei einer etwaigen Änderung von einem Wert zum nächsten. Es kann nur eine definierte Anzahl an Informationsinhalten übertragen werden. Vorteilhaft ist dagegen die damit verbundene Fehlerfreiheit bei minimalsten, ungewollten Schwankungen. Oftmals werden nur zwei Werte HIGH und LOW (Ein/Aus oder 1/0) übermittelt.
 
--   I2C
+'\]digitaler\[/simple\_tooltip\] \[simple\_tooltip content='Die Mikrocontroller besitzen kleine metallische Kontakte, an die Komponenten, Shields oder andere Platinen angeschlossen werden können. Diese Kontakte werden Pins genannt und können oft als sogenannte GPIO’s (Allzweck Ein- und Ausgabe) eingesetzt werden. Dies bedeutet, dass diese Pins direkt über die Programmierung des Mikrocontrollers angesprochen werden können und hierbei sogar bestimmt werden kann, ob dieser Pin als Eingang (beispielsweise zum Auslesen eines Sensors) oder als Ausgang (beispielsweise zur Steuerung eines Motors) genutzt werden kann. Praktisches Beispiel: Wird am Arduino eine LED an Pin 1 angeschlossen, kann im Programm direkt der Pin 1 als „An“ oder „Aus“ definiert werden und damit die LED an- oder ausgeschaltet werden. '\]Pin\[/simple\_tooltip\] des Controllers über den Schalter auf Masse gelegt. Sobald der Schalter betätigt wird, wird damit ein digitaler Anschlusspin auf Masse gelegt, was vom Controller erfasst werden kann.
 
-### Ausgang
+Der Schalter kann an einen Arduino oder Raspberry Pi angeschlossen werden und benötigt nur einen digitalen Pin.
 
--   High Power / High Voltage
+Der Endschalter kommt vor allem bei Robotern oder anderen bewegten Maschinen zum Einsatz, um Kollisionen zu erkennen und zu vermeiden. Dafür wird beispielsweise ein Endschalter am Ende einer Schiene platziert, auf der ein Laufwagen läuft. Kommt der Laufwagen zu nah an das Ende der Schiene, kollidiert er mit dem Schaltarm des Endschalters und betätigt ihn somit. So wird die bevorstehende Kollision erkannt und kann vermieden werden.
 
-## Kurz-Datenblatt
+Man findet über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnung entsprechende Projektbeispiele und Tutorials.
 
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
+<!-- infolist -->
 
-## Siehe Auch
+<!-- infolists -->
+## Wichtige Links für die ersten Schritte:
 
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
+- [Datenblatt](https://asset.conrad.com/media10/add/160267/c1/-/de/000707243DS01/datenblatt-707243-hartmann-mikroschalter-mbb1-01-a-01-c-09-a-250-vac-5-a-1-x-einein-tastend-1-st.pdf)
+
+## Projektbeispiele:
+
+- [Kameraslider mit Endschalter](http://hmr-video.de/slider.html)
+
+## Weiterführende Hintergrundinformationen:
+
+- [Schalter](https://de.wikipedia.org/wiki/Schalter_\(Elektrotechnik\)) [(Elektrotechnik)](https://de.wikipedia.org/wiki/Schalter_\(Elektrotechnik\)) [- Wikipedia Artikel](https://de.wikipedia.org/wiki/Schalter_\(Elektrotechnik\))
+- [Positionsschalter - Wikipedia Artikel](https://de.wikipedia.org/wiki/Positionsschalter)
+- [GPIO - Wikipedia Artikel](https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe)
 
 
 
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
-
-## Beispiel
-
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
-
-## Anleitung
-
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt

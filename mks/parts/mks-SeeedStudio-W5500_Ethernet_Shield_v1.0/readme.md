@@ -1,55 +1,49 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "Ethernet Shield"
+date: "2018-10-01T15:04:12.000Z"
+tags: 
+  - "shield"
+coverImage: "69_ethernet_shield.jpg"
+material_number: "69"
+material_type: "shield"
+material_short_descr: "Seeed Studio W5500 Ethernet Shield v1.0"
+manufacture: "Seeed Studio"
+manufacture_url: "https://www.seeedstudio.com/"
+repo_name: "mks-SeeedStudio-W5500_Ethernet_Shield_v1.0"
+product_url: "http://wiki.seeedstudio.com/W5500_Ethernet_Shield_v1.0/"
+clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-W5500_Ethernet_Shield_v1.0.git"
+repo_prefix: "mks"
+repo_part: "W5500_Ethernet_Shield_v1.0"
+embedded_example_file: "examples/W5500_Ethernet_Shield_v1.0_minimal/W5500_Ethernet_Shield_v1.0_minimal.ino"
+---
+
+
+# Ethernet Shield
+
+![Ethernet Shield](69_ethernet_shield.jpg)
 
 ## Beschreibung
+Das Ethernet Shield ist eine Erweiterungsplatine für Arduino-ähnliche Mikrocontroller. Diese Erweiterungsplatinen werden im Allgemeinen als „Shield“ bezeichnet und werden einfach auf den entsprechenden Controller oder Einplatinencomputer gesteckt. Diese vereinfachen das Anschließen von speziellen Komponenten enorm.
 
-kurz-Beschreibung
+Diese spezielle Ausführung erweitert einen Arduino um einen Ethernet-Anschluss. Dadurch kann der Mikrocontroller in ein LAN-Netzwerk eingebunden werden und damit auch beispielsweise Sensordaten ins Internet streamen. Dieses Modul ist ebenfalls der Grundstein für jedes Internet-of-Things-Projekt.
 
-## Anschlüsse
+Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnung entsprechende Projektbeispiele und Tutorials.
 
-### Eingang
-
--   I2C
-
-### Ausgang
-
--   High Power / High Voltage
-
-## Kurz-Datenblatt
-
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
-
-## Siehe Auch
-
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
+ 
 
 
+<!-- infolist -->
 
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
 
-## Beispiel
+## Wichtige Links für die ersten Schritte:
 
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
+- [Seeed Studio Wi](http://wiki.seeedstudio.com/W5500_Ethernet_Shield_v1.0/)[ki - Ethernet Shield](http://wiki.seeedstudio.com/W5500_Ethernet_Shield_v1.0/)
+- [Adafruit - Arduino Ethernet and SD card - Overview](https://learn.adafruit.com/arduino-ethernet-sd-card)
 
-## Anleitung
+## Weiterführende Hintergrundinformationen:
 
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt
+- [Ethernet - Wikipedia Artikel](https://de.wikipedia.org/wiki/Ethernet)
+- [Internet-of-things - Wikipedia Artikel](https://de.wikipedia.org/wiki/Internet_der_Dinge)
+- [GitHub-Repository: Ethernet Shield](https://github.com/MakeYourSchool/69-Ethernet-Shield)
+

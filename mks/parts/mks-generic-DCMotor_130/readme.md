@@ -1,55 +1,56 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "Gleichstrommotor"
+date: "2018-10-01T14:21:00.000Z"
+tags: 
+  - "output"
+coverImage: "41_gleichstrommotor.jpg"
+material_number: "41"
+material_type: "output"
+material_short_descr: "DC Toy/Hobby Motor – 130 Size"
+manufacture: "Generic"
+repo_name: "mks-generic-DCMotor_130"
+repo_prefix: "mks"
+repo_manufacture: "generic"
+repo_part: "DCMotor_130"
+clone_url: "https://github.com/Make-Your-School/mks-generic-DCMotor_130.git"
+embedded_example_file: "examples/DCMotor_130_minimal/DCMotor_130_minimal.ino"
+---
+
+
+# Gleichstrommotor
+
+![Gleichstrommotor](41_gleichstrommotor.jpg)
 
 ## Beschreibung
+Ein Gleichstrommotor (auch Direct-Current-Motor genannt) dreht solange, wie er an einer Spannungsquelle hängt und kann sich so theoretisch unendlich weiterdrehen. Die tatsächliche Drehung ist auch von der Kraft abhängig, die er aufbringen muss, um etwas in Bewegung zu bringen. Seine genaue Positionierung ist daher ohne Sensoren nicht möglich. Wird ein DC-Motor stark belastet, dreht er sich deutlich langsamer.
 
-kurz-Beschreibung
+Die Steuerung erfolgt über ein einfaches Relais, einen Transistor, einen manuellen Schalter oder einen Motortreiber, der als fertiges Modul zwischen Mikrocontroller und Gleichstrommotor geschaltet wird.
 
-## Anschlüsse
+Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen. Das wichtige Stichwort lautet hier „DC Motor“ oder „Gleichstrommotor“.
 
-### Eingang
+<!-- infolist -->
 
--   I2C
+<!-- infolists -->
+ 
 
-### Ausgang
+https://www.youtube.com/watch?v=wVxcmO2YuxA
 
--   High Power / High Voltage
+ 
 
-## Kurz-Datenblatt
+## Wichtige Links für die ersten Schritte:
 
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
+- [Adafruit Gleichstrommotor](https://www.adafruit.com/product/711)
+- [Seeed Studio Wiki – Motortreiber](http://wiki.seeedstudio.com/Grove-I2C_Motor_Driver_V1.3/)
 
-## Siehe Auch
+## Projektbeispiele:
 
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
+- [Arduino-Tutorial - DC Motor Steuerung](https://www.arduino-tutorial.de/motorsteuerung-direkt-per-arduino/)
+
+## Weiterführende Hintergrundinformationen:
+
+- [GPIO - Wikipedia Artikel](https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe)
+- [Gleichstrommotor - Wikipedia Artikel](https://de.wikipedia.org/wiki/Gleichstrommaschine)
 
 
 
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
-
-## Beispiel
-
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
-
-## Anleitung
-
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt

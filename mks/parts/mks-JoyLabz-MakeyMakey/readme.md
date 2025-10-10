@@ -1,55 +1,39 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "Makey-Makey"
+date: "2018-10-01T14:46:28.000Z"
+tags: 
+  - "sensor"
+coverImage: "55_makeymakey.jpg"
+material_number: "55"
+material_type: "sensor"
+material_short_descr: "Makey-Makey – Standard Kit"
+manufacture: "JoyLabz"
+manufacture_url: "https://www.makeymakey.com/"
+repo_name: "mks-JoyLabz-MakeyMakey"
+repo_prefix: "mks"
+repo_manufacture: "JoyLabz"
+repo_part: "MakeyMakey"
+product_url: "https://www.makeymakey.com/"
+clone_url: "https://github.com/Make-Your-School/mks-JoyLabz-MakeyMakey.git"
+embedded_example_file: "examples/MakeyMakey_minimal/MakeyMakey_minimal.ino"
+---
+
+
+# Makey-Makey
+
+![Makey-Makey](55_makeymakey.jpg)
 
 ## Beschreibung
+Mit den Makey-Makey-Modulen lassen sich viele Alltagsgegenstände in Eingabegeräte verwandeln. Leitfähige Gegenstände wie Alufolie oder Früchte können einfach mit Krokodilklemmen an das Makey-Makey-Modul angeschlossen werden. Ist man zusätzlich selbst ebenfalls mit dem Makey-Makey verbunden, erkennt das Modul eine Berührung der leitfähigen Gegenstände. Das Makey-Makey wird schließlich mit USB an einen PC angeschlossen und damit können simple Spiele oder Anwendungen gesteuert werden.
 
-kurz-Beschreibung
+Dadurch lassen sich beispielsweise Früchte oder auch Treppenstufen zu Klaviertasten verwandeln.
 
-## Anschlüsse
-
-### Eingang
-
--   I2C
-
-### Ausgang
-
--   High Power / High Voltage
-
-## Kurz-Datenblatt
-
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
-
-## Siehe Auch
-
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
+Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf der offiziellen Produktseite von Makey Makey zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.
 
 
+<!-- infolist -->
+## Wichtige Links für die ersten Schritte:
 
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
+- [Makey-Makey Produktseite](https://www.makeymakey.com/)
 
-## Beispiel
-
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
-
-## Anleitung
-
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt

@@ -1,55 +1,49 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "Pulssensor"
+date: "2018-10-01T13:55:21.000Z"
+tags: 
+  - "sensor"
+coverImage: "mys_mk_32.jpg"
+material_number: "32"
+material_type: "sensor"
+material_short_descr: "Seeed Studio Grove – Earclip Heart Rate Sensor"
+manufacture: "Seeed Studio"
+manufacture_url: "https://www.seeedstudio.com/"
+repo_name: "mks-SeeedStudio-Grove_Ear-clip_Heart_Rate_Sensor"
+product_url: "https://wiki.seeedstudio.com/Grove-Ear-clip_Heart_Rate_Sensor/"
+clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Ear-clip_Heart_Rate_Sensor.git"
+repo_prefix: "mks"
+repo_part: "Grove_Ear-clip_Heart_Rate_Sensor"
+embedded_example_file: "examples/Grove_Ear-clip_Heart_Rate_Sensor_minimal/Grove_Ear-clip_Heart_Rate_Sensor_minimal.ino"
+---
+
+
+# Pulssensor
+
+![Pulssensor](mys_mk_32.jpg)
 
 ## Beschreibung
+Der Pulssensor ermöglicht es, den menschlichen Puls am Finger oder Ohr mithilfe der beiliegenden Klammer zu messen. Die Messung erfolgt dabei optisch. Unterschiedliche Blutbewegungen reflektieren das vom Sensor ausgestrahlte grüne Licht unterschiedlich auf den Sensor zurück. Durch die integrierte Messverstärkung und Aufbereitung, wird der Puls direkt ermittelt und ein digitales Signal ausgegeben.
 
-kurz-Beschreibung
+Der Sensor kann direkt oder mithilfe eines Grove Shields an einen Arduino oder Raspberry angeschlossen werden.
 
-## Anschlüsse
+Der Pulssensor kann beispielsweise als Teil eines digitalen Sport-Assistenten eingesetzt werden.
 
-### Eingang
+Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen entsprechende Projektbeispiele und Tutorials.
 
--   I2C
+Die genaue Bezeichnung des Sensors, die bei der Suche von Beschreibungen und Anleitungen wichtig sein kann, lautet PAH8001EI-2G.
 
-### Ausgang
+<!-- infolist -->
 
--   High Power / High Voltage
+<!-- infolists -->
+## Wichtige Links für die ersten Schritte:
 
-## Kurz-Datenblatt
+- [Seeed Studio Wiki - Pulssensor](https://wiki.seeedstudio.com/Grove-Ear-clip_Heart_Rate_Sensor/)
 
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
+## Weiterführende Hintergrundinformationen:
 
-## Siehe Auch
-
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
+- [Herzfrequenzmessgeräte - Wikipedia Artikel](https://de.wikipedia.org/wiki/Herzfrequenzmessger%C3%A4t)
 
 
 
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
-
-## Beispiel
-
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
-
-## Anleitung
-
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt

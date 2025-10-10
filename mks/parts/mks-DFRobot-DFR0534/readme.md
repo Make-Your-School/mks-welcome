@@ -1,55 +1,47 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "MP3-Modul"
+date: "2018-10-01T15:20:08.000Z"
+tags: 
+  - "output"
+coverImage: "68_mp3-modul_rz.jpg"
+material_number: "68"
+material_type: "output"
+material_short_descr: "DFR0534"
+manufacture: "DFRobot"
+manufacture_url: "https://dfrobot.com/"
+repo_name: "mks-DFRobot-DFR0534"
+repo_prefix: "mks"
+repo_manufacture: "DFRobot"
+repo_part: "DFR0534"
+product_url: "https://wiki.dfrobot.com/Voice_Module_SKU__DFR0534#target_0"
+clone_url: "https://github.com/Make-Your-School/mks-DFRobot-DFR0534.git"
+embedded_example_file: "examples/DFR0534_minimal/DFR0534_minimal.ino"
+---
+
+
+# MP3-Modul
+
+![MP3-Modul](68_mp3-modul_rz.jpg)
 
 ## Beschreibung
+Das MP3-Modul ermöglicht das Abspielen von Musik oder abgespeicherten Tönen. Es integriert einen Speicherplatz von 8 MB, auf dem Musikdateien im mp3- oder wav-Format über einen Mikro-USB-Anschluss gespeichert werden können. Um die Musik auszugeben, lässt sich ein Lautsprecher an die dafür vorgesehenen Steckplätze anschließen.
 
-kurz-Beschreibung
+Das Modul wird über die \[simple\_tooltip content='Bei einer seriellen Datenübertragung werden die Bits (Informationen/Kommandos) nacheinander (seriell) über eine Leitung übertragen. Die wichtigsten seriellen Standards im Rahmen der Mikrocontroller sind I2C (Inter-Integrated Circuit), SPI (Serial Peripheral Interface) und UART (Universal Asynchronous Receiver Transmitter). Die genaue Funktionsweise ist für die reine Nutzung vorerst irrelevant. Es muss allerdings immer geprüft werden an welchen Pins oder an welchen Steckplätzen der jeweilige serielle Anschluss genutzt werden kann. Dies wird in den Datenblättern der Mikrocontroller normalerweise mit angegeben.'\]serielle Schnittstelle UART\[/simple\_tooltip\] direkt oder mithilfe des Grove Shields an einen Mikrocontroller angeschlossen.
 
-## Anschlüsse
+Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von DFRobot zusammengefasst. Die genaue Bezeichnung des integrierten Sensors, die bei der Suche von Beschreibungen und Anleitungen wichtig sein kann, lautet DFR0534.
 
-### Eingang
+<!-- infolist -->
 
--   I2C
+<!-- infolists -->
+## Wichtige Links für die ersten Schritte:
 
-### Ausgang
+- [## DFRobot Wiki](https://wiki.dfrobot.com/Voice_Module_SKU__DFR0534#target_0)
 
--   High Power / High Voltage
+## Weiterführende Hintergrundinformationen:
 
-## Kurz-Datenblatt
-
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
-
-## Siehe Auch
-
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
+- [## UART – Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)
+- [GitHub-Repository: MP3-Modul](https://github.com/s-light/MYS__68-MP3-Modul/blob/master/DFR0534/README.md)
 
 
 
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
-
-## Beispiel
-
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
-
-## Anleitung
-
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt

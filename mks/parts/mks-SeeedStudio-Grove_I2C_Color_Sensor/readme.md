@@ -1,55 +1,53 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "Farbsensor"
+date: "2018-10-01T13:57:05.000Z"
+tags: 
+  - "sensor"
+coverImage: "35_farbsensor.jpg"
+material_number: "35"
+material_type: "sensor"
+material_short_descr: "Seeed Studio Grove – I2C Color Sensor v2"
+manufacture: "Seeed Studio"
+manufacture_url: "https://www.seeedstudio.com/"
+repo_name: "mks-SeeedStudio-Grove_I2C_Color_Sensor"
+product_url: "https://wiki.seeedstudio.com/Grove-I2C_Color_Sensor/"
+clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_I2C_Color_Sensor.git"
+repo_prefix: "mks"
+repo_part: "Grove_I2C_Color_Sensor"
+embedded_example_file: "examples/Grove_I2C_Color_Sensor_minimal/Grove_I2C_Color_Sensor_minimal.ino"
+---
+
+
+# Farbsensor
+
+![Farbsensor](35_farbsensor.jpg)
 
 ## Beschreibung
+Der Farbsensor kann Farben sowohl von Lichtquellen als auch von Gegenständen ermitteln. Um die Erkennung zu verbessern, kann der Sensor mit einer externen gepulsten Lichtquelle synchronisiert werden. Die erkannte Farbe wird in RGB-Werten ausgegeben. Der Sensor wird direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen. Er kommuniziert über \[simple\_tooltip content='Bei einer seriellen Datenübertragung werden die Bits (Informationen/Kommandos) nacheinander (seriell) über eine Leitung übertragen. Die wichtigsten seriellen Standards im Rahmen der Microcontroller sind I2C (Inter-Integrated Circuit), SPI (Serial Peripheral Interface) und UART (Universal Asynchronous Receiver Transmitter). Die genaue Funktionsweise ist für die reine Nutzung vorerst irrelevant. Es muss allerdings immer geprüft werden an welchen Pins oder an welchen Steckplätzen der jeweilige serielle Anschluss genutzt werden kann. Dies wird in den Datenblättern der Mikrocontroller normalerweise immer mit angegeben.'\]die serielle Schnittstelle I2C\[/simple\_tooltip\].
 
-kurz-Beschreibung
+Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen entsprechende Projektbeispiele und Tutorials.
 
-## Anschlüsse
+Die genaue Bezeichnung des Sensors, die bei der Suche von Beschreibungen und Anleitungen wichtig sein kann, lautet TCS3414CS.
 
-### Eingang
+<!-- infolist -->
 
--   I2C
+<!-- infolists -->
+## Wichtige Links für die ersten Schritte:
 
-### Ausgang
+- [Seeed Studio Wiki](http://wiki.seeedstudio.com/Grove-I2C_Color_Sensor/) [- Farbsensor](http://wiki.seeedstudio.com/Grove-I2C_Color_Sensor/)
 
--   High Power / High Voltage
+## Projektbeispiele:
 
-## Kurz-Datenblatt
+- [Makerblog - Beispielhafte Farberkennung](https://www.makerblog.at/2015/01/farben-erkennen-mit-dem-rgb-sensor-tcs34725-und-dem-arduino/)
 
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
+## Weiterführende Hintergrundinformationen:
 
-## Siehe Auch
+- [I2C - Wikipedia Artikel](https://de.wikipedia.org/wiki/I%C2%B2C)
+- [SPI - Wikipedia Artikel](https://de.wikipedia.org/wiki/Serial_Peripheral_Interface)
+- [UART - Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)
+- [RGB-Farbraum - Wikipedia Artikel](https://de.wikipedia.org/wiki/RGB-Farbraum)
+- [GitHub-Repository: Farbsensor](https://github.com/MakeYourSchool/35-Farbsensor)
 
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
 
 
-
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
-
-## Beispiel
-
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
-
-## Anleitung
-
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt

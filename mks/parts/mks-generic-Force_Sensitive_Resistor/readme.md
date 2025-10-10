@@ -1,55 +1,62 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "Drucksensor"
+date: "2018-10-01T13:54:33.000Z"
+tags: 
+  - "sensor"
+coverImage: "31_drucksensor.jpg"
+material_number: "31"
+material_type: "sensor"
+manufacture: "Generic"
+repo_name: "mks-generic-Force_Sensitive_Resistor"
+repo_prefix: "mks"
+repo_manufacture: "generic"
+repo_part: "Force_Sensitive_Resistor"
+product_url: "https://learn.adafruit.com/force-sensitive-resistor-fsr/using-an-fsr"
+clone_url: "https://github.com/Make-Your-School/mks-generic-Force_Sensitive_Resistor.git"
+embedded_example_file: "examples/Force_Sensitive_Resistor_minimal/Force_Sensitive_Resistor_minimal.ino"
+---
+
+
+# Drucksensor
+
+![Drucksensor](31_drucksensor.jpg)
 
 ## Beschreibung
+Der Drucksensor ermöglicht es, Kräfte, die auf den Sensor wirken, zu bestimmen. Wird die Sensorfläche belastet, ändert sich der elektrische Widerstand zwischen den Anschlusspins. Durch eine Widerstandsmessung, kann folglich auf den einwirkenden Druck (also Kraft pro Flächeneinheit) geschlossen werden.
 
-kurz-Beschreibung
+Da ein Arduino nicht direkt eine Widerstandsänderung messen kann, wird eine Messverstärkerschaltung benötigt. Eine Möglichkeit bietet hierfür ein sogenannter Spannungsteiler, bei dem der Sensor in Reihe mit einem zweiten Widerstand zwischen Versorgungsspannung und Masse gelegt wird. Der Arduino kann schließlich die Widerstandsänderung als Spannungsänderung über einen \[simple\_tooltip content='
 
-## Anschlüsse
+Digital vs. analog:
 
-### Eingang
+- Analoge Signale können beliebige, kontinuierliche Werte annehmen. Sie verändern sich stufenlos. Dadurch können theoretisch unendlich kleine Änderungen (und damit ein unendlicher Informationsinhalt) übertragen werden. Einschränkend wirkt die Genauigkeit, mit der das analoge Signal ausgelesen/erfasst wird.
+- Das digitale Signal nimmt nur diskrete Werte an und springt bei einer etwaigen Änderung von einem Wert zum nächsten. Es kann nur eine definierte Anzahl an Informationsinhalten übertragen werden. Vorteilhaft ist dagegen die damit verbundene Fehlerfreiheit bei minimalsten, ungewollten Schwankungen. Oftmals werden nur zwei Werte HIGH und LOW (Ein/Aus oder 1/0) übermittelt.
 
--   I2C
+'\]analogen\[/simple\_tooltip\] \[simple\_tooltip content='Die Mikrocontroller besitzen kleine metallische Kontakte, an die Komponenten, Shields oder andere Platinen angeschlossen werden können. Diese Kontakte werden Pins genannt und können oft als sogenannte GPIO’s (Allzweck Ein- und Ausgabe) eingesetzt werden. Dies bedeutet, dass diese Pins direkt über die Programmierung des Mikrocontrollers angesprochen werden können und hierbei sogar bestimmt werden kann, ob dieser Pin ein Eingang (beispielsweise zum Auslesen eines Sensors) oder als Ausgang (beispielsweise zur Steuerung eines Motors) genutzt werden kann. Praktisches vereinfachtes Beispiel: Wird am Arduino eine LED an Pin 1 angeschlossen, kann im Programm direkt der Pin 1 als „An“ oder „Aus“ definiert werden und damit die LED an- oder ausgeschaltet werden. '\]Pin\[/simple\_tooltip\] erfassen.
 
-### Ausgang
+Der Sensor kann genutzt werden, um eine Berührung eines Objekts zu erkennen. Zusätzlich lässt sich die tatsächliche Kraft, die auf das Objekt ausgeübt wird, ermitteln.
 
--   High Power / High Voltage
+Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau sind im Datenblatt des Sensors zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen entsprechende Projektbeispiele und Tutorials. Hierbei ist das wichtige Stichwort „FSR“ (force sensing resistor).
 
-## Kurz-Datenblatt
+<!-- infolist -->
 
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
+<!-- infolists -->
+## Wichtige Links für die ersten Schritte:
 
-## Siehe Auch
+- FSR Drucksensor [overview](https://www.sparkfun.com/datasheets/Sensors/Pressure/fsrguide.pdf)  
 
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
+## Projektbeispiele:
+
+- [Adafruit - FSR Sensoren](https://learn.adafruit.com/force-sensitive-resistor-fsr/using-an-fsr)
+- [Instructables - FSR Tutorial](https://www.instructables.com/id/FSR-Tutorial/)
+
+## Weiterführende Hintergrundinformationen:
+
+- [Spannungsteiler - Wikipedia Artikel](https://de.wikipedia.org/wiki/Spannungsteiler)
+- [Messverstärker - Wikipedia Artikel](https://de.wikipedia.org/wiki/Messverst%C3%A4rker)
+- [Force Sensing Resistor - Wikipedia Artikel](https://de.wikipedia.org/wiki/Force_Sensing_Resistor)
+- [GPIO - Wikipedia Artikel](https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe)
+- [GitHub-Repository: Drucksensor](https://github.com/MakeYourSchool/31-Drucksensor)
 
 
 
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
-
-## Beispiel
-
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
-
-## Anleitung
-
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt

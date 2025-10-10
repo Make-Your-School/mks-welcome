@@ -1,55 +1,56 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "UV-Lichtsensor"
+date: "2018-10-01T12:49:38.000Z"
+tags: 
+  - "sensor"
+coverImage: "mys_mk_6.jpg"
+material_number: "6"
+material_type: "sensor"
+material_short_descr: "Seeed Studio Grove - UV Sensor"
+manufacture: "Seeed Studio"
+manufacture_url: "https://www.seeedstudio.com/"
+repo_name: "mks-SeeedStudio-Grove_UV_Sensor"
+product_url: "https://wiki.seeedstudio.com/Grove-UV_Sensor/"
+clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_UV_Sensor.git"
+repo_prefix: "mks"
+repo_part: "Grove_UV_Sensor"
+embedded_example_file: "examples/Grove_UV_Sensor_minimal/Grove_UV_Sensor_minimal.ino"
+---
+
+
+# UV-Lichtsensor
+
+![UV-Lichtsensor](mys_mk_6.jpg)
 
 ## Beschreibung
+Der UV-Lichtsensor erfasst die Intensität der auf ihn einwirkenden Ultraviolettstrahlung (kurz: UV). UV-Strahlung ist eine elektromagnetische Strahlung mit einer Wellenlänge zwischen 10 nm (Nanometer) und 380 nm. Die Wellenlänge ist damit länger als die von Röntgenstrahlung und kürzer als die von sichtbarem, violettem Licht. UV-Strahlung ist für das menschliche Auge unsichtbar und ist bspw. im kurzwelligen Anteil der Sonnenstrahlung enthalten.
 
-kurz-Beschreibung
+Die Sensibilität des Sensors ist am höchsten bei einer Strahlung mit einer Wellenlänge zwischen 200 nm und 400 nm. Dadurch erfasst der Sensor sowohl UV-Strahlung als auch einen geringen Anteil des sichtbaren violetten Lichts.
 
-## Anschlüsse
+Der Sensor kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen werden. Der Sensor wird dabei an einen \[simple\_tooltip content='Digital vs. analog:
 
-### Eingang
+- Analoge Signale können beliebige kontinuierliche Werte annehmen. Sie verändern sich stufenlos. Dadurch können theoretisch unendlich viele kleine Änderungen (und damit ein unendlicher Informationsinhalt) übertragen werden. Einschränkend wirkt die Genauigkeit, mit der das analoge Signal ausgelesen/erfasst wird.
+- Das digitale Signal nimmt nur diskrete Werte an und springt bei einer etwaigen Änderung von einem Wert zum nächsten. Es kann nur eine definierte Anzahl an Informationsinhalten übertragen werden. Vorteilhaft ist dagegen die damit verbundene Fehlerfreiheit bei minimalsten, ungewollten Schwankungen. Oftmals werden nur zwei Werte HIGH und LOW (Ein/Aus oder 1/0) übermittelt.
 
--   I2C
+'\]analogen\[/simple\_tooltip\] Eingang angeschlossen.
 
-### Ausgang
+Das Modul wird beispielsweise in einer Messstation für Umweltdaten, wie Feinstaub, Lautstärke, Luftfeuchtigkeit, Temperatur und UV-Strahlung eingesetzt.
 
--   High Power / High Voltage
+Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnung entsprechende Projektbeispiele und Tutorials.
 
-## Kurz-Datenblatt
+<!-- infolist -->
 
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
+<!-- infolists -->
+## Wichtige Links für die ersten Schritte:
 
-## Siehe Auch
+- [Seeed Studio Wiki – UV Sensor](https://wiki.seeedstudio.com/Grove-UV_Sensor/) 
 
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
+## Weiterführende Hintergrundinformationen:
+
+- [UV-Strahlung – Wikipedia Artikel](https://de.wikipedia.org/wiki/Ultraviolettstrahlung)
+- [Spektrum Elektromagnetische Strahlung – Wikipedia Artikel](https://de.wikipedia.org/wiki/Elektromagnetisches_Spektrum)
+- [GitHub-Repository: UV-Lichtsensor](https://github.com/MakeYourSchool/6-UV-Lichtsensor)
 
 
 
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
-
-## Beispiel
-
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
-
-## Anleitung
-
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt

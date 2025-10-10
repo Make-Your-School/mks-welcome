@@ -1,55 +1,47 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "SenseBox Shield (Arduino)"
+date: "2018-10-01T15:02:45.000Z"
+tags: 
+  - "shield"
+coverImage: "68_sensebox_shield_arduino.jpg"
+material_number: "68"
+material_type: "shield"
+material_short_descr: "SenseBox – Home Shield"
+manufacture: "Reedu GmbH & Co. KG"
+manufacture_url: "https://sensebox.de/"
+repo_name: "mks-SenseBox-Shield"
+clone_url: "https://github.com/Make-Your-School/mks-SenseBox-Shield.git"
+repo_prefix: "mks"
+repo_part: "Shield"
+embedded_example_file: "examples/Shield_minimal/Shield_minimal.ino"
+---
+
+
+# SenseBox Shield (Arduino)
+
+![SenseBox Shield (Arduino)](68_sensebox_shield_arduino.jpg)
 
 ## Beschreibung
-
-kurz-Beschreibung
-
-## Anschlüsse
-
-### Eingang
-
--   I2C
-
-### Ausgang
-
--   High Power / High Voltage
-
-## Kurz-Datenblatt
-
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
-
-## Siehe Auch
-
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
+Produkt vom Markt genommen.
 
 
+Das SenseBox Shield ist eine Erweiterungsplatine für Arduino-ähnliche Mikrocontroller. Diese Erweiterungsplatinen werden im Allgemeinen als „Shield“ bezeichnet und werden einfach auf den entsprechenden Controller oder Einplatinencomputer gesteckt. Das Shield bietet dann einzelne Steckplätze, um die Sensoren mit entsprechenden Verbindungskabel anzuschließen.
 
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
+Diese spezielle Ausführung gehört zu der SenseBox. Diese ist ein Citizen Science DIY-Toolkit für die ortsbezogene Messung von Umweltdaten wie Temperatur, Luftfeuchte, Luftdruck, Beleuchtungsstärke und UV-Licht. Dieser Baukasten ermöglicht es, mithilfe von vorausgewählten Sensoren und Online-Anleitungen, eine Wetterstation aufzubauen. Das System kann einfach in die SenseBox-eigene Sensorweb-Plattform (openSenseMap) integriert werden, auf/in der die Umweltdaten kontinuierlich und live im Internet angezeigt werden können. Die Sensoren können alle zusammen mit dem SenseBox Shield an einem beliebigen Arduino angeschlossen werden. Entsprechende vorgefertigte Programme können ebenfalls von der offiziellen Webseite heruntergeladen werden.
 
-## Beispiel
+Die SenseBox hat mehrere Schritt-für-Schritt-Anleitungen für den Bau der eigenen Wetterstation. Die sonstige Dokumentation ist recht ausführlich, da das gesamte Projekt auch unter der Open-Hardware-Lizenz läuft.
 
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
+<!-- infolist -->
+## Weiterführende Hintergrundinformationen:
 
-## Anleitung
+- [DIY - Wikipedia Artikel](https://de.wikipedia.org/wiki/Do_it_yourself)
+- [Mikrocontroller - Wikipedia Artikel](https://de.wikipedia.org/wiki/Mikrocontroller)
 
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt
+## Wichtige Links für die ersten Schritte:
+
+- [SenseBox Webseite](https://sensebox.de/)
+- [Tutorials-SenseBox Home](https://home.books.sensebox.de/de/)
+- [Tutorials-SenseBox Edu](https://edu.books.sensebox.de/de/)
+- [openSenseMap](https://osem.books.sensebox.de/de/)
+

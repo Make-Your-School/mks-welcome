@@ -1,55 +1,49 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "RFID-Transponder"
+date: "2018-10-01T14:41:57.000Z"
+tags: 
+  - "sensor"
+coverImage: "51_rfid_chip.jpg"
+material_number: "51"
+material_type: "sensor"
+material_short_descr: "Seeed Studio RFID tag combo (125khz)"
+manufacture: "Seeed Studio"
+manufacture_url: "https://www.seeedstudio.com/"
+repo_name: "mks-generic-RFID_Tag_125KHz"
+product_url: "https://wiki.seeedstudio.com/Grove-125KHz_RFID_Reader/"
+clone_url: "https://github.com/Make-Your-School/mks-generic-RFID_Tag_125KHz.git"
+repo_prefix: "mks"
+repo_part: "RFID_Tag_125KHz"
+embedded_example_file: "examples/RFID_Tag_125KHz_minimal/RFID_Tag_125KHz_minimal.ino"
+---
+
+
+# RFID-Transponder
+
+![RFID-Transponder](51_rfid_chip.jpg)
 
 ## Beschreibung
+RFID bezeichnet ein Sender-Empfänger-System, das vor allem zur eindeutigen Identifizierung von Objekten, Einkaufswaren oder auch Lebewesen eingesetzt wird. Der abgebildete RFID-Transponder hat die Form eines Schlüsselanhängers und einer Kreditkarte und besitzt eine eindeutige Identifikationsnummer. Die Identifikationsnummer wird vom Lesegerät ausgelesen, sobald der Transponder in seine unmittelbare Nähe gehalten wird. Der Transponder benötigt dabei keine Stromversorgung, da das Auslesegerät ihn kontaktlos mit Energie versorgt.
 
-kurz-Beschreibung
+Mit der RFID-Technologie lässt sich beispielsweie ein Haustür-Schloss automatisieren. Individuelle RFID-Transponder müssen dann an das entsprechende Lesegerät gehalten werden und könnten so einen Schlüssel ersetzen. Bei Verlust eines Transponders ließe sich dieser nachträglich ohne Austausch des Schlosses aus dem System sperren.
 
-## Anschlüsse
+Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.
 
-### Eingang
-
--   I2C
-
-### Ausgang
-
--   High Power / High Voltage
-
-## Kurz-Datenblatt
-
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
-
-## Siehe Auch
-
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
+https://www.youtube.com/watch?v=dJXTgtIMUPw
 
 
+<!-- infolist -->
+## Wichtige Links für die ersten Schritte:
 
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
+- [Produktseite - RFID Chip](https://www.seeedstudio.com/rfid-tag-combo-125khz-5-pcs-p-700.html?cPath=19_24)
+- [Seeed Studio Wiki -](http://wiki.seeedstudio.com/Grove-125KHz_RFID_Reader/) [RFID Lesegerät](http://wiki.seeedstudio.com/Grove-125KHz_RFID_Reader/)
 
-## Beispiel
+## Projektbeispiele:
 
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
+- [Hackster - Haus-Sicherheitssystem](https://www.hackster.io/ArduinoBasics/arduino-based-security-project-using-cayenne-eb379b)
 
-## Anleitung
+## Weiterführende Hintergrundinformationen:
 
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt
+- [RFID - Wikipedia Artikel](https://de.wikipedia.org/wiki/RFID)
+

@@ -1,55 +1,57 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "Linearservomotor"
+date: "2018-10-01T14:01:22.000Z"
+tags: 
+  - "output"
+coverImage: "39_linearservomotor.jpg"
+material_number: "39"
+material_type: "output"
+material_short_descr: "Micro-Servo S 15 linear Sol Expert S15JST 0.5 s"
+manufacture: "Generic"
+repo_name: "mks-generic-mico_linear_servo"
+repo_prefix: "mks"
+repo_manufacture: "generic"
+repo_part: "mico_linear_servo"
+product_url: "https://www.conrad.de/de/micro-servo-s-15-linear-sol-expert-s15jst-05-s-404224.html"
+clone_url: "https://github.com/Make-Your-School/mks-generic-mico_linear_servo.git"
+embedded_example_file: "examples/mico_linear_servo_minimal/mico_linear_servo_minimal.ino"
+---
+
+
+# Linearservomotor
+
+![Linearservomotor](39_linearservomotor.jpg)
 
 ## Beschreibung
+Ein Servomotor verfügt über eine interne Regelung, sodass von außen nur eine Position angeben werden muss, die er dann selbstständig anfährt und hält (trotz Krafteinwirkung). Er kann dadurch nur genaue Positionen anfahren, ist aber nicht für endloses Drehen ausgelegt. Ein Servomotor wird direkt oder mithilfe des Grove Shields an einen Arduino angeschlossen und über \[simple\_tooltip content='Pulsweitenmodulation ist eine Methode zur Simulierung von analogen Informationen mittels digitalen Signalen. Der Informationsinhalt wird hier durch die Pulsweite (zeitliche Länge eines Impulses) definiert und erzeugt, nicht durch dessen Intensität. Zu dieser Kategorie gehören auch andere Signalarten, die regelmäßig aufeinander folgende Spannungsimpulse nutzen, um die gewünschten Informationen zu übertragen.'\]Pulsweitenmodulation (PWM)\[/simple\_tooltip\] angesteuert.
 
-kurz-Beschreibung
+Der Linearservomotor ist ein spezieller Servomotor, der für lineare Bewegungen konzipiert ist. Er kann somit kleine Vor- und Rückwärtsbewegungen ausführen.
 
-## Anschlüsse
+Entsprechende Projektbeispiele und Tutorials sind über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen zu finden. Hierbei ist die Eingabe des Stichworts „Linear Servomotor“ entscheidend.
 
-### Eingang
+<!-- infolist -->
 
--   I2C
+<!-- infolists -->
+ 
 
-### Ausgang
+https://www.youtube.com/watch?v=wVxcmO2YuxA
 
--   High Power / High Voltage
+ 
 
-## Kurz-Datenblatt
+## Wichtige Links für die ersten Schritte:
 
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
+- [Conrad - Produktseite](https://www.conrad.de/de/micro-servo-s-15-linear-sol-expert-s15jst-05-s-404224.html)
 
-## Siehe Auch
+## Projektbeispiele:
 
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
+- [Arduino Tutorial - Servo](https://www.arduino-tutorial.de/servo/)
+
+## Weiterführende Hintergrundinformationen:
+
+- [Pulsweitenmodulation - Wikipedia Artikel](https://de.wikipedia.org/wiki/Pulsweitenmodulation)
+- [GPIO - Wikipedia Artikel](https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe)
+- [Servomotor - Wikipedia Artikel](https://de.wikipedia.org/wiki/Servomotor)
 
 
 
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
-
-## Beispiel
-
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
-
-## Anleitung
-
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt

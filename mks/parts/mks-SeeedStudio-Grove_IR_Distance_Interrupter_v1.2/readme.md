@@ -1,55 +1,60 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "Infrarot-Entfernungsschalter"
+date: "2018-10-12T14:53:06.000Z"
+tags: 
+  - "sensor"
+coverImage: "18_infrarot_entfernungsschalter.jpg"
+material_number: "18"
+material_type: "sensor"
+material_short_descr: "Seeed Studio Grove – IR Distance Interrupter v1.2."
+manufacture: "Seeed Studio"
+manufacture_url: "https://www.seeedstudio.com/"
+repo_name: "mks-SeeedStudio-Grove_IR_Distance_Interrupter_v1.2"
+repo_prefix: "mks"
+repo_manufacture: "SeeedStudio"
+repo_part: "Grove_IR_Distance_Interrupter_v1.2"
+product_url: "http://wiki.seeedstudio.com/Grove-IR_Distance_Interrupter_v1.2/"
+clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_IR_Distance_Interrupter_v1.2.git"
+embedded_example_file: "examples/Grove_IR_Distance_Interrupter_v1.2_minimal/Grove_IR_Distance_Interrupter_v1.2_minimal.ino"
+---
+
+
+# Infrarot-Entfernungsschalter
+
+![Infrarot-Entfernungsschalter](18_infrarot_entfernungsschalter.jpg)
 
 ## Beschreibung
+Der Infrarot-Entfernungsschalter ist ein Sensor, der - ähnlich einer Lichtschranke - Objekte erkennt, sobald sie den vom Sensor ausgestrahlten Infrarot-Strahl durchqueren. Der Sensor strahlt permanent einen Infrarot-Lichtstrahl aus und erkennt das durch ein Objekt leicht reflektierte Licht. Hierbei werden helle Objekte besser erkannt als dunkle. Der Messbereich erstreckt sich von 7,5cm bis 40cm. Die Sensitivität kann auf dem Modul eingestellt werden.
 
-kurz-Beschreibung
+Der Sensor wird direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen werden. Er kommuniziert über einen \[simple\_tooltip content='
 
-## Anschlüsse
+Digital vs. analog:
 
-### Eingang
+- Analoge Signale können beliebige kontinuierliche Werte annehmen. Sie verändern sich stufenlos. Dadurch können theoretisch unendlich viele kleine Änderungen (und damit ein unendlicher Informationsinhalt) übertragen werden. Einschränkend wirkt die Genauigkeit, mit der das analoge Signal ausgelesen/erfasst wird.
+- Das digitale Signal nimmt nur diskrete Werte an und springt bei einer etwaigen Änderung von einem Wert zum nächsten. Es kann nur eine definierte Anzahl an Informationsinhalten übertragen werden. Vorteilhaft ist dagegen die damit verbundene Fehlerfreiheit bei minimalsten, ungewollten Schwankungen. Oftmals werden nur zwei Werte HIGH und LOW (Ein/Aus oder 1/0) übermittelt.
 
--   I2C
+'\]digitalen\[/simple\_tooltip\] \[simple\_tooltip content='Die Mikrocontroller besitzen kleine metallische Kontakte, an die Komponenten, Shields oder andere Platinen angeschlossen werden können. Diese Kontakte werden Pins genannt und können oft als sogenannte GPIO’s (Allzweck Ein- und Ausgabe) eingesetzt werden. Dies bedeutet, dass diese Pins direkt über die Programmierung des Mikrocontrollers angesprochen werden können und hierbei sogar bestimmt werden kann, ob dieser Pin ein Eingang (beispielsweise zum Auslesen eines Sensors) oder als Ausgang (beispielsweise zur Steuerung eines Motors) genutzt werden kann. Praktisches vereinfachtes Beispiel: Wird am Arduino eine LED an Pin 1 angeschlossen, kann im Programm direkt der Pin 1 als „An“ oder „Aus“ definiert werden und damit die LED an- oder ausgeschaltet werden. '\]Pin\[/simple\_tooltip\].
 
-### Ausgang
+Der Entfernungsschalter kann beispielsweise als Zähler eingesetzt werden, um die Anzahl von Personen zu bestimmen, die einen Raum betreten.
 
--   High Power / High Voltage
+Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnung entsprechende Projektbeispiele und Tutorials.
 
-## Kurz-Datenblatt
+<!-- infolist -->
 
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
+<!-- infolists -->
+## Wichtige Links für die ersten Schritte:
 
-## Siehe Auch
+- [Seeed Studio Wiki](http://wiki.seeedstudio.com/Grove-IR_Distance_Interrupter_v1.2/) [- IR Entfernungsschalter](http://wiki.seeedstudio.com/Grove-IR_Distance_Interrupter_v1.2/)
 
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
+## Projektbeispiele:
+
+- [Instructables - IR Entfernungsschalter](https://www.instructables.com/id/Grove-sensors-with-a-Particle-Core-IR-Distance-Int/)
+
+## Weiterführende Hintergrundinformationen:
+
+- [GPIO - Wikipedia Artikel](https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe)
+- [GitHub-Repository: Infrarot-Entfernungsschalter](https://github.com/MakeYourSchool/18-Infrarot-Entfernungsschalter)
 
 
 
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
-
-## Beispiel
-
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
-
-## Anleitung
-
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt

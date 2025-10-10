@@ -1,55 +1,42 @@
-# mks-Bauteil
 
-![Bauteil](./bauteil.png)
-<!-- TODO: CONTENT change image -->
-<!-- TODO: ARCHITECTURE multiple images? -->
-<!-- do we need multiple images per part?-->
-<!-- and if do we need a slider? -->
+---
+title: "Peristaltikpumpe"
+date: "2018-10-01T14:24:30.000Z"
+tags: 
+  - "output"
+coverImage: "43_peristaltikpumpe.jpg"
+material_number: "43"
+material_type: "output"
+material_short_descr: "Peristaltic Liquid Pump with Silicone Tubing"
+manufacture: "Generic"
+repo_name: "mks-generic-PeristalticPump"
+repo_prefix: "mks"
+repo_manufacture: "generic"
+repo_part: "PeristalticPump"
+product_url: "https://www.adafruit.com/product/3910"
+clone_url: "https://github.com/Make-Your-School/mks-generic-PeristalticPump.git"
+embedded_example_file: "examples/PeristalticPump_minimal/PeristalticPump_minimal.ino"
+---
+
+
+# Peristaltikpumpe
+
+![Peristaltikpumpe](43_peristaltikpumpe.jpg)
 
 ## Beschreibung
+Die Peristaltikpumpe bringt durch Kneten eines Silikonschlauchs die darin befindliche Flüssigkeit in Bewegung und drückt diese so durch den Schlauch hindurch. Dabei kommen die mechanischen Bauteile der Pumpe nicht mit der Flüssigkeit in Kontakt und so lässt sie sich auch für Getränke oder andere flüssige Nahrungsmittel oder sterile Flüssigkeiten nutzen. Da die Pumpe durch einen Gleichstrommotor angetrieben wird, wird sie auch wie dieser angeschlossen. Die Steuerung erfolgt über ein einfaches Relais, einen Transistor, einen manuellen Schalter oder einen Motortreiber, der als fertiges Modul zwischen Mikrocontroller und Gleichstrommotor geschaltet wird.
 
-kurz-Beschreibung
+Die Peristaltikpumpe kann zur Bewässerung von Pflanzen oder zum Aufbau eines Wasserspenders eingesetzt werden.
 
-## Anschlüsse
+Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponentenbezeichnungen. Das wichtige Stichwort lautet hier „DC Motor“ oder „Gleichstrommotor“.
 
-### Eingang
+<!-- infolist -->
+## Wichtige Links für die ersten Schritte:
 
--   I2C
+- [Adafruit Wasserpumpe](https://www.adafruit.com/product/1150)
 
-### Ausgang
+## Weiterführende Hintergrundinformationen:
 
--   High Power / High Voltage
+- [GPIO - Wikipedia Artikel](https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe)
+- [Peristaltikpumpe - Wikipedia Artikel](https://de.wikipedia.org/wiki/Schlauchpumpe)
 
-## Kurz-Datenblatt
-
--   Signal Eingang: 3-5V
--   Betriebsspannung: 5-12V
--   Ausgang Strom Max: 2A
-
-## Siehe Auch
-
--   falls vorhanden link zu anderem Bauteil / zugehörigem part
-
-
-
-## library
-um dieses Bauteil zu benutzen verwende / installiere bitte diese Library: LibraryName
-<!-- TODO: CONTENT change library name -->
-
-## Beispiel
-
-schau dir das Minimal-Beispiel an:
-<!-- TODO: ARCHITECTURE include example *_minimal.ino-->
-
-## Anleitung
-
-<!-- TODO: CONTENT change guide -->
-- nimm Bauteil
-- Schließe an Port D2 an
-- nehm Beispiel Code 
-    - kopiere von hier drüber
-    - oder direkt in der Arduino IDE: 
-        `Datei-Beispiele-MakeYourSchool-FunktionsNamen-BauteilNamen-Minimal`
-- Sketch Hochladen
-- Das Sollte nun passieren:
-    - die LED Blinkt im 1 Sekunden Takt
