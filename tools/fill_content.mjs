@@ -82,8 +82,8 @@ async function updateMarkdownFile(repoData) {
 
 export async function main() {
     console.log(`found '${reposData.length}' repos to process..`)
-    const repoData = reposData[0]; {
-    // for (const repoData of reposData) {
+    // const repoData = reposData[0]; {
+    for (const repoData of reposData) {
         await updateMarkdownFile(repoData)
     }
 }
