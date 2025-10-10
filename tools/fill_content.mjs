@@ -68,16 +68,16 @@ ${content_description}
 ${content_infolist}
 
 `
-    return content1
+    return content
 }
 
 async function updateMarkdownFile(repoData) {
     console.log(`update '${repoData.repo_name}' Readme.md.`)
     const md = await buildMarkdownFileContent(repoData)
 
-    const filepath = path.join(repoData.submodule_path, 'readme.md')
+    const filepath = path.join(".", repoData.submodule_path, 'readme.md')
     console.log('filepath', filepath)
-    // fs.writeFileSync(filepath, md)
+    fs.writeFileSync(filepath, md)
 }
 
 export async function main() {
