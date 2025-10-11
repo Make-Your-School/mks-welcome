@@ -54,12 +54,11 @@ async function buildMarkdownFileContent(repoData) {
     const content_description = repoData.content_description
     const content_infolist = repoData.content_infolist
 
-    const content = `
-${content_frontmatter}
+    const content = `${content_frontmatter}
 
 # ${repoData.frontmatter.title}
 
-![${repoData.frontmatter.title}](${repoData.frontmatter.coverImage})
+![${repoData.frontmatter.title}](./${repoData.frontmatter.coverImage})
 
 ## Beschreibung
 ${content_description}
