@@ -1,33 +1,3 @@
-[submodule "public/mks/mks-GroveUltraschall"]
-	path = public/mks/parts/mks-GroveUltraschall
-	url = https://github.com/Make-Your-School/mks-GroveUltraschall.git
-[submodule "public/mks/mks-GroveMotortreiberI2C"]
-	path = public/mks/parts/mks-GroveMotortreiberI2C
-	url = https://github.com/Make-Your-School/mks-GroveMotortreiberI2C.git
-[submodule "public/mks/mks-GroveMagnetschalter"]
-	path = public/mks/parts/mks-GroveMagnetschalter
-	url = https://github.com/Make-Your-School/mks-GroveMagnetschalter.git
-[submodule "public/mks/mks-GroveKippschalter"]
-	path = public/mks/parts/mks-GroveKippschalter
-	url = https://github.com/Make-Your-School/mks-GroveKippschalter.git
-[submodule "public/mks/mks-GroveTaster"]
-	path = public/mks/parts/mks-GroveTaster
-	url = https://github.com/Make-Your-School/mks-GroveTaster.git
-[submodule "public/mks/mks-GroveSchalter"]
-	path = public/mks/parts/mks-GroveSchalter
-	url = https://github.com/Make-Your-School/mks-GroveSchalter.git
-[submodule "public/mks/parts/mks-Endschalter"]
-	path = public/mks/parts/mks-Endschalter
-	url = https://github.com/Make-Your-School/mks-Endschalter.git
-[submodule "public/mks/mks-Taster"]
-	path = public/mks/parts/mks-Taster
-	url = https://github.com/Make-Your-School/mks-Taster.git
-[submodule "public/mks/parts/mks-GroveSerialBluetoothV3.0"]
-	path = public/mks/parts/mks-GroveSerialBluetoothV3.0
-	url = https://github.com/Make-Your-School/mks-GroveSerialBluetoothV3.0.git
-[submodule "public/mks/parts/mks-Grove125KHzRFIDReader-V1.0"]
-	path = public/mks/parts/mks-Grove125KHzRFIDReader-V1.0
-	url = https://github.com/Make-Your-School/mks-Grove125KHzRFIDReader-V1.0.git
 [submodule "public/mks/parts/mks-Arduino-UNO_R3"]
 	path = public/mks/parts/mks-Arduino-UNO_R3
 	url = https://github.com/Make-Your-School/mks-Arduino-UNO_R3.git
