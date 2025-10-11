@@ -7,45 +7,46 @@ const reposDataFile = './reposData.json'
 import path from 'path'
 // import { diff } from 'node:util';
 
-function writeAbbrFile(key, content) {
-    const filepath = path.join('.', 'public', 'mks', 'abbr', `${key}.md`)
-    fs.writeFileSync(filepath, content)
-    console.log('reposData saved to disk.')
-}
-
 const regexToolTip =
     /\\\[simple\\_tooltip content='(?<tooltip_content>.*?)'\\\](?<tooltip_key>.*?)\\\[\/simple\\_tooltip\\\]/gmsu
 
-async function extractToolTips(repoData, tooltipList) {
+function addToolTipItem(abbrList, tooltip_key, tooltip_content) {
+    tooltip_content = tooltip_content.trim()
+    if (abbrList[tooltip_key]) {
+        // console.log(`    already available. checking content..`);
+        // const diffs = diff(abbrList[tooltip_key], tooltip_content)
+        // if (diffs.length > 0) {
+        //     console.log(
+        //         `    already available. content differs. generating new key please check yourself.....`,
+        //     )
+        // }
+        if (abbrList[tooltip_key] != tooltip_content) {
+            console.log(`    already available. content differs.`)
+            let tooltip_key_new = tooltip_key
+            while (Object.keys(abbrList).includes(tooltip_key_new)) {
+                tooltip_key_new = tooltip_key_new + '-'
+            }
+            console.log(`     generated new key '${tooltip_key_new}'.`)
+            console.log(`     please check content yourself.....`)
+            abbrList[tooltip_key_new] = tooltip_content
+        }
+    } else {
+        abbrList[tooltip_key] = tooltip_content
+    }
+}
+
+async function extractToolTips(repoData, abbrList) {
     console.log(`extract tooltips from '${repoData.repo_name}'...`)
 
     repoData.content_description.replaceAll(
         regexToolTip,
         (match, p1, p2, offset, string, groups) => {
-            const { tooltip_key, tooltip_content } = groups
+            let { tooltip_key, tooltip_content } = groups
+            tooltip_key = tooltip_key.trim()
+            tooltip_content = tooltip_content.trim()
             if (tooltip_key && tooltip_content) {
                 console.log(`    found '${tooltip_key}'`)
-                if (tooltipList[tooltip_key]) {
-                    // console.log(`    already available. checking content..`);
-                    // const diffs = diff(tooltipList[tooltip_key], tooltip_content)
-                    // if (diffs.length > 0) {
-                    //     console.log(
-                    //         `    already available. content differs. generating new key please check yourself.....`,
-                    //     )
-                    // }
-                    if (tooltipList[tooltip_key] != tooltip_content) {
-                        console.log(`    already available. content differs.`)
-                        let tooltip_key_new = tooltip_key
-                        while (Object.keys(tooltipList).includes(tooltip_key_new)) {
-                            tooltip_key_new = tooltip_key_new + '-'
-                        }
-                        console.log(`     generated new key '${tooltip_key_new}'.`)
-                        console.log(`     please check content yourself.....`)
-                        tooltipList[tooltip_key_new] = tooltip_content
-                    }
-                } else {
-                    tooltipList[tooltip_key] = tooltip_content
-                }
+                addToolTipItem(abbrList, tooltip_key, tooltip_content)
             } else {
                 console.log(
                     `    extraction failed: key '${tooltip_key}', content '${tooltip_content}'`,
@@ -59,27 +60,7 @@ async function extractToolTips(repoData, tooltipList) {
     //     const { tooltip_key, tooltip_content } = result.groups
     //     if (tooltip_key && tooltip_content) {
     //         console.log(`    found '${tooltip_key}'`)
-    //         if (tooltipList[tooltip_key]) {
-    //             // console.log(`    already available. checking content..`);
-    //             // const diffs = diff(tooltipList[tooltip_key], tooltip_content)
-    //             // if (diffs.length > 0) {
-    //             //     console.log(
-    //             //         `    already available. content differs. generating new key please check yourself.....`,
-    //             //     )
-    //             // }
-    //             if (tooltipList[tooltip_key] != tooltip_content) {
-    //                 console.log(`    already available. content differs.`)
-    //                 let tooltip_key_new = tooltip_key
-    //                 while (Object.keys(tooltipList).includes(tooltip_key_new)) {
-    //                     tooltip_key_new = tooltip_key_new + '-'
-    //                 }
-    //                 console.log(`     generated new key '${tooltip_key_new}'.`)
-    //                 console.log(`     please check content yourself.....`)
-    //                 tooltipList[tooltip_key_new] = tooltip_content
-    //             }
-    //         } else {
-    //             tooltipList[tooltip_key] = tooltip_content
-    //         }
+    //            addToolTipItem(abbrList, tooltip_key, tooltip_content)
     //     } else {
     //         console.log(`    extraction failed: key '${tooltip_key}', content '${tooltip_content}'`)
     //     }
@@ -96,18 +77,15 @@ export async function main() {
     console.log(`found '${reposData.length}' repos to process..`)
 
     // const repoData = reposData[0]; {
-    const tooltipList = {}
+    const abbrList = {}
     for (const repoData of reposData) {
         // await prepareContentInfolist(repoData)
-        await extractToolTips(repoData, tooltipList)
+        await extractToolTips(repoData, abbrList)
     }
 
-    const tooltipListJSON = JSON.stringify(tooltipList, null, 4)
-    fs.writeFileSync('tooltipList.json', tooltipListJSON)
-    console.log(`'tooltipList.json' saved to disk.`)
-    for (const { key, content } of Object.entries(tooltipList)) {
-        // writeAbbrFile(key, content)
-    }
+    const abbrListJSON = JSON.stringify(abbrList, null, 4)
+    fs.writeFileSync('./tools/abbrList.json', abbrListJSON)
+    console.log(`'abbrList.json' saved to disk.`)
 }
 
 main()
