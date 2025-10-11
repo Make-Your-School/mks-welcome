@@ -1,4 +1,3 @@
-
 ---
 title: "Elektromagnet"
 date: "2018-10-01T14:29:58.000Z"
@@ -21,7 +20,7 @@ embedded_example_file: "examples/Grove_Electromagnet_minimal/Grove_Electromagnet
 
 # Elektromagnet
 
-![Elektromagnet](49_elektromagnet.jpg)
+![Elektromagnet](./49_elektromagnet.jpg)
 
 ## Beschreibung
 Beim Elektromagneten handelt es sich um einen Magneten, der über eine angelegte Spannung aktiviert oder deaktiviert werden kann. Das Funktionsprinzip beruht auf der physikalischen Eigenschaft einer stromdurchflossenen Spule, die ein Magnetfeld um sich herum aufbaut. Da Spulen und Elektromagnete Ströme induzieren, die der angelegten Spannung entgegen gerichtet sind, dürfen Mikrocontroller nicht direkt an den Elektromagneten angeschlossen werden. Dieser könnte sonst beschädigt werden. Das hier vorliegende Board beinhaltet alle wichtigen Schutzschaltungen, sodass  ein Arduino oder Raspberry Pi direkt oder mithilfe des Grove Shields angeschlossen werden können. Mit einem einfachen digitalen HIGH-Signal wird der Magnet angeschaltet. Der Elektromagnet kann hierbei ein Gewicht von ca. 1 kg tragen.

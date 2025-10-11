@@ -1,4 +1,3 @@
-
 ---
 title: "Vibrationssensor"
 date: "2018-10-01T13:28:09.000Z"
@@ -22,7 +21,7 @@ embedded_example_file: "examples/Grove_Piezo_Vibration_Sensor_minimal/Grove_Piez
 
 # Vibrationssensor
 
-![Vibrationssensor](13_vibrationssensor.jpg)
+![Vibrationssensor](./13_vibrationssensor.jpg)
 
 ## Beschreibung
 Der Vibrationssensor erfasst jegliche Art von Erschütterungen. Jedes Mal, wenn der Sensor vorwärts und rückwärts bewegt wird, gibt er einen Spannungsimpuls aus und erfasst damit eine Erschütterung. Die Sensitivität kann mit einem integrierten Potentiometer (Drehwiderstand) eingestellt werden und definiert die Erschütterungsfrequenz.

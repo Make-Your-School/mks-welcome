@@ -1,4 +1,3 @@
-
 ---
 title: "Motortreiber"
 date: "2018-10-01T15:07:22.000Z"
@@ -22,7 +21,7 @@ embedded_example_file: "examples/Grove_I2C_Motor_Driver_V1.3_minimal/Grove_I2C_M
 
 # Motortreiber
 
-![Motortreiber](70_motortreiber.jpg)
+![Motortreiber](./70_motortreiber.jpg)
 
 ## Beschreibung
 Im Allgemeinen reichen die Stromstärken, die ein Mikrocontroller liefern kann, nicht aus, um einen Motor direkt anzusteuern. Deshalb gibt es unterschiedliche Arten von sogenannten Motortreibern. Diese werden eingangsseitig am Mikrocontroller und ausgangsseitig am Motor angeschlossen. Sie übersetzen die Kommandos des Mikrocontrollers in die vom Motor benötigten Stromstärken. Gleichzeitig wird der Mikrocontroller von etwaigen Kurzschlüssen oder Überspannungen, die seitens des Motors entstehen könnten, geschützt.

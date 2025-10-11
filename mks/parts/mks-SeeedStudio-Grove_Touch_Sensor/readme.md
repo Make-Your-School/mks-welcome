@@ -1,4 +1,3 @@
-
 ---
 title: "Berührungssensor"
 date: "2018-10-02T07:03:08.000Z"
@@ -22,7 +21,7 @@ embedded_example_file: "examples/Grove_Touch_Sensor_minimal/Grove_Touch_Sensor_m
 
 # Berührungssensor
 
-![Berührungssensor](56_beruehrungssensor.jpg)
+![Berührungssensor](./56_beruehrungssensor.jpg)
 
 ## Beschreibung
 Der Berührungssensor erkennt, sobald sich ein Finger dem Sensor nähert. Dabei spielt es keine Rolle, ob der Finger den Sensor tatsächlich berührt oder dieser sich nur knapp darüber befindet. Er hat damit eine ähnliche Funktion wie ein Taster oder Schalter und kann einen Mikrocontroller steuern. Der Sensor lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi anschließen. Die erkannte Berührung (oder Annäherung) wird über ein digitales Signal ausgegeben.

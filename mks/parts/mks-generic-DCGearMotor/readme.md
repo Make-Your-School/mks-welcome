@@ -1,4 +1,3 @@
-
 ---
 title: "Gleichstrommotor mit Getriebe"
 date: "2018-10-01T14:21:43.000Z"
@@ -20,7 +19,7 @@ embedded_example_file: "examples/DCGearMotor_minimal/DCGearMotor_minimal.ino"
 
 # Gleichstrommotor mit Getriebe
 
-![Gleichstrommotor mit Getriebe](42_gleichstrommotor_mit_getriebe.jpg)
+![Gleichstrommotor mit Getriebe](./42_gleichstrommotor_mit_getriebe.jpg)
 
 ## Beschreibung
 Ein Gleichstrommotor dreht solange, wie er an einer Spannungsquelle hängt und ist dadurch auf endloses Drehen optimal ausgelegt. Dagegen ist die genaue Positionierung etwas schwieriger, da die Drehgeschwindigkeit von der Kraft die er aufbringen muss, abhängt. Die Steuerung erfolgt über ein einfaches Relais, einen Transistor, einen manuellen Schalter oder einen Motortreiber, der als fertiges Modul zwischen Mikrocontroller und Gleichstrommotor geschaltet wird.

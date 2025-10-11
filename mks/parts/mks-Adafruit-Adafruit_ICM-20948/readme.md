@@ -1,4 +1,3 @@
-
 ---
 title: "Inertialsensor"
 date: "2018-10-01T13:25:56.000Z"
@@ -21,7 +20,7 @@ embedded_example_file: "examples/Adafruit_ICM-20948_minimal/Adafruit_ICM-20948_m
 
 # Inertialsensor
 
-![Inertialsensor](12_intertialsensor_rz.jpg)
+![Inertialsensor](./12_intertialsensor_rz.jpg)
 
 ## Beschreibung
 Der TDK InvenSense ICM-20948 ist ein sogenannter neunachsiger Inertialsensor. Inertialsensoren kombinieren mehrere Sensortypen, um jegliche dreidimensionale Bewegung (Verschiebungen und Neigungen in allen Raumrichtungen) zu bestimmen.

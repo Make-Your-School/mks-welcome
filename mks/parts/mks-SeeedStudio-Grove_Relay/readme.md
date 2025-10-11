@@ -1,4 +1,3 @@
-
 ---
 title: "Relaiskarte"
 date: "2018-10-01T14:28:00.000Z"
@@ -22,7 +21,7 @@ embedded_example_file: "examples/Grove_Relay_minimal/Grove_Relay_minimal.ino"
 
 # Relaiskarte
 
-![Relaiskarte](48_relaiskarte.jpg)
+![Relaiskarte](./48_relaiskarte.jpg)
 
 ## Beschreibung
 Eine Relaiskarte ist eine Platine, die es einem Mikrocontroller ermöglicht, ein Relais anzusteuern, was im Allgemeinen nicht ohne weitere Komponenten möglich ist.  Ein Relais wird zum Schalten von elektronischen Komponenten eingesetzt. Es funktioniert dabei ähnlich wie ein Handschalter, nur, dass ein Elektromagnet die benötigte Stellkraft des Schaltens zur Verfügung stellt. Da ein direkt an einen Mikrocontroller angeschlossener Elektromagnet den Controller zerstören kann, besitzt die Relaiskarte alle notwendigen Schutz- und Wandlungskomponenten. So können auch Geräte mit hoher Leistung oder höheren Spannungen mit einem Mikrocontroller geschaltet werden. Die Relaiskarte lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi anschließen. Mit einem einfachen digitalen HIGH-Signal wird das Relais geschaltet und damit ein Schaltkreis geschlossen.

@@ -1,4 +1,3 @@
-
 ---
 title: "Feinstaubsensor"
 date: "2018-10-01T12:55:53.000Z"
@@ -21,7 +20,7 @@ embedded_example_file: "examples/Grove_Dust_Sensor_minimal/Grove_Dust_Sensor_min
 
 # Feinstaubsensor
 
-![Feinstaubsensor](8_feinstaubsensor.jpg)
+![Feinstaubsensor](./8_feinstaubsensor.jpg)
 
 ## Beschreibung
 Der Feinstaubsensor wertet die umgebende Luftqualität über die Feinstaubkonzentration aus. Die Feinstaubkonzentration wird dabei durch die Anzahl an erfassten Partikeln pro Zeiteinheit bestimmt. Der Sensor erfasst Feinstaubpartikel ab einer Größe von 1 µm und gibt einen Impuls bei jeder Erfassung eines Partikels aus. Er kann direkt oder mithilfe des Grove Shields an einen digitalen Pin eines Arduinos angeschlossen werden. Die Anzahl der Impulse kann schließlich mithilfe des Arduinos in die Feinstaubkonzentration umgerechnet werden.

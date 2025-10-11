@@ -1,4 +1,3 @@
-
 ---
 title: "Bewegungsmelder"
 date: "2018-10-01T13:35:14.000Z"
@@ -21,7 +20,7 @@ embedded_example_file: "examples/Grove_PIR_Motion_Sensor_minimal/Grove_PIR_Motio
 
 # Bewegungsmelder
 
-![Bewegungsmelder](19_bewegungsmelder.jpg)
+![Bewegungsmelder](./19_bewegungsmelder.jpg)
 
 ## Beschreibung
 Der Bewegungsmelder erkennt in seiner näheren Umgebung sich bewegende Objekte. Der Messbereich liegt zwischen 10cm und 6m. Der Sensor gibt solange ein digitales Signal aus, wie eine Bewegung in der Umgebung wahrgenommen wird.

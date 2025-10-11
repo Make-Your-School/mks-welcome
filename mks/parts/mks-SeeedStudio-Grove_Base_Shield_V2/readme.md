@@ -1,4 +1,3 @@
-
 ---
 title: "Grove Shield (Arduino)"
 date: "2018-08-28T23:43:51.000Z"
@@ -22,7 +21,7 @@ embedded_example_file: "examples/Grove_Base_Shield_V2_minimal/Grove_Base_Shield_
 
 # Grove Shield (Arduino)
 
-![Grove Shield (Arduino)](66_grove_shield_arduino.jpg)
+![Grove Shield (Arduino)](./66_grove_shield_arduino.jpg)
 
 ## Beschreibung
 Das Grove Base Shield ist eine Erweiterungsplatine für Arduino-ähnliche Mikrocontroller. Diese Erweiterungsplatinen werden im Allgemeinen als „Shield“ bezeichnet. Sie werden auf den entsprechenden Controller oder Einplatinencomputer gesteckt und vereinfachen das Anschließen von speziellen Komponenten.

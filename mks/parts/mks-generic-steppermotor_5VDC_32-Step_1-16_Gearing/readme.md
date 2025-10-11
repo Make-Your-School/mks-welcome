@@ -1,4 +1,3 @@
-
 ---
 title: "Schrittmotor"
 date: "2018-10-02T07:00:52.000Z"
@@ -21,7 +20,7 @@ embedded_example_file: "examples/steppermotor_5VDC_32-Step_1-16_Gearing_minimal/
 
 # Schrittmotor
 
-![Schrittmotor](40_schrittmotor.jpg)
+![Schrittmotor](./40_schrittmotor.jpg)
 
 ## Beschreibung
 Ein Schrittmotor wird immer mithilfe eines Motortreibers angesteuert. Er kann sehr genau positioniert werden, selbst ohne Sensoren, da er in einzelnen, unabhängig von äußeren Belastungen, immer gleichbleibenden Schritten weiterdreht (innerhalb der angegeben Belastungsgrenze). Praktisch bedeutet das: Der Mikrocontroller sendet an den Motortreiber die Richtung und die Anzahl an Schritten, die weitergedreht werden sollen. Solange man die Anfangsposition kennt und den Überblick der vorwärts und rückwärts gedrehten Schritten behält, ist die Position des Motors bekannt. Der Schrittmotor ist dadurch sehr präzise aber oftmals nicht so schnell wie ein einfacher DC-Motor.

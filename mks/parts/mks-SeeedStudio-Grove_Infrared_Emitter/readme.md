@@ -1,4 +1,3 @@
-
 ---
 title: "Infrarot-Emitter"
 date: "2018-10-01T13:29:36.000Z"
@@ -22,7 +21,7 @@ embedded_example_file: "examples/Grove_Infrared_Emitter_minimal/Grove_Infrared_E
 
 # Infrarot-Emitter
 
-![Infrarot-Emitter](15_infrarot_emitter.jpg)
+![Infrarot-Emitter](./15_infrarot_emitter.jpg)
 
 ## Beschreibung
 Der Infrarot Emitter wird zur Übertragung von Signalen über infrarotes Licht eingesetzt. Als Partner kommt der Infrarot-Empfänger zum Einsatz, der die Signale empfängt. Die Leuchtdiode strahlt in einer Wellenlänge von 940nm und kann nicht nur zum Bestrahlen des entsprechenden Empfängers genutzt werden, sondern ebenfalls als Infrarot-Fernbedienung von anderen Geräten eingesetzt werden. Die maximale Reichweite beträgt ca. 10m. Der Emitter kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen werden. Er wird hierbei über einen digitalen Pin angesteuert.

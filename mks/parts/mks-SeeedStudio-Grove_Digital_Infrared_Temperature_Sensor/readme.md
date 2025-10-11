@@ -1,4 +1,3 @@
-
 ---
 title: "Infrarot-Temperatursensor"
 date: "2018-10-01T13:46:26.000Z"
@@ -21,7 +20,7 @@ embedded_example_file: "examples/Grove_Digital_Infrared_Temperature_Sensor_minim
 
 # Infrarot-Temperatursensor
 
-![Infrarot-Temperatursensor](27_infrarot_temperatursensor.jpg)
+![Infrarot-Temperatursensor](./27_infrarot_temperatursensor.jpg)
 
 ## Beschreibung
 Dieser Temperatursensor ermittelt die Wärmestrahlung eines beliebigen Gegenstands kontaktlos über infrarotes Licht. Eine Entfernung des zu messenden Objekts von ca. 3cm wird empfohlen. Der Sensor kann direkt oder mithilfe des Grove Shields an einen Arduino angeschlossen werden und kommuniziert standardmäßig über eine serielle Schnittstelle namens SMBus. Er kann ebenfalls über die serielle Schnittstelle I2C ausgelesen werden.

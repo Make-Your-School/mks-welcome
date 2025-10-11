@@ -1,4 +1,3 @@
-
 ---
 title: "Makey-Makey"
 date: "2018-10-01T14:46:28.000Z"
@@ -22,7 +21,7 @@ embedded_example_file: "examples/MakeyMakey_minimal/MakeyMakey_minimal.ino"
 
 # Makey-Makey
 
-![Makey-Makey](55_makeymakey.jpg)
+![Makey-Makey](./55_makeymakey.jpg)
 
 ## Beschreibung
 Mit den Makey-Makey-Modulen lassen sich viele Alltagsgegenstände in Eingabegeräte verwandeln. Leitfähige Gegenstände wie Alufolie oder Früchte können einfach mit Krokodilklemmen an das Makey-Makey-Modul angeschlossen werden. Ist man zusätzlich selbst ebenfalls mit dem Makey-Makey verbunden, erkennt das Modul eine Berührung der leitfähigen Gegenstände. Das Makey-Makey wird schließlich mit USB an einen PC angeschlossen und damit können simple Spiele oder Anwendungen gesteuert werden.

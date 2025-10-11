@@ -1,4 +1,3 @@
-
 ---
 title: "Temperatur- und Luft­feuchtigkeits&amp;shy;sensor"
 date: "2018-08-28T23:39:41.000Z"
@@ -22,7 +21,7 @@ embedded_example_file: "examples/Grove_DHT11_minimal/Grove_DHT11_minimal.ino"
 
 # Temperatur- und Luft­feuchtigkeits&amp;shy;sensor
 
-![Temperatur- und Luft­feuchtigkeits&amp;shy;sensor](5_temperatur-und-luftfeuchtigkeitssensor.jpg)
+![Temperatur- und Luft­feuchtigkeits&amp;shy;sensor](./5_temperatur-und-luftfeuchtigkeitssensor.jpg)
 
 ## Beschreibung
 Der Temperatur- und Luftfeuchtigkeitssensor kann zum Messen der Temperatur und der relativen Luftfeuchtigkeit in seiner direkten Umgebung eingesetzt werden. Der Sensor ist vom Hersteller so voreingestellt, dass die Messdaten als sauberes, digitales Signal ausgegeben werden. Das heißt, dass es dabei keine Messschwankungen oder Messfehler gibt, ein unverfälschtes Messsignal also. Dadurch besitzt der Sensor eine hohe Präzision, Zuverlässigkeit und Langzeitstabilität. Zusätzlich sind auch lange Kabel (>20 m) als Datenübertragung zwischen Sensor und Mikrocontroller kein Problem. Der Sensor arbeitet allerdings nur bei Umgebungstemperaturen über 0 °C.

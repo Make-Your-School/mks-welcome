@@ -1,4 +1,3 @@
-
 ---
 title: "Lautstärkesensor"
 date: "2018-10-01T13:57:42.000Z"
@@ -22,7 +21,7 @@ embedded_example_file: "examples/Grove_Loudness_Sensor_minimal/Grove_Loudness_Se
 
 # Lautstärkesensor
 
-![Lautstärkesensor](36_lautstaerkesensor.jpg)
+![Lautstärkesensor](./36_lautstaerkesensor.jpg)
 
 ## Beschreibung
 Der Lautstärkesensor erfasst die Umgebungsgeräusche und misst hieraus die Lautstärke in Form des sogenannten Schalldrucks. Dieser verarbeitet die erfassten Umgebungsgeräusche und gibt ein analoges Signal direkt proportional zur Lautstärke aus. Mit dem integrierten Potentiometer kann die Sensitivität eingestellt werden. Der Sensor wird direkt oder mithilfe des Grove Shields an einen Arduino über einen analogen Pinangeschlossen.

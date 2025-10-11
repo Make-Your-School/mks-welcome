@@ -1,4 +1,3 @@
-
 ---
 title: "Arduino UNO"
 date: "2018-08-16T19:55:36.000Z"
@@ -22,7 +21,7 @@ embedded_example_file: "examples/UNO_R3_minimal/UNO_R3_minimal.ino"
 
 # Arduino UNO
 
-![Arduino UNO](1_arduino.jpg)
+![Arduino UNO](./1_arduino.jpg)
 
 ## Beschreibung
  

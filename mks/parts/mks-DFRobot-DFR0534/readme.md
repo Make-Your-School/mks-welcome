@@ -1,4 +1,3 @@
-
 ---
 title: "MP3-Modul"
 date: "2018-10-01T15:20:08.000Z"
@@ -22,7 +21,7 @@ embedded_example_file: "examples/DFR0534_minimal/DFR0534_minimal.ino"
 
 # MP3-Modul
 
-![MP3-Modul](68_mp3-modul_rz.jpg)
+![MP3-Modul](./68_mp3-modul_rz.jpg)
 
 ## Beschreibung
 Das MP3-Modul ermöglicht das Abspielen von Musik oder abgespeicherten Tönen. Es integriert einen Speicherplatz von 8 MB, auf dem Musikdateien im mp3- oder wav-Format über einen Mikro-USB-Anschluss gespeichert werden können. Um die Musik auszugeben, lässt sich ein Lautsprecher an die dafür vorgesehenen Steckplätze anschließen.

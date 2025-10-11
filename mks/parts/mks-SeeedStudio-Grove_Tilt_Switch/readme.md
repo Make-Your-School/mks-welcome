@@ -1,4 +1,3 @@
-
 ---
 title: "Kippschalter"
 date: "2018-10-01T13:42:53.000Z"
@@ -22,7 +21,7 @@ embedded_example_file: "examples/Grove_Tilt_Switch_minimal/Grove_Tilt_Switch_min
 
 # Kippschalter
 
-![Kippschalter](24_kippschalter.jpg)
+![Kippschalter](./24_kippschalter.jpg)
 
 ## Beschreibung
 Der Kippschalter funktioniert wie ein normaler Schalter. Er kann als Eingabe für einen Mikrocontroller verwendet werden. Der Sensor besteht aus mehreren Metallkugeln, die nur dann einen elektrischen Kontakt herstellen, wenn der Sensor hochkant steht. Der Sensor gibt ein digitales Signal aus, sobald er eine gewisse Neigung erreicht. Er kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen werden. Der Schalter benötigt nur einen digitalen Pin.

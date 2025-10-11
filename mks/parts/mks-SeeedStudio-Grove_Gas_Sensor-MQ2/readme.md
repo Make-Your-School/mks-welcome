@@ -1,4 +1,3 @@
-
 ---
 title: "Gassensor"
 date: "2018-10-01T13:25:00.000Z"
@@ -22,7 +21,7 @@ embedded_example_file: "examples/Grove_Gas_Sensor-MQ2_minimal/Grove_Gas_Sensor-M
 
 # Gassensor
 
-![Gassensor](11_gassensor.jpg)
+![Gassensor](./11_gassensor.jpg)
 
 ## Beschreibung
 Der Grove Gas Sensor MQ2 erfasst Leckströme von Verbrennungsgasen (beispielsweise Rauch). Er besitzt eine hohe Sensitivität und eine schnelle Reaktionszeit. Er benötigt allerdings in vielen Fällen eine längere Kalibrierungsphase vor der ersten Benutzung. Die Sensitivität kann direkt auf dem Sensor mithilfe des Potentiometers eingestellt werden.

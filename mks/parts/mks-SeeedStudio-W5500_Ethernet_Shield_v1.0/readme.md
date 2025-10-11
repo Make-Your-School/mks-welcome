@@ -1,4 +1,3 @@
-
 ---
 title: "Ethernet Shield"
 date: "2018-10-01T15:04:12.000Z"
@@ -21,7 +20,7 @@ embedded_example_file: "examples/W5500_Ethernet_Shield_v1.0_minimal/W5500_Ethern
 
 # Ethernet Shield
 
-![Ethernet Shield](69_ethernet_shield.jpg)
+![Ethernet Shield](./69_ethernet_shield.jpg)
 
 ## Beschreibung
 Das Ethernet Shield ist eine Erweiterungsplatine für Arduino-ähnliche Mikrocontroller. Diese Erweiterungsplatinen werden im Allgemeinen als „Shield“ bezeichnet und werden einfach auf den entsprechenden Controller oder Einplatinencomputer gesteckt. Diese vereinfachen das Anschließen von speziellen Komponenten enorm.

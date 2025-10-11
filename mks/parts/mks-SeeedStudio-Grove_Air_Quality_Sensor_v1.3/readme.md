@@ -1,4 +1,3 @@
-
 ---
 title: "Luftqualitätssensor"
 date: "2018-10-01T12:56:41.000Z"
@@ -22,7 +21,7 @@ embedded_example_file: "examples/Grove_Air_Quality_Sensor_v1.3_minimal/Grove_Air
 
 # Luftqualitätssensor
 
-![Luftqualitätssensor](9_luftqualitaetssensor.jpg)
+![Luftqualitätssensor](./9_luftqualitaetssensor.jpg)
 
 ## Beschreibung
 Der Luftqualitätssensor erfasst unterschiedlich auftretende, toxische Gase, wie beispielsweise Kohlenmonoxid, Alkohol, Aceton und Thinner. Jedoch ermöglicht das Messprinzip keine exakten (quantitativen) Angaben über die vorhandenen Gaskonzentrationen. Allerdings reicht der Sensor aus, um deren Präsenz qualitativ in vier groben Konzentrationsstufen einzuteilen.

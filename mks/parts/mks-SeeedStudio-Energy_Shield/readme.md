@@ -1,4 +1,3 @@
-
 ---
 title: "Energy Shield"
 date: "2018-10-01T15:22:30.000Z"
@@ -21,7 +20,7 @@ embedded_example_file: "examples/Energy_Shield_minimal/Energy_Shield_minimal.ino
 
 # Energy Shield
 
-![Energy Shield](74_energie_shield.jpg)
+![Energy Shield](./74_energie_shield.jpg)
 
 ## Beschreibung
 Das Energy Shield ist eine Erweiterungsplatine für Arduino-ähnliche Mikrocontroller. Diese Erweiterungsplatinen werden im Allgemeinen als „Shield“ bezeichnet und werden einfach auf den entsprechenden Controller oder Einplatinencomputer gesteckt. Diese vereinfachen das Anschließen von speziellen Komponenten enorm.

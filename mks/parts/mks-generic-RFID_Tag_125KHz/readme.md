@@ -1,4 +1,3 @@
-
 ---
 title: "RFID-Transponder"
 date: "2018-10-01T14:41:57.000Z"
@@ -21,7 +20,7 @@ embedded_example_file: "examples/RFID_Tag_125KHz_minimal/RFID_Tag_125KHz_minimal
 
 # RFID-Transponder
 
-![RFID-Transponder](51_rfid_chip.jpg)
+![RFID-Transponder](./51_rfid_chip.jpg)
 
 ## Beschreibung
 RFID bezeichnet ein Sender-Empfänger-System, das vor allem zur eindeutigen Identifizierung von Objekten, Einkaufswaren oder auch Lebewesen eingesetzt wird. Der abgebildete RFID-Transponder hat die Form eines Schlüsselanhängers und einer Kreditkarte und besitzt eine eindeutige Identifikationsnummer. Die Identifikationsnummer wird vom Lesegerät ausgelesen, sobald der Transponder in seine unmittelbare Nähe gehalten wird. Der Transponder benötigt dabei keine Stromversorgung, da das Auslesegerät ihn kontaktlos mit Energie versorgt.

@@ -1,4 +1,3 @@
-
 ---
 title: "Summer"
 date: "2018-10-01T14:25:41.000Z"
@@ -22,7 +21,7 @@ embedded_example_file: "examples/Grove_Buzzer_v1.1_minimal/Grove_Buzzer_v1.1_min
 
 # Summer
 
-![Summer](45_summer.jpg)
+![Summer](./45_summer.jpg)
 
 ## Beschreibung
 Der Summer gibt Pieptöne in unterschiedlichen Tonhöhen aus. Dafür wird der Summer direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen. Durch ein einfaches digitales „HIGH“ oder „LOW”-Signal kann der Pieper an- oder ausgeschaltet werden. Alternativ kann er auch Effekte oder unterschiedliche Tonhöhen ausgeben, wenn er durch ein PWM-Signal angesteuert wird.

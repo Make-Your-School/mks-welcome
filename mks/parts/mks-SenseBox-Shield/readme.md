@@ -1,4 +1,3 @@
-
 ---
 title: "SenseBox Shield (Arduino)"
 date: "2018-10-01T15:02:45.000Z"
@@ -20,7 +19,7 @@ embedded_example_file: "examples/Shield_minimal/Shield_minimal.ino"
 
 # SenseBox Shield (Arduino)
 
-![SenseBox Shield (Arduino)](68_sensebox_shield_arduino.jpg)
+![SenseBox Shield (Arduino)](./68_sensebox_shield_arduino.jpg)
 
 ## Beschreibung
 Produkt vom Markt genommen.

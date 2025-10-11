@@ -1,4 +1,3 @@
-
 ---
 title: "Endschalter/Anschlag"
 date: "2018-10-01T13:43:35.000Z"
@@ -19,7 +18,7 @@ embedded_example_file: "examples/Endschalter_minimal/Endschalter_minimal.ino"
 
 # Endschalter/Anschlag
 
-![Endschalter/Anschlag](mys_mk_25.jpg)
+![Endschalter/Anschlag](./mys_mk_25.jpg)
 
 ## Beschreibung
 Der Endschalter funktioniert wie ein normaler Schalter und kann als Eingabe für einen Mikrocontroller verwendet werden. Der Schalter besitzt einen elastischen Schaltarm, der einen elektrischen Kontakt zwischen den Anschlusspins herstellt, wenn der Arm gedrückt wird.

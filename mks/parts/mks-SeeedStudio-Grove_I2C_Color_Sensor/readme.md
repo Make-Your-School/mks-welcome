@@ -1,4 +1,3 @@
-
 ---
 title: "Farbsensor"
 date: "2018-10-01T13:57:05.000Z"
@@ -21,7 +20,7 @@ embedded_example_file: "examples/Grove_I2C_Color_Sensor_minimal/Grove_I2C_Color_
 
 # Farbsensor
 
-![Farbsensor](35_farbsensor.jpg)
+![Farbsensor](./35_farbsensor.jpg)
 
 ## Beschreibung
 Der Farbsensor kann Farben sowohl von Lichtquellen als auch von Gegenständen ermitteln. Um die Erkennung zu verbessern, kann der Sensor mit einer externen gepulsten Lichtquelle synchronisiert werden. Die erkannte Farbe wird in RGB-Werten ausgegeben. Der Sensor wird direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen. Er kommuniziert über die serielle Schnittstelle I2C.

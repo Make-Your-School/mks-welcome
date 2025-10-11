@@ -1,4 +1,3 @@
-
 ---
 title: "Infrarot-Entfernungsschalter"
 date: "2018-10-12T14:53:06.000Z"
@@ -22,7 +21,7 @@ embedded_example_file: "examples/Grove_IR_Distance_Interrupter_v1.2_minimal/Grov
 
 # Infrarot-Entfernungsschalter
 
-![Infrarot-Entfernungsschalter](18_infrarot_entfernungsschalter.jpg)
+![Infrarot-Entfernungsschalter](./18_infrarot_entfernungsschalter.jpg)
 
 ## Beschreibung
 Der Infrarot-Entfernungsschalter ist ein Sensor, der - ähnlich einer Lichtschranke - Objekte erkennt, sobald sie den vom Sensor ausgestrahlten Infrarot-Strahl durchqueren. Der Sensor strahlt permanent einen Infrarot-Lichtstrahl aus und erkennt das durch ein Objekt leicht reflektierte Licht. Hierbei werden helle Objekte besser erkannt als dunkle. Der Messbereich erstreckt sich von 7,5cm bis 40cm. Die Sensitivität kann auf dem Modul eingestellt werden.

@@ -1,4 +1,3 @@
-
 ---
 title: "RFID-Leser"
 date: "2018-10-01T14:44:10.000Z"
@@ -22,7 +21,7 @@ embedded_example_file: "examples/Grove_125KHz_RFID_Reader_v1.0_minimal/Grove_125
 
 # RFID-Leser
 
-![RFID-Leser](52_rfid_leser.jpg)
+![RFID-Leser](./52_rfid_leser.jpg)
 
 ## Beschreibung
 RFID bezeichnet ein Sender-Empfänger-System, das vor allem zur eindeutigen Identifizierung von Objekten, Einkaufswaren oder auch Lebewesen eingesetzt wird. Der RFID-Transponder besitzt eine eindeutige Identifikationsnummer. Das Lesegerät liest diese aus, sobald der Transponder in unmittelbarer Nähe ist. Der Transponder benötigt dabei keine Stromversorgung, da das Auslesegerät ihn kontaktlost mit Energie versorgt.

@@ -1,4 +1,3 @@
-
 ---
 title: "Bluetooth-Modul"
 date: "2018-10-02T07:01:49.000Z"
@@ -21,7 +20,7 @@ embedded_example_file: "examples/Grove_Serial_Bluetooth_v3.0_minimal/Grove_Seria
 
 # Bluetooth-Modul
 
-![Bluetooth-Modul](53_bluetooth-modul.jpg)
+![Bluetooth-Modul](./53_bluetooth-modul.jpg)
 
 ## Beschreibung
 Das Bluetooth-Modul ermöglicht es Informationen, Befehle und Daten kabellos zwischen mehreren Endgeräten oder Mikrocontrollern zu übertragen. So können beispielsweise zwei Arduinos untereinander oder auch ein Arduino mit einem Smartphone kommunizieren. Damit das funktioniert, wird auf dem Smartphone ein Terminal benötigt, über das Befehle empfangen und gesendet werden können. Ein Beispiel-Link zu einem solchen Terminal findet ihr unter „Wichtige Links“. Das Bluetooth-Modul lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über die serielle Schnittstelle UART  anschließen und zusätzlich über bestimmte Befehle programmieren. So kann beispielsweise ein Bluetooth-Pin oder der angezeigte Bluetooth-Name eingestellt werden.

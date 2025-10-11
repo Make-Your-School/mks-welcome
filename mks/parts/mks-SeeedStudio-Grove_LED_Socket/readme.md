@@ -1,4 +1,3 @@
-
 ---
 title: "LED-Sockel"
 date: "2018-10-01T15:01:56.000Z"
@@ -21,7 +20,7 @@ embedded_example_file: "examples/Grove_LED_Socket_minimal/Grove_LED_Socket_minim
 
 # LED-Sockel
 
-![LED-Sockel](64_led-sockel.jpg)
+![LED-Sockel](./64_led-sockel.jpg)
 
 ## Beschreibung
 LEDs (Leuchtdioden) dienen zur Beleuchtung aber auch zur Darstellung eines Zustandes. Viele Geräte sind mit LEDs ausgestattet. Diese zeigen dabei ausschließlich an, ob das Gerät eingeschaltet ist oder beispielsweise ein Fehler vorliegt. Bei Elektronik-Projekten kommen LEDs meistens zum Einsatz, um die Funktion von Sensoren zu testen. LEDs lassen sich auch direkt (mit zwischengeschaltetem Widerstand) an einen Mikrocontroller über einen digitalen Pin anschließen.

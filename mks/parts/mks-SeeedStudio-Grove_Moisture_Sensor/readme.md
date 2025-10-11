@@ -1,4 +1,3 @@
-
 ---
 title: "Bodenfeuchtigkeitssensor"
 date: "2018-10-01T12:57:44.000Z"
@@ -21,7 +20,7 @@ embedded_example_file: "examples/Grove_Moisture_Sensor_minimal/Grove_Moisture_Se
 
 # Bodenfeuchtigkeitssensor
 
-![Bodenfeuchtigkeitssensor](10_bodenfeuchtigkeitssensor.jpg)
+![Bodenfeuchtigkeitssensor](./10_bodenfeuchtigkeitssensor.jpg)
 
 ## Beschreibung
 Der Feuchtigkeitssensor kann die Bodenfeuchtigkeit messen oder erkennen, ob er sich in Wasser befindet. Mithilfe des Grove Shields oder auch direkt kann der Sensor an einen Arduino angeschlossen werden. Er gibt über den analogen Ausgang die Bodenfeuchtigkeit an. Die Skala reicht hier von 0 (trocken) bis 900 (komplett in Wasser stehend).

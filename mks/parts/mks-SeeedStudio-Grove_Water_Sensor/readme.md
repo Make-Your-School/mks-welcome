@@ -1,4 +1,3 @@
-
 ---
 title: "Wasserspiegelsensor"
 date: "2018-10-01T13:50:50.000Z"
@@ -21,7 +20,7 @@ embedded_example_file: "examples/Grove_Water_Sensor_minimal/Grove_Water_Sensor_m
 
 # Wasserspiegelsensor
 
-![Wasserspiegelsensor](29_wasserspiegelsensor.jpg)
+![Wasserspiegelsensor](./29_wasserspiegelsensor.jpg)
 
 ## Beschreibung
 Der Wassersensor erkennt, ob er sich in Wasser befindet. Durch mehrere integrierte Fühler, die sich abhängig vom Wasserstand im oder außerhalb des Wassers befinden, kann der Sensor den aktuellen Wasserspiegel ermitteln. Feuchtigkeit verändert seine interne Leitfähigkeit, die schließlich als Indikator für Nässe genutzt werden kann. Der Sensor kann digital als Wassererkennung oder auch analog zur Ermittlung des Wasserstands genutzt werden. Der Sensor kann direkt oder mithilfe des Grove Shields an einen Arduino (digital und analog) oder Raspberry Pi (digital) angeschlossen werden.
