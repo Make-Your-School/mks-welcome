@@ -1,0 +1,1 @@
+Ein Gleichstrommotor (DC-Motor) dreht solange, wie er an einer Spannungsquelle hängt und ist dadurch auf endloses Drehen optimal ausgelegt. Dagegen ist die genaue Positionierung ohne Sensoren nicht möglich, da die tatsächliche Drehung auch von der Kraft abhängt, die er aufbringen muss. Wird ein DC-Motor stark belastet dreht er deutlich langsamer als unbelastet.
