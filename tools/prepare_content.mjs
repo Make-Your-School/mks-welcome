@@ -3,7 +3,7 @@
 
 import fs from 'node:fs'
 import reposData from './reposData.json' with { type: 'json' }
-const reposDataFile = './reposData.json'
+const reposDataFile = './tools/reposData.json'
 import path from 'path'
 // import { diff } from 'node:util';
 
@@ -38,7 +38,7 @@ function addToolTipItem(abbrList, tooltip_key, tooltip_content) {
 async function extractToolTips(repoData, abbrList) {
     console.log(`extract tooltips from '${repoData.repo_name}'...`)
 
-    repoData.content_description.replaceAll(
+    repoData.content_description = repoData.content_description.replaceAll(
         regexToolTip,
         (match, p1, p2, offset, string, groups) => {
             let { tooltip_key, tooltip_content } = groups
@@ -82,6 +82,11 @@ export async function main() {
         // await prepareContentInfolist(repoData)
         await extractToolTips(repoData, abbrList)
     }
+
+    // save modifications in reposData to disc
+    const repoDataJson = JSON.stringify(reposData, null, 4)
+    fs.writeFileSync(reposDataFile, repoDataJson)
+    console.log('reposData saved to disk.')
 
     const abbrListJSON = JSON.stringify(abbrList, null, 4)
     fs.writeFileSync('./tools/abbrList.json', abbrListJSON)
