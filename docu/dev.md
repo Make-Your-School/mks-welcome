@@ -80,3 +80,11 @@ git submodule foreach "(git checkout main; git push)&"
 ```bash
 git submodule foreach "(git add .; git commit -a -m 'bulk-update readme.md')&"
 ```
+
+```bash
+git submodule foreach "(git commit -a -m 'bulk-update readme.md')&"
+```
+
+```bash
+git submodule foreach "(git push)&"
+```
