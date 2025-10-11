@@ -5,7 +5,9 @@ dieses repository beinhaltet die Dokumentation zu allen Make Your School Materia
 es gibt eine gerenderte version unter:
 https://Make-Your-School.github.io/mks-welcome/
 
-ansonsten stöbere gerne in den verschiedenen Unterordnern.
+ansonsten stöbere gerne in den verschiedenen Unterordnern bzw. Sub-Repositories -
+für jedes Bauteil gibt es hier ein repository:
+https://github.com/orgs/Make-Your-School/repositories?q=mks-
 
 ## Struktur
 
@@ -15,7 +17,7 @@ Jedes Bauteil liegt in einem eigenen Repository welches hier als git submodule e
 
 Im Ordner [`public/mks/abbr/`](./public/mks/abbr/) findest du die Tool-Tip-Wörter (abbreviations / Abkürzungen).
 Alle diese hier verfügbaren Abkürzungen werden automatisch auf der gerenderten Seite mit den Tool-Tips ergänzt.
-Der inhalt der Tooltips ist dann der Gerenderte Inhalt aus dem jeweils entsprechenden File.
+Der Inhalt der Tooltips ist dann der gerenderte Inhalt aus dem jeweils entsprechenden File.
 
 Im Ordner [`public/mks/tags/`](./public/mks/tags/) findest du die Erklärungen für alle _Funktions-Gruppen_ / tags
 (momentan noch ungenutzt.)
@@ -23,12 +25,12 @@ Im Ordner [`public/mks/tags/`](./public/mks/tags/) findest du die Erklärungen f
 - [`public/`](./public/)
     - [`mks/`](./public/mks/)
         - [`parts/`](./public/mks/parts/)
-            - [`mks-GroveUltraschall`](./public/mks/parts/mks-GroveUltraschall/)
-                - [`readme.md`](./public/mks/parts/mks-GroveUltraschall/readme.md)
-            - [`mks-Endschalter`](./public/mks/parts/mks-Endschalter/)
-                - [`readme.md`](./public/mks/parts/mks-Endschalter/readme.md)
-            - [`mks-Taster`](./public/mks/parts/mks-Taster/)
-                - [`readme.md`](./public/mks/parts/mks-Taster/readme.md)
+            - [`mks-SeeedStudio-Grove_Ultrasonic_Ranger`](./public/mks/parts/mks-SeeedStudio-Grove_Ultrasonic_Ranger/)
+                - [`readme.md`](./public/mks/parts/mks-SeeedStudio-Grove_Ultrasonic_Ranger/readme.md)
+            - [`mks-generic-Endschalter`](./public/mks/parts/mks-generic-Endschalter/)
+                - [`readme.md`](./public/mks/parts/mks-generic-Endschalter/readme.md)
+            - [`mks-generic-Taster`](./public/mks/parts/mks-generic-Taster/)
+                - [`readme.md`](./public/mks/parts/mks-generic-Taster/readme.md)
             - ...
         - [`tags/`](./public/mks/tags/)
             - [`Entfernung/`](./public/mks/tags/Entfernung)
@@ -40,21 +42,33 @@ Im Ordner [`public/mks/tags/`](./public/mks/tags/) findest du die Erklärungen f
             - [`UART.md`](./public/mks/abbr/UART.md)
             - ...
 
-die Website folgt in etwa diesem layout
-![website layout](./layout_concept.svg)
+<!-- die Website folgt in etwa diesem layout
+![website layout](./layout_concept.svg) -->
 
 ## contributions
 
-du hast einen Fehler enddeckt?
-dann schreibe ihn uns bitte im [issues-tracker](https://github.com/Make-Your-School/mks-welcome/issues)
+### mks-welcome Struktur & Inhalt
 
-du magst
+du hast eine Idee zu einer Verbesserung der Struktur/Inhalt hier?
+dann schreibe uns bitte im [issues-tracker](https://github.com/Make-Your-School/mks-welcome/issues)
 
-- eine änderung in einem Text oder code beispiel machen?
-  schau mal in [docu/contributions.md](./docu/contributions.md)
-- ein bauteil hinzufügen?
-  schau mal in [docu/neues_bauteil_hinzufuegen.md](./docu/neues_bauteil_hinzufuegen.md)
+### Bauteil Spezifisch Inhalt/Code
+
+wenn es ein spezifisches Bauteil betrifft, bitte im Bauteil-eigenen Repository ein issue erstellen.
+
+in der gerenderten Seite ist das jeweilige Bauteil-Repository ganz am Ende der Seite mit dem Text `edit source` verlinkt.
+
+und wenn Du direkt eine Idee hast **wie** z.b. eine Formulierung leichter Verständlich ist, kannst du diese auch gerne als `PR` (PullRequest) vorbereiten.
+aktuell gibt es dazu noch keine ausführliche Dokumentation.
+vielleicht hilft dir die [offizielle Github Hilfe](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) auch schon weiter
+ansonsten gern auch hier eine Frage als Issues oder als [_Forumsbeitrag_](https://github.com/Make-Your-School/mks-welcome/discussions)
+
+mehr infos dazu in [docu/contributions.md](./docu/contributions.md) (WIP)
+
+### Bauteil Hinzufügen
+
+[docu/neues_bauteil_hinzufuegen.md](./docu/neues_bauteil_hinzufuegen.md)
 
 ## DEV
 
-für development des renderings ansich siehe [./docu/dev.md](./docu/dev.md)
+für development des renderings an-sich siehe [./docu/dev.md](./docu/dev.md)

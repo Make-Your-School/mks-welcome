@@ -12,6 +12,9 @@ node_modules
 !dist/spa
 # try if our build process is also working with the ignore here..
 
+
+tools/temp/*
+
 # Cordova related directories and files
 /src-cordova/node_modules
 /src-cordova/platforms

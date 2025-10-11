@@ -5,10 +5,15 @@ import fs from 'node:fs'
 import reposData from './reposData.json' with { type: 'json' }
 const reposDataFile = './reposData.json'
 
-async function prepareContentInfolist(repoData) {
-    repoData.content_infolist = repoData.content_infolist.replace()
-
+const regexToolTip =
+    /.*?\\\[simple\\_tooltip content='(?<tooltip_content>.*?)'\\\](?<tooltip_key>.*)\\\[\/simple\\_tooltip\\\].*/gms
+async function extractToolTips(repoData) {
+    regexToolTip.exec(repoData.content_description)
 }
+
+// async function prepareContentInfolist(repoData) {
+//     repoData.content_infolist = repoData.content_infolist.replace()
+// }
 
 export async function main() {
     console.log(`found '${reposData.length}' repos to process..`)
