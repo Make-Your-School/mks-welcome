@@ -1,7 +1,7 @@
 ---
 title: Endschalter
 tags: [taster_schalter, schalter, taster_taster_schalter, schalter, taster, motor, input]
-id: 25
+material_number: 25
 ---
 
 # Endschalter
