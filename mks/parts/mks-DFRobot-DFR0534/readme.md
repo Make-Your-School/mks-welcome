@@ -27,7 +27,7 @@ embedded_example_file: "examples/DFR0534_minimal/DFR0534_minimal.ino"
 ## Beschreibung
 Das MP3-Modul ermöglicht das Abspielen von Musik oder abgespeicherten Tönen. Es integriert einen Speicherplatz von 8 MB, auf dem Musikdateien im mp3- oder wav-Format über einen Mikro-USB-Anschluss gespeichert werden können. Um die Musik auszugeben, lässt sich ein Lautsprecher an die dafür vorgesehenen Steckplätze anschließen.
 
-Das Modul wird über die \[simple\_tooltip content='Bei einer seriellen Datenübertragung werden die Bits (Informationen/Kommandos) nacheinander (seriell) über eine Leitung übertragen. Die wichtigsten seriellen Standards im Rahmen der Mikrocontroller sind I2C (Inter-Integrated Circuit), SPI (Serial Peripheral Interface) und UART (Universal Asynchronous Receiver Transmitter). Die genaue Funktionsweise ist für die reine Nutzung vorerst irrelevant. Es muss allerdings immer geprüft werden an welchen Pins oder an welchen Steckplätzen der jeweilige serielle Anschluss genutzt werden kann. Dies wird in den Datenblättern der Mikrocontroller normalerweise mit angegeben.'\]serielle Schnittstelle UART\[/simple\_tooltip\] direkt oder mithilfe des Grove Shields an einen Mikrocontroller angeschlossen.
+Das Modul wird über die serielle Schnittstelle UART direkt oder mithilfe des Grove Shields an einen Mikrocontroller angeschlossen.
 
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von DFRobot zusammengefasst. Die genaue Bezeichnung des integrierten Sensors, die bei der Suche von Beschreibungen und Anleitungen wichtig sein kann, lautet DFR0534.
 

@@ -24,14 +24,7 @@ embedded_example_file: "examples/Grove_Light_Sensor_v1.2_minimal/Grove_Light_Sen
 ![Helligkeitssensor](30_helligkeitssensor.jpg)
 
 ## Beschreibung
-Der Helligkeitssensor ermittelt die ihn umgebende Helligkeit. Er besteht aus einem Fotowiderstand, der abhängig von der Umgebungshelligkeit seinen Widerstand ändert. Durch die interne Verschaltung gibt der Sensor proportional zu der Helligkeit schließlich eine \[simple\_tooltip content='
-
-Digital vs. analog:
-
-- Analoge Signale können beliebige kontinuierliche Werte annehmen. Sie verändern sich stufenlos. Dadurch können theoretisch unendlich viele kleine Änderungen (und damit ein unendlicher Informationsinhalt) übertragen werden. Einschränkend wirkt die Genauigkeit, mit der das analoge Signal ausgelesen/erfasst wird.
-- Das digitale Signal nimmt nur diskrete Werte an und springt bei einer etwaigen Änderung von einem Wert zum nächsten. Es kann nur eine definierte Anzahl an Informationsinhalten übertragen werden. Vorteilhaft ist dagegen die damit verbundene Fehlerfreiheit bei minimalsten, ungewollten Schwankungen. Oftmals werden nur zwei Werte HIGH und LOW (Ein/Aus oder 1/0) übermittelt.
-
-'\]analoge \[/simple\_tooltip\]Spannung aus. Der Sensor kann direkt oder mithilfe des Grove Shields an einen Arduino angeschlossen werden.
+Der Helligkeitssensor ermittelt die ihn umgebende Helligkeit. Er besteht aus einem Fotowiderstand, der abhängig von der Umgebungshelligkeit seinen Widerstand ändert. Durch die interne Verschaltung gibt der Sensor proportional zu der Helligkeit schließlich eine analogeSpannung aus. Der Sensor kann direkt oder mithilfe des Grove Shields an einen Arduino angeschlossen werden.
 
 Der Helligkeitssensor wird häufig eingesetzt, um Leuchten automatisch bei Dunkelheit anzuschalten.
 

@@ -25,12 +25,7 @@ embedded_example_file: "examples/Grove_Touch_Sensor_minimal/Grove_Touch_Sensor_m
 ![Berührungssensor](56_beruehrungssensor.jpg)
 
 ## Beschreibung
-Der Berührungssensor erkennt, sobald sich ein Finger dem Sensor nähert. Dabei spielt es keine Rolle, ob der Finger den Sensor tatsächlich berührt oder dieser sich nur knapp darüber befindet. Er hat damit eine ähnliche Funktion wie ein Taster oder Schalter und kann einen Mikrocontroller steuern. Der Sensor lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi anschließen. Die erkannte Berührung (oder Annäherung) wird über ein \[simple\_tooltip content='Digital vs Analog:
-
-- Analoge Signale können beliebige, kontinuierliche Werte annehmen. Sie verändern sich stufenlos. Dadurch können theoretisch unendlich kleine Änderungen (und damit ein unendlicher Informationsinhalt) übertragen werden. Einschränkend wirkt die Genauigkeit, mit der das analoge Signal ausgelesen/erfasst wird.
-- Das digitale Signal nimmt nur diskrete Werte an und springt bei einer etwaigen Änderung von einem Wert zum nächsten. Es kann nur eine definierte Anzahl an Informationsinhalten übertragen werden. Vorteilhaft ist dagegen die damit verbundene Fehlerfreiheit bei minimalsten, ungewollten Schwankungen. Oftmals werden nur zwei Werte HIGH und LOW (Ein/Aus oder 1/0) übermittelt.
-
-'\]digitales Signal\[/simple\_tooltip\] ausgegeben.
+Der Berührungssensor erkennt, sobald sich ein Finger dem Sensor nähert. Dabei spielt es keine Rolle, ob der Finger den Sensor tatsächlich berührt oder dieser sich nur knapp darüber befindet. Er hat damit eine ähnliche Funktion wie ein Taster oder Schalter und kann einen Mikrocontroller steuern. Der Sensor lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi anschließen. Die erkannte Berührung (oder Annäherung) wird über ein digitales Signal ausgegeben.
 
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.
 

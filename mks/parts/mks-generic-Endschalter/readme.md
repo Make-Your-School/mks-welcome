@@ -4,7 +4,7 @@ title: "Endschalter/Anschlag"
 date: "2018-10-01T13:43:35.000Z"
 tags: 
   - "sensor"
-coverImage: "mys_mk_25.png"
+coverImage: "mys_mk_25.jpg"
 material_number: "25"
 material_type: "sensor"
 manufacture: "Generic"
@@ -19,19 +19,12 @@ embedded_example_file: "examples/Endschalter_minimal/Endschalter_minimal.ino"
 
 # Endschalter/Anschlag
 
-![Endschalter/Anschlag](mys_mk_25.png)
+![Endschalter/Anschlag](mys_mk_25.jpg)
 
 ## Beschreibung
 Der Endschalter funktioniert wie ein normaler Schalter und kann als Eingabe für einen Mikrocontroller verwendet werden. Der Schalter besitzt einen elastischen Schaltarm, der einen elektrischen Kontakt zwischen den Anschlusspins herstellt, wenn der Arm gedrückt wird.
 
-Um den Schaltvorgang mit einem Mikrocontroller zu erfassen, wird ein \[simple\_tooltip content='
-
-Digital vs. analog:
-
-- Analoge Signale können beliebige kontinuierliche Werte annehmen. Sie verändern sich stufenlos. Dadurch können theoretisch unendlich viele kleine Änderungen (und damit ein unendlicher Informationsinhalt) übertragen werden. Einschränkend wirkt die Genauigkeit, mit der das analoge Signal ausgelesen/erfasst wird.
-- Das digitale Signal nimmt nur diskrete Werte an und springt bei einer etwaigen Änderung von einem Wert zum nächsten. Es kann nur eine definierte Anzahl an Informationsinhalten übertragen werden. Vorteilhaft ist dagegen die damit verbundene Fehlerfreiheit bei minimalsten, ungewollten Schwankungen. Oftmals werden nur zwei Werte HIGH und LOW (Ein/Aus oder 1/0) übermittelt.
-
-'\]digitaler\[/simple\_tooltip\] \[simple\_tooltip content='Die Mikrocontroller besitzen kleine metallische Kontakte, an die Komponenten, Shields oder andere Platinen angeschlossen werden können. Diese Kontakte werden Pins genannt und können oft als sogenannte GPIO’s (Allzweck Ein- und Ausgabe) eingesetzt werden. Dies bedeutet, dass diese Pins direkt über die Programmierung des Mikrocontrollers angesprochen werden können und hierbei sogar bestimmt werden kann, ob dieser Pin als Eingang (beispielsweise zum Auslesen eines Sensors) oder als Ausgang (beispielsweise zur Steuerung eines Motors) genutzt werden kann. Praktisches Beispiel: Wird am Arduino eine LED an Pin 1 angeschlossen, kann im Programm direkt der Pin 1 als „An“ oder „Aus“ definiert werden und damit die LED an- oder ausgeschaltet werden. '\]Pin\[/simple\_tooltip\] des Controllers über den Schalter auf Masse gelegt. Sobald der Schalter betätigt wird, wird damit ein digitaler Anschlusspin auf Masse gelegt, was vom Controller erfasst werden kann.
+Um den Schaltvorgang mit einem Mikrocontroller zu erfassen, wird ein digitaler Pin des Controllers über den Schalter auf Masse gelegt. Sobald der Schalter betätigt wird, wird damit ein digitaler Anschlusspin auf Masse gelegt, was vom Controller erfasst werden kann.
 
 Der Schalter kann an einen Arduino oder Raspberry Pi angeschlossen werden und benötigt nur einen digitalen Pin.
 

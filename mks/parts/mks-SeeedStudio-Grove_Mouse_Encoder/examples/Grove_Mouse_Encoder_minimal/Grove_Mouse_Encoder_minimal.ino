@@ -6,21 +6,21 @@
 * v. 0.1 - very basic functions - mw 20061220
 *
 */  
- 
- 
+ 
+ 
 int val; 
 int encoder0PinA = 3;
 int encoder0PinB = 4;
 int encoder0Pos = 0;
 int encoder0PinALast = LOW;
 int n = LOW;
- 
+ 
 void setup() { 
     pinMode (encoder0PinA,INPUT);
     pinMode (encoder0PinB,INPUT);
     Serial.begin (115200);
 } 
- 
+ 
 void loop() { 
     n = digitalRead(encoder0PinA);
     if ((encoder0PinALast == LOW) && (n == HIGH)) {

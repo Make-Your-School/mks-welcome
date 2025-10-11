@@ -24,7 +24,7 @@ embedded_example_file: "examples/Grove_Servo_minimal/Grove_Servo_minimal.ino"
 ![Servomotor](38_linearservomotor.jpg)
 
 ## Beschreibung
-Ein Servomotor verfügt über eine interne Regelung, sodass von außen nur eine Position angeben werden muss, die er selbstständig anfährt und hält (trotz Krafteinwirkung). Er kann dadurch sehr genaue Positionen anfahren, ist aber nicht für endloses Drehen ausgelegt. Der Motor wird direkt oder mit Hilfe des Grove Shields an einen Arduino angeschlossen und über \[simple\_tooltip content='Pulsweitenmodulation ist eine Methode zur Simulierung von analogen Informationen mittels digitalen Signalen. Der Informationsinhalt wird hier durch die Pulsweite (zeitliche Länge eines Impulses) definiert und erzeugt, nicht durch dessen Intensität. Zu dieser Kategorie gehören auch andere Signalarten, die regelmäßig aufeinander folgende Spannungsimpulse nutzen, um die gewünschten Informationen zu übertragen.'\]Pulsweitenmodulation (PWM)\[/simple\_tooltip\] angesteuert.
+Ein Servomotor verfügt über eine interne Regelung, sodass von außen nur eine Position angeben werden muss, die er selbstständig anfährt und hält (trotz Krafteinwirkung). Er kann dadurch sehr genaue Positionen anfahren, ist aber nicht für endloses Drehen ausgelegt. Der Motor wird direkt oder mit Hilfe des Grove Shields an einen Arduino angeschlossen und über Pulsweitenmodulation (PWM) angesteuert.
 
 Der hier abgebildete Servomotor kann in einem begrenzten Winkelbereich rotieren und somit unter anderem Zeiger oder Hebel bewegen. So kann beispielsweise die Lenkung eines ferngesteuerten Autos mithilfe von Servomotoren bewegt werden.
 
@@ -37,11 +37,11 @@ Je nach Motoraufbau kann der maximale Aktionsradius des Motors variieren. In vie
 <!-- infolist -->
 
 <!-- infolists -->
- 
+ 
 
 https://www.youtube.com/watch?v=wVxcmO2YuxA
 
- 
+ 
 
 ## Wichtige Links für die ersten Schritte:
 

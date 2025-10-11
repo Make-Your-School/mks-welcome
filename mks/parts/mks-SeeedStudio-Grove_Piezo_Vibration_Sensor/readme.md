@@ -27,12 +27,7 @@ embedded_example_file: "examples/Grove_Piezo_Vibration_Sensor_minimal/Grove_Piez
 ## Beschreibung
 Der Vibrationssensor erfasst jegliche Art von Erschütterungen. Jedes Mal, wenn der Sensor vorwärts und rückwärts bewegt wird, gibt er einen Spannungsimpuls aus und erfasst damit eine Erschütterung. Die Sensitivität kann mit einem integrierten Potentiometer (Drehwiderstand) eingestellt werden und definiert die Erschütterungsfrequenz.
 
-Der Sensor kann direkt oder mithilfe des Grove Shields an einen Arduino angeschlossen werden. Der Sensor kommuniziert hierbei über einen \[simple\_tooltip content='Digital vs. Analog:
-
-- Analoge Signale können beliebige kontinuierliche Werte annehmen. Sie verändern sich stufenlos. Dadurch können theoretisch unendlich viele kleine Änderungen (und damit ein unendlicher Informationsinhalt) übertragen werden. Einschränkend wirkt die Genauigkeit, mit der das analoge Signal ausgelesen/erfasst wird.
-- Das digitale Signal nimmt nur diskrete Werte an und springt bei einer etwaigen Änderung von einem Wert zum nächsten. Es kann nur eine definierte Anzahl an Informationsinhalten übertragen werden. Vorteilhaft ist dagegen die damit verbundene Fehlerfreiheit bei minimalsten, ungewollten Schwankungen. Oftmals werden nur zwei Werte HIGH und LOW (Ein/Aus oder 1/0) übermittelt.
-
-'\]digitalen Pin.\[/simple\_tooltip\]
+Der Sensor kann direkt oder mithilfe des Grove Shields an einen Arduino angeschlossen werden. Der Sensor kommuniziert hierbei über einen digitalen Pin.
 
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnung entsprechende Projektbeispiele und Tutorials.
 

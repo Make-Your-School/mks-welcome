@@ -32,11 +32,11 @@ Auf der Platine können schließlich zwei verschiedene Verstärkungsfaktoren aus
 
 ![](images/verstaerker_formel_texte_online-1-300x67.png)
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 Mithilfe dieser Platine kann beispielsweise ein Berührungssensor aufgebaut werden. Hierfür wird der berührende Finger gedanklich in Reihe mit einem hohen Widerstand zwischen Versorgungsspannung und Masse gelegt. Werden die offenen Kabel gleichzeitig berührt fließt ein sehr kleiner Strom. Am zweiten Widerstand wird schließlich die abfallende Spannung mithilfe des Verstärkers gemessen und damit die Berührung detektiert.
 

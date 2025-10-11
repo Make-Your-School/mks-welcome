@@ -20,7 +20,7 @@ void loop()
         }
         Serial.write(buffer,count);                 // if no data transmission ends, write buffer to hardware serial port
         clearBufferArray();                         // call clearBufferArray function to clear the stored data from the array
-        count = 0;                                  // set counter of while loop to zero 
+        count = 0;                                  // set counter of while loop to zero 
     }
     if (Serial.available())                 // if data is available on hardware serial port ==> data is coming from PC or notebook
     SoftSerial.write(Serial.read());        // write it to the SoftSerial shield

@@ -33,9 +33,9 @@ Auf der Platine können schließlich zwei verschiedene Verstärkungsfaktoren aus
 
 ![](images/verstaerker_formel_texte_online-1-300x67.png)
 
- 
+ 
 
- 
+ 
 
 Mit dem Spannungsteiler kann z.B. der ungefähre Füllstand eines Li-Po-Akkus ermittelt werden. Ein Li-Po-Akku besteht normalerweise aus vielen einzelnen Zellen, die jeweils eine Nennspannung von 3.7V besitzen. Daher gibt es Li-Po-Akkus mit 3.7V, 7.4V, 11.1V, 14.8V, 18.5V etc. Jede einzelne Li-Po-Zelle eines Akkus hat im vollgeladenen Zustand eine Spannung von ca. 4.2V. Eine Li-Po-Zelle eines Akkus sollte nicht unter 3.4V fallen. Über die Spannungsmessung kann schließlich der Füllstand grob ermittelt werden.
 
@@ -43,7 +43,7 @@ ACHTUNG: Hiermit können keine Spannungsquellen oder Stromversorgungen umgewande
 
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponentenbezeichnung entsprechende Projektbeispiele und Tutorials.
 
- 
+ 
 
 
 <!-- infolist -->

@@ -24,21 +24,14 @@ embedded_example_file: "examples/Grove_Vibration_Motor_v1.2_minimal/Grove_Vibrat
 ![Vibrationsmotor](47_vibratonsmotor.jpg)
 
 ## Beschreibung
-Der Miniatur-Vibrationsmotor erzeugt trotz des kleinen Bauraums eine relativ starke Vibration. Dadurch kann für diverse Anwendungen beispielsweise ein haptisches Feedback bewirkt werden. Der Motor lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi anschließen. Mit einem einfachen \[simple\_tooltip content='
-
-Digital vs. Analog
-
-- Analoge Signale können beliebige, kontinuierliche Werte annehmen. Sie verändern sich stufenlos. Dadurch können theoretisch unendlich kleine Änderungen (und damit ein unendlicher Informationsinhalt) übertragen werden. Einschränkend wirkt die Genauigkeit, mit der das analoge Signal ausgelesen/erfasst wird.
-- Das digitale Signal nimmt nur diskrete Werte an und springt bei einer etwaigen Änderung von einem Wert zum nächsten. Es kann nur eine definierte Anzahl an Informationsinhalten übertragen werden. Vorteilhaft ist dagegen die damit verbundene Fehlerfreiheit bei minimalsten, ungewollten Schwankungen. Oftmals werden nur zwei Werte HIGH und LOW (Ein/Aus oder 1/0) übermittelt.
-
-'\]digitalen HIGH-Signal \[/simple\_tooltip\]vibriert der Motor dann ähnlich wie ein stumm geschaltetes Smartphone.
+Der Miniatur-Vibrationsmotor erzeugt trotz des kleinen Bauraums eine relativ starke Vibration. Dadurch kann für diverse Anwendungen beispielsweise ein haptisches Feedback bewirkt werden. Der Motor lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi anschließen. Mit einem einfachen digitalen HIGH-Signalvibriert der Motor dann ähnlich wie ein stumm geschaltetes Smartphone.
 
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.
 
 <!-- infolist -->
 
 <!-- infolists -->
- 
+ 
 
 ## Wichtige Links für die ersten Schritte:
 

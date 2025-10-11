@@ -24,14 +24,7 @@ embedded_example_file: "examples/Grove_Water_Sensor_minimal/Grove_Water_Sensor_m
 ![Wasserspiegelsensor](29_wasserspiegelsensor.jpg)
 
 ## Beschreibung
-Der Wassersensor erkennt, ob er sich in Wasser befindet. Durch mehrere integrierte Fühler, die sich abhängig vom Wasserstand im oder außerhalb des Wassers befinden, kann der Sensor den aktuellen Wasserspiegel ermitteln. Feuchtigkeit verändert seine interne Leitfähigkeit, die schließlich als Indikator für Nässe genutzt werden kann. Der Sensor kann digital als Wassererkennung oder auch analog zur Ermittlung des Wasserstands genutzt werden. Der Sensor kann direkt oder mithilfe des Grove Shields an einen Arduino (\[simple\_tooltip content='
-
-Digital vs. Analog:
-
-- Analoge Signale können beliebige kontinuierliche Werte annehmen. Sie verändern sich stufenlos. Dadurch können theoretisch unendlich viele kleine Änderungen (und damit ein unendlicher Informationsinhalt) übertragen werden. Einschränkend wirkt die Genauigkeit, mit der das analoge Signal ausgelesen/erfasst wird.
-- Das digitale Signal nimmt nur diskrete Werte an und springt bei einer etwaigen Änderung von einem Wert zum nächsten. Es kann nur eine definierte Anzahl an Informationsinhalten übertragen werden. Vorteilhaft ist dagegen die damit verbundene Fehlerfreiheit bei minimalsten, ungewollten Schwankungen. Oftmals werden nur zwei Werte HIGH und LOW (Ein/Aus oder 1/0) übermittelt.
-
-'\]digital und analog\[/simple\_tooltip\]) oder Raspberry Pi (digital) angeschlossen werden.
+Der Wassersensor erkennt, ob er sich in Wasser befindet. Durch mehrere integrierte Fühler, die sich abhängig vom Wasserstand im oder außerhalb des Wassers befinden, kann der Sensor den aktuellen Wasserspiegel ermitteln. Feuchtigkeit verändert seine interne Leitfähigkeit, die schließlich als Indikator für Nässe genutzt werden kann. Der Sensor kann digital als Wassererkennung oder auch analog zur Ermittlung des Wasserstands genutzt werden. Der Sensor kann direkt oder mithilfe des Grove Shields an einen Arduino (digital und analog) oder Raspberry Pi (digital) angeschlossen werden.
 
 Ein Einsatzzweck des Wasserspiegelsensors ist kann die Erkennung von Wasserlecks sein.
 

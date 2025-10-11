@@ -32,11 +32,11 @@ Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwen
 <!-- infolist -->
 
 <!-- infolists -->
- 
+ 
 
 https://www.youtube.com/watch?v=wVxcmO2YuxA
 
- 
+ 
 
 ## Wichtige Links für die ersten Schritte:
 

@@ -25,30 +25,30 @@ embedded_example_file: "examples/Grove_DHT11_minimal/Grove_DHT11_minimal.ino"
 ![Temperatur- und Luft­feuchtigkeits&amp;shy;sensor](5_temperatur-und-luftfeuchtigkeitssensor.jpg)
 
 ## Beschreibung
-Der Temperatur- und Luftfeuchtigkeitssensor kann zum Messen der Temperatur und der relativen Luftfeuchtigkeit in seiner direkten Umgebung eingesetzt werden. Der Sensor ist vom Hersteller so voreingestellt, dass die Messdaten als sauberes, \[simple\_tooltip content='Digital vs. analog: Analoge Signale können beliebige kontinuierliche Werte annehmen. Sie verändern sich stufenlos. Dadurch können theoretisch unendlich viele kleine Änderungen (und damit ein unendlicher Informationsinhalt) übertragen werden. Einschränkend wirkt die Genauigkeit, mit der das analoge Signal ausgelesen/erfasst wird. Das digitale Signal nimmt nur diskrete Werte an und springt bei einer etwaigen Änderung von einem Wert zum nächsten. Es kann nur eine definierte Anzahl an Informationsinhalten übertragen werden. Vorteilhaft ist dagegen die damit verbundene Fehlerfreiheit bei minimalsten, ungewollten Schwankungen. Oftmals werden nur zwei Werte HIGH und LOW (Ein/Aus oder 1/0) übermittelt.'\]digitales Signal\[/simple\_tooltip\] ausgegeben werden. Das heißt, dass es dabei keine Messschwankungen oder Messfehler gibt, ein unverfälschtes Messsignal also. Dadurch besitzt der Sensor eine hohe Präzision, Zuverlässigkeit und Langzeitstabilität. Zusätzlich sind auch lange Kabel (>20 m) als Datenübertragung zwischen Sensor und Mikrocontroller kein Problem. Der Sensor arbeitet allerdings nur bei Umgebungstemperaturen über 0 °C.
+Der Temperatur- und Luftfeuchtigkeitssensor kann zum Messen der Temperatur und der relativen Luftfeuchtigkeit in seiner direkten Umgebung eingesetzt werden. Der Sensor ist vom Hersteller so voreingestellt, dass die Messdaten als sauberes, digitales Signal ausgegeben werden. Das heißt, dass es dabei keine Messschwankungen oder Messfehler gibt, ein unverfälschtes Messsignal also. Dadurch besitzt der Sensor eine hohe Präzision, Zuverlässigkeit und Langzeitstabilität. Zusätzlich sind auch lange Kabel (>20 m) als Datenübertragung zwischen Sensor und Mikrocontroller kein Problem. Der Sensor arbeitet allerdings nur bei Umgebungstemperaturen über 0 °C.
 
-Der Sensor kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen werden. Der Sensor kommuniziert über einen \[simple\_tooltip content='Anschlüsse / Pins / Ein- und Ausgänge: Die Mikrocontroller besitzen kleine metallische Kontakte, an die Komponenten, Shields oder andere Platinen angeschlossen werden können. Diese Kontakte werden Pins genannt und können oft als sogenannte GPIO’s (Allzweck Ein- und Ausgabe) eingesetzt werden. Dies bedeutet, dass diese Pins direkt über die Programmierung des Mikrocontrollers angesprochen werden können und hierbei sogar bestimmt werden kann, ob dieser Pin als Eingang (beispielsweise zum Auslesen eines Sensors) oder als Ausgang (beispielsweise zur Steuerung eines Motors) genutzt werden kann. Praktisches Beispiel: Wird am Arduino eine LED an Pin 1 angeschlossen, kann im Programm direkt der Pin 1 als „An“ oder „Aus“ definiert werden und damit die LED an- oder ausgeschaltet werden.'\]digitalen Pin\[/simple\_tooltip\].
+Der Sensor kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen werden. Der Sensor kommuniziert über einen digitalen Pin.
 
 Das Modul wird beispielsweise in einer Messstation für Umweltdaten, wie Feinstaub, Lautstärke, Luftfeuchtigkeit, Temperatur und UV-Strahlung eingesetzt.
 
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnung entsprechende Projektbeispiele und Tutorials.
 
- 
+ 
 
 **Wichtige Hinweise:**
 
-Die unten aufgeführte Anleitung zur Nutzung des Luftfeuchtigkeitssensors funktioniert gleichermaßen mit verschiedenen Sensoren. Damit der Beispielcode mit dem Luftfeuchtigkeitssensor funktioniert, muss der entsprechende Sensorname im Code ein- oder auskommentiert werden. Ist der Sensor vom Typ DHT 11, so müssen die drei entsprechenden Zeilen wie folgt aussehen: #define DHTTYPE DHT11   // DHT 11 //#define DHTTYPE DHT22   // DHT 22 (AM2302), AM2321 //#define DHTTYPE DHT21   // DHT 21 (AM2301)
+Die unten aufgeführte Anleitung zur Nutzung des Luftfeuchtigkeitssensors funktioniert gleichermaßen mit verschiedenen Sensoren. Damit der Beispielcode mit dem Luftfeuchtigkeitssensor funktioniert, muss der entsprechende Sensorname im Code ein- oder auskommentiert werden. Ist der Sensor vom Typ DHT 11, so müssen die drei entsprechenden Zeilen wie folgt aussehen: #define DHTTYPE DHT11   // DHT 11 //#define DHTTYPE DHT22   // DHT 22 (AM2302), AM2321 //#define DHTTYPE DHT21   // DHT 21 (AM2301)
 
 Wenn der Sensor vom Typ DHT 22 ist, lautet der Code:
 
-//#define DHTTYPE DHT11   // DHT 11 #define DHTTYPE DHT22   // DHT 22 (AM2302), AM2321 //#define DHTTYPE DHT21   // DHT 21 (AM2301)
+//#define DHTTYPE DHT11   // DHT 11 #define DHTTYPE DHT22   // DHT 22 (AM2302), AM2321 //#define DHTTYPE DHT21   // DHT 21 (AM2301)
 
 <!-- infolist -->
 
 <!-- infolists -->
 https://www.youtube.com/watch?v=UlptibF4bUk
 
- 
+ 
 
 ## Wichtige Links für die ersten Schritte:
 

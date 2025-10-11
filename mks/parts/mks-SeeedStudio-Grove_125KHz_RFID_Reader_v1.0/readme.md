@@ -27,7 +27,7 @@ embedded_example_file: "examples/Grove_125KHz_RFID_Reader_v1.0_minimal/Grove_125
 ## Beschreibung
 RFID bezeichnet ein Sender-Empfänger-System, das vor allem zur eindeutigen Identifizierung von Objekten, Einkaufswaren oder auch Lebewesen eingesetzt wird. Der RFID-Transponder besitzt eine eindeutige Identifikationsnummer. Das Lesegerät liest diese aus, sobald der Transponder in unmittelbarer Nähe ist. Der Transponder benötigt dabei keine Stromversorgung, da das Auslesegerät ihn kontaktlost mit Energie versorgt.
 
-Der RFID-Leser lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über \[simple\_tooltip content='Bei einer seriellen Datenübertragung werden die Bits (Informationen / Kommandos) nacheinander (seriell) über eine Leitung übertragen. Die wichtigsten seriellen Standards im Rahmen der Microcontroller sind I2C (Inter-Integrated Circuit), SPI (Serial Peripheral Interface) und UART (Universal Asynchronous Receiver Transmitter). Die genaue Funktionsweise ist für die reine Nutzung vorerst irrelevant. Es muss allerdings immer geprüft werden an welchen Pins oder an welchen Steckplätzen der jeweilige serielle Anschluss genutzt werden kann. Dies wird in den Datenblättern der Mikrocontroller normalerweise immer mit angegeben.'\]die serielle Schnittstelle UART \[/simple\_tooltip\]anschließen.
+Der RFID-Leser lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über die serielle Schnittstelle UARTanschließen.
 
 Mit der RFID-Technologie lässt sich beispielsweise ein Haustür-Schloss automatisieren. Individuelle RFID-Transponder müssen dann an das entsprechende Lesegerät gehalten werden und könnten so einen Schlüssel ersetzen. Bei Verlust eines Transponders ließe sich dieser nachträglich ohne Austausch des Schlosses aus dem System sperren.
 
@@ -36,11 +36,11 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 <!-- infolist -->
 
 <!-- infolists -->
- 
+ 
 
 https://www.youtube.com/watch?v=dJXTgtIMUPw
 
- 
+ 
 
 ## Wichtige Links für die ersten Schritte:
 

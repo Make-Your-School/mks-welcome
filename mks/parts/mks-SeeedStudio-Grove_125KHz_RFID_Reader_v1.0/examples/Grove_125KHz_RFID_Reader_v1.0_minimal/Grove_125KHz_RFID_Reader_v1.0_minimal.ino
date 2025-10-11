@@ -5,19 +5,19 @@
   Computer is connected to Hardware UART
   SoftSerial Shield is connected to the Software UART:D2&D3
 */
- 
+ 
 #include <SoftwareSerial.h>
- 
+ 
 SoftwareSerial SoftSerial(2, 3);
 unsigned char buffer[64];       // buffer array for data receive over serial port
 int count = 0;                    // counter for buffer array
- 
+ 
 void setup()
 {
     SoftSerial.begin(9600);     // the SoftSerial baud rate
     Serial.begin(9600);         // the Serial port of Arduino baud rate.
 }
- 
+ 
 void loop()
 {
     // if date is coming from software serial port ==> data is coming from SoftSerial shield

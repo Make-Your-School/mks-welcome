@@ -25,13 +25,13 @@ embedded_example_file: "examples/Grove_Q_Touch_Sensor_minimal/Grove_Q_Touch_Sens
 ![Berührungssensor](57_beruehrungssensor_qtouch.jpg)
 
 ## Beschreibung
-Der Berührungssensor QTouch erkennt, sobald ein an den Sensor angeschlossener Gegenstand berührt wird. So lässt sich beispielsweise eine Banane mit dem Sensor verbinden. Sobald die Banane berührt wird, übermittelt dies der Sensor an den Mikrocontroller. Es können gleichzeitig bis zu sieben Berührungsobjekte an das Modul angeschlossen werden. Der Berührungssensor lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über \[simple\_tooltip content='Bei einer seriellen Datenübertragung werden die Bits (Informationen / Kommandos) nacheinander (seriell) über eine Leitung übertragen. Die wichtigsten seriellen Standards im Rahmen der Microcontroller sind I2C (Inter-Integrated Circuit), SPI (Serial Peripheral Interface) und UART (Universal Asynchronous Receiver Transmitter). Die genaue Funktionsweise ist für die reine Nutzung vorerst irrelevant. Es muss allerdings immer geprüft werden an welchen Pins oder an welchen Steckplätzen der jeweilige serielle Anschluss genutzt werden kann. Dies wird in den Datenblättern der Mikrocontroller normalerweise immer mit angegeben.'\]die serielle Schnittstelle I2C \[/simple\_tooltip\]angeschlossen.
+Der Berührungssensor QTouch erkennt, sobald ein an den Sensor angeschlossener Gegenstand berührt wird. So lässt sich beispielsweise eine Banane mit dem Sensor verbinden. Sobald die Banane berührt wird, übermittelt dies der Sensor an den Mikrocontroller. Es können gleichzeitig bis zu sieben Berührungsobjekte an das Modul angeschlossen werden. Der Berührungssensor lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über die serielle Schnittstelle I2Cangeschlossen.
 
 Das Modul kommt beispielsweise beim Bau einer Leuchte zum Einsatz, die durch Berührung des Gehäuses an- oder ausgeschaltet wird.
 
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.
 
- 
+ 
 
 <!-- infolist -->
 ## Wichtige Links für die ersten Schritte:

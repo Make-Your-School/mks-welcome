@@ -24,7 +24,7 @@ embedded_example_file: "examples/Neopixel_minimal/Neopixel_minimal.ino"
 ## Beschreibung
 Der LED-Streifen kann Lichteffekte und -animationen erzeugen oder kommt auch einfach zur Beleuchtung zum Einsatz. Er lässt sich dabei beliebig zuschneiden und wieder zusammenlöten. Weiterhin kann jede einzelne LED in Farbe und Helligkeit individuell gesteuert werden. Dadurch ist es möglich, komplexe Lichteffekte zu realisieren.
 
-Der LED-Streifen kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen werden. Da der Streifen über ein \[simple\_tooltip content='Pulsweitenmodulation (PWM): Pulsweitenmodulation ist eine Methode zur Simulierung von analogen Informationen mittels digitaler Signale. Der Informationsinhalt wird hier durch die Pulsweite (zeitliche Länge eines Impulses) definiert und erzeugt, nicht durch dessen Intensität. Zu dieser Kategorie gehören auch andere Signalarten, die regelmäßig aufeinander folgende Spannungsimpulse nutzen, um die gewünschten Informationen zu übertragen.'\]PWM-Signal\[/simple\_tooltip\] gesteuert wird, wird nur ein \[simple\_tooltip content='Anschlüsse / Pins / Ein- und Ausgänge:  Die Mikrocontroller besitzen kleine metallische Kontakte, an die Komponenten, Shields oder andere Platinen angeschlossen werden können. Diese Kontakte werden Pins genannt und können oft als sogenannte GPIO’s (Allzweck Ein- und Ausgabe) eingesetzt werden. Dies bedeutet, dass diese Pins direkt über die Programmierung des Mikrocontrollers angesprochen werden können und hierbei sogar bestimmt werden kann, ob dieser Pin als Eingang (beispielsweise zum Auslesen eines Sensors) oder als Ausgang (beispielsweise zur Steuerung eines Motors) genutzt werden kann. Praktisches Beispiel: Wird am Arduino eine LED an Pin 1 angeschlossen, kann im Programm direkt der Pin 1 als „An“ oder „Aus“ definiert werden und damit die LED an- oder ausgeschaltet werden.'\]digitaler Pin\[/simple\_tooltip\] am Mikrocontroller benötigt.
+Der LED-Streifen kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen werden. Da der Streifen über ein PWM-Signal gesteuert wird, wird nur ein digitaler Pin am Mikrocontroller benötigt.
 
 Ab einer Länge von fünf LEDs wird empfohlen, den LED-Streifen an eine externe Stromquelle anzuschließen. Werden längere LED-Streifen in Betracht gezogen so sollte eine Stromeinspeisung mindestens jeden Meter erfolgen, um alle LEDs gleichmäßig mit Strom zu versorgen.
 
@@ -32,7 +32,7 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau sind auf der Pro
 
 https://youtu.be/e0CBo3xn858?feature=shared
 
- 
+ 
 
 
 <!-- infolist -->

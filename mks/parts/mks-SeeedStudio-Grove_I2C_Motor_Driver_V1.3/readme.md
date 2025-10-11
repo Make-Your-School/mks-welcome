@@ -27,9 +27,9 @@ embedded_example_file: "examples/Grove_I2C_Motor_Driver_V1.3_minimal/Grove_I2C_M
 ## Beschreibung
 Im Allgemeinen reichen die Stromstärken, die ein Mikrocontroller liefern kann, nicht aus, um einen Motor direkt anzusteuern. Deshalb gibt es unterschiedliche Arten von sogenannten Motortreibern. Diese werden eingangsseitig am Mikrocontroller und ausgangsseitig am Motor angeschlossen. Sie übersetzen die Kommandos des Mikrocontrollers in die vom Motor benötigten Stromstärken. Gleichzeitig wird der Mikrocontroller von etwaigen Kurzschlüssen oder Überspannungen, die seitens des Motors entstehen könnten, geschützt.
 
-Die vorliegende Ausführung kann einen vieradrigen \[simple\_tooltip content='Ein Schrittmotor wird immer mithilfe eines Motortreibers angesteuert. Er kann sehr genau positioniert werden, selbst ohne Sensoren, da er in einzelnen immer gleichbleibenden Schritten weiterdreht, unabhängig von seiner äußeren Belastung (innerhalb der angegebenen Belastungsgrenzen). Praktisch bedeutet das: Der Mikrocontroller sendet an den Motortreiber die Richtung und die Anzahl an Schritten, die weitergedreht werden sollen. Solange man die Anfangsposition kennt und den Überblick der vorwärts und rückwärts gedrehten Schritten behält, ist die Position des Motors bekannt. Der Schrittmotor ist dadurch sehr präzise, jedoch oftmals nicht so schnell wie ein einfacher DC-Motor.'\]Schrittmotor \[/simple\_tooltip\]oder bis zu zwei \[simple\_tooltip content='Ein Gleichstrommotor (DC-Motor) dreht solange, wie er an einer Spannungsquelle hängt und ist dadurch auf endloses Drehen optimal ausgelegt. Dagegen ist die genaue Positionierung ohne Sensoren nicht möglich, da die tatsächliche Drehung auch von der Kraft abhängt, die er aufbringen muss. Wird ein DC-Motor stark belastet dreht er deutlich langsamer als unbelastet.'\]Gleichstrommotoren \[/simple\_tooltip\]ansteuern. Falls zwei Gleichstrommotoren angeschlossen werden, können diese unabhängig voneinander sowohl bezüglich der Richtung und Geschwindigkeit gesteuert werden.
+Die vorliegende Ausführung kann einen vieradrigen Schrittmotoroder bis zu zwei Gleichstrommotorenansteuern. Falls zwei Gleichstrommotoren angeschlossen werden, können diese unabhängig voneinander sowohl bezüglich der Richtung und Geschwindigkeit gesteuert werden.
 
-Der Motortreiber wird direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über die \[simple\_tooltip content='Bei einer seriellen Datenübertragung werden die Bits (Informationen/Kommandos) nacheinander (seriell) über eine Leitung übertragen. Die wichtigsten seriellen Standards im Rahmen der Mikrocontroller sind I2C (Inter-Integrated Circuit), SPI (Serial Peripheral Interface) und UART (Universal Asynchronous Receiver Transmitter). Die genaue Funktionsweise ist für die reine Nutzung vorerst irrelevant. Es muss allerdings immer geprüft werden an welchen Pins oder an welchen Steckplätzen der jeweilige serielle Anschluss genutzt werden kann. Dies wird in den Datenblättern der Mikrocontroller normalerweise mit angegeben.'\]serielle Schnittstelle I2C\[/simple\_tooltip\]  angeschlossen. Der Treiber benötigt dabei eine separate Stromversorgung zwischen 6V und 15V.
+Der Motortreiber wird direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über die serielle Schnittstelle I2C  angeschlossen. Der Treiber benötigt dabei eine separate Stromversorgung zwischen 6V und 15V.
 
 Ein Beispielprojekt könnte ein Roboter sein, der ein frei drehbares und zwei angetriebene Räder besitzt. Die zwei Räder können mithilfe des Motortreibers sowohl vorwärts als auch rückwärts gesteuert werden. So kann der Roboter in alle Richtungen navigiert werden.
 
@@ -42,11 +42,11 @@ Programmierung und RESET: Beim Heraufladen eines Programms auf einen Mikrocontro
 <!-- infolist -->
 
 <!-- infolists -->
- 
+ 
 
 https://www.youtube.com/watch?v=wVxcmO2YuxA
 
- 
+ 
 
 ## Wichtige Links für die ersten Schritte:
 

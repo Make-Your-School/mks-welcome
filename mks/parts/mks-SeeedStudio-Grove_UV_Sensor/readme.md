@@ -28,12 +28,7 @@ Der UV-Lichtsensor erfasst die Intensität der auf ihn einwirkenden Ultraviolett
 
 Die Sensibilität des Sensors ist am höchsten bei einer Strahlung mit einer Wellenlänge zwischen 200 nm und 400 nm. Dadurch erfasst der Sensor sowohl UV-Strahlung als auch einen geringen Anteil des sichtbaren violetten Lichts.
 
-Der Sensor kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen werden. Der Sensor wird dabei an einen \[simple\_tooltip content='Digital vs. analog:
-
-- Analoge Signale können beliebige kontinuierliche Werte annehmen. Sie verändern sich stufenlos. Dadurch können theoretisch unendlich viele kleine Änderungen (und damit ein unendlicher Informationsinhalt) übertragen werden. Einschränkend wirkt die Genauigkeit, mit der das analoge Signal ausgelesen/erfasst wird.
-- Das digitale Signal nimmt nur diskrete Werte an und springt bei einer etwaigen Änderung von einem Wert zum nächsten. Es kann nur eine definierte Anzahl an Informationsinhalten übertragen werden. Vorteilhaft ist dagegen die damit verbundene Fehlerfreiheit bei minimalsten, ungewollten Schwankungen. Oftmals werden nur zwei Werte HIGH und LOW (Ein/Aus oder 1/0) übermittelt.
-
-'\]analogen\[/simple\_tooltip\] Eingang angeschlossen.
+Der Sensor kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen werden. Der Sensor wird dabei an einen analogen Eingang angeschlossen.
 
 Das Modul wird beispielsweise in einer Messstation für Umweltdaten, wie Feinstaub, Lautstärke, Luftfeuchtigkeit, Temperatur und UV-Strahlung eingesetzt.
 
@@ -44,7 +39,7 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 <!-- infolists -->
 ## Wichtige Links für die ersten Schritte:
 
-- [Seeed Studio Wiki – UV Sensor](https://wiki.seeedstudio.com/Grove-UV_Sensor/) 
+- [Seeed Studio Wiki – UV Sensor](https://wiki.seeedstudio.com/Grove-UV_Sensor/) 
 
 ## Weiterführende Hintergrundinformationen:
 

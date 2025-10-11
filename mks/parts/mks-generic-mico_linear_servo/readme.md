@@ -24,7 +24,7 @@ embedded_example_file: "examples/mico_linear_servo_minimal/mico_linear_servo_min
 ![Linearservomotor](39_linearservomotor.jpg)
 
 ## Beschreibung
-Ein Servomotor verfügt über eine interne Regelung, sodass von außen nur eine Position angeben werden muss, die er dann selbstständig anfährt und hält (trotz Krafteinwirkung). Er kann dadurch nur genaue Positionen anfahren, ist aber nicht für endloses Drehen ausgelegt. Ein Servomotor wird direkt oder mithilfe des Grove Shields an einen Arduino angeschlossen und über \[simple\_tooltip content='Pulsweitenmodulation ist eine Methode zur Simulierung von analogen Informationen mittels digitalen Signalen. Der Informationsinhalt wird hier durch die Pulsweite (zeitliche Länge eines Impulses) definiert und erzeugt, nicht durch dessen Intensität. Zu dieser Kategorie gehören auch andere Signalarten, die regelmäßig aufeinander folgende Spannungsimpulse nutzen, um die gewünschten Informationen zu übertragen.'\]Pulsweitenmodulation (PWM)\[/simple\_tooltip\] angesteuert.
+Ein Servomotor verfügt über eine interne Regelung, sodass von außen nur eine Position angeben werden muss, die er dann selbstständig anfährt und hält (trotz Krafteinwirkung). Er kann dadurch nur genaue Positionen anfahren, ist aber nicht für endloses Drehen ausgelegt. Ein Servomotor wird direkt oder mithilfe des Grove Shields an einen Arduino angeschlossen und über Pulsweitenmodulation (PWM) angesteuert.
 
 Der Linearservomotor ist ein spezieller Servomotor, der für lineare Bewegungen konzipiert ist. Er kann somit kleine Vor- und Rückwärtsbewegungen ausführen.
 
@@ -33,11 +33,11 @@ Entsprechende Projektbeispiele und Tutorials sind über alle gängigen Suchmasch
 <!-- infolist -->
 
 <!-- infolists -->
- 
+ 
 
 https://www.youtube.com/watch?v=wVxcmO2YuxA
 
- 
+ 
 
 ## Wichtige Links für die ersten Schritte:
 

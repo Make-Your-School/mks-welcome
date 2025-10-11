@@ -24,7 +24,7 @@ embedded_example_file: "examples/Grove_Digital_Infrared_Temperature_Sensor_minim
 ![Infrarot-Temperatursensor](27_infrarot_temperatursensor.jpg)
 
 ## Beschreibung
-Dieser Temperatursensor ermittelt die Wärmestrahlung eines beliebigen Gegenstands kontaktlos über infrarotes Licht. Eine Entfernung des zu messenden Objekts von ca. 3cm wird empfohlen. Der Sensor kann direkt oder mithilfe des Grove Shields an einen Arduino angeschlossen werden und kommuniziert standardmäßig über eine serielle Schnittstelle namens SMBus. Er kann ebenfalls über \[simple\_tooltip content='Bei einer seriellen Datenübertragung werden die Bits (Informationen/Kommandos) nacheinander (seriell) über eine Leitung übertragen. Die wichtigsten seriellen Standards im Rahmen der Mikrocontroller sind I2C (Inter-Integrated Circuit), SPI (Serial Peripheral Interface) und UART (Universal Asynchronous Receiver Transmitter). Die genaue Funktionsweise ist für die reine Nutzung vorerst irrelevant. Es muss allerdings immer geprüft werden, an welchen Pins oder an welchen Steckplätzen der jeweilige serielle Anschluss genutzt werden kann. Dies wird in den Datenblättern der Mikrocontroller normalerweise angegeben.'\]die serielle Schnittstelle I2C\[/simple\_tooltip\] ausgelesen werden.
+Dieser Temperatursensor ermittelt die Wärmestrahlung eines beliebigen Gegenstands kontaktlos über infrarotes Licht. Eine Entfernung des zu messenden Objekts von ca. 3cm wird empfohlen. Der Sensor kann direkt oder mithilfe des Grove Shields an einen Arduino angeschlossen werden und kommuniziert standardmäßig über eine serielle Schnittstelle namens SMBus. Er kann ebenfalls über die serielle Schnittstelle I2C ausgelesen werden.
 
 Der Sensor kann zum Beispiel eingesetzt werden, um ein Infrarot-Thermometer aufzubauen.
 
