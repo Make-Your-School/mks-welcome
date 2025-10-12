@@ -75,6 +75,8 @@
     --mys-blue-800: hsl(194, 55%, 27%);
     --mys-blue-900: hsl(198, 52%, 22%);
     --mys-blue-950: hsl(198, 63%, 15%);
+
+    --mys-blue-400-dark: hsl(187.5, 8.7%, 18%);
 }
 
 body.body--light {
@@ -106,8 +108,17 @@ body.body--light {
 }
 
 body.body--dark {
-    --surface-stroke--primary: var(--mys-blue-950);
     --text-primary: var(--mys-blue-100);
+    --text-primary-contrast: var(--mys-blue-950);
+
+
+    --card-stroke: var(--mys-blue-300);
+    --card-text: var(--mys-blue-100);
+    --card-text-hover: var(--mys-blue-50);
+    --card-fill: var(--mys-blue-950);
+    --card-fill-hover: var(--mys-blue-700);
+    --card-fill-accent: var(--mys-blue-900);
+    --box-shadow-default: var(--mys-blue-950) 4px 4px 0px 0px;
 }
 
 

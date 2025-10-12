@@ -71,11 +71,6 @@ console.log('props.mks_item', props.mks_item)
             color: var(--text-primary);
             font-size: 36px
             font-weight: bold
-            // dark mode color overwrites
-            // background-color: rgb(35, 47, 49);
-            // border-color: rgb(46, 158, 204);
-            // box-shadow: rgb(14, 48, 62) 4px 4px 0px 0px;
-            // color: rgb(116, 240, 255) !important;
         .title
             margin: 0
             font-size: 36px

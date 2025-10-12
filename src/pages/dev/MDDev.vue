@@ -9,7 +9,7 @@
 
 <script setup>
 
-import * as md_obj from "../../../public/mks/parts/mks-Endschalter/readme.md"
+import * as md_obj from "../../../public/mks/parts/mks-generic-Endschalter/readme.md"
 const MDContent = md_obj.default
 console.log('md_obj', md_obj)
 </script>
