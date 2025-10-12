@@ -114,48 +114,44 @@ const searchText = ref('')
     flex-direction: column
     min-height: 0
     height: 100%
-.card-wrapper
-    flex-grow: 1
-    overflow: auto
-    min-height: 0
-    list-style: none
-    padding: 0
-    li
-        margin: 0
-.q-card
-    background-color: #84cbd4
-.my-card
-    width: 100%
-    min-width: 25rem
-    max-width: 32.5vw
-    max-height: 80vh
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
-.clickable
-    cursor: pointer
-    text-decoration: none
-    display: block
-    width: 100%
-    height: 100%
-    overflow: scroll
+    // max-width: 80em
+    margin: 0 auto
+    @media only screen and (min-width: 2280px)
+        --container-spacing: 0;
+        max-width: 1680px;
+    .card-wrapper
+        flex-grow: 1
+        overflow: visible
+        min-height: 80vh
+        list-style: none
+        padding: 0
+        li
+            margin: 0
+        .my-card
+            width: 100%
+            min-width: 15rem
+            width: 32.5%
+            overflow: visible
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            .clickable
+                cursor: pointer
+                text-decoration: none
+                display: block
+                width: 100%
+                height: 100%
+                overflow: visible
 </style>
 
 <style lang="sass">
-.my-card
-    img
-        max-width: 100%
-        max-height: 20vh
-        display: block
-        margin: auto
-        background-color: transparent
-    h1
-        color: white
-        display: flex
-        justify-content: center
-        align-items: center
-        width: 100%
-        text-align: center
+// .my-card
+//     h1
+//         color: white
+//         display: flex
+//         justify-content: center
+//         align-items: center
+//         width: 100%
+//         text-align: center
 </style>
-useMDContentStoreuseMDContentStore

@@ -1,24 +1,136 @@
 // app global css in SCSS form
+
+
+:root {
+    --mys-basics-100: #ebecee;
+    --mys-basics-200: #dcdee1;
+    --mys-basics-300: #c4c9cc;
+    --mys-basics-400: #a4abb1;
+    --mys-basics-50: #f6f7f8;
+    --mys-basics-500: #9198a0;
+    --mys-basics-600: #808690;
+    --mys-basics-700: #737882;
+    --mys-basics-800: #61646c;
+    --mys-basics-900: #505358;
+    --mys-basics-950: #333438;
+    --mys-basics-white: #ffffff;
+    --mys-green-100: #f8f6cf;
+    --mys-green-200: #f1efa5;
+    --mys-green-300: #e5e471;
+    --mys-green-400: #d4d645;
+    --mys-green-50: #fcfbe9;
+    --mys-green-500: #b8bc26;
+    --mys-green-600: #9aa01c;
+    --mys-green-700: #6d7219;
+    --mys-green-800: #565b19;
+    --mys-green-900: #494d1a;
+    --mys-green-950: #262a09;
+    --mys-orange-100: #fff5d4;
+    --mys-orange-200: #ffe8a7;
+    --mys-orange-300: #ffd570;
+    --mys-orange-400: #ffb736;
+    --mys-orange-50: #fffbec;
+    --mys-orange-500: #ffa00f;
+    --mys-orange-600: #e66f00;
+    --mys-orange-700: #c86406;
+    --mys-orange-800: #9e4e0e;
+    --mys-orange-900: #7f400f;
+    --mys-orange-950: #451f05;
+    --mys-red-100: #ffe7e1;
+    --mys-red-200: #ffd2c7;
+    --mys-red-300: #ffb3a0;
+    --mys-red-400: #ff7452;
+    --mys-red-50: #fff4f1;
+    --mys-red-500: #f8603b;
+    --mys-red-600: #df3a12;
+    --mys-red-700: #c13614;
+    --mys-red-800: #a03014;
+    --mys-red-900: #842d18;
+    --mys-red-950: #481407;
+    --underline-color: #ffffff;
+    --mys-violet: #981a80;
+}
+
+:root {
+    --padding-l: var(40px);
+    --padding-m: var(32px);
+    --padding-s: var(24px);
+    --padding-xl: var(48px);
+    --padding-xs: var(20px);
+}
+
+:root {
+    --corner-radius-medium: 24px;
+}
+
+:root {
+    --mys-blue-50: hsl(184, 79%, 96%);
+    --mys-blue-100: hsl(185, 76%, 90%);
+    --mys-blue-200: hsl(186, 74%, 82%);
+    --mys-blue-300: hsl(187, 73%, 72%);
+    --mys-blue-400: hsl(187, 68%, 53%);
+    --mys-blue-500: hsl(188, 75%, 43%);
+    --mys-blue-600: hsl(191, 73%, 36%);
+    --mys-blue-700: hsl(193, 66%, 31%);
+    --mys-blue-800: hsl(194, 55%, 27%);
+    --mys-blue-900: hsl(198, 52%, 22%);
+    --mys-blue-950: hsl(198, 63%, 15%);
+}
+
 body.body--light {
-    color: $text
+    --text-primary: var(--mys-blue-950);
+    --text-primary-contrast: var(--mys-blue-100);
+
+    --link-hover-color: var(--mys-blue-600);
+    --link-hover-color-light: var(--mys-blue-300);
+
+    --card-stroke: var(--mys-blue-950);
+    --card-text: var(--mys-blue-100);
+    --card-text-hover: var(--mys-blue-50);
+    --card-fill: var(--mys-blue-100);
+    --card-fill-hover: var(--mys-blue-950);
+    --card-fill-accent: var(--mys-blue-200);
+    --box-shadow-default: var(--mys-blue-950) 4px 4px 0px 0px;
+    // button
+    --button-fill: var(--mys-blue-100);
+    --button-shadow: var(--mys-blue-300);
+    // button hover
+    --button-hover-text: hsl(--mys-blue-950);
+    --button-hover-stroke: var(--mys-blue-600);
+    --button-hover-fill: var(--mys-blue-300);
+    // button active
+    --button-active-text: var(--mys-blue-100);
+    --button-active-stroke: hsl(--mys-blue-950);
+    --button-active-fill: var(--mys-blue-600);
+    --button-active-shadow: hsl(--mys-blue-950);
 }
 
 body.body--dark {
-    color: $text-on-dark
+    --surface-stroke--primary: var(--mys-blue-950);
+    --text-primary: var(--mys-blue-100);
+}
+
+
+body.body--light {
+    color: var(--mys-blue-950);
+}
+
+body.body--dark {
+    color: $text-on-dark;
 }
 
 body.body--dark .q-dark {
-    color: $text-on-dark
+    color: $text-on-dark;
 }
 
 body.body--dark code:not(.hljs) {
     color: hsl(180, 6.9%, 60.4%);
-	background: hsl(192.2, 100%, 10.6%);
-	padding: 0.1em 0.5em;
+    background: hsl(192.2, 100%, 10.6%);
+    padding: 0.1em 0.5em;
 }
 
 body.body--light code:not(.hljs) {
     color: hsl(194, 14%, 40%);
-	background: hsl(44, 87%, 94%);
+    background: hsl(44, 87%, 94%);
     padding: 0.1em 0.5em;
 }
