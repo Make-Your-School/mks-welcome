@@ -3,7 +3,7 @@ title: "OLED-Bildschirm"
 date: "2018-10-01T15:01:02.000Z"
 tags: 
   - "output"
-coverImage: "63_oled_bildschirm.jpg"
+coverImage: "63_oled_bildschirm.png"
 material_number: "63"
 material_type: "output"
 material_short_descr: "Seeed Studio Grove – OLED Display 1.12\""
@@ -21,7 +21,7 @@ embedded_example_file: "examples/Grove_OLED_Display_1.12inch_minimal/Grove_OLED_
 
 # OLED-Bildschirm
 
-![OLED-Bildschirm](./63_oled_bildschirm.jpg)
+![OLED-Bildschirm](./63_oled_bildschirm.png)
 
 ## Beschreibung
 Auf den 96x96 Pixel des OLED-Bildschirms können Bilder, Informationen oder auch Diagramme o.ä. in 16 Graustufen und hohem Kontrast dargestellt werden. Der Bildschirm lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über die serielle Schnittstelle I2C anschließen.

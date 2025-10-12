@@ -3,9 +3,9 @@ title: "Temperatursensor"
 date: "2018-08-28T23:44:26.000Z"
 tags: 
   - "sensor"
-coverImage: "4_temperatursensor.jpg"
+coverImage: "4_temperatursensor.png"
 material_number: "4"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove - Grove - Temperature Sensor V1.2"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -21,7 +21,7 @@ embedded_example_file: "examples/Grove_Temperature_Sensor_V1.2_minimal/Grove_Tem
 
 # Temperatursensor
 
-![Temperatursensor](./4_temperatursensor.jpg)
+![Temperatursensor](./4_temperatursensor.png)
 
 ## Beschreibung
 Der Temperatursensors misst die Temperatur mit einem sogenannten Thermistor. Dies ist ein elektrischer Widerstand, der sich ändert, je nachdem welche Temperatur ihn umgibt.  Mit einer entsprechenden Schaltung wird diese Widerstandsänderung in eine analoge Spannung umgewandelt. Diese analoge Spannung kann von einem Mikrocontroller ausgelesen werden. Schließlich kann über mathematische Zusammenhänge die Temperatur ausgerechnet werden. Dieser Temperatursensor erfasst Temperaturen zwischen -40 °C und 125 °C und verfügt über eine Genauigkeit von  1,5 °C.

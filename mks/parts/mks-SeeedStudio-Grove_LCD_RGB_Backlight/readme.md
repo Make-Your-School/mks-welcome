@@ -3,7 +3,7 @@ title: "LCD-Bildschirm"
 date: "2018-10-01T15:00:27.000Z"
 tags: 
   - "output"
-coverImage: "62_lcd-bildschirm.jpg"
+coverImage: "62_lcd-bildschirm.png"
 material_number: "62"
 material_type: "output"
 material_short_descr: "Seeed Studio Grove – LCD RGB Backlight"
@@ -20,7 +20,7 @@ embedded_example_file: "examples/Grove_LCD_RGB_Backlight_minimal/Grove_LCD_RGB_B
 
 # LCD-Bildschirm
 
-![LCD-Bildschirm](./62_lcd-bildschirm.jpg)
+![LCD-Bildschirm](./62_lcd-bildschirm.png)
 
 ## Beschreibung
 Der LCD Bildschirm dient hautpsächlich zum Anzeigen von Informationen. Er verfügt über zwei Zeilen, auf denen jeweils 16 Zeichen (Buchstaben, Zahlen und Sonderzeichen) dargestellt werden können. Zusätzlich lässt sich die Farbe der Hintergrundbeleuchtung steuern, um einen besonderen Effekt zu erzeugen. Der Bildschirm kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über die serielle Schnittstelle I2C angeschlossen werden.

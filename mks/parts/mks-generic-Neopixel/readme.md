@@ -3,7 +3,7 @@ title: "LED-Streifen"
 date: "2018-08-28T23:41:38.000Z"
 tags: 
   - "output"
-coverImage: "65_led-streifen.jpg"
+coverImage: "65_led-streifen.png"
 material_number: "65"
 material_type: "output"
 material_short_descr: "Adafruit NeoPixel Digital RGB LED Strip - White 60 LED"
@@ -18,7 +18,7 @@ embedded_example_file: "examples/Neopixel_minimal/Neopixel_minimal.ino"
 
 # LED-Streifen
 
-![LED-Streifen](./65_led-streifen.jpg)
+![LED-Streifen](./65_led-streifen.png)
 
 ## Beschreibung
 Der LED-Streifen kann Lichteffekte und -animationen erzeugen oder kommt auch einfach zur Beleuchtung zum Einsatz. Er lässt sich dabei beliebig zuschneiden und wieder zusammenlöten. Weiterhin kann jede einzelne LED in Farbe und Helligkeit individuell gesteuert werden. Dadurch ist es möglich, komplexe Lichteffekte zu realisieren.

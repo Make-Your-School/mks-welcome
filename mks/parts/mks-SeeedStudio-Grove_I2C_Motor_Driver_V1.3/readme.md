@@ -2,8 +2,12 @@
 title: "Motortreiber"
 date: "2018-10-01T15:07:22.000Z"
 tags: 
-  - "output"
-coverImage: "70_motortreiber.jpg"
+    - "output"
+    - "aktor"
+    - "motortreiber"
+    - "motor"
+    - "i2c"
+coverImage: "70_motortreiber.png"
 material_number: "70"
 material_type: "output"
 material_short_descr: "Seeed Studio Grove – I2C Motor Driver V1.3"
@@ -21,7 +25,9 @@ embedded_example_file: "examples/Grove_I2C_Motor_Driver_V1.3_minimal/Grove_I2C_M
 
 # Motortreiber
 
-![Motortreiber](./70_motortreiber.jpg)
+mks Nr 70
+
+![Motortreiber](./70_motortreiber.png)
 
 ## Beschreibung
 Im Allgemeinen reichen die Stromstärken, die ein Mikrocontroller liefern kann, nicht aus, um einen Motor direkt anzusteuern. Deshalb gibt es unterschiedliche Arten von sogenannten Motortreibern. Diese werden eingangsseitig am Mikrocontroller und ausgangsseitig am Motor angeschlossen. Sie übersetzen die Kommandos des Mikrocontrollers in die vom Motor benötigten Stromstärken. Gleichzeitig wird der Mikrocontroller von etwaigen Kurzschlüssen oder Überspannungen, die seitens des Motors entstehen könnten, geschützt.
@@ -38,14 +44,25 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 
 Programmierung und RESET: Beim Heraufladen eines Programms auf einen Mikrocontroller über einen Computeranschluss („Upload-Vorgang“) wird der Mikrocontroller automatisch kurz vom Strom getrennt, damit das neu geladene Programm komplett von vorne ablaufen kann. Der hier vorliegende Motortreiber wird aber zusätzliche mit einer externen Stromquelle betrieben, zum Beispiel mit einem Netzteil oder einem Akku. Sind Motortreiber, externe Stromquelle und Mikrocontroller während des Upload-Vorgangs miteinander verbunden, kommt es teilweise zu Problemen. Der Grund ist, dass der Mikrocontroller nicht richtig vom Strom getrennt werden kann, wenn er (zusätzlich zur Stromversorgung über einen Computer) an einer externen Stromquelle hängt. Deshalb sollte man Mikrocontroller und Motortreiber während des Upload-Vorgangs von allen Stromquellen außer dem PC-Anschluss trennen. Soll der Mikrocontroller resettet werden, also in den Ausgangszustand versetzt werden, sollte er ebenfalls von allen externen **Stromquellen getrennt werden**.
 
-<!-- infolist -->
-
-<!-- infolists -->
- 
 
 https://www.youtube.com/watch?v=wVxcmO2YuxA
 
- 
+
+## Anschlüsse
+
+### Eingang
+
+-   I2C
+
+### Ausgang
+
+-   High Power / High Voltage
+
+## Kurz-Datenblatt
+
+-   Signal Eingang: 3-5V
+-   Betriebsspannung: 5-12V
+-   Ausgang Strom Max: 1A 
 
 ## Wichtige Links für die ersten Schritte:
 

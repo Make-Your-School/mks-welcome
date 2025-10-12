@@ -3,9 +3,9 @@ title: "Gestenerkennung"
 date: "2018-10-01T13:56:33.000Z"
 tags: 
   - "sensor"
-coverImage: "34_gestenerkennung.jpg"
+coverImage: "34_gestenerkennung.png"
 material_number: "34"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove – Gesture"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -21,7 +21,7 @@ embedded_example_file: "examples/Grove_Gesture_v1.0_minimal/Grove_Gesture_v1.0_m
 
 # Gestenerkennung
 
-![Gestenerkennung](./34_gestenerkennung.jpg)
+![Gestenerkennung](./34_gestenerkennung.png)
 
 ## Beschreibung
 Der Sensor für Gestenerkennung erkennt bis zu neun vorprogrammierte Handbewegungen, die unmittelbar vor oder über ihm ausgeführt werden. Als mögliche Handbewegung ist beispielsweise ein Wischen oder eine Drehbewegung der Finger denkbar. So lässt sich ein angeschlossener Mikrocontroller steuern.

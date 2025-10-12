@@ -3,7 +3,7 @@ title: "Calliope mini"
 date: "2018-08-28T23:44:25.000Z"
 tags: 
   - "controller"
-coverImage: "2_calliope_mini.jpg"
+coverImage: "2_calliope_mini.png"
 material_number: "2"
 material_type: "controller"
 manufacture: "Calliope gGmbH"
@@ -19,7 +19,7 @@ embedded_example_file: "examples/Calliope_mini_minimal/Calliope_mini_minimal.ino
 
 # Calliope mini
 
-![Calliope mini](./2_calliope_mini.jpg)
+![Calliope mini](./2_calliope_mini.png)
 
 ## Beschreibung
 Der Calliope mini ist ein Mikrocontroller, der speziell für Bildungszwecke entwickelt wurde. Neben den grundlegenden Funktionen eines jeden Mikrocontrollers hat er bereits viele Sensoren und Aktoren, wie Lautsprecher und Leuchten, integriert. Dies ermöglicht es, schnell ohne zusätzliche Komponenten kleine Projekte umzusetzen und auszuprobieren.

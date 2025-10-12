@@ -3,9 +3,9 @@ title: "Ultraschall-Entfernungssensor"
 date: "2018-10-01T13:31:08.000Z"
 tags: 
   - "sensor"
-coverImage: "17_ultraschallentfernungssensor.jpg"
+coverImage: "17_ultraschallentfernungssensor.png"
 material_number: "17"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove – Ultrasonic Ranger"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -21,7 +21,7 @@ embedded_example_file: "examples/Grove_Ultrasonic_Ranger_minimal/Grove_Ultrasoni
 
 # Ultraschall-Entfernungssensor
 
-![Ultraschall-Entfernungssensor](./17_ultraschallentfernungssensor.jpg)
+![Ultraschall-Entfernungssensor](./17_ultraschallentfernungssensor.png)
 
 ## Beschreibung
 Der Ultraschall-Entfernungssensor misst die Entfernung zwischen sich und einem vor ihm positionierten Gegenstand. Der Sensor strahlt eigene Ultraschall-Signale aus und analysiert das vom Objekt reflektierte Echo. So lassen sich Entfernungen zwischen 2cm und 350cm erfassen. Die Genauigkeit liegt hierbei bei  1cm.

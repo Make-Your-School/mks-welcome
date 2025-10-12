@@ -3,9 +3,9 @@ title: "Luftqualitätssensor"
 date: "2018-10-01T12:56:41.000Z"
 tags: 
   - "sensor"
-coverImage: "9_luftqualitaetssensor.jpg"
+coverImage: "9_luftqualitaetssensor.png"
 material_number: "9"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove – Air quality sensor 1.3"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -21,7 +21,7 @@ embedded_example_file: "examples/Grove_Air_Quality_Sensor_v1.3_minimal/Grove_Air
 
 # Luftqualitätssensor
 
-![Luftqualitätssensor](./9_luftqualitaetssensor.jpg)
+![Luftqualitätssensor](./9_luftqualitaetssensor.png)
 
 ## Beschreibung
 Der Luftqualitätssensor erfasst unterschiedlich auftretende, toxische Gase, wie beispielsweise Kohlenmonoxid, Alkohol, Aceton und Thinner. Jedoch ermöglicht das Messprinzip keine exakten (quantitativen) Angaben über die vorhandenen Gaskonzentrationen. Allerdings reicht der Sensor aus, um deren Präsenz qualitativ in vier groben Konzentrationsstufen einzuteilen.

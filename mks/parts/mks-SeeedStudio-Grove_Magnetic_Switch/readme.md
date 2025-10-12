@@ -3,9 +3,9 @@ title: "Magnetschalter"
 date: "2018-10-01T13:49:51.000Z"
 tags: 
   - "sensor"
-coverImage: "28_magnetschalter.jpg"
+coverImage: "28_magnetschalter.png"
 material_number: "28"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove – Magnet Switch"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -21,7 +21,7 @@ embedded_example_file: "examples/Grove_Magnetic_Switch_minimal/Grove_Magnetic_Sw
 
 # Magnetschalter
 
-![Magnetschalter](./28_magnetschalter.jpg)
+![Magnetschalter](./28_magnetschalter.png)
 
 ## Beschreibung
 Der Magnetschalter funktioniert wie ein normaler Schalter und kann als Eingabe für einen Mikrocontroller verwendet werden. Der Sensor ermittelt, ob sich ein Magnet in seiner unmittelbaren Nähe befindet und gibt ein digitales Signal aus, sobald er sich in einem Magnetfeld befindet. Er kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen werden. Der Schalter benötigt nur einen digitalen Pin.

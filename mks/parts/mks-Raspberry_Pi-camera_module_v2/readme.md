@@ -3,9 +3,9 @@ title: "Kamera"
 date: "2018-10-01T13:58:23.000Z"
 tags: 
   - "sensor"
-coverImage: "37_kamera.jpg"
+coverImage: "37_kamera.png"
 material_number: "37"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Rasberry Kameramodul v2"
 manufacture: "Raspberry Pi"
 manufacture_url: "https://www.raspberrypi.com/"
@@ -20,7 +20,7 @@ embedded_example_file: "examples/camera_module_v2_minimal/camera_module_v2_minim
 
 # Kamera
 
-![Kamera](./37_kamera.jpg)
+![Kamera](./37_kamera.png)
 
 ## Beschreibung
 Das Kameramodul kann wie eine handelsübliche Webcam eingesetzt werden. Die Kamera ist speziell für den Raspberry Pi entwickelt und kann einfach über den CSI-Steckplatz (Camera Serial Interface) angeschlossen werden. Das Modul ist mit einem hochwertigen Bildsensor von Sony ausgestattet, der eine Bildauflösung bis 8 Megapixel liefert. Daneben können Videoaufnahmen erstellt werden bei 1080p mit 30fps, bei 720p mit 60fps und bei 640x480 Pixeln mit bis zu 90fps. Eine optimale Handhabung wird durch automatische Steuerfunktionen für Belichtung, Lichtstärkeerkennung und Weißabgleich sichergestellt.

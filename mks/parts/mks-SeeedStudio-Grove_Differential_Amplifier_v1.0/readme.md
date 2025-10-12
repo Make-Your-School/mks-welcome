@@ -3,9 +3,9 @@ title: "Verstärker"
 date: "2018-10-01T15:15:46.000Z"
 tags: 
   - "sensor"
-coverImage: "71_verstaerker.jpg"
+coverImage: "71_verstaerker.png"
 material_number: "71"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove – Differential Amplifier v1.0"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -20,7 +20,7 @@ embedded_example_file: "examples/Grove_Differential_Amplifier_v1.0_minimal/Grove
 
 # Verstärker
 
-![Verstärker](./71_verstaerker.jpg)
+![Verstärker](./71_verstaerker.png)
 
 ## Beschreibung
 Das Verstärker-Modul ermöglicht es, kleine Spannungen zu verstärken, um sie beispielweise für einen Mikrocontroller messbar zu machen. So können Spannungen erfasst werden, die in ihrer ursprünglichen Form zu klein für die direkte Erfassung mit einem Mikrocontroller sind.

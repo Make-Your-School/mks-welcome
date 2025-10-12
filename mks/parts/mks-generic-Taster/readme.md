@@ -3,9 +3,9 @@ title: "Taster/Knopf"
 date: "2018-10-01T14:48:30.000Z"
 tags: 
   - "sensor"
-coverImage: "59_taster_knopf.jpg"
+coverImage: "59_taster_knopf.png"
 material_number: "59"
-material_type: "sensor"
+material_type: "input"
 manufacture: "Generic"
 repo_name: "mks-generic-Taster"
 repo_prefix: "mks"
@@ -18,7 +18,7 @@ embedded_example_file: "examples/Taster_minimal/Taster_minimal.ino"
 
 # Taster/Knopf
 
-![Taster/Knopf](./59_taster_knopf.jpg)
+![Taster/Knopf](./59_taster_knopf.png)
 
 ## Beschreibung
 Taster oder auch Knöpfe sind eine sehr einfache Eingabemöglichkeit für Elektronik-Projekte und können frei nach eigenen Vorstellungen eingesetzt werden. Mit einem zurückfedernden Schaltmechanismus stellen sie einen elektrischen Kontakt zwischen den Anschlusspins her, solange der Taster gedrückt ist.  Die Taster müssen allerdings an entsprechende Verlängerungskabel gelötet oder über Breadboards mit dem Mikrocontroller verbunden werden.

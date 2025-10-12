@@ -3,9 +3,9 @@ title: "Gassensor"
 date: "2018-10-01T13:25:00.000Z"
 tags: 
   - "sensor"
-coverImage: "11_gassensor.jpg"
+coverImage: "11_gassensor.png"
 material_number: "11"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove – Gas Sensor (MQ2)"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -21,7 +21,7 @@ embedded_example_file: "examples/Grove_Gas_Sensor-MQ2_minimal/Grove_Gas_Sensor-M
 
 # Gassensor
 
-![Gassensor](./11_gassensor.jpg)
+![Gassensor](./11_gassensor.png)
 
 ## Beschreibung
 Der Grove Gas Sensor MQ2 erfasst Leckströme von Verbrennungsgasen (beispielsweise Rauch). Er besitzt eine hohe Sensitivität und eine schnelle Reaktionszeit. Er benötigt allerdings in vielen Fällen eine längere Kalibrierungsphase vor der ersten Benutzung. Die Sensitivität kann direkt auf dem Sensor mithilfe des Potentiometers eingestellt werden.

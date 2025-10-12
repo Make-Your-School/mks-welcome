@@ -3,7 +3,7 @@ title: "SD-Karten-Shield"
 date: "2018-10-01T15:19:28.000Z"
 tags: 
   - "shield"
-coverImage: "73_sd-karten_shield.jpg"
+coverImage: "73_sd-karten_shield.png"
 material_number: "73"
 material_type: "shield"
 material_short_descr: "Seeed Studio Grove – SD Card Shield V4"
@@ -20,7 +20,7 @@ embedded_example_file: "examples/SD_Card_shield_V4.0_minimal/SD_Card_shield_V4.0
 
 # SD-Karten-Shield
 
-![SD-Karten-Shield](./73_sd-karten_shield.jpg)
+![SD-Karten-Shield](./73_sd-karten_shield.png)
 
 ## Beschreibung
 Das SD-Karten-Shield ist eine Erweiterungsplatine für Arduino-ähnliche Mikrocontroller. Diese Erweiterungsplatinen werden im Allgemeinen als „Shield“ bezeichnet und werden einfach auf den entsprechenden Controller oder Einplatinencomputer gesteckt. Diese vereinfachen das Anschließen von speziellen Komponenten enorm.

@@ -3,7 +3,7 @@ title: "Servomotor"
 date: "2018-10-01T14:02:00.000Z"
 tags: 
   - "output"
-coverImage: "38_linearservomotor.jpg"
+coverImage: "38_linearservomotor.png"
 material_number: "38"
 material_type: "output"
 material_short_descr: "Seeed Studio Grove – Servo"
@@ -20,7 +20,7 @@ embedded_example_file: "examples/Grove_Servo_minimal/Grove_Servo_minimal.ino"
 
 # Servomotor
 
-![Servomotor](./38_linearservomotor.jpg)
+![Servomotor](./38_linearservomotor.png)
 
 ## Beschreibung
 Ein Servomotor verfügt über eine interne Regelung, sodass von außen nur eine Position angeben werden muss, die er selbstständig anfährt und hält (trotz Krafteinwirkung). Er kann dadurch sehr genaue Positionen anfahren, ist aber nicht für endloses Drehen ausgelegt. Der Motor wird direkt oder mit Hilfe des Grove Shields an einen Arduino angeschlossen und über Pulsweitenmodulation (PWM) angesteuert.

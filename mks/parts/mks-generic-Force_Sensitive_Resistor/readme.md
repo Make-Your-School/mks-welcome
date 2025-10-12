@@ -3,9 +3,9 @@ title: "Drucksensor"
 date: "2018-10-01T13:54:33.000Z"
 tags: 
   - "sensor"
-coverImage: "31_drucksensor.jpg"
+coverImage: "31_drucksensor.png"
 material_number: "31"
-material_type: "sensor"
+material_type: "input"
 manufacture: "Generic"
 repo_name: "mks-generic-Force_Sensitive_Resistor"
 repo_prefix: "mks"
@@ -19,7 +19,7 @@ embedded_example_file: "examples/Force_Sensitive_Resistor_minimal/Force_Sensitiv
 
 # Drucksensor
 
-![Drucksensor](./31_drucksensor.jpg)
+![Drucksensor](./31_drucksensor.png)
 
 ## Beschreibung
 Der Drucksensor ermöglicht es, Kräfte, die auf den Sensor wirken, zu bestimmen. Wird die Sensorfläche belastet, ändert sich der elektrische Widerstand zwischen den Anschlusspins. Durch eine Widerstandsmessung, kann folglich auf den einwirkenden Druck (also Kraft pro Flächeneinheit) geschlossen werden.

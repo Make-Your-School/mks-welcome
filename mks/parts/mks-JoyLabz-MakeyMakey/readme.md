@@ -3,9 +3,9 @@ title: "Makey-Makey"
 date: "2018-10-01T14:46:28.000Z"
 tags: 
   - "sensor"
-coverImage: "55_makeymakey.jpg"
+coverImage: "55_makeymakey.png"
 material_number: "55"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Makey-Makey – Standard Kit"
 manufacture: "JoyLabz"
 manufacture_url: "https://www.makeymakey.com/"
@@ -21,7 +21,7 @@ embedded_example_file: "examples/MakeyMakey_minimal/MakeyMakey_minimal.ino"
 
 # Makey-Makey
 
-![Makey-Makey](./55_makeymakey.jpg)
+![Makey-Makey](./55_makeymakey.png)
 
 ## Beschreibung
 Mit den Makey-Makey-Modulen lassen sich viele Alltagsgegenstände in Eingabegeräte verwandeln. Leitfähige Gegenstände wie Alufolie oder Früchte können einfach mit Krokodilklemmen an das Makey-Makey-Modul angeschlossen werden. Ist man zusätzlich selbst ebenfalls mit dem Makey-Makey verbunden, erkennt das Modul eine Berührung der leitfähigen Gegenstände. Das Makey-Makey wird schließlich mit USB an einen PC angeschlossen und damit können simple Spiele oder Anwendungen gesteuert werden.

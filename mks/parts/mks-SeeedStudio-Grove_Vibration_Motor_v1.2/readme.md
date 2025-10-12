@@ -3,7 +3,7 @@ title: "Vibrationsmotor"
 date: "2018-10-01T14:26:43.000Z"
 tags: 
   - "output"
-coverImage: "47_vibratonsmotor.jpg"
+coverImage: "47_vibratonsmotor.png"
 material_number: "47"
 material_type: "output"
 material_short_descr: "Seeed Studio Grove – Vibration Motor"
@@ -20,7 +20,7 @@ embedded_example_file: "examples/Grove_Vibration_Motor_v1.2_minimal/Grove_Vibrat
 
 # Vibrationsmotor
 
-![Vibrationsmotor](./47_vibratonsmotor.jpg)
+![Vibrationsmotor](./47_vibratonsmotor.png)
 
 ## Beschreibung
 Der Miniatur-Vibrationsmotor erzeugt trotz des kleinen Bauraums eine relativ starke Vibration. Dadurch kann für diverse Anwendungen beispielsweise ein haptisches Feedback bewirkt werden. Der Motor lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi anschließen. Mit einem einfachen digitalen HIGH-Signalvibriert der Motor dann ähnlich wie ein stumm geschaltetes Smartphone.

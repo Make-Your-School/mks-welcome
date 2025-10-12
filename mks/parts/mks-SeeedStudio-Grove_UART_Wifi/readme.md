@@ -3,9 +3,9 @@ title: "WiFi-Modul"
 date: "2018-10-01T14:44:57.000Z"
 tags: 
   - "sensor"
-coverImage: "54_wifi-modul.jpg"
+coverImage: "54_wifi-modul.png"
 material_number: "54"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove – UART Wi-Fi"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -20,7 +20,7 @@ embedded_example_file: "examples/Grove_UART_Wifi_minimal/Grove_UART_Wifi_minimal
 
 # WiFi-Modul
 
-![WiFi-Modul](./54_wifi-modul.jpg)
+![WiFi-Modul](./54_wifi-modul.png)
 
 ## Beschreibung
 Das WiFi-Modul ermöglicht es Informationen, Befehle und Daten kabellos zwischen mehreren Endgeräten oder Mikrocontrollern innerhalb eines Netzwerkes zu übertragen. So lassen sich beispielsweise Sensordaten von einem Arduino in ein lokales Netzwerk stellen und damit an PCs oder Smartphones übertragen oder sogar über einen Router ins Internet stellen und von überall auf der Welt abrufen. Das Modul kann über bestimmte Befehle programmiert werden. So kann unter anderem das Modul selbst einen Zugangspunkt für andere Netzwerk-Clients darstellen oder sich in ein bestehendes WLAN einwählen. Das Modul kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über die serielle Schnittstelle UART angeschlossen werden.

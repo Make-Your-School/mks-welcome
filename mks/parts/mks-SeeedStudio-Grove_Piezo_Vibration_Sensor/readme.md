@@ -3,9 +3,9 @@ title: "Vibrationssensor"
 date: "2018-10-01T13:28:09.000Z"
 tags: 
   - "sensor"
-coverImage: "13_vibrationssensor.jpg"
+coverImage: "13_vibrationssensor.png"
 material_number: "13"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove – Piezo Vibration Sensor"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -21,7 +21,7 @@ embedded_example_file: "examples/Grove_Piezo_Vibration_Sensor_minimal/Grove_Piez
 
 # Vibrationssensor
 
-![Vibrationssensor](./13_vibrationssensor.jpg)
+![Vibrationssensor](./13_vibrationssensor.png)
 
 ## Beschreibung
 Der Vibrationssensor erfasst jegliche Art von Erschütterungen. Jedes Mal, wenn der Sensor vorwärts und rückwärts bewegt wird, gibt er einen Spannungsimpuls aus und erfasst damit eine Erschütterung. Die Sensitivität kann mit einem integrierten Potentiometer (Drehwiderstand) eingestellt werden und definiert die Erschütterungsfrequenz.

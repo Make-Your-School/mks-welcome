@@ -3,9 +3,9 @@ title: "Spannungsteiler"
 date: "2018-10-01T15:18:11.000Z"
 tags: 
   - "sensor"
-coverImage: "72_spannungsteiler.jpg"
+coverImage: "72_spannungsteiler.png"
 material_number: "72"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove – Voltage Divider"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -21,7 +21,7 @@ embedded_example_file: "examples/Grove_Voltage_Divider_minimal/Grove_Voltage_Div
 
 # Spannungsteiler
 
-![Spannungsteiler](./72_spannungsteiler.jpg)
+![Spannungsteiler](./72_spannungsteiler.png)
 
 ## Beschreibung
 Der Spannungsteiler ermöglicht es, große Spannungen zu verkleinern, um sie beispielsweise für einen Mikrocontroller messbar zu machen. So können Spannungen erfasst werden, die in ihrer ursprünglichen Form zu groß für die direkte Erfassung mit einem Mikrocontroller sind.

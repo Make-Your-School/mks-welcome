@@ -3,9 +3,9 @@ title: "Barometer und Temperatur Sensor"
 date: "2018-10-01T12:52:13.000Z"
 tags: 
   - "sensor"
-coverImage: "7_barometer-und-temperatursensor.jpg"
+coverImage: "7_barometer-und-temperatursensor.png"
 material_number: "7"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove - Barometer Sensor (BMP280)"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -21,7 +21,7 @@ embedded_example_file: "examples/Grove_Barometer_Sensor-BMP280_minimal/Grove_Bar
 
 # Barometer und Temperatur Sensor
 
-![Barometer und Temperatur Sensor](./7_barometer-und-temperatursensor.jpg)
+![Barometer und Temperatur Sensor](./7_barometer-und-temperatursensor.png)
 
 ## Beschreibung
 Der Druck- und Temperatursensor besteht u.a. aus einem sogenannten Barometer. Dieses misst den statischen Luftdruck in der direkten Umgebung. Da der Luftdruck mit der Höhe zusammenhängt, kann dieser Sensor sowohl als Luftdruckmesser, als auch indirekt als Höhenmesser eingesetzt werden. Zusätzlich kann der Sensor die Umgebungstemperatur erfassen. Der Sensor kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen werden. Der Sensor kommuniziert über die seriellen Schnittstellen I2C und SPI.

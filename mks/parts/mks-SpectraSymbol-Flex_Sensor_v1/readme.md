@@ -3,9 +3,9 @@ title: "Biegesensor"
 date: "2018-10-01T13:36:00.000Z"
 tags: 
   - "sensor"
-coverImage: "20_biegesensor.jpg"
+coverImage: "20_biegesensor.png"
 material_number: "20"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Flex Sensor 2.2\""
 manufacture: "Spectra Symbol"
 manufacture_url: "https://www.spectrasymbol.com/"
@@ -21,7 +21,7 @@ embedded_example_file: "examples/Flex_Sensor_v1_minimal/Flex_Sensor_v1_minimal.i
 
 # Biegesensor
 
-![Biegesensor](./20_biegesensor.jpg)
+![Biegesensor](./20_biegesensor.png)
 
 ## Beschreibung
 Der Biegesensor ermöglicht es, Verbiegungen zu erkennen und deren Ausmaß zu bestimmen. Wird der Fühler des Sensors gebogen (Aufrollbewegung mit den Metallplättchen nach außen), ändert sich der elektrische Widerstand zwischen den Anschlusspins. Durch eine Widerstandsmessung kann folglich auf die Biegung des Fühlers geschlossen werden.

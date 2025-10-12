@@ -3,9 +3,9 @@ title: "Drehwinkelsensor"
 date: "2018-10-01T13:37:36.000Z"
 tags: 
   - "sensor"
-coverImage: "21_drehwinkelsensor.jpg"
+coverImage: "21_drehwinkelsensor.png"
 material_number: "21"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove - Rotary Angle Sensor"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -20,7 +20,7 @@ embedded_example_file: "examples/Grove_Rotary_Angle_Sensor_minimal/Grove_Rotary_
 
 # Drehwinkelsensor
 
-![Drehwinkelsensor](./21_drehwinkelsensor.jpg)
+![Drehwinkelsensor](./21_drehwinkelsensor.png)
 
 ## Beschreibung
 Der Drehwinkelsensor kann den Drehwinkel seiner Drehachse bestimmen. Dafür besteht der Sensor aus einem Drehpotentiometer, das abhängig des Drehwinkels die Widerstandsverhältnisse zwischen seinen Anschlüssen verändert. Durch die bereits integrierte Verschaltung als Spannungsteiler gibt das Modul an seinem Anschluss eine analoge Spannung direkt abhängig vom Drehwinkel aus. Der Sensor kann direkt oder mithilfe des Grove Shields an einen analogen Pin am Arduino angeschlossen werden.

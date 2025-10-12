@@ -3,9 +3,9 @@ title: "Taster/Knopf (Platine)"
 date: "2018-10-01T14:49:00.000Z"
 tags: 
   - "sensor"
-coverImage: "60_taster_knopf_platine.jpg"
+coverImage: "60_taster_knopf_platine.png"
 material_number: "60"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove – Button"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -20,7 +20,7 @@ embedded_example_file: "examples/Grove_Button_minimal/Grove_Button_minimal.ino"
 
 # Taster/Knopf (Platine)
 
-![Taster/Knopf (Platine)](./60_taster_knopf_platine.jpg)
+![Taster/Knopf (Platine)](./60_taster_knopf_platine.png)
 
 ## Beschreibung
 Taster oder auch Knöpfe sind eine sehr einfache Eingabemöglichkeit in Elektronik-Projekten. Die Taster haben einen zurückfedernden Schaltmechanismus, der einen elektrischen Kontakt zwischen den Anschlusspins herstellt, solange der Taster gedrückt wird. Die vorliegenden Taster sind bereits auf einer Platine vormontiert und lassen sich dadurch mit Standard-Grove-Verbindungskabeln und direkt mithilfe des Grove Shields an einen Arduino oder Raspberry Pi anschließen. Das Modul benötigt hierfür nur einen digitalen Pin.

@@ -3,9 +3,9 @@ title: "Stromsensor"
 date: "2018-10-01T13:44:08.000Z"
 tags: 
   - "sensor"
-coverImage: "26_stromsensor.jpg"
+coverImage: "26_stromsensor.png"
 material_number: "26"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove – Electricity Sensor"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -21,7 +21,7 @@ embedded_example_file: "examples/Grove_Electricity_Sensor_minimal/Grove_Electric
 
 # Stromsensor
 
-![Stromsensor](./26_stromsensor.jpg)
+![Stromsensor](./26_stromsensor.png)
 
 ## Beschreibung
 Der Stromsensor misst die Wechselstromstärke eines Kabels. Ein Stromwandler wandelt eine hohe Wechselstromstärke in eine minimale um. Durch die interne Verschaltung wird schließlich über einen analogen Anschluss eine analoge Spannung ausgegeben, die proportional zur gemessenen Stromstärke ist. Die maximal messbare Stromstärke liegt bei 5 Ampere. Der Sensor kann direkt oder mithilfe des Grove Shields an einen analogen Pindes Arduinos angeschlossen werden.

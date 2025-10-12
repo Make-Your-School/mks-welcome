@@ -3,9 +3,9 @@ title: "Lichtschranke"
 date: "2018-10-01T13:28:21.000Z"
 tags: 
   - "sensor"
-coverImage: "14_lichtschranke.jpg"
+coverImage: "14_lichtschranke.png"
 material_number: "14"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Gabel-Lichtschranke TCST 2103 Vishay"
 manufacture: "VISCHAY"
 manufacture_url: "https://www.vishay.com/"
@@ -20,7 +20,7 @@ embedded_example_file: "examples/TCST_2103_minimal/TCST_2103_minimal.ino"
 
 # Lichtschranke
 
-![Lichtschranke](./14_lichtschranke.jpg)
+![Lichtschranke](./14_lichtschranke.png)
 
 ## Beschreibung
 Die Gabellichtschranke funktioniert wie eine klassische Lichtschranke in einer kompakten Bauweise. Das Modul erkennt, sobald die Lichtschranke zwischen den zwei integrierten Dioden durch einen lichtundurchlässigen Gegenstand unterbrochen wird.

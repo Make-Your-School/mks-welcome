@@ -3,9 +3,9 @@ title: "Temperatur- und Luft­feuchtigkeits&amp;shy;sensor"
 date: "2018-08-28T23:39:41.000Z"
 tags: 
   - "sensor"
-coverImage: "5_temperatur-und-luftfeuchtigkeitssensor.jpg"
+coverImage: "5_temperatur-und-luftfeuchtigkeitssensor.png"
 material_number: "5"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove - DHT11 Feuchte- und Temperatursensor"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -21,7 +21,7 @@ embedded_example_file: "examples/Grove_DHT11_minimal/Grove_DHT11_minimal.ino"
 
 # Temperatur- und Luft­feuchtigkeits&amp;shy;sensor
 
-![Temperatur- und Luft­feuchtigkeits&amp;shy;sensor](./5_temperatur-und-luftfeuchtigkeitssensor.jpg)
+![Temperatur- und Luft­feuchtigkeits&amp;shy;sensor](./5_temperatur-und-luftfeuchtigkeitssensor.png)
 
 ## Beschreibung
 Der Temperatur- und Luftfeuchtigkeitssensor kann zum Messen der Temperatur und der relativen Luftfeuchtigkeit in seiner direkten Umgebung eingesetzt werden. Der Sensor ist vom Hersteller so voreingestellt, dass die Messdaten als sauberes, digitales Signal ausgegeben werden. Das heißt, dass es dabei keine Messschwankungen oder Messfehler gibt, ein unverfälschtes Messsignal also. Dadurch besitzt der Sensor eine hohe Präzision, Zuverlässigkeit und Langzeitstabilität. Zusätzlich sind auch lange Kabel (>20 m) als Datenübertragung zwischen Sensor und Mikrocontroller kein Problem. Der Sensor arbeitet allerdings nur bei Umgebungstemperaturen über 0 °C.

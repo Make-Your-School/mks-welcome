@@ -3,9 +3,9 @@ title: "Hautleitwertsensor"
 date: "2018-10-01T14:14:11.000Z"
 tags: 
   - "sensor"
-coverImage: "33_hautleitwertsensor.jpg"
+coverImage: "33_hautleitwertsensor.png"
 material_number: "33"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove – GSR Sensor"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -21,7 +21,7 @@ embedded_example_file: "examples/Grove_GSR_Sensor_v1.2_minimal/Grove_GSR_Sensor_
 
 # Hautleitwertsensor
 
-![Hautleitwertsensor](./33_hautleitwertsensor.jpg)
+![Hautleitwertsensor](./33_hautleitwertsensor.png)
 
 ## Beschreibung
 Der Hautleitwertsensor misst über zwei Elektroden den Leitwert der menschlichen Haut. Er stellt also fest, wie gut diese elektrisch leitet. Die Hautleitfähigkeit wird unter anderem durch die Feuchtigkeit der Haut beeinflusst, welche je nach (emotionaler) Verfasstheit des Menschen variiert und sich beispielsweise durch Stress erhöht. Die Messung des Hautleitwertes kann somit unter anderem herangezogen werden, um mit einem Lügendetektoren das Stresslevel zu messen. Der Sensor lässt sich direkt oder mithilfe des Grove Shields an einen Arduino anschließen. Die Kommunikation läuft über einen analogen Anschluss.

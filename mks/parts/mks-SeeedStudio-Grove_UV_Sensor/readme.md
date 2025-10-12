@@ -3,9 +3,9 @@ title: "UV-Lichtsensor"
 date: "2018-10-01T12:49:38.000Z"
 tags: 
   - "sensor"
-coverImage: "mys_mk_6.jpg"
+coverImage: "mys_mk_6.png"
 material_number: "6"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove - UV Sensor"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -20,7 +20,7 @@ embedded_example_file: "examples/Grove_UV_Sensor_minimal/Grove_UV_Sensor_minimal
 
 # UV-Lichtsensor
 
-![UV-Lichtsensor](./mys_mk_6.jpg)
+![UV-Lichtsensor](./mys_mk_6.png)
 
 ## Beschreibung
 Der UV-Lichtsensor erfasst die Intensität der auf ihn einwirkenden Ultraviolettstrahlung (kurz: UV). UV-Strahlung ist eine elektromagnetische Strahlung mit einer Wellenlänge zwischen 10 nm (Nanometer) und 380 nm. Die Wellenlänge ist damit länger als die von Röntgenstrahlung und kürzer als die von sichtbarem, violettem Licht. UV-Strahlung ist für das menschliche Auge unsichtbar und ist bspw. im kurzwelligen Anteil der Sonnenstrahlung enthalten.

@@ -3,7 +3,7 @@ title: "Raspberry Pi 4 B"
 date: "2018-08-16T19:58:50.000Z"
 tags: 
   - "controller"
-coverImage: "3_raspberrypi4b.jpg"
+coverImage: "3_raspberrypi4b.png"
 material_number: "3"
 material_type: "controller"
 material_short_descr: "Raspberry Pi 4 Model B – 1GB RAM"
@@ -20,7 +20,7 @@ embedded_example_file: "examples/4B_minimal/4B_minimal.ino"
 
 # Raspberry Pi 4 B
 
-![Raspberry Pi 4 B](./3_raspberrypi4b.jpg)
+![Raspberry Pi 4 B](./3_raspberrypi4b.png)
 
 ## Beschreibung
 Der Raspberry Pi ist ein sogenannter Einplatinencomputer. Er kann alles, was von einem modernen PC oder Laptop erwartet werden kann, wenn auch mit entsprechenden Leistungseinbußen. Als Betriebssystem wird hauptsächlich eine Linux-Variante eingesetzt und als Programmierumgebung kommt Python zum Einsatz. Da der Raspberry Pi programmierbare Ein- und Ausgänge besitzt, kann er auch wie ein Mikrocontroller (Arduino UNO oder Calliope) eingesetzt werden. Er hat eine deutlich höhere Rechenleistung und Speicherkapazität als beispielsweise der Arduino UNO. Dadurch kommt er vermehrt für Medienzentren, Netzwerkspeicher oder auch andere Internet-of-Things-Projekte in Frage.

@@ -3,9 +3,9 @@ title: "Inertialsensor"
 date: "2018-10-01T13:25:56.000Z"
 tags: 
   - "sensor"
-coverImage: "12_intertialsensor_rz.jpg"
+coverImage: "12_intertialsensor_rz.png"
 material_number: "12"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "ICM-20948"
 manufacture: "Adafruit"
 manufacture_url: "https://adafruit.com/"
@@ -20,10 +20,13 @@ embedded_example_file: "examples/Adafruit_ICM-20948_minimal/Adafruit_ICM-20948_m
 
 # Inertialsensor
 
-![Inertialsensor](./12_intertialsensor_rz.jpg)
+![Inertialsensor](./12_intertialsensor_rz.png)
 
 ## Beschreibung
-Der TDK InvenSense ICM-20948 ist ein sogenannter neunachsiger Inertialsensor. Inertialsensoren kombinieren mehrere Sensortypen, um jegliche dreidimensionale Bewegung (Verschiebungen und Neigungen in allen Raumrichtungen) zu bestimmen.
+Der TDK InvenSense ICM-20948 ist ein sogenannter neunachsiger Inertialsensor. 
+Inertialsensoren kombinieren mehrere Sensortypen, um jegliche dreidimensionale Bewegung (Verschiebungen und Neigungen in allen Raumrichtungen) zu bestimmen.
+
+<!-- more_details -->
 
 Das Gyroskop (siehe Link am Ende der Seite) misst zu jedem Zeitpunkt die Drehraten (Drehgeschwindigkeiten) in allen drei Raumrichtungen. Der Beschleunigungssensor misst die axialen Beschleunigungen in allen drei Raumrichtungen. Theoretisch ist es bereits mit diesen sechs Messwerten möglich, die Bewegung (Verschiebungen und Neigungen in allen Raumrichtungen) nachzuvollziehen. Da insbesondere das Gyroskop oftmals driftet (mit der Zeit verschieben sich die Messwerte), kommt bei diesem IMU zusätzlich ein Magnetometer zum Einsatz. Dieses misst die Magnetfeldstärke in allen drei Raumrichtungen. Das dient insbesondere dazu, das Erdmagnetfeld als Orientierungsreferenz zu nutzen und die Gesamtmessung immer wieder zu referenzieren. Werden diese Informationen allesamt kombiniert, ist es möglich, die genaue Bewegung des Sensors nachzuvollziehen und so beispielsweise immer dreidimensional die aktuelle Position sowie die Orientierung (Neigung) des Sensors relativ zu einer Startposition zu ermitteln.
 
@@ -37,7 +40,6 @@ Die genaue Bezeichnung des integrierten Sensors, die bei der Suche von Beschreib
 
 <!-- infolist -->
 
-<!-- infolists -->
 ## Wichtige Links für die ersten Schritte:
 
 - [Für Arduino](https://learn.adafruit.com/adafruit-tdk-invensense-icm-20948-9-dof-imu/arduino)

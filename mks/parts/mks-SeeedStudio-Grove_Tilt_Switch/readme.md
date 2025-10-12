@@ -3,9 +3,9 @@ title: "Kippschalter"
 date: "2018-10-01T13:42:53.000Z"
 tags: 
   - "sensor"
-coverImage: "24_kippschalter.jpg"
+coverImage: "24_kippschalter.png"
 material_number: "24"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove – Tilt Switch"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -21,7 +21,7 @@ embedded_example_file: "examples/Grove_Tilt_Switch_minimal/Grove_Tilt_Switch_min
 
 # Kippschalter
 
-![Kippschalter](./24_kippschalter.jpg)
+![Kippschalter](./24_kippschalter.png)
 
 ## Beschreibung
 Der Kippschalter funktioniert wie ein normaler Schalter. Er kann als Eingabe für einen Mikrocontroller verwendet werden. Der Sensor besteht aus mehreren Metallkugeln, die nur dann einen elektrischen Kontakt herstellen, wenn der Sensor hochkant steht. Der Sensor gibt ein digitales Signal aus, sobald er eine gewisse Neigung erreicht. Er kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen werden. Der Schalter benötigt nur einen digitalen Pin.

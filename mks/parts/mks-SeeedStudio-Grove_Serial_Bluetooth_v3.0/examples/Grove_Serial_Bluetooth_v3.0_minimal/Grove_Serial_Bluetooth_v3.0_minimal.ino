@@ -1,85 +1,40 @@
+// Einfacher Test: Sende Daten des Seriellen-Ports an das Bluetooth module
 
-#include <SoftwareSerial.h>                         // Software Serial Port
+#include <SoftwareSerial.h>
 
-#define RxD         6
-#define TxD         7
+// auf diesem Pin empfängt der Arduino Daten vom Bluetooth-Modul (R = receive)
+#define RxD 6
+// auf diesem Pin sendet der Arduino Daten an das Bluetooth-Modul (T = transmit)
+#define TxD 7
 
-#define PINBUTTON   5                               // pin of button
+// Bluetoothmodul an D6 auf dem Grove Shield anschließen
+SoftwareSerial Bluetooth(RxD, TxD);
 
-#define DEBUG_ENABLED  1
+char command = '0';
 
-SoftwareSerial blueToothSerial(RxD,TxD);
-
-void setup()
-{
+void setup() {
     Serial.begin(9600);
+
     pinMode(RxD, INPUT);
     pinMode(TxD, OUTPUT);
-    pinMode(PINBUTTON, INPUT);
-    
-    setupBlueToothConnection();
-    //wait 1s and flush the serial buffer
-    delay(1000);
+    Bluetooth.begin(9600);
+
+    delay(100);
     Serial.flush();
-    blueToothSerial.flush();
+    Bluetooth.flush();
+
+    Serial.println("Los geht's");
 }
 
-void loop()
-{
-    
-    static unsigned char state = 0;             // led off
-    
-    if(digitalRead(PINBUTTON))
-    {
-        state = 1-state;
-        
-        Serial.println("button on");
-        
-        blueToothSerial.print(state);
-        
-        delay(10);
-        while(digitalRead(PINBUTTON))       // until button release
-        {
-            delay(10);
-        }
-        
-        Serial.println("button off");
+void loop() {
+    // Daten vom Bluetooth-Modul empfangen und an PC weiterleiten
+    if (Bluetooth.available()) {
+        command = Bluetooth.read();
+        Serial.write(command);
+    }
+
+    // Daten vom PC (serieller Monitor) an das Bluetooth-Modul senden
+    if (Serial.available()) {
+        Bluetooth.write(Serial.read());
     }
 }
-
-/***************************************************************************
- * Function Name: setupBlueToothConnection
- * Description:  initilizing bluetooth connction
- * Parameters: 
- * Return: 
-***************************************************************************/
-void setupBlueToothConnection()
-{
-
-    
-    blueToothSerial.begin(9600);  
-    
-    blueToothSerial.print("AT");
-    delay(400); 
-    
-    blueToothSerial.print("AT+DEFAULT");             // Restore all setup value to factory setup
-    delay(2000); 
-    
-    blueToothSerial.print("AT+NAMESeeedMaster");    // set the bluetooth name as "SeeedMaster" ,the length of bluetooth name must less than 12 characters.
-    delay(400);
-    
-    blueToothSerial.print("AT+ROLEM");             // set the bluetooth work in slave mode
-    delay(400); 
-    
-    
-    blueToothSerial.print("AT+AUTH1");            
-    delay(400);    
-    
-    blueToothSerial.print("AT+CLEAR");             // Clear connected device mac address
-    delay(400);   
-    
-    blueToothSerial.flush();
-    
-    
-}
-```

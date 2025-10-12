@@ -3,9 +3,9 @@ title: "Infrarot-Empfänger"
 date: "2018-10-01T13:45:07.000Z"
 tags: 
   - "sensor"
-coverImage: "16_infrarot_empfaenger.jpg"
+coverImage: "16_infrarot_empfaenger.png"
 material_number: "16"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove – Infrared Receiver"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -20,7 +20,7 @@ embedded_example_file: "examples/Grove_Infrared_Receiver_minimal/Grove_Infrared_
 
 # Infrarot-Empfänger
 
-![Infrarot-Empfänger](./16_infrarot_empfaenger.jpg)
+![Infrarot-Empfänger](./16_infrarot_empfaenger.png)
 
 ## Beschreibung
 Der Infrarot-Empfänger wird zu Empfangen von Signalen über infrarotes Licht eingesetzt. Als Partner kommt meist der Infrarot-Sender von Grove zum Einsatz, der die Signale generiert. Die maximale Reichweite beträgt ca. 10m. Der Empfänger kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen werden. Er wird hierbei über einen digitalen Pin angesteuert.

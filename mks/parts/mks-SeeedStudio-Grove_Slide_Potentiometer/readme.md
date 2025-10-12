@@ -3,9 +3,9 @@ title: "Schiebepotentiometer"
 date: "2018-10-01T13:41:55.000Z"
 tags: 
   - "sensor"
-coverImage: "23_schiebepotentiometer.jpg"
+coverImage: "23_schiebepotentiometer.png"
 material_number: "23"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove – Slide Potentiometer"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -20,7 +20,7 @@ embedded_example_file: "examples/Grove_Slide_Potentiometer_minimal/Grove_Slide_P
 
 # Schiebepotentiometer
 
-![Schiebepotentiometer](./23_schiebepotentiometer.jpg)
+![Schiebepotentiometer](./23_schiebepotentiometer.png)
 
 ## Beschreibung
 Der Schiebepotentiometer ist ein veränderbarer Widerstand. Durch Verschieben des Hebels verändert sich das Widerstandsverhältnis zwischen seinen drei Anschlüssen. Durch die bereits integrierte Verschaltung als Spannungsteiler gibt das Modul an seinem Anschluss eine analoge Spannung direkt abhängig von der Hebelposition aus. Der Sensor kann direkt oder mithilfe des Grove Shields an einen analogen Pinam Arduino angeschlossen werden.

@@ -3,9 +3,9 @@ title: "Drehgeschwindigkeitssensor"
 date: "2018-10-01T13:41:01.000Z"
 tags: 
   - "sensor"
-coverImage: "22_drehgeschwindigkeitssensor.jpg"
+coverImage: "22_drehgeschwindigkeitssensor.png"
 material_number: "22"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove – Mouse Encoder"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -21,7 +21,7 @@ embedded_example_file: "examples/Grove_Mouse_Encoder_minimal/Grove_Mouse_Encoder
 
 # Drehgeschwindigkeitssensor
 
-![Drehgeschwindigkeitssensor](./22_drehgeschwindigkeitssensor.jpg)
+![Drehgeschwindigkeitssensor](./22_drehgeschwindigkeitssensor.png)
 
 ## Beschreibung
 Der Drehgeschwindigkeitssensor wird eingesetzt, um die Drehgeschwindigkeit einer daran angesteckten Drehachse zu ermitteln. Der Sensor gibt einzelne Spannungsimpulse immer dann aus, wenn bestimmte Winkelpositionen erreicht werden. Über die Länge und Frequenz der ausgegebenen Pulse kann schließlich auf die Drehgeschwindigkeit der Drehachse geschlossen werden. Der Sensor kann direkt oder mithilfe des Grove Shields an einen digitalen Pin des Arduinos oder Raspberry Pis angeschlossen werden.

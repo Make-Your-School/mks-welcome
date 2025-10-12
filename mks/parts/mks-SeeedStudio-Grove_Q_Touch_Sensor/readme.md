@@ -3,9 +3,9 @@ title: "Berührungssensor"
 date: "2018-10-02T07:02:32.000Z"
 tags: 
   - "sensor"
-coverImage: "57_beruehrungssensor_qtouch.jpg"
+coverImage: "57_beruehrungssensor_qtouch.png"
 material_number: "57"
-material_type: "sensor"
+material_type: "input"
 material_short_descr: "Seeed Studio Grove – QTouch Sensor"
 manufacture: "Seeed Studio"
 manufacture_url: "https://www.seeedstudio.com/"
@@ -21,7 +21,7 @@ embedded_example_file: "examples/Grove_Q_Touch_Sensor_minimal/Grove_Q_Touch_Sens
 
 # Berührungssensor
 
-![Berührungssensor](./57_beruehrungssensor_qtouch.jpg)
+![Berührungssensor](./57_beruehrungssensor_qtouch.png)
 
 ## Beschreibung
 Der Berührungssensor QTouch erkennt, sobald ein an den Sensor angeschlossener Gegenstand berührt wird. So lässt sich beispielsweise eine Banane mit dem Sensor verbinden. Sobald die Banane berührt wird, übermittelt dies der Sensor an den Mikrocontroller. Es können gleichzeitig bis zu sieben Berührungsobjekte an das Modul angeschlossen werden. Der Berührungssensor lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über die serielle Schnittstelle I2Cangeschlossen.

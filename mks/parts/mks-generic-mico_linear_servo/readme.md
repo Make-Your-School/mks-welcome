@@ -3,7 +3,7 @@ title: "Linearservomotor"
 date: "2018-10-01T14:01:22.000Z"
 tags: 
   - "output"
-coverImage: "39_linearservomotor.jpg"
+coverImage: "39_linearservomotor.png"
 material_number: "39"
 material_type: "output"
 material_short_descr: "Micro-Servo S 15 linear Sol Expert S15JST 0.5 s"
@@ -20,7 +20,7 @@ embedded_example_file: "examples/mico_linear_servo_minimal/mico_linear_servo_min
 
 # Linearservomotor
 
-![Linearservomotor](./39_linearservomotor.jpg)
+![Linearservomotor](./39_linearservomotor.png)
 
 ## Beschreibung
 Ein Servomotor verfügt über eine interne Regelung, sodass von außen nur eine Position angeben werden muss, die er dann selbstständig anfährt und hält (trotz Krafteinwirkung). Er kann dadurch nur genaue Positionen anfahren, ist aber nicht für endloses Drehen ausgelegt. Ein Servomotor wird direkt oder mithilfe des Grove Shields an einen Arduino angeschlossen und über Pulsweitenmodulation (PWM) angesteuert.

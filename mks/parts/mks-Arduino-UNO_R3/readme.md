@@ -1,32 +1,36 @@
 ---
-title: "Arduino UNO"
-date: "2018-08-16T19:55:36.000Z"
-tags: 
-  - "controller"
-coverImage: "1_arduino.jpg"
-material_number: "1"
-material_type: "controller"
-material_short_descr: "Arduino UNO R3"
-manufacture: "Arduino"
-manufacture_url: "https://arduino.cc/"
-repo_name: "mks-Arduino-UNO_R3"
-repo_prefix: "mks"
-repo_manufacture: "Arduino"
-repo_part: "UNO_R3"
-product_url: "https://store.arduino.cc/products/arduino-uno-rev3"
-clone_url: "https://github.com/Make-Your-School/mks-Arduino-UNO_R3.git"
-embedded_example_file: "examples/UNO_R3_minimal/UNO_R3_minimal.ino"
+title: 'Arduino UNO'
+date: '2018-08-16T19:55:36.000Z'
+tags:
+    - 'controller'
+coverImage: '1_arduino.png'
+material_number: '1'
+material_type: 'controller'
+material_short_descr: 'Arduino UNO R3'
+manufacture: 'Arduino'
+manufacture_url: 'https://arduino.cc/'
+repo_name: 'mks-Arduino-UNO_R3'
+repo_prefix: 'mks'
+repo_manufacture: 'Arduino'
+repo_part: 'UNO_R3'
+product_url: 'https://store.arduino.cc/products/arduino-uno-rev3'
+clone_url: 'https://github.com/Make-Your-School/mks-Arduino-UNO_R3.git'
+embedded_example_file: 'examples/UNO_R3_minimal/UNO_R3_minimal.ino'
 ---
-
 
 # Arduino UNO
 
-![Arduino UNO](./1_arduino.jpg)
+![Arduino UNO](./1_arduino.png)
 
 ## Beschreibung
- 
 
-Der Arduino UNO ist ein Mikrocontroller, der es ermöglicht, prinzipiell jegliche Art von technischen Vorgängen automatisiert miteinander zu koordinieren. Dafür besitzt der Mikrocontroller viele Ein- und Ausgänge (Inputs und Outputs). Diese sind elektrische Anschlüsse, an die verschiedene technische Komponenten, wie Sensoren oder auch Aktoren (Motoren, Leuchten etc.), angeschlossen werden können. Wird der Mikrocontroller entsprechend programmiert, können diese Komponenten logisch miteinander verknüpft werden. Dadurch können die Komponenten gemeinsam eine technische Aufgabe erfüllen.
+Der Arduino UNO ist ein Mikrocontroller, der es ermöglicht, prinzipiell jegliche Art von technischen Vorgängen automatisiert miteinander zu koordinieren. 
+Dafür besitzt der Mikrocontroller viele Ein- und Ausgänge (Inputs und Outputs). 
+Diese sind elektrische Anschlüsse, an die verschiedene technische Komponenten, wie Sensoren oder auch Aktoren (Motoren, Leuchten etc.), angeschlossen werden können. 
+Wird der Mikrocontroller entsprechend programmiert, können diese Komponenten logisch miteinander verknüpft werden. 
+Dadurch können die Komponenten gemeinsam eine technische Aufgabe erfüllen.
+
+<!-- more_details -->
 
 Der Arduino wird über die Arduino IDE (Entwicklungsumgebung) frei nach eigenen Wünschen und Anforderungen programmiert. Dazu wird er an einem PC mit der entsprechenden vorinstallierten Software angeschlossen und das Programm „Arduino IDE” gestartet. Das final erstellte Programm wird schließlich auf den Mikrocontroller geladen.
 
@@ -38,15 +42,9 @@ Der Arduino UNO ist ein Mikrocontroller, der ursprünglich speziell für Bildung
 
 https://www.youtube.com/watch?v=GQw20v8Qls0
 
- 
-
 https://www.youtube.com/watch?v=EEa-0fhb2WA
 
- 
-
-
 <!-- infolist -->
-
 
 ## Wichtige Links für die ersten Schritte:
 
@@ -64,11 +62,10 @@ https://www.youtube.com/watch?v=EEa-0fhb2WA
 
 ## Weiterführende Hintergrundinformationen:
 
-- [Arduino - Wikipedia Artikel](https://de.wikipedia.org/wiki/Arduino_\(Plattform\))
+- [Arduino - Wikipedia Artikel](<https://de.wikipedia.org/wiki/Arduino_(Plattform)>)
 - [Mikrocontroller - Wikipedia Artikel](https://de.wikipedia.org/wiki/Mikrocontroller)
 - [DIY - Wikipedia Artikel](https://de.wikipedia.org/wiki/Do_it_yourself)
 - [GPIO - Wikipedia Artikel](https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe)
 - [I2C - Wikipedia Artikel](https://de.wikipedia.org/wiki/I%C2%B2C)
 - [SPI - Wikipedia Artikel](https://de.wikipedia.org/wiki/Serial_Peripheral_Interface)
 - [UART - Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)
-

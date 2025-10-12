@@ -3,7 +3,7 @@ title: "Grove-Shield (Raspberry Pi)"
 date: "2018-10-01T15:03:37.000Z"
 tags: 
   - "shield"
-coverImage: "67_grove_shield_raspberrypi.jpg"
+coverImage: "67_grove_shield_raspberrypi.png"
 material_number: "67"
 material_type: "shield"
 material_short_descr: "GrovePi+"
@@ -21,7 +21,7 @@ embedded_example_file: "examples/Grove_Pi_Plus_minimal/Grove_Pi_Plus_minimal.ino
 
 # Grove-Shield (Raspberry Pi)
 
-![Grove-Shield (Raspberry Pi)](./67_grove_shield_raspberrypi.jpg)
+![Grove-Shield (Raspberry Pi)](./67_grove_shield_raspberrypi.png)
 
 ## Beschreibung
 Das Grove Base Shield ist eine Erweiterungsplatine für Raspberry Pi-ähnliche Einplatinencomputer. Diese Erweiterungsplatinen werden im Allgemeinen als „Shield“ bezeichnet. Sie werden auf den entsprechenden Controller oder Einplatinencomputer gesteckt und vereinfachen so das Anschließen von speziellen Komponenten.
