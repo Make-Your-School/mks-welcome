@@ -52,25 +52,8 @@ console.log('props.mks_item', props.mks_item)
         border-radius: 0;
         transition: all .2s ease-in-out;
         .material_number
-            border-radius: 60px;
-            border: 1px solid var(--card-stroke);
-            box-shadow: var(--box-shadow-default);
-            // padding: var(--padding-xs) var(--padding-xs);
-            padding: 0.5em;
-            position: absolute;
-            min-width: 1.5em;
-            aspect-ratio: 1/1;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             top: 0;
             transform: translateY(-55%);
-            margin: 0
-            background: var(--card-fill-accent);
-            color: var(--text-primary);
-            font-size: 36px
-            font-weight: bold
         .title
             margin: 0
             font-size: 36px

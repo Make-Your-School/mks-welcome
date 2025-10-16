@@ -2,10 +2,21 @@
     <!-- <q-page class="flex flex-center content-stretch"> -->
     <!-- class="col" style="min-height: 0" -->
     <q-page>
-        <!-- {{ part_name }} -->
-        <component :is="part.content" />
+        <header>
+            <div class="info">
+                <h2 class="material_number">{{ part.meta.material_number }}</h2>
+                <h1 class="title">{{ part.meta.title }}</h1>
+                <!-- <h2 class="type">{{ part.meta.material_type }}</h2> -->
+            </div>
+            <img :src="coverImage" :alt="part.meta.title" />
+        </header>
+        <component class="part-content" :is="part.content" />
         <hr />
-        <a :href="part.submodule.urlWeb" target="_blank">edit source</a>
+        <a :href="mysLink">{{ props.part_name }}</a> - (<a
+            :href="part.submodule.urlWeb"
+            target="_blank"
+            >edit source</a
+        >)
     </q-page>
 </template>
 
@@ -29,6 +40,10 @@ console.log('mdContent', mdContent)
 const part = mdContent.mks.parts[props.part_name]
 console.log('part', part)
 
+const mysLink = location.href
+
+const coverImage = `../${part.path_base}/${part.meta.coverImage}`
+
 // const route = useRoute()
 // console.log('route', route);
 
@@ -40,3 +55,41 @@ console.log('part', part)
 //     },
 // )
 </script>
+
+<style lang="sass" scoped>
+header
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
+    align-content: stretch
+    align-items: center
+    margin-top: 1em
+    .info
+        order: 0
+        flex: 0 1 auto
+        align-self: auto
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        justify-content: center
+        align-content: center
+        align-items: center
+        .material_number
+            position: relative
+        .title
+            margin: 0
+            text-align: center
+            font-size: var(--display-large)
+    img
+        max-width: 100vw
+
+</style>
+
+<style lang="sass">
+.part-content > h1
+    display: none
+
+.part-content > p > img
+    display: none
+</style>

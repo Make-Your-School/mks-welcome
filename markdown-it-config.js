@@ -4,6 +4,8 @@ import MarkdownItPluginAbbrAsMDAbbr from './src/components/markdown-it-plugins/m
 import { mksAbbrLoadNodeJS } from './src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr.js'
 export const mksAbbrCollection = mksAbbrLoadNodeJS()
 
+// import mditPluginRemoveTitleAndCoverImage from './src/components/markdown-it-plugins/markdown-it-plugin-remove-title-and-coverImage.js'
+
 import { full as mditPluginEmoji } from 'markdown-it-emoji'
 
 import mditPluginAnchor from 'markdown-it-anchor'
@@ -18,6 +20,7 @@ import mditPluginImgSrcAbs from './src/components/markdown-it-plugins/markdown-i
 import { mditPluginEmbedCodeNodejs } from './src/components/markdown-it-plugins/markdown-it-plugin-embed-code-nodejs.js'
 
 const markdownItSetup = async (md) => {
+    // md.use(mditPluginRemoveTitleAndCoverImage, {})
     md.use(MarkdownItPluginCodeAsMDCode, {})
 
     md.use(MarkdownItPluginAbbrAsMDAbbr, {

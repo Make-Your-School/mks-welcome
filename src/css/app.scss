@@ -52,11 +52,15 @@
 }
 
 :root {
-    --padding-l: var(40px);
-    --padding-m: var(32px);
-    --padding-s: var(24px);
-    --padding-xl: var(48px);
-    --padding-xs: var(20px);
+    --display-large: 48px;
+}
+
+:root {
+    --padding-l: 40px;
+    --padding-m: 32px;
+    --padding-s: 24px;
+    --padding-xl: 48px;
+    --padding-xs: 20px;
 }
 
 :root {
@@ -77,6 +81,10 @@
     --mys-blue-950: hsl(198, 63%, 15%);
 
     --mys-blue-400-dark: hsl(187.5, 8.7%, 18%);
+}
+
+body {
+    font-size: 20px;
 }
 
 body.body--light {
@@ -144,4 +152,27 @@ body.body--light code:not(.hljs) {
     color: hsl(194, 14%, 40%);
     background: hsl(44, 87%, 94%);
     padding: 0.1em 0.5em;
+}
+
+
+
+
+.material_number {
+    position: absolute;
+    margin: 0;
+    border-radius: 60px;
+    border: 1px solid var(--card-stroke);
+    box-shadow: var(--box-shadow-default);
+    // padding: var(--padding-xs) var(--padding-xs);
+    padding: 0.5em;
+    min-width: 1.5em;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--card-fill-accent);
+    color: var(--text-primary);
+    font-size: 36px;
+    font-weight: bold;
 }

@@ -34,7 +34,7 @@ const mksAddPartsToTags = (mksContent) => {
 }
 
 const mksAddURLToParts = (mksContent) => {
-    console.group('mksAddURLToParts')
+    console.groupCollapsed('mksAddURLToParts')
     const mksParts = mksContent.parts
     // const submodules = getsubmodules()
     const submodules = JSON.parse(process.env.submodules)
