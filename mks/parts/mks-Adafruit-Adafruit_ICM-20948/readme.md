@@ -64,15 +64,15 @@ schau dir das Minimal-Beispiel an:
 
 ## Weiterführende Hintergrundinformationen:
 
-- [## UART – Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)
-- [## I2C – Wikipedia Artikel](https://de.wikipedia.org/wiki/I%C2%B2C)
-- [## Drift – Wikipedia Artikel](https://de.wikipedia.org/wiki/Systematische_Abweichung)
-- [## Magnetometer – Wikipedia Artikel](https://de.wikipedia.org/wiki/Magnetometer)
-- [## Beschleunigungssensor – Wikipedia Artikel](https://de.wikipedia.org/wiki/Beschleunigungssensor)
-- [## Gyroskop – Wikipedia Artikel](https://de.wikipedia.org/wiki/Kreiselinstrument)
-- [## Inertialsensor – Wikipedia Artikel](https://de.wikipedia.org/wiki/Inertiale_Messeinheit)
-- [## Intertialsensor - Adafruit GitHub (Englisch)](https://github.com/adafruit/Adafruit-ICM20948-PCB)
-- [## Intertialsensor - _Make Your School_ GitHub (Deutsch)](https://github.com/s-light/MYS__12-Inertialsensor)
+- [UART – Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)
+- [I2C – Wikipedia Artikel](https://de.wikipedia.org/wiki/I%C2%B2C)
+- [Drift – Wikipedia Artikel](https://de.wikipedia.org/wiki/Systematische_Abweichung)
+- [Magnetometer – Wikipedia Artikel](https://de.wikipedia.org/wiki/Magnetometer)
+- [Beschleunigungssensor – Wikipedia Artikel](https://de.wikipedia.org/wiki/Beschleunigungssensor)
+- [Gyroskop – Wikipedia Artikel](https://de.wikipedia.org/wiki/Kreiselinstrument)
+- [Inertialsensor – Wikipedia Artikel](https://de.wikipedia.org/wiki/Inertiale_Messeinheit)
+- [Intertialsensor - Adafruit GitHub (Englisch)](https://github.com/adafruit/Adafruit-ICM20948-PCB)
+- [Intertialsensor - _Make Your School_ GitHub (Deutsch)](https://github.com/s-light/MYS__12-Inertialsensor)
 
 
 
