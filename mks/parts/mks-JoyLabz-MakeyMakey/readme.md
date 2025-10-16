@@ -3,6 +3,7 @@ title: "Makey-Makey"
 date: "2018-10-01T14:46:28.000Z"
 tags: 
   - "sensor"
+  - "controller"
 coverImage: "55_makeymakey.png"
 material_number: "55"
 material_type: "input"

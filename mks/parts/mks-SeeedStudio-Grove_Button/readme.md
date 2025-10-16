@@ -23,19 +23,27 @@ embedded_example_file: "examples/Grove_Button_minimal/Grove_Button_minimal.ino"
 ![Taster/Knopf (Platine)](./60_taster_knopf_platine.png)
 
 ## Beschreibung
-Taster oder auch Knöpfe sind eine sehr einfache Eingabemöglichkeit in Elektronik-Projekten. Die Taster haben einen zurückfedernden Schaltmechanismus, der einen elektrischen Kontakt zwischen den Anschlusspins herstellt, solange der Taster gedrückt wird. Die vorliegenden Taster sind bereits auf einer Platine vormontiert und lassen sich dadurch mit Standard-Grove-Verbindungskabeln und direkt mithilfe des Grove Shields an einen Arduino oder Raspberry Pi anschließen. Das Modul benötigt hierfür nur einen digitalen Pin.
+Taster oder auch Knöpfe sind eine sehr einfache Eingabemöglichkeit in Elektronik-Projekten. 
+Die Taster haben einen zurückfedernden Schaltmechanismus, der einen elektrischen Kontakt zwischen den Anschlusspins herstellt, solange der Taster gedrückt wird. 
+Die vorliegenden Taster sind bereits auf einer Platine vormontiert und lassen sich dadurch mit Standard-Grove-Verbindungskabeln und direkt mithilfe des Grove Shields an einen Arduino oder Raspberry Pi anschließen. 
+Das Modul benötigt hierfür nur einen digitalen Pin.
 
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.
 
-<!-- infolist -->
 
-<!-- infolists -->
- 
 
 https://www.youtube.com/watch?v=ITsk6dPSsqA
 
- 
 
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:./examples/Endschalter_minimal/Endschalter_minimal.ino
+// this should be overwritten!
+```
+
+<!-- infolists -->
 ## Wichtige Links für die ersten Schritte:
 
 - [Seeed Studio Wiki](http://wiki.seeedstudio.com/Grove-Button/) [- Taster](http://wiki.seeedstudio.com/Grove-Button/)
