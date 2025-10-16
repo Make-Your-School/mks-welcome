@@ -76,7 +76,7 @@ async function addExampleSection(submodule) {
         if (readmeContentTweaked === readmeContent) {
             console.log('   skipping. no changes in readme.')
         } else {
-            fs.writeFileSync(filepath, readmeContent)
+            fs.writeFileSync(filepath, readmeContentTweaked)
             console.log('    readme saved to disk.')
         }
     } else {
