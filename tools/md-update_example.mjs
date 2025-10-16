@@ -77,7 +77,7 @@ async function addExampleSection(submodule) {
             console.log('   skipping. no changes in readme.')
         } else {
             fs.writeFileSync(filepath, readmeContent)
-            console.log('readme saved to disk.')
+            console.log('    readme saved to disk.')
         }
     } else {
         console.log('   skipping. no valid examplePath found.')
