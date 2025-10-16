@@ -32,7 +32,19 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 
  
 
+
+<!-- currently no valid example available...
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-SeeedStudio-Grove_Q_Touch_Sensor/examples/Grove_Q_Touch_Sensor_minimal/Grove_Q_Touch_Sensor_minimal.ino
+// look in the linked file.
+```
+-->
+
 <!-- infolist -->
+
 ## Wichtige Links für die ersten Schritte:
 
 - [Seeed Studio Wiki](http://wiki.seeedstudio.com/Grove-Q_Touch_Sensor/) [- QTouch Berührungssensor](http://wiki.seeedstudio.com/Grove-Q_Touch_Sensor/)

@@ -28,9 +28,17 @@ Der Berührungssensor erkennt, sobald sich ein Finger dem Sensor nähert. Dabei 
 
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.
 
+
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-SeeedStudio-Grove_Touch_Sensor/examples/Grove_Touch_Sensor_minimal/Grove_Touch_Sensor_minimal.ino
+// look in the linked file.
+```
+
 <!-- infolist -->
 
-<!-- infolists -->
 ## Wichtige Links für die ersten Schritte:
 
 - [Seeed Studio Wiki](http://wiki.seeedstudio.com/Grove-Touch_Sensor/) [- Touchsensor](http://wiki.seeedstudio.com/Grove-Touch_Sensor/)

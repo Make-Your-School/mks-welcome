@@ -34,7 +34,19 @@ https://youtu.be/e0CBo3xn858?feature=shared
  
 
 
+
+<!-- currently no valid example available...
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-generic-Neopixel/examples/Neopixel_minimal/Neopixel_minimal.ino
+// look in the linked file.
+```
+-->
+
 <!-- infolist -->
+
 
 
 ## Wichtige Links für die ersten Schritte:

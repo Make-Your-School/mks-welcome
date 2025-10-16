@@ -29,9 +29,17 @@ Der Helligkeitssensor wird häufig eingesetzt, um Leuchten automatisch bei Dunke
 
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnung entsprechende Projektbeispiele und Tutorials.
 
+
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-SeeedStudio-Grove_Light_Sensor_v1.2/examples/Grove_Light_Sensor_v1.2_minimal/Grove_Light_Sensor_v1.2_minimal.ino
+// look in the linked file.
+```
+
 <!-- infolist -->
 
-<!-- infolists -->
 ## Wichtige Links für die ersten Schritte:
 
 - [Seeed Studio Wiki](http://wiki.seeedstudio.com/Grove-Light_Sensor/) [- Helligkeitssensor](http://wiki.seeedstudio.com/Grove-Light_Sensor/)

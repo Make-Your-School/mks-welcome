@@ -30,9 +30,17 @@ Der Sensor kann direkt oder mithilfe des Grove Shields an einen Arduino angeschl
 
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Hier wird man ebenfalls Schritt für Schritt durch die Kalibrierung geführt. Zusätzlich findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnung entsprechende Projektbeispiele und Tutorials.
 
+
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-SeeedStudio-Grove_Gas_Sensor-MQ2/examples/Grove_Gas_Sensor-MQ2_minimal/Grove_Gas_Sensor-MQ2_minimal.ino
+// look in the linked file.
+```
+
 <!-- infolist -->
 
-<!-- infolists -->
 ## Wichtige Links für die ersten Schritte:
 
 - [Seeed Studio Wiki](http://wiki.seeedstudio.com/Grove-Gas_Sensor-MQ2/) [- Gas Sensor](http://wiki.seeedstudio.com/Grove-Gas_Sensor-MQ2/)

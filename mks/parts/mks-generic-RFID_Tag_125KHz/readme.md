@@ -32,7 +32,19 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 https://www.youtube.com/watch?v=dJXTgtIMUPw
 
 
+
+<!-- currently no valid example available...
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-generic-RFID_Tag_125KHz/examples/RFID_Tag_125KHz_minimal/RFID_Tag_125KHz_minimal.ino
+// look in the linked file.
+```
+-->
+
 <!-- infolist -->
+
 ## Wichtige Links für die ersten Schritte:
 
 - [Produktseite - RFID Chip](https://www.seeedstudio.com/rfid-tag-combo-125khz-5-pcs-p-700.html?cPath=19_24)

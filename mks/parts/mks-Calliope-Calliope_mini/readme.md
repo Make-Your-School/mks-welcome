@@ -29,7 +29,19 @@ Ein Mikrocontroller erlaubt es, prinzipiell jegliche Art von technischen Vorgän
 Der Calliope mini wird über verschiedene, besonders intuitive, grafische Programmiersprachen frei nach eigenen Wünschen und Anforderungen programmiert. Dazu wird der Calliope an einem PC angeschlossen, um online im entsprechenden Editor das gewünschte Programm zu erzeugen. Das final erstellte Programm wird schließlich auf den Mikrocontroller geladen. Der Calliope mini ist dabei etwas leistungsschwächer als ein Arduino UNO. Er bietet dagegen bereits verschiedene Sensoren und LEDs direkt an Board. Da der Calliope in gleicher Weise wie der Arduino eingesetzt werden kann, können die meisten Tutorials aus der Welt des Arduinos einfach für den Calliope übernommen werden. Es reicht oftmals aus, nur die Komponenten, die man verbinden möchte, in eine Suchmaschine einzugeben, um entsprechende Tutorials zu finden.
 
 
+
+<!-- currently no valid example available...
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-Calliope-Calliope_mini/examples/Calliope_mini_minimal/Calliope_mini_minimal.ino
+// look in the linked file.
+```
+-->
+
 <!-- infolist -->
+
 ## Wichtige Links für die ersten Schritte:
 
 - [Calliope Webseite](https://calliope.cc/)

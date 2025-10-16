@@ -27,9 +27,17 @@ Der LCD Bildschirm dient hautpsächlich zum Anzeigen von Informationen. Er verf�
 
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.
 
+
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-SeeedStudio-Grove_LCD_RGB_Backlight/examples/Grove_LCD_RGB_Backlight_minimal/Grove_LCD_RGB_Backlight_minimal.ino
+// look in the linked file.
+```
+
 <!-- infolist -->
 
-<!-- infolists -->
 https://www.youtube.com/watch?v=PWh7wkT2Dog
 
  

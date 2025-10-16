@@ -34,9 +34,17 @@ Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwen
 
 Die genaue Bezeichnung des Sensors, die bei der Suche von Beschreibungen und Anleitungen wichtig sein kann, lautet PAJ7620U2.
 
+
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-SeeedStudio-Grove_Gesture_v1.0/examples/Grove_Gesture_v1.0_minimal/Grove_Gesture_v1.0_minimal.ino
+// look in the linked file.
+```
+
 <!-- infolist -->
 
-<!-- infolists -->
 ## Wichtige Links für die ersten Schritte:
 
 - [Seeed Studio Wiki](http://wiki.seeedstudio.com/Grove-Gesture_v1.0/) [- Gestenerkennung](http://wiki.seeedstudio.com/Grove-Gesture_v1.0/)

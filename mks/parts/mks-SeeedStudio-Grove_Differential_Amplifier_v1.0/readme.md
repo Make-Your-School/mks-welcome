@@ -44,7 +44,19 @@ ACHTUNG: Hiermit können keine Spannungsquellen oder Stromversorgungen umgewande
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnung entsprechende Projektbeispiele und Tutorials.
 
 
+
+<!-- currently no valid example available...
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-SeeedStudio-Grove_Differential_Amplifier_v1.0/examples/Grove_Differential_Amplifier_v1.0_minimal/Grove_Differential_Amplifier_v1.0_minimal.ino
+// look in the linked file.
+```
+-->
+
 <!-- infolist -->
+
 
 
 ## Wichtige Links für die ersten Schritte:

@@ -30,7 +30,19 @@ Ideale Anwendungsbereiche des Moduls sind unter anderem Überwachungskameras, so
 Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen.
 
 
+
+<!-- currently no valid example available...
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-Raspberry_Pi-camera_module_v2/examples/camera_module_v2_minimal/camera_module_v2_minimal.ino
+// look in the linked file.
+```
+-->
+
 <!-- infolist -->
+
 ## Wichtige Links für die ersten Schritte:
 
 - [Raspberry Pi Projects - Picamera](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera) 

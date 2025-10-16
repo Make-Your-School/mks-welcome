@@ -30,9 +30,17 @@ Der Sensor kann direkt oder mithilfe des Grove Shields an einen Arduino oder Ras
 
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen. Diese ist normalerweise direkt auf der Platine des Sensors markiert. Im Folgenden sind zwei Anleitungen zu den zwei gängigsten Sensortypen zusammengefasst.
 
+
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-SeeedStudio-Grove_Ultrasonic_Ranger/examples/Grove_Ultrasonic_Ranger_minimal/Grove_Ultrasonic_Ranger_minimal.ino
+// look in the linked file.
+```
+
 <!-- infolist -->
 
-<!-- infolists -->
 https://www.youtube.com/watch?v=J8BHAVSdJe0&t=16s
 
  

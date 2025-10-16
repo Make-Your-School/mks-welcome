@@ -28,7 +28,19 @@ Der Mini-Ventilator vereint einen Gleichstrommotor, einen kleinen Schaumstoff-Ve
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponentenbezeichnung entsprechende Projektbeispiele und Tutorials.
 
 
+
+<!-- currently no valid example available...
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-SeeedStudio-Grove_Mini_Fan/examples/Grove_Mini_Fan_minimal/Grove_Mini_Fan_minimal.ino
+// look in the linked file.
+```
+-->
+
 <!-- infolist -->
+
 ## Wichtige Links für die ersten Schritte:
 
 - [Seeed Studio Wiki](http://wiki.seeedstudio.com/Grove-Mini_Fan/) [- Mini Ventilator](http://wiki.seeedstudio.com/Grove-Mini_Fan/)

@@ -32,7 +32,19 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
  
 
 
+
+<!-- currently no valid example available...
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-SeeedStudio-W5500_Ethernet_Shield_v1.0/examples/W5500_Ethernet_Shield_v1.0_minimal/W5500_Ethernet_Shield_v1.0_minimal.ino
+// look in the linked file.
+```
+-->
+
 <!-- infolist -->
+
 
 
 ## Wichtige Links für die ersten Schritte:

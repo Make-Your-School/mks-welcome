@@ -32,7 +32,19 @@ Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwen
 
 https://www.youtube.com/watch?v=wVxcmO2YuxA
 
+
+<!-- currently no valid example available...
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-generic-DCGearMotor/examples/DCGearMotor_minimal/DCGearMotor_minimal.ino
+// look in the linked file.
+```
+-->
+
 <!-- infolist -->
+
 ## Wichtige Links für die ersten Schritte:
 
 - [Adafruit Gleichstrommotor](https://www.adafruit.com/product/711)

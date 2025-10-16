@@ -32,7 +32,17 @@ Das Modul wird beispielsweise in einer Messstation für Umweltdaten, wie Feinsta
 
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnung entsprechende Projektbeispiele und Tutorials.
 
+
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-SeeedStudio-Grove_Temperature_Sensor_V1.2/examples/Grove_Temperature_Sensor_V1.2_minimal/Grove_Temperature_Sensor_V1.2_minimal.ino
+// look in the linked file.
+```
+
 <!-- infolist -->
+
 ## Wichtige Links für die ersten Schritte:
 
 - [Seeed Studio Wiki – Temperatursensor v1.2](http://wiki.seeedstudio.com/Grove-Temperature_Sensor_V1.2/)

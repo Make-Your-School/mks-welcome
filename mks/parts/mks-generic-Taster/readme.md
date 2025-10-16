@@ -31,7 +31,17 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 
 
 
+
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-generic-Taster/examples/Taster_minimal/Taster_minimal.ino
+// look in the linked file.
+```
+
 <!-- infolist -->
+
 
 ## Wichtige Links für die ersten Schritte:
 

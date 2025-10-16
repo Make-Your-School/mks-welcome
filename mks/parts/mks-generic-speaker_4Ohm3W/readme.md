@@ -25,7 +25,19 @@ Dieser Lautsprecher ermöglicht das Ausgeben jeder Art von Geräuschen durch ein
 
 Die genaue Bezeichnung des Lautsprechers, die bei der Suche von Beschreibungen und Anleitungen wichtig sein kann, lautet Mono Enclosed Speaker with Plain Wires - 3W 4 Ohm.
 
+
+<!-- currently no valid example available...
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-generic-speaker_4Ohm3W/examples/speaker_4Ohm3W_minimal/speaker_4Ohm3W_minimal.ino
+// look in the linked file.
+```
+-->
+
 <!-- infolist -->
+
 
 
 

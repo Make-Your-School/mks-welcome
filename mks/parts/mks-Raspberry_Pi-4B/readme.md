@@ -35,7 +35,19 @@ https://www.youtube.com/watch?v=HD0ZA1D2aNg
 
 
 
+
+<!-- currently no valid example available...
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-Raspberry_Pi-4B/examples/4B_minimal/4B_minimal.ino
+// look in the linked file.
+```
+-->
+
 <!-- infolist -->
+
 
  
 

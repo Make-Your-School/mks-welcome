@@ -31,7 +31,19 @@ Diese spezielle Ausführung gehört zu der SenseBox. Diese ist ein Citizen Scien
 
 Die SenseBox hat mehrere Schritt-für-Schritt-Anleitungen für den Bau der eigenen Wetterstation. Die sonstige Dokumentation ist recht ausführlich, da das gesamte Projekt auch unter der Open-Hardware-Lizenz läuft.
 
+
+<!-- currently no valid example available...
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-SenseBox-Shield/examples/Shield_minimal/Shield_minimal.ino
+// look in the linked file.
+```
+-->
+
 <!-- infolist -->
+
 ## Weiterführende Hintergrundinformationen:
 
 - [DIY - Wikipedia Artikel](https://de.wikipedia.org/wiki/Do_it_yourself)

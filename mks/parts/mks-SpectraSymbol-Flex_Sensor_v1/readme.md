@@ -32,9 +32,17 @@ Eine häufige Anwendung des Biegesensors ist die Nutzung in einem Sensorhandschu
 
 Man findet über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponentenbezeichnung entsprechende Projektbeispiele und Tutorials. Hierbei ist das wichtige Stichwort „FSR“ (force sensing resistor).
 
+
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-SpectraSymbol-Flex_Sensor_v1/examples/Flex_Sensor_v1_minimal/Flex_Sensor_v1_minimal.ino
+// look in the linked file.
+```
+
 <!-- infolist -->
 
-<!-- infolists -->
 ## Wichtige Links für die ersten Schritte:
 
 - [Datenblatt](https://www.sparkfun.com/datasheets/Sensors/Flex/flex22.pdf) [- Flexsensor 2.2”](https://www.sparkfun.com/datasheets/Sensors/Flex/flex22.pdf)

@@ -29,9 +29,17 @@ Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwen
 
 Die genaue Bezeichnung des Sensors, die bei der Suche von Beschreibungen und Anleitungen wichtig sein kann, lautet TCS3414CS.
 
+
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-SeeedStudio-Grove_I2C_Color_Sensor/examples/Grove_I2C_Color_Sensor_minimal/Grove_I2C_Color_Sensor_minimal.ino
+// look in the linked file.
+```
+
 <!-- infolist -->
 
-<!-- infolists -->
 ## Wichtige Links für die ersten Schritte:
 
 - [Seeed Studio Wiki](http://wiki.seeedstudio.com/Grove-I2C_Color_Sensor/) [- Farbsensor](http://wiki.seeedstudio.com/Grove-I2C_Color_Sensor/)

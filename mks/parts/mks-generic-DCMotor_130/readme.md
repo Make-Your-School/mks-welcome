@@ -29,8 +29,6 @@ Die Steuerung erfolgt über ein einfaches Relais, einen Transistor, einen manuel
 
 Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen. Das wichtige Stichwort lautet hier „DC Motor“ oder „Gleichstrommotor“.
 
-<!-- infolist -->
-
 <!-- infolists -->
 
 https://www.youtube.com/watch?v=wVxcmO2YuxA

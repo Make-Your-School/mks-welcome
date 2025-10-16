@@ -27,9 +27,17 @@ Der Feinstaubsensor wertet die umgebende Luftqualität über die Feinstaubkonzen
 
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnung entsprechende Projektbeispiele und Tutorials.
 
+
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-SeeedStudio-Grove_Dust_Sensor/examples/Grove_Dust_Sensor_minimal/Grove_Dust_Sensor_minimal.ino
+// look in the linked file.
+```
+
 <!-- infolist -->
 
-<!-- infolists -->
 ## Wichtige Links für die ersten Schritte:
 
 - [Seeed Studio Wiki](http://wiki.seeedstudio.com/Grove-Dust_Sensor/) [- Feinstaubsensor](http://wiki.seeedstudio.com/Grove-Dust_Sensor/)

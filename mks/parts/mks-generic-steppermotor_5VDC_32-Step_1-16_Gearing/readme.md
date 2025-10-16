@@ -31,9 +31,17 @@ Ein Schrittmotor kommt durch seine genaue und einfache Positionierbarkeit oftmal
 
 Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen.
 
+
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-generic-steppermotor_5VDC_32-Step_1-16_Gearing/examples/steppermotor_5VDC_32-Step_1-16_Gearing_minimal/steppermotor_5VDC_32-Step_1-16_Gearing_minimal.ino
+// look in the linked file.
+```
+
 <!-- infolist -->
 
-<!-- infolists -->
  
 
 https://www.youtube.com/watch?v=wVxcmO2YuxA

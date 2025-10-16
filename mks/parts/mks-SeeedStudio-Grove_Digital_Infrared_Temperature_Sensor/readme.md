@@ -31,9 +31,17 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 
 Die genaue Bezeichnung des Sensors, die bei der Suche von Beschreibungen und Anleitungen wichtig sein kann, lautet MLX90615.
 
+
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-SeeedStudio-Grove_Digital_Infrared_Temperature_Sensor/examples/Grove_Digital_Infrared_Temperature_Sensor_minimal/Grove_Digital_Infrared_Temperature_Sensor_minimal.ino
+// look in the linked file.
+```
+
 <!-- infolist -->
 
-<!-- infolists -->
 ## Weiterführende Hintergrundinformationen:
 
 - [I2C - Wikipedia Artikel](https://de.wikipedia.org/wiki/I%C2%B2C)

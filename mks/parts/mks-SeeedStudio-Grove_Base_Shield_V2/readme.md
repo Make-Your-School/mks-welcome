@@ -38,7 +38,19 @@ Auf dem Grove Shield befindet sich direkt neben dem Reset-Taster ein kleiner Sch
 
 
 
+
+<!-- currently no valid example available...
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-SeeedStudio-Grove_Base_Shield_V2/examples/Grove_Base_Shield_V2_minimal/Grove_Base_Shield_V2_minimal.ino
+// look in the linked file.
+```
+-->
+
 <!-- infolist -->
+
 
 ## Wichtige Links für die ersten Schritte:
 

@@ -32,7 +32,19 @@ Dadurch lassen sich beispielsweise Früchte oder auch Treppenstufen zu Klavierta
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf der offiziellen Produktseite von Makey Makey zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.
 
 
+
+<!-- currently no valid example available...
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-JoyLabz-MakeyMakey/examples/MakeyMakey_minimal/MakeyMakey_minimal.ino
+// look in the linked file.
+```
+-->
+
 <!-- infolist -->
+
 ## Wichtige Links für die ersten Schritte:
 
 - [Makey-Makey Produktseite](https://www.makeymakey.com/)

@@ -31,7 +31,19 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 
 Die genaue Bezeichnung des Moduls, die bei der Suche von Beschreibungen und Anleitungen wichtig sein kann, lautet ESP8266.
 
+
+<!-- currently no valid example available...
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-SeeedStudio-Grove_UART_Wifi/examples/Grove_UART_Wifi_minimal/Grove_UART_Wifi_minimal.ino
+// look in the linked file.
+```
+-->
+
 <!-- infolist -->
+
 ## Wichtige Links für die ersten Schritte:
 
 - [Seeed Studio Wiki](http://wiki.seeedstudio.com/Grove-UART_Wifi/) [- WiFi](http://wiki.seeedstudio.com/Grove-UART_Wifi/)

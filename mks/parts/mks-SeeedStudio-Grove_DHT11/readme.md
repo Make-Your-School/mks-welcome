@@ -42,9 +42,17 @@ Wenn der Sensor vom Typ DHT 22 ist, lautet der Code:
 
 //#define DHTTYPE DHT11   // DHT 11 #define DHTTYPE DHT22   // DHT 22 (AM2302), AM2321 //#define DHTTYPE DHT21   // DHT 21 (AM2301)
 
+
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-SeeedStudio-Grove_DHT11/examples/Grove_DHT11_minimal/Grove_DHT11_minimal.ino
+// look in the linked file.
+```
+
 <!-- infolist -->
 
-<!-- infolists -->
 https://www.youtube.com/watch?v=UlptibF4bUk
 
  

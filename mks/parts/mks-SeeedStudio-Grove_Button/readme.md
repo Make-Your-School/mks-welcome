@@ -43,7 +43,17 @@ schau dir das Minimal-Beispiel an:
 // this should be overwritten!
 ```
 
-<!-- infolists -->
+
+## Beispiel
+
+schau dir das Minimal-Beispiel an:
+
+```c++:public/mks/parts/mks-SeeedStudio-Grove_Button/examples/Grove_Button_minimal/Grove_Button_minimal.ino
+// look in the linked file.
+```
+
+<!-- infolist -->
+
 ## Wichtige Links für die ersten Schritte:
 
 - [Seeed Studio Wiki](http://wiki.seeedstudio.com/Grove-Button/) [- Taster](http://wiki.seeedstudio.com/Grove-Button/)
