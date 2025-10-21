@@ -2,6 +2,16 @@
     <!-- <q-page class="flex flex-center content-stretch"> -->
     <!-- class="col" style="min-height: 0" -->
     <q-page>
+        <q-btn
+            flat
+            dense
+            round
+            icon="arrow_back"
+            aria-label="zurück zur Übersicht"
+            @click="$router.go(-1)"
+            class="fixed-top-left q-ma-sm back"
+        >
+        </q-btn>
         <header>
             <div class="info">
                 <h2 class="material_number">{{ part.meta.material_number }}</h2>
@@ -57,6 +67,10 @@ const coverImage = `../${part.path_base}/${part.meta.coverImage}`
 </script>
 
 <style lang="sass" scoped>
+.back
+    display: block
+    margin-left: 3em
+    cursor: pointer
 header
     display: flex
     flex-direction: row
@@ -77,12 +91,14 @@ header
         align-items: center
         .material_number
             position: relative
+            margin-bottom: 1em
         .title
             margin: 0
             text-align: center
             font-size: var(--display-large)
     img
         max-width: 100vw
+        max-height: 35rem
 
 </style>
 

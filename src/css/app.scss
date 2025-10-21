@@ -1,6 +1,5 @@
 // app global css in SCSS form
 
-
 :root {
     --mys-basics-100: #ebecee;
     --mys-basics-200: #dcdee1;
@@ -119,7 +118,6 @@ body.body--dark {
     --text-primary: var(--mys-blue-100);
     --text-primary-contrast: var(--mys-blue-950);
 
-
     --card-stroke: var(--mys-blue-300);
     --card-text: var(--mys-blue-100);
     --card-text-hover: var(--mys-blue-50);
@@ -128,7 +126,6 @@ body.body--dark {
     --card-fill-accent: var(--mys-blue-900);
     --box-shadow-default: var(--mys-blue-950) 4px 4px 0px 0px;
 }
-
 
 body.body--light {
     color: var(--mys-blue-950);
@@ -155,7 +152,27 @@ body.body--light code:not(.hljs) {
 }
 
 
+html {
+        font-size: 16px;
+    }
 
+@media (max-width: 900px) {
+    html {
+        font-size: 11px;
+    }
+}
+
+@media (min-width: 1200px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1920px) {
+    html {
+        font-size: 20px;
+    }
+}
 
 .material_number {
     position: absolute;
@@ -173,6 +190,5 @@ body.body--light code:not(.hljs) {
     justify-content: center;
     background: var(--card-fill-accent);
     color: var(--text-primary);
-    font-size: 36px;
-    font-weight: bold;
 }
+

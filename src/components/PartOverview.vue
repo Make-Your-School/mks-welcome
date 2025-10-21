@@ -36,6 +36,7 @@ console.log('props.mks_item', props.mks_item)
     background-color: transparent
     color: var(--text-primary);
     width: 100%
+    height: 100%
     overflow: hidden
     // background-color: hsl(187.5, 8.7%, 18%);
     .q-card__section
@@ -46,8 +47,11 @@ console.log('props.mks_item', props.mks_item)
         aspect-ratio : 1 / 1
     .q-card__section.info
         position: relative
-        padding: var(--padding-m, 32px) var(--padding-m, 32px) var(--padding-l, 40px)
-        padding-top: 3em;
+        height: 100%
+        padding-bottom: 1.0em
+        padding-left: 1.5em
+        padding-right: 1.5em
+        padding-top: 2em;
         background: var(--card-fill);
         border-radius: 0;
         transition: all .2s ease-in-out;
@@ -56,11 +60,13 @@ console.log('props.mks_item', props.mks_item)
             transform: translateY(-55%);
         .title
             margin: 0
-            font-size: 36px
+            font-size: 24px
             line-height: 120%
-            font-weight: bold
+            font-weight: 700
         .type
-            font-size: 32px
+            font-size: 20px
+            line-height: 30px
+            font-weight: 400
             margin: 0
             text-transform: capitalize
 .part-overview:hover

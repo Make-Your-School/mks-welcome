@@ -116,26 +116,38 @@ const searchText = ref('')
     height: 100%
     // max-width: 80em
     margin: 0 auto
-    @media only screen and (min-width: 2280px)
+    @media (width >= 2280px)
         --container-spacing: 0;
-        max-width: 1680px;
+        max-width: 1700px;
     .card-wrapper
         flex-grow: 1
         overflow: visible
         min-height: 80vh
         list-style: none
         padding: 0
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-content: stretch;
+        align-items: stretch;
         li
             margin: 0
         .my-card
             width: 100%
-            min-width: 15rem
-            width: 32.5%
+            // min-width: min(39rem, 200px)
+            max-width: 32.5%
             overflow: visible
             display: flex
             flex-direction: column
             justify-content: center
-            align-items: center
+            align-items: stretch
+            @media (width <= 900px)
+                max-width: 50%
+            @media (width <= 560px)
+                max-width: 100%
+            @media (width >= 2000px)
+                max-width: 25%
             .clickable
                 cursor: pointer
                 text-decoration: none
@@ -143,15 +155,12 @@ const searchText = ref('')
                 width: 100%
                 height: 100%
                 overflow: visible
+
 </style>
 
 <style lang="sass">
-// .my-card
-//     h1
-//         color: white
-//         display: flex
-//         justify-content: center
-//         align-items: center
-//         width: 100%
-//         text-align: center
+.my-page
+    .markdown-body
+        h1:first-child
+            margin-left: 2.5em
 </style>
