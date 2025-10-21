@@ -1,0 +1,43 @@
+.back[data-v-6ff69f06] {
+  display: block;
+  margin-left: 3em;
+  cursor: pointer;
+}
+header[data-v-6ff69f06] {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+  margin-top: 1em;
+}
+header .info[data-v-6ff69f06] {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+header .info .material_number[data-v-6ff69f06] {
+  position: relative;
+  margin-bottom: 1em;
+}
+header .info .title[data-v-6ff69f06] {
+  margin: 0;
+  text-align: center;
+  font-size: var(--display-large);
+}
+header img[data-v-6ff69f06] {
+  max-width: 100vw;
+  max-height: 35rem;
+}.part-content > h1 {
+  display: none;
+}
+.part-content > p > img {
+  display: none;
+}
