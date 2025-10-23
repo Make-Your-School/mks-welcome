@@ -137,15 +137,12 @@ function tokenizeVideo(md, options) {
     function tokenizeReturn(tokens, idx) {
         const videoID = md.utils.escapeHtml(tokens[idx].videoID)
         const service = md.utils.escapeHtml(tokens[idx].service).toLowerCase()
-
+        const url = options.url(service, videoID, tokens[idx].url, options)
+        // console.log(service)
+        // console.log(options)
         return videoID === ''
             ? ''
-            : '<YTEmbed ' +
-                  '" videoID="' +
-                  videoID +
-                  '" src="' +
-                  options.url(service, videoID, tokens[idx].url, options) +
-                  '" ></YTEmbed>'
+            : `<YTEmbed service="${service}" videoID="${videoID}" src="${url}"></YTEmbed>`
     }
 
     return tokenizeReturn
@@ -153,7 +150,7 @@ function tokenizeVideo(md, options) {
 
 const options_defaults = {
     url: videoUrl,
-    youtube: { width: 640, height: 390, nocookie: true },
+    youtube: { width: 560, height: 315, nocookie: true },
 }
 
 /**
