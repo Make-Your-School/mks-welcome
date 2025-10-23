@@ -12,4 +12,16 @@
 }
 .q-tooltip.MDAbbrDescription p {
   margin-bottom: 0.5rem;
+}.question[data-v-bbcfc3f1] {
+  display: block;
+  width: 560px;
+  height: 315px;
+  padding: 2em;
+  background: var(--card-fill);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }

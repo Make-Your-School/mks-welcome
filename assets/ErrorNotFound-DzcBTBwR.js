@@ -1,4 +1,4 @@
-import { p as createElementBlock, v as openBlock, l as createBaseVNode, j as createVNode, aA as QBtn } from "./index-DdPrOAwd.js";
+import { p as createElementBlock, v as openBlock, l as createBaseVNode, j as createVNode, a1 as QBtn } from "./index-CwyaBHP_.js";
 const _hoisted_1 = { class: "fullscreen bg-blue text-white text-center q-pa-md flex flex-center" };
 const _sfc_main = /* @__PURE__ */ Object.assign({
   name: "ErrorNotFound"

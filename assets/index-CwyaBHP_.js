@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/MKS_Parts-Bpm_7h7X.js","assets/QInput-D4ABPJoc.js","assets/QCard-BOsQZd2T.js","assets/use-dark-CFl6lK0U.js","assets/focus-manager-DXzUojAp.js","assets/QPage-Da2hGwDo.js","assets/_plugin-vue_export-helper-1tPrXgE0.js","assets/mdContent-DMh2tIJB.js","assets/readme-B0PoRPbZ.js","assets/about-DWZRWltn.js","assets/MKS_Parts-IJCIRZX1.css","assets/MKS_Tags-DDA3s4CE.js","assets/TagBauteilListe-CTr4UcIb.js","assets/MKS_Tags-Byav8agq.css","assets/MKS_Abbr-BFhYmmBq.js","assets/QList-CiwMnDZB.js","assets/scroll-BjFi0elz.js","assets/AboutPage-BGm7GxfI.js","assets/SettingsPage-BOMQ89wN.js","assets/MDDemo-B9ECIWK_.js","assets/MDDev-YMVJmajl.js","assets/parts-meta-BjSszZRv.js","assets/MainLayout-EzpIVyJg.js","assets/use-quasar-DT2sBvaY.js","assets/MainLayout-BvSd311F.css","assets/MKS_Part_Details-B1vuRIbp.js","assets/MKS_Part_Details-DPiMcqxJ.css","assets/MKS_Tag_Details-fj_iNhlr.js","assets/register-global-components-DLWnQpsv.js","assets/register-global-components-DIW3Pasc.css","assets/markdown-load-css-Ld-8w1cp.css"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/MKS_Parts-CjnAspWe.js","assets/QInput-YA8Ogo04.js","assets/QCard-BMe02b06.js","assets/use-dark-DnH7qsRn.js","assets/focus-manager-DXzUojAp.js","assets/QPage-BwHin3ii.js","assets/_plugin-vue_export-helper-1tPrXgE0.js","assets/mdContent-CYadVMcI.js","assets/readme-MGCw-G29.js","assets/about-mpzVp-zn.js","assets/MKS_Parts-IJCIRZX1.css","assets/MKS_Tags-CRgn0xnd.js","assets/TagBauteilListe-R_r0C4wg.js","assets/MKS_Tags-Byav8agq.css","assets/MKS_Abbr-DJ6DnT4x.js","assets/QList-Bs9RasP2.js","assets/scroll-ggksCLei.js","assets/AboutPage-ABCvfMgN.js","assets/SettingsPage-CmMgF_tA.js","assets/MDDemo-D-xTyai6.js","assets/MDDev-DeCc9SkS.js","assets/parts-meta-DpW1zmSh.js","assets/MainLayout-CEE2YRbm.js","assets/use-quasar-BlcoCY0p.js","assets/MainLayout-BvSd311F.css","assets/MKS_Part_Details-DHmxlqVP.js","assets/MKS_Part_Details-DPiMcqxJ.css","assets/MKS_Tag_Details-CGbS6WN1.js","assets/register-global-components-C-2Tvuul.js","assets/register-global-components-vviEdBc9.css","assets/markdown-load-css-Ld-8w1cp.css"])))=>i.map(i=>d[i]);
 const scriptRel = /* @__PURE__ */ function detectScriptRel() {
   const relList = typeof document !== "undefined" && document.createElement("link").relList;
   return relList && relList.supports && relList.supports("modulepreload") ? "modulepreload" : "preload";
@@ -19075,19 +19075,19 @@ const childrenCommon = [
     title: "Parts",
     icon: "precision_manufacturing",
     path: "/",
-    component: () => __vitePreload(() => import("./MKS_Parts-Bpm_7h7X.js"), true ? __vite__mapDeps([0,1,2,3,4,5,6,7,8,9,10]) : void 0)
+    component: () => __vitePreload(() => import("./MKS_Parts-CjnAspWe.js"), true ? __vite__mapDeps([0,1,2,3,4,5,6,7,8,9,10]) : void 0)
   },
   {
     title: "Tags",
     icon: "precision_manufacturing",
     path: "/tags",
-    component: () => __vitePreload(() => import("./MKS_Tags-DDA3s4CE.js"), true ? __vite__mapDeps([11,1,2,3,4,5,12,6,7,8,9,13]) : void 0)
+    component: () => __vitePreload(() => import("./MKS_Tags-CRgn0xnd.js"), true ? __vite__mapDeps([11,1,2,3,4,5,12,6,7,8,9,13]) : void 0)
   },
   {
     title: "Glossar",
     icon: "precision_manufacturing",
     path: "/abbr/:id?",
-    component: () => __vitePreload(() => import("./MKS_Abbr-BFhYmmBq.js"), true ? __vite__mapDeps([14,2,3,15,16,5]) : void 0),
+    component: () => __vitePreload(() => import("./MKS_Abbr-DJ6DnT4x.js"), true ? __vite__mapDeps([14,2,3,15,16,5]) : void 0),
     props: true
   },
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -19097,13 +19097,13 @@ const childrenCommon = [
     // icon: 'mdi-information-variant',
     icon: "info",
     path: "about",
-    component: () => __vitePreload(() => import("./AboutPage-BGm7GxfI.js"), true ? __vite__mapDeps([17,5,9]) : void 0)
+    component: () => __vitePreload(() => import("./AboutPage-ABCvfMgN.js"), true ? __vite__mapDeps([17,5,9]) : void 0)
   },
   {
     title: "Settings",
     icon: "settings",
     path: "settings",
-    component: () => __vitePreload(() => import("./SettingsPage-BOMQ89wN.js"), true ? __vite__mapDeps([18,5]) : void 0)
+    component: () => __vitePreload(() => import("./SettingsPage-CmMgF_tA.js"), true ? __vite__mapDeps([18,5]) : void 0)
   },
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   // dev
@@ -19111,13 +19111,13 @@ const childrenCommon = [
     title: "MD-Demo",
     icon: "brush",
     path: "md-demo",
-    component: () => __vitePreload(() => import("./MDDemo-B9ECIWK_.js"), true ? __vite__mapDeps([19,5]) : void 0)
+    component: () => __vitePreload(() => import("./MDDemo-D-xTyai6.js"), true ? __vite__mapDeps([19,5]) : void 0)
   },
   {
     title: "MD-Dev",
     icon: "brush",
     path: "md-dev",
-    component: () => __vitePreload(() => import("./MDDev-YMVJmajl.js"), true ? __vite__mapDeps([20,5,8]) : void 0)
+    component: () => __vitePreload(() => import("./MDDev-DeCc9SkS.js"), true ? __vite__mapDeps([20,5,8]) : void 0)
   },
   // {
   //     title: 'Convert `posts.json` to `reposData.json`',
@@ -19135,7 +19135,7 @@ const childrenCommon = [
     title: "Parts Meta-Data Table",
     icon: "brush",
     path: "tools-parts-meta",
-    component: () => __vitePreload(() => import("./parts-meta-BjSszZRv.js"), true ? __vite__mapDeps([21,5,7,8,9]) : void 0)
+    component: () => __vitePreload(() => import("./parts-meta-DpW1zmSh.js"), true ? __vite__mapDeps([21,5,7,8,9]) : void 0)
   }
   // {
   //     title: "MDGlob",
@@ -19171,7 +19171,7 @@ const childrenCommon = [
 const routes = [
   {
     path: "/",
-    component: () => __vitePreload(() => import("./MainLayout-EzpIVyJg.js"), true ? __vite__mapDeps([22,15,3,16,23,6,24]) : void 0),
+    component: () => __vitePreload(() => import("./MainLayout-CEE2YRbm.js"), true ? __vite__mapDeps([22,15,3,16,23,6,24]) : void 0),
     children: [
       // {
       //     path: 'part',
@@ -19182,12 +19182,12 @@ const routes = [
       // routes wihtout menu entries
       {
         path: "part/:part_name",
-        component: () => __vitePreload(() => import("./MKS_Part_Details-B1vuRIbp.js"), true ? __vite__mapDeps([25,5,7,8,9,6,26]) : void 0),
+        component: () => __vitePreload(() => import("./MKS_Part_Details-DHmxlqVP.js"), true ? __vite__mapDeps([25,5,7,8,9,6,26]) : void 0),
         props: true
       },
       {
         path: "tag/:tag_name?",
-        component: () => __vitePreload(() => import("./MKS_Tag_Details-fj_iNhlr.js"), true ? __vite__mapDeps([27,5,12,6,7,8,9]) : void 0),
+        component: () => __vitePreload(() => import("./MKS_Tag_Details-CGbS6WN1.js"), true ? __vite__mapDeps([27,5,12,6,7,8,9]) : void 0),
         props: true
       },
       // add children that with menu-entries
@@ -19201,7 +19201,7 @@ const routes = [
   // but you can also remove it
   {
     path: "/:catchAll(.*)*",
-    component: () => __vitePreload(() => import("./ErrorNotFound-D1A5793b.js"), true ? [] : void 0)
+    component: () => __vitePreload(() => import("./ErrorNotFound-DzcBTBwR.js"), true ? [] : void 0)
   }
 ];
 const createRouter = route(function() {
@@ -21033,9 +21033,9 @@ createQuasarApp(createApp, quasarUserOptions).then((app) => {
     (bootFiles) => bootFiles.map((entry) => entry.default)
   ];
   return Promise[method]([
-    __vitePreload(() => import("./i18n-CRRNbz2l.js"), true ? [] : void 0),
-    __vitePreload(() => import("./addressbar-color-BbfPQAtN.js"), true ? [] : void 0),
-    __vitePreload(() => import("./register-global-components-DLWnQpsv.js").then((n) => n.a), true ? __vite__mapDeps([28,23,16,4,6,29]) : void 0),
+    __vitePreload(() => import("./i18n-OThkfqgE.js"), true ? [] : void 0),
+    __vitePreload(() => import("./addressbar-color-C_Jo5tAg.js"), true ? [] : void 0),
+    __vitePreload(() => import("./register-global-components-C-2Tvuul.js").then((n) => n.a), true ? __vite__mapDeps([28,23,16,4,6,29]) : void 0),
     __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([30]) : void 0)
   ]).then((bootFiles) => {
     const boot2 = mapFn(bootFiles).filter((entry) => typeof entry === "function");
@@ -21073,16 +21073,16 @@ export {
   __vitePreload as _,
   getCurrentInstance as a,
   withCtx as a0,
-  resolveComponent as a1,
-  resolveDynamicComponent as a2,
-  renderList as a3,
-  onBeforeUpdate as a4,
-  formKey as a5,
-  debounce as a6,
-  onActivated as a7,
-  QIcon as a8,
-  QSpinner as a9,
-  QBtn as aA,
+  QBtn as a1,
+  resolveComponent as a2,
+  resolveDynamicComponent as a3,
+  renderList as a4,
+  onBeforeUpdate as a5,
+  formKey as a6,
+  debounce as a7,
+  onActivated as a8,
+  QIcon as a9,
+  childrenCommon as aA,
   Platform as aB,
   quasarKey as aC,
   useRouterLink as aD,
@@ -21092,32 +21092,32 @@ export {
   getElement as aH,
   defineStore as aI,
   markRaw as aJ,
-  shouldIgnoreKey as aa,
-  stop as ab,
-  useRouterLinkProps as ac,
-  shallowReactive as ad,
-  withDirectives as ae,
-  vShow as af,
-  watchEffect as ag,
-  useRoute as ah,
-  useRouter as ai,
-  isRuntimeSsrPreHydration as aj,
-  createStaticVNode as ak,
-  History as al,
-  getEventPath as am,
-  createDirective as an,
-  preventDraggable as ao,
-  noop$2 as ap,
-  position as aq,
-  leftClick as ar,
-  emptyRenderFn as as,
-  layoutKey as at,
-  hDir as au,
-  provide as av,
-  pageContainerKey as aw,
-  reactive as ax,
-  hMergeSlot as ay,
-  childrenCommon as az,
+  QSpinner as aa,
+  shouldIgnoreKey as ab,
+  stop as ac,
+  useRouterLinkProps as ad,
+  shallowReactive as ae,
+  withDirectives as af,
+  vShow as ag,
+  watchEffect as ah,
+  useRoute as ai,
+  useRouter as aj,
+  isRuntimeSsrPreHydration as ak,
+  createStaticVNode as al,
+  History as am,
+  getEventPath as an,
+  createDirective as ao,
+  preventDraggable as ap,
+  noop$2 as aq,
+  position as ar,
+  leftClick as as,
+  emptyRenderFn as at,
+  layoutKey as au,
+  hDir as av,
+  provide as aw,
+  pageContainerKey as ax,
+  reactive as ay,
+  hMergeSlot as az,
   inject as b,
   computed as c,
   defineComponent as d,

@@ -1,4 +1,4 @@
-import { a1 as resolveComponent, p as createElementBlock, v as openBlock, l as createBaseVNode, ak as createStaticVNode, j as createVNode, D as createTextVNode, a0 as withCtx } from "./index-DdPrOAwd.js";
+import { a2 as resolveComponent, p as createElementBlock, v as openBlock, l as createBaseVNode, al as createStaticVNode, j as createVNode, D as createTextVNode, a0 as withCtx } from "./index-CwyaBHP_.js";
 const _hoisted_1 = { class: "markdown-body" };
 const title = "Endschalter/Anschlag";
 const date = "2018-10-01T13:43:35.000Z";

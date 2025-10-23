@@ -1,4 +1,4 @@
-import { V as onDeactivated, M as onBeforeUnmount, W as vmIsDestroyed, a as getCurrentInstance, aB as Platform, b as inject, aC as quasarKey } from "./index-DdPrOAwd.js";
+import { V as onDeactivated, M as onBeforeUnmount, W as vmIsDestroyed, a as getCurrentInstance, aB as Platform, b as inject, aC as quasarKey } from "./index-CwyaBHP_.js";
 function useTimeout() {
   let timer = null;
   const vm = getCurrentInstance();

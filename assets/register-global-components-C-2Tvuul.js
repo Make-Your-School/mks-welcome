@@ -1,7 +1,7 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-Cp3vZVoP.js","assets/index-DdPrOAwd.js","assets/index-bq9ha6K-.css","assets/use-quasar-DT2sBvaY.js","assets/scroll-BjFi0elz.js","assets/focus-manager-DXzUojAp.js","assets/_plugin-vue_export-helper-1tPrXgE0.js"])))=>i.map(i=>d[i]);
-import { l as createBaseVNode, d as defineComponent, m as mergeDefaults, u as useSlots, b as inject, r as ref, t as toRefs, c as computed, n as unref, p as createElementBlock, w as watch, q as onBeforeMount, o as onMounted, v as openBlock, x as createCommentVNode, y as normalizeStyle, z as renderSlot, B as normalizeProps, C as mergeProps, F as Fragment, D as createTextVNode, E as toDisplayString, G as normalizeClass, H as createBlock, _ as __vitePreload, j as createVNode, a as getCurrentInstance, I as prevent, J as addEvt, K as nextTick, L as isKeyCode, M as onBeforeUnmount, N as cleanEvt, O as listenOpts, P as createComponent, f as onUnmounted, Q as injectProp, h, R as Teleport, S as createGlobalNode, U as removeGlobalNode, V as onDeactivated, W as vmIsDestroyed, X as client, Y as Transition, Z as hSlot, $ as stopAndPrevent, a0 as withCtx } from "./index-DdPrOAwd.js";
-import { u as useQuasar, c as clearSelection, a as useTimeout } from "./use-quasar-DT2sBvaY.js";
-import { g as getScrollbarWidth, u as useModelToggleEmits, s as scrollTargetProp, a as useModelToggleProps, b as useModelToggle, c as getScrollTarget } from "./scroll-BjFi0elz.js";
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/index-Ddk9AIzn.js","assets/index-CwyaBHP_.js","assets/index-bq9ha6K-.css","assets/use-quasar-BlcoCY0p.js","assets/scroll-ggksCLei.js","assets/focus-manager-DXzUojAp.js","assets/_plugin-vue_export-helper-1tPrXgE0.js"])))=>i.map(i=>d[i]);
+import { l as createBaseVNode, d as defineComponent, m as mergeDefaults, u as useSlots, b as inject, r as ref, t as toRefs, c as computed, n as unref, p as createElementBlock, w as watch, q as onBeforeMount, o as onMounted, v as openBlock, x as createCommentVNode, y as normalizeStyle, z as renderSlot, B as normalizeProps, C as mergeProps, F as Fragment, D as createTextVNode, E as toDisplayString, G as normalizeClass, H as createBlock, _ as __vitePreload, j as createVNode, a as getCurrentInstance, I as prevent, J as addEvt, K as nextTick, L as isKeyCode, M as onBeforeUnmount, N as cleanEvt, O as listenOpts, P as createComponent, f as onUnmounted, Q as injectProp, h, R as Teleport, S as createGlobalNode, U as removeGlobalNode, V as onDeactivated, W as vmIsDestroyed, X as client, Y as Transition, Z as hSlot, $ as stopAndPrevent, a0 as withCtx, a1 as QBtn } from "./index-CwyaBHP_.js";
+import { u as useQuasar, c as clearSelection, a as useTimeout } from "./use-quasar-BlcoCY0p.js";
+import { g as getScrollbarWidth, u as useModelToggleEmits, s as scrollTargetProp, a as useModelToggleProps, b as useModelToggle, c as getScrollTarget } from "./scroll-ggksCLei.js";
 import { r as removeFocusWaitFlag, a as addFocusWaitFlag } from "./focus-manager-DXzUojAp.js";
 import { _ as _export_sfc } from "./_plugin-vue_export-helper-1tPrXgE0.js";
 const wrapper = (callback) => callback;
@@ -1556,11 +1556,11 @@ const In = { class: "v-code-block--button-copy" }, Gn = { class: "v-code-block--
     });
   }
   function tn() {
-    Sn(), e.value.highlightjs && __vitePreload(() => import("./index-Cp3vZVoP.js"), true ? __vite__mapDeps([0,1,2,3,4,5,6]) : void 0).then((a) => {
+    Sn(), e.value.highlightjs && __vitePreload(() => import("./index-Ddk9AIzn.js"), true ? __vite__mapDeps([0,1,2,3,4,5,6]) : void 0).then((a) => {
       L = a.default, L.registerLanguage("plain", Fn), M.value = L.highlight(_.value, { language: e.value.lang }).value;
     }).catch((a) => {
       console.error("Highlight.js import:", { err: a });
-    }), e.value.prismjs && __vitePreload(() => import("./prism-BtWfO5c-.js").then((n) => n.p), true ? [] : void 0).then((a) => {
+    }), e.value.prismjs && __vitePreload(() => import("./prism-CfYxHSf-.js").then((n) => n.p), true ? [] : void 0).then((a) => {
       A = a.default, M.value = A.highlight(_.value, A.languages[e.value.lang], e.value.lang);
     }).catch((a) => {
       console.error("PrismJS import:", { err: a });
@@ -4609,8 +4609,8 @@ function css(hljs) {
     ]
   };
 }
-const _hoisted_1$1 = { class: "MDCode" };
-const _sfc_main$1 = {
+const _hoisted_1$2 = { class: "MDCode" };
+const _sfc_main$2 = {
   __name: "MDCode",
   props: {
     content: String,
@@ -4637,7 +4637,7 @@ const _sfc_main$1 = {
       }
     );
     return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("div", _hoisted_1$1, [
+      return openBlock(), createElementBlock("div", _hoisted_1$2, [
         createVNode(unref(Un), {
           code: __props.content,
           highlightjs: "",
@@ -5475,12 +5475,12 @@ const QTooltip = createComponent({
     return renderPortal;
   }
 });
-const _hoisted_1 = { class: "MDAbbr" };
-const _sfc_main = {
+const _hoisted_1$1 = { class: "MDAbbr" };
+const _sfc_main$1 = {
   __name: "MDAbbr",
   setup(__props) {
     return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("span", _hoisted_1, [
+      return openBlock(), createElementBlock("span", _hoisted_1$1, [
         renderSlot(_ctx.$slots, "default", {}, void 0, true),
         createVNode(QTooltip, {
           anchor: "top middle",
@@ -5497,10 +5497,51 @@ const _sfc_main = {
     };
   }
 };
-const MDAbbr = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-fa8e34f6"]]);
+const MDAbbr = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-fa8e34f6"]]);
+const _hoisted_1 = ["src"];
+const _hoisted_2 = {
+  key: 1,
+  class: "question"
+};
+const _sfc_main = {
+  __name: "YTEmbed",
+  props: {
+    service: String,
+    videoId: String,
+    src: String,
+    options: String
+  },
+  setup(__props) {
+    const allowService = ref(false);
+    return (_ctx, _cache) => {
+      return openBlock(), createElementBlock("div", null, [
+        allowService.value ? (openBlock(), createElementBlock("iframe", {
+          key: 0,
+          type: "text/html",
+          width: "560",
+          height: "315",
+          src: __props.src,
+          title: "YouTube video player",
+          frameborder: "0",
+          allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+          referrerpolicy: "strict-origin-when-cross-origin",
+          allowfullscreen: ""
+        }, null, 8, _hoisted_1)) : (openBlock(), createElementBlock("div", _hoisted_2, [
+          createBaseVNode("p", null, " Diesen " + toDisplayString(__props.service) + " content musst du erst erlauben. Durch das Erlauben gelten die Bedinungen von " + toDisplayString(__props.service) + ". hiermit erlangt dieser service zugriff auf dein Browser-Verhalten. ", 1),
+          createVNode(QBtn, {
+            label: `Lade ${__props.service} content`,
+            onClick: _cache[0] || (_cache[0] = ($event) => allowService.value = true)
+          }, null, 8, ["label"])
+        ]))
+      ]);
+    };
+  }
+};
+const YTEmbed = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-bbcfc3f1"]]);
 const registerGlobalComponents = defineBoot(async ({ app }) => {
-  app.component("MDCode", _sfc_main$1);
+  app.component("MDCode", _sfc_main$2);
   app.component("MDAbbr", MDAbbr);
+  app.component("YTEmbed", YTEmbed);
 });
 const registerGlobalComponents$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,

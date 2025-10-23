@@ -1,6 +1,6 @@
-import { p as createElementBlock, v as openBlock, ak as createStaticVNode, l as createBaseVNode, a1 as resolveComponent, D as createTextVNode, j as createVNode, a0 as withCtx, aI as defineStore } from "./index-DdPrOAwd.js";
-import { m as md_obj } from "./readme-B0PoRPbZ.js";
-import { i as importSingleFile, a as about } from "./about-DWZRWltn.js";
+import { p as createElementBlock, v as openBlock, al as createStaticVNode, l as createBaseVNode, a2 as resolveComponent, D as createTextVNode, j as createVNode, a0 as withCtx, aI as defineStore } from "./index-CwyaBHP_.js";
+import { m as md_obj } from "./readme-MGCw-G29.js";
+import { i as importSingleFile, a as about } from "./about-mpzVp-zn.js";
 const _hoisted_1$1f = { class: "markdown-body" };
 const titel$1 = "Entfernung";
 const tags$1f = ["entfernung", "input"];
@@ -330,7 +330,7 @@ const _sfc_main$19 = {
         _cache[5] || (_cache[5] = createBaseVNode("p", null, "Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf der Produktseite zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen.", -1)),
         createBaseVNode("p", null, [
           createVNode(_component_YTEmbed, {
-            '"': "",
+            service: "youtube",
             videoID: "KKbfTAG5HsU",
             src: "https://www.youtube-nocookie.com/embed/KKbfTAG5HsU"
           })
@@ -411,14 +411,14 @@ const _sfc_main$18 = {
         _cache[20] || (_cache[20] = createBaseVNode("p", null, "Der Arduino UNO ist ein Mikrocontroller, der ursprünglich speziell für Bildungszwecke entwickelt wurde. Durch die einfache Programmierung und den niedrigen Preis hat er allerdings sehr schnell auch in anderen Branchen an Beliebtheit gewonnen. Sowohl Wissenschaftler*innen als auch Studierende, Hobby-Bastler*innen, DIY-Begeisterte und viele mehr setzen den Mikrocontroller ein, um unterschiedlichste automatisierte Projekte umzusetzen.", -1)),
         createBaseVNode("p", null, [
           createVNode(_component_YTEmbed, {
-            '"': "",
+            service: "youtube",
             videoID: "GQw20v8Qls0",
             src: "https://www.youtube-nocookie.com/embed/GQw20v8Qls0"
           })
         ]),
         createBaseVNode("p", null, [
           createVNode(_component_YTEmbed, {
-            '"': "",
+            service: "youtube",
             videoID: "EEa-0fhb2WA",
             src: "https://www.youtube-nocookie.com/embed/EEa-0fhb2WA"
           })
@@ -899,7 +899,7 @@ const _sfc_main$14 = {
         ]),
         createBaseVNode("p", null, [
           createVNode(_component_YTEmbed, {
-            '"': "",
+            service: "youtube",
             videoID: "HD0ZA1D2aNg",
             src: "https://www.youtube-nocookie.com/embed/HD0ZA1D2aNg"
           })
@@ -1136,7 +1136,7 @@ const _sfc_main$11 = {
         _cache[6] || (_cache[6] = createStaticVNode('<h1 id="rfid-leser" tabindex="-1">RFID-Leser</h1><p><img src="/mks-welcome/mks/parts/mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0/52_rfid_leser.png" alt="RFID-Leser"></p><h2 id="beschreibung" tabindex="-1">Beschreibung</h2><p>RFID bezeichnet ein Sender-Empfänger-System, das vor allem zur eindeutigen Identifizierung von Objekten, Einkaufswaren oder auch Lebewesen eingesetzt wird. Der RFID-Transponder besitzt eine eindeutige Identifikationsnummer. Das Lesegerät liest diese aus, sobald der Transponder in unmittelbarer Nähe ist. Der Transponder benötigt dabei keine Stromversorgung, da das Auslesegerät ihn kontaktlost mit Energie versorgt.</p><p>Der RFID-Leser lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über die serielle Schnittstelle UARTanschließen.</p><p>Mit der RFID-Technologie lässt sich beispielsweise ein Haustür-Schloss automatisieren. Individuelle RFID-Transponder müssen dann an das entsprechende Lesegerät gehalten werden und könnten so einen Schlüssel ersetzen. Bei Verlust eines Transponders ließe sich dieser nachträglich ohne Austausch des Schlosses aus dem System sperren.</p><p>Schaue dir die Beispiele im Ordner <a href="./examples/"><code>examples</code></a> an. Dort haben wir verschiedene Szenarien hinterlegt.</p><p>Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.</p>', 8)),
         createBaseVNode("p", null, [
           createVNode(_component_YTEmbed, {
-            '"': "",
+            service: "youtube",
             videoID: "dJXTgtIMUPw",
             src: "https://www.youtube-nocookie.com/embed/dJXTgtIMUPw"
           })
@@ -1190,7 +1190,7 @@ const _sfc_main$11 = {
         }, "Video", -1)),
         createBaseVNode("p", null, [
           createVNode(_component_YTEmbed, {
-            '"': "",
+            service: "youtube",
             videoID: "dJXTgtIMUPw",
             src: "https://www.youtube-nocookie.com/embed/dJXTgtIMUPw?si=BcOwoU9WhtPMKLse"
           })
@@ -1710,7 +1710,7 @@ const _sfc_main$Z = {
         _cache[7] || (_cache[7] = createBaseVNode("p", null, "Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.", -1)),
         createBaseVNode("p", null, [
           createVNode(_component_YTEmbed, {
-            '"': "",
+            service: "youtube",
             videoID: "ITsk6dPSsqA",
             src: "https://www.youtube-nocookie.com/embed/ITsk6dPSsqA"
           })
@@ -2003,7 +2003,7 @@ void loop() {
         }),
         createBaseVNode("p", null, [
           createVNode(_component_YTEmbed, {
-            '"': "",
+            service: "youtube",
             videoID: "UlptibF4bUk",
             src: "https://www.youtube-nocookie.com/embed/UlptibF4bUk"
           })
@@ -3386,7 +3386,7 @@ const _sfc_main$L = {
         ], -1)),
         createBaseVNode("p", null, [
           createVNode(_component_YTEmbed, {
-            '"': "",
+            service: "youtube",
             videoID: "wVxcmO2YuxA",
             src: "https://www.youtube-nocookie.com/embed/wVxcmO2YuxA"
           })
@@ -3864,7 +3864,7 @@ const _sfc_main$H = {
         }),
         createBaseVNode("p", null, [
           createVNode(_component_YTEmbed, {
-            '"': "",
+            service: "youtube",
             videoID: "PWh7wkT2Dog",
             src: "https://www.youtube-nocookie.com/embed/PWh7wkT2Dog"
           })
@@ -4041,7 +4041,7 @@ const _sfc_main$G = {
         _cache[9] || (_cache[9] = createBaseVNode("p", null, "Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.", -1)),
         createBaseVNode("p", null, [
           createVNode(_component_YTEmbed, {
-            '"': "",
+            service: "youtube",
             videoID: "ITsk6dPSsqA",
             src: "https://www.youtube-nocookie.com/embed/ITsk6dPSsqA"
           })
@@ -4221,7 +4221,7 @@ const _sfc_main$E = {
         }),
         createBaseVNode("p", null, [
           createVNode(_component_YTEmbed, {
-            '"': "",
+            service: "youtube",
             videoID: "A4VYpebn1BQ",
             src: "https://www.youtube-nocookie.com/embed/A4VYpebn1BQ"
           })
@@ -5643,7 +5643,7 @@ const _sfc_main$r = {
         }),
         createBaseVNode("p", null, [
           createVNode(_component_YTEmbed, {
-            '"': "",
+            service: "youtube",
             videoID: "wVxcmO2YuxA",
             src: "https://www.youtube-nocookie.com/embed/wVxcmO2YuxA"
           })
@@ -6389,7 +6389,7 @@ const _sfc_main$j = {
         }),
         createBaseVNode("p", null, [
           createVNode(_component_YTEmbed, {
-            '"': "",
+            service: "youtube",
             videoID: "J8BHAVSdJe0",
             src: "https://www.youtube-nocookie.com/embed/J8BHAVSdJe0?start=16"
           })
@@ -7207,7 +7207,7 @@ const _sfc_main$a = {
         _cache[5] || (_cache[5] = createBaseVNode("p", null, "Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen. Das wichtige Stichwort lautet hier „DC Motor“ oder „Gleichstrommotor“.", -1)),
         createBaseVNode("p", null, [
           createVNode(_component_YTEmbed, {
-            '"': "",
+            service: "youtube",
             videoID: "wVxcmO2YuxA",
             src: "https://www.youtube-nocookie.com/embed/wVxcmO2YuxA"
           })
@@ -7278,7 +7278,7 @@ const _sfc_main$9 = {
         _cache[5] || (_cache[5] = createBaseVNode("p", null, "Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen. Das wichtige Stichwort lautet hier „DC Motor“ oder „Gleichstrommotor“.", -1)),
         createBaseVNode("p", null, [
           createVNode(_component_YTEmbed, {
-            '"': "",
+            service: "youtube",
             videoID: "wVxcmO2YuxA",
             src: "https://www.youtube-nocookie.com/embed/wVxcmO2YuxA"
           })
@@ -7629,7 +7629,7 @@ const _sfc_main$5 = {
         _cache[5] || (_cache[5] = createBaseVNode("p", null, "Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.", -1)),
         createBaseVNode("p", null, [
           createVNode(_component_YTEmbed, {
-            '"': "",
+            service: "youtube",
             videoID: "dJXTgtIMUPw",
             src: "https://www.youtube-nocookie.com/embed/dJXTgtIMUPw"
           })
@@ -7830,7 +7830,7 @@ const _sfc_main$3 = {
         }),
         createBaseVNode("p", null, [
           createVNode(_component_YTEmbed, {
-            '"': "",
+            service: "youtube",
             videoID: "wVxcmO2YuxA",
             src: "https://www.youtube-nocookie.com/embed/wVxcmO2YuxA"
           })
@@ -8027,7 +8027,7 @@ const _sfc_main$1 = {
         }),
         createBaseVNode("p", null, [
           createVNode(_component_YTEmbed, {
-            '"': "",
+            service: "youtube",
             videoID: "wVxcmO2YuxA",
             src: "https://www.youtube-nocookie.com/embed/wVxcmO2YuxA"
           })
