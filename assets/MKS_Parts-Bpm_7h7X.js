@@ -1,30 +1,43 @@
-import { Q as QInput } from "./QInput-BtgtXj8V.js";
-import { Q as QPage } from "./QPage-CPaWQyUh.js";
-import { H as createBlock, v as openBlock, a0 as withCtx, j as createVNode, l as createBaseVNode, r as ref, c as computed, a1 as resolveComponent, p as createElementBlock, F as Fragment, a3 as renderList } from "./index-B0d0Cx_0.js";
-import { Q as QCardSection, a as QCard } from "./QCard-1SitUtzz.js";
-import { T as TagBauteilListe } from "./TagBauteilListe-CK1u207A.js";
+import { Q as QInput } from "./QInput-D4ABPJoc.js";
+import { Q as QPage } from "./QPage-Da2hGwDo.js";
+import { H as createBlock, v as openBlock, a0 as withCtx, j as createVNode, l as createBaseVNode, E as toDisplayString, r as ref, c as computed, a1 as resolveComponent, a2 as resolveDynamicComponent, n as unref, p as createElementBlock, F as Fragment, a3 as renderList } from "./index-DdPrOAwd.js";
+import { Q as QCardSection, a as QCard } from "./QCard-BOsQZd2T.js";
 import { _ as _export_sfc } from "./_plugin-vue_export-helper-1tPrXgE0.js";
-import { u as useMDContentStore } from "./mdContent-DbRcw7Pl.js";
-import "./use-dark-CbBma54y.js";
+import { u as useMDContentStore } from "./mdContent-DMh2tIJB.js";
+import "./use-dark-CFl6lK0U.js";
 import "./focus-manager-DXzUojAp.js";
-import "./readme-CGNVhiQ2.js";
-import "./about-DfpUUyGh.js";
-const _hoisted_1$1 = ["innerHTML"];
+import "./readme-B0PoRPbZ.js";
+import "./about-DWZRWltn.js";
+const _hoisted_1$1 = ["src", "alt"];
+const _hoisted_2 = { class: "material_number" };
+const _hoisted_3 = { class: "title" };
+const _hoisted_4 = { class: "type" };
 const _sfc_main$1 = {
-  __name: "TagOverview",
+  __name: "PartOverview",
   props: {
-    tag: Object
+    // defineProps({
+    mks_item: Object
   },
   setup(__props) {
+    const props = __props;
+    console.log("props.mks_item", props.mks_item);
     return (_ctx, _cache) => {
-      return openBlock(), createBlock(QCard, { class: "tag-overview" }, {
+      return openBlock(), createBlock(QCard, { class: "part-overview" }, {
         default: withCtx(() => [
           createVNode(QCardSection, null, {
             default: withCtx(() => [
-              createBaseVNode("div", {
-                innerHTML: __props.tag.excerpt
-              }, null, 8, _hoisted_1$1),
-              createVNode(TagBauteilListe, { tag: __props.tag }, null, 8, ["tag"])
+              createBaseVNode("img", {
+                src: __props.mks_item.path_base + `/` + __props.mks_item.meta.coverImage,
+                alt: __props.mks_item.meta.title
+              }, null, 8, _hoisted_1$1)
+            ]),
+            _: 1
+          }),
+          createVNode(QCardSection, { class: "info" }, {
+            default: withCtx(() => [
+              createBaseVNode("h2", _hoisted_2, toDisplayString(__props.mks_item.meta.material_number), 1),
+              createBaseVNode("h1", _hoisted_3, toDisplayString(__props.mks_item.meta.title), 1),
+              createBaseVNode("h2", _hoisted_4, toDisplayString(__props.mks_item.meta.material_type), 1)
             ]),
             _: 1
           })
@@ -34,15 +47,15 @@ const _sfc_main$1 = {
     };
   }
 };
-const TagOverview = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-afb5b414"]]);
+const PartOverview = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-81727791"]]);
 const _hoisted_1 = { class: "card-wrapper row items-stretch" };
 const _sfc_main = {
-  __name: "MKS_Tags",
+  __name: "MKS_Parts",
   setup(__props) {
     const mdContent = useMDContentStore();
     console.log("mdContent", mdContent);
-    const mks_tags = ref(mdContent.mks.tags);
-    const searchText = ref("");
+    const mks_welcome = mdContent.mks.welcome;
+    const mks_parts = ref(mdContent.mks.parts);
     const check_searchTextInReadme = (readme, item_name) => {
       var _a, _b;
       return (item_name == null ? void 0 : item_name.toLowerCase().includes(searchText.value.toLowerCase())) || readme.content_text.toLowerCase().includes(searchText.value.toLowerCase()) || // TODO: find a better way to search for text in rendered output..
@@ -59,14 +72,17 @@ const _sfc_main = {
     };
     const mks_items_filtered = computed(() => {
       const result = {
-        ...getObjItemsWithSearchTextInReadme(mks_tags.value)
+        // ...getObjItemsWithSearchTextInReadme(mks_tags.value),
+        ...getObjItemsWithSearchTextInReadme(mks_parts.value)
       };
       return result;
     });
+    const searchText = ref("");
     return (_ctx, _cache) => {
       const _component_router_link = resolveComponent("router-link");
       return openBlock(), createBlock(QPage, { class: "my-page" }, {
         default: withCtx(() => [
+          (openBlock(), createBlock(resolveDynamicComponent(unref(mks_welcome).content))),
           createBaseVNode("div", null, [
             createVNode(QInput, {
               rounded: "",
@@ -83,11 +99,14 @@ const _sfc_main = {
                 class: "my-card q-pa-md"
               }, [
                 createVNode(_component_router_link, {
-                  to: `/tag/${mks_item_name}`,
+                  to: `/part/${mks_item_name}`,
                   class: "clickable"
                 }, {
                   default: withCtx(() => [
-                    createVNode(TagOverview, { tag: mks_item }, null, 8, ["tag"])
+                    createVNode(PartOverview, {
+                      mks_item,
+                      mks_parts: mks_parts.value
+                    }, null, 8, ["mks_item", "mks_parts"])
                   ]),
                   _: 2
                 }, 1032, ["to"])
@@ -100,7 +119,7 @@ const _sfc_main = {
     };
   }
 };
-const MKS_Tags = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-0298f64c"]]);
+const MKS_Parts = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-9fc1451d"]]);
 export {
-  MKS_Tags as default
+  MKS_Parts as default
 };

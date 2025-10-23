@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/MKS_Parts-Dx3WWBMa.js","assets/QInput-BtgtXj8V.js","assets/QCard-1SitUtzz.js","assets/use-dark-CbBma54y.js","assets/focus-manager-DXzUojAp.js","assets/QPage-CPaWQyUh.js","assets/_plugin-vue_export-helper-1tPrXgE0.js","assets/mdContent-DbRcw7Pl.js","assets/readme-CGNVhiQ2.js","assets/about-DfpUUyGh.js","assets/MKS_Parts-IJCIRZX1.css","assets/MKS_Tags-CdihBgsx.js","assets/TagBauteilListe-CK1u207A.js","assets/MKS_Tags-Byav8agq.css","assets/MKS_Abbr-BQ4ZBCDQ.js","assets/QList-7jswn6M8.js","assets/scroll-DSpFeI-n.js","assets/AboutPage-D7pcHdSd.js","assets/SettingsPage-DhXZX4SL.js","assets/MDDemo-DKkra8wf.js","assets/MDDev-EU-G36R2.js","assets/parts-meta-BbJCpuGC.js","assets/MainLayout-BWneTMfn.js","assets/use-quasar-BJwyTPVD.js","assets/MainLayout-BvSd311F.css","assets/MKS_Part_Details-DdROHViK.js","assets/MKS_Part_Details-DPiMcqxJ.css","assets/MKS_Tag_Details-BVcQeMhM.js","assets/register-global-components-CtRHKtrY.js","assets/register-global-components-DIW3Pasc.css","assets/markdown-load-css-Ld-8w1cp.css"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/MKS_Parts-Bpm_7h7X.js","assets/QInput-D4ABPJoc.js","assets/QCard-BOsQZd2T.js","assets/use-dark-CFl6lK0U.js","assets/focus-manager-DXzUojAp.js","assets/QPage-Da2hGwDo.js","assets/_plugin-vue_export-helper-1tPrXgE0.js","assets/mdContent-DMh2tIJB.js","assets/readme-B0PoRPbZ.js","assets/about-DWZRWltn.js","assets/MKS_Parts-IJCIRZX1.css","assets/MKS_Tags-DDA3s4CE.js","assets/TagBauteilListe-CTr4UcIb.js","assets/MKS_Tags-Byav8agq.css","assets/MKS_Abbr-BFhYmmBq.js","assets/QList-CiwMnDZB.js","assets/scroll-BjFi0elz.js","assets/AboutPage-BGm7GxfI.js","assets/SettingsPage-BOMQ89wN.js","assets/MDDemo-B9ECIWK_.js","assets/MDDev-YMVJmajl.js","assets/parts-meta-BjSszZRv.js","assets/MainLayout-EzpIVyJg.js","assets/use-quasar-DT2sBvaY.js","assets/MainLayout-BvSd311F.css","assets/MKS_Part_Details-B1vuRIbp.js","assets/MKS_Part_Details-DPiMcqxJ.css","assets/MKS_Tag_Details-fj_iNhlr.js","assets/register-global-components-DLWnQpsv.js","assets/register-global-components-DIW3Pasc.css","assets/markdown-load-css-Ld-8w1cp.css"])))=>i.map(i=>d[i]);
 const scriptRel = /* @__PURE__ */ function detectScriptRel() {
   const relList = typeof document !== "undefined" && document.createElement("link").relList;
   return relList && relList.supports && relList.supports("modulepreload") ? "modulepreload" : "preload";
@@ -19075,19 +19075,19 @@ const childrenCommon = [
     title: "Parts",
     icon: "precision_manufacturing",
     path: "/",
-    component: () => __vitePreload(() => import("./MKS_Parts-Dx3WWBMa.js"), true ? __vite__mapDeps([0,1,2,3,4,5,6,7,8,9,10]) : void 0)
+    component: () => __vitePreload(() => import("./MKS_Parts-Bpm_7h7X.js"), true ? __vite__mapDeps([0,1,2,3,4,5,6,7,8,9,10]) : void 0)
   },
   {
     title: "Tags",
     icon: "precision_manufacturing",
     path: "/tags",
-    component: () => __vitePreload(() => import("./MKS_Tags-CdihBgsx.js"), true ? __vite__mapDeps([11,1,2,3,4,5,12,6,7,8,9,13]) : void 0)
+    component: () => __vitePreload(() => import("./MKS_Tags-DDA3s4CE.js"), true ? __vite__mapDeps([11,1,2,3,4,5,12,6,7,8,9,13]) : void 0)
   },
   {
     title: "Glossar",
     icon: "precision_manufacturing",
     path: "/abbr/:id?",
-    component: () => __vitePreload(() => import("./MKS_Abbr-BQ4ZBCDQ.js"), true ? __vite__mapDeps([14,2,3,15,16,5]) : void 0),
+    component: () => __vitePreload(() => import("./MKS_Abbr-BFhYmmBq.js"), true ? __vite__mapDeps([14,2,3,15,16,5]) : void 0),
     props: true
   },
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -19097,13 +19097,13 @@ const childrenCommon = [
     // icon: 'mdi-information-variant',
     icon: "info",
     path: "about",
-    component: () => __vitePreload(() => import("./AboutPage-D7pcHdSd.js"), true ? __vite__mapDeps([17,5,9]) : void 0)
+    component: () => __vitePreload(() => import("./AboutPage-BGm7GxfI.js"), true ? __vite__mapDeps([17,5,9]) : void 0)
   },
   {
     title: "Settings",
     icon: "settings",
     path: "settings",
-    component: () => __vitePreload(() => import("./SettingsPage-DhXZX4SL.js"), true ? __vite__mapDeps([18,5]) : void 0)
+    component: () => __vitePreload(() => import("./SettingsPage-BOMQ89wN.js"), true ? __vite__mapDeps([18,5]) : void 0)
   },
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   // dev
@@ -19111,13 +19111,13 @@ const childrenCommon = [
     title: "MD-Demo",
     icon: "brush",
     path: "md-demo",
-    component: () => __vitePreload(() => import("./MDDemo-DKkra8wf.js"), true ? __vite__mapDeps([19,5]) : void 0)
+    component: () => __vitePreload(() => import("./MDDemo-B9ECIWK_.js"), true ? __vite__mapDeps([19,5]) : void 0)
   },
   {
     title: "MD-Dev",
     icon: "brush",
     path: "md-dev",
-    component: () => __vitePreload(() => import("./MDDev-EU-G36R2.js"), true ? __vite__mapDeps([20,5,8]) : void 0)
+    component: () => __vitePreload(() => import("./MDDev-YMVJmajl.js"), true ? __vite__mapDeps([20,5,8]) : void 0)
   },
   // {
   //     title: 'Convert `posts.json` to `reposData.json`',
@@ -19135,7 +19135,7 @@ const childrenCommon = [
     title: "Parts Meta-Data Table",
     icon: "brush",
     path: "tools-parts-meta",
-    component: () => __vitePreload(() => import("./parts-meta-BbJCpuGC.js"), true ? __vite__mapDeps([21,5,7,8,9]) : void 0)
+    component: () => __vitePreload(() => import("./parts-meta-BjSszZRv.js"), true ? __vite__mapDeps([21,5,7,8,9]) : void 0)
   }
   // {
   //     title: "MDGlob",
@@ -19171,7 +19171,7 @@ const childrenCommon = [
 const routes = [
   {
     path: "/",
-    component: () => __vitePreload(() => import("./MainLayout-BWneTMfn.js"), true ? __vite__mapDeps([22,15,3,16,23,6,24]) : void 0),
+    component: () => __vitePreload(() => import("./MainLayout-EzpIVyJg.js"), true ? __vite__mapDeps([22,15,3,16,23,6,24]) : void 0),
     children: [
       // {
       //     path: 'part',
@@ -19182,12 +19182,12 @@ const routes = [
       // routes wihtout menu entries
       {
         path: "part/:part_name",
-        component: () => __vitePreload(() => import("./MKS_Part_Details-DdROHViK.js"), true ? __vite__mapDeps([25,5,7,8,9,6,26]) : void 0),
+        component: () => __vitePreload(() => import("./MKS_Part_Details-B1vuRIbp.js"), true ? __vite__mapDeps([25,5,7,8,9,6,26]) : void 0),
         props: true
       },
       {
         path: "tag/:tag_name?",
-        component: () => __vitePreload(() => import("./MKS_Tag_Details-BVcQeMhM.js"), true ? __vite__mapDeps([27,5,12,6,7,8,9]) : void 0),
+        component: () => __vitePreload(() => import("./MKS_Tag_Details-fj_iNhlr.js"), true ? __vite__mapDeps([27,5,12,6,7,8,9]) : void 0),
         props: true
       },
       // add children that with menu-entries
@@ -19201,7 +19201,7 @@ const routes = [
   // but you can also remove it
   {
     path: "/:catchAll(.*)*",
-    component: () => __vitePreload(() => import("./ErrorNotFound-DQprWmEu.js"), true ? [] : void 0)
+    component: () => __vitePreload(() => import("./ErrorNotFound-D1A5793b.js"), true ? [] : void 0)
   }
 ];
 const createRouter = route(function() {
@@ -21033,9 +21033,9 @@ createQuasarApp(createApp, quasarUserOptions).then((app) => {
     (bootFiles) => bootFiles.map((entry) => entry.default)
   ];
   return Promise[method]([
-    __vitePreload(() => import("./i18n-B1gjbR4T.js"), true ? [] : void 0),
-    __vitePreload(() => import("./addressbar-color-NKTJwx8g.js"), true ? [] : void 0),
-    __vitePreload(() => import("./register-global-components-CtRHKtrY.js").then((n) => n.a), true ? __vite__mapDeps([28,23,16,4,6,29]) : void 0),
+    __vitePreload(() => import("./i18n-CRRNbz2l.js"), true ? [] : void 0),
+    __vitePreload(() => import("./addressbar-color-BbfPQAtN.js"), true ? [] : void 0),
+    __vitePreload(() => import("./register-global-components-DLWnQpsv.js").then((n) => n.a), true ? __vite__mapDeps([28,23,16,4,6,29]) : void 0),
     __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([30]) : void 0)
   ]).then((bootFiles) => {
     const boot2 = mapFn(bootFiles).filter((entry) => typeof entry === "function");

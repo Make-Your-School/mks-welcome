@@ -40,9 +40,9 @@ Durch die große Beliebtheit des Arduino in der wachsenden Community lässt sich
 
 Der Arduino UNO ist ein Mikrocontroller, der ursprünglich speziell für Bildungszwecke entwickelt wurde. Durch die einfache Programmierung und den niedrigen Preis hat er allerdings sehr schnell auch in anderen Branchen an Beliebtheit gewonnen. Sowohl Wissenschaftler\*innen als auch Studierende, Hobby-Bastler\*innen, DIY-Begeisterte und viele mehr setzen den Mikrocontroller ein, um unterschiedlichste automatisierte Projekte umzusetzen.
 
-https://www.youtube.com/watch?v=GQw20v8Qls0
+@[youtube](https://www.youtube.com/watch?v=GQw20v8Qls0)
 
-https://www.youtube.com/watch?v=EEa-0fhb2WA
+@[youtube](https://www.youtube.com/watch?v=EEa-0fhb2WA)
 
 <!-- infolist -->
 
