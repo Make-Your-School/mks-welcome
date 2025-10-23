@@ -35,6 +35,7 @@ export const childrenCommon = [
         path: 'settings',
         component: () => import('pages/SettingsPage.vue'),
     },
+
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // dev
     {
@@ -50,17 +51,23 @@ export const childrenCommon = [
         component: () => import('pages/dev/MDDev.vue'),
     },
 
+    // {
+    //     title: 'Convert `posts.json` to `reposData.json`',
+    //     icon: 'brush',
+    //     path: 'tools-convert-posts-to-reposData',
+    //     component: () => import('pages/tools/convert-posts-to-repos.vue'),
+    // },
+    // {
+    //     title: 'edit `reposData.json`',
+    //     icon: 'brush',
+    //     path: 'tools-edit-data',
+    //     component: () => import('pages/tools/edit_data.vue'),
+    // },
     {
-        title: 'Convert `posts.json` to `reposData.json`',
+        title: 'Parts Meta-Data Table',
         icon: 'brush',
-        path: 'tools-convert-posts-to-reposData',
-        component: () => import('pages/tools/convert-posts-to-repos.vue'),
-    },
-    {
-        title: 'edit `reposData.json`',
-        icon: 'brush',
-        path: 'tools-edit-data',
-        component: () => import('pages/tools/edit_data.vue'),
+        path: 'tools-parts-meta',
+        component: () => import('pages/tools/parts-meta.vue'),
     },
     // {
     //     title: "MDGlob",
@@ -132,4 +139,4 @@ const routes = [
     },
 ]
 
-export default routes;
+export default routes

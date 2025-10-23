@@ -1,5 +1,7 @@
 import MarkdownItPluginCodeAsMDCode from './src/components/markdown-it-plugins/markdown-it-plugin-code-as-mdcode'
 
+import MarkdownItPluginYoutubeAsYTEmbed from './src/components/markdown-it-plugins/markdown-it-plugin-youtube-as-YTEmbed.js'
+
 import MarkdownItPluginAbbrAsMDAbbr from './src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr.js'
 import { mksAbbrLoadNodeJS } from './src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr.js'
 export const mksAbbrCollection = mksAbbrLoadNodeJS()
@@ -22,6 +24,7 @@ import { mditPluginEmbedCodeNodejs } from './src/components/markdown-it-plugins/
 const markdownItSetup = async (md) => {
     // md.use(mditPluginRemoveTitleAndCoverImage, {})
     md.use(MarkdownItPluginCodeAsMDCode, {})
+    md.use(MarkdownItPluginYoutubeAsYTEmbed, {})
 
     md.use(MarkdownItPluginAbbrAsMDAbbr, {
         abbreviations: mksAbbrCollection,
