@@ -1,7 +1,7 @@
 <template>
     <!-- <q-page class="flex flex-center content-stretch"> -->
     <!-- class="col" style="min-height: 0" -->
-    <q-page>
+    <q-page class="part-detail-page">
         <q-btn
             flat
             dense
@@ -67,6 +67,8 @@ const coverImage = `../${part.path_base}/${part.meta.coverImage}`
 </script>
 
 <style lang="sass" scoped>
+.part-detail-page
+    padding: 1em
 .back
     display: block
     margin-left: 3em
