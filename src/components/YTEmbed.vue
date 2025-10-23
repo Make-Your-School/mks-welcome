@@ -1,56 +1,80 @@
 <template>
-    <div>
+    <div class="video-embed">
+        <!-- <p>{{ videoid }}</p> -->
+        <!-- :src="src" -->
         <iframe
-            v-if="allowService"
+            v-if="consent.videoService[service] || consent.videoLoaded[videoid]"
             type="text/html"
             width="560"
             height="315"
-            :src="src"
             title="YouTube video player"
             frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
         ></iframe>
         <div v-else class="question">
             <p>
-                Diesen {{ service }} content musst du erst erlauben. Durch das Erlauben gelten die
-                Bedinungen von {{ service }}. hiermit erlangt dieser service zugriff auf dein
-                Browser-Verhalten.
+                Diesen {{ service }} content musst du erst erlauben. <br />
+                Durch das Erlauben gelten die Bedienungen des {{ service }}. <br />
+                Dadurch erlangt dieser Service zugriff auf dein Browser-Verhalten / Nutzer-Daten.
             </p>
-            <q-btn :label="`Lade ${service} content`" @click="allowService = true" />
+            <q-checkbox
+                v-model="allowServiceAll"
+                :label="`${service} für diese Session erlauben?`"
+                checked-icon="task_alt"
+                unchecked-icon="highlight_off"
+            />
+            <br />
+            <q-btn :label="`Lade ${service} content`" @click="handleAllow" />
         </div>
     </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-const allowService = ref(false)
+import { useConsentStore } from 'stores/consent'
+// import { storeToRefs } from 'pinia';
 
-// const props = defineProps({
-defineProps({
+const consent = useConsentStore()
+
+const allowServiceAll = ref(false)
+
+const props = defineProps({
     service: String,
-    videoId: String,
+    videoid: String,
     src: String,
     options: String,
 })
 // console.log('---')
-// console.log('props.service', props.videoId)
-// console.log('props.videoId', props.videoId)
-// console.log('props.src', props.src)
 // console.log('props.options', props.options)
+
+// function handleAllow(event) {
+function handleAllow() {
+    // console.log('props.service', props.videoid)
+    // console.log('props.src', props.src)
+    // console.log('props.videoid', props.videoid)
+    consent.videoLoaded[props.videoid] = true
+    console.log(`allow '${props.service}' globally? `, allowServiceAll.value)
+    consent.videoService[props.service] = allowServiceAll.value
+}
 </script>
 
 <style lang="sass" scoped>
-.question
+.video-embed
     display: block
     width: 560px
     height: 315px
-    padding: 2em
     background: var(--card-fill)
+.question
+    display: block
+    width: 100%
+    height: 100%
+    padding: 2em
+    font-size: 0.7em
     display: flex
-    flex-direction: row
-    flex-wrap: wrap
+    flex-direction: column
+    flex-wrap: nowrap
     justify-content: center
     align-content: center
     align-items: center

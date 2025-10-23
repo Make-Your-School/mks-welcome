@@ -138,11 +138,12 @@ function tokenizeVideo(md, options) {
         const videoID = md.utils.escapeHtml(tokens[idx].videoID)
         const service = md.utils.escapeHtml(tokens[idx].service).toLowerCase()
         const url = options.url(service, videoID, tokens[idx].url, options)
-        // console.log(service)
+        console.log('videoID', videoID)
+        console.log('service', service)
         // console.log(options)
         return videoID === ''
             ? ''
-            : `<YTEmbed service="${service}" videoID="${videoID}" src="${url}"></YTEmbed>`
+            : `<YTEmbed service="${service}" videoid="${videoID}" src="${url}"></YTEmbed>`
     }
 
     return tokenizeReturn
