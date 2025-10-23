@@ -1,9 +1,12 @@
-.back[data-v-6ff69f06] {
+.part-detail-page[data-v-5282febc] {
+  padding: 1em;
+}
+.back[data-v-5282febc] {
   display: block;
   margin-left: 3em;
   cursor: pointer;
 }
-header[data-v-6ff69f06] {
+header[data-v-5282febc] {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -12,7 +15,7 @@ header[data-v-6ff69f06] {
   align-items: center;
   margin-top: 1em;
 }
-header .info[data-v-6ff69f06] {
+header .info[data-v-5282febc] {
   order: 0;
   flex: 0 1 auto;
   align-self: auto;
@@ -23,16 +26,16 @@ header .info[data-v-6ff69f06] {
   align-content: center;
   align-items: center;
 }
-header .info .material_number[data-v-6ff69f06] {
+header .info .material_number[data-v-5282febc] {
   position: relative;
   margin-bottom: 1em;
 }
-header .info .title[data-v-6ff69f06] {
+header .info .title[data-v-5282febc] {
   margin: 0;
   text-align: center;
   font-size: var(--display-large);
 }
-header img[data-v-6ff69f06] {
+header img[data-v-5282febc] {
   max-width: 100vw;
   max-height: 35rem;
 }.part-content > h1 {

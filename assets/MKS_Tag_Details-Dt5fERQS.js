@@ -1,10 +1,10 @@
-import { Q as QPage } from "./QPage-BwHin3ii.js";
-import { H as createBlock, v as openBlock, a0 as withCtx, j as createVNode, a3 as resolveDynamicComponent, n as unref } from "./index-CwyaBHP_.js";
-import { T as TagBauteilListe } from "./TagBauteilListe-R_r0C4wg.js";
-import { u as useMDContentStore } from "./mdContent-CYadVMcI.js";
+import { Q as QPage } from "./QPage-BTQveDCV.js";
+import { H as createBlock, v as openBlock, a0 as withCtx, j as createVNode, a3 as resolveDynamicComponent, n as unref } from "./index-CbhmIho7.js";
+import { T as TagBauteilListe } from "./TagBauteilListe-XgwA6Smr.js";
+import { u as useMDContentStore } from "./mdContent-DHcyvepO.js";
 import "./_plugin-vue_export-helper-1tPrXgE0.js";
-import "./readme-MGCw-G29.js";
-import "./about-mpzVp-zn.js";
+import "./readme-C4uGm4FI.js";
+import "./about-CNQHi2_r.js";
 const _sfc_main = {
   __name: "MKS_Tag_Details",
   props: {

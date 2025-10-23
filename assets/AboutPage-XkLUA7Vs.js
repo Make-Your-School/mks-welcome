@@ -1,6 +1,6 @@
-import { Q as QPage } from "./QPage-BwHin3ii.js";
-import { H as createBlock, v as openBlock, a0 as withCtx, l as createBaseVNode, E as toDisplayString, n as unref, D as createTextVNode, a3 as resolveDynamicComponent } from "./index-CwyaBHP_.js";
-import { a as about } from "./about-mpzVp-zn.js";
+import { Q as QPage } from "./QPage-BTQveDCV.js";
+import { H as createBlock, v as openBlock, a0 as withCtx, l as createBaseVNode, E as toDisplayString, n as unref, D as createTextVNode, a3 as resolveDynamicComponent } from "./index-CbhmIho7.js";
+import { a as about } from "./about-CNQHi2_r.js";
 var define_process_env_appinfo_default = { name: "mks-welcome", version: "0.1.1", productName: "MYS MKS", description: "evolution of the material-website", projectUrl: "https://github.com/Make-Your-School/mks-welcome/", previewUrl: "https://make-your-school.github.io/mks-welcome/" };
 const _hoisted_1 = ["href"];
 const _hoisted_2 = ["href"];

@@ -1,9 +1,9 @@
-import { H as createBlock, v as openBlock, a0 as withCtx, j as createVNode, l as createBaseVNode, D as createTextVNode, a1 as QBtn, E as toDisplayString, n as unref, a3 as resolveDynamicComponent } from "./index-CwyaBHP_.js";
-import { Q as QPage } from "./QPage-BwHin3ii.js";
-import { u as useMDContentStore } from "./mdContent-CYadVMcI.js";
+import { H as createBlock, v as openBlock, a0 as withCtx, j as createVNode, l as createBaseVNode, D as createTextVNode, a1 as QBtn, E as toDisplayString, n as unref, a3 as resolveDynamicComponent } from "./index-CbhmIho7.js";
+import { Q as QPage } from "./QPage-BTQveDCV.js";
+import { u as useMDContentStore } from "./mdContent-DHcyvepO.js";
 import { _ as _export_sfc } from "./_plugin-vue_export-helper-1tPrXgE0.js";
-import "./readme-MGCw-G29.js";
-import "./about-mpzVp-zn.js";
+import "./readme-C4uGm4FI.js";
+import "./about-CNQHi2_r.js";
 const _hoisted_1 = { class: "info" };
 const _hoisted_2 = { class: "material_number" };
 const _hoisted_3 = { class: "title" };
@@ -25,7 +25,7 @@ const _sfc_main = {
     const mysLink = location.href;
     const coverImage = `../${part.path_base}/${part.meta.coverImage}`;
     return (_ctx, _cache) => {
-      return openBlock(), createBlock(QPage, null, {
+      return openBlock(), createBlock(QPage, { class: "part-detail-page" }, {
         default: withCtx(() => [
           createVNode(QBtn, {
             flat: "",
@@ -61,7 +61,7 @@ const _sfc_main = {
     };
   }
 };
-const MKS_Part_Details = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-6ff69f06"]]);
+const MKS_Part_Details = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-5282febc"]]);
 export {
   MKS_Part_Details as default
 };
