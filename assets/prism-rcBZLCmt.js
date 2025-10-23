@@ -1,4 +1,4 @@
-import { c as commonjsGlobal, g as getDefaultExportFromCjs } from "./register-global-components-rUfyEJUL.js";
+import { c as commonjsGlobal, g as getDefaultExportFromCjs } from "./register-global-components-CtRHKtrY.js";
 function _mergeNamespaces(n, m) {
   for (var i = 0; i < m.length; i++) {
     const e = m[i];

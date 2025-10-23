@@ -43,7 +43,7 @@ schau dir das Minimal-Beispiel an:
 
 <!-- infolist -->
 
-<iframe title="YouTube video player" src="https://www.youtube.com/embed/A4VYpebn1BQ" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+@[youtube](https://www.youtube.com/embed/A4VYpebn1BQ)
 
  
 

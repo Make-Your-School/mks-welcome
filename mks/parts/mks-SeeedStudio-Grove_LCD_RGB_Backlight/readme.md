@@ -38,7 +38,7 @@ schau dir das Minimal-Beispiel an:
 
 <!-- infolist -->
 
-https://www.youtube.com/watch?v=PWh7wkT2Dog
+@[youtube](https://www.youtube.com/watch?v=PWh7wkT2Dog)
 
  
 

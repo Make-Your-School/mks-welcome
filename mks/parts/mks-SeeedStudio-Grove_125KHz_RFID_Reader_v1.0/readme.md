@@ -41,7 +41,7 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.
 
 
-https://www.youtube.com/watch?v=dJXTgtIMUPw
+@[youtube](https://www.youtube.com/watch?v=dJXTgtIMUPw)
 
 
 ## Anschlüsse
@@ -91,7 +91,7 @@ Der Beispiel-Code ist (vorerst) im Ordner "examples" zu finden.
 
 ### Video
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dJXTgtIMUPw?si=BcOwoU9WhtPMKLse" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+@[youtube](https://www.youtube.com/embed/dJXTgtIMUPw?si=BcOwoU9WhtPMKLse)
 
 ## Siehe Auch
 

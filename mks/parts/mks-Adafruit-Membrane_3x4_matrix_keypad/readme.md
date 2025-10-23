@@ -29,7 +29,7 @@ Das Tastenfeld findet beispielsweise als Eingabebereich für einen selbstgebaute
 
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf der Produktseite zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen.
 
-https://www.youtube.com/watch?v=KKbfTAG5HsU
+@[youtube](https://www.youtube.com/watch?v=KKbfTAG5HsU)
 
 
 <!-- currently no valid example available...

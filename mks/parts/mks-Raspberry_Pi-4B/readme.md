@@ -31,7 +31,7 @@ Er wurde entwickelt, um den Heimcomputer in seiner ursprünglichen Form als Expe
 
 Neben Python existieren weitere Programmiersprachen und -umgebungen, die die Programmierung spezieller Anwendungen erleichtern. Eine erwähnenswerte Alternative vor allem im Bereich IoT ist „Node-RED“. Node-RED setzt hauptsächlich auf eine grafische Programmierung. Die meisten Befehle sind bereits als fertige Blöcke in der Programmierumgebung vorhanden und können sehr leicht wie in einem virtuellen Puzzle miteinander verbunden werden.
 
-https://www.youtube.com/watch?v=HD0ZA1D2aNg
+@[youtube](https://www.youtube.com/watch?v=HD0ZA1D2aNg)
 
 
 

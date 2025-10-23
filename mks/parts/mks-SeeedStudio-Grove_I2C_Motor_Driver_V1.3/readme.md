@@ -45,7 +45,7 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 Programmierung und RESET: Beim Heraufladen eines Programms auf einen Mikrocontroller über einen Computeranschluss („Upload-Vorgang“) wird der Mikrocontroller automatisch kurz vom Strom getrennt, damit das neu geladene Programm komplett von vorne ablaufen kann. Der hier vorliegende Motortreiber wird aber zusätzliche mit einer externen Stromquelle betrieben, zum Beispiel mit einem Netzteil oder einem Akku. Sind Motortreiber, externe Stromquelle und Mikrocontroller während des Upload-Vorgangs miteinander verbunden, kommt es teilweise zu Problemen. Der Grund ist, dass der Mikrocontroller nicht richtig vom Strom getrennt werden kann, wenn er (zusätzlich zur Stromversorgung über einen Computer) an einer externen Stromquelle hängt. Deshalb sollte man Mikrocontroller und Motortreiber während des Upload-Vorgangs von allen Stromquellen außer dem PC-Anschluss trennen. Soll der Mikrocontroller resettet werden, also in den Ausgangszustand versetzt werden, sollte er ebenfalls von allen externen **Stromquellen getrennt werden**.
 
 
-https://www.youtube.com/watch?v=wVxcmO2YuxA
+@[youtube](https://www.youtube.com/watch?v=wVxcmO2YuxA)
 
 
 ## Anschlüsse

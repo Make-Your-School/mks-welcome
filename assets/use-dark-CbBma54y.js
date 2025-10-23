@@ -1,4 +1,4 @@
-import { c as computed } from "./index-CYuG1cOH.js";
+import { c as computed } from "./index-B0d0Cx_0.js";
 const useDarkProps = {
   dark: {
     type: Boolean,

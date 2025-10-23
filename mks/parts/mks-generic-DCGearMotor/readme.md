@@ -30,7 +30,7 @@ Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwen
 
  
 
-https://www.youtube.com/watch?v=wVxcmO2YuxA
+@[youtube](https://www.youtube.com/watch?v=wVxcmO2YuxA)
 
 
 <!-- currently no valid example available...

@@ -31,7 +31,7 @@ Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwen
 
 <!-- infolists -->
 
-https://www.youtube.com/watch?v=wVxcmO2YuxA
+@[youtube](https://www.youtube.com/watch?v=wVxcmO2YuxA)
 
 ## Wichtige Links für die ersten Schritte:
 
