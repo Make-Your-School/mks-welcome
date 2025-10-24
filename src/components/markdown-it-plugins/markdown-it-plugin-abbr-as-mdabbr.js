@@ -114,7 +114,7 @@ export default function abbr_plugin(md, opts) {
     const UNICODE_PUNCT_RE = md.utils.lib.ucmicro.P.source;
     const UNICODE_SPACE_RE = md.utils.lib.ucmicro.Z.source;
 
-    function abbr_def(state, startLine, endLine, silent) {
+    function abbr_scan_for_def(state, startLine, endLine, silent) {
         let labelEnd;
         let pos = state.bMarks[startLine] + state.tShift[startLine];
         const max = state.eMarks[startLine];
@@ -312,7 +312,7 @@ export default function abbr_plugin(md, opts) {
         }
     }
 
-    md.block.ruler.before("reference", "abbr_def", abbr_def, { alt: ["paragraph", "reference"] });
+    md.block.ruler.before("reference", "abbr_scan_for_def", abbr_scan_for_def, { alt: ["paragraph", "reference"] });
 
     md.core.ruler.after("linkify", "abbr_replace", abbr_replace);
 

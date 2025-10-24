@@ -22,6 +22,7 @@ const RE_INFO = /(?<codeLang>.*?)\s?:(?<codeFilePath>.*)/;
  *
  *  // please look at ./relative/file/to/your/code.cpp
  * ```
+ * ```
  * @module embedCode
  * @param {MarkdownItTokens} tokens - MarkdownIt instance
  * @param {MarkdownItOptions} options - options Object

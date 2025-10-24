@@ -2,6 +2,7 @@ import { defineBoot } from '#q-app/wrappers'
 
 import MDCode from 'src/components/MDComponents/MDCode.vue'
 import MDAbbr from 'src/components/MDComponents/MDAbbr.vue'
+import MDExamples from 'src/components/MDComponents/MDExamples.vue'
 import YTEmbed from 'src/components/YTEmbed.vue'
 
 // "async" is optional;
@@ -11,5 +12,6 @@ export default defineBoot(async ({ app }) => {
   // register global components
   app.component('MDCode', MDCode)
   app.component('MDAbbr', MDAbbr)
+  app.component('MDExamples', MDExamples)
   app.component('YTEmbed', YTEmbed)
 })

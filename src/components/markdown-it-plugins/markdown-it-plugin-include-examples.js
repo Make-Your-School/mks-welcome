@@ -1,331 +1,206 @@
-// source / based on
+// based & inspired by
+// https://github.com/rotorz/markdown-it-block-embed/blob/master/lib/tokenizer.js
+//   Copyright (c) Rotorz Limited and portions by original markdown-it-video authors
+//   Licensed under the MIT license. See LICENSE file in the project root.
+// https://github.com/seanWLawrence/markdown-it-plugin-data-src/
+// https://github.com/camelaissani/markdown-it-include
+// https://github.com/tokusumi/markdown-embed-code
 // https://github.com/markdown-it/markdown-it-abbr/blob/master/index.mjs
 
-// Enclose abbreviations in <MDAbbr> component
+import md2html from './markdown-rendering.js'
 
-// import { mksAbbrCollection } from "src/content_md/mksAbbr";
+import fs from 'node:fs'
+import path from 'node:path'
 
-// export const mksAbbrCollection = {}
+export const loadExample = (examplePath) => {
+    // find all files belonging to one example folder.
+    // return object with contents..
+    console.group('loadExample')
+    let exampleFiles = {}
 
-import md2html from "./markdown-rendering.js";
+    // https://nodejs.org/docs/latest/api/fs.html#fsreaddirsyncpath-options
+    const files = fs.readdirSync(examplePath, { recursive: false })
+    console.log('files', files)
+    for (const filePath of files) {
+        console.log('filePath', filePath)
+        const filePathExt = path.extname(filePath)
+        console.log(`filePathExt: '${filePathExt}'`)
+        const itemName = path.basename(filePath, filePathExt)
+        console.log(`itemName: '${itemName}'`)
+        let data = fs.readFileSync(filePath, 'utf8')
+        if (filePathExt == 'md') {
+            data = md2html(data)
+        }
+        console.log('data', data)
+        // exampleFiles[itemName] = data
+        exampleFiles[itemName] = {}
+        exampleFiles[itemName].name = itemName
+        exampleFiles[itemName].filePath = filePath
+        exampleFiles[itemName].fileExt = filePathExt
+        exampleFiles[itemName].content = data
+    }
+    // console.log('exampleFiles:', exampleFiles)
+    console.log('exampleFiles:', Object.keys(exampleFiles))
+    console.groupEnd()
+    return exampleFiles
+}
 
-// import { glob } from 'node:fs/promises'
-import fs from "node:fs";
-import path from "node:path";
+const getDirectories = (source) =>
+    fs
+        .readdirSync(source, { withFileTypes: true })
+        .filter((dirent) => dirent.isDirectory())
+        .map((dirent) => dirent.name)
 
-export const mksAbbrLoadNodeJS = () => {
-    // console.group('mksAbbrLoadNodeJS')
-    let mksAbbrList = {};
+export const loadExamplesFolder = (basePath) => {
+    console.group('loadExamplesFolder')
+    let examples = {}
 
     // https://nodejs.org/docs/latest/api/fs.html#fsglobsyncpattern-options
     // console.log('process.cwd()', process.cwd())
-    // const items_dir = globSync(`../../md_content/abbr/*.md`)
-    // const files = fs.globSync(`src/md_content/abbr/*.md`);
-    const files = fs.globSync(`public/mks/abbr/*.md`);
-    // console.log('files', files)
-    for (const filePath of files) {
-        // console.log('filePath', filePath)
-        const data = fs.readFileSync(filePath, "utf8");
-        // console.log('data', data)
-        const item_name = path.basename(filePath, path.extname(filePath));
-        // console.log(`item_name: '${item_name}'`)
-        const abbrDescription = md2html(data);
-        mksAbbrList[item_name] = abbrDescription;
-        // mksAbbrList[item_name] = {}
-        // mksAbbrList[item_name].name = item_name
-        // mksAbbrList[item_name].path_readme = filePath
-        // mksAbbrList[item_name].content =
-        // console.log('mksAbbrList[item_name].content', mksAbbrList[item_name].content)
-    }
-    // console.log('mksAbbrList:', mksAbbrList)
-    console.log("mksAbbrList:", Object.keys(mksAbbrList));
-    console.groupEnd();
-    return mksAbbrList;
-};
+    console.log('basePath', basePath)
+    const dirs = fs.readdirSync(basePath, { recursive: true })
+    console.log('dirs', dirs)
+    const dirs1 = fs.readdirSync(basePath, { recursive: true, withFileTypes: true })
+    console.log('dirs1', dirs1)
+    console.log(
+        'dirs1 filtered',
+        dirs1.filter((dirent) => dirent.isDirectory()),
+    )
 
-// export const mksAbbrLoadWeb = () => {
-export const mksAbbrLoad = () => {
-    // console.group("mksAbbrLoad");
+    const dirs2 = getDirectories(basePath)
+    console.log('dirs2', dirs2)
 
-    let mksAbbrList = {};
-    const items_dir = import.meta.glob(`../../../public/mks/abbr/*.md`, {
-        // query: "?url&raw",
-        // query: "?raw",
-        eager: true,
-    });
-    // console.log("items_dir", items_dir);
-    // const path_regex = new RegExp(`\.\.\/\.\.\/public\/mks\/abbr\/(?<item_name>.*)\.md`);
-    const path_regex = new RegExp(`../../../public/mks/abbr/(?<item_name>.*).md`);
-    // /src/components/markdown-it-plugins/markdown-it-plugin-abbr-as-mdabbr.js
-    // /public/mks/abbr/HTML.md
+    // for (const filePath of files) {
+    //     // console.log('filePath', filePath)
+    //     const data = fs.readFileSync(filePath, "utf8");
+    //     // console.log('data', data)
+    //     const itemName = path.basename(filePath, path.extname(filePath));
+    //     // console.log(`itemName: '${itemName}'`)
+    //     const abbrDescription = md2html(data);
+    //     examples[itemName] = abbrDescription;
 
-    // console.log("path_regex", path_regex);
-    for (const path in items_dir) {
-        console.log("path", path);
-        console.log("items_dir[path]", items_dir[path]);
-        const { item_name } = path_regex.exec(path).groups;
-        console.log(`item_name: '${item_name}'`);
-        mksAbbrList[item_name] = {};
-        mksAbbrList[item_name].name = item_name;
-        mksAbbrList[item_name].path_readme = path;
-        mksAbbrList[item_name].path_base = `mks/abbr/`;
-        mksAbbrList[item_name].content = items_dir[path].default;
-        // const content = preProcessingMD(
-        //     items_dir[path].default,
-        //     mksAbbrList[item_name].path_base
-        // );
-        // console.log(`mksAbbrList['${item_name}'] content:`, content);
-        // mksAbbrList[item_name].content = content;
-        // console.log(`${item_name} '${mksAbbrList[item_name].path_base}'`);
-    }
-    console.log("mksAbbrList:", mksAbbrList);
-    // console.log("mksAbbrList:", Object.keys(mksAbbrList));
-    console.groupEnd();
-    return mksAbbrList;
-};
+    //     loadExample()
+    // }
+    // // console.log('examples:', examples)
+    // console.log("examples:", Object.keys(examples));
+    console.groupEnd()
+    return examples
+}
 
-// export const mksAbbrLoad = () => {
-//     console.log("import.meta.env.MODE", import.meta.env.MODE);
-// }
 
-export default function abbr_plugin(md, opts) {
-    // console.log(`MarkdownItPluginAbbrAsMDAbbr.abbr_plugin`);
-    const opts_defaults = {
-        abbreviations: {},
-    };
+// @show-examples:./path-to-folder/
+const SYNTAX_CHARS = '!!!show-examples:'.split('')
+const SYNTAX_CODES = SYNTAX_CHARS.map((char) => char.charCodeAt(0))
 
-    opts = Object.assign({}, opts_defaults, opts);
-    // console.log("opts", opts);
-    // console.log('mksAbbrCollection', mksAbbrCollection)
-    // console.log('opts.abbreviations', opts.abbreviations)
-    opts.abbreviations = Object.fromEntries(
-        Object.entries(opts.abbreviations).map(([key, value]) => [`:${key}`, value]),
-    );
-    // console.log('opts.abbreviations', opts.abbreviations)
+function tokenizer(state, startLine, endLine, silent) {
+    let startPos = state.bMarks[startLine] + state.tShift[startLine]
+    let maxPos = state.eMarks[startLine]
 
-    const escapeRE = md.utils.escapeRE;
-    const arrayReplaceAt = md.utils.arrayReplaceAt;
+    let pointer = { line: startLine, pos: startPos }
 
-    // ASCII characters in Cc, Sc, Sm, Sk categories we should terminate on;
-    // you can check character classes here:
-    // http://www.unicode.org/Public/UNIDATA/UnicodeData.txt
-    const OTHER_CHARS = " \r\n$+<=>^`|~";
-
-    const UNICODE_PUNCT_RE = md.utils.lib.ucmicro.P.source;
-    const UNICODE_SPACE_RE = md.utils.lib.ucmicro.Z.source;
-
-    function abbr_def(state, startLine, endLine, silent) {
-        let labelEnd;
-        let pos = state.bMarks[startLine] + state.tShift[startLine];
-        const max = state.eMarks[startLine];
-
-        if (pos + 2 >= max) {
-            return false;
-        }
-
-        if (state.src.charCodeAt(pos++) !== 0x2a /* * */) {
-            return false;
-        }
-        if (state.src.charCodeAt(pos++) !== 0x5b /* [ */) {
-            return false;
-        }
-
-        const labelStart = pos;
-
-        for (; pos < max; pos++) {
-            const ch = state.src.charCodeAt(pos);
-            if (ch === 0x5b /* [ */) {
-                return false;
-            } else if (ch === 0x5d /* ] */) {
-                labelEnd = pos;
-                break;
-            } else if (ch === 0x5c /* \ */) {
-                pos++;
-            }
-        }
-
-        if (labelEnd < 0 || state.src.charCodeAt(labelEnd + 1) !== 0x3a /* : */) {
-            return false;
-        }
-
-        if (silent) {
-            return true;
-        }
-
-        const label = state.src.slice(labelStart, labelEnd).replace(/\\(.)/g, "$1");
-        const title = state.src.slice(labelEnd + 2, max).trim();
-        if (label.length === 0) {
-            return false;
-        }
-        if (title.length === 0) {
-            return false;
-        }
-        if (!opts.abbreviations) {
-            opts.abbreviations = {};
-        }
-        // prepend ':' to avoid conflict with Object.prototype members
-        if (typeof opts.abbreviations[":" + label] === "undefined") {
-            opts.abbreviations[":" + label] = title;
-        }
-
-        state.line = startLine + 1;
-        return true;
+    // Block must be at start of input or the previous line must be blank.
+    if (startLine !== 0) {
+        let prevLineStartPos = state.bMarks[startLine - 1] + state.tShift[startLine - 1]
+        let prevLineMaxPos = state.eMarks[startLine - 1]
+        if (prevLineMaxPos > prevLineStartPos) return false
     }
 
-    function abbr_replace(state) {
-        // console.log(`MarkdownItPluginAbbrAsMDAbbr.abbr_replace`);
-        const blockTokens = state.tokens;
+    // Identify as being a potential block.
+    if (maxPos - startPos < 2) return false
 
-        // const mksAbbrTemp = mksAbbrLoad()
-        // console.log('mksAbbrTemp', mksAbbrTemp)
-        // // console.log("mksAbbrCollection", mksAbbrCollection);
+    // check for SYNTAX_CHARS
+    for (const code of SYNTAX_CODES) {
+        if (code !== state.src.charCodeAt(pointer.pos++)) return false
+    }
+    // console.log(`mditPluginIncludeExamples.tokenizer: found start part.`)
 
-        if (!opts.abbreviations) {
-            console.log("!opts.abbreviations", !opts.abbreviations);
-            return;
-        }
-        // https://stackoverflow.com/questions/679915/how-do-i-test-for-an-empty-javascript-object
-        if (Object.keys(opts.abbreviations).length == 0) {
-            return;
-        }
-        // console.log('opts.abbreviations', opts.abbreviations)
+    // use rest of line as path
+    maxPos = state.eMarks[pointer.line]
+    let basePath = state.src.substr(pointer.pos, maxPos - pointer.pos).trim()
+    if (basePath == '') return false
+    pointer.pos = maxPos
+    // console.log(`basePath:`, basePath)
 
-        const regSimple = new RegExp(
-            "(?:" +
-                Object.keys(opts.abbreviations)
-                    .map(function (x) {
-                        return x.substr(1);
-                    })
-                    .sort(function (a, b) {
-                        return b.length - a.length;
-                    })
-                    .map(escapeRE)
-                    .join("|") +
-                ")",
-        );
-
-        const abbrList =
-            // "(?<abbr>" +
-            "(" +
-            Object.keys(opts.abbreviations)
-                .map(function (x) {
-                    return x.substr(1);
-                })
-                .sort(function (a, b) {
-                    return b.length - a.length;
-                })
-                .map(escapeRE)
-                .join("|") +
-            ")";
-        // console.log('abbrList', abbrList)
-
-        const regText =
-            "(^|" +
-            UNICODE_PUNCT_RE +
-            "|" +
-            UNICODE_SPACE_RE +
-            "|[" +
-            OTHER_CHARS.split("").map(escapeRE).join("") +
-            "])" +
-            abbrList +
-            "($|" +
-            UNICODE_PUNCT_RE +
-            "|" +
-            UNICODE_SPACE_RE +
-            "|[" +
-            OTHER_CHARS.split("").map(escapeRE).join("") +
-            "])";
-
-        // console.log("regText", regText);
-        const reg = new RegExp(regText, "g");
-
-        for (let j = 0, l = blockTokens.length; j < l; j++) {
-            if (blockTokens[j].type !== "inline") {
-                continue;
-            }
-            let tokens = blockTokens[j].children;
-
-            // We scan from the end, to keep position when new tags added.
-            for (let i = tokens.length - 1; i >= 0; i--) {
-                const currentToken = tokens[i];
-                if (currentToken.type !== "text") {
-                    continue;
-                }
-
-                let pos = 0;
-                const text = currentToken.content;
-                reg.lastIndex = 0;
-                const nodes = [];
-
-                // fast regexp run to determine whether there are any abbreviated words
-                // in the current token
-                if (!regSimple.test(text)) {
-                    continue;
-                }
-
-                let m;
-
-                while ((m = reg.exec(text))) {
-                    // console.log("m", m);
-                    if (m.index > 0 || m[1].length > 0) {
-                        const token = new state.Token("text", "", 0);
-                        token.content = text.slice(pos, m.index + m[1].length);
-                        nodes.push(token);
-                    }
-
-                    // const token_o = new state.Token("abbr_open", "abbr", 1);
-                    // token_o.attrs = [["title", opts.abbreviations[":" + m[2]]]];
-                    // nodes.push(token_o);
-
-                    const token_t = new state.Token("abbr", "MDAbbr", 0);
-                    token_t.content = m[2];
-                    if (token_t.meta == undefined) {
-                        token_t.meta = {
-                            abbrDescription: "",
-                        };
-                    }
-                    token_t.meta.abbrDescription = opts.abbreviations[":" + m[2]].toString();
-                    // token_t.attrJoin('abbrDescription', token_t.meta.abbrDescription)
-                    nodes.push(token_t);
-                    // console.log("token_t", token_t);
-
-                    // const token_c = new state.Token("abbr_close", "abbr", -1);
-                    // nodes.push(token_c);
-
-                    reg.lastIndex -= m[3].length;
-                    pos = reg.lastIndex;
-                }
-
-                if (!nodes.length) {
-                    continue;
-                }
-
-                if (pos < text.length) {
-                    const token = new state.Token("text", "", 0);
-                    token.content = text.slice(pos);
-                    nodes.push(token);
-                }
-
-                // replace current node
-                blockTokens[j].children = tokens = arrayReplaceAt(tokens, i, nodes);
-            }
-        }
+    // Block must be at end of input or the next line must be blank.
+    if (endLine !== pointer.line + 1) {
+        let nextLineStartPos = state.bMarks[pointer.line + 1] + state.tShift[pointer.line + 1]
+        let nextLineMaxPos = state.eMarks[pointer.line + 1]
+        if (nextLineMaxPos > nextLineStartPos) return false
     }
 
-    md.block.ruler.before("reference", "abbr_def", abbr_def, { alt: ["paragraph", "reference"] });
+    if (pointer.line >= endLine) return false
 
-    md.core.ruler.after("linkify", "abbr_replace", abbr_replace);
+    if (!silent) {
+        console.log(`mditPluginIncludeExamples.tokenizer found:`)
+        console.log(`  basePath '${basePath}'`)
+        console.log(`  markup `, state.src.slice(startPos, pointer.pos))
+        let token = state.push('include-examples', 'MDExamples', 0)
+        token.markup = state.src.slice(startPos, pointer.pos)
+        token.block = true
+        token.content = basePath
+        token.meta = {
+            basePath: basePath,
+        }
+        token.info = {
+            basePath: basePath,
+        }
+        token.map = [startLine, pointer.line + 1]
 
-    md.renderer.rules.abbr = function (tokens, idx, options, env, slf) {
-        // console.log(`MarkdownItPluginAbbrAsMDAbbr.abbr called`)
-        // the default rendering does escape html... we want it raw!
-        const token = tokens[idx];
-        // console.log(`token: `, token)
-        const resultHTML = `<${token.tag} ${slf.renderAttrs(token)}>
-        <template #default>${token.content}</template>
-        <template #abbrDescription>${token.meta?.abbrDescription}</template>
-        </${token.tag}>`;
-        // console.log(`resultHTML: `, resultHTML)
-        return resultHTML;
-    };
+        console.log(`  token`, token)
+
+        state.line = pointer.line + 1
+    }
+
+    return true
+}
+
+function renderer(tokens, idx, options, env, self, plugin_options) {
+    console.log(`mditPluginIncludeExamples.renderer called`)
+    const token = tokens[idx]
+    console.log(`token: `, token)
+    console.log(`plugin_options: `, plugin_options)
+    const basePath = token.info.basePath
+
+    loadExamplesFolder(basePath)
+
+    // the default rendering does escape html... we want it raw!
+    // <template #default>${token.content}</template>
+    // <template #abbrDescription>${token.meta?.abbrDescription}</template>
+    const resultHTML = `<${token.tag} ${self.renderAttrs(token)} basePath="${basePath}">
+        </${token.tag}>`
+    // console.log(`resultHTML: `, resultHTML)
+    return resultHTML
+}
+
+/**
+ * include all examples from folder as MDExamples component
+ * syntax:
+ * @show-examples:./path-to-folder/
+ * @show-examples:./examples/
+ * @module mditPluginIncludeExamples
+ * @param {MarkdownItOptions} options - options Object
+ * @param {Object} env - environment options Object
+ * @param {MarkdownIt} self - MarkdownIt instance
+ * @returns {undefined} - Side effects only
+ * @author Stefan Krüger s-light.eu
+ * @version 1.0.0
+ * @license MIT
+ * @exports mditPluginIncludeExamples
+ */
+export default function mditPluginIncludeExamples(md, plugin_options) {
+    console.log(`mditPluginIncludeExamples`);
+    // console.log(`md`, md);
+    const plugin_options_defaults = {
+        ignore: ['old', 'dev'],
+        // sort: 'minimal',
+    }
+    plugin_options = Object.assign({}, plugin_options_defaults, plugin_options)
+    console.log(`plugin_options`, plugin_options);
+
+    md.block.ruler.before('fence', 'embed-example', tokenizer, {
+        alt: ['paragraph', 'reference', 'blockquote', 'list'],
+    })
+    md.renderer.rules['embed-example'] = (tokens, idx, options, env, self) => {
+        return renderer(tokens, idx, options, env, self, plugin_options)
+    }
 }

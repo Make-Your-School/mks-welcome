@@ -1,13 +1,13 @@
 <template>
     <div class="video-embed">
         <!-- <p>{{ videoid }}</p> -->
-        <!-- :src="src" -->
         <iframe
             v-if="consent.videoService[service] || consent.videoLoaded[videoid]"
             type="text/html"
             width="560"
             height="315"
             title="YouTube video player"
+            :src="src"
             frameborder="0"
             allow="web-share"
             referrerpolicy="strict-origin-when-cross-origin"

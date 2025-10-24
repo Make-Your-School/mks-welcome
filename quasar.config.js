@@ -34,6 +34,22 @@ import { nodePolyfills } from 'vite-plugin-node-polyfills'
 import Markdown from 'unplugin-vue-markdown/vite'
 import markdownItConfig from './markdown-it-config'
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// try to silence assets in public directory warnings:
+// https://vite.dev/config/shared-options.html#customlogger
+import { createLogger } from 'vite'
+
+const logger = createLogger()
+const loggerWarn = logger.warn
+
+logger.warn = (msg, options) => {
+    // Ignore empty CSS files warning
+    if (msg.includes('Assets in public directory cannot be imported from JavaScript.')) return
+    if (msg.includes('If you intend to import that asset, put ')) return
+    if (msg.includes('If you intend to use the URL of that asset, use ')) return
+    loggerWarn(msg, options)
+}
+
 // export default defineConfig((ctx) => {
 export default defineConfig(() => {
     return {
@@ -131,6 +147,7 @@ export default defineConfig(() => {
                             },
                         ],
                     },
+                    customLogger: logger,
                 }
                 // equivalent of following vite.config.js/vite.config.ts:
                 // export default defineConfig({

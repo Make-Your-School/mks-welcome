@@ -1,4 +1,5 @@
 import MarkdownItPluginCodeAsMDCode from './src/components/markdown-it-plugins/markdown-it-plugin-code-as-mdcode'
+import MarkdownItPluginIncludeExamples from './src/components/markdown-it-plugins/markdown-it-plugin-include-examples.js'
 
 import MarkdownItPluginYoutubeAsYTEmbed from './src/components/markdown-it-plugins/markdown-it-plugin-youtube-as-YTEmbed.js'
 
@@ -25,6 +26,7 @@ const markdownItSetup = async (md) => {
     // md.use(mditPluginRemoveTitleAndCoverImage, {})
     md.use(MarkdownItPluginCodeAsMDCode, {})
     md.use(MarkdownItPluginYoutubeAsYTEmbed, {})
+    md.use(MarkdownItPluginIncludeExamples, {})
 
     md.use(MarkdownItPluginAbbrAsMDAbbr, {
         abbreviations: mksAbbrCollection,
