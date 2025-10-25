@@ -1,5 +1,6 @@
 <template>
     <div>
+        <div id="data" style="display: none;"><slot name="contentJSON"></slot></div>
         <h1>include examples</h1>
         {{ basePath }}
     </div>

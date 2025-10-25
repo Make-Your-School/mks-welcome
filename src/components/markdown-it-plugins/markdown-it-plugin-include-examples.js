@@ -7,81 +7,111 @@
 // https://github.com/tokusumi/markdown-embed-code
 // https://github.com/markdown-it/markdown-it-abbr/blob/master/index.mjs
 
-import md2html from './markdown-rendering.js'
+// import md2html from './markdown-rendering.js'
 
 import fs from 'node:fs'
 import path from 'node:path'
 
-export const loadExample = (examplePath) => {
+export const loadExample = (example_path, dir_content) => {
     // find all files belonging to one example folder.
     // return object with contents..
     console.group('loadExample')
-    let exampleFiles = {}
+    console.log('example_path', example_path)
+
+    let example_files = {
+        example_path: example_path,
+        // obj: dir_content,
+        files: {},
+    }
 
     // https://nodejs.org/docs/latest/api/fs.html#fsreaddirsyncpath-options
-    const files = fs.readdirSync(examplePath, { recursive: false })
-    console.log('files', files)
-    for (const filePath of files) {
-        console.log('filePath', filePath)
-        const filePathExt = path.extname(filePath)
-        console.log(`filePathExt: '${filePathExt}'`)
-        const itemName = path.basename(filePath, filePathExt)
-        console.log(`itemName: '${itemName}'`)
-        let data = fs.readFileSync(filePath, 'utf8')
-        if (filePathExt == 'md') {
-            data = md2html(data)
+    // const files = fs.readdirSync(examplePath, { recursive: false })
+    // console.log('dir_content', dir_content)
+    for (const file_dir of dir_content) {
+        // console.log('file_dir', file_dir)
+        const file_path = path.join(file_dir.parentPath, file_dir.name)
+        console.log('file_path', file_path)
+        const file_ext = path.extname(file_path)
+        console.log(`file_ext: '${file_ext}'`)
+        const file_name = path.basename(file_path)
+        console.log(`file_name: '${file_name}'`)
+        const item_name = path.basename(file_path, file_ext)
+        console.log(`item_name: '${item_name}'`)
+        let data = fs.readFileSync(file_path, 'utf8')
+        if (file_ext == 'md') {
+            // data = md2html(data)
+            console.log('TODO: convert md to html');
         }
-        console.log('data', data)
-        // exampleFiles[itemName] = data
-        exampleFiles[itemName] = {}
-        exampleFiles[itemName].name = itemName
-        exampleFiles[itemName].filePath = filePath
-        exampleFiles[itemName].fileExt = filePathExt
-        exampleFiles[itemName].content = data
+        // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+        // console.group('data')
+        // console.log(data)
+        // console.groupEnd()
+        // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+        // example_files[item_name] = data
+        example_files.files[file_name] = {}
+        example_files.files[file_name].file_path = file_path
+        example_files.files[file_name].file_name = file_name
+        example_files.files[file_name].name = item_name
+        example_files.files[file_name].file_ext = file_ext
+        example_files.files[file_name].content = data
     }
-    // console.log('exampleFiles:', exampleFiles)
-    console.log('exampleFiles:', Object.keys(exampleFiles))
+    // console.log('example_files:', example_files)
+    // console.log('example_files:', Object.keys(example_files))
     console.groupEnd()
-    return exampleFiles
+    return example_files
 }
 
-const getDirectories = (source) =>
-    fs
-        .readdirSync(source, { withFileTypes: true })
-        .filter((dirent) => dirent.isDirectory())
-        .map((dirent) => dirent.name)
+function is_dir_example(dir_content, dir_name) {
+    const dir_file_names = dir_content
+        .filter((dirent) => dirent.isFile())
+        .map((dirent) => path.basename(dirent.name, path.extname(dirent.name)))
+    // console.log('dir_file_names', dir_file_names)
+    return dir_file_names.includes(dir_name) || dir_file_names.includes('main')
+}
 
-export const loadExamplesFolder = (basePath) => {
-    console.group('loadExamplesFolder')
-    let examples = {}
+function walk_directories(path_start, examples, base_path) {
+    // we want to have a tree that finds ous all folders
+    // that contain a file that is the same as the folder name.
+    // or that is main.py
 
     // https://nodejs.org/docs/latest/api/fs.html#fsglobsyncpattern-options
-    console.log('process.cwd()', process.cwd())
-    console.log('basePath', basePath)
-    const dirs = fs.readdirSync(basePath, { recursive: true })
-    console.log('dirs', dirs)
-    const dirs1 = fs.readdirSync(basePath, { recursive: true, withFileTypes: true })
-    console.log('dirs1', dirs1)
-    console.log(
-        'dirs1 filtered',
-        dirs1.filter((dirent) => dirent.isDirectory()),
-    )
+    const dirs = fs.readdirSync(path_start, { recursive: false, withFileTypes: true })
+    // console.log('')
+    // console.log('dirs', dirs)
+    const dirs_filtered = dirs
+        .filter((dirent) => dirent.isDirectory())
+        .filter((dirent) => !dirent.name.includes('dev'))
+        .filter((dirent) => !dirent.name.includes('old'))
 
-    const dirs2 = getDirectories(basePath)
-    console.log('dirs2', dirs2)
+    for (const dir of dirs_filtered) {
+        const current_path = path.join(dir.parentPath, dir.name)
+        const example_path_rel = path.relative(base_path, current_path)
+        const dir_content = fs.readdirSync(current_path, { recursive: false, withFileTypes: true })
+        // console.log('dir_content', dir_content)
+        if (is_dir_example(dir_content, dir.name)) {
+            console.log('******************************************')
+            console.log('  yeah! example found.')
+            console.log('******************************************')
+            examples[example_path_rel] = loadExample(current_path, dir_content)
+            console.log('******************************************')
+        } else {
+            // recursive for subfolders...
+            const sub_dirs = dir_content.filter((dirent) => dirent.isDirectory())
+            for (const sub_dir of sub_dirs) {
+                const sub_dir_path = path.join(sub_dir.parentPath, sub_dir.name)
+                walk_directories(sub_dir_path, examples)
+            }
+        }
+    }
+}
 
-    // for (const filePath of files) {
-    //     // console.log('filePath', filePath)
-    //     const data = fs.readFileSync(filePath, "utf8");
-    //     // console.log('data', data)
-    //     const itemName = path.basename(filePath, path.extname(filePath));
-    //     // console.log(`itemName: '${itemName}'`)
-    //     const abbrDescription = md2html(data);
-    //     examples[itemName] = abbrDescription;
-
-    //     loadExample()
-    // }
-    // // console.log('examples:', examples)
+export const loadExamplesFolder = (base_path) => {
+    console.group('loadExamplesFolder')
+    let examples = {}
+    console.log('base_path', base_path)
+    walk_directories(base_path, examples, base_path)
+    console.log('done. 🥳')
+    // console.log('  examples:', examples)
     // console.log("examples:", Object.keys(examples));
     console.groupEnd()
     return examples
@@ -115,10 +145,10 @@ function tokenizer(state, startLine, endLine, silent) {
 
     // use rest of line as path
     maxPos = state.eMarks[pointer.line]
-    let basePath = state.src.substr(pointer.pos, maxPos - pointer.pos).trim()
-    if (basePath == '') return false
+    let pathRel = state.src.substr(pointer.pos, maxPos - pointer.pos).trim()
+    if (pathRel == '') return false
     pointer.pos = maxPos
-    // console.log(`basePath:`, basePath)
+    // console.log(`pathRel:`, pathRel)
 
     // Block must be at end of input or the next line must be blank.
     if (endLine !== pointer.line + 1) {
@@ -131,17 +161,18 @@ function tokenizer(state, startLine, endLine, silent) {
 
     if (!silent) {
         console.log(`mditPluginIncludeExamples.tokenizer found:`)
-        console.log(`  basePath '${basePath}'`)
+        console.log(`  pathRel '${pathRel}'`)
         console.log(`  markup `, state.src.slice(startPos, pointer.pos))
         const token = state.push('include_examples', 'MDExamples', 0)
         token.markup = state.src.slice(startPos, pointer.pos)
         token.block = true
-        token.content = basePath
+        token.content = pathRel
+        token.attrSet('pathRel', pathRel)
         token.meta = {
-            basePath: basePath,
+            pathRel: pathRel,
         }
         token.info = {
-            basePath: basePath,
+            pathRel: pathRel,
         }
         token.map = [startLine, pointer.line + 1]
 
@@ -154,17 +185,45 @@ function tokenizer(state, startLine, endLine, silent) {
     return true
 }
 
+function getCurrentBasePath(pathRel, env) {
+    if (env?.id) {
+        // console.log(`env.id found:`, env.id);
+        // srcValue = srcValue.replace("./", env.public);
+        // console.log(`__dirname`, __dirname);
+        // console.log(`process.cwd()`, process.cwd());
+        const projectAbsPathReadme = env.id
+        console.log('projectAbsPathReadme', projectAbsPathReadme)
+        const projectRelPath = path.dirname(path.relative(process.cwd(), projectAbsPathReadme))
+        console.log('projectRelPath', projectRelPath)
+        const basePath = path.join(projectRelPath, pathRel)
+        // const basePath = path.resolve(path.dirname(projectRelPath))
+        // const basePath = path.dirname(projectRelPath).replace('public', '/mks-welcome')
+        console.log('basePath', basePath)
+        // const filePath = srcValue.replace('./', basePath + path.sep)
+        // console.log("filePath", filePath);
+        return basePath
+    } else {
+        console.log('no env information found to build path from.')
+    }
+}
+
 function renderer(tokens, idx, options, env, self, plugin_options) {
     console.log(`mditPluginIncludeExamples.renderer called`)
     const token = tokens[idx]
     // console.log(`token: `, token)
     console.log(`plugin_options: `, plugin_options)
-    const basePath = token.info.basePath
-    // loadExamplesFolder(basePath)
+    const basePath = getCurrentBasePath(token.info.pathRel, env)
+    token.meta.basePath = basePath
+    // token.attrSet('basePath', basePath)
 
+    const examples = loadExamplesFolder(basePath)
+    // const examples_JSON = JSON.stringify(examples)
+    const examples_JSON = JSON.stringify(examples, null, 4)
+    console.log('  examples_JSON:', examples_JSON)
     // the default rendering does escape html... we want it raw!
-    // <template #default>${token.content}</template>
+    // https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script#embedding_data_in_html
     // <template #abbrDescription>${token.meta?.abbrDescription}</template>
+    // <template #contentJSON>${examples_JSON}</template>
     const resultHTML = `<${token.tag} ${self.renderAttrs(token)} basePath="${basePath}">
         </${token.tag}>`
     console.log(`resultHTML: `, resultHTML)
