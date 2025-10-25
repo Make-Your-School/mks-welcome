@@ -1,15 +1,25 @@
 <template>
     <div class="MDCode">
-        <!-- <span v-if="includePath!='undefined'">'{{ includePath }}'</span> -->
-        <!-- TODO: change span to label -->
-        <!-- TODO: or make it clickable to point to source on github... -->
         <VCodeBlock
             :code="content"
             highlightjs
             :lang="codeLanguage"
             :theme="theme"
-            :label="codeFilePath!='undefined' ? codeFilePath : ''"
+            :label="codeFilePath != 'undefined' ? codeFilePath : ''"
+            persistentCopyButton
+            style="margin-bottom: 0;"
         ></VCodeBlock>
+        <q-btn
+            v-if="codeWebPath"
+            flat
+            dense
+            round
+            icon="open_in_browser"
+            aria-label="öffne Datei im web"
+            :href="codeWebPath"
+            target="_blank"
+            class="codeWeb"
+        />
         <!--
             :label="codeFilePath"
          -->
@@ -23,26 +33,29 @@ import VCodeBlock from '@wdns/vue-code-block'
 // https://github.com/webdevnerdstuff/vue-code-block
 
 // import hljs from "highlight.js";
-import hljs from 'highlight.js/lib/core';
+import hljs from 'highlight.js/lib/core'
 // import "highlight.js/styles/night-owl.css";
 // import 'highlight.js/styles/base16/solarized-dark.css';
 // import hljs from 'highlight.js/lib/core';
 
-import cpp from "highlight.js/lib/languages/cpp";
+import cpp from 'highlight.js/lib/languages/cpp'
 // Then register the languages you need
-hljs.registerLanguage("cpp", cpp);
-hljs.registerLanguage("c++", cpp);
-import css from "highlight.js/lib/languages/css";
-hljs.registerLanguage("css", css);
-
+hljs.registerLanguage('cpp', cpp)
+hljs.registerLanguage('c++', cpp)
+hljs.registerLanguage('ino', cpp)
+import python from 'highlight.js/lib/languages/python'
+hljs.registerLanguage('py', python)
+import css from 'highlight.js/lib/languages/css'
+hljs.registerLanguage('css', css)
 
 // const props = defineProps({
 defineProps({
     content: String,
     codeLanguage: String,
-    includePath: String,
     codeFilePath: String,
-    fileExists: String,
+    codeWebPath: String,
+    // includePath: String,
+    // fileExists: String,
 })
 // console.log("---");
 // console.log("props.codeLanguage", props.codeLanguage);
@@ -67,4 +80,12 @@ watch(
 )
 </script>
 
-<style lang="sass" scoped></style>
+<style lang="sass" scoped>
+.MDCode
+    position: relative
+    .codeWeb
+        position: absolute
+        top: 3.5em
+        right: 1.5em
+        z-index: 10
+</style>

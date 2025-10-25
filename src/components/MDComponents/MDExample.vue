@@ -1,56 +1,85 @@
 <template>
-  <q-card class="md-example">
-        <q-tabs
-          v-model="tab"
-          dense
-          align="justify"
-          narrow-indicator
-        >
-          <q-tab name="readme.md" label="readme.md" />
-          <q-tab name="code.ino" label="code.ino" />
-        </q-tabs>
+    <q-card class="md-example">
+        <q-expansion-item
+            expand-separator
+            switch-toggle-side
+            :label="example_name"
+            :modelValue="expanded"
+            >
+            <q-card>
+                <!-- <q-card-section>
+                </q-card-section> -->
+                <!-- <pre>
+                    {{ JSON.stringify(content_obj, null, 4) }}
+                </pre> -->
 
-        <q-separator />
+                <q-toolbar class="">
+                    <!-- notice shrink property since we are placing it as child of QToolbar -->
+                    <q-tabs v-model="tab" dense align="left" narrow-indicator shrink stretch>
+                        <q-tab
+                            v-for="(file_obj, file_name) in content_obj.files"
+                            :key="file_name"
+                            :name="file_name"
+                            :label="file_name"
+                        />
+                    </q-tabs>
+                    <q-space />
+                    <q-btn
+                        flat
+                        round
+                        icon="archive"
+                        aria-label="download Beispiel"
+                        @click="handleDownload"
+                    />
+                </q-toolbar>
 
-        <q-tab-panels v-model="tab" animated>
-          <q-tab-panel name="readme.md">
-            <MDCode>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </MDCode>
-          </q-tab-panel>
+                <q-separator />
 
-          <q-tab-panel name="code.ino">
-            <MDCode>
-                // some code example..
-
-                void setup() {
-                    pinMode(1, INPUTPULLUP);
-                }
-            </MDCode>
-          </q-tab-panel>
-        </q-tab-panels>
-      </q-card>
+                <q-tab-panels v-model="tab" animated>
+                    <q-tab-panel
+                        v-for="(file_obj, file_name) in content_obj.files"
+                        :key="file_name"
+                        :name="file_name"
+                        :label="file_name"
+                        class="q-pa-none"
+                    >
+                        <!-- {{ file_obj }}
+                <pre>
+                    {{ JSON.stringify(file_obj, null, 4) }}
+                </pre> -->
+                        <!-- :content="file_obj.content" -->
+                        <MDCode
+                            :content="`// ${file_obj.file_name} \n// TODO: activate real content..`"
+                            :codeLanguage="file_obj.file_ext.replace('.', '')"
+                            :codeWebPath="file_obj.file_url"
+                        />
+                        <!-- :codeFilePath="file_obj.file_path" -->
+                    </q-tab-panel>
+                </q-tab-panels>
+            </q-card>
+        </q-expansion-item>
+    </q-card>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue'
 
-const tab = ref('');
-
-// const props = defineProps({
-defineProps({
-    contentJSON: String,
-    includePath: String,
-    codeFilePath: String,
-    fileExists: String,
+const props = defineProps({
+    example_name: String,
+    content_obj: Object,
+    expanded: Boolean,
 })
-// console.log("---");
-// console.log("props.codeLanguage", props.codeLanguage);
-// console.log("props.content", props.content);
-// console.log("props.codeFilePath", props.codeFilePath);
-// console.log("props.includePath", props.includePath);
 
+const tab = ref('')
 
+watchEffect(() => {
+    tab.value = Object.keys(props.content_obj.files)[0]
+})
+
+function handleDownload(event) {
+    console.log('TODO: implement', event)
+    alert('not implemented yet.')
+}
 </script>
 
 <style lang="sass" scoped></style>

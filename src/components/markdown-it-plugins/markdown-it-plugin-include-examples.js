@@ -12,14 +12,39 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-export const loadExample = (example_path, dir_content) => {
+
+
+// based on
+// https://github.com/markdown-it/markdown-it/blob/master/lib/common/utils.mjs#L121
+const HTML_ESCAPE_REPLACE_RE = /[&<>"']/g
+const HTML_REPLACEMENTS = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&apos;',
+}
+
+function replaceUnsafeChar(ch) {
+    return HTML_REPLACEMENTS[ch]
+}
+
+function escapeHtml(str) {
+    return str.replace(HTML_ESCAPE_REPLACE_RE, replaceUnsafeChar)
+}
+
+export const loadExample = (example_path, dir_content, part_name) => {
     // find all files belonging to one example folder.
     // return object with contents..
     console.group('loadExample')
     console.log('example_path', example_path)
-
+    console.log('part_name', part_name)
+    // https://github.com/Make-Your-School/part_name/tree/main/examples/Grove_125KHz_RFID_Reader_v1.0_minimal
+    const part_url = `https://github.com/Make-Your-School/${part_name}`
+    const example_url = `${part_url}/tree/main/examples/${path.basename(example_path)}`
     let example_files = {
         example_path: example_path,
+        example_url: example_url,
         // obj: dir_content,
         files: {},
     }
@@ -37,10 +62,12 @@ export const loadExample = (example_path, dir_content) => {
         console.log(`file_name: '${file_name}'`)
         const item_name = path.basename(file_path, file_ext)
         console.log(`item_name: '${item_name}'`)
-        let data = fs.readFileSync(file_path, 'utf8')
+        const file_url = `${example_url}/${file_name}`
+        console.log(`file_url: '${file_url}'`)
+        let data = escapeHtml(fs.readFileSync(file_path, 'utf8'))
         if (file_ext == 'md') {
             // data = md2html(data)
-            console.log('TODO: convert md to html');
+            console.log('TODO: convert md to html')
         }
         // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
         // console.group('data')
@@ -49,6 +76,7 @@ export const loadExample = (example_path, dir_content) => {
         // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
         // example_files[item_name] = data
         example_files.files[file_name] = {}
+        example_files.files[file_name].file_url = file_url
         example_files.files[file_name].file_path = file_path
         example_files.files[file_name].file_name = file_name
         example_files.files[file_name].name = item_name
@@ -69,7 +97,7 @@ function is_dir_example(dir_content, dir_name) {
     return dir_file_names.includes(dir_name) || dir_file_names.includes('main')
 }
 
-function walk_directories(path_start, examples, base_path) {
+function walk_directories(path_start, examples, base_path, part_name) {
     // we want to have a tree that finds ous all folders
     // that contain a file that is the same as the folder name.
     // or that is main.py
@@ -92,24 +120,24 @@ function walk_directories(path_start, examples, base_path) {
             console.log('******************************************')
             console.log('  yeah! example found.')
             console.log('******************************************')
-            examples[example_path_rel] = loadExample(current_path, dir_content)
+            examples[example_path_rel] = loadExample(current_path, dir_content, part_name)
             console.log('******************************************')
         } else {
             // recursive for subfolders...
             const sub_dirs = dir_content.filter((dirent) => dirent.isDirectory())
             for (const sub_dir of sub_dirs) {
                 const sub_dir_path = path.join(sub_dir.parentPath, sub_dir.name)
-                walk_directories(sub_dir_path, examples)
+                walk_directories(sub_dir_path, examples, base_path, part_name)
             }
         }
     }
 }
 
-export const loadExamplesFolder = (base_path) => {
+export const loadExamplesFolder = (base_path, part_name) => {
     console.group('loadExamplesFolder')
     let examples = {}
     console.log('base_path', base_path)
-    walk_directories(base_path, examples, base_path)
+    walk_directories(base_path, examples, base_path, part_name)
     console.log('done. 🥳')
     // console.log('  examples:', examples)
     // console.log("examples:", Object.keys(examples));
@@ -195,6 +223,7 @@ function getCurrentBasePath(pathRel, env) {
         console.log('projectAbsPathReadme', projectAbsPathReadme)
         const projectRelPath = path.dirname(path.relative(process.cwd(), projectAbsPathReadme))
         console.log('projectRelPath', projectRelPath)
+
         const basePath = path.join(projectRelPath, pathRel)
         // const basePath = path.resolve(path.dirname(projectRelPath))
         // const basePath = path.dirname(projectRelPath).replace('public', '/mks-welcome')
@@ -207,6 +236,7 @@ function getCurrentBasePath(pathRel, env) {
     }
 }
 
+
 function renderer(tokens, idx, options, env, self, plugin_options) {
     console.log(`mditPluginIncludeExamples.renderer called`)
     const token = tokens[idx]
@@ -214,17 +244,44 @@ function renderer(tokens, idx, options, env, self, plugin_options) {
     console.log(`plugin_options: `, plugin_options)
     const basePath = getCurrentBasePath(token.info.pathRel, env)
     token.meta.basePath = basePath
+    const part_name = path.basename(path.dirname(env.id))
+    console.log('part_name', part_name)
+    token.meta.part_name = part_name
     // token.attrSet('basePath', basePath)
 
-    const examples = loadExamplesFolder(basePath)
-    // const examples_JSON = JSON.stringify(examples)
+    // const examples = loadExamplesFolder(basePath, part_name)
+    // console.log('  examples:', examples)
+    const examples = {
+        'Grove_125KHz_RFID_Reader_v1.0_minimal': {
+            example_path:
+                'public/mks/parts/mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0/examples/Grove_125KHz_RFID_Reader_v1.0_minimal',
+            example_url:
+                'https://github.com/Make-Your-School/mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0/tree/main/examples/Grove_125KHz_RFID_Reader_v1.0_minimal',
+            files: {
+                'Grove_125KHz_RFID_Reader_v1.0_minimal.ino': {
+                    file_url:
+                        'https://github.com/Make-Your-School/mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0/tree/main/examples/Grove_125KHz_RFID_Reader_v1.0_minimal/Grove_125KHz_RFID_Reader_v1.0_minimal.ino',
+                    file_path:
+                        'public/mks/parts/mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0/examples/Grove_125KHz_RFID_Reader_v1.0_minimal/Grove_125KHz_RFID_Reader_v1.0_minimal.ino',
+                    file_name: 'Grove_125KHz_RFID_Reader_v1.0_minimal.ino',
+                    name: 'Grove_125KHz_RFID_Reader_v1.0_minimal',
+                    file_ext: '.ino',
+                    // content:
+                    //     '// link between the computer and the RFID Shield\n// at 9600 bps 8-N-1\n// Computer is connected to Hardware UART\n// SoftSerial Shield is connected to the Software UART:D2 &amp; D3\n\n#include &lt;SoftwareSerial.h&gt;\n\nSoftwareSerial RFID(2, 3);\n// buffer array for data receive over serial port\nunsigned char buffer[64];\n// counter for buffer array\nint count = 0;\n\nvoid setup() {\n    RFID.begin(9600);\n\n    Serial.begin(9600);\n    delay(100);\n    Serial.flush();\n    Serial.println(&quot;RFID Reader - Los geht&apos;s&quot;);\n}\n\nvoid loop() {\n    // if date is coming from software serial port ==&gt; data is coming from\n    // RFID shield\n    if (RFID.available()) {\n        // reading data into char array\n        while (RFID.available()) {\n            // writing data into array\n            buffer[count++] = RFID.read();\n            if (count == 64)\n                break;\n        }\n        // if no data transmission ends, write\n        // buffer to hardware serial port\n        Serial.write(buffer, count);\n        // call clearBufferArray function to clear the\n        // stored data from the array\n        clearBufferArray();\n        // set counter of while loop to zero\n        count = 0;\n    }\n    // if data is available on hardware serial port ==&gt;\n    // data is coming from PC or notebook\n    if (Serial.available()) {\n        // write it to the RFID shield\n        RFID.write(Serial.read());\n    }\n}\n\nvoid clearBufferArray() {\n    // function to clear buffer array\n    // clear all index of array with command NULL\n    for (int i = 0; i &lt; count; i++) {\n        buffer[i] = NULL;\n    }\n}\n',
+                },
+            },
+        },
+    }
+
+
+    // // const examples_JSON = JSON.stringify(examples)
     const examples_JSON = JSON.stringify(examples, null, 4)
     console.log('  examples_JSON:', examples_JSON)
     // the default rendering does escape html... we want it raw!
     // https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script#embedding_data_in_html
     // <template #abbrDescription>${token.meta?.abbrDescription}</template>
-    // <template #contentJSON>${examples_JSON}</template>
     const resultHTML = `<${token.tag} ${self.renderAttrs(token)} basePath="${basePath}">
+        <template #contentJSON>${examples_JSON}</template>
         </${token.tag}>`
     console.log(`resultHTML: `, resultHTML)
     return resultHTML
