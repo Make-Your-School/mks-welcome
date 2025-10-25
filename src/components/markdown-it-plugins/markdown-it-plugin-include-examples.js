@@ -56,7 +56,7 @@ export const loadExamplesFolder = (basePath) => {
     let examples = {}
 
     // https://nodejs.org/docs/latest/api/fs.html#fsglobsyncpattern-options
-    // console.log('process.cwd()', process.cwd())
+    console.log('process.cwd()', process.cwd())
     console.log('basePath', basePath)
     const dirs = fs.readdirSync(basePath, { recursive: true })
     console.log('dirs', dirs)
@@ -87,7 +87,6 @@ export const loadExamplesFolder = (basePath) => {
     return examples
 }
 
-
 // @show-examples:./path-to-folder/
 const SYNTAX_CHARS = '!!!show-examples:'.split('')
 const SYNTAX_CODES = SYNTAX_CHARS.map((char) => char.charCodeAt(0))
@@ -105,7 +104,7 @@ function tokenizer(state, startLine, endLine, silent) {
         if (prevLineMaxPos > prevLineStartPos) return false
     }
 
-    // Identify as being a potential block.
+    // Identify as being a potential code block.
     if (maxPos - startPos < 2) return false
 
     // check for SYNTAX_CHARS
@@ -134,7 +133,7 @@ function tokenizer(state, startLine, endLine, silent) {
         console.log(`mditPluginIncludeExamples.tokenizer found:`)
         console.log(`  basePath '${basePath}'`)
         console.log(`  markup `, state.src.slice(startPos, pointer.pos))
-        let token = state.push('include-examples', 'MDExamples', 0)
+        const token = state.push('include_examples', 'MDExamples', 0)
         token.markup = state.src.slice(startPos, pointer.pos)
         token.block = true
         token.content = basePath
@@ -146,7 +145,8 @@ function tokenizer(state, startLine, endLine, silent) {
         }
         token.map = [startLine, pointer.line + 1]
 
-        console.log(`  token`, token)
+        // console.log(`  token`, token)
+        // state.push('include_examples_close', 'MDExamples', 0)
 
         state.line = pointer.line + 1
     }
@@ -157,18 +157,17 @@ function tokenizer(state, startLine, endLine, silent) {
 function renderer(tokens, idx, options, env, self, plugin_options) {
     console.log(`mditPluginIncludeExamples.renderer called`)
     const token = tokens[idx]
-    console.log(`token: `, token)
+    // console.log(`token: `, token)
     console.log(`plugin_options: `, plugin_options)
     const basePath = token.info.basePath
-
-    loadExamplesFolder(basePath)
+    // loadExamplesFolder(basePath)
 
     // the default rendering does escape html... we want it raw!
     // <template #default>${token.content}</template>
     // <template #abbrDescription>${token.meta?.abbrDescription}</template>
     const resultHTML = `<${token.tag} ${self.renderAttrs(token)} basePath="${basePath}">
         </${token.tag}>`
-    // console.log(`resultHTML: `, resultHTML)
+    console.log(`resultHTML: `, resultHTML)
     return resultHTML
 }
 
@@ -188,19 +187,19 @@ function renderer(tokens, idx, options, env, self, plugin_options) {
  * @exports mditPluginIncludeExamples
  */
 export default function mditPluginIncludeExamples(md, plugin_options) {
-    console.log(`mditPluginIncludeExamples`);
+    console.log(`mditPluginIncludeExamples`)
     // console.log(`md`, md);
     const plugin_options_defaults = {
         ignore: ['old', 'dev'],
         // sort: 'minimal',
     }
     plugin_options = Object.assign({}, plugin_options_defaults, plugin_options)
-    console.log(`plugin_options`, plugin_options);
+    console.log(`plugin_options`, plugin_options)
 
-    md.block.ruler.before('fence', 'embed-example', tokenizer, {
+    md.block.ruler.before('fence', 'include_examples', tokenizer, {
         alt: ['paragraph', 'reference', 'blockquote', 'list'],
     })
-    md.renderer.rules['embed-example'] = (tokens, idx, options, env, self) => {
+    md.renderer.rules['include_examples'] = (tokens, idx, options, env, self) => {
         return renderer(tokens, idx, options, env, self, plugin_options)
     }
 }
