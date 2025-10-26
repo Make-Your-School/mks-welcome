@@ -5,7 +5,7 @@
             switch-toggle-side
             :label="example_name"
             :modelValue="expanded"
-            >
+        >
             <q-card>
                 <!-- <q-card-section>
                 </q-card-section> -->
@@ -35,7 +35,7 @@
 
                 <q-separator />
 
-                <q-tab-panels v-model="tab" animated>
+                <q-tab-panels v-model="tab" animated transition-prev="fade" transition-next="fade">
                     <q-tab-panel
                         v-for="(file_obj, file_name) in content_obj.files"
                         :key="file_name"
@@ -47,9 +47,9 @@
                 <pre>
                     {{ JSON.stringify(file_obj, null, 4) }}
                 </pre> -->
-                        <!-- :content="file_obj.content" -->
+                        <!-- :content="`// ${file_obj.file_name} \n// TODO: activate real content..`" -->
                         <MDCode
-                            :content="`// ${file_obj.file_name} \n// TODO: activate real content..`"
+                            :content="file_obj.content"
                             :codeLanguage="file_obj.file_ext.replace('.', '')"
                             :codeWebPath="file_obj.file_url"
                         />

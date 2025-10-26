@@ -26,9 +26,9 @@ onMounted(() => {
     // console.log('contentJSONRef', contentJSONRef.value)
     try {
         const raw = contentJSONRef.value.textContent
-        // console.log('raw', raw)
+        console.log('raw', raw)
         const parsed = JSON.parse(raw)
-        // console.log('parsed', parsed)
+        console.log('parsed', parsed)
         // contentJSON = parsed
         content.value = parsed
         // console.log('content', content)
@@ -52,4 +52,6 @@ defineProps({
 <style lang="sass" scoped>
 .jsondata
     display: none
+    white-space: pre
+    font-family: monospace
 </style>

@@ -14,22 +14,28 @@ import path from 'node:path'
 
 
 
-// based on
-// https://github.com/markdown-it/markdown-it/blob/master/lib/common/utils.mjs#L121
-const HTML_ESCAPE_REPLACE_RE = /[&<>"']/g
+// // based on
+// // https://github.com/markdown-it/markdown-it/blob/master/lib/common/utils.mjs#L121
+// const HTML_ESCAPE_REPLACE_RE = /[&<>"']/g
+const HTML_ESCAPE_REPLACE_RE = /[<> ]/g
 const HTML_REPLACEMENTS = {
-    '&': '&amp;',
+    // '&': '&amp;',
     '<': '&lt;',
     '>': '&gt;',
-    '"': '&quot;',
-    "'": '&apos;',
+    // '"': '&quot;',
+    // "'": '&apos;',
+    // ' ': '&#32;', // does not work.
+    // ' ': '&nbsp;',
+    // ' ': ' ', // this should be an nbsp space. - does not work
+    ' ': ' ', // this should be an em space. this is working.
+    // https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
 }
 
 function replaceUnsafeChar(ch) {
     return HTML_REPLACEMENTS[ch]
 }
 
-function escapeHtml(str) {
+function escapeThings(str) {
     return str.replace(HTML_ESCAPE_REPLACE_RE, replaceUnsafeChar)
 }
 
@@ -64,7 +70,8 @@ export const loadExample = (example_path, dir_content, part_name) => {
         console.log(`item_name: '${item_name}'`)
         const file_url = `${example_url}/${file_name}`
         console.log(`file_url: '${file_url}'`)
-        let data = escapeHtml(fs.readFileSync(file_path, 'utf8'))
+        let data = fs.readFileSync(file_path, 'utf8')
+        data = escapeThings(data)
         if (file_ext == 'md') {
             // data = md2html(data)
             console.log('TODO: convert md to html')
@@ -249,29 +256,29 @@ function renderer(tokens, idx, options, env, self, plugin_options) {
     token.meta.part_name = part_name
     // token.attrSet('basePath', basePath)
 
-    // const examples = loadExamplesFolder(basePath, part_name)
+    const examples = loadExamplesFolder(basePath, part_name)
     // console.log('  examples:', examples)
-    const examples = {
-        'Grove_125KHz_RFID_Reader_v1.0_minimal': {
-            example_path:
-                'public/mks/parts/mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0/examples/Grove_125KHz_RFID_Reader_v1.0_minimal',
-            example_url:
-                'https://github.com/Make-Your-School/mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0/tree/main/examples/Grove_125KHz_RFID_Reader_v1.0_minimal',
-            files: {
-                'Grove_125KHz_RFID_Reader_v1.0_minimal.ino': {
-                    file_url:
-                        'https://github.com/Make-Your-School/mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0/tree/main/examples/Grove_125KHz_RFID_Reader_v1.0_minimal/Grove_125KHz_RFID_Reader_v1.0_minimal.ino',
-                    file_path:
-                        'public/mks/parts/mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0/examples/Grove_125KHz_RFID_Reader_v1.0_minimal/Grove_125KHz_RFID_Reader_v1.0_minimal.ino',
-                    file_name: 'Grove_125KHz_RFID_Reader_v1.0_minimal.ino',
-                    name: 'Grove_125KHz_RFID_Reader_v1.0_minimal',
-                    file_ext: '.ino',
-                    // content:
-                    //     '// link between the computer and the RFID Shield\n// at 9600 bps 8-N-1\n// Computer is connected to Hardware UART\n// SoftSerial Shield is connected to the Software UART:D2 &amp; D3\n\n#include &lt;SoftwareSerial.h&gt;\n\nSoftwareSerial RFID(2, 3);\n// buffer array for data receive over serial port\nunsigned char buffer[64];\n// counter for buffer array\nint count = 0;\n\nvoid setup() {\n    RFID.begin(9600);\n\n    Serial.begin(9600);\n    delay(100);\n    Serial.flush();\n    Serial.println(&quot;RFID Reader - Los geht&apos;s&quot;);\n}\n\nvoid loop() {\n    // if date is coming from software serial port ==&gt; data is coming from\n    // RFID shield\n    if (RFID.available()) {\n        // reading data into char array\n        while (RFID.available()) {\n            // writing data into array\n            buffer[count++] = RFID.read();\n            if (count == 64)\n                break;\n        }\n        // if no data transmission ends, write\n        // buffer to hardware serial port\n        Serial.write(buffer, count);\n        // call clearBufferArray function to clear the\n        // stored data from the array\n        clearBufferArray();\n        // set counter of while loop to zero\n        count = 0;\n    }\n    // if data is available on hardware serial port ==&gt;\n    // data is coming from PC or notebook\n    if (Serial.available()) {\n        // write it to the RFID shield\n        RFID.write(Serial.read());\n    }\n}\n\nvoid clearBufferArray() {\n    // function to clear buffer array\n    // clear all index of array with command NULL\n    for (int i = 0; i &lt; count; i++) {\n        buffer[i] = NULL;\n    }\n}\n',
-                },
-            },
-        },
-    }
+    // const examples = {
+    //     'Grove_125KHz_RFID_Reader_v1.0_minimal': {
+    //         example_path:
+    //             'public/mks/parts/mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0/examples/Grove_125KHz_RFID_Reader_v1.0_minimal',
+    //         example_url:
+    //             'https://github.com/Make-Your-School/mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0/tree/main/examples/Grove_125KHz_RFID_Reader_v1.0_minimal',
+    //         files: {
+    //             'Grove_125KHz_RFID_Reader_v1.0_minimal.ino': {
+    //                 file_url:
+    //                     'https://github.com/Make-Your-School/mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0/tree/main/examples/Grove_125KHz_RFID_Reader_v1.0_minimal/Grove_125KHz_RFID_Reader_v1.0_minimal.ino',
+    //                 file_path:
+    //                     'public/mks/parts/mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0/examples/Grove_125KHz_RFID_Reader_v1.0_minimal/Grove_125KHz_RFID_Reader_v1.0_minimal.ino',
+    //                 file_name: 'Grove_125KHz_RFID_Reader_v1.0_minimal.ino',
+    //                 name: 'Grove_125KHz_RFID_Reader_v1.0_minimal',
+    //                 file_ext: '.ino',
+    //                 content:
+    //                     '// D2 & D3\n\n#include &lt;SoftwareSerial.h&gt;\n\nSoftwareSerial RFID(2, 3);\nunsigned char buffer[64];\n\nvoid setup() {\n    Serial.begin(9600);\n    Serial.println("RFID Reader - Los geht&apos;s");\n}\n',
+    //             },
+    //         },
+    //     },
+    // }
 
 
     // // const examples_JSON = JSON.stringify(examples)
