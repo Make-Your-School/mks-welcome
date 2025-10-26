@@ -61,15 +61,15 @@ export const loadExample = (example_path, dir_content, part_name) => {
     for (const file_dir of dir_content) {
         // console.log('file_dir', file_dir)
         const file_path = path.join(file_dir.parentPath, file_dir.name)
-        console.log('file_path', file_path)
+        // console.log('file_path', file_path)
         const file_ext = path.extname(file_path)
-        console.log(`file_ext: '${file_ext}'`)
+        // console.log(`file_ext: '${file_ext}'`)
         const file_name = path.basename(file_path)
-        console.log(`file_name: '${file_name}'`)
+        // console.log(`file_name: '${file_name}'`)
         const item_name = path.basename(file_path, file_ext)
-        console.log(`item_name: '${item_name}'`)
+        // console.log(`item_name: '${item_name}'`)
         const file_url = `${example_url}/${file_name}`
-        console.log(`file_url: '${file_url}'`)
+        // console.log(`file_url: '${file_url}'`)
         let data = fs.readFileSync(file_path, 'utf8')
         data = escapeThings(data)
         if (file_ext == 'md') {

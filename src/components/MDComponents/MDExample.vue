@@ -17,7 +17,7 @@
                     <!-- notice shrink property since we are placing it as child of QToolbar -->
                     <q-tabs v-model="tab" dense align="left" narrow-indicator shrink stretch>
                         <q-tab
-                            v-for="(file_obj, file_name) in content_obj.files"
+                            v-for="(file_obj, file_name) in files"
                             :key="file_name"
                             :name="file_name"
                             :label="file_name"
@@ -37,7 +37,7 @@
 
                 <q-tab-panels v-model="tab" animated transition-prev="fade" transition-next="fade">
                     <q-tab-panel
-                        v-for="(file_obj, file_name) in content_obj.files"
+                        v-for="(file_obj, file_name) in files"
                         :key="file_name"
                         :name="file_name"
                         :label="file_name"
@@ -71,9 +71,25 @@ const props = defineProps({
 })
 
 const tab = ref('')
+const files = ref([])
 
 watchEffect(() => {
-    tab.value = Object.keys(props.content_obj.files)[0]
+    tab.value = Object.keys(files.value)[0]
+})
+
+watchEffect(() => {
+    const checkKey = (key) => key.includes('ino') || key.includes('main')
+
+    const entries = Object.entries(props.content_obj.files)
+    console.log('entries', entries);
+    const firstEntries = entries.filter(([key]) => checkKey(key))
+    console.log('firstEntries', firstEntries);
+    const otherEntries = entries.filter(([key]) => !checkKey(key))
+    console.log('otherEntries', otherEntries);
+    otherEntries.sort(([a], [b]) => a.localeCompare(b))
+    const sortedEntries = [...firstEntries, ...otherEntries]
+    console.log('sortedEntries', sortedEntries);
+    files.value = Object.fromEntries(sortedEntries)
 })
 
 function handleDownload(event) {

@@ -22,6 +22,18 @@ const contentJSONRef = useTemplateRef('content-json-ref')
 // let contentJSON = {}
 const content = shallowRef({})
 
+// function sort_examples(examples) {
+//     const checkKey = (key) =>
+//         key.includes('minimal') || key.includes('simple') || key.includes('einfach')
+
+//     const entries = Object.entries(examples)
+//     const firstEntries = entries.filter(([key]) => checkKey(key))
+//     const otherEntries = entries.filter(([key]) => !checkKey(key))
+//     otherEntries.sort(([a], [b]) => a.localeCompare(b))
+//     const sortedEntries = [...firstEntries, ...otherEntries]
+//     return sortedEntries
+// }
+
 onMounted(() => {
     // console.log('contentJSONRef', contentJSONRef.value)
     try {
@@ -29,8 +41,10 @@ onMounted(() => {
         console.log('raw', raw)
         const parsed = JSON.parse(raw)
         console.log('parsed', parsed)
-        // contentJSON = parsed
         content.value = parsed
+        // const sorted = sort_examples()
+        // console.log('sorted', sorted)
+        // content.value = sorted
         // console.log('content', content)
     } catch (error) {
         console.log(error)
