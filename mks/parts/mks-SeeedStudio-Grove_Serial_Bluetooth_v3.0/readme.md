@@ -56,13 +56,9 @@ So kann beispielsweise ein Bluetooth-Pin oder der angezeigte Bluetooth-Name eing
 Um dieses Bauteil zu verwenden, wird lediglich die Bibliothek "SoftwareSerial" benötigt.
 (diese ist schon fest in die Arduino IDE integriert - du musst nichts installieren.)
 
-## Beispiel
+## Beispiele
 
-Der Beispiel-Code ist (vorerst) im Ordner "examples" zu finden.
-
-```c++:./examples/Grove_Serial_Bluetooth_v3.0_.0_minimal/Grove_Serial_Bluetooth_v3.0_.0_minimal.ino
-./examples/Grove_Serial_Bluetooth_v3.0_.0_minimal/Grove_Serial_Bluetooth_v3.0_.0_minimal.ino
-```
+!!!show-examples:./examples/
 
 ## Anleitungen
 

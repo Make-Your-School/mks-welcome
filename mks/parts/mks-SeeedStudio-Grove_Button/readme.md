@@ -34,16 +34,6 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 
 @[youtube](https://www.youtube.com/watch?v=ITsk6dPSsqA)
 
-
-## Beispiel
-
-schau dir das Minimal-Beispiel an:
-
-```c++:./examples/Endschalter_minimal/Endschalter_minimal.ino
-// this should be overwritten!
-```
-
-
 ## Beispiel
 
 schau dir das Minimal-Beispiel an:

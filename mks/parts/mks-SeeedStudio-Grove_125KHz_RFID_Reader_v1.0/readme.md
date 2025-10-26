@@ -41,9 +41,6 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.
 
 
-@[youtube](https://www.youtube.com/watch?v=dJXTgtIMUPw)
-
-
 ## Anschlüsse
 
 ### Eingang
@@ -70,18 +67,11 @@ Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eing
 Um dieses Bauteil zu verwenden, wird lediglich die Bibliothek "SoftwareSerial" benötigt.
 (diese ist schon fest in die Arduino IDE integriert - du musst nichts installieren.)
 
-## Beispiel
+## Beispiele
 
-Der Beispiel-Code ist (vorerst) im Ordner "examples" zu finden.
-
-```c++:./examples/GroveSerialBluetoothV3.0_minimal/GroveSerialBluetoothV3.0_minimal.ino
-./examples/GroveSerialBluetoothV3.0_minimal/GroveSerialBluetoothV3.0_minimal.ino
-```
-
-<!-- TODO:  include example *_minimal.ino-->
+!!!show-examples:./examples/
 
 ## Anleitung
-
 
 ### Grundsätzlich:
 
@@ -91,7 +81,7 @@ Der Beispiel-Code ist (vorerst) im Ordner "examples" zu finden.
 
 ### Video
 
-@[youtube](https://www.youtube.com/embed/dJXTgtIMUPw?si=BcOwoU9WhtPMKLse)
+@[youtube](https://www.youtube.com/watch?v=dJXTgtIMUPw)
 
 ## Siehe Auch
 
