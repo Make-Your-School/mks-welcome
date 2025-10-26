@@ -26,6 +26,7 @@
         "@quasar/extras": "^1.16.4",
         "@types/markdown-it": "*",
         "@wdns/vue-code-block": "^2.3.3",
+        "client-zip": "^2.5.0",
         "gray-matter": "^4.0.3",
         "highlight.js": "^11.10.0",
         "markdown-it": "^14.1.0",

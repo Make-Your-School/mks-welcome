@@ -2152,6 +2152,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"client-zip@npm:^2.5.0":
+  version: 2.5.0
+  resolution: "client-zip@npm:2.5.0"
+  checksum: e752b40d8959cb13cb47be9b7267e6c2636804bd69d6e97429a48ffa7d020792b5746094387f19bcc6b7f58ae2fa3372da2606440a5006f65a85dd07b4cb7419
+  languageName: node
+  linkType: hard
+
 "cliui@npm:^8.0.1":
   version: 8.0.1
   resolution: "cliui@npm:8.0.1"
@@ -4642,6 +4649,7 @@ __metadata:
     "@vue/eslint-config-prettier": ^10.2.0
     "@wdns/vue-code-block": ^2.3.3
     autoprefixer: ^10.4.2
+    client-zip: ^2.5.0
     dotenv: ^17.2.1
     eslint: 9
     eslint-plugin-vue: ^9.32.0

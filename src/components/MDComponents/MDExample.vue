@@ -63,6 +63,8 @@
 
 <script setup>
 import { ref, watchEffect } from 'vue'
+import { exportFile } from 'quasar'
+import { downloadZip } from 'client-zip'
 
 const props = defineProps({
     example_name: String,
@@ -81,20 +83,35 @@ watchEffect(() => {
     const checkKey = (key) => key.includes('ino') || key.includes('main')
 
     const entries = Object.entries(props.content_obj.files)
-    console.log('entries', entries);
+    // console.log('entries', entries)
     const firstEntries = entries.filter(([key]) => checkKey(key))
-    console.log('firstEntries', firstEntries);
+    // console.log('firstEntries', firstEntries)
     const otherEntries = entries.filter(([key]) => !checkKey(key))
-    console.log('otherEntries', otherEntries);
+    // console.log('otherEntries', otherEntries)
     otherEntries.sort(([a], [b]) => a.localeCompare(b))
     const sortedEntries = [...firstEntries, ...otherEntries]
-    console.log('sortedEntries', sortedEntries);
+    // console.log('sortedEntries', sortedEntries)
     files.value = Object.fromEntries(sortedEntries)
 })
 
-function handleDownload(event) {
-    console.log('TODO: implement', event)
-    alert('not implemented yet.')
+async function handleDownload() {
+    // build files:
+    const zip_files = []
+    for (const [file_name, file_obj] of Object.entries(files.value)) {
+        console.log('file_name', file_name)
+        console.log('file_obj', file_obj)
+        const file = {
+            name: `${props.example_name}/${file_name}`,
+            lastModified: new Date(),
+            input: file_obj.content,
+        }
+        zip_files.push(file)
+    }
+    // get the ZIP stream in a Blob
+    const blob = await downloadZip(zip_files).blob()
+    // console.log(blob);
+    const status = exportFile(`${props.example_name}.zip`,blob)
+    console.log("exportFile status:", status);
 }
 </script>
 
