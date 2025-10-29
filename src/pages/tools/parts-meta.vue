@@ -32,10 +32,10 @@
                         <q-input v-model="props.row.meta.title" dense borderless />
                     </q-td>
                     <q-td key="status" :props="props">
-                        <q-input v-model="props.row.meta.status" dense borderless />
+                        <q-select v-model="props.row.meta.status" :options="options_status" dense borderless />
                     </q-td>
                     <q-td key="difficulty" :props="props">
-                        <q-input v-model="props.row.meta.difficulty" dense borderless />
+                        <q-select v-model="props.row.meta.difficulty" :options="options_difficulty" dense borderless />
                     </q-td>
                     <q-td key="manufacture" :props="props">
                         <q-input v-model="props.row.meta.manufacture" dense borderless />
@@ -96,6 +96,17 @@ const $q = useQuasar()
 
 const tableRef = ref(null)
 const navigationActive = ref(false)
+const options_status = ref([
+    'active',
+    'deprecated',
+    'EOL',
+])
+const options_difficulty = ref([
+    'recommend',
+    'advanced',
+    'expert',
+    'fairy',
+])
 
 const columns = [
     {
