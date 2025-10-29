@@ -30,13 +30,12 @@ Der Linearservomotor ist ein spezieller Servomotor, der für lineare Bewegungen 
 Entsprechende Projektbeispiele und Tutorials sind über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen zu finden. Hierbei ist die Eingabe des Stichworts „Linear Servomotor“ entscheidend.
 
 
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-generic-mico_linear_servo/examples/mico_linear_servo_minimal/mico_linear_servo_minimal.ino
-// look in the linked file.
-```
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

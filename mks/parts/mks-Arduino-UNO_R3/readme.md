@@ -44,6 +44,11 @@ Der Arduino UNO ist ein Mikrocontroller, der ursprünglich speziell für Bildung
 
 @[youtube](https://www.youtube.com/watch?v=EEa-0fhb2WA)
 
+
+## Beispiele
+
+!!!show-examples:./examples/
+
 <!-- infolist -->
 
 ## Wichtige Links für die ersten Schritte:

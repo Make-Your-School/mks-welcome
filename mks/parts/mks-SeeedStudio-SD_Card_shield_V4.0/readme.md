@@ -33,15 +33,12 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 
 
 
-<!-- currently no valid example available...
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-SeeedStudio-SD_Card_shield_V4.0/examples/SD_Card_shield_V4.0_minimal/SD_Card_shield_V4.0_minimal.ino
-// look in the linked file.
-```
--->
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

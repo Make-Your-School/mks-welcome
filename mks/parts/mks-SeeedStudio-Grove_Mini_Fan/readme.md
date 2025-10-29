@@ -29,15 +29,12 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 
 
 
-<!-- currently no valid example available...
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-SeeedStudio-Grove_Mini_Fan/examples/Grove_Mini_Fan_minimal/Grove_Mini_Fan_minimal.ino
-// look in the linked file.
-```
--->
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

@@ -35,13 +35,12 @@ Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwen
 Die genaue Bezeichnung des Sensors, die bei der Suche von Beschreibungen und Anleitungen wichtig sein kann, lautet PAJ7620U2.
 
 
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-SeeedStudio-Grove_Gesture_v1.0/examples/Grove_Gesture_v1.0_minimal/Grove_Gesture_v1.0_minimal.ino
-// look in the linked file.
-```
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

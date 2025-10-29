@@ -45,15 +45,12 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 
 
 
-<!-- currently no valid example available...
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-SeeedStudio-Grove_Differential_Amplifier_v1.0/examples/Grove_Differential_Amplifier_v1.0_minimal/Grove_Differential_Amplifier_v1.0_minimal.ino
-// look in the linked file.
-```
--->
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

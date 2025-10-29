@@ -33,15 +33,12 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 
 
 
-<!-- currently no valid example available...
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-JoyLabz-MakeyMakey/examples/MakeyMakey_minimal/MakeyMakey_minimal.ino
-// look in the linked file.
-```
--->
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

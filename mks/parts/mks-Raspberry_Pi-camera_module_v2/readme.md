@@ -31,15 +31,12 @@ Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwen
 
 
 
-<!-- currently no valid example available...
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-Raspberry_Pi-camera_module_v2/examples/camera_module_v2_minimal/camera_module_v2_minimal.ino
-// look in the linked file.
-```
--->
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

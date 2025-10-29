@@ -31,13 +31,12 @@ Der Summer wird oftmals als Warnton oder auch als akustisches Feedback in divers
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponentenbezeichnungen entsprechende Projektbeispiele und Tutorials.
 
 
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-SeeedStudio-Grove_Buzzer_v1.1/examples/Grove_Buzzer_v1.1_minimal/Grove_Buzzer_v1.1_minimal.ino
-// look in the linked file.
-```
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

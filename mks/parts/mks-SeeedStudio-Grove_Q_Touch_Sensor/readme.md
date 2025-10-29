@@ -33,15 +33,12 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
  
 
 
-<!-- currently no valid example available...
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-SeeedStudio-Grove_Q_Touch_Sensor/examples/Grove_Q_Touch_Sensor_minimal/Grove_Q_Touch_Sensor_minimal.ino
-// look in the linked file.
-```
--->
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

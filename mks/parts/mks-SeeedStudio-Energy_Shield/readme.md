@@ -34,15 +34,12 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 
 
 
-<!-- currently no valid example available...
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-SeeedStudio-Energy_Shield/examples/Energy_Shield_minimal/Energy_Shield_minimal.ino
-// look in the linked file.
-```
--->
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

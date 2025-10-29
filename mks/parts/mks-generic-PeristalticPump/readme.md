@@ -30,15 +30,12 @@ Die Peristaltikpumpe kann zur Bewässerung von Pflanzen oder zum Aufbau eines Wa
 Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponentenbezeichnungen. Das wichtige Stichwort lautet hier „DC Motor“ oder „Gleichstrommotor“.
 
 
-<!-- currently no valid example available...
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-generic-PeristalticPump/examples/PeristalticPump_minimal/PeristalticPump_minimal.ino
-// look in the linked file.
-```
--->
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

@@ -35,13 +35,12 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 
 
 
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-SeeedStudio-Grove_LED_Socket/examples/Grove_LED_Socket_minimal/Grove_LED_Socket_minimal.ino
-// look in the linked file.
-```
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

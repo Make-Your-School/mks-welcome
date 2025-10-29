@@ -36,15 +36,12 @@ Neben Python existieren weitere Programmiersprachen und -umgebungen, die die Pro
 
 
 
-<!-- currently no valid example available...
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-Raspberry_Pi-4B/examples/4B_minimal/4B_minimal.ino
-// look in the linked file.
-```
--->
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

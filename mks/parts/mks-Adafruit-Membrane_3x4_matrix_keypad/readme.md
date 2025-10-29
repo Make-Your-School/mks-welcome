@@ -32,15 +32,12 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 @[youtube](https://www.youtube.com/watch?v=KKbfTAG5HsU)
 
 
-<!-- currently no valid example available...
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-Adafruit-Membrane_3x4_matrix_keypad/examples/Membrane_3x4_matrix_keypad_minimal/Membrane_3x4_matrix_keypad_minimal.ino
-// look in the linked file.
-```
--->
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

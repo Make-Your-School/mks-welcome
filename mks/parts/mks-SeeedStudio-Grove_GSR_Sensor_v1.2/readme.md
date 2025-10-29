@@ -29,13 +29,12 @@ Der Hautleitwertsensor misst über zwei Elektroden den Leitwert der menschlichen
 Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen entsprechende Projektbeispiele und Tutorials.
 
 
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-SeeedStudio-Grove_GSR_Sensor_v1.2/examples/Grove_GSR_Sensor_v1.2_minimal/Grove_GSR_Sensor_v1.2_minimal.ino
-// look in the linked file.
-```
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

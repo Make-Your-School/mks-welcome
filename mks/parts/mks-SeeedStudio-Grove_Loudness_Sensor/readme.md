@@ -33,13 +33,12 @@ Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwen
 Die genaue Bezeichnung des Sensors, die bei der Suche von Beschreibungen und Anleitungen wichtig sein kann, lautet LM2904.
 
 
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-SeeedStudio-Grove_Loudness_Sensor/examples/Grove_Loudness_Sensor_minimal/Grove_Loudness_Sensor_minimal.ino
-// look in the linked file.
-```
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

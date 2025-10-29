@@ -32,13 +32,12 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 Die genaue Bezeichnung des Sensors, die bei der Suche von Beschreibungen und Anleitungen wichtig sein kann, lautet MLX90615.
 
 
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-SeeedStudio-Grove_Digital_Infrared_Temperature_Sensor/examples/Grove_Digital_Infrared_Temperature_Sensor_minimal/Grove_Digital_Infrared_Temperature_Sensor_minimal.ino
-// look in the linked file.
-```
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

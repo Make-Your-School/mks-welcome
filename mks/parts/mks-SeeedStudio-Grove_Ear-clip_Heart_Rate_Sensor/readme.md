@@ -34,13 +34,12 @@ Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwen
 Die genaue Bezeichnung des Sensors, die bei der Suche von Beschreibungen und Anleitungen wichtig sein kann, lautet PAH8001EI-2G.
 
 
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-SeeedStudio-Grove_Ear-clip_Heart_Rate_Sensor/examples/Grove_Ear-clip_Heart_Rate_Sensor_minimal/Grove_Ear-clip_Heart_Rate_Sensor_minimal.ino
-// look in the linked file.
-```
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

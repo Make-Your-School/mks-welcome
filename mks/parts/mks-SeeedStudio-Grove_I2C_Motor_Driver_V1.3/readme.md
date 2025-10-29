@@ -64,6 +64,10 @@ Programmierung und RESET: Beim Heraufladen eines Programms auf einen Mikrocontro
 -   Betriebsspannung: 5-12V
 -   Ausgang Strom Max: 1A 
 
+## Beispiele
+
+!!!show-examples:./examples/
+
 ## Wichtige Links für die ersten Schritte:
 
 - [Seeed Studio Wiki - Motortreiber](http://wiki.seeedstudio.com/Grove-I2C_Motor_Driver_V1.3/)

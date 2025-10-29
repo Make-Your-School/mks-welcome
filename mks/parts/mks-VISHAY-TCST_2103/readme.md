@@ -32,13 +32,12 @@ Ein üblicher Anwendungsfall ist ein Rotationssensor. Dabei wird eine drehende A
 In welchen Bereichen man eine Lichtschranke einsetzen kann, lässt sich mithilfe von Suchmaschinen herausfinden (durch die Eingabe der Komponentenbezeichnung und dem verwendeten Mikrocontroller).
 
 
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-VISHAY-TCST_2103/examples/TCST_2103_minimal/TCST_2103_minimal.ino
-// look in the linked file.
-```
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

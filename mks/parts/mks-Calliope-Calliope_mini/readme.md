@@ -30,15 +30,12 @@ Der Calliope mini wird über verschiedene, besonders intuitive, grafische Progra
 
 
 
-<!-- currently no valid example available...
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-Calliope-Calliope_mini/examples/Calliope_mini_minimal/Calliope_mini_minimal.ino
-// look in the linked file.
-```
--->
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

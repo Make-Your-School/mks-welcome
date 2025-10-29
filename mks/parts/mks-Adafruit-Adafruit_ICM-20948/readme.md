@@ -39,15 +39,12 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 Die genaue Bezeichnung des integrierten Sensors, die bei der Suche von Beschreibungen und Anleitungen wichtig sein kann, lautet ICM-20948.
 
 
-<!-- currently no valid example available...
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-Adafruit-Adafruit_ICM-20948/examples/Adafruit_ICM-20948_minimal/Adafruit_ICM-20948_minimal.ino
-// look in the linked file.
-```
--->
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

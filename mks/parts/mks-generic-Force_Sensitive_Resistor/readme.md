@@ -31,13 +31,12 @@ Der Sensor kann genutzt werden, um eine Berührung eines Objekts zu erkennen. Zu
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau sind im Datenblatt des Sensors zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen entsprechende Projektbeispiele und Tutorials. Hierbei ist das wichtige Stichwort „FSR“ (force sensing resistor).
 
 
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:public/mks/parts/mks-generic-Force_Sensitive_Resistor/examples/Force_Sensitive_Resistor_minimal/Force_Sensitive_Resistor_minimal.ino
-// look in the linked file.
-```
+!!!show-examples:./examples/
+
+
 
 <!-- infolist -->
 

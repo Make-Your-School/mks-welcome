@@ -75,13 +75,12 @@ So wird die bevorstehende Kollision erkannt und kann vermieden werden.
 
 keine library nötig.
 
-## Beispiel
 
-schau dir das Minimal-Beispiel an:
+## Beispiele
 
-```c++:./examples/Endschalter_minimal/Endschalter_minimal.ino
-// this should be overwritten!
-```
+!!!show-examples:./examples/
+
+
 
 ## Anleitung
 
