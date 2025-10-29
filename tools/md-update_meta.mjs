@@ -15,7 +15,7 @@ function replaceMeta(content, meta_obj, key) {
     // console.log('    meta_value', meta_value)
     if (meta_value) {
         // console.log('content', content)
-        var keyRegex = new RegExp(`^${key}: '.*?'$`, 'gm')
+        var keyRegex = new RegExp(`^${key}: ['"].*?['"]$`, 'gm')
         // console.log('keyRegex', keyRegex)
         if (keyRegex.test(content)) {
             // console.log('    update')
