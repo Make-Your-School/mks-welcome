@@ -124,11 +124,11 @@ function walk_directories(path_start, examples, base_path, part_name) {
         const dir_content = fs.readdirSync(current_path, { recursive: false, withFileTypes: true })
         // console.log('dir_content', dir_content)
         if (is_dir_example(dir_content, dir.name)) {
-            console.log('******************************************')
-            console.log('  yeah! example found.')
-            console.log('******************************************')
+            // console.log('******************************************')
+            // console.log('  yeah! example found.')
+            // console.log('******************************************')
             examples[example_path_rel] = loadExample(current_path, dir_content, part_name)
-            console.log('******************************************')
+            // console.log('******************************************')
         } else {
             // recursive for subfolders...
             const sub_dirs = dir_content.filter((dirent) => dirent.isDirectory())
@@ -141,11 +141,11 @@ function walk_directories(path_start, examples, base_path, part_name) {
 }
 
 export const loadExamplesFolder = (base_path, part_name) => {
-    console.group('loadExamplesFolder')
+    // console.group('loadExamplesFolder')
     let examples = {}
-    console.log('base_path', base_path)
+    // console.log('base_path', base_path)
     walk_directories(base_path, examples, base_path, part_name)
-    console.log('done. 🥳')
+    // console.log('done. 🥳')
     // console.log('  examples:', examples)
     // console.log("examples:", Object.keys(examples));
     console.groupEnd()
@@ -195,9 +195,9 @@ function tokenizer(state, startLine, endLine, silent) {
     if (pointer.line >= endLine) return false
 
     if (!silent) {
-        console.log(`mditPluginIncludeExamples.tokenizer found:`)
-        console.log(`  pathRel '${pathRel}'`)
-        console.log(`  markup `, state.src.slice(startPos, pointer.pos))
+        // console.log(`mditPluginIncludeExamples.tokenizer found:`)
+        // console.log(`  pathRel '${pathRel}'`)
+        // console.log(`  markup `, state.src.slice(startPos, pointer.pos))
         const token = state.push('include_examples', 'MDExamples', 0)
         token.markup = state.src.slice(startPos, pointer.pos)
         token.block = true
@@ -227,14 +227,14 @@ function getCurrentBasePath(pathRel, env) {
         // console.log(`__dirname`, __dirname);
         // console.log(`process.cwd()`, process.cwd());
         const projectAbsPathReadme = env.id
-        console.log('projectAbsPathReadme', projectAbsPathReadme)
+        // console.log('projectAbsPathReadme', projectAbsPathReadme)
         const projectRelPath = path.dirname(path.relative(process.cwd(), projectAbsPathReadme))
-        console.log('projectRelPath', projectRelPath)
+        // console.log('projectRelPath', projectRelPath)
 
         const basePath = path.join(projectRelPath, pathRel)
         // const basePath = path.resolve(path.dirname(projectRelPath))
         // const basePath = path.dirname(projectRelPath).replace('public', '/mks-welcome')
-        console.log('basePath', basePath)
+        // console.log('basePath', basePath)
         // const filePath = srcValue.replace('./', basePath + path.sep)
         // console.log("filePath", filePath);
         return basePath
@@ -244,15 +244,16 @@ function getCurrentBasePath(pathRel, env) {
 }
 
 
-function renderer(tokens, idx, options, env, self, plugin_options) {
-    console.log(`mditPluginIncludeExamples.renderer called`)
+// function renderer(tokens, idx, options, env, self, plugin_options) {
+function renderer(tokens, idx, options, env, self) {
+    // console.log(`mditPluginIncludeExamples.renderer called`)
     const token = tokens[idx]
     // console.log(`token: `, token)
-    console.log(`plugin_options: `, plugin_options)
+    // console.log(`plugin_options: `, plugin_options)
     const basePath = getCurrentBasePath(token.info.pathRel, env)
     token.meta.basePath = basePath
     const part_name = path.basename(path.dirname(env.id))
-    console.log('part_name', part_name)
+    // console.log('part_name', part_name)
     token.meta.part_name = part_name
     // token.attrSet('basePath', basePath)
 
@@ -283,14 +284,14 @@ function renderer(tokens, idx, options, env, self, plugin_options) {
 
     // // const examples_JSON = JSON.stringify(examples)
     const examples_JSON = JSON.stringify(examples, null, 4)
-    console.log('  examples_JSON:', examples_JSON)
+    // console.log('  examples_JSON:', examples_JSON)
     // the default rendering does escape html... we want it raw!
     // https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script#embedding_data_in_html
     // <template #abbrDescription>${token.meta?.abbrDescription}</template>
     const resultHTML = `<${token.tag} ${self.renderAttrs(token)} basePath="${basePath}">
         <template #contentJSON>${examples_JSON}</template>
         </${token.tag}>`
-    console.log(`resultHTML: `, resultHTML)
+    // console.log(`resultHTML: `, resultHTML)
     return resultHTML
 }
 

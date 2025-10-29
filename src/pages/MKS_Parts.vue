@@ -47,6 +47,51 @@ console.log('mdContent', mdContent)
 const mks_welcome = mdContent.mks.welcome
 const mks_parts = ref(mdContent.mks.parts)
 
+
+const mks_items_sorted = () => {
+    // const checkKey = (key) => key.includes('ino') || key.includes('main')
+    // console.log(mks_parts.value);
+    // const entries = Object.entries(mks_parts.value)
+    // // console.log('entries', entries)
+    // const preferredEntries = entries.filter(([key]) => checkKey(key))
+    // // // console.log('firstEntries', firstEntries)
+    // // const otherEntries = entries.filter(([key]) => !checkKey(key))
+    // // console.log('otherEntries', otherEntries)
+    // otherEntries.sort(([a], [b]) => a.localeCompare(b))
+    // const sortedEntries = [...firstEntries, ...otherEntries]
+    // // console.log('sortedEntries', sortedEntries)
+    // const sortedEntriesObj = Object.fromEntries(sortedEntries)
+
+
+    const result = {
+        ...mks_parts.value
+    }
+    return result
+}
+
+// const mks_items_sorted = computed(() => {
+//     // const checkKey = (key) => key.includes('ino') || key.includes('main')
+//     console.log(mks_parts.value);
+//     // const entries = Object.entries(mks_parts.value)
+//     // // console.log('entries', entries)
+//     // // const firstEntries = entries.filter(([key]) => checkKey(key))
+//     // // // console.log('firstEntries', firstEntries)
+//     // // const otherEntries = entries.filter(([key]) => !checkKey(key))
+//     // // console.log('otherEntries', otherEntries)
+//     // otherEntries.sort(([a], [b]) => a.localeCompare(b))
+//     // const sortedEntries = [...firstEntries, ...otherEntries]
+//     // // console.log('sortedEntries', sortedEntries)
+//     // files.value = Object.fromEntries(sortedEntries)
+
+
+//     const result = {
+//         ...getObjItemsWithSearchTextInReadme(mks_parts.value),
+//         // ...mks_parts.value
+//     }
+//     return result
+// })
+
+
 // const check_searchTextInReadme = (readme, item_name) => {
 //     return (
 //         item_name?.toLowerCase().includes(searchText.value.toLowerCase()) ||
@@ -74,28 +119,6 @@ const getObjItemsWithSearchTextInReadme = (obj) => {
     return result
 }
 
-const mks_items_sorted = computed(() => {
-    // const checkKey = (key) => key.includes('ino') || key.includes('main')
-    console.log(mks_parts.value);
-    // const entries = Object.entries(mks_parts.value)
-    // // console.log('entries', entries)
-    // // const firstEntries = entries.filter(([key]) => checkKey(key))
-    // // // console.log('firstEntries', firstEntries)
-    // // const otherEntries = entries.filter(([key]) => !checkKey(key))
-    // // console.log('otherEntries', otherEntries)
-    // otherEntries.sort(([a], [b]) => a.localeCompare(b))
-    // const sortedEntries = [...firstEntries, ...otherEntries]
-    // // console.log('sortedEntries', sortedEntries)
-    // files.value = Object.fromEntries(sortedEntries)
-
-
-    // const result = {
-    //     // ...getObjItemsWithSearchTextInReadme(mks_tags.value),
-    //     ...getObjItemsWithSearchTextInReadme(parts_sorted),
-    // }
-    return mks_parts.value
-})
-
 const mks_items_filtered = computed(() => {
     // const result = {};
     // for (const [mks_item_name, mks_item] of Object.entries(mks_tags.value)) {
@@ -118,10 +141,11 @@ const mks_items_filtered = computed(() => {
     // }
 
 
-    mks_parts.value
     const result = {
         // ...getObjItemsWithSearchTextInReadme(mks_tags.value),
-        ...getObjItemsWithSearchTextInReadme(mks_items_sorted),
+        // ...getObjItemsWithSearchTextInReadme(mks_parts.value),
+        ...getObjItemsWithSearchTextInReadme(mks_items_sorted()),
+        // ...mks_items_sorted,
     }
     return result
 })
