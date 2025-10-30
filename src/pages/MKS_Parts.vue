@@ -131,6 +131,7 @@ const mks_items_sorted = () => {
     // return sortedEntries
 }
 
+console.log("mks_items_sorted", mks_items_sorted);
 // const mks_items_sorted = computed(() => {
 //     // const checkKey = (key) => key.includes('ino') || key.includes('main')
 //     console.log(mks_parts.value);
