@@ -202,8 +202,8 @@ const mks_items_filtered = computed(() => {
 
     const result = {
         // ...getObjItemsWithSearchTextInReadme(mks_tags.value),
-        // ...getObjItemsWithSearchTextInReadme(mks_parts.value),
-        ...getObjItemsWithSearchTextInReadme(mks_items_sorted()),
+        ...getObjItemsWithSearchTextInReadme(mks_parts.value),
+        // ...getObjItemsWithSearchTextInReadme(mks_items_sorted()),
         // ...mks_items_sorted,
     }
     return result
