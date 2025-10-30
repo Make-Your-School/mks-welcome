@@ -33,8 +33,7 @@ async function checkMissingExample(submodule_name, submodule) {
 
 export async function main() {
     const submodules = getsubmodules()
-    // console.log('submodul
-    es', submodules)
+    // console.log('submodules', submodules)
     const submodules_sorted = Object.entries(submodules).sort(([key1], [key2]) => {
         return path.basename(key1).localeCompare(path.basename(key2))
     })

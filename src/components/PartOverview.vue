@@ -20,11 +20,11 @@
 // import { computed, h, shallowRef, ref, watch, watchEffect } from "vue";
 // import { useQuasar } from "quasar";
 
-const props = defineProps({
-    // defineProps({
+// const props = defineProps({
+defineProps({
     mks_item: Object,
 })
-console.log('props.mks_item', props.mks_item)
+// console.log('props.mks_item', props.mks_item)
 </script>
 
 <style lang="sass" scoped>

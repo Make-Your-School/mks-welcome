@@ -30,6 +30,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { shallowRef } from 'vue';
 // import { useQuasar } from "quasar";
 
 import PartOverview from 'src/components/PartOverview.vue'
@@ -45,28 +46,89 @@ import { useMDContentStore } from 'src/stores/mdContent'
 const mdContent = useMDContentStore()
 console.log('mdContent', mdContent)
 const mks_welcome = mdContent.mks.welcome
-const mks_parts = ref(mdContent.mks.parts)
+const mks_parts = shallowRef(mdContent.mks.parts)
 
+const sort_difficulty = (entries) => {
+    // difficulty
+    // - recommend
+    // - advanced
+    // - expert
+    // console.log('entries', entries)
+    let difficulty_recommend = entries.filter(([, obj]) => obj.meta.difficulty == 'recommend')
+    let difficulty_advanced = entries.filter(([, obj]) => obj.meta.difficulty == 'advanced')
+    let difficulty_expert = entries.filter(([, obj]) => obj.meta.difficulty == 'expert')
+    let difficulty_rest = entries.filter(
+        ([, obj]) => !['recommend', 'advanced', 'expert'].includes(obj.meta.difficulty),
+    )
 
-const mks_items_sorted = () => {
-    // const checkKey = (key) => key.includes('ino') || key.includes('main')
-    // console.log(mks_parts.value);
-    // const entries = Object.entries(mks_parts.value)
-    // // console.log('entries', entries)
-    // const preferredEntries = entries.filter(([key]) => checkKey(key))
-    // // // console.log('firstEntries', firstEntries)
-    // // const otherEntries = entries.filter(([key]) => !checkKey(key))
-    // // console.log('otherEntries', otherEntries)
-    // otherEntries.sort(([a], [b]) => a.localeCompare(b))
-    // const sortedEntries = [...firstEntries, ...otherEntries]
-    // // console.log('sortedEntries', sortedEntries)
-    // const sortedEntriesObj = Object.fromEntries(sortedEntries)
+    const sort_local = ([key1], [key2]) => {
+        return key1.localeCompare(key2)
+    }
 
+    difficulty_recommend.sort(sort_local)
+    difficulty_advanced.sort(sort_local)
+    difficulty_expert.sort(sort_local)
+    difficulty_rest.sort(sort_local)
 
+    console.log('difficulty_recommend', difficulty_recommend)
+    console.log('difficulty_advanced', difficulty_advanced)
+    console.log('difficulty_expert', difficulty_expert)
+    console.log('difficulty_rest', difficulty_rest)
     const result = {
-        ...mks_parts.value
+        ...difficulty_recommend,
+        ...difficulty_advanced,
+        ...difficulty_expert,
+        ...difficulty_rest,
     }
     return result
+}
+
+const mks_items_sorted = () => {
+    // sort:
+    // status
+    // - active
+    // - deprecated
+    // - EOL
+    // every status group should be sorted by difficulty.
+    // difficulty
+    // - recommend
+    // - advanced
+    // - expert
+
+    console.log(mks_parts.value)
+    const entries = Object.entries(mks_parts.value)
+    // console.log('entries', entries)
+    let status_active = entries.filter(([, obj]) => obj.meta.status == 'active')
+    let status_deprecated = entries.filter(([, obj]) => obj.meta.status == 'deprecated')
+    let status_EOL = entries.filter(([, obj]) => obj.meta.status == 'EOL')
+    let status_rest = entries.filter(
+        ([, obj]) => !['active', 'deprecated', 'EOL'].includes(obj.meta.status),
+    )
+
+    // for every group we sort it again with the difficulty:
+    status_active = sort_difficulty(status_active)
+    status_deprecated = sort_difficulty(status_deprecated)
+    status_EOL = sort_difficulty(status_EOL)
+    status_rest = sort_difficulty(status_rest)
+
+    console.log('status_active', status_active)
+    console.log('status_deprecated', status_deprecated)
+    console.log('status_EOL', status_EOL)
+    console.log('status_rest', status_rest)
+
+    const sortedEntries = {
+        // ...status_active,
+        // ...status_deprecated,
+        // ...status_rest,
+        // ...status_EOL,
+        // ...mks_parts.value,
+        ...entries,
+    }
+    // console.log('sortedEntries', sortedEntries)
+    const sortedEntriesObj = Object.fromEntries(sortedEntries)
+    console.log('sortedEntriesObj', sortedEntriesObj)
+    return sortedEntriesObj
+    // return sortedEntries
 }
 
 // const mks_items_sorted = computed(() => {
@@ -83,14 +145,12 @@ const mks_items_sorted = () => {
 //     // // console.log('sortedEntries', sortedEntries)
 //     // files.value = Object.fromEntries(sortedEntries)
 
-
 //     const result = {
 //         ...getObjItemsWithSearchTextInReadme(mks_parts.value),
 //         // ...mks_parts.value
 //     }
 //     return result
 // })
-
 
 // const check_searchTextInReadme = (readme, item_name) => {
 //     return (
@@ -139,7 +199,6 @@ const mks_items_filtered = computed(() => {
     //         result[fn_name] = fn_item;
     //     }
     // }
-
 
     const result = {
         // ...getObjItemsWithSearchTextInReadme(mks_tags.value),
@@ -204,7 +263,6 @@ const searchText = ref('')
                 width: 100%
                 height: 100%
                 overflow: visible
-
 </style>
 
 <style lang="sass">
