@@ -1,5 +1,5 @@
 ---
-title: "Taster/Knopf"
+title: 'Taster/Knopf'
 date: "2018-10-01T14:48:30.000Z"
 tags: 
   - "sensor"
@@ -13,6 +13,8 @@ repo_manufacture: "generic"
 repo_part: "Taster"
 clone_url: "https://github.com/Make-Your-School/mks-generic-Taster.git"
 embedded_example_file: "examples/Taster_minimal/Taster_minimal.ino"
+status: 'active'
+difficulty: 'advanced'
 ---
 
 

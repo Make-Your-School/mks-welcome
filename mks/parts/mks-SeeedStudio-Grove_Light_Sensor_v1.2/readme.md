@@ -1,5 +1,5 @@
 ---
-title: "Helligkeitssensor"
+title: 'Helligkeitssensor'
 date: "2018-10-01T14:15:12.000Z"
 tags: 
   - "sensor"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Light_Sens
 repo_prefix: "mks"
 repo_part: "Grove_Light_Sensor_v1.2"
 embedded_example_file: "examples/Grove_Light_Sensor_v1.2_minimal/Grove_Light_Sensor_v1.2_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
 
 

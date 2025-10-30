@@ -1,5 +1,5 @@
 ---
-title: "Mini-Ventilator"
+title: 'Mini-Ventilator'
 date: "2018-10-01T14:25:04.000Z"
 tags: 
   - "output"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Mini_Fan.g
 repo_prefix: "mks"
 repo_part: "Grove_Mini_Fan"
 embedded_example_file: "examples/Grove_Mini_Fan_minimal/Grove_Mini_Fan_minimal.ino"
+status: 'deprecated'
+difficulty: 'recommend'
 ---
 
 

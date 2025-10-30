@@ -1,5 +1,5 @@
 ---
-title: "Drehwinkelsensor"
+title: 'Drehwinkelsensor'
 date: "2018-10-01T13:37:36.000Z"
 tags: 
   - "sensor"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Rotary_Ang
 repo_prefix: "mks"
 repo_part: "Grove_Rotary_Angle_Sensor"
 embedded_example_file: "examples/Grove_Rotary_Angle_Sensor_minimal/Grove_Rotary_Angle_Sensor_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
 
 

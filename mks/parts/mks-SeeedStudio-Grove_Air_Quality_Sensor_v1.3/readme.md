@@ -1,5 +1,5 @@
 ---
-title: "Luftqualitätssensor"
+title: 'Luftqualitätssensor'
 date: "2018-10-01T12:56:41.000Z"
 tags: 
   - "sensor"
@@ -16,6 +16,8 @@ repo_part: "Grove_Air_Quality_Sensor_v1.3"
 product_url: "https://wiki.seeedstudio.com/Grove-Air_Quality_Sensor_v1.3/"
 clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Air_Quality_Sensor_v1.3.git"
 embedded_example_file: "examples/Grove_Air_Quality_Sensor_v1.3_minimal/Grove_Air_Quality_Sensor_v1.3_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
 
 

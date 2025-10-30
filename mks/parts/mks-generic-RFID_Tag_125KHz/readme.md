@@ -1,5 +1,5 @@
 ---
-title: "RFID-Transponder"
+title: 'RFID-Transponder'
 date: "2018-10-01T14:41:57.000Z"
 tags: 
   - "sensor"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-generic-RFID_Tag_125KHz.git"
 repo_prefix: "mks"
 repo_part: "RFID_Tag_125KHz"
 embedded_example_file: "examples/RFID_Tag_125KHz_minimal/RFID_Tag_125KHz_minimal.ino"
+status: 'active'
+difficulty: 'advanced'
 ---
 
 

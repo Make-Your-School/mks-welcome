@@ -1,5 +1,5 @@
 ---
-title: "Gestenerkennung"
+title: 'Gestenerkennung'
 date: "2018-10-01T13:56:33.000Z"
 tags: 
   - "sensor"
@@ -16,6 +16,8 @@ repo_part: "Grove_Gesture_v1.0"
 product_url: "https://wiki.seeedstudio.com/Grove-Gesture_v1.0/"
 clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Gesture_v1.0.git"
 embedded_example_file: "examples/Grove_Gesture_v1.0_minimal/Grove_Gesture_v1.0_minimal.ino"
+status: 'active'
+difficulty: 'advanced'
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-title: "LED-Sockel"
+title: 'LED-Sockel'
 date: "2018-10-01T15:01:56.000Z"
 tags: 
   - "output"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_LED_Socket
 repo_prefix: "mks"
 repo_part: "Grove_LED_Socket"
 embedded_example_file: "examples/Grove_LED_Socket_minimal/Grove_LED_Socket_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
 
 

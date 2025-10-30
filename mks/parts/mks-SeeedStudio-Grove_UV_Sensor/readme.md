@@ -1,5 +1,5 @@
 ---
-title: "UV-Lichtsensor"
+title: 'UV-Lichtsensor'
 date: "2018-10-01T12:49:38.000Z"
 tags: 
   - "sensor"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_UV_Sensor.
 repo_prefix: "mks"
 repo_part: "Grove_UV_Sensor"
 embedded_example_file: "examples/Grove_UV_Sensor_minimal/Grove_UV_Sensor_minimal.ino"
+status: 'active'
+difficulty: 'advanced'
 ---
 
 

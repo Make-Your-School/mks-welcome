@@ -1,5 +1,5 @@
 ---
-title: "Elektromagnet"
+title: 'Elektromagnet'
 date: "2018-10-01T14:29:58.000Z"
 tags: 
   - "output"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Electromag
 repo_prefix: "mks"
 repo_part: "Grove_Electromagnet"
 embedded_example_file: "examples/Grove_Electromagnet_minimal/Grove_Electromagnet_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
 
 

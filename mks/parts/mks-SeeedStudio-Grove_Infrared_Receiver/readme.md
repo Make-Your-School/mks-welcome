@@ -1,5 +1,5 @@
 ---
-title: "Infrarot-Empfänger"
+title: 'Infrarot-Empfänger'
 date: "2018-10-01T13:45:07.000Z"
 tags: 
   - "sensor"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Infrared_R
 repo_prefix: "mks"
 repo_part: "Grove_Infrared_Receiver"
 embedded_example_file: "examples/Grove_Infrared_Receiver_minimal/Grove_Infrared_Receiver_minimal.ino"
+status: 'active'
+difficulty: 'expert'
 ---
 
 

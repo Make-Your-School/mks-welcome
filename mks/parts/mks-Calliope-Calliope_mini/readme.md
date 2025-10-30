@@ -1,5 +1,5 @@
 ---
-title: "Calliope mini"
+title: 'Calliope mini'
 date: "2018-08-28T23:44:25.000Z"
 tags: 
   - "controller"
@@ -14,6 +14,8 @@ clone_url: "https://github.com/Make-Your-School/mks-Calliope-Calliope_mini.git"
 repo_prefix: "mks"
 repo_part: "Calliope_mini"
 embedded_example_file: "examples/Calliope_mini_minimal/Calliope_mini_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
 
 

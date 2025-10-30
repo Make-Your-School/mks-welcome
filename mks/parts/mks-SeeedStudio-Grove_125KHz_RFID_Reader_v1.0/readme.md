@@ -16,6 +16,8 @@ repo_part: 'Grove_125KHz_RFID_Reader_v1.0'
 product_url: 'https://wiki.seeedstudio.com/Grove-125KHz_RFID_Reader/'
 clone_url: 'https://github.com/Make-Your-School/mks-SeeedStudio-Grove_125KHz_RFID_Reader_v1.0.git'
 embedded_example_file: 'examples/Grove_125KHz_RFID_Reader_v1.0_minimal/Grove_125KHz_RFID_Reader_v1.0_minimal.ino'
+status: 'active'
+difficulty: 'advanced'
 ---
 
 # RFID-Leser

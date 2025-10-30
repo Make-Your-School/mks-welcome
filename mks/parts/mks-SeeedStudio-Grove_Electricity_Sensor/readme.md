@@ -1,5 +1,5 @@
 ---
-title: "Stromsensor"
+title: 'Stromsensor'
 date: "2018-10-01T13:44:08.000Z"
 tags: 
   - "sensor"
@@ -16,6 +16,8 @@ repo_part: "Grove_Electricity_Sensor"
 product_url: "https://wiki.seeedstudio.com/Grove-Electricity_Sensor/"
 clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Electricity_Sensor.git"
 embedded_example_file: "examples/Grove_Electricity_Sensor_minimal/Grove_Electricity_Sensor_minimal.ino"
+status: 'active'
+difficulty: 'advanced'
 ---
 
 

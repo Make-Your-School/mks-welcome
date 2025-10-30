@@ -1,5 +1,5 @@
 ---
-title: "Biegesensor"
+title: 'Biegesensor'
 date: "2018-10-01T13:36:00.000Z"
 tags: 
   - "sensor"
@@ -16,6 +16,8 @@ repo_part: "Flex_Sensor_v1"
 product_url: "https://store.spectrasymbol.com/products/spectraflex-flex-sensor?variant=40919797399667"
 clone_url: "https://github.com/Make-Your-School/mks-SpectraSymbol-Flex_Sensor_v1.git"
 embedded_example_file: "examples/Flex_Sensor_v1_minimal/Flex_Sensor_v1_minimal.ino"
+status: 'active'
+difficulty: 'advanced'
 ---
 
 

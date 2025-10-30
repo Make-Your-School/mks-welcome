@@ -15,6 +15,8 @@ clone_url: 'https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Serial_Blu
 repo_prefix: 'mks'
 repo_part: 'Grove_Serial_Bluetooth_v3.0'
 embedded_example_file: 'examples/Grove_Serial_Bluetooth_v3.0_minimal/Grove_Serial_Bluetooth_v3.0_minimal.ino'
+status: 'active'
+difficulty: 'expert'
 ---
 
 # Bluetooth-Modul

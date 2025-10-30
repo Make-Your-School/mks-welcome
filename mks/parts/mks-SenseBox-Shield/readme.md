@@ -1,5 +1,5 @@
 ---
-title: "SenseBox Shield (Arduino)"
+title: 'SenseBox Shield (Arduino)'
 date: "2018-10-01T15:02:45.000Z"
 tags: 
   - "shield"
@@ -14,6 +14,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SenseBox-Shield.git"
 repo_prefix: "mks"
 repo_part: "Shield"
 embedded_example_file: "examples/Shield_minimal/Shield_minimal.ino"
+status: 'EOL'
+difficulty: 'expert'
 ---
 
 

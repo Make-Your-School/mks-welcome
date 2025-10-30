@@ -1,5 +1,5 @@
 ---
-title: "LED-Streifen"
+title: 'LED-Streifen'
 date: "2018-08-28T23:41:38.000Z"
 tags: 
   - "output"
@@ -13,6 +13,8 @@ clone_url: "https://github.com/Make-Your-School/mks-generic-Neopixel.git"
 repo_prefix: "mks"
 repo_part: "Neopixel"
 embedded_example_file: "examples/Neopixel_minimal/Neopixel_minimal.ino"
+status: 'active'
+difficulty: 'advanced'
 ---
 
 

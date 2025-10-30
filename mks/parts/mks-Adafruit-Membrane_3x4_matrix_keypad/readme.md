@@ -1,5 +1,5 @@
 ---
-title: "Tastenfeld"
+title: 'Tastenfeld'
 date: "2018-10-01T14:47:07.000Z"
 tags: 
   - "sensor"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-Adafruit-Membrane_3x4_matrix
 repo_prefix: "mks"
 repo_part: "Membrane_3x4_matrix_keypad"
 embedded_example_file: "examples/Membrane_3x4_matrix_keypad_minimal/Membrane_3x4_matrix_keypad_minimal.ino"
+status: 'active'
+difficulty: 'advanced'
 ---
 
 

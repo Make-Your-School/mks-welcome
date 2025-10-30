@@ -1,5 +1,5 @@
 ---
-title: "Summer"
+title: 'Summer'
 date: "2018-10-01T14:25:41.000Z"
 tags: 
   - "output"
@@ -16,6 +16,8 @@ repo_part: "Grove_Buzzer_v1.1"
 product_url: "https://wiki.seeedstudio.com/Grove-Buzzer/"
 clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Buzzer_v1.1.git"
 embedded_example_file: "examples/Grove_Buzzer_v1.1_minimal/Grove_Buzzer_v1.1_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
 
 

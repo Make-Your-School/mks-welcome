@@ -1,5 +1,5 @@
 ---
-title: "Infrarot-Entfernungsschalter"
+title: 'Infrarot-Entfernungsschalter'
 date: "2018-10-12T14:53:06.000Z"
 tags: 
   - "sensor"
@@ -16,6 +16,8 @@ repo_part: "Grove_IR_Distance_Interrupter_v1.2"
 product_url: "http://wiki.seeedstudio.com/Grove-IR_Distance_Interrupter_v1.2/"
 clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_IR_Distance_Interrupter_v1.2.git"
 embedded_example_file: "examples/Grove_IR_Distance_Interrupter_v1.2_minimal/Grove_IR_Distance_Interrupter_v1.2_minimal.ino"
+status: 'active'
+difficulty: 'advanced'
 ---
 
 

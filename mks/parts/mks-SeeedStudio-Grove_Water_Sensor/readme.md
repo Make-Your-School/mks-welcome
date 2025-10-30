@@ -1,5 +1,5 @@
 ---
-title: "Wasserspiegelsensor"
+title: 'Wasserspiegelsensor'
 date: "2018-10-01T13:50:50.000Z"
 tags: 
   - "sensor"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Water_Sens
 repo_prefix: "mks"
 repo_part: "Grove_Water_Sensor"
 embedded_example_file: "examples/Grove_Water_Sensor_minimal/Grove_Water_Sensor_minimal.ino"
+status: 'active'
+difficulty: 'advanced'
 ---
 
 

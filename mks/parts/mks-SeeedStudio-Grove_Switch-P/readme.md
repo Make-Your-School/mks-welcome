@@ -1,5 +1,5 @@
 ---
-title: "Schalter"
+title: 'Schalter'
 date: "2018-10-01T14:58:25.000Z"
 tags: 
   - "sensor"
@@ -16,6 +16,8 @@ repo_part: "Grove_Switch-P"
 product_url: "http://wiki.seeedstudio.com/Grove-Switch-P/"
 clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Switch-P.git"
 embedded_example_file: "examples/Grove_Switch-P_minimal/Grove_Switch-P_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
 
 

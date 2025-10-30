@@ -1,5 +1,5 @@
 ---
-title: "Verstärker"
+title: 'Verstärker'
 date: "2018-10-01T15:15:46.000Z"
 tags: 
   - "sensor"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Differenti
 repo_prefix: "mks"
 repo_part: "Grove_Differential_Amplifier_v1.0"
 embedded_example_file: "examples/Grove_Differential_Amplifier_v1.0_minimal/Grove_Differential_Amplifier_v1.0_minimal.ino"
+status: 'active'
+difficulty: 'expert'
 ---
 
 

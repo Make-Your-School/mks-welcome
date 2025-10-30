@@ -1,5 +1,5 @@
 ---
-title: "Bodenfeuchtigkeitssensor"
+title: 'Bodenfeuchtigkeitssensor'
 date: "2018-10-01T12:57:44.000Z"
 tags: 
   - "sensor"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Moisture_S
 repo_prefix: "mks"
 repo_part: "Grove_Moisture_Sensor"
 embedded_example_file: "examples/Grove_Moisture_Sensor_minimal/Grove_Moisture_Sensor_minimal.ino"
+status: 'active'
+difficulty: 'advanced'
 ---
 
 

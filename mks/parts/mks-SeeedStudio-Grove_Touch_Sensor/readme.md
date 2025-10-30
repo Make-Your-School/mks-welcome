@@ -1,5 +1,5 @@
 ---
-title: "Berührungssensor"
+title: 'Berührungssensor'
 date: "2018-10-02T07:03:08.000Z"
 tags: 
   - "sensor"
@@ -16,6 +16,8 @@ repo_part: "Grove_Touch_Sensor"
 product_url: "http://wiki.seeedstudio.com/Grove-Touch_Sensor"
 clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Touch_Sensor.git"
 embedded_example_file: "examples/Grove_Touch_Sensor_minimal/Grove_Touch_Sensor_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
 
 

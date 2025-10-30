@@ -1,5 +1,5 @@
 ---
-title: "Magnetschalter"
+title: 'Magnetschalter'
 date: "2018-10-01T13:49:51.000Z"
 tags: 
   - "sensor"
@@ -16,6 +16,8 @@ repo_part: "Grove_Magnetic_Switch"
 product_url: "https://wiki.seeedstudio.com/Grove-Magnetic_Switch/"
 clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Magnetic_Switch.git"
 embedded_example_file: "examples/Grove_Magnetic_Switch_minimal/Grove_Magnetic_Switch_minimal.ino"
+status: 'active'
+difficulty: 'advanced'
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Barometer und Temperatur Sensor"
+title: 'Barometer und Temperatur Sensor'
 date: "2018-10-01T12:52:13.000Z"
 tags: 
   - "sensor"
@@ -16,6 +16,8 @@ repo_part: "Grove_Barometer_Sensor-BMP280"
 product_url: "https://wiki.seeedstudio.com/Grove-Barometer_Sensor-BMP280/"
 clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Barometer_Sensor-BMP280.git"
 embedded_example_file: "examples/Grove_Barometer_Sensor-BMP280_minimal/Grove_Barometer_Sensor-BMP280_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
 
 

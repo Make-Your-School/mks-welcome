@@ -16,6 +16,8 @@ repo_part: 'UNO_R3'
 product_url: 'https://store.arduino.cc/products/arduino-uno-rev3'
 clone_url: 'https://github.com/Make-Your-School/mks-Arduino-UNO_R3.git'
 embedded_example_file: 'examples/UNO_R3_minimal/UNO_R3_minimal.ino'
+status: 'active'
+difficulty: 'recommend'
 ---
 
 # Arduino UNO

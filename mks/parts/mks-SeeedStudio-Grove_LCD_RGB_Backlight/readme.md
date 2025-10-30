@@ -1,5 +1,5 @@
 ---
-title: "LCD-Bildschirm"
+title: 'LC-Bildschirm'
 date: "2018-10-01T15:00:27.000Z"
 tags: 
   - "output"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_LCD_RGB_Ba
 repo_prefix: "mks"
 repo_part: "Grove_LCD_RGB_Backlight"
 embedded_example_file: "examples/Grove_LCD_RGB_Backlight_minimal/Grove_LCD_RGB_Backlight_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
 
 

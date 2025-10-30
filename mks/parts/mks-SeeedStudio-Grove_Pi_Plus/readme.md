@@ -1,5 +1,5 @@
 ---
-title: "Grove-Shield (Raspberry Pi)"
+title: 'Grove-Shield (Raspberry Pi)'
 date: "2018-10-01T15:03:37.000Z"
 tags: 
   - "shield"
@@ -16,6 +16,8 @@ repo_part: "Grove_Pi_Plus"
 product_url: "http://wiki.seeedstudio.com/GrovePi_Plus/"
 clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Pi_Plus.git"
 embedded_example_file: "examples/Grove_Pi_Plus_minimal/Grove_Pi_Plus_minimal.ino"
+status: 'active'
+difficulty: 'expert'
 ---
 
 

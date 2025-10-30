@@ -1,5 +1,5 @@
 ---
-title: "Kamera"
+title: 'Kamera'
 date: "2018-10-01T13:58:23.000Z"
 tags: 
   - "sensor"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-Raspberry_Pi-camera_module_v
 repo_prefix: "mks"
 repo_part: "camera_module_v2"
 embedded_example_file: "examples/camera_module_v2_minimal/camera_module_v2_minimal.ino"
+status: 'active'
+difficulty: 'expert'
 ---
 
 

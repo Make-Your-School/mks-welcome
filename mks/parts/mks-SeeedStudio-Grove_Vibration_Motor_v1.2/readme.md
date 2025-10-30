@@ -1,5 +1,5 @@
 ---
-title: "Vibrationsmotor"
+title: 'Vibrationsmotor'
 date: "2018-10-01T14:26:43.000Z"
 tags: 
   - "output"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Vibration_
 repo_prefix: "mks"
 repo_part: "Grove_Vibration_Motor_v1.2"
 embedded_example_file: "examples/Grove_Vibration_Motor_v1.2_minimal/Grove_Vibration_Motor_v1.2_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Makey-Makey"
+title: 'Makey-Makey'
 date: "2018-10-01T14:46:28.000Z"
 tags: 
   - "sensor"
@@ -17,6 +17,8 @@ repo_part: "MakeyMakey"
 product_url: "https://www.makeymakey.com/"
 clone_url: "https://github.com/Make-Your-School/mks-JoyLabz-MakeyMakey.git"
 embedded_example_file: "examples/MakeyMakey_minimal/MakeyMakey_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
 
 

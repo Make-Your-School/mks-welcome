@@ -1,5 +1,5 @@
 ---
-title: "Energy Shield"
+title: 'Energy Shield'
 date: "2018-10-01T15:22:30.000Z"
 tags: 
   - "shield"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Energy_Shield.gi
 repo_prefix: "mks"
 repo_part: "Energy_Shield"
 embedded_example_file: "examples/Energy_Shield_minimal/Energy_Shield_minimal.ino"
+status: 'active'
+difficulty: 'advanced'
 ---
 
 

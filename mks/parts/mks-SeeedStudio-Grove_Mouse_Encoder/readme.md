@@ -1,5 +1,5 @@
 ---
-title: "Drehgeschwindigkeitssensor"
+title: 'Drehgeschwindigkeitssensor'
 date: "2018-10-01T13:41:01.000Z"
 tags: 
   - "sensor"
@@ -16,6 +16,8 @@ repo_part: "Grove_Mouse_Encoder"
 product_url: "https://wiki.seeedstudio.com/Grove-Mouse_Encoder/"
 clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Mouse_Encoder.git"
 embedded_example_file: "examples/Grove_Mouse_Encoder_minimal/Grove_Mouse_Encoder_minimal.ino"
+status: 'active'
+difficulty: 'advanced'
 ---
 
 

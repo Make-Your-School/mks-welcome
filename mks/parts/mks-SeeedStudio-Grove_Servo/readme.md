@@ -1,5 +1,5 @@
 ---
-title: "Servomotor"
+title: 'Servomotor'
 date: "2018-10-01T14:02:00.000Z"
 tags: 
   - "output"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Servo.git"
 repo_prefix: "mks"
 repo_part: "Grove_Servo"
 embedded_example_file: "examples/Grove_Servo_minimal/Grove_Servo_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
 
 

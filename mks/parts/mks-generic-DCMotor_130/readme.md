@@ -15,6 +15,8 @@ repo_manufacture: 'generic'
 repo_part: 'DCMotor_130'
 clone_url: 'https://github.com/Make-Your-School/mks-generic-DCMotor_130.git'
 embedded_example_file: 'examples/DCMotor_130_minimal/DCMotor_130_minimal.ino'
+status: 'active'
+difficulty: 'recommend'
 ---
 
 # Gleichstrommotor

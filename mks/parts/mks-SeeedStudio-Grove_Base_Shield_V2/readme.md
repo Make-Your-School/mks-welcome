@@ -1,5 +1,5 @@
 ---
-title: "Grove Shield (Arduino)"
+title: 'Grove Shield (Arduino)'
 date: "2018-08-28T23:43:51.000Z"
 tags: 
   - "shield"
@@ -16,6 +16,8 @@ repo_part: "Grove_Base_Shield_V2"
 product_url: "https://wiki.seeedstudio.com/Base_Shield_V2/"
 clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Base_Shield_V2.git"
 embedded_example_file: "examples/Grove_Base_Shield_V2_minimal/Grove_Base_Shield_V2_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
 
 

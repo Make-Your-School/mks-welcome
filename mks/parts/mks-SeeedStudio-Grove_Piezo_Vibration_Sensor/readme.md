@@ -1,5 +1,5 @@
 ---
-title: "Vibrationssensor"
+title: 'Vibrationssensor'
 date: "2018-10-01T13:28:09.000Z"
 tags: 
   - "sensor"
@@ -16,6 +16,8 @@ repo_part: "Grove_Piezo_Vibration_Sensor"
 product_url: "https://wiki.seeedstudio.com/Grove-Piezo_Vibration_Sensor/"
 clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Piezo_Vibration_Sensor.git"
 embedded_example_file: "examples/Grove_Piezo_Vibration_Sensor_minimal/Grove_Piezo_Vibration_Sensor_minimal.ino"
+status: 'active'
+difficulty: 'advanced'
 ---
 
 

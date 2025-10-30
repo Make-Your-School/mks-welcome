@@ -1,5 +1,5 @@
 ---
-title: "Temperatursensor"
+title: 'Temperatursensor'
 date: "2018-08-28T23:44:26.000Z"
 tags: 
   - "sensor"
@@ -16,6 +16,8 @@ repo_part: "Grove_Temperature_Sensor_V1.2"
 product_url: "https://wiki.seeedstudio.com/Grove-Temperature_Sensor_V1.2/"
 clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Temperature_Sensor_V1.2.git"
 embedded_example_file: "examples/Grove_Temperature_Sensor_V1.2_minimal/Grove_Temperature_Sensor_V1.2_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-title: "SD-Karten-Shield"
+title: 'SD-Karten-Shield'
 date: "2018-10-01T15:19:28.000Z"
 tags: 
   - "shield"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-SD_Card_shield_V
 repo_prefix: "mks"
 repo_part: "SD_Card_shield_V4.0"
 embedded_example_file: "examples/SD_Card_shield_V4.0_minimal/SD_Card_shield_V4.0_minimal.ino"
+status: 'active'
+difficulty: 'expert'
 ---
 
 

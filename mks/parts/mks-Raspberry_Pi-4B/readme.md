@@ -1,5 +1,5 @@
 ---
-title: "Raspberry Pi 4 B"
+title: 'Raspberry Pi 4 B'
 date: "2018-08-16T19:58:50.000Z"
 tags: 
   - "controller"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-Raspberry_Pi-4B.git"
 repo_prefix: "mks"
 repo_part: "4B"
 embedded_example_file: "examples/4B_minimal/4B_minimal.ino"
+status: 'active'
+difficulty: 'expert'
 ---
 
 

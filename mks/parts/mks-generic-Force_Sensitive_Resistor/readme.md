@@ -1,5 +1,5 @@
 ---
-title: "Drucksensor"
+title: 'Drucksensor'
 date: "2018-10-01T13:54:33.000Z"
 tags: 
   - "sensor"
@@ -14,6 +14,8 @@ repo_part: "Force_Sensitive_Resistor"
 product_url: "https://learn.adafruit.com/force-sensitive-resistor-fsr/using-an-fsr"
 clone_url: "https://github.com/Make-Your-School/mks-generic-Force_Sensitive_Resistor.git"
 embedded_example_file: "examples/Force_Sensitive_Resistor_minimal/Force_Sensitive_Resistor_minimal.ino"
+status: 'active'
+difficulty: 'advanced'
 ---
 
 

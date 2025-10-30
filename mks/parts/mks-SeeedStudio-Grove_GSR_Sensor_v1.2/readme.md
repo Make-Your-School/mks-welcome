@@ -1,5 +1,5 @@
 ---
-title: "Hautleitwertsensor"
+title: 'Hautleitwertsensor'
 date: "2018-10-01T14:14:11.000Z"
 tags: 
   - "sensor"
@@ -16,6 +16,8 @@ repo_part: "Grove_GSR_Sensor_v1.2"
 product_url: "https://wiki.seeedstudio.com/Grove-GSR_Sensor/"
 clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_GSR_Sensor_v1.2.git"
 embedded_example_file: "examples/Grove_GSR_Sensor_v1.2_minimal/Grove_GSR_Sensor_v1.2_minimal.ino"
+status: 'active'
+difficulty: 'advanced'
 ---
 
 

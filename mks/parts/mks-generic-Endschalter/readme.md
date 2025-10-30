@@ -18,6 +18,8 @@ clone_url: 'https://github.com/Make-Your-School/mks-generic-Endschalter.git'
 repo_prefix: 'mks'
 repo_part: 'Endschalter'
 embedded_example_file: 'examples/Endschalter_minimal/Endschalter_minimal.ino'
+status: 'active'
+difficulty: 'advanced'
 ---
 
 # Endschalter/Anschlag

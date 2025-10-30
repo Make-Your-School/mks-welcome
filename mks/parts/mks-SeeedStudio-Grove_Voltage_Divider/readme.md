@@ -1,5 +1,5 @@
 ---
-title: "Spannungsteiler"
+title: 'Spannungsteiler'
 date: "2018-10-01T15:18:11.000Z"
 tags: 
   - "sensor"
@@ -16,6 +16,8 @@ repo_part: "Grove_Voltage_Divider"
 product_url: "http://wiki.seeedstudio.com/Grove-Voltage_Divider/)"
 clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Voltage_Divider.git"
 embedded_example_file: "examples/Grove_Voltage_Divider_minimal/Grove_Voltage_Divider_minimal.ino"
+status: 'active'
+difficulty: 'expert'
 ---
 
 

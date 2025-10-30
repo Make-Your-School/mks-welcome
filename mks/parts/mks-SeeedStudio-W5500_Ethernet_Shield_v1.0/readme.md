@@ -1,5 +1,5 @@
 ---
-title: "Ethernet Shield"
+title: 'Ethernet Shield'
 date: "2018-10-01T15:04:12.000Z"
 tags: 
   - "shield"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-W5500_Ethernet_S
 repo_prefix: "mks"
 repo_part: "W5500_Ethernet_Shield_v1.0"
 embedded_example_file: "examples/W5500_Ethernet_Shield_v1.0_minimal/W5500_Ethernet_Shield_v1.0_minimal.ino"
+status: 'active'
+difficulty: 'expert'
 ---
 
 

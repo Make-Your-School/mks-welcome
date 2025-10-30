@@ -1,5 +1,5 @@
 ---
-title: "Schiebepotentiometer"
+title: 'Schiebepotentiometer'
 date: "2018-10-01T13:41:55.000Z"
 tags: 
   - "sensor"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Slide_Pote
 repo_prefix: "mks"
 repo_part: "Grove_Slide_Potentiometer"
 embedded_example_file: "examples/Grove_Slide_Potentiometer_minimal/Grove_Slide_Potentiometer_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Peristaltikpumpe"
+title: 'Peristaltikpumpe'
 date: "2018-10-01T14:24:30.000Z"
 tags: 
   - "output"
@@ -15,6 +15,8 @@ repo_part: "PeristalticPump"
 product_url: "https://www.adafruit.com/product/3910"
 clone_url: "https://github.com/Make-Your-School/mks-generic-PeristalticPump.git"
 embedded_example_file: "examples/PeristalticPump_minimal/PeristalticPump_minimal.ino"
+status: 'active'
+difficulty: 'advanced'
 ---
 
 

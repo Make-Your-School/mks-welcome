@@ -1,5 +1,5 @@
 ---
-title: "Gleichstrommotor mit Getriebe"
+title: 'Gleichstrommotor mit Getriebe'
 date: "2018-10-01T14:21:43.000Z"
 tags: 
   - "output"
@@ -14,31 +14,34 @@ clone_url: "https://github.com/Make-Your-School/mks-generic-DCGearMotor.git"
 repo_prefix: "mks"
 repo_part: "DCGearMotor"
 embedded_example_file: "examples/DCGearMotor_minimal/DCGearMotor_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
-
 
 # Gleichstrommotor mit Getriebe
 
 ![Gleichstrommotor mit Getriebe](./42_gleichstrommotor_mit_getriebe.png)
 
 ## Beschreibung
-Ein Gleichstrommotor dreht solange, wie er an einer Spannungsquelle hängt und ist dadurch auf endloses Drehen optimal ausgelegt. Dagegen ist die genaue Positionierung etwas schwieriger, da die Drehgeschwindigkeit von der Kraft die er aufbringen muss, abhängt. Die Steuerung erfolgt über ein einfaches Relais, einen Transistor, einen manuellen Schalter oder einen Motortreiber, der als fertiges Modul zwischen Mikrocontroller und Gleichstrommotor geschaltet wird.
 
-Im Materialkoffer sind Motoren mit zwei Getriebevarianten enthalten. Die Getriebe ermöglichen eine Übersetzung der Drehung der Motoren. Je höher die Übersetzung gewählt wird, desto langsamer dreht der Motor. Gleichzeitig steigt aber die maximale Belastbarkeit des Motors. Je nach gewähltem Motor, kann dieser von der gezeigten Abbildung abweichen
+Ein Gleichstrommotor dreht solange, wie er an einer Spannungsquelle hängt und ist dadurch auf endloses Drehen optimal ausgelegt.
+Dagegen ist die genaue Positionierung etwas schwieriger, da die Drehgeschwindigkeit von der Kraft die er aufbringen muss, abhängt.
+Die Steuerung erfolgt über ein einfaches Relais, einen Transistor, einen manuellen Schalter oder einen Motortreiber, der als fertiges Modul zwischen Mikrocontroller und Gleichstrommotor geschaltet wird.
 
-Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen. Das wichtige Stichwort lautet hier „DC Motor“ oder „Gleichstrommotor“.
+<!-- more_details -->
 
- 
+Im Materialkoffer sind Motoren mit zwei Getriebevarianten enthalten. Die Getriebe ermöglichen eine Übersetzung der Drehung der Motoren.
+Je höher die Übersetzung gewählt wird, desto langsamer dreht der Motor. Gleichzeitig steigt aber die maximale Belastbarkeit des Motors.
+Je nach gewähltem Motor, kann dieser von der gezeigten Abbildung abweichen
+
+Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen. 
+Das wichtige Stichwort lautet hier „DC Motor“ oder „Gleichstrommotor“.
 
 @[youtube](https://www.youtube.com/watch?v=wVxcmO2YuxA)
-
-
 
 ## Beispiele
 
 !!!show-examples:./examples/
-
-
 
 <!-- infolist -->
 
@@ -56,5 +59,4 @@ Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwen
 
 - [GPIO - Wikipedia Artikel](https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe)
 - [Gleichstrommotor - Wikipedia Artikel](https://de.wikipedia.org/wiki/Gleichstrommaschine)
-- [Übersetzung - Wikipedia Artikel](https://de.wikipedia.org/wiki/%C3%9Cbersetzung_\(Technik\))
-
+- [Übersetzung - Wikipedia Artikel](<https://de.wikipedia.org/wiki/%C3%9Cbersetzung_(Technik)>)

@@ -1,5 +1,5 @@
 ---
-title: "Infrarot-Temperatursensor"
+title: 'Infrarot-Temperatursensor'
 date: "2018-10-01T13:46:26.000Z"
 tags: 
   - "sensor"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Digital_In
 repo_prefix: "mks"
 repo_part: "Grove_Digital_Infrared_Temperature_Sensor"
 embedded_example_file: "examples/Grove_Digital_Infrared_Temperature_Sensor_minimal/Grove_Digital_Infrared_Temperature_Sensor_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
 
 

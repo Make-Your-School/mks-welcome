@@ -1,5 +1,5 @@
 ---
-title: "Taster/Knopf (Platine)"
+title: 'Taster/Knopf (Platine)'
 date: "2018-10-01T14:49:00.000Z"
 tags: 
   - "sensor"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Button.git
 repo_prefix: "mks"
 repo_part: "Grove_Button"
 embedded_example_file: "examples/Grove_Button_minimal/Grove_Button_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Lautsprecher"
+title: 'Lautsprecher'
 date: "2018-10-02T07:03:42.000Z"
 tags: 
   - "output"
@@ -13,6 +13,8 @@ clone_url: "https://github.com/Make-Your-School/mks-generic-speaker_4Ohm3W.git"
 repo_prefix: "mks"
 repo_part: "speaker_4Ohm3W"
 embedded_example_file: "examples/speaker_4Ohm3W_minimal/speaker_4Ohm3W_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
 
 

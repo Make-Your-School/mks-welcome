@@ -1,5 +1,5 @@
 ---
-title: "Feinstaubsensor"
+title: 'Feinstaubsensor'
 date: "2018-10-01T12:55:53.000Z"
 tags: 
   - "sensor"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Dust_Senso
 repo_prefix: "mks"
 repo_part: "Grove_Dust_Sensor"
 embedded_example_file: "examples/Grove_Dust_Sensor_minimal/Grove_Dust_Sensor_minimal.ino"
+status: 'active'
+difficulty: 'advanced'
 ---
 
 

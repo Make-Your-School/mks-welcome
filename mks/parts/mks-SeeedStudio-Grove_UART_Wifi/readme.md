@@ -1,5 +1,5 @@
 ---
-title: "WiFi-Modul"
+title: 'WiFi-Modul'
 date: "2018-10-01T14:44:57.000Z"
 tags: 
   - "sensor"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_UART_Wifi.
 repo_prefix: "mks"
 repo_part: "Grove_UART_Wifi"
 embedded_example_file: "examples/Grove_UART_Wifi_minimal/Grove_UART_Wifi_minimal.ino"
+status: 'active'
+difficulty: 'expert'
 ---
 
 

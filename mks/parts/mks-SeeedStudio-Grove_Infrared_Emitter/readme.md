@@ -1,5 +1,5 @@
 ---
-title: "Infrarot-Emitter"
+title: 'Infrarot-Emitter'
 date: "2018-10-01T13:29:36.000Z"
 tags: 
   - "output"
@@ -16,6 +16,8 @@ repo_part: "Grove_Infrared_Emitter"
 product_url: "https://wiki.seeedstudio.com/Grove-Infrared_Emitter/"
 clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Infrared_Emitter.git"
 embedded_example_file: "examples/Grove_Infrared_Emitter_minimal/Grove_Infrared_Emitter_minimal.ino"
+status: 'active'
+difficulty: 'expert'
 ---
 
 

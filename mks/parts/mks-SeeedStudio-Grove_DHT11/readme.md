@@ -1,5 +1,5 @@
 ---
-title: "Temperatur- und Luft­feuchtigkeits&amp;shy;sensor"
+title: 'Temperatur- und Luft­feuchtigkeits&amp;shy;sensor'
 date: "2018-08-28T23:39:41.000Z"
 tags: 
   - "sensor"
@@ -16,6 +16,8 @@ repo_part: "Grove_DHT11"
 product_url: "https://www.seeedstudio.com/Grove-Temperature-Humidity-Sensor-DHT11.html"
 clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_DHT11.git"
 embedded_example_file: "examples/Grove_DHT11_minimal/Grove_DHT11_minimal.ino"
+status: 'active'
+difficulty: 'recommend'
 ---
 
 

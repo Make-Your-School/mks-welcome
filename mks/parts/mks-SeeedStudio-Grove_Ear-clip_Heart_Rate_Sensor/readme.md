@@ -1,5 +1,5 @@
 ---
-title: "Pulssensor"
+title: 'Pulssensor'
 date: "2018-10-01T13:55:21.000Z"
 tags: 
   - "sensor"
@@ -15,6 +15,8 @@ clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Ear-clip_H
 repo_prefix: "mks"
 repo_part: "Grove_Ear-clip_Heart_Rate_Sensor"
 embedded_example_file: "examples/Grove_Ear-clip_Heart_Rate_Sensor_minimal/Grove_Ear-clip_Heart_Rate_Sensor_minimal.ino"
+status: 'active'
+difficulty: 'advanced'
 ---
 
 
