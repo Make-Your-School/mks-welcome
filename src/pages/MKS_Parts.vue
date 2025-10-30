@@ -30,7 +30,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import { shallowRef } from 'vue';
+import { shallowRef } from 'vue'
 // import { useQuasar } from "quasar";
 
 import PartOverview from 'src/components/PartOverview.vue'
@@ -43,95 +43,16 @@ import PartOverview from 'src/components/PartOverview.vue'
 // const mks_parts = ref(mksContent.parts);
 
 import { useMDContentStore } from 'src/stores/mdContent'
+
+
 const mdContent = useMDContentStore()
 console.log('mdContent', mdContent)
 const mks_welcome = mdContent.mks.welcome
 const mks_parts = shallowRef(mdContent.mks.parts)
+const mks_parts_sorted = shallowRef(mdContent.mks.parts_sorted)
+console.log('mks_parts_sorted', mks_parts_sorted)
 
-const sort_difficulty = (entries) => {
-    // difficulty
-    // - recommend
-    // - advanced
-    // - expert
-    // console.log('entries', entries)
-    let difficulty_recommend = entries.filter(([, obj]) => obj.meta.difficulty == 'recommend')
-    let difficulty_advanced = entries.filter(([, obj]) => obj.meta.difficulty == 'advanced')
-    let difficulty_expert = entries.filter(([, obj]) => obj.meta.difficulty == 'expert')
-    let difficulty_rest = entries.filter(
-        ([, obj]) => !['recommend', 'advanced', 'expert'].includes(obj.meta.difficulty),
-    )
 
-    const sort_local = ([key1], [key2]) => {
-        return key1.localeCompare(key2)
-    }
-
-    difficulty_recommend.sort(sort_local)
-    difficulty_advanced.sort(sort_local)
-    difficulty_expert.sort(sort_local)
-    difficulty_rest.sort(sort_local)
-
-    console.log('difficulty_recommend', difficulty_recommend)
-    console.log('difficulty_advanced', difficulty_advanced)
-    console.log('difficulty_expert', difficulty_expert)
-    console.log('difficulty_rest', difficulty_rest)
-    const result = {
-        ...difficulty_recommend,
-        ...difficulty_advanced,
-        ...difficulty_expert,
-        ...difficulty_rest,
-    }
-    return result
-}
-
-const mks_items_sorted = () => {
-    // sort:
-    // status
-    // - active
-    // - deprecated
-    // - EOL
-    // every status group should be sorted by difficulty.
-    // difficulty
-    // - recommend
-    // - advanced
-    // - expert
-
-    console.log(mks_parts.value)
-    const entries = Object.entries(mks_parts.value)
-    // console.log('entries', entries)
-    let status_active = entries.filter(([, obj]) => obj.meta.status == 'active')
-    let status_deprecated = entries.filter(([, obj]) => obj.meta.status == 'deprecated')
-    let status_EOL = entries.filter(([, obj]) => obj.meta.status == 'EOL')
-    let status_rest = entries.filter(
-        ([, obj]) => !['active', 'deprecated', 'EOL'].includes(obj.meta.status),
-    )
-
-    // for every group we sort it again with the difficulty:
-    status_active = sort_difficulty(status_active)
-    status_deprecated = sort_difficulty(status_deprecated)
-    status_EOL = sort_difficulty(status_EOL)
-    status_rest = sort_difficulty(status_rest)
-
-    console.log('status_active', status_active)
-    console.log('status_deprecated', status_deprecated)
-    console.log('status_EOL', status_EOL)
-    console.log('status_rest', status_rest)
-
-    const sortedEntries = {
-        // ...status_active,
-        // ...status_deprecated,
-        // ...status_rest,
-        // ...status_EOL,
-        // ...mks_parts.value,
-        ...entries,
-    }
-    // console.log('sortedEntries', sortedEntries)
-    const sortedEntriesObj = Object.fromEntries(sortedEntries)
-    console.log('sortedEntriesObj', sortedEntriesObj)
-    return sortedEntriesObj
-    // return sortedEntries
-}
-
-console.log("mks_items_sorted", mks_items_sorted);
 // const mks_items_sorted = computed(() => {
 //     // const checkKey = (key) => key.includes('ino') || key.includes('main')
 //     console.log(mks_parts.value);
@@ -203,10 +124,11 @@ const mks_items_filtered = computed(() => {
 
     const result = {
         // ...getObjItemsWithSearchTextInReadme(mks_tags.value),
-        ...getObjItemsWithSearchTextInReadme(mks_parts.value),
-        // ...getObjItemsWithSearchTextInReadme(mks_items_sorted()),
-        // ...mks_items_sorted,
+        // ...getObjItemsWithSearchTextInReadme(mks_parts.value),
+        ...getObjItemsWithSearchTextInReadme(mks_parts_sorted.value),
+        // ...mks_parts_sorted,
     }
+    // console.log('mks_items_filtered', result)
     return result
 })
 
