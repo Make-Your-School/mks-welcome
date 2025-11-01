@@ -186,6 +186,11 @@ const searchText = ref('')
                 width: 100%
                 height: 100%
                 overflow: visible
+
+        body.body--light .my-card
+            color: var(--mys-blue-950)
+        body.body--dark .my-card
+            color: $text-on-dark
 </style>
 
 <style lang="sass">

@@ -79,6 +79,8 @@
     --mys-blue-900: hsl(198, 52%, 22%);
     --mys-blue-950: hsl(198, 63%, 15%);
 
+    --mys-blue-950-dark: hsl(198, 63%, 8%);
+
     --mys-blue-400-dark: hsl(187.5, 8.7%, 18%);
 }
 
@@ -105,14 +107,19 @@ body.body--light {
     --button-fill: var(--mys-blue-100);
     --button-shadow: var(--mys-blue-300);
     // button hover
-    --button-hover-text: hsl(--mys-blue-950);
+    --button-hover-text: var(--mys-blue-950);
     --button-hover-stroke: var(--mys-blue-600);
     --button-hover-fill: var(--mys-blue-300);
     // button active
     --button-active-text: var(--mys-blue-100);
-    --button-active-stroke: hsl(--mys-blue-950);
+    --button-active-stroke: var(--mys-blue-950);
     --button-active-fill: var(--mys-blue-600);
-    --button-active-shadow: hsl(--mys-blue-950);
+    --button-active-shadow: var(--mys-blue-950);
+
+    --main-background: var(--mys-basics-50);
+    --main-background-dots: hsla(198, 63%, 15%, 0.5);
+    // --main-background-dots: var(--mys-blue-950);
+
 }
 
 body.body--dark {
@@ -126,7 +133,23 @@ body.body--dark {
     --card-fill-hover: var(--mys-blue-700);
     --card-fill-accent: var(--mys-blue-900);
     --box-shadow-default: var(--mys-blue-950) 4px 4px 0px 0px;
+
+    --main-background: var(--mys-blue-950-dark);
+    --main-background-dots: hsla(198, 63%, 100%, 1);
 }
+
+body {
+    background-color: var(--main-background) !important;
+}
+
+body {
+    background-image:
+        radial-gradient(circle at 33% 50%, var(--main-background-dots) 0.03rem, transparent 0),
+        radial-gradient(circle at 66% 50%, var(--main-background-dots) 0.03rem, transparent 0);
+    background-repeat: round;
+    background-size: 3.1rem 1.4rem;
+}
+
 
 body.body--light {
     color: var(--mys-blue-950);
@@ -152,10 +175,9 @@ body.body--light code:not(.hljs) {
     padding: 0.1em 0.5em;
 }
 
-
 html {
-        font-size: 16px;
-    }
+    font-size: 16px;
+}
 
 @media (max-width: 900px) {
     html {
@@ -174,6 +196,11 @@ html {
         font-size: 20px;
     }
 }
+
+// input,
+// .q-field__native {
+//     background-color: var(--main-background);
+// }
 
 .material_number {
     position: absolute;
