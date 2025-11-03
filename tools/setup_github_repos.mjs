@@ -149,7 +149,7 @@ export async function main() {
                 repoData.repo_name,
                 repoData.description,
             )
-            const homepage = `https://make-your-school.github.io/mks-welcome/part/${repoData.repo_name}`
+            const homepage = `https://make-your-school.github.io/mks-welcome/part/${repoData.repo_name.toLowerCase}`
             repoSetHomepage(octokit, repoData.repo_name, homepage)
 
             // console.log(`result`, result)

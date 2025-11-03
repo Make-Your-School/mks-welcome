@@ -42,8 +42,6 @@ Im Ordner [`public/mks/tags/`](./public/mks/tags/) findest du die Erklärungen f
             - [`UART.md`](./public/mks/abbr/UART.md)
             - ...
 
-<!-- die Website folgt in etwa diesem layout
-![website layout](./layout_concept.svg) -->
 
 ## contributions
 
@@ -54,16 +52,11 @@ dann schreibe uns bitte im [issues-tracker](https://github.com/Make-Your-School/
 
 ### Bauteil Spezifisch Inhalt/Code
 
-wenn es ein spezifisches Bauteil betrifft, bitte im Bauteil-eigenen Repository ein issue erstellen.
+wenn es ein spezifisches Bauteil betrifft, bitte im Bauteil-eigenen Repository ein issue erstellen:
 
 in der gerenderten Seite ist das jeweilige Bauteil-Repository ganz am Ende der Seite mit dem Text `edit source` verlinkt.
 
-und wenn Du direkt eine Idee hast **wie** z.b. eine Formulierung leichter Verständlich ist, kannst du diese auch gerne als `PR` (PullRequest) vorbereiten.
-aktuell gibt es dazu noch keine ausführliche Dokumentation.
-vielleicht hilft dir die [offizielle Github Hilfe](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) auch schon weiter
-ansonsten gern auch hier eine Frage als Issues oder als [_Forumsbeitrag_](https://github.com/Make-Your-School/mks-welcome/discussions)
-
-mehr infos dazu in [docu/contributions.md](./docu/contributions.md) (WIP)
+mehr infos zu diesem Prozess in [docu/contributions.md](./docu/contributions.md)
 
 ### Bauteil Hinzufügen
 
