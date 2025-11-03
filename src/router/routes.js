@@ -8,10 +8,11 @@ export const childrenCommon = [
         component: () => import('pages/MKS_Parts.vue'),
     },
     {
-        title: 'Tags',
+        title: 'Tags (WIP)',
         icon: 'precision_manufacturing',
         path: '/tags',
         component: () => import('pages/MKS_Tags.vue'),
+        visible: false,
     },
     {
         title: 'Glossar',
