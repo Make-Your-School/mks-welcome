@@ -38,6 +38,7 @@ const markdownItSetup = async (md) => {
 
     // https://github.com/valeriangalliat/markdown-it-anchor/tree/master
     md.use(mditPluginAnchor, {
+        permalink: mditPluginAnchor.permalink.headerLink(),
         // https://github.com/valeriangalliat/markdown-it-anchor/tree/master?tab=readme-ov-file#link-after-header
         // permalink: mditPluginAnchor.permalink.linkAfterHeader({
         //     style: "visually-hidden",

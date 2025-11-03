@@ -72,7 +72,7 @@ const coverImage = `../${part.path_base}/${part.meta.coverImage}`
     padding: 1em
 .back
     display: block
-    margin-left: 3em
+    // margin-left: 3em
     cursor: pointer
 header
     display: flex

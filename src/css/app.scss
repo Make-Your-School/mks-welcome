@@ -53,7 +53,6 @@ body.body--light {
     --main-background: var(--mys-basics-50);
     --main-background-dots: hsla(198, 63%, 15%, 0.5);
     // --main-background-dots: var(--mys-blue-950);
-
 }
 
 body.body--dark {
@@ -85,7 +84,7 @@ body {
 }
 
 a {
-	color: var(--text-primary);
+    color: var(--text-primary);
 }
 
 body.body--light {
@@ -157,3 +156,12 @@ html {
     color: var(--text-primary);
 }
 
+// headings
+.header-anchor {
+	text-decoration: none;
+}
+
+.header-anchor:hover {
+    -webkit-text-decoration: underline;
+    text-decoration: underline;
+}
