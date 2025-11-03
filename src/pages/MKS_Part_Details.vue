@@ -48,7 +48,7 @@ console.log('props.part_name', props.part_name)
 import { useMDContentStore } from 'src/stores/mdContent'
 const mdContent = useMDContentStore()
 console.log('mdContent', mdContent)
-const part = mdContent.mks.parts[props.part_name.toLowerCase()]
+const part = mdContent.mks.parts[props.part_name]
 console.log('part', part)
 
 const mysLink = location.href

@@ -42,9 +42,9 @@ function escapeThings(str) {
 export const loadExample = (example_path, dir_content, part_name) => {
     // find all files belonging to one example folder.
     // return object with contents..
-    console.group('loadExample')
-    console.log('example_path', example_path)
-    console.log('part_name', part_name)
+    // console.group('loadExample')
+    // console.log('example_path', example_path)
+    // console.log('part_name', part_name)
     // https://github.com/Make-Your-School/part_name/tree/main/examples/Grove_125KHz_RFID_Reader_v1.0_minimal
     const part_url = `https://github.com/Make-Your-School/${part_name}`
     const example_url = `${part_url}/tree/main/examples/${path.basename(example_path)}`
@@ -92,7 +92,7 @@ export const loadExample = (example_path, dir_content, part_name) => {
     }
     // console.log('example_files:', example_files)
     // console.log('example_files:', Object.keys(example_files))
-    console.groupEnd()
+    // console.groupEnd()
     return example_files
 }
 

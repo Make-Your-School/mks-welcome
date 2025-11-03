@@ -95,17 +95,17 @@ const mksGetItems = (mksContent, folderName, items_dir, items_dir_text) => {
         console.log('importedObj', importedObj)
         const { item_name } = path_regex.exec(path).groups
         // console.log(`item_name: '${item_name}'`);
-        const item_name_lc = item_name.toLowerCase()
-        mksItems[item_name_lc] = importSingleFile(
+        // const item_name_lc = item_name.toLowerCase()
+        mksItems[item_name] = importSingleFile(
             importedObj,
             `mks/${folderName}/${item_name}/`,
             path,
             item_name,
         )
         // TODO: find a better way to support text-search of rendered content.
-        mksItems[item_name_lc].content_text = items_dir_text[path].default
+        mksItems[item_name].content_text = items_dir_text[path].default
 
-        console.log(`${item_name} '${mksItems[item_name_lc].path_base}'`)
+        console.log(`${item_name} '${mksItems[item_name].path_base}'`)
     }
     console.log('mksItems', mksItems)
     console.groupEnd()
