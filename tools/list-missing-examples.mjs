@@ -31,6 +31,9 @@ async function checkMissingExample(submodule_name, submodule) {
     }
 }
 
+const statusCheck = /status: ['"]active['"]/gm
+// const statusCheck = /.*/gm
+
 export async function main() {
     const submodules = getsubmodules()
     // console.log('submodules', submodules)
@@ -42,7 +45,8 @@ export async function main() {
     for (const [submodule_name, submodule] of submodules_sorted) {
         const filepath = path.join(submodule.path, 'readme.md')
         let readmeContent = fs.readFileSync(filepath, 'utf8')
-        if (readmeContent.includes(/active/)) {
+        if (statusCheck.test(readmeContent)) {
+            // console.log(`checkMissingExample for '${submodule_name}'`)
             await checkMissingExample(submodule_name, submodule)
         }
     }

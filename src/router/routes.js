@@ -41,13 +41,13 @@ export const childrenCommon = [
     {
         title: 'MD-Demo',
         icon: 'brush',
-        path: 'md-demo',
+        path: '/md-demo',
         component: () => import('pages/dev/MDDemo.vue'),
     },
     {
         title: 'MD-Dev',
         icon: 'brush',
-        path: 'md-dev',
+        path: '/md-dev',
         component: () => import('pages/dev/MDDev.vue'),
     },
 
@@ -66,7 +66,7 @@ export const childrenCommon = [
     {
         title: 'Parts Meta-Data Table',
         icon: 'brush',
-        path: 'tools-parts-meta',
+        path: '/tools-parts-meta',
         component: () => import('pages/tools/parts-meta.vue'),
     },
     // {

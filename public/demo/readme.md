@@ -3,86 +3,108 @@ titel: MD Test
 tags: [test, mock]
 ---
 
-# Test MD features
+# Demo
 
-demo Text..
-some more text here.. :tada:
+Hier ist ein Text / Test um alle verfügbaren Formatierungsoptionen zu testen.
+Dies dient auch als Reference :tada:
 
-link: [mks](https://makeyourschool.de/maker-ecke/material/) working?!
-and another paragraph
+den sorce-code dieses *readme.md* datei findest du unter
+
+https://github.com/Make-Your-School/mks-welcome/blob/main/public/demo/readme.md?plain=1
+
+
+ein link mit *titel* geht so: [mks](https://makeyourschool.de/material/)
+
+nun der - momentan ungenutzte - more_details link break.
 
 <!-- more_details -->
 
-this text is after the more_details break..
+dieser Text kommt dann nach dem more_details break..
 
 ## Abbr
 
-Here we have a Text with some Abbreviations - here should be no line-break! just a Abbr now: HTML for example. or the good known W3C.
-and more in the topic of MYS we have UART in most of the uC's.
-and often Sensors are using I2C for there communication interface.
+In diesem Text gibt es einige *Abbreviations* - Abkürzungen. Zum Beispiel HTML. Oder das eher unbekannte W3C.
+und mehr MYS relevante UART und natürlich das bei Sensoren sehr häufig genutzte I2C für deren Kommunikation-Schnittstelle.
+
 
 ## Info Boxes...
 
-### @mdit/plugin-alert
-
-> [!note]
-> This is a note
+Diese Box-Typen werden alle unterstützt:
 
 > [!tip]
 > This is a tip
 
-> [!important]
-> Important Information...
+> [!notiz]
+> Eine Notiz
 
-> [!caution]
-> be careful with this....
+> [!wichtig]
+> Wichtige Informationen für diese Bauteil!
 
-> [!warning]
-> This is warning text
+> [!achtung]
+> Bitte Vorsichtig sein!
 
-### markdown-it-container
-
-::: info
-just some Information...
-:::
-
-::: warning
-*here be dragons*
-:::
+> [!warnung]
+> Achtung Achtung!!!!
+> ganz wichtig...
 
 
 ## code
-this code block should be filled with a good example.ino code..
-```c++ :./example.ino
-// this should be replaced..
-```
 
-this code block does not find it's linked file..
-```c++ :./does_not_exist.ino
-this does fail.. so we can check a 404 is handled smoothly.
-```
-
-
-just some js...
+code kannst du wie folgt einfügen:
 ```js
 const hello = "world";
 let ping = 42;
 ```
 
-embed example2.ino here:
+und dann gibt es noch zwei Specials:
+
+### aus datei geladen
+Dieser Code-Block sollte aus der Datei example.ino (im gleichen Ordner wie diese readme.md) befüllt sein:
+```c++ :./example.ino
+// this should be replaced..
+```
+
+bei diesem Code-Block existiert die verlinkte datei nicht..
+```c++ :./does_not_exist.ino
+this does fail.. so we can check a 404 is handled smoothly.
+```
+
+und noch ein funktionierendes Beispiel example2.ino here:
 ```c++ :./example2.ino
 // this should be replaced..
 ```
 
-code examples done.
+### alle examples einbinden
+
+mit
+```md
+!!!show-examples:./examples/
+```
+kannst du den *automatischen* importer einfügen:
+dieser versucht aus dem verlinkten verzeichniss
+
+das Ergebniss solltest du hier sehen:
+
+!!!show-examples:./examples/
 
 
+## Bilder
+Bilder werden mit
 
-## images
-include an image:
 ![test](./test_image.png)
 
-## heading2
+eingebunden.
+
+
+## Überschriften
+
+```md
+# Überschrift ersten Grades
+## Überschrift zweiten Grades
+...
+```
+
+## Liste
 
 -   list element
 -   list element

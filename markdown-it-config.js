@@ -49,7 +49,20 @@ const markdownItSetup = async (md) => {
 
     // import "@mdit/plugin-alert/style";
     // css loading now in `boot/markdown-load-css.js`
-    md.use(mdit_alert)
+    md.use(mdit_alert, {
+        alertNames: [
+            'important',
+            'note',
+            'tip',
+            'warning',
+            'caution',
+            'wichtig',
+            'achtung',
+            'warnung',
+            'notiz',
+            'info',
+        ],
+    })
 
     md.use(mditPluginImgSrcAbs)
 

@@ -3,6 +3,7 @@
 // load css
 import "@mdit/plugin-alert/style";
 import "components/markdown-it-plugins/markdown-rendering.sass";
+import "../css/alert.css";
 
 // "async" is optional;
 // more info on params: https://v2.quasar.dev/quasar-cli-vite/boot-files

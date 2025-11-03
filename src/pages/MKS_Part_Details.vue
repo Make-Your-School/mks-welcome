@@ -8,9 +8,10 @@
             round
             icon="arrow_back"
             aria-label="zurück zur Übersicht"
-            @click="$router.go(-1)"
+            @click="$router.push('/')"
             class="fixed-top-left q-ma-sm back"
-        >
+            >
+            <!-- @click="$router.go(-1)" -->
         </q-btn>
         <header>
             <div class="info">
