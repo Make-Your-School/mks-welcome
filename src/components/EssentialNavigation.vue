@@ -17,12 +17,14 @@ import { computed } from 'vue'
 import { childrenCommon } from '../router/routes'
 
 const props = defineProps({
-    invisible: { type: Boolean, required: false, default: false },
+    showInvisible: { type: Boolean, required: false, default: false },
 })
 
 const itemsFiltered = computed(() => {
     console.log('childrenCommon', childrenCommon)
-    if (props.invisible) {
+    if (props.showInvisible) {
+        return childrenCommon
+    } else {
         return childrenCommon.filter((item) => {
             if (item.visible == undefined) {
                 return true
@@ -30,8 +32,6 @@ const itemsFiltered = computed(() => {
                 return item.visible
             }
         })
-    } else {
-        return childrenCommon
     }
 })
 </script>

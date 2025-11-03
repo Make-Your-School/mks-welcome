@@ -33,7 +33,7 @@
 
         <q-drawer v-model="leftDrawerOpen" bordered elevated overlay>
             <q-list class="q-pt-xl q-pb-xl">
-                <EssentialNavigation :invisible="show_invisible" />
+                <EssentialNavigation :show-invisible="showInvisible" />
 
                 <q-item>
                     <q-item-section>
@@ -49,7 +49,7 @@
                     <q-item-section> </q-item-section>
                 </q-item>
 
-                <q-item-label header class="fixed-bottom" @click="handleMagicClick">
+                <q-item-label header class="fixed-bottom appinfo" v-touch-hold:2000.mouse="handleMagicClick">
                     {{ appinfo.productName }} v{{ appinfo.version }}
                     <br />
                     Quasar v{{ $q.version }}
@@ -80,17 +80,18 @@ function toggleLeftDrawer() {
     leftDrawerOpen.value = !leftDrawerOpen.value
 }
 
+const showInvisible = ref(false)
 // function handleKeydown(event) {
 //     console.log("keydown event", event);
 //     leftDrawerOpen.value = true;
 // }
 function handleMagicClick() {
-    show_invisible.value = !show_invisible.value
+    showInvisible.value = !showInvisible.value
 }
 
 const appinfo = process.env.appinfo
 
-const show_invisible = ref(false)
+
 
 const $q = useQuasar()
 
@@ -111,8 +112,7 @@ const $q = useQuasar()
 // $q.dark.toggle()
 </script>
 
-<style>
-.body--light {
-    background-color: hsl(0, 0%, 100%);
-}
+<style lang="sass" scoped>
+.appinfo
+    margin-bottom: 2em
 </style>
