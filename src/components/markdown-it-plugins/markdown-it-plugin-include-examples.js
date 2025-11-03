@@ -311,14 +311,14 @@ function renderer(tokens, idx, options, env, self) {
  * @exports mditPluginIncludeExamples
  */
 export default function mditPluginIncludeExamples(md, plugin_options) {
-    console.log(`mditPluginIncludeExamples`)
+    // console.log(`mditPluginIncludeExamples`)
     // console.log(`md`, md);
     const plugin_options_defaults = {
         ignore: ['old', 'dev'],
         // sort: 'minimal',
     }
     plugin_options = Object.assign({}, plugin_options_defaults, plugin_options)
-    console.log(`plugin_options`, plugin_options)
+    // console.log(`plugin_options`, plugin_options)
 
     md.block.ruler.before('fence', 'include_examples', tokenizer, {
         alt: ['paragraph', 'reference', 'blockquote', 'list'],
