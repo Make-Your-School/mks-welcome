@@ -94,7 +94,4 @@ Zusätzlich findet man über alle gängigen Suchmaschinen durch die Eingabe der 
 - [Gleichstrommotor - Wikipedia Artikel](https://de.wikipedia.org/wiki/Gleichstrommaschine)
 - [Schrittmotor - Wikipedia Artikel](https://de.wikipedia.org/wiki/Schrittmotor)
 - [I2C - Wikipedia Artikel](https://de.wikipedia.org/wiki/I%C2%B2C)
-- [SPI - Wikipedia Artikel](https://de.wikipedia.org/wiki/Serial_Peripheral_Interface)
-- [UART - Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)
-- [GitHub-Repository: Motortreiber](https://github.com/MakeYourSchool/70-Motortreiber)
 
