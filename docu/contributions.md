@@ -67,10 +67,12 @@ ansonsten gern auch hier eine Frage als Issues oder als [_Forumsbeitrag_](https:
 für die verfügbaren Formatierungen schaue dir die Demo Seite an:
 https://make-your-school.github.io/mks-welcome/md-demo
 
-diese ist auch über das *geheime Menü* Verfügbar:
-unten links auf das *hamburger* Menü Simbol clicken,
-und dann >2sekunden auf die App Versions-Nummer clicken und halten.
-dann werden zusätzliche Menüeinträge angezeigt.
+
+diese ist auch über ein versteckten Menüeintrag erreichbar:
+- unten links auf das *hamburger* Menü Symbol clicken
+- dann auf die App Versions-Nummer clicken und >2 sekunden halten.
+- dann werden zusätzliche Menüeinträge angezeigt.
+
 Diese sind mehr für Entwicklung und testen gedacht - können dir vielleicht auch nützlich sein :-)
 
 
