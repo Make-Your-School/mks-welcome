@@ -34,6 +34,7 @@ export const childrenCommon = [
         icon: 'settings',
         path: 'settings',
         component: () => import('pages/SettingsPage.vue'),
+        visible: false,
     },
 
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -43,12 +44,14 @@ export const childrenCommon = [
         icon: 'brush',
         path: '/md-demo',
         component: () => import('pages/dev/MDDemo.vue'),
+        visible: false,
     },
     {
         title: 'MD-Dev',
         icon: 'brush',
         path: '/md-dev',
         component: () => import('pages/dev/MDDev.vue'),
+        visible: false,
     },
 
     // {
@@ -68,6 +71,7 @@ export const childrenCommon = [
         icon: 'brush',
         path: '/tools-parts-meta',
         component: () => import('pages/tools/parts-meta.vue'),
+        visible: false,
     },
     // {
     //     title: "MDGlob",

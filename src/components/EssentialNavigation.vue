@@ -1,10 +1,5 @@
 <template>
-    <q-item
-        v-for="item in childrenCommon"
-        :key="item.title"
-        :to="item.path"
-        exact
-    >
+    <q-item v-for="item in itemsFiltered" :key="item.title" :to="item.path" exact>
         <q-item-section avatar>
             <q-icon :name="item.icon" />
         </q-item-section>
@@ -16,15 +11,27 @@
     </q-item>
 </template>
 
-<script>
+<script setup>
+import { computed } from 'vue'
+
 import { childrenCommon } from '../router/routes'
 
-export default {
-    name: 'EssentialNavigation',
-    data () {
-        return {
-            childrenCommon: childrenCommon
-        }
+const props = defineProps({
+    invisible: { type: Boolean, required: false, default: false },
+})
+
+const itemsFiltered = computed(() => {
+    console.log('childrenCommon', childrenCommon)
+    if (props.invisible) {
+        return childrenCommon.filter((item) => {
+            if (item.visible == undefined) {
+                return true
+            } else if (item.visible) {
+                return item.visible
+            }
+        })
+    } else {
+        return childrenCommon
     }
-}
+})
 </script>

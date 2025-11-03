@@ -1,5 +1,6 @@
 <template>
     <!-- style="min-height: 0" -->
+    <!-- @keydown="handleKeydown" -->
     <q-layout view="lHh Lpr lFf">
         <!-- <q-header elevated>
             <q-toolbar>
@@ -17,7 +18,7 @@
             icon="menu"
             aria-label="Menu"
             @click="toggleLeftDrawer"
-            class="fixed-top-left q-ma-sm"
+            class="fixed-bottom-left q-ma-sm"
             style="z-index: 10000"
         >
         </q-btn>
@@ -30,14 +31,9 @@
             style="z-index: 10000"
         />
 
-        <q-drawer
-            v-model="leftDrawerOpen"
-            bordered
-            elevated
-            overlay
-        >
+        <q-drawer v-model="leftDrawerOpen" bordered elevated overlay>
             <q-list class="q-pt-xl q-pb-xl">
-                <EssentialNavigation />
+                <EssentialNavigation :invisible="show_invisible" />
 
                 <q-item>
                     <q-item-section>
@@ -53,7 +49,7 @@
                     <q-item-section> </q-item-section>
                 </q-item>
 
-                <q-item-label header class="fixed-bottom">
+                <q-item-label header class="fixed-bottom" @click="handleMagicClick">
                     {{ appinfo.productName }} v{{ appinfo.version }}
                     <br />
                     Quasar v{{ $q.version }}
@@ -69,24 +65,34 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { useQuasar } from "quasar";
+import { ref } from 'vue'
+import { useQuasar } from 'quasar'
 
-import EssentialNavigation from "components/EssentialNavigation.vue";
+import EssentialNavigation from 'components/EssentialNavigation.vue'
 
 defineOptions({
-    name: "MainLayout",
-});
+    name: 'MainLayout',
+})
 
-const leftDrawerOpen = ref(false);
+const leftDrawerOpen = ref(false)
 
 function toggleLeftDrawer() {
-    leftDrawerOpen.value = !leftDrawerOpen.value;
+    leftDrawerOpen.value = !leftDrawerOpen.value
 }
 
-const appinfo = process.env.appinfo;
+// function handleKeydown(event) {
+//     console.log("keydown event", event);
+//     leftDrawerOpen.value = true;
+// }
+function handleMagicClick() {
+    show_invisible.value = !show_invisible.value
+}
 
-const $q = useQuasar();
+const appinfo = process.env.appinfo
+
+const show_invisible = ref(false)
+
+const $q = useQuasar()
 
 // const dark = ref(true);
 // watchEffect(() => {
