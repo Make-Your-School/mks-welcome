@@ -23,16 +23,29 @@ difficulty: 'advanced'
 ![LED-Streifen](./65_led-streifen.png)
 
 ## Beschreibung
-Der LED-Streifen kann Lichteffekte und -animationen erzeugen oder kommt auch einfach zur Beleuchtung zum Einsatz. Er lässt sich dabei beliebig zuschneiden und wieder zusammenlöten. Weiterhin kann jede einzelne LED in Farbe und Helligkeit individuell gesteuert werden. Dadurch ist es möglich, komplexe Lichteffekte zu realisieren.
+Der LED-Streifen kann Lichteffekte und -animationen erzeugen oder kommt auch einfach zur Beleuchtung zum Einsatz. 
+Er lässt sich dabei beliebig zuschneiden und wieder zusammenlöten. 
+Weiterhin kann jede einzelne LED in Farbe und Helligkeit individuell gesteuert werden. 
+Dadurch ist es möglich, komplexe Lichteffekte zu realisieren.
 
-Der LED-Streifen kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen werden. Da der Streifen über ein PWM-Signal gesteuert wird, wird nur ein digitaler Pin am Mikrocontroller benötigt.
+<!-- more_details -->
 
-Ab einer Länge von fünf LEDs wird empfohlen, den LED-Streifen an eine externe Stromquelle anzuschließen. Werden längere LED-Streifen in Betracht gezogen so sollte eine Stromeinspeisung mindestens jeden Meter erfolgen, um alle LEDs gleichmäßig mit Strom zu versorgen.
+Der LED-Streifen kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen werden.
+Der Streifen wird über ein kombiniertes Zeit & Daten-Signal gesteuert. 
+Hierfür wird nur ein digitaler Pin am Mikrocontroller benötigt.
 
-Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau sind auf der Produktseite zu finden. Eine ausführliche Anleitung zu NeoPixel-LED-Streifen ist weiter unten verlinkt. Die Anleitung sollte mit größter Sorgfalt Schritt für Schritt abgearbeitet werden, um Schäden am LED-Streifen zu vermeiden. Zusätzliche Informationen findet man über alle gängigen Suchmaschinen, indem nach „NeoPixel LED-Streifen“ und „Arduino“ gesucht wird.
+### Power
+grob gesagt braucht jeder Pixel bis zu 60mA (wenn du ihn 100% Weiß leuchten lässt).
+Ab einer Länge von fünf LEDs wird empfohlen, den LED-Streifen an eine externe Stromquelle anzuschließen. 
+(5*0,06A = 300mA; normales USB erlaubt max. 500mA)
+Werden längere LED-Streifen in Betracht gezogen, so sollte eine Stromeinspeisung mindestens jeden Meter erfolgen, um alle LEDs gleichmäßig mit Spannung zu versorgen.
 
-https://youtu.be/e0CBo3xn858?feature=shared
+Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau sind auf der Produktseite zu finden. 
+Auch eine ausführliche Anleitung zu NeoPixel-LED-Streifen ist weiter unten verlinkt. 
+Die Anleitung sollte mit größter Sorgfalt Schritt für Schritt abgearbeitet werden, um Schäden am LED-Streifen & Controller zu vermeiden. 
+Zusätzliche Informationen findet man über alle gängigen Suchmaschinen, in dem nach „NeoPixel LED-Streifen“ und „Arduino“ gesucht wird.
 
+@[youtube](https://www.youtube.com/watch?v=e0CBo3xn858)
  
 
 
@@ -57,11 +70,14 @@ https://youtu.be/e0CBo3xn858?feature=shared
 ## Projektbeispiele:
 
 - [Hackster – Indoor NeoPixel Thermometer](https://www.hackster.io/hackerEsk/indoor-neopixel-thermometer-64f22e)
+- [Adafruit - Neopixel Jewel Necklace](https://learn.adafruit.com/10-minute-neopixel-necklace)
+- [Adafruit - NeoPixel LED Sound Reactive Drums](https://learn.adafruit.com/gemma-powered-neopixel-led-sound-reactive-drums)
+- [Adafruit - NeoPixel LED Necklace Insert](https://learn.adafruit.com/neopixel-led-necklace-insert-with-usb-charging)
+- [Adafruit - NeoPixel Basketball Hoop](https://learn.adafruit.com/neopixel-mini-basketball-hoop)
 
+<!-- 
 ## Weiterführende Hintergrundinformationen:
 
-- [I2C - Wikipedia Artikel](https://de.wikipedia.org/wiki/I%C2%B2C)
-- [SPI - Wikipedia Artikel](https://de.wikipedia.org/wiki/Serial_Peripheral_Interface)
-- [UART - Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)
-- [GitHub-Repository: LED-Streifen](https://github.com/MakeYourSchool/65-LED-Streifen)
+- [GitHub-Repository: LED-Streifen](https://github.com/MakeYourSchool/65-LED-Streifen) 
+-->
 

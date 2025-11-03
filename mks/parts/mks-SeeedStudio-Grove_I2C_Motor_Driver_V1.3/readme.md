@@ -40,18 +40,26 @@ Gleichzeitig wird der Mikrocontroller von etwaigen Kurzschlüssen oder Überspan
 
 <!-- more_details -->
 
-Die vorliegende Ausführung kann einen vieradrigen Schrittmotoroder oder zwei Gleichstrommotorenansteuern. 
+Die vorliegende Ausführung kann einen vieradrigen Schrittmotor oder oder zwei Gleichstrommotoren ansteuern. 
 Falls zwei Gleichstrommotoren angeschlossen werden, können diese unabhängig voneinander sowohl bezüglich der Richtung und Geschwindigkeit gesteuert werden.
 
-Der Motortreiber wird direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über die serielle Schnittstelle I2C  angeschlossen. Der Treiber benötigt dabei eine separate Stromversorgung zwischen 6V und 15V.
+Der Motortreiber wird direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über die serielle Schnittstelle I2C  angeschlossen. 
+Der Treiber benötigt dabei eine separate Stromversorgung zwischen 6V und 15V.
 
-Ein Beispielprojekt könnte ein Roboter sein, der ein frei drehbares und zwei angetriebene Räder besitzt. Die zwei Räder können mithilfe des Motortreibers sowohl vorwärts als auch rückwärts gesteuert werden. So kann der Roboter in alle Richtungen navigiert werden.
+Ein Beispielprojekt könnte ein Roboter sein, der ein frei drehbares und zwei angetriebene Räder besitzt. Die zwei Räder können mithilfe des Motortreibers sowohl vorwärts als auch rückwärts gesteuert werden. 
+So kann der Roboter in alle Richtungen navigiert werden.
 
-Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnung entsprechende Projektbeispiele und Tutorials.
+Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. 
+Zusätzlich findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponenten-Bezeichnung entsprechende Projektbeispiele und Tutorials.
 
-**Wichtige Hinweise:**
-
-Programmierung und RESET: Beim Heraufladen eines Programms auf einen Mikrocontroller über einen Computeranschluss („Upload-Vorgang“) wird der Mikrocontroller automatisch kurz vom Strom getrennt, damit das neu geladene Programm komplett von vorne ablaufen kann. Der hier vorliegende Motortreiber wird aber zusätzliche mit einer externen Stromquelle betrieben, zum Beispiel mit einem Netzteil oder einem Akku. Sind Motortreiber, externe Stromquelle und Mikrocontroller während des Upload-Vorgangs miteinander verbunden, kommt es teilweise zu Problemen. Der Grund ist, dass der Mikrocontroller nicht richtig vom Strom getrennt werden kann, wenn er (zusätzlich zur Stromversorgung über einen Computer) an einer externen Stromquelle hängt. Deshalb sollte man Mikrocontroller und Motortreiber während des Upload-Vorgangs von allen Stromquellen außer dem PC-Anschluss trennen. Soll der Mikrocontroller resettet werden, also in den Ausgangszustand versetzt werden, sollte er ebenfalls von allen externen **Stromquellen getrennt werden**.
+> [!wichtig]
+> Programmierung und RESET: 
+> Beim Heraufladen eines Programms auf einen Mikrocontroller über einen Computeranschluss („Upload-Vorgang“) wird der Mikrocontroller automatisch *zurückgesetzt*, damit das neu geladene Programm komplett von vorne ablaufen kann. 
+> Der hier vorliegende Motortreiber wird meist zusätzliche mit einer externen Stromquelle betrieben, zum Beispiel mit einem Netzteil oder einem Akku. 
+> Sind Motortreiber, externe Stromquelle und Mikrocontroller während des Upload-Vorgangs miteinander verbunden, kommt es teilweise zu Problemen. 
+> Der Grund ist, dass der Mikrocontroller nicht richtig vom Strom getrennt werden kann, wenn er (zusätzlich zur Stromversorgung über einen Computer) an einer externen Stromquelle hängt. 
+> Deshalb sollte man Mikrocontroller und Motortreiber während des Upload-Vorgangs von allen Stromquellen außer dem PC-Anschluss trennen. 
+> Soll der Mikrocontroller resettet werden, also in den Ausgangszustand versetzt werden, sollte er ebenfalls von allen externen **Stromquellen getrennt werden**.
 
 
 @[youtube](https://www.youtube.com/watch?v=wVxcmO2YuxA)
@@ -89,6 +97,4 @@ Programmierung und RESET: Beim Heraufladen eines Programms auf einen Mikrocontro
 - [SPI - Wikipedia Artikel](https://de.wikipedia.org/wiki/Serial_Peripheral_Interface)
 - [UART - Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)
 - [GitHub-Repository: Motortreiber](https://github.com/MakeYourSchool/70-Motortreiber)
-
-
 
