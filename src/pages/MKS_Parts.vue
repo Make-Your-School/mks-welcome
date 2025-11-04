@@ -6,10 +6,23 @@
         <!-- class="col-auto" -->
         <!-- -->
         <!-- <div class="scroll-wrapper col"> -->
-        <div>
-            <q-input rounded outlined v-model="searchText" label="Suche:"> </q-input>
+        <div class="row wrap justify-start items-stretch content-start">
+            <q-input class="col-grow" rounded outlined v-model="searchText" label="Suche:">
+            </q-input>
+            <q-btn-toggle
+                rounded
+                outlined
+                v-model="filter_by_type"
+                clearable
+                :options="[
+                    { label: 'Controller', value: 'controller' },
+                    { label: 'input', value: 'input' },
+                    { label: 'output', value: 'output' },
+                    { label: 'shield', value: 'shield' },
+                ]"
+            />
         </div>
-        <ul class="card-wrapper row items-stretch">
+        <ul class="card-wrapper row">
             <li
                 v-for="(mks_item, mks_item_name) in mks_items_filtered"
                 :key="mks_item_name"
@@ -44,7 +57,6 @@ import PartOverview from 'src/components/PartOverview.vue'
 
 import { useMDContentStore } from 'src/stores/mdContent'
 
-
 const mdContent = useMDContentStore()
 console.log('mdContent', mdContent)
 const mks_welcome = mdContent.mks.welcome
@@ -52,87 +64,17 @@ const mks_parts = shallowRef(mdContent.mks.parts)
 const mks_parts_sorted = shallowRef(mdContent.mks.parts_sorted)
 console.log('mks_parts_sorted', mks_parts_sorted)
 
-
-// const mks_items_sorted = computed(() => {
-//     // const checkKey = (key) => key.includes('ino') || key.includes('main')
-//     console.log(mks_parts.value);
-//     // const entries = Object.entries(mks_parts.value)
-//     // // console.log('entries', entries)
-//     // // const firstEntries = entries.filter(([key]) => checkKey(key))
-//     // // // console.log('firstEntries', firstEntries)
-//     // // const otherEntries = entries.filter(([key]) => !checkKey(key))
-//     // // console.log('otherEntries', otherEntries)
-//     // otherEntries.sort(([a], [b]) => a.localeCompare(b))
-//     // const sortedEntries = [...firstEntries, ...otherEntries]
-//     // // console.log('sortedEntries', sortedEntries)
-//     // files.value = Object.fromEntries(sortedEntries)
-
-//     const result = {
-//         ...getObjItemsWithSearchTextInReadme(mks_parts.value),
-//         // ...mks_parts.value
-//     }
-//     return result
-// })
-
-// const check_searchTextInReadme = (readme, item_name) => {
-//     return (
-//         item_name?.toLowerCase().includes(searchText.value.toLowerCase()) ||
-//         readme.content.toLowerCase().includes(searchText.value.toLowerCase()) ||
-//         readme.data?.tags?.join(", ").toLowerCase().includes(searchText.value.toLowerCase())
-//     );
-// };
-const check_searchTextInReadme = (readme, item_name) => {
-    return (
-        item_name?.toLowerCase().includes(searchText.value.toLowerCase()) ||
-        readme.content_text.toLowerCase().includes(searchText.value.toLowerCase()) ||
-        // TODO: find a better way to search for text in rendered output..
-        readme.data?.tags?.join(', ').toLowerCase().includes(searchText.value.toLowerCase())
-    )
-}
-
-const getObjItemsWithSearchTextInReadme = (obj) => {
-    const result = {}
-    for (const [item_name, item] of Object.entries(obj)) {
-        // console.log(`item_name`, item_name, `item`, item)
-        if (check_searchTextInReadme(item, item_name)) {
-            result[item_name] = item
-        }
-    }
-    return result
-}
+const filter_by_type = ref('')
+const searchText = ref('')
+const search_in_content = ref(false)
 
 const mks_items_filtered = computed(() => {
-    // const result = {};
-    // for (const [mks_item_name, mks_item] of Object.entries(mks_tags.value)) {
-    //     console.log(`mks_item_name`, mks_item_name, `mks_item`, fn_item);
-    //     // only include in result if search text is somewhere in the content..
-    //     // check bauteile
-    //     // const bauteile_includes = getObjItemsWithSearchTextInReadme(mks_parts.);
-    //     // // console.log("bauteile_includes", bauteile_includes);
-    //     // console.log("Object.keys(bauteile_includes)", Object.keys(bauteile_includes));
-
-    //     // if (
-    //     //     check_searchTextInReadme(fn_item.readme, fn_name) ||
-    //     //     Object.keys(bauteile_includes).length > 0
-    //     // ) {
-    //     if (
-    //         check_searchTextInReadme(fn_item.readme, fn_name)
-    //     ) {
-    //         result[fn_name] = fn_item;
-    //     }
-    // }
-
-    const result = {
-        // ...getObjItemsWithSearchTextInReadme(mks_tags.value),
-        // ...getObjItemsWithSearchTextInReadme(mks_parts.value),
-        ...getObjItemsWithSearchTextInReadme(mks_parts_sorted.value),
-        // ...mks_parts_sorted,
-    }
-    // console.log('mks_items_filtered', result)
-    return result
+    return mdContent.parts_filtered({
+        by_searchText: searchText.value,
+        by_material_type: filter_by_type.value,
+        in_content: search_in_content.value,
+    })
 })
-
-const searchText = ref('')
 
 // $q.notify('Message')
 
@@ -160,7 +102,7 @@ const searchText = ref('')
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-start;
-        align-content: stretch;
+        align-content: flex-start;
         align-items: stretch;
         li
             margin: 0

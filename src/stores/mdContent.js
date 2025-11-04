@@ -8,7 +8,6 @@ import about from '../content_md/about.js'
 // import demo from '../content_md/demo.js'
 // console.log('mksContent', mksContent)
 
-
 const sort_materialtype = (entries) => {
     // material_type
     // - controller
@@ -135,6 +134,52 @@ const mks_items_sorted = (mks_parts_raw) => {
     // return sortedEntries
 }
 
+const filter_with_text = (item, item_name, searchText, searchInContent = false) => {
+    // TODO: find a better way to search for text in rendered output..
+    // readme.content.toLowerCase().includes(searchText.value.toLowerCase()) ||
+    return (
+        item_name?.toLowerCase().includes(searchText.toLowerCase()) ||
+        (searchInContent
+            ? item.content_text.toLowerCase().includes(searchText.toLowerCase())
+            : false) ||
+        item.excerpt.toLowerCase().includes(searchText.toLowerCase()) ||
+        item.meta.tags?.join(', ').toLowerCase().includes(searchText.toLowerCase()) ||
+        item.meta.material_short_descr?.toLowerCase().includes(searchText.toLowerCase()) ||
+        item.data?.tags?.join(', ').toLowerCase().includes(searchText.toLowerCase())
+    )
+}
+
+const filterObjItemsWithSearchText = (obj, searchText, searchInContent) => {
+    const result = {}
+    for (const [item_name, item] of Object.entries(obj)) {
+        // console.log(`item_name`, item_name, `item`, item)
+        if (filter_with_text(item, item_name, searchText, searchInContent)) {
+            result[item_name] = item
+        }
+    }
+    return result
+}
+
+const filterByMaterialType = (obj, by_material_type) => {
+    // console.log(`obj`, obj)
+    // console.log(`by_material_type`, by_material_type)
+    if (by_material_type && by_material_type != '') {
+        // console.log('filter!')
+        const result = {}
+        for (const [item_name, item] of Object.entries(obj)) {
+            // console.log(`item_name`, item_name, `item`, item)
+            // console.log(`item.meta.material_type`, item.meta.material_type)
+            if (item.meta.material_type == by_material_type) {
+                result[item_name] = item
+            }
+        }
+        return result
+    } else {
+        // console.log('skip')
+        return obj
+    }
+}
+
 export const useMDContentStore = defineStore('MDContent', {
     state: () => ({
         mks: {
@@ -148,7 +193,27 @@ export const useMDContentStore = defineStore('MDContent', {
         // demo: demo,
         // abbr: {abbr:mksAbbrLoad()},
     }),
-    getters: {},
+    getters: {
+        // parts_sorted: (state) => mks_items_sorted(state.parts),
+        // parts_filtered_by_material_type: (state) => {
+        //     // https://pinia.vuejs.org/core-concepts/getters.html#Passing-arguments-to-getters
+        //     return (userId) => this.parts_sorted.find((part) => user.id === userId)
+        //     mks_items_sorted(state.parts)
+        // },
+        parts_filtered: (state) => {
+            // https://pinia.vuejs.org/core-concepts/getters.html#Passing-arguments-to-getters
+            return (filterObj) => {
+                return filterByMaterialType(
+                    filterObjItemsWithSearchText(
+                        state.mks.parts_sorted,
+                        filterObj.by_searchText ? filterObj.by_searchText : '',
+                        filterObj.in_content ? filterObj.in_content : false,
+                    ),
+                    filterObj.by_material_type,
+                )
+            }
+        },
+    },
     actions: {},
 })
 
