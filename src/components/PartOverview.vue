@@ -28,7 +28,7 @@ defineProps({
 </script>
 
 <style lang="sass" scoped>
-.part-overview
+// .part-overview
 .q-card
     border-radius: var(--corner-radius-medium);
     border: 2px solid var(--card-stroke);
