@@ -16,8 +16,8 @@ repo_part: "Grove_Q_Touch_Sensor"
 product_url: "http://wiki.seeedstudio.com/Grove-Q_Touch_Sensor/"
 clone_url: "https://github.com/Make-Your-School/mks-SeeedStudio-Grove_Q_Touch_Sensor.git"
 embedded_example_file: "examples/Grove_Q_Touch_Sensor_minimal/Grove_Q_Touch_Sensor_minimal.ino"
-status: 'active'
-difficulty: 'advanced'
+status: 'EOL'
+difficulty: 'EOL'
 ---
 
 

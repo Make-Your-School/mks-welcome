@@ -15,7 +15,7 @@ repo_prefix: "mks"
 repo_part: "Shield"
 embedded_example_file: "examples/Shield_minimal/Shield_minimal.ino"
 status: 'EOL'
-difficulty: 'expert'
+difficulty: 'EOL'
 ---
 
 
@@ -24,7 +24,8 @@ difficulty: 'expert'
 ![SenseBox Shield (Arduino)](./68_sensebox_shield_arduino.png)
 
 ## Beschreibung
-Produkt vom Markt genommen.
+
+Produkt ist vom Markt genommen.
 
 
 Das SenseBox Shield ist eine Erweiterungsplatine für Arduino-ähnliche Mikrocontroller. Diese Erweiterungsplatinen werden im Allgemeinen als „Shield“ bezeichnet und werden einfach auf den entsprechenden Controller oder Einplatinencomputer gesteckt. Das Shield bietet dann einzelne Steckplätze, um die Sensoren mit entsprechenden Verbindungskabel anzuschließen.

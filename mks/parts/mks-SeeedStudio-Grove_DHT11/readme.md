@@ -1,5 +1,5 @@
 ---
-title: 'Temperatur- und Luft­feuchtigkeits&amp;shy;sensor'
+title: 'Temperatur- und Luft­feuchtigkeitssensor'
 date: "2018-08-28T23:39:41.000Z"
 tags: 
   - "sensor"
@@ -21,7 +21,7 @@ difficulty: 'recommend'
 ---
 
 
-# Temperatur- und Luft­feuchtigkeits&amp;shy;sensor
+# Temperatur- und Luft­feuchtigkeitssensor
 
 ![Temperatur- und Luft­feuchtigkeits&amp;shy;sensor](./5_temperatur-und-luftfeuchtigkeitssensor.png)
 
@@ -72,7 +72,7 @@ Wenn der Sensor vom Typ DHT 22 ist, lautet der Code:
 - [SPI - Wikipedia Artikel](https://de.wikipedia.org/wiki/Serial_Peripheral_Interface)
 - [UART - Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)
 - [Luftfeuchtigkeit – Wikipedia Artikel](https://de.wikipedia.org/wiki/Luftfeuchtigkeit#Relative_Luftfeuchtigkeit)
-- [GitHub-Repository: Temperatur- und Luftfeuchtigkeitssenso](https://github.com/MakeYourSchool/5-Temperatur-und-Luftfeuchtigkeitssensor)
+- [GitHub-Repository: Temperatur- und Luftfeuchtigkeitssensor](https://github.com/MakeYourSchool/5-Temperatur-und-Luftfeuchtigkeitssensor)
 
 
 
