@@ -1,19 +1,18 @@
 # Make Your School - Material
 
-dieses repository beinhaltet die Dokumentation zu allen Make Your School Materialien.
+Dieses Repository beinhaltet die Dokumentation zu allen technischen Materialien im Projekt Make Your School.
 
-es gibt eine gerenderte version unter:
+Eine gerenderte Version gibt es unter:
 https://Make-Your-School.github.io/mks-welcome/
 
-ansonsten stöbere gerne in den verschiedenen Unterordnern bzw. Sub-Repositories -
-für jedes Bauteil gibt es hier ein repository:
+Stöbere gern in den verschiedenen Unterordnern bzw. Sub-Repositories - für jedes Bauteil gibt es hier ein Repository:
 https://github.com/orgs/Make-Your-School/repositories?q=mks-
 
 ## Struktur
 
-die Übersichts-seite liegt im Ordner [`public/mks/`](./public/mks/readme.md)
-Darunter findest du die verschiedenen bauteile im Ordner [`public/mks/parts/`](./public/mks/parts/).
-Jedes Bauteil liegt in einem eigenen Repository welches hier als git submodule eingebunden ist.
+Die Übersichtsseite liegt im Ordner [`public/mks/`](./public/mks/readme.md).
+Darunter findest du die verschiedenen Bauteile im Ordner [`public/mks/parts/`](./public/mks/parts/).
+Jedes Bauteil liegt in einem eigenen Repository, das hier als git submodule eingebunden ist.
 
 Im Ordner [`public/mks/abbr/`](./public/mks/abbr/) findest du die Tool-Tip-Wörter (abbreviations / Abkürzungen).
 Alle diese hier verfügbaren Abkürzungen werden automatisch auf der gerenderten Seite mit den Tool-Tips ergänzt.
@@ -47,21 +46,20 @@ Im Ordner [`public/mks/tags/`](./public/mks/tags/) findest du die Erklärungen f
 
 ### mks-welcome Struktur & Inhalt
 
-du hast eine Idee zu einer Verbesserung der Struktur/Inhalt hier?
-dann schreibe uns bitte im [issues-tracker](https://github.com/Make-Your-School/mks-welcome/issues)
+Du hast eine Idee zu einer Verbesserung der Struktur oder des Inhalts?
+Dann schreibe uns bitte im [issues-tracker](https://github.com/Make-Your-School/mks-welcome/issues)
 
-### Bauteil Spezifisch Inhalt/Code
+### Bauteilspezifisch Inhalt/Code
 
-wenn es ein spezifisches Bauteil betrifft, bitte im Bauteil-eigenen Repository ein issue erstellen:
+Wenn es ein spezifisches Bauteil betrifft, bitte im Bauteil-eigenen Repository ein issue erstellen:
+In der gerenderten Seite ist das jeweilige Bauteil-Repository ganz am Ende der Seite mit dem Text `edit source` verlinkt.
 
-in der gerenderten Seite ist das jeweilige Bauteil-Repository ganz am Ende der Seite mit dem Text `edit source` verlinkt.
+Mehr infos zu diesem Prozess findest du in [docu/contributions.md](./docu/contributions.md)
 
-mehr infos zu diesem Prozess in [docu/contributions.md](./docu/contributions.md)
-
-### Bauteil Hinzufügen
+### Bauteil hinzufügen
 
 [docu/neues_bauteil_hinzufuegen.md](./docu/neues_bauteil_hinzufuegen.md)
 
 ## DEV
 
-für development des renderings an-sich siehe [./docu/dev.md](./docu/dev.md)
+Für development des renderings an sich, siehe [./docu/dev.md](./docu/dev.md)
