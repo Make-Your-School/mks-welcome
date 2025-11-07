@@ -35,7 +35,7 @@ export const childrenCommon = [
         icon: 'settings',
         path: 'settings',
         component: () => import('pages/SettingsPage.vue'),
-        visible: false,
+        visible: true,
     },
 
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

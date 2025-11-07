@@ -49,7 +49,11 @@
                     <q-item-section> </q-item-section>
                 </q-item>
 
-                <q-item-label header class="fixed-bottom appinfo" v-touch-hold:2000.mouse="handleMagicClick">
+                <q-item-label
+                    header
+                    class="fixed-bottom appinfo"
+                    v-touch-hold:1000.mouse="handleMagicClick"
+                >
                     {{ appinfo.productName }} v{{ appinfo.version }}
                     <br />
                     Quasar v{{ $q.version }}
@@ -90,8 +94,6 @@ function handleMagicClick() {
 }
 
 const appinfo = process.env.appinfo
-
-
 
 const $q = useQuasar()
 

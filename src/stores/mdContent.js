@@ -85,7 +85,7 @@ const sort_difficulty = (entries) => {
     return result
 }
 
-const mks_items_sorted = (mks_parts_raw) => {
+const mks_items_sorted_recommend = (entries, hide_EOL = false) => {
     // sort:
     // status
     // - active
@@ -97,8 +97,6 @@ const mks_items_sorted = (mks_parts_raw) => {
     // - advanced
     // - expert
     // console.group('mks_items_sorted')
-    // console.log('mks_parts_raw', mks_parts_raw)
-    const entries = Object.entries(mks_parts_raw)
     // console.log('entries', entries)
     let status_active = entries.filter(([, obj]) => obj.meta.status == 'active')
     let status_deprecated = entries.filter(([, obj]) => obj.meta.status == 'deprecated')
@@ -122,10 +120,41 @@ const mks_items_sorted = (mks_parts_raw) => {
         ...status_active,
         ...status_deprecated,
         ...status_rest,
-        ...status_EOL,
-        // ...mks_parts.value,
-        // ...entries,
+        ...(hide_EOL ? [] : status_EOL),
     ]
+    // console.log('sortedEntries', sortedEntries)
+    // console.groupEnd()
+    return sortedEntries
+}
+
+const mks_items_sorted_material_number = (entries, hide_EOL = true) => {
+    // console.group('mks_items_sorted_material_number')
+    // console.log('entries', entries)
+    if (hide_EOL) {
+        entries = entries.filter(([, obj]) => obj.meta.status !== 'EOL')
+    }
+
+    // const sort_material_number = ([key1, item1], [key2, item2]) => {
+    const sort_material_number = ([, item1], [, item2]) => {
+        // return key1.localeCompare(key2)
+        return item1.meta.material_number - item2.meta.material_number
+    }
+
+    entries.sort(sort_material_number)
+
+    return entries
+}
+
+const mks_items_sorted = (mks_parts_raw, settings = {}) => {
+    const entries = Object.entries(mks_parts_raw)
+
+    let sortedEntries = []
+    if (settings.sorting == 'recommend') {
+        sortedEntries = mks_items_sorted_recommend(entries, settings.hide_EOL)
+    } else {
+        sortedEntries = mks_items_sorted_material_number(entries, settings.hide_EOL)
+    }
+
     // console.log('sortedEntries', sortedEntries)
     const sortedEntriesObj = Object.fromEntries(sortedEntries)
     // console.log('sortedEntriesObj', sortedEntriesObj)
@@ -185,9 +214,17 @@ export const useMDContentStore = defineStore('MDContent', {
         mks: {
             welcome: mksContent.welcome,
             parts: mksContent.parts,
-            parts_sorted: mks_items_sorted(mksContent.parts),
+            // parts_sorted: mks_items_sorted(mksContent.parts, {
+            //     hide_EOL: this.settings.hide_EOL,
+            //     sorting: this.settings.sorting,
+            // }),
             tags: mksContent.tags,
             // abbr: mksAbbr,
+        },
+        settings: {
+            sorting: 'material_number',
+            hide_EOL: true,
+            search_in_content: false,
         },
         about: about,
         // demo: demo,
@@ -205,9 +242,13 @@ export const useMDContentStore = defineStore('MDContent', {
             return (filterObj) => {
                 return filterByMaterialType(
                     filterObjItemsWithSearchText(
-                        state.mks.parts_sorted,
+                        // state.mks.parts_sorted,
+                        mks_items_sorted(state.mks.parts, {
+                            hide_EOL: state.settings.hide_EOL,
+                            sorting: state.settings.sorting,
+                        }),
                         filterObj.by_searchText ? filterObj.by_searchText : '',
-                        filterObj.in_content ? filterObj.in_content : false,
+                        state.settings.search_in_content,
                     ),
                     filterObj.by_material_type,
                 )
