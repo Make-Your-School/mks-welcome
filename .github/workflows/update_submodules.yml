@@ -1,0 +1,29 @@
+# inspired by
+# https://medium.com/@0xWerz/how-to-automatically-update-git-submodules-using-github-actions-d71c8126e82e
+
+name: update submodules
+
+on:
+    schedule:
+        - cron: 0 4 * * 1
+        #  every Monday at 4:00h
+    repository_dispatch:
+        types:
+            - update-submodule
+    # push:
+    #     branches:
+    #         - main
+
+permissions:
+    contents: write
+
+jobs:
+    update-submodules:
+        concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+        runs-on: ubuntu-latest
+        steps:
+            - name: update-submodules
+              uses: runsascoded/update-submodules@gha0.0.2
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
+            - run: echo "Pushed new commit ${{ steps.update.outputs.sha }} with updated submodules"
