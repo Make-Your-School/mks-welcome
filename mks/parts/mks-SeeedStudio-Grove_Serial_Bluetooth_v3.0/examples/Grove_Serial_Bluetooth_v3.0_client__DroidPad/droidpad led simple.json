@@ -1,0 +1,31 @@
+{
+    "controlPad": {
+        "name": "led simple",
+        "orientation": "PORTRAIT",
+        "width": 1080,
+        "height": 1975
+    },
+    "controlPadItems": [
+        {
+            "itemIdentifier": "led",
+            "controlPadId": 2,
+            "offsetX": 391.14844,
+            "offsetY": 1034.3281,
+            "itemType": "BUTTON",
+            "properties": "{\"useIcon\":true,\"useClickAction\":true,\"iconId\":9}"
+        },
+        {
+            "itemIdentifier": "led",
+            "controlPadId": 2,
+            "offsetX": 423.77637,
+            "offsetY": 614.72266,
+            "itemType": "LED",
+            "properties": "{\"color\":18374964651818483712}"
+        }
+    ],
+    "connectionConfig": {
+        "controlPadId": 2,
+        "connectionType": "BLUETOOTH",
+        "configJson": "{\"remoteDevice\":null}"
+    }
+}

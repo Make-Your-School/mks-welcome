@@ -30,8 +30,8 @@ So können beispielsweise zwei Arduinos untereinander oder auch ein Arduino mit 
 
 <!-- more_details -->
 
-Damit das funktioniert, wird auf dem Smartphone ein Terminal benötigt, über das Befehle empfangen und gesendet werden können.
-Ein Beispiel-Link zu einem solchen Terminal findet ihr unter „Wichtige Links“.
+Damit das funktioniert, wird auf dem Smartphone eine App benötigt, über welche Befehle empfangen und gesendet werden können.
+Beispiel-Links zu solchen Apps findet ihr unter „Wichtige Links“.
 Das Bluetooth-Modul lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über die serielle Schnittstelle UART anschließen und zusätzlich über bestimmte Befehle programmieren.
 So kann beispielsweise ein Bluetooth-Pin oder der angezeigte Bluetooth-Name eingestellt werden.
 
@@ -67,12 +67,13 @@ Um dieses Bauteil zu verwenden, wird lediglich die Bibliothek "SoftwareSerial" b
 Grundsätzlich:
 
 - Bluetooth-Modul am Arduino anschließen (am besten über das Grove Shield).
-  Den richtigen Port entnehmt ihr dem Beispiel-Code
+  Den richtigen Port findest du im jeweiligen Beispiel-Code
 - Sobald der Arduino mit Strom versorgt wird, sollte das Bluetooth-Modul anfangen zu blinken.
 
 ### Bluetooth-Modul konfigurieren
 
-Das BT-Modul kann über sogenannte AT-Befehle konfiguriert werden. Diese können händisch in der Arduino IDE über den seriellen Monitor verschickt werden. Dies muss nur einmalig gemacht werden. Das Modul speichert die Konfiguration dauerhaft.
+Das BT-Modul kann über sogenannte AT-Befehle konfiguriert werden. Diese können händisch in der Arduino IDE über den seriellen Monitor verschickt werden. 
+Dies muss nur einmalig gemacht werden. Das Modul speichert die Konfiguration dauerhaft.
 Damit das BT-Modul AT-Befehle korrekt verarbeitet müssen drei Bedingungen erfüllt sein:
 
 - Der Beispiel-Code (oder ein vergleichbarer Sketch) muss auf den Arduino aufgespielt sein.
@@ -112,21 +113,22 @@ Liste der wichtigsten AT-Befehle (Optionen sind in [ ] angegeben (keine Leerzeic
 ### Bluetooth-Modul und Smartphone verbinden
 
 - Bluetooth-Modul auf Werkszustand zurücksetzen (oder wie gewünscht konfigurieren)
-- Auf dem Smartphone in die Bluetooth-Einstellungen gehen und nach neuen Geräten suchen. Nach einigen Sekunden sollte das Bluetooth-Modul als "HMSoft" auftauchen.
+- Auf dem Smartphone in die Bluetooth-Einstellungen gehen und nach neuen Geräten suchen. 
+- Nach einigen Sekunden sollte das Bluetooth-Modul als "HMSoft" auftauchen. (`HMSoft` ist der Standard Name)
 - "HMSoft" auswählen und PIN eingeben (Standard: 1234)
-- In vielen Fällen wird sich das Smartphone zwar koppeln aber keine Verbindung aufbauen können. Das ist nicht schlimm.
-- Eine der empfohlenen Bluetooth-Apps öffnen (s. Links zum Google Play Store) und innerhalb der App mit HMSoft verbinden
+- In vielen Fällen wird sich das Smartphone zwar koppeln aber keine Verbindung aufbauen können. Das ist normal.
+- Eine der empfohlenen Bluetooth-Apps öffnen (s. Links) und innerhalb der App mit HMSoft verbinden
 
 #### Bluetooth-Apps
 
-- [Google Play Store – Bluetooth Arduino Control](https://play.google.com/store/apps/details?id=com.giristudio.hc05.bluetooth.arduino.control)
-- [Google Play Store – Serial Bluetooth Terminal](https://play.google.com/store/apps/details?id=de.kai_morich.serial_bluetooth_terminal&hl=de)
+- [F-Droid - DroidPad](https://f-droid.org/packages/com.github.umer0586.droidpad/) ([orig. repo](https://github.com/UmerCodez/DroidPad))
+    - FOSS und kostenfrei und werbefreie App
+    - ermöglicht grafische Oberflächen mit Tastern und Schiebereglern und ähnlichem zu erstellen.
+    - jedes *Bedien-Element* hat eine ID auf die der Arduino-Sketch dann reagieren kann. (siehe Beispiel `*__DroidPad`)
 - [F-Droid - Bluetooth Viewer (LITE)](https://f-droid.org/en/packages/net.bluetoothviewer/)
 - [F-Droid - SerialTest (kann auch Bluetooth)](https://f-droid.org/en/packages/priv.wh201906.serialtest/)
-
-## Wichtige Links für die ersten Schritte:
-
-- [Seeed Studio Wiki – Bluetooth](http://wiki.seeedstudio.com/Grove-Serial_Bluetooth_v3.0/)
+- [Google Play Store – Bluetooth Arduino Control](https://play.google.com/store/apps/details?id=com.giristudio.hc05.bluetooth.arduino.control)
+- [Google Play Store – Serial Bluetooth Terminal](https://play.google.com/store/apps/details?id=de.kai_morich.serial_bluetooth_terminal&hl=de)
 
 ## Projektbeispiele:
 
@@ -134,6 +136,7 @@ Liste der wichtigsten AT-Befehle (Optionen sind in [ ] angegeben (keine Leerzeic
 
 ## Weiterführende Hintergrundinformationen:
 
+- [Seeed Studio Wiki – Bluetooth](http://wiki.seeedstudio.com/Grove-Serial_Bluetooth_v3.0/)
+- [Bluetooth-Chip Software Datasheet](https://files.seeedstudio.com/wiki/Bluetooth_Shield_V2/res/Bluetooth_en.pdf)
 - [UART - Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)
 - [Bluetooth - Wikipedia Artikel](https://de.wikipedia.org/wiki/Bluetooth)
-- [Bluetooth-Chip Software Datasheet](https://files.seeedstudio.com/wiki/Bluetooth_Shield_V2/res/Bluetooth_en.pdf)
