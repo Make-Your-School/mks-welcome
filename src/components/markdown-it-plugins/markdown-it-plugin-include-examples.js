@@ -59,7 +59,7 @@ export const loadExample = (example_path, dir_content, part_name) => {
     for (const file_dir of dir_content) {
         // console.log('file_dir', file_dir)
         const file_path = path.join(file_dir.parentPath, file_dir.name)
-        console.log('file_path', file_path)
+        // console.log('file_path', file_path)
         // the replace removes the leading dot from the extension...
         const file_ext = path.extname(file_path).replace(/^\./, '')
         // console.log(`file_ext: '${file_ext}'`)
