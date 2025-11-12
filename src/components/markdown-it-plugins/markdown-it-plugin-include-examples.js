@@ -12,8 +12,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-
-
 // // based on
 // // https://github.com/markdown-it/markdown-it/blob/master/lib/common/utils.mjs#L121
 // const HTML_ESCAPE_REPLACE_RE = /[&<>"']/g
@@ -243,7 +241,6 @@ function getCurrentBasePath(pathRel, env) {
     }
 }
 
-
 // function renderer(tokens, idx, options, env, self, plugin_options) {
 function renderer(tokens, idx, options, env, self) {
     // console.log(`mditPluginIncludeExamples.renderer called`)
@@ -280,7 +277,6 @@ function renderer(tokens, idx, options, env, self) {
     //         },
     //     },
     // }
-
 
     // // const examples_JSON = JSON.stringify(examples)
     const examples_JSON = JSON.stringify(examples, null, 4)

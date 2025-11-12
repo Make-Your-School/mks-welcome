@@ -7,8 +7,8 @@
             :key="example_name"
             :example_name="example_name"
             :content_obj="content_obj"
-            :expanded="Object.keys(content).indexOf(example_name) == 0 ? true : false"
         />
+        <!-- :expanded="Object.keys(content).indexOf(example_name) == 0 ? true : false" -->
         <!-- expanded: make first one expanded by default. -->
     </div>
 </template>
@@ -34,13 +34,29 @@ const content = shallowRef({})
 //     return sortedEntries
 // }
 
+function fixWhitespace(obj) {
+    for (const [item_name, item] of Object.entries(obj)) {
+        // console.log('item_name', item_name, 'item', item)
+        if (item instanceof Object) {
+            fixWhitespace(item)
+        } else if (item_name == 'content') {
+            // console.log('fix white-space')
+            // console.log('sppoki whitespaces:', obj.content.split(xxxxx).length - 1)
+            obj.content = obj.content.replaceAll(' ', ' ')
+            // console.log('sppoki whitespaces left:', obj.content.split(xxxxx).length - 1)
+        }
+    }
+}
+
 onMounted(() => {
     // console.log('contentJSONRef', contentJSONRef.value)
     try {
         const raw = contentJSONRef.value.textContent
-        console.log('raw', raw)
+        // console.log('raw', raw)
         const parsed = JSON.parse(raw)
-        console.log('parsed', parsed)
+        // console.log('parsed', parsed)
+        fixWhitespace(parsed)
+        // console.log('fixed white-space', parsed)
         content.value = parsed
         // const sorted = sort_examples()
         // console.log('sorted', sorted)
