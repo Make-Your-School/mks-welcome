@@ -47,12 +47,17 @@
                 <pre>
                     {{ JSON.stringify(file_obj, null, 4) }}
                 </pre> -->
-                        <!-- :content="`// ${file_obj.file_name} \n// TODO: activate real content..`" -->
                         <MDCode
+                            v-if="file_obj.content != 'image'"
                             :content="file_obj.content"
                             :codeLanguage="file_obj.file_ext.replace('.', '')"
                             :codeWebPath="file_obj.file_url"
                         />
+                        <img
+                            v-else-if="file_obj.content == 'image'"
+                            :src="file_obj.file_path_web"
+                        />
+                        <!-- <div v-else-if="file_obj.file_ext == 'md'" />  todo: // data = md2html(data)-->
                         <!-- :codeFilePath="file_obj.file_path" -->
                     </q-tab-panel>
                 </q-tab-panels>
@@ -65,6 +70,8 @@
 import { ref, watchEffect } from 'vue'
 import { exportFile } from 'quasar'
 import { downloadZip } from 'client-zip'
+
+// import md2html from './markdown-rendering.js'
 
 const props = defineProps({
     example_name: String,
@@ -110,8 +117,8 @@ async function handleDownload() {
     // get the ZIP stream in a Blob
     const blob = await downloadZip(zip_files).blob()
     // console.log(blob);
-    const status = exportFile(`${props.example_name}.zip`,blob)
-    console.log("exportFile status:", status);
+    const status = exportFile(`${props.example_name}.zip`, blob)
+    console.log('exportFile status:', status)
 }
 </script>
 

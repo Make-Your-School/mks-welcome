@@ -59,8 +59,9 @@ export const loadExample = (example_path, dir_content, part_name) => {
     for (const file_dir of dir_content) {
         // console.log('file_dir', file_dir)
         const file_path = path.join(file_dir.parentPath, file_dir.name)
-        // console.log('file_path', file_path)
-        const file_ext = path.extname(file_path)
+        console.log('file_path', file_path)
+        // the replace removes the leading dot from the extension...
+        const file_ext = path.extname(file_path).replace(/^\./, '')
         // console.log(`file_ext: '${file_ext}'`)
         const file_name = path.basename(file_path)
         // console.log(`file_name: '${file_name}'`)
@@ -68,12 +69,26 @@ export const loadExample = (example_path, dir_content, part_name) => {
         // console.log(`item_name: '${item_name}'`)
         const file_url = `${example_url}/${file_name}`
         // console.log(`file_url: '${file_url}'`)
-        let data = fs.readFileSync(file_path, 'utf8')
-        data = escapeThings(data)
-        if (file_ext == 'md') {
-            // data = md2html(data)
-            console.log('TODO: convert md to html')
+        let data = ''
+        // data = fs.readFileSync(file_path, 'utf8')
+        // data = escapeThings(data)
+        switch (file_ext) {
+            case 'md':
+                data = fs.readFileSync(file_path, 'utf8')
+                break
+            case 'png':
+            case 'jpg':
+            case 'jpeg':
+            case 'aviv':
+            case 'svg':
+                data = 'image'
+                break
+
+            default:
+                data = fs.readFileSync(file_path, 'utf8')
+                break
         }
+        data = escapeThings(data)
         // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
         // console.group('data')
         // console.log(data)
@@ -83,6 +98,7 @@ export const loadExample = (example_path, dir_content, part_name) => {
         example_files.files[file_name] = {}
         example_files.files[file_name].file_url = file_url
         example_files.files[file_name].file_path = file_path
+        example_files.files[file_name].file_path_web = file_path.replace('public', '/mks-welcome')
         example_files.files[file_name].file_name = file_name
         example_files.files[file_name].name = item_name
         example_files.files[file_name].file_ext = file_ext
