@@ -163,18 +163,31 @@ const mks_items_sorted = (mks_parts_raw, settings = {}) => {
     // return sortedEntries
 }
 
-const filter_with_text = (item, item_name, searchText, searchInContent = false) => {
+const includesText = (a, b, caseSensitive = false) => {
+    if (caseSensitive == false) {
+        a = a?.toLowerCase()
+        b = b?.toLowerCase()
+    }
+    return a?.includes(b)
+}
+
+const filter_with_text = (
+    item,
+    item_name,
+    searchText,
+    searchInContent = false,
+    searchCaseSensitive = false,
+) => {
     // TODO: find a better way to search for text in rendered output..
     // readme.content.toLowerCase().includes(searchText.value.toLowerCase()) ||
     return (
-        item_name?.toLowerCase().includes(searchText.toLowerCase()) ||
-        (searchInContent
-            ? item.content_text.toLowerCase().includes(searchText.toLowerCase())
-            : false) ||
-        item.excerpt.toLowerCase().includes(searchText.toLowerCase()) ||
-        item.meta.tags?.join(', ').toLowerCase().includes(searchText.toLowerCase()) ||
-        item.meta.material_short_descr?.toLowerCase().includes(searchText.toLowerCase()) ||
-        item.data?.tags?.join(', ').toLowerCase().includes(searchText.toLowerCase())
+        includesText(item_name, searchText, searchCaseSensitive) ||
+        includesText(item.excerpt, searchText, searchCaseSensitive) ||
+        includesText(item.meta.material_short_descr, searchText, searchCaseSensitive) ||
+        includesText(item.meta.title, searchText, searchCaseSensitive) ||
+        includesText(item.meta.tags?.join(', '), searchText, searchCaseSensitive) ||
+        includesText(item.data?.tags?.join(', '), searchText, searchCaseSensitive) ||
+        (searchInContent ? includesText(item.content_text, searchText, searchCaseSensitive) : false)
     )
 }
 
