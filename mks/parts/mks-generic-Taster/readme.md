@@ -40,7 +40,7 @@ Sobald der Taster betätigt wird, wird damit ein digitaler Anschlusspin des Mikr
 
 Der Schalter lässt sich an einen Arduino oder Raspberry Pi anschließen. Er benötigt dafür nur einen digitalen Pin.
 
-Für weitere Informationen schaue beim Bauteil [Taster/Knopf (Platine)](/part/mks-seeedstudio-grove_button) nach.
+Für weitere Informationen schaue beim Bauteil [Taster/Knopf (Platine)](/mks-welcome/part/mks-SeeedStudio-Grove_Button) nach.
 
 @[youtube](https://www.youtube.com/watch?v=ITsk6dPSsqA)
 
