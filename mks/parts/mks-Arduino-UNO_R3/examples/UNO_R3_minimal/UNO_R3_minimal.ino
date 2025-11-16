@@ -4,7 +4,7 @@
 const int led_pin = LED_BUILTIN;
 
 void setup() { 
-    pinMode(led_pin, OUTPUT); 
+    pinMode(led_pin, OUTPUT);
 }
 
 void loop() {

@@ -34,7 +34,9 @@ Die Taster müssen allerdings an entsprechende Verlängerungskabel gelötet oder
 
 Um den Schaltvorgang mit einem Mikrocontroller zu erfassen, wird ein digitaler Pin des Controllers mit dem Taster verbunden. 
 Der andere Anschluss des Tasters wird mit Masse verbunden. 
-Sobald der Taster betätigt wird, wird damit ein digitaler Anschlusspin des Mikrocontrollers auf Masse gelegt, was der Controller erfasst.
+Der Mikrocontroller wird so programmiert das der Pin, an dem der Taster angeschlossen ist, mit einem PullUp auf einen HIGH Pegel *zieht*.
+Sobald der Taster betätigt wird, wird damit ein digitaler Anschlusspin des Mikrocontrollers auf Masse gelegt, diesen wechsel von HIGH auf LOW kann der Controller dann erkennen.
+
 
 Der Schalter lässt sich an einen Arduino oder Raspberry Pi anschließen. Er benötigt dafür nur einen digitalen Pin.
 
