@@ -51,10 +51,6 @@ Das sollte dann in etwa so aussehen:
 ![pr done](<7 pr-done.png>)
 
 
-Vielleicht hilft dir die [offizielle Github Hilfe](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) auch schon weiter.
-Ansonsten schreibe gern auch hier eine Frage als Issues oder als [_Forumsbeitrag_](https://github.com/Make-Your-School/mks-welcome/discussions)
-
-
 
 ## Formatierungen
 Welche Formatierungen verfügbar sind, zeigt dir diese Demo-Seite:
@@ -65,3 +61,7 @@ Du findest sie auch über ein verstecktes Menü:
 1. unten links auf das **Hamburger-Menü** klicken
 2. auf die App-Versionsnummer tippen und **länger als 2 Sekunden** halten
 3. zusätzliche Menüeinträge erscheinen (praktisch für Entwicklung & Tests)
+
+
+Vielleicht hilft dir die [offizielle Github-Hilfe](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) auch schon weiter.
+Ansonsten schreibe gern  hier eine Frage als Issue oder als [_Forumsbeitrag_](https://github.com/Make-Your-School/mks-welcome/discussions).
