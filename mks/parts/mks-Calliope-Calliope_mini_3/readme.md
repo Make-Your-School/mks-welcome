@@ -1,6 +1,6 @@
 ---
-title: 'Calliope mini'
-date: '2018-08-28T23:44:25.000Z'
+title: 'Calliope mini 3'
+date: '2025-11-23T23:38:00.000Z'
 tags:
     - 'controller'
 coverImage: '2_calliope_mini.png'
@@ -8,7 +8,7 @@ material_number: '2'
 material_type: 'controller'
 manufacture: 'Calliope gGmbH'
 manufacture_url: 'https://calliope.cc/'
-repo_name: 'mks-Calliope-Calliope_mini'
+repo_name: 'mks-Calliope-Calliope_mini_3'
 product_url: 'https://calliope.cc/calliope-mini/calliope-mini-3'
 clone_url: 'https://github.com/Make-Your-School/mks-Calliope-Calliope_mini_3.git'
 repo_prefix: 'mks'

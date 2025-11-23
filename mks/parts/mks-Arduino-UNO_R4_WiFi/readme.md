@@ -1,6 +1,6 @@
 ---
-title: 'Arduino UNO'
-date: '2018-08-16T19:55:36.000Z'
+title: 'Arduino UNO R4 WiFi'
+date: '2025-11-23T23:38:00.000Z'
 tags:
     - 'controller'
 coverImage: '1_arduino.png'
