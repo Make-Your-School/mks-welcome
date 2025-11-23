@@ -5,8 +5,8 @@ name: update submodules
 
 on:
     schedule:
-        - cron: 0 4 * * 1
-        #  every Monday at 4:00h
+        - cron: 0 4,13 * * *
+        #  every Day at 4:00h and 13:00h
     repository_dispatch:
         types:
             - update-submodule

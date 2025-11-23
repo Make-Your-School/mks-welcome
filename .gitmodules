@@ -223,3 +223,9 @@
 [submodule "public/mks/parts/mks-SeeedStudio-Grove_IR_Distance_Interrupter_v1.2"]
 	path = public/mks/parts/mks-SeeedStudio-Grove_IR_Distance_Interrupter_v1.2
 	url = https://github.com/Make-Your-School/mks-SeeedStudio-Grove_IR_Distance_Interrupter_v1.2.git
+[submodule "public/mks/parts/mks-Calliope-Calliope_mini_3"]
+	path = public/mks/parts/mks-Calliope-Calliope_mini_3
+	url = https://github.com/Make-Your-School/mks-Calliope-Calliope_mini_3.git
+[submodule "public/mks/parts/mks-Arduino-UNO_R4_WiFi"]
+	path = public/mks/parts/mks-Arduino-UNO_R4_WiFi
+	url = https://github.com/Make-Your-School/mks-Arduino-UNO_R4_WiFi.git
