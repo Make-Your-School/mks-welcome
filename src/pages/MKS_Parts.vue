@@ -134,10 +134,3 @@ const mks_items_filtered = computed(() => {
         body.body--dark .my-card
             color: $text-on-dark
 </style>
-
-<style lang="sass">
-.my-page
-    .markdown-body
-        h1:first-child
-            margin-left: 2.5em
-</style>

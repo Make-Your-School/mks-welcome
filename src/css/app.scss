@@ -1,6 +1,8 @@
 // app global css in SCSS form
 
 @import 'mys-colors.scss';
+@import 'fonts/source-sans-3/source-sans-3.css';
+@import 'fonts/Fira_Code/fira_code.css';
 
 :root {
     --display-large: 48px;
@@ -158,10 +160,23 @@ html {
 
 // headings
 .header-anchor {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 .header-anchor:hover {
     -webkit-text-decoration: underline;
     text-decoration: underline;
+}
+
+// .markdown-body {
+// }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Source Sans 3';
+    font-family: 'Fira Code';
 }
