@@ -14,7 +14,7 @@ git submodule add https://github.com/XXXX
 
 ## link collection
 
--   list all mks repos https://github.com/search?q=user%3As-light+mks-&type=repositories
+- list all mks repos https://github.com/search?q=user%3As-light+mks-&type=repositories
 
 ## Install the dependencies
 
@@ -60,14 +60,18 @@ then there will be a _release_ that merges this into main and with this merge tr
 
 See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
 
-
 ### git submodules magic
+
 for your locally:
+`.git/modules/YourRePoName/config`
+
 ```
 [remote "origin"]
 	url = http://github.com/
 ```
+
 replace with
+
 ```
 [remote "origin"]
 	url = git@github.com:
