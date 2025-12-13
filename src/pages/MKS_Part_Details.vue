@@ -106,9 +106,9 @@ header
 </style>
 
 <style lang="sass">
-.part-content > h1
+.part-content > h1:first-of-type
     display: none
 
-.part-content > p > img
+.part-content > p:first-of-type > img
     display: none
 </style>

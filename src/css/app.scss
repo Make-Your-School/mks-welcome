@@ -180,3 +180,25 @@ h6 {
     font-family: 'Source Sans 3';
     font-family: 'Fira Code';
 }
+
+
+table {
+    // table-layout: fixed;
+    // width: 90%;
+    // margin: 10px auto;
+    border-collapse: collapse;
+    border: 1px solid var(--card-stroke);
+
+    th,
+    td {
+        padding: 0.6em;
+    }
+
+    th {
+        background-color: hsla(0, 0%, 50%, 0.2);
+    }
+
+    tr:nth-child(even) {
+        background-color: hsla(0, 0%, 50%, 0.2);
+    }
+}
