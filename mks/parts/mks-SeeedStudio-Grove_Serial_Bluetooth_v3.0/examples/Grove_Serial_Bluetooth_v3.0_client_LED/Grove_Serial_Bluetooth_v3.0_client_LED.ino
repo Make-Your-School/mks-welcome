@@ -25,8 +25,7 @@ void setup() {
     pinMode(LED_Pin, OUTPUT);
     Serial.begin(9600);
     Bluetooth.begin(9600);
-    Serial.println("Grove_Serial_Bluetooth_v3.0_client_LED.ino");u
-
+    Serial.println("Grove_Serial_Bluetooth_v3.0_client_LED.ino");
 }
 
 void loop() {
