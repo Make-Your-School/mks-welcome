@@ -36,6 +36,24 @@ Um die Musik auszugeben, lässt sich ein Lautsprecher an den dafür vorgesehenen
 Das Modul wird über die serielle Schnittstelle UART direkt oder mithilfe des Grove Shields an einen Mikrocontroller angeschlossen.
 
 
+## Anschlüsse
+
+### Eingang
+
+- UART
+- USB
+
+### Ausgang
+
+- Audio über Lautsprecher
+
+## Kurz-Datenblatt
+
+- Signal Eingang: 3.3V
+- Betriebsspannung: 5V
+- Modul-Bezeichnung `DFR0534`
+- Main Chip `JQ8400`
+
 ## Benutzung / Erste Schritte
 
 ### Anschließen
@@ -162,16 +180,13 @@ bitte die Library `DFR0534` via library manager installieren.
 
 <!-- infolist -->
 
-## Wichtige Links für die ersten Schritte:
-
-- [DFRobot Wiki](https://wiki.dfrobot.com/Voice_Module_SKU__DFR0534#target_0)
-
 ## Weiterführende Hintergrundinformationen
 
 - [DFRobot Wiki](https://wiki.dfrobot.com/Voice_Module_SKU__DFR0534#target_0)
 - [library repository](https://github.com/codingABI/DFR0534) 
     hier findest du die eine Dokumentation zur Library
     und auch viele weitere Informationen und Möglichkeiten...
+- [Datenblatt (grobe übersetzung ins Englische) ](https://sparks.gogo.co.nz/assets/_site_/downloads/JQ8400_English.pdf) 
 - [UART – Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)
 
 

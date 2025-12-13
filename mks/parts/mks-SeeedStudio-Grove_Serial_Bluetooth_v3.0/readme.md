@@ -121,6 +121,10 @@ Liste der wichtigsten AT-Befehle (Optionen sind in [ ] angegeben (keine Leerzeic
 
 #### Bluetooth-Apps
 
+> [!wichtig]
+> diese apps sind teilweise Werbe- oder *Daten-Sammelnd* finanziert!
+> überlege dir gut welche app du wirklich installieren möchtest!
+
 - [F-Droid - DroidPad](https://f-droid.org/packages/com.github.umer0586.droidpad/) ([orig. repo](https://github.com/UmerCodez/DroidPad))
     - FOSS und kostenfrei und werbefreie App
     - ermöglicht grafische Oberflächen mit Tastern und Schiebereglern und ähnlichem zu erstellen.
