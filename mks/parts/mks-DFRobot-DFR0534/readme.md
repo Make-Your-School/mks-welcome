@@ -140,9 +140,9 @@ es stehen maximal 8MB Speicherplatz zu Verfügung.
 ![Datei Manager](<datei manager.png>)
 
 
-du findest hier im Ordner DFR0534 ein paar Beispiel Sounds die auch im Beispiel-Code verwendet wurden.
+du findest [hier im Ordner DFR0534](https://github.com/Make-Your-School/mks-DFRobot-DFR0534/tree/main/sounds) ein paar Beispiel Sounds die auch im Beispiel-Code verwendet wurden.
 
-eine große auswahl an frei verfügbaren Sound-Effekten findest du auf
+eine große Auswahl an frei verfügbaren Sound-Effekten findest du auf
 [freesound.org](https://freesound.org)
 
 z.B.
@@ -178,7 +178,7 @@ bitte die Library `DFR0534` via library manager installieren.
 
 <style>
 img {
-    max-height: 35vh;
-    max-width: 50vw;
+    max-height: 45vh;
+    max-width: 60vw;
 }
 </style>
