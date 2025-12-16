@@ -1,10 +1,13 @@
 # DEV INFO
 
-## clone local
+## Setup repo for local development
 
-```bash
-git clone --recurse-submodules REPONAME
-```
+1. Clone repo with all submodules via `git clone --recurse-submodules https://github.com/Make-Your-School/mks-welcome.git`. Consider using ssh link instead of https.
+2. Install npm on your system. [npm website](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+3. Run `sudo npm install -g corepack` and `sudo npm i -g @quasar/cli` to install the dependencies needed
+4. Go into the repo folder with `cd ./mks-welcome`
+5. Run `yarn` install dependencies of the project
+7. Run `quasar dev` to start the application. Follow the link in the logs to open the page
 
 ## add part
 
