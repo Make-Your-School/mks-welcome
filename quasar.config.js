@@ -184,11 +184,11 @@ export default defineConfig(() => {
         // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer
         devServer: {
             open: false, // opens browser window automatically
-            // https: true, // for automagically self-signed cert.
-            https: {
-                key: path.join(__dirname, '.certs/localhost/key.pem'),
-                cert: path.join(__dirname, '.certs/localhost/cert.pem'),
-            },
+            https: true, // for automagically self-signed cert.
+            // https: {
+            //     key: path.join(__dirname, '.certs/localhost/key.pem'),
+            //    cert: path.join(__dirname, '.certs/localhost/cert.pem'),
+            // },
         },
 
         // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
