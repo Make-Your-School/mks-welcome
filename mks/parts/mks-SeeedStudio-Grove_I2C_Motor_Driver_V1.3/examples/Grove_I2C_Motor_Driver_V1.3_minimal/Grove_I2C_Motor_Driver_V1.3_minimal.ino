@@ -11,9 +11,11 @@ Motor.begin(I2C_ADDRESS);
 
 void loop() {
 // Set speed of MOTOR1, Clockwise, speed: -100~100
-Motor.speed(MOTOR1, 50);
+// -200 and 200 sometimes work, but not always
+// -50 and 50 is often too little to make it spin
+Motor.speed(MOTOR1, 100);
 // Set speed of MOTOR2, Anticlockwise
-Motor.speed(MOTOR2, -70);
+Motor.speed(MOTOR2, -100);
 delay(2000);
 // Change speed and direction of MOTOR1
 Motor.speed(MOTOR1, -100);
