@@ -42,8 +42,10 @@ import { createLogger } from 'vite'
 const logger = createLogger()
 const loggerWarn = logger.warn
 
+// filter logging message
+// so that the warnings about public and import are hidden..
+// (we use this as hacky way to setup all this..)
 logger.warn = (msg, options) => {
-    // Ignore empty CSS files warning
     if (msg.includes('Assets in public directory cannot be imported from JavaScript.')) return
     if (msg.includes('If you intend to import that asset, put ')) return
     if (msg.includes('If you intend to use the URL of that asset, use ')) return
@@ -91,7 +93,6 @@ export default defineConfig(() => {
             // vueOptionsAPI: false,
 
             // publicPath: '/',
-            // publicPath: "/quasar_lightpaint/dist/spa/",
             publicPath: '/mks-welcome/',
             // analyze: true,
             env: {

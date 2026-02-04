@@ -7,7 +7,7 @@
 3. Run `sudo npm install -g corepack` and `sudo npm i -g @quasar/cli` to install the dependencies needed
 4. Go into the repo folder with `cd ./mks-welcome`
 5. Run `yarn` install dependencies of the project
-7. Run `quasar dev` to start the application. Follow the link in the logs to open the page
+6. Run `quasar dev` to start the application. Follow the link in the logs to open the page
 
 ## add part
 
@@ -78,6 +78,10 @@ replace with
 ```
 [remote "origin"]
 	url = git@github.com:
+```
+
+```bash
+git submodule foreach "(git pull)&"
 ```
 
 ```bash
