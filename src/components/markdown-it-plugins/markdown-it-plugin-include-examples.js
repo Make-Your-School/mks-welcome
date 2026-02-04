@@ -79,7 +79,7 @@ export const loadExample = (example_path, dir_content, part_name) => {
             case 'png':
             case 'jpg':
             case 'jpeg':
-            case 'aviv':
+            case 'avif':
             case 'svg':
                 data = 'image'
                 break
