@@ -1,4 +1,4 @@
-# UNO R4 WiFi - RTC NTP (Network Time Protokoll)
+# RTC NTP (Network Time Protokoll)
 
 diese Beispiel ist etwas komplexer.
 Der Arduino verbindet sich mit dem in `arduino_secrets.h` definierten WiFi.

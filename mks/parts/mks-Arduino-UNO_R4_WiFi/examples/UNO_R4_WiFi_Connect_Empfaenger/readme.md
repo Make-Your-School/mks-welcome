@@ -1,6 +1,6 @@
-# UNO R4 WiFi - UDP Connect
+# UDP Connect Empfänger
 
-[connect demo](20260204_connect-scaled-600.avif)
+![](./demo_connect.avif)
 
 für diese Beispiel brauchst du Zwei Arduino UNO R4 WiFi.
 einer wird der `Sender`, der zweite der `Empfänger`.

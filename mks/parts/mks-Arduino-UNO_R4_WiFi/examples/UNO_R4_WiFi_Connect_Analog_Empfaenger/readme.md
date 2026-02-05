@@ -1,14 +1,11 @@
-# UNO R4 WiFi - UDP Connect Analog
+# UDP Connect Analog Empfänger
 
-[connect analog demo](20260204_connect_analog-scaled-600.avif)
+![](./demo_connect_analog.avif)
 
 für diese Beispiel brauchst du Zwei Arduino UNO R4 WiFi.
 einer wird der `Sender`, der zweite der `Empfänger`.
 
 es gibt auch je ein dazugehöriges Beispiel-Sketch dafür.
-
-> [!info]
-> Sketch für Empfänger_Analog
 
 du benötigst keine externen Bauteile.
 

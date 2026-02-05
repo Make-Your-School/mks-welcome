@@ -1,4 +1,4 @@
-# UNO R4 WiFi - LEDMatrix - einfacher start
+# LEDMatrix - einfacher start
 
 ![bild der animation](<20260203_113029 OP.jpg>)
 
