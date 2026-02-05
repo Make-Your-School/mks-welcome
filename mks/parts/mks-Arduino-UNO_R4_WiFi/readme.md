@@ -3,7 +3,7 @@ title: 'Arduino UNO R4 WiFi'
 date: '2025-11-23T23:38:00.000Z'
 tags:
     - 'controller'
-coverImage: '1_arduino.png'
+coverImage: 'UNO_R4_WiFi.avif'
 material_number: '1'
 material_type: 'controller'
 material_short_descr: 'Arduino UNO R4 WiFi'
@@ -22,7 +22,7 @@ difficulty: 'recommend'
 
 # Arduino UNO R4 WiFi
 
-![Arduino UNO R4 WiFi](./bauteil.png)
+![Arduino UNO R4 WiFi](./UNO_R4_WiFi.avif)
 
 ## Beschreibung
 
