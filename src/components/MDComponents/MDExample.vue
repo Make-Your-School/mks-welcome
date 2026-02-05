@@ -48,10 +48,15 @@
                     {{ JSON.stringify(file_obj, null, 4) }}
                 </pre> -->
                         <MDCode
-                            v-if="file_obj.content != 'image'"
+                            v-if="file_obj.content != 'image' && file_obj.file_ext != 'md'"
                             :content="file_obj.content"
                             :codeLanguage="file_obj.file_ext.replace('.', '')"
                             :codeWebPath="file_obj.file_url"
+                        />
+                        <MyMarkdown
+                            v-if="file_obj.file_ext == 'md'"
+                            :source="file_obj.content"
+                            :filePath="content_obj.example_path_app"
                         />
                         <img
                             v-else-if="file_obj.content == 'image'"
@@ -70,6 +75,7 @@
 import { ref, watchEffect } from 'vue'
 import { exportFile } from 'quasar'
 import { downloadZip } from 'client-zip'
+import MyMarkdown from './MyMarkdown.vue'
 
 // import md2html from './markdown-rendering.js'
 
@@ -87,16 +93,26 @@ watchEffect(() => {
 })
 
 watchEffect(() => {
-    const checkKey = (key) => key.includes('ino') || key.includes('main')
+    const checkKeyReadme = (key) => key.includes('readme')
+    const checkKeyCode = (key) => key.includes('.ino') || key.includes('main')
 
     const entries = Object.entries(props.content_obj.files)
-    // console.log('entries', entries)
-    const firstEntries = entries.filter(([key]) => checkKey(key))
-    // console.log('firstEntries', firstEntries)
-    const otherEntries = entries.filter(([key]) => !checkKey(key))
-    // console.log('otherEntries', otherEntries)
+    console.log('entries', entries)
+
+    const readmeEntries = entries.filter(([key]) => checkKeyReadme(key))
+    const notReadme = entries.filter(([key]) => !checkKeyReadme(key))
+    console.log('readmeEntries', readmeEntries)
+    console.log('notReadme', notReadme)
+
+    const codeEntries = notReadme.filter(([key]) => checkKeyCode(key))
+    codeEntries.sort(([a], [b]) => a.localeCompare(b))
+    console.log('codeEntries', codeEntries)
+
+    const otherEntries = notReadme.filter(([key]) => !checkKeyCode(key))
     otherEntries.sort(([a], [b]) => a.localeCompare(b))
-    const sortedEntries = [...firstEntries, ...otherEntries]
+    console.log('otherEntries', otherEntries)
+
+    const sortedEntries = [...readmeEntries, ...codeEntries, ...otherEntries]
     // console.log('sortedEntries', sortedEntries)
     files.value = Object.fromEntries(sortedEntries)
 })

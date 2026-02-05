@@ -1,20 +1,17 @@
 // loosly based on
 // https://github.com/seanWLawrence/markdown-it-plugin-data-src/blob/master/lib/index.js
 
-// import fs from "node:fs";
-import path from 'node:path'
-
 /**
  * make all img 'src' attribute absolute.
- * @module imgSrcAbs
+ * @module imgSrcAbsOnline
  * @param {MarkdownIt} md - MarkdownIt instance
  * @returns {undefined} - Side effects only
  * @author Stefan Krüger s-light.eu
  * @version 1.0.0
  * @license MIT
- * @exports imgSrcAbs
+ * @exports imgSrcAbsOnline
  */
-export default function imgSrcAbs(md) {
+export default function imgSrcAbsOnline(md) {
     const defaultRender =
         md.renderer.rules.image ||
         function (tokens, idx, options, env, self) {
@@ -22,6 +19,7 @@ export default function imgSrcAbs(md) {
         }
 
     md.renderer.rules.image = function (tokens, idx, options, env, self) {
+        // console.log(`imgSrcAbsOnline`)
         const token = tokens[idx]
         if (token.meta == undefined) {
             token.meta = {}
@@ -29,20 +27,16 @@ export default function imgSrcAbs(md) {
         let srcValue = token.attrGet('src')
         if (!srcValue.startsWith('http')) {
             // we think we have a relative path to tweak..
-            // console.log(`srcValue: '${srcValue}'`);
-            // console.log(`check env: `, env);
-            if (env?.id) {
-                // console.log(`env.id found:`, env.id);
-                // srcValue = srcValue.replace("./", env.public);
-                // console.log(`__dirname`, __dirname);
-                // console.log(`process.cwd()`, process.cwd());
-                const fullPath = env.id
-                const projectRelPath = path.relative(process.cwd(), fullPath)
-                const basePath = path.dirname(projectRelPath).replace('public', '/mks-welcome')
-                // console.log("basePath", basePath);
-                const filePath = srcValue.replace('./', basePath + path.sep)
-                // console.log("filePath", filePath);
-
+            // console.log(`srcValue: '${srcValue}'`)
+            // console.log(`check env: `, env)
+            if (env?.filePath) {
+                // console.log(`env.filePath found:`, env.filePath)
+                // remove trailing slash as we do add it manually..
+                const basePath = env.filePath.replace(/\/$/gm, '')
+                console.log('basePath', basePath)
+                // let srcValueClean = srcValue.replace('./', '')
+                const filePath = basePath + '/' + srcValue
+                // console.log('filePath', filePath)
                 token.meta.filePath = filePath
                 // console.log(`srcValue: (moded) '${srcValue}'`);
                 // write back
