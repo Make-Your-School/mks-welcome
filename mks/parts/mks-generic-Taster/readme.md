@@ -54,7 +54,7 @@ Für weitere Informationen schaue beim Bauteil [Taster/Knopf (Platine)](/mks-wel
 <!-- infolist -->
 
 
-## Wichtige Links für die ersten Schritte:
+## weitere Informationen
 
 - [Adafruit Button-Sortiment](https://www.adafruit.com/product/1010)
 
@@ -62,7 +62,7 @@ Für weitere Informationen schaue beim Bauteil [Taster/Knopf (Platine)](/mks-wel
 
 - [Funduino - Taster Tutorial](https://funduino.de/nr-5-taster-am-arduino)
 
-## Weiterführende Hintergrundinformationen:
+## Hintergrundinformationen:
 
 - [GPIO - Wikipedia Artikel](https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe)
 - [Steckplatine (Breadboard) - Wikipedia Artikel](https://de.wikipedia.org/wiki/Steckplatine)

@@ -35,8 +35,10 @@ Die Steuerung erfolgt über ein einfaches Relais, einen Transistor, einen manuel
 
 <!-- more_details -->
 
-Im Materialkoffer sind Motoren mit zwei Getriebevarianten enthalten. Die Getriebe ermöglichen eine Übersetzung der Drehung der Motoren.
-Je höher die Übersetzung gewählt wird, desto langsamer dreht der Motor. Gleichzeitig steigt die Kraft der Dreh-Achse.
+Im Materialkoffer sind Motoren mit zwei Getriebevarianten enthalten. 
+Die Getriebe ermöglichen eine Übersetzung der Drehung der Motoren.
+Je höher die Übersetzung gewählt wird, desto langsamer dreht der Motor. 
+Gleichzeitig steigt die Kraft der Dreh-Achse.
 Je nach gewähltem Motor, kann dieser von der gezeigten Abbildung abweichen
 
 Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen. 

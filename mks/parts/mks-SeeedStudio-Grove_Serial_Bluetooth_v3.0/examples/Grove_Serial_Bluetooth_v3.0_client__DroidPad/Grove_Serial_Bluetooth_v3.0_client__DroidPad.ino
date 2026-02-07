@@ -1,6 +1,6 @@
 /*
 DroidPad * Arduino
-details siehe readme:md
+details siehe readme.md
 */
 
 #include <SoftwareSerial.h>
