@@ -28,7 +28,7 @@
                 :key="mks_item_name"
                 class="my-card q-pa-md"
             >
-                <router-link :to="`/part/${mks_item_name}`" class="clickable">
+                <router-link :to="`/part/${mks_item_name}/`" class="clickable">
                     <!--
                         <router-link :to="{ name: 'part', params: { 'part_name':mks_item_name } }" class="clickable">
                     @click="$router.push({ name: 'parts', params: { 'part_name':mks_item_name } }) "
@@ -44,7 +44,11 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { shallowRef } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 // import { useQuasar } from "quasar";
+
+const router = useRouter()
+const route = useRoute()
 
 import PartOverview from 'src/components/PartOverview.vue'
 // import PartDetails from "src/components/PartDetails.vue";
@@ -64,9 +68,39 @@ const mks_parts = shallowRef(mdContent.mks.parts)
 const mks_parts_sorted = shallowRef(mdContent.mks.parts_sorted)
 console.log('mks_parts_sorted', mks_parts_sorted)
 
-const filter_by_type = ref('')
-const searchText = ref('')
+// const filter_by_type = ref('')
+// const searchText = ref('')
 const search_in_content = ref(false)
+
+const filter_by_type = computed({
+    get() {
+        return route.query.filter_by_type
+    },
+    set(newValue) {
+        //  use replace so that you're not actually pushing a new page to the history stack
+        router.replace({
+            query: {
+                ...route.query,
+                filter_by_type: newValue,
+            },
+        })
+    },
+})
+
+const searchText = computed({
+    get() {
+        return route.query.searchText
+    },
+    set(newValue) {
+        //  use replace so that you're not actually pushing a new page to the history stack
+        router.replace({
+            query: {
+                ...route.query,
+                searchText: newValue,
+            },
+        })
+    },
+})
 
 const mks_items_filtered = computed(() => {
     return mdContent.parts_filtered({

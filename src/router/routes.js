@@ -119,8 +119,13 @@ const routes = [
             // { path: 'about', component: () => import('pages/About.vue') }
             // routes wihtout menu entries
             {
-                path: 'part/:part_name',
+                path: 'part/:part_name/',
                 component: () => import('pages/MKS_Part_Details.vue'),
+                props: true,
+            },
+            {
+                path: 'part/:part_name/:pathMatch(.*)+',
+                component: () => import('pages/MKS_Part_SubMarkdownFile.vue'),
                 props: true,
             },
             {

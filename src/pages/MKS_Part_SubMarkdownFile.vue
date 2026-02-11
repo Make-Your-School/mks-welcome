@@ -7,27 +7,18 @@
             dense
             round
             icon="arrow_back"
-            aria-label="zurück zur Übersicht"
-            class="fixed-top-left q-ma-sm back"
+            aria-label="zurück"
             @click="$router.back()"
+            class="fixed-top-left q-ma-sm back"
         >
-            <!--
-                @click="$router.push('/')"
-                 @click="$router.go(-1)"
-            -->
+            <!-- @click="$router.go(-1)" -->
         </q-btn>
-        <header>
-            <div class="info">
-                <h2 class="material_number">{{ part.meta.material_number }}</h2>
-                <h1 class="title">{{ part.meta.title }}</h1>
-                <!-- <h2 class="type">{{ part.meta.material_type }}</h2> -->
-            </div>
-            <img :src="coverImage" :alt="part.meta.title" />
-        </header>
-        <component class="part-content" :is="part.content" />
+        <!-- <component class="part-content" :is="part.content" /> -->
+        <MyMarkdown :source="mdFileContent" :filePath="mdFile"></MyMarkdown>
+        <div>Ping!</div>
         <hr />
-        <a :href="mysLink">{{ props.part_name }}</a> - (<a
-            :href="part.submodule.urlWeb"
+        <a :href="mysLink">{{ props.part_name + '/' + props.pathMatch.join('/') }}</a> - (<a
+            :href="urlWebSource"
             target="_blank"
             >edit source</a
         >)
@@ -35,18 +26,21 @@
 </template>
 
 <script setup>
-// import { watch } from 'vue'
+import { watchEffect, ref } from 'vue'
 // import { shallowRef } from 'vue'
 // import { useRoute } from 'vue-router'
 // import { useQuasar } from "quasar";
 
 // import PartDetails from 'src/components/PartDetails.vue'
+import MyMarkdown from 'src/components/MDComponents/MyMarkdown.vue'
 
 const props = defineProps({
     part_name: String,
+    pathMatch: Array,
 })
 
 console.log('props.part_name', props.part_name)
+console.log('props.pathMatch', props.pathMatch)
 
 import { useMDContentStore } from 'src/stores/mdContent'
 const mdContent = useMDContentStore()
@@ -55,19 +49,23 @@ const part = mdContent.mks.parts[props.part_name]
 console.log('part', part)
 
 const mysLink = location.href
+const urlWebSource = part.submodule.urlWeb + '/blob/main/' + props.pathMatch.join('/')
 
-const coverImage = `../${part.path_base}/${part.meta.coverImage}`
+const mdFile = ref(`../${part.path_base}/${props.pathMatch.join('/')}`)
+const mdFileContent = ref(null)
 
 // const route = useRoute()
 // console.log('route', route);
 
-// watch(
-//     () => route.params.part_name,
-//     (newId, oldId) => {
-//         // react to route changes...
-//         console.log(`newID: '${newId}'; oldId: '${oldId}'`);
-//     },
-// )
+watchEffect(async () => {
+    mdFile.value = `/mks-welcome/${part.path_base}/${props.pathMatch.join('/')}`
+    console.log('mdFile.value', mdFile.value)
+    // mks-welcome/mks/parts/mks-DFRobot-DFR0534/AdapterLoeten.md
+    const response = await fetch(mdFile.value)
+    console.log(response)
+    mdFileContent.value = await response.text()
+    console.log('mdFileContent.value', mdFileContent.value)
+})
 </script>
 
 <style lang="sass" scoped>
