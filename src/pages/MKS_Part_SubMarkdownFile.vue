@@ -8,7 +8,7 @@
             round
             icon="arrow_back"
             aria-label="zurück"
-            @click="$router.back()"
+            @click="backHandler()"
             class="fixed-top-left q-ma-sm back"
         >
             <!-- @click="$router.go(-1)" -->
@@ -56,6 +56,17 @@ const mdFileContent = ref(null)
 
 // const route = useRoute()
 // console.log('route', route);
+import { useRouter } from 'vue-router'
+const router = useRouter()
+async function backHandler() {
+    if (navigation.canGoBack) {
+        await router.back().finished
+        // Handle any required clean-up after
+        // navigation has finished
+    } else {
+        router.push('/')
+    }
+}
 
 watchEffect(async () => {
     mdFile.value = `/mks-welcome/${part.path_base}/${props.pathMatch.join('/')}`

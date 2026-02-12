@@ -9,9 +9,10 @@
             icon="arrow_back"
             aria-label="zurück zur Übersicht"
             class="fixed-top-left q-ma-sm back"
-            @click="$router.back()"
+            @click="backHandler()"
         >
             <!--
+                @click="$router.back()"
                 @click="$router.push('/')"
                  @click="$router.go(-1)"
             -->
@@ -38,6 +39,7 @@
 // import { watch } from 'vue'
 // import { shallowRef } from 'vue'
 // import { useRoute } from 'vue-router'
+
 // import { useQuasar } from "quasar";
 
 // import PartDetails from 'src/components/PartDetails.vue'
@@ -57,6 +59,18 @@ console.log('part', part)
 const mysLink = location.href
 
 const coverImage = `../${part.path_base}/${part.meta.coverImage}`
+
+import { useRouter } from 'vue-router'
+const router = useRouter()
+async function backHandler() {
+    if (navigation.canGoBack) {
+        await router.back().finished
+        // Handle any required clean-up after
+        // navigation has finished
+    } else {
+        router.push('/')
+    }
+}
 
 // const route = useRoute()
 // console.log('route', route);
