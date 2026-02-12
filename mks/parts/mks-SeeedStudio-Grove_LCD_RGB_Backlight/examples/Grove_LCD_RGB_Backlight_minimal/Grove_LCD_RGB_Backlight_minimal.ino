@@ -1,34 +1,27 @@
+// minimal Beispiel um das Grove LCD zu benutzen.
+// für eine Anleitung schaue in die readme.md Datei.
 
-#include <Wire.h>
 #include "rgb_lcd.h"
+#include <Wire.h>
 
 rgb_lcd lcd;
 
-const int colorR = 255;
-const int colorG = 0;
-const int colorB = 0;
+const int colorR = 0;
+const int colorG = 255;
+const int colorB = 150;
 
-void setup() 
-{
-    // set up the LCD's number of columns and rows:
+void setup() {
     lcd.begin(16, 2);
-    
     lcd.setRGB(colorR, colorG, colorB);
-    
-    // Print a message to the LCD.
     lcd.print("hello, world!");
-
-    delay(1000);
 }
 
-void loop() 
-{
-    // set the cursor to column 0, line 1
-    // (note: line 1 is the second row, since counting begins with 0):
+void loop() {
+    // setze den cursor auf die position Spalte 0, Zeile 1
+    // (Wichtig: Zeile 1 ist die Zweite-Zeile des Displays - es wird bei 0 angefangen zu zählen)
     lcd.setCursor(0, 1);
-    // print the number of seconds since reset:
-    lcd.print(millis()/1000);
-
+    // zeige die Sekunden seit *System-Reset*
+    lcd.print(millis() / 1000);
+    // warte 0.1s
     delay(100);
 }
-```

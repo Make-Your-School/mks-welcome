@@ -11,8 +11,8 @@
 #include <ArduinoBLE.h>
 
 // dies sind die UUIDs die DroidPad verwendet.
-// const char serviceUUID[] = ;
-// const char characteristicUUID[] = ;
+const char *serviceUUID = "4fbfc1d7-f509-44ab-afe1-62ea40a4b111";
+const char *characteristicUUID = "dc3f5274-33ba-48de-8246-43bf8985b323";
 
 const int ledPin = LED_BUILTIN;
 
@@ -43,6 +43,8 @@ unsigned long timeStamp_lastPrint = millis();
 void loop() { handleBLE(); }
 
 void setupBluethooth() {
+    BLE.debug(Serial);
+
     if (!BLE.begin()) {
         Serial.println("Verbindung zu Bluethooth module fehlgeschlagen!");
         // wir können hier nicht weitermachen.
@@ -60,7 +62,7 @@ void setupBluethooth() {
     // BLE.advertise();
 
     // BLE.scan();
-    BLE.scanForUuid("4fbfc1d7-f509-44ab-afe1-62ea40a4b111");
+    BLE.scanForUuid(serviceUUID);
     Serial.println("Bluethooth Device namens 'HackBLE' fertig initialisiert.");
 }
 
@@ -77,8 +79,7 @@ void handleBLE() {
         Serial.println();
 
         // check for peripheral's name
-        if (peripheral.advertisedServiceUuid() ==
-            "4fbfc1d7-f509-44ab-afe1-62ea40a4b111") {
+        if (peripheral.advertisedServiceUuid() == serviceUUID) {
             // stop scanning
             BLE.stopScan();
 
@@ -111,8 +112,8 @@ void connectPeripheral(BLEDevice peripheral) {
 }
 
 void handleDroidPadPeripheral() {
-    droidPadCharacteristic = droidPadPeripheral.characteristic(
-        "dc3f5274-33ba-48de-8246-43bf8985b323");
+    droidPadCharacteristic =
+        droidPadPeripheral.characteristic(characteristicUUID);
 
     if (!droidPadCharacteristic) {
         Serial.println("DroidPad characteristic nicht gefunden!");
@@ -184,6 +185,7 @@ void handleDroidPadConnected() {
     //     }
     // }
 }
+
 void printData(const unsigned char data[], int length) {
     for (int i = 0; i < length; i++) {
         unsigned char b = data[i];

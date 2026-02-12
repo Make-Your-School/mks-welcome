@@ -5,6 +5,7 @@
     - den anderen Taster-Pin an den Pin D2 des Arduino
 - lade den Beispiel-Code auf den Arduino
 - öffne den Seriellen Monitor
+- stelle die Geschwindigkeit des Seriellen Monitor auf 115200
 - dieser Zeigt nun mit 
     - 0 das der Taster gedrückt ist (der Pin wird auf Masse = LOW = 0 _gezogen_)
     - 1 das der Taster *offen* ist (der Pin wird mit dem internen PullUp auf die Betriebsspannung 5V _gezogen_)

@@ -1,8 +1,8 @@
 // Schließe eine *LED Platine* an Pin D2 auf dem Grove Shield an.
 // lade den sketch hoch
-// die LED Blinkt nun.
+// die LED Blitzt nun.
 
-const int meineLED_PIN =  2;
+const int meineLED_PIN = 2;
 
 void setup() {
     // setze den Pin für die LED als Ausgang
@@ -10,12 +10,12 @@ void setup() {
 }
 
 void loop() {
-    // schalte die LED an
     digitalWrite(meineLED_PIN, HIGH);
-    // warte 0.5s
-    delay(500);
-    // schalte die LED aus
+    delay(100);
     digitalWrite(meineLED_PIN, LOW);
-    // warte 0.5s
-    delay(500);
+    delay(100);
+    digitalWrite(meineLED_PIN, HIGH);
+    delay(100);
+    digitalWrite(meineLED_PIN, LOW);
+    delay(700);
 }

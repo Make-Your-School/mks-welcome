@@ -1,0 +1,5 @@
+serviceUUID
+4fbfc1d7-f509-44ab-afe1-62ea40a4b111
+
+characteristicUUID
+dc3f5274-33ba-48de-8246-43bf8985b323

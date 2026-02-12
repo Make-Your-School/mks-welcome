@@ -4,16 +4,18 @@
 const int tasterPin = 2;
 
 void setup() {
+    delay(500);
     Serial.begin(115200);
-    // Wait for Serial Connection to be Opend from Host or 6second timeout
-    unsigned long ulTimeStamp_Start = millis();
-    while ((!Serial) && ((millis() - ulTimeStamp_Start) < 6000)) {
+    unsigned long timeStamp_Start = millis();
+    while ((!Serial) && ((millis() - timeStamp_Start) < 6000)) {
+        // warte bis der computer sich mit dem Arduino Seriell verbunden hat.
+        // oder mache nach über 6s warten ohne Verbindung weiter.
         1;
     }
+    delay(500);
+    Serial.println("Taster_minimal.ino");
 
     pinMode(tasterPin, INPUT_PULLUP);
-
-    delay(10);
 }
 
 void loop() {
