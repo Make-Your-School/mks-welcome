@@ -22,4 +22,3 @@ void loop()
  Serial.println(" cm");
  delay(250);
 }
-```

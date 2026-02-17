@@ -46,4 +46,3 @@ void loop() {
     Serial.println(mlx90615.getTemperature(MLX90615_AMBIENT_TEMPERATURE));
     delay(1000);
 }
-```

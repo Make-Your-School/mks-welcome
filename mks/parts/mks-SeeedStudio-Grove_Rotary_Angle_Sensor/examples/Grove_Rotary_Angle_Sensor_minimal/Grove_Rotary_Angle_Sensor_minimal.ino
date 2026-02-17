@@ -30,4 +30,3 @@ void loop()
     analogWrite(LED,brightness);
     delay(500);
 }
-```

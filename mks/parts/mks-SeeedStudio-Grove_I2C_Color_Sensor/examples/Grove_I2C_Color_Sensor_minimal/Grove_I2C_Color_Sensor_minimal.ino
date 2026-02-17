@@ -84,4 +84,3 @@ void loop() {
     analogWrite(greenpin, gammatable[(int)g]);
     analogWrite(bluepin, gammatable[(int)b]);
 }
-```

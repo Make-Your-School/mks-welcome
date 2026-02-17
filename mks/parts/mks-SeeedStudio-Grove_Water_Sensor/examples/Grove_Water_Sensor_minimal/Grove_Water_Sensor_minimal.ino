@@ -11,4 +11,3 @@ void loop()
   Serial.println(digitalRead(WATER_SENSOR));
   delay(500);
 }
-```

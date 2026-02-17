@@ -30,4 +30,3 @@ void loop(void) {
  
   delay(100);
 }
-```

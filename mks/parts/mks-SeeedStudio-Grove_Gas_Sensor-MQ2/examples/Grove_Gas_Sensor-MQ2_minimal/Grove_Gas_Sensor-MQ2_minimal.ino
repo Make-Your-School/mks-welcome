@@ -15,4 +15,3 @@ void loop() {
     Serial.println("V");
     delay(1000);
 }
-```

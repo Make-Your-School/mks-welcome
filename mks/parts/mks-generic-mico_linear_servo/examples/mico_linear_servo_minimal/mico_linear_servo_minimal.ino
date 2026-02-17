@@ -16,4 +16,3 @@ void loop() {
   myservo.write(val); // überträgt die Zielposition an den Servomotors
   delay(15); // lässt dem Servomotor Zeit, die Zielposition zu erreichen
 }
-```

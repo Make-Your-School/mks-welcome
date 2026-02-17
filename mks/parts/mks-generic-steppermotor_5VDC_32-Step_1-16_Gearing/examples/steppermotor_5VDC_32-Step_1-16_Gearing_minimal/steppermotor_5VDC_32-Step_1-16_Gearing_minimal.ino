@@ -20,4 +20,3 @@ void loop() {
 }
 
 // End of file
-```

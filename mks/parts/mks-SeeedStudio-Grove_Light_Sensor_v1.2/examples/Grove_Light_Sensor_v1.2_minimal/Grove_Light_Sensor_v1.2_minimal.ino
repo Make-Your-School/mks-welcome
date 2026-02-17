@@ -11,4 +11,3 @@ void loop()
   Serial.println(value);
   delay(100);
 }
-```

@@ -51,4 +51,3 @@
         }
         return sensorMax;
     }
-```

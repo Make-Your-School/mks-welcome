@@ -17,4 +17,3 @@ void loop()
     Serial.println(adcIn);
     delay(100);
 }
-```

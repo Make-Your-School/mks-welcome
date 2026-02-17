@@ -35,4 +35,3 @@ Serial.println(temperature);
 
 delay(100);
 }
-```

@@ -34,4 +34,3 @@ void loop() {
     myReceiver.enableIRIn();      //Restart receiver
   }
 }
-```

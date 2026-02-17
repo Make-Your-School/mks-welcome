@@ -21,4 +21,3 @@ void loop()
  if (data == GES_DOWN_FLAG)      // When down gesture be detected,the variable 'data' will be set to GES_DOWN_FLAG.
         digitalWrite(4, LOW);       // turn the LED off by making the voltage LOW
 }
-```

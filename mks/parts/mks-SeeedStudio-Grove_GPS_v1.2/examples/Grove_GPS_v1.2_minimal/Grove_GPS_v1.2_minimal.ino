@@ -33,4 +33,4 @@ void clearBufferArray()                     // function to clear buffer array
         buffer[i]=NULL;
     }                      // clear all index of array with command NULL
 }
-```
+

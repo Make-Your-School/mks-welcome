@@ -38,4 +38,3 @@ ISR(TIMER2_OVF_vect)
         airqualitysensor.counter++;
     }
 }
-```

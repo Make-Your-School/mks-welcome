@@ -18,4 +18,3 @@ void loop(){
    gsr_average = sum/10;
    Serial.println(gsr_average);
 }
-```

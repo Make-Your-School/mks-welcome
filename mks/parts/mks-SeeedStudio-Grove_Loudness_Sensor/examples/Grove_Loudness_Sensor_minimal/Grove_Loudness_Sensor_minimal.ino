@@ -12,4 +12,3 @@ void loop()
     Serial.println(loudness);
     delay(200);
 }
-```

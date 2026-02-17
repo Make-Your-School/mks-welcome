@@ -13,4 +13,3 @@ void loop()  {
     digitalWrite(MoPin, LOW);
     delay(1000);
 }
-```

@@ -32,4 +32,3 @@ void loop()
         starttime = millis();
     }
 }
-```

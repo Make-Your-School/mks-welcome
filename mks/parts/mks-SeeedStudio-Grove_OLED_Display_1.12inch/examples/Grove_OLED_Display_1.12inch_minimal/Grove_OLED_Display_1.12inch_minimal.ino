@@ -17,4 +17,3 @@ void loop(void) {
     u8g2.drawStr(0,24,"Hello World!");
   } while ( u8g2.nextPage() );
 }
-```

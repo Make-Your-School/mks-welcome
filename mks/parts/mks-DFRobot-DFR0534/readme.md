@@ -101,13 +101,13 @@ die Kabel einfach nach dieser Zuordnung (siehe auch das Foto) zusammen stecken:
 
 #### Adapter Kabel löten
 
-<!-- [AdapterLoeten.md](<./AdapterLoeten.md>) -->
-
+[AdapterLoeten.md](<./AdapterLoeten.md>)
+<!-- 
 <details>
 <summary>
 alternative kannst du das Kabel auch *ordentlich* löten:
 (aufklappen für mehr infos)
-</summary>
+</summary> 
 
 ###### Benötigte Materialien
 ![benötigte materialien](<./adapter kabel löten/20240502_161140.jpg>) 
@@ -136,7 +136,7 @@ noch mit tape oder tesa abkleben. und schon ists fertig :-)
 ![fertig](<./adapter kabel löten/20240502_162449 crop.jpg>) 
 
 </details>
-
+-->
 
 ### Musik aufspielen
 Das Modul wird über eine Micro-USB Kabel mit dem Laptop verbunden.
