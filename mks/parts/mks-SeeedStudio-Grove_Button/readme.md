@@ -25,16 +25,27 @@ difficulty: 'recommend'
 ![Taster/Knopf (Platine)](./60_taster_knopf_platine.png)
 
 ## Beschreibung
-Taster oder auch Knöpfe sind eine sehr einfache Eingabemöglichkeit in Elektronik-Projekten. 
-Die Taster haben einen zurückfedernden Schaltmechanismus, der einen elektrischen Kontakt zwischen den Anschlusspins herstellt, solange der Taster gedrückt wird. 
-Die vorliegenden Taster sind bereits auf einer Platine vormontiert und lassen sich dadurch mit Standard-Grove-Verbindungskabeln und direkt mithilfe des Grove Shields an einen Arduino oder Raspberry Pi anschließen. 
-Das Modul benötigt hierfür nur einen digitalen Pin.
 
-Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.
+Taster oder auch Knöpfe sind eine sehr einfache Eingabemöglichkeit für Elektronik-Projekte und funktionieren ähnlich wie man es zuhause von Knöpfen von der Waschmaschine oder dem Geschirrspüler kennt. Dahinter verbirgt sich nichts Kompliziertes: Der Taster stellt eine elektrische Verbindung her, Strom fließt und der Computer (Arduino in unserem Fall) merkt, dass etwas passiert ist.
 
+Im Gegensatz zu dem anderen [Taster](/mks-welcome/part/mks-generic-Taster/), ist dieser bereits auf einer kleinen Platine vormontiert und lässt sich dadurch mit Standard-Grove-Verbindungskabeln und direkt mithilfe des Grove Shields an einen Arduino oder Raspberry Pi anschließen. Sehr praktisch :) Das Modul muss hierfür an einen digitalen Pin angeschlossen werden.
 
+## Video
 
 @[youtube](https://www.youtube.com/watch?v=ITsk6dPSsqA)
+
+### Anleitung
+1. Schließe den Taster mit einem Grove Kabel an Pin `D2` an dem Grove Shield an
+1. Nehme den Beispielcode von unten und lade ihn auf den Arduino hoch.
+1. Öffne den Serial-Monitor, indem du in der Arduino IDE oben auf Werkzeuge gehst und Serieller Monitor auswählst.
+1. Stelle die Geschwindigkeit des Serial-Monitors auf 9600 (falls nicht schon passiert). Das geht ganz rechts in einem kleinem Dropdown.
+1. Drücke den Taster 🔘
+1. Der serielle Monitor zeigt den aktuellen Status des Tasters durch 0 / 1 an.
+
+
+
+
+
 
 
 ## Beispiele
@@ -47,7 +58,9 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 
 ## Wichtige Links für die ersten Schritte:
 
-- [Seeed Studio Wiki](http://wiki.seeedstudio.com/Grove-Button/) [- Taster](http://wiki.seeedstudio.com/Grove-Button/)
+Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.
+
+- [Seeed Studio Wiki - Taster](http://wiki.seeedstudio.com/Grove-Button/)
 
 ## Projektbeispiele:
 
