@@ -1,7 +1,7 @@
 // minimal Beispiel um einen Taster abzufragen.
 // für eine Anleitung schaue in die readme.md Datei.
 
-const int tasterPin = 2;
+const int tasterPin = 4;
 
 void setup() {
     delay(500);

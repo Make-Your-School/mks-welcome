@@ -26,22 +26,41 @@ difficulty: 'advanced'
 
 ## Beschreibung
 
-Taster oder auch Knöpfe sind eine sehr einfache Eingabemöglichkeit für Elektronik-Projekte und können frei nach eigenen Vorstellungen eingesetzt werden.
-Mit einem zurückfedernden Schaltmechanismus stellen sie einen elektrischen Kontakt zwischen den Anschlusspins her, solange der Taster gedrückt ist.  
-Die Taster müssen allerdings an entsprechende Verlängerungskabel gelötet oder über Breadboards mit dem Mikrocontroller verbunden werden.
+Taster oder auch Knöpfe sind eine sehr einfache Eingabemöglichkeit für Elektronik-Projekte und funktionieren ähnlich wie man es zuhause von Knöpfen von der Waschmaschine oder dem Geschirrspüler kennt. Dahinter verbirgt sich nichts Kompliziertes: Der Taster stellt eine elektrische Verbindung her, Strom fließt und der Computer (Arduino in unserem Fall) merkt, dass etwas passiert ist.
 
-<!-- more_details -->
+Diese Taster brauchen ein paar Kabel und einen Widerstand, damit sie benutzt werden können. Schneller geht es mit dem [Taster/Knopf (Platine)](/mks-welcome/part/mks-SeeedStudio-Grove_Button), den man direkt per Grove-Kabel anschließen kann.
 
-Um den Schaltvorgang mit einem Mikrocontroller zu erfassen, wird ein digitaler Pin des Controllers mit dem Taster verbunden.
-Der andere Anschluss des Tasters wird mit Masse verbunden.
-Der Mikrocontroller wird so programmiert das der Pin, an dem der Taster angeschlossen ist, mit einem PullUp auf einen HIGH Pegel _zieht_.
-Sobald der Taster betätigt wird, wird damit ein digitaler Anschlusspin des Mikrocontrollers auf Masse gelegt, diesen wechsel von HIGH auf LOW kann der Controller dann erkennen.
-
-Der Schalter lässt sich an einen Arduino oder Raspberry Pi anschließen. Er benötigt dafür nur einen digitalen Pin.
-
-Für weitere Informationen schaue beim Bauteil [Taster/Knopf (Platine)](/mks-welcome/part/mks-SeeedStudio-Grove_Button) nach.
+![Taster/Knopf](./taster2jpg.jpg)
 
 @[youtube](https://www.youtube.com/watch?v=ITsk6dPSsqA)
+
+## Aufbau 
+
+Um diesen Taster zu nutzen, braucht es noch:
+- Ein Breadboard
+- Zwei Jumperkabel (male/male)
+
+So bekommt man ihn zum Laufen: 
+
+1. Stecke den Taster so auf das Breadboard:  
+![Taster auf Breadboard Nah](./taster-nah2.jpg)
+1. Verbinde die beiden Kabel mit dem Taster und den Arduino wie auf diesem Diagramm. Achte darauf die Pins `GND` und `4` zu nutzen. Achte dabei darauf, dass die Beine diagonal gegenüber angeschlossen werden. Mehr dazu unten. 
+![Diagramm](./diagram.png)
+1. Füge dann den Code von unten ein. Mit dem Code kannst du testen, ob der Schalter funktioniert und der Arduino ihn erkennt. 
+1. Öffne den **Serial Monitor** auf dem Laptop. Gehe dazu unter `Werkzeuge` oben im Menü und klicke auf `Serieller Monitor`. Dann wird unten sich ein Bereich öffnen, in dem mal sehen kann ob der Schalter erkannt wird.
+
+
+### Schaltdiagramm des Tasters
+
+![Diagramm](./button-diagram.png)
+
+Der Taster ist so wie im Bild aufgebaut. Wenn man also zwei Beine gegenüber anschließt, fließt der Strom einfach durch den Taster hindurch ohne geschalten zu werden. Um etwas zu schalten gehen also nur diagonale Verbindungen (A <-> C oder B <-> D), oder U-Verbindungen (A <-> B und C <-> D).
+
+### Eigentlich braucht es einen Widerstand
+
+Wenn man den Taster drückt, wird ein Kreislauf geschlossen und Strom fließt durch das Kabel. Wenn der Strom ungebremst oder unverbraucht durch den Taster wieder in den Arduino fließt, kann es einen Kurzschluss geben und den Arduino beschädigen. Daher braucht es eigentlich einen Widerstand, welcher den Strom abbremst. 
+
+Der Arduino ist allerdings gut ausgerüstet und hat eingebaute Widerstände, welche man per Code aktivieren kann. Sobald man den digitalen Pin als `INPUT_PULLUP` registriert (im Gegensatz zum normalen `INPUT`), wird ein Widerstand dazwischengeschalten und der Arduino abgesichert.
 
 ## Beispiele
 
@@ -49,8 +68,9 @@ Für weitere Informationen schaue beim Bauteil [Taster/Knopf (Platine)](/mks-wel
 
 <!-- infolist -->
 
-## weitere Informationen
+## Weitere Informationen
 
+- [Taster/Knopf (Platine)](/mks-welcome/part/mks-SeeedStudio-Grove_Button)
 - [Adafruit Button-Sortiment](https://www.adafruit.com/product/1010)
 
 ## Projektbeispiele:

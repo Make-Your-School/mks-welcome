@@ -2,7 +2,7 @@
 
 - Schließe den Taster an den Arduino an
     - ein Pin mit Masse / GND (0V) verbinden
-    - den anderen Taster-Pin an den Pin D2 des Arduino
+    - den anderen Taster-Pin an den Pin D4 des Arduino
 - lade den Beispiel-Code auf den Arduino
 - öffne den Seriellen Monitor
 - stelle die Geschwindigkeit des Seriellen Monitor auf 115200
