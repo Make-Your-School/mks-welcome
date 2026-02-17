@@ -25,17 +25,30 @@ difficulty: 'recommend'
 ![LED-Sockel](./64_led-sockel.png)
 
 ## Beschreibung
-LEDs (Leuchtdioden) dienen zur Beleuchtung aber auch zur Darstellung eines Zustandes. Viele Geräte sind mit LEDs ausgestattet. Diese zeigen dabei ausschließlich an, ob das Gerät eingeschaltet ist oder beispielsweise ein Fehler vorliegt. Bei Elektronik-Projekten kommen LEDs meistens zum Einsatz, um die Funktion von Sensoren zu testen. LEDs lassen sich auch direkt (mit zwischengeschaltetem Widerstand) an einen Mikrocontroller über einen digitalen Pin anschließen.
+LEDs (Leuchtdioden) dienen zur Beleuchtung aber auch zur Darstellung eines Zustandes (z.B. eine rot-leuchtende LED symbolisiert schlechte Luftqualität). Viele Geräte sind mit LEDs ausgestattet. Diese zeigen dabei ausschließlich an, ob das Gerät eingeschaltet ist oder beispielsweise ein Fehler vorliegt. Bei Elektronik-Projekten kommen LEDs meistens zum Einsatz, um die Funktion von Sensoren zu testen.
 
-Die hier abgebildete LED ist direkt auf einer Platine mit einstellbarem Widerstand montiert, sodass sie mit Standard-Grove-Verbindungskabel und mithilfe eines Grove Shields an den entsprechenden Mikrocontroller angeschlossen werden kann. Um eine andere Farbe zu erhalten, lässt sich die Leuchtdiode auf der Platine auch austauschen. Hierbei muss man allerdings auf die richtige Polung der LED achten.
-
-Das integrierte Potentiometer ist auch nützlich, um den richtigen Vorwiderstand für die entsprechende LED einzustellen. Darüberhinaus kann man so auch deren Helligkeit verändern.
-
-Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.
+![LED-Sockel](./led-socket.jpg)
 
 @[youtube](https://www.youtube.com/watch?v=ITsk6dPSsqA)
 
+Normalerweise brauchen LEDs einen Widerstand, damit sie nicht durchbrennen. Praktischerweise hat dieser LED-Sockel schon eingebaute Widerstände, welche die LED davor schützen.
 
+## Aufbau 
+
+1. Nehme eine LED und stecke sie in den LED-Sockel hinein. Du kannst verschiedenfarbige LEDs hierfür nehmen! ⚠️ Hierbei muss man beachten, wie herum man sie reinsteckt, da der Strom durch LEDs nur in einer Richtung durchfließen kann. Nehme folgendes Bild zur Hilfe:  
+![Diagramm](./plus-minus.png)
+1. Verbinde den LED-Sockel mit Grove-Kabel mit dem Grove-Shield auf dem Arduino. Für unser Beispiel nehmen wir den digitalen Pin `D2`. Siehe es hier im Bild:  
+![Diagramm](./diagram.jpg)
+1. Füge den Beispielcode von unten ein und lade ihn auf den Arduino. Du solltest die LED blinken sehen.
+
+**Helligkeit der LED ändern**  
+Mit einem Kreuz-Schraubenzieher kann man kann die Helligkeit der LED ändern und heller oder dunkler stellen. Dahinter steckt ein Widerstand, der regelt, wieviel Strom durch die LED fließt. Mehr Strom = hellere LED, weniger Strom = dunklere LED.
+
+![Helligkeit ändern mit Schraubenzieher](./change-brightness.jpeg)
+
+## Weitere Informationen
+
+Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.
 
 
 ## Beispiele

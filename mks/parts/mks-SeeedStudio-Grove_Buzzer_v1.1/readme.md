@@ -25,10 +25,21 @@ difficulty: 'recommend'
 
 ![Summer](./45_summer.png)
 
+
 ## Beschreibung
-Der Summer gibt Pieptöne in unterschiedlichen Tonhöhen aus. Dafür wird der Summer direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi angeschlossen. Durch ein einfaches digitales „HIGH“ oder „LOW”-Signal kann der Pieper an- oder ausgeschaltet werden. Alternativ kann er auch Effekte oder unterschiedliche Tonhöhen ausgeben, wenn er durch ein PWM-Signal angesteuert wird.
+
+
+Der Summer (oder engl. Buzzer) gibt Pieptöne in unterschiedlichen Tonhöhen aus. Achtung, er kann ganz schön nervig sein! 😉 Dafür wird der Summer direkt oder mithilfe des [Grove Shields](/mks-welcome/part/mks-SeeedStudio-Grove_Base_Shield_V2/) an einen Arduino oder Raspberry Pi angeschlossen. Durch ein einfaches digitales `HIGH` oder `LOW`-Signal (also Strom an oder Strom aus) kann der Pieper an- oder ausgeschaltet werden. Alternativ kann er auch Effekte oder unterschiedliche Tonhöhen ausgeben, wenn er durch ein PWM-Signal angesteuert wird.
 
 Der Summer wird oftmals als Warnton oder auch als akustisches Feedback in diversen Projekten eingesetzt.
+
+### Aufbau
+
+![Aufbau](./diagram.jpg)
+
+Um den Summer zu nutzen, nehme Summer und schließe ihn mit einem Grove-Kabel an den digitalen `D6` Pin des Grove Shields an. Dann nehme den Beispielcode von unten und lade ihn auf den Arduino.
+
+### Weitere Informationen
 
 Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponentenbezeichnungen entsprechende Projektbeispiele und Tutorials.
 
@@ -44,7 +55,7 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 
 ## Wichtige Links für die ersten Schritte:
 
-- [Seeed Studio Wiki](http://wiki.seeedstudio.com/Grove-Buzzer/) [- Summer](http://wiki.seeedstudio.com/Grove-Buzzer/)
+- [Seeed Studio Wiki - Summer](http://wiki.seeedstudio.com/Grove-Buzzer/)
 
 ## Projektbeispiele:
 

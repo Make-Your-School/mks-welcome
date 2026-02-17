@@ -1,30 +1,35 @@
 
-const int switchPin = 2;     // the number of the pushbutton pin
-const int ledPin =  6;      // the number of the LED pin
+// Der digitale Pin des Schalters
+const int pinSchalter = 2;
+// Der digitale Pin der LED
+const int pinLed =  6;
 
-int switchState = 0;         // variable for reading the pushbutton status
+// Eine Variable um den Zustand des Schalters zu merken
+int zustandSchalter = 0;
 
 void setup() {
-    // initialize the LED pin as an output:
-    pinMode(ledPin, OUTPUT);
-    // initialize the switch pin as an input:
-    pinMode(switchPin, INPUT);
+    // Wir sagen dem Arduino, dass der Schalter ein Input ist
+    pinMode(pinSchalter, INPUT);
+    // Wir sagen dem Arduino, dass die LED ein Output ist 
+    pinMode(pinLed, OUTPUT);
+
     Serial.begin(9600);
 }
 
 void loop(){
-    // read the state of the switch value:
-    switchState = digitalRead(switchPin);
+    // Wir lesen den Schalterzustand aus und speichern ihn ab
+    zustandSchalter = digitalRead(pinSchalter);
 
-    if (switchState == HIGH) {
-        //turn LED on:
-        digitalWrite(ledPin, HIGH);
-        Serial.println("switch high!");
-    }
-    else {
-        //turn LED off:
-        digitalWrite(ledPin, LOW);
-        Serial.println("switch low");
+    // WENN der Schalter angeschalten ist, dann ...
+    if (zustandSchalter == HIGH) {
+        // Mach die LED an
+        digitalWrite(pinLed, HIGH);
+        // Und wir schreiben es auch noch in die Console
+        Serial.println("Schalter an!");
+    } else {
+        // wenn nicht, dann mach sie aus
+        digitalWrite(pinLed, LOW);
+        // und schreib es auch in die Konsole
+        Serial.println("Schalter aus!");
     }
 }
-```
