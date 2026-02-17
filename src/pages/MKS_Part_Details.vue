@@ -40,7 +40,7 @@
 // import { shallowRef } from 'vue'
 // import { useRoute } from 'vue-router'
 
-// import { useQuasar } from "quasar";
+// import { useQuasar } from 'quasar'
 
 // import PartDetails from 'src/components/PartDetails.vue'
 
@@ -58,7 +58,11 @@ console.log('part', part)
 
 const mysLink = location.href
 
-const coverImage = `../${part.path_base}/${part.meta.coverImage}`
+const publicPath = process.env.publicPath
+console.log('publicPath', publicPath)
+const coverImage = `${publicPath}${part.path_base}/${part.meta.coverImage}`
+console.log('part.path_base', part.path_base)
+console.log('coverImage', coverImage)
 
 import { useRouter } from 'vue-router'
 const router = useRouter()

@@ -124,6 +124,7 @@ const routes = [
                 props: true,
             },
             {
+                // path: 'part/:part_name/:pathMatch(.*)+.md',
                 path: 'part/:part_name/:pathMatch(.*)+',
                 component: () => import('pages/MKS_Part_SubMarkdownFile.vue'),
                 props: true,

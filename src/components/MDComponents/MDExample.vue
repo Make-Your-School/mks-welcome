@@ -97,20 +97,20 @@ watchEffect(() => {
     const checkKeyCode = (key) => key.includes('.ino') || key.includes('main')
 
     const entries = Object.entries(props.content_obj.files)
-    console.log('entries', entries)
+    // console.log('entries', entries)
 
     const readmeEntries = entries.filter(([key]) => checkKeyReadme(key))
     const notReadme = entries.filter(([key]) => !checkKeyReadme(key))
-    console.log('readmeEntries', readmeEntries)
-    console.log('notReadme', notReadme)
+    // console.log('readmeEntries', readmeEntries)
+    // console.log('notReadme', notReadme)
 
     const codeEntries = notReadme.filter(([key]) => checkKeyCode(key))
     codeEntries.sort(([a], [b]) => a.localeCompare(b))
-    console.log('codeEntries', codeEntries)
+    // console.log('codeEntries', codeEntries)
 
     const otherEntries = notReadme.filter(([key]) => !checkKeyCode(key))
     otherEntries.sort(([a], [b]) => a.localeCompare(b))
-    console.log('otherEntries', otherEntries)
+    // console.log('otherEntries', otherEntries)
 
     const sortedEntries = [...readmeEntries, ...codeEntries, ...otherEntries]
     // console.log('sortedEntries', sortedEntries)
