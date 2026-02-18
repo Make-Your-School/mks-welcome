@@ -101,8 +101,8 @@ const descriptionType derGanzeText[TEXT_ZEILEN] PROGMEM = {
 void setup() {
     delay(500);
     Serial.begin(115200);
-    unsigned long timeStamp_Start = millis();
-    while ((!Serial) && ((millis() - timeStamp_Start) < 6000)) {
+    unsigned long startZeit = millis();
+    while ((!Serial) && ((millis() - startZeit) < 6000)) {
         // warte bis der computer sich mit dem Arduino Seriell verbunden hat.
         // oder mache nach ueber 6s warten ohne Verbindung weiter.
         1;

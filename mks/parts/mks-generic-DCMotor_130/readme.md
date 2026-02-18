@@ -25,18 +25,19 @@ difficulty: 'recommend'
 
 ## Beschreibung
 
-Ein Gleichstrommotor (auch Direct-Current-Motor genannt) dreht solange, wie er an einer Spannungsquelle hängt und kann sich so theoretisch unendlich weiterdrehen. 
+Ein Gleichstrommotor (auch DC = Direct-Current Motor genannt) dreht solange, wie er an einer Spannungsquelle hängt.
 
 <!-- more_details -->
 
-Die tatsächliche Drehung ist auch von der Kraft abhängig, die er aufbringen muss, um etwas in Bewegung zu bringen. 
-Seine genaue Positionierung ist daher ohne Sensoren nicht möglich. 
-Wird ein DC-Motor stark belastet, dreht er sich deutlich langsamer.
+Die tatsächliche Drehung ist auch von der Kraft abhängig, die er aufbringen muss, um etwas in Bewegung zu bringen.
+Eine Positionierung ist daher ohne Sensoren nicht möglich.
+Wird ein DC-Motor belastet, dreht er sich deutlich langsamer oder bleibt sogar stehen.
 
-Die Steuerung erfolgt über ein einfaches Relais, einen Transistor, einen manuellen Schalter oder einen Motortreiber, der als fertiges Modul zwischen Mikrocontroller und Gleichstrommotor geschaltet wird.
+Die Steuerung erfolgt über ein einfaches Relais, einen Transistor, einen manuellen Schalter oder einen Motortreiber.
 
-Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen. 
-Das wichtige Stichwort lautet hier „DC Motor“ oder „Gleichstrommotor“.
+Falls du den Motor vom Arduino nur Ein und Aus Schalten möchtest, nutze einfach das [Relay](/mks-welcome/part/mks-SeeedStudio-Grove_Relay/).
+Wenn eine Steuerung der Geschwindigkeit oder Drehrichtung nötig ist, verwendest du am besten den [Motortreiber](/mks-welcome/part/mks-SeeedStudio-Grove_I2C_Motor_Driver_V1.3/).
+Schaue dort nach dem Beispiel für `DC-Motor`.
 
 ## Beispiele
 
@@ -46,16 +47,13 @@ Das wichtige Stichwort lautet hier „DC Motor“ oder „Gleichstrommotor“.
 
 @[youtube](https://www.youtube.com/watch?v=wVxcmO2YuxA)
 
-## Wichtige Links für die ersten Schritte:
-
-- [Adafruit Gleichstrommotor](https://www.adafruit.com/product/711)
-- [Seeed Studio Wiki – Motortreiber](http://wiki.seeedstudio.com/Grove-I2C_Motor_Driver_V1.3/)
-
 ## Projektbeispiele:
 
 - [Arduino-Tutorial - DC Motor Steuerung](https://www.arduino-tutorial.de/motorsteuerung-direkt-per-arduino/)
 
 ## Weiterführende Hintergrundinformationen:
 
+- [Adafruit Gleichstrommotor](https://www.adafruit.com/product/711)
+- [Seeed Studio Wiki – Motortreiber](http://wiki.seeedstudio.com/Grove-I2C_Motor_Driver_V1.3/)
 - [GPIO - Wikipedia Artikel](https://de.wikipedia.org/wiki/Allzweckeingabe/-ausgabe)
 - [Gleichstrommotor - Wikipedia Artikel](https://de.wikipedia.org/wiki/Gleichstrommaschine)

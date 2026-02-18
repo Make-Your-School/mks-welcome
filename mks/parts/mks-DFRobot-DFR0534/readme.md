@@ -3,6 +3,7 @@ title: 'MP3-Modul'
 date: "2018-10-01T15:20:08.000Z"
 tags: 
   - "output"
+  - "audio"
 coverImage: "68_mp3-modul_rz.png"
 material_number: "68"
 material_type: "output"
@@ -102,41 +103,7 @@ die Kabel einfach nach dieser Zuordnung (siehe auch das Foto) zusammen stecken:
 #### Adapter Kabel löten
 
 [AdapterLoeten.md](<./AdapterLoeten.md>)
-<!-- 
-<details>
-<summary>
-alternative kannst du das Kabel auch *ordentlich* löten:
-(aufklappen für mehr infos)
-</summary> 
 
-###### Benötigte Materialien
-![benötigte materialien](<./adapter kabel löten/20240502_161140.jpg>) 
-
-###### Pin-Reihenfolge tauschen
-![lösen mit Pinzette](<./adapter kabel löten/20240502_161230.jpg>) 
-![wieder einstecken](<./adapter kabel löten/20240502_161300.jpg>) 
-![fertig](<./adapter kabel löten/20240502_161415.jpg>) 
-
-###### Widerstand einbauen
-TX-Leitung (weiß) durchschneiden
-![TX-Leitung (weiß) durchschneiden](<./adapter kabel löten/20240502_161501.jpg>) 
-
-abisolieren
-![abisolieren](<./adapter kabel löten/20240502_161534.jpg>) 
-
-10k Widerstand - Beinchen auf Länge kürzen
-![10k Widerstand - Beinchen auf Länge kürzen](<./adapter kabel löten/20240502_161801.jpg>) 
-
-Widerstand anlöten
-![Widerstand anlöten](<./adapter kabel löten/20240502_162113.jpg>) 
-
-![zweite Seite anlöten](<./adapter kabel löten/20240502_162148.jpg>) 
-
-noch mit tape oder tesa abkleben. und schon ists fertig :-)
-![fertig](<./adapter kabel löten/20240502_162449 crop.jpg>) 
-
-</details>
--->
 
 ### Musik aufspielen
 Das Modul wird über eine Micro-USB Kabel mit dem Laptop verbunden.
@@ -184,7 +151,7 @@ bitte die Library `DFR0534` via library manager installieren.
 
 - [DFRobot Wiki](https://wiki.dfrobot.com/Voice_Module_SKU__DFR0534#target_0)
 - [library repository](https://github.com/codingABI/DFR0534) 
-    hier findest du die eine Dokumentation zur Library
+    hier findest du die Dokumentation zur Library
     und auch viele weitere Informationen und Möglichkeiten...
 - [Datenblatt (grobe übersetzung ins Englische) ](https://sparks.gogo.co.nz/assets/_site_/downloads/JQ8400_English.pdf) 
 - [UART – Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)
