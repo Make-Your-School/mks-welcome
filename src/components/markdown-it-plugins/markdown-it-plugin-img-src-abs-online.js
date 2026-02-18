@@ -1,6 +1,13 @@
 // loosly based on
 // https://github.com/seanWLawrence/markdown-it-plugin-data-src/blob/master/lib/index.js
 
+export function getDirectoryName(path) {
+    const parts = path.split('/')
+    // Remove the last part (file name)
+    parts.pop()
+    return parts.join('/')
+}
+
 /**
  * make all img 'src' attribute absolute.
  * @module imgSrcAbsOnline
@@ -32,13 +39,14 @@ export default function imgSrcAbsOnline(md) {
             if (env?.filePath) {
                 // console.log(`env.filePath found:`, env.filePath)
                 // remove trailing slash as we do add it manually..
-                const basePath = env.filePath.replace(/\/$/gm, '')
-                console.log('basePath', basePath)
+                const basePath = getDirectoryName(env.filePath)
+                // const basePath = env.filePath.replace(/\/$/gm, '')
+                // console.log('basePath', basePath)
                 // let srcValueClean = srcValue.replace('./', '')
                 const filePath = basePath + '/' + srcValue
                 // console.log('filePath', filePath)
                 token.meta.filePath = filePath
-                // console.log(`srcValue: (moded) '${srcValue}'`);
+                // console.log(`srcValue: (moded) '${srcValue}'`)
                 // write back
                 token.attrSet('src', filePath)
                 // console.log("check attr:", token.attrGet("src"));

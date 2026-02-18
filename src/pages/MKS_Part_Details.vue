@@ -59,22 +59,38 @@ console.log('part', part)
 const mysLink = location.href
 
 const publicPath = process.env.publicPath
-console.log('publicPath', publicPath)
+// console.log('publicPath', publicPath)
 const coverImage = `${publicPath}${part.path_base}/${part.meta.coverImage}`
-console.log('part.path_base', part.path_base)
-console.log('coverImage', coverImage)
+// console.log('part.path_base', part.path_base)
+// console.log('coverImage', coverImage)
 
 import { useRouter } from 'vue-router'
 const router = useRouter()
 async function backHandler() {
     if (navigation.canGoBack) {
-        await router.back().finished
+        console.log('canGoBack')
+        await router.back()
         // Handle any required clean-up after
         // navigation has finished
     } else {
         router.push('/')
     }
 }
+
+import { onBeforeRouteLeave, onBeforeRouteUpdate } from 'vue-router'
+// same as beforeRouteLeave option but with no access to `this`
+onBeforeRouteLeave((to, from) => {
+    console.log('onBeforeRouteLeave')
+    console.log('to', to)
+    console.log('from', from)
+})
+
+// same as beforeRouteUpdate option but with no access to `this`
+onBeforeRouteUpdate(async (to, from) => {
+    console.log('onBeforeRouteUpdate')
+    console.log('to', to)
+    console.log('from', from)
+})
 
 // const route = useRoute()
 // console.log('route', route);

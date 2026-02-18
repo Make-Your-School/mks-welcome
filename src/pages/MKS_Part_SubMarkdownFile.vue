@@ -15,7 +15,6 @@
         </q-btn>
         <!-- <component class="part-content" :is="part.content" /> -->
         <MyMarkdown :source="mdFileContent" :filePath="mdFile"></MyMarkdown>
-        <div>Ping!</div>
         <hr />
         <a :href="mysLink">{{ props.part_name + '/' + props.pathMatch.join('/') }}</a> - (<a
             :href="urlWebSource"
@@ -51,8 +50,9 @@ console.log('part', part)
 const mysLink = location.href
 const urlWebSource = part.submodule.urlWeb + '/blob/main/' + props.pathMatch.join('/')
 
-const mdFile = ref(`../${part.path_base}/${props.pathMatch.join('/')}`)
-const mdFileContent = ref(null)
+const appPartURL = ref(`/part/${props.part_name}`)
+const mdFile = ref(`/mks-welcome/${part.path_base}${props.pathMatch.join('/')}`)
+const mdFileContent = ref('')
 
 // const route = useRoute()
 // console.log('route', route);
@@ -60,22 +60,23 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 async function backHandler() {
     if (navigation.canGoBack) {
-        await router.back().finished
+        await router.back()
         // Handle any required clean-up after
         // navigation has finished
     } else {
-        router.push('/')
+        console.log('appPartURL', appPartURL.value)
+        router.push(appPartURL.value)
     }
 }
 
 watchEffect(async () => {
-    mdFile.value = `/mks-welcome/${part.path_base}/${props.pathMatch.join('/')}`
-    console.log('mdFile.value', mdFile.value)
+    mdFile.value = `/mks-welcome/${part.path_base}${props.pathMatch.join('/')}`
+    // console.log('mdFile.value', mdFile.value)
     // mks-welcome/mks/parts/mks-DFRobot-DFR0534/AdapterLoeten.md
     const response = await fetch(mdFile.value)
-    console.log(response)
+    // console.log(response)
     mdFileContent.value = await response.text()
-    console.log('mdFileContent.value', mdFileContent.value)
+    // console.log('mdFileContent.value', mdFileContent.value)
 })
 </script>
 
