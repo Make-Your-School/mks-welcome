@@ -28,11 +28,17 @@ difficulty: 'recommend'
 ## Beschreibung
 Der Berührungssensor erkennt, sobald sich ein Finger dem Sensor nähert. 
 Dabei spielt es keine Rolle, ob der Finger den Sensor tatsächlich berührt oder dieser sich nur knapp darüber befindet. 
-Er hat damit eine ähnliche Funktion wie ein Taster oder Schalter und kann einen Mikrocontroller steuern. 
+Er hat damit eine ähnliche Funktion wie ein [Taster](/mks-welcome/part/mks-SeeedStudio-Grove_Button/) oder [Schalter](/mks-welcome/part/mks-SeeedStudio-Grove_Switch-P/) und kann einen Mikrocontroller steuern. 
 Der Sensor lässt sich direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi anschließen. 
 Die erkannte Berührung (oder Annäherung) wird über ein digitales Signal ausgegeben.
 
-Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.
+### Aufbau
+
+1. Schließe den Touch-Sensor mit einem Grove-Kabel an den `D2` Pin des Grove-Shields an.
+1. Schließe eine LED and den `D3` Pin an. Am leichtesten geht es mit einem [LED-Sockel](/mks-welcome/part/mks-SeeedStudio-Grove_LED_Socket/).
+1. Kopiere den Code von unten in die Arduino IDE und lade ihn auf den Arduino. Wenn du jetzt den Sensor berührst, geht das Licht an!
+
+![Beispielaufbau](./aufbau.jpg)
 
 
 
@@ -45,6 +51,8 @@ Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwend
 <!-- infolist -->
 
 ## Wichtige Links für die ersten Schritte:
+
+Alle weiteren Hintergrundinformationen sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken sind auf dem offiziellen Wiki (bisher nur in englischer Sprache) von Seeed Studio zusammengefasst. Zusätzlich findet man über alle gängigen Suchmaschinen meist nur mit der Eingabe der genauen Komponenten-Bezeichnungen entsprechende Projektbeispiele und Tutorials.
 
 - [Seeed Studio Wiki](http://wiki.seeedstudio.com/Grove-Touch_Sensor/) [- Touchsensor](http://wiki.seeedstudio.com/Grove-Touch_Sensor/)
 

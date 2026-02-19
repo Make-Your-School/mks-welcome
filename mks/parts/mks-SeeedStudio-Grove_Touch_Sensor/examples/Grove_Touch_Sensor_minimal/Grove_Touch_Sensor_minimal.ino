@@ -1,20 +1,25 @@
-
-const int TouchPin=2;
-const int ledPin=3;
+// Pinnummer wo der Touchsensor angeschlossen wird
+const int TouchPin = 2;
+// Pinnummer, wo die LED angeschlossen wird
+const int ledPin = 3;
 
 void setup() {
-    pinMode(TouchPin, INPUT);
-    pinMode(ledPin,OUTPUT);
+  // Der Touchsensor ist ein Input
+  pinMode(TouchPin, INPUT);
+  // Die LED ein Output
+  pinMode(ledPin, OUTPUT);
 }
 
 void loop() {
-    int sensorValue = digitalRead(TouchPin);
-    if(sensorValue==1)
-    {
-        digitalWrite(ledPin,HIGH);
-    }
-    else
-    {
-        digitalWrite(ledPin,LOW);
-    }
+  // Wir schauen nach, ob der Touch-Sensor etwas detektiert und speichern es ab
+  int sensorValue = digitalRead(TouchPin);
+
+  // Falls jemand berührt, dann ...
+  if( sensorValue == 1) {
+    // Schalte die LED an
+    digitalWrite(ledPin, HIGH);
+  } else {
+    // sonst, schalte die LED aus.
+    digitalWrite(ledPin, LOW);
+  }
 }
