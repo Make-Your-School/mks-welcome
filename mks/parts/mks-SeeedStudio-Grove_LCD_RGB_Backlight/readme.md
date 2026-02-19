@@ -27,6 +27,8 @@ difficulty: 'recommend'
 ## Beschreibung
 Der LCD Bildschirm ist ein bisschen wie der Bildschirm dieses Laptops, nur *viel* einfacher. Aber genau gleich wie bei einem Laptop kann er dazu benutzt werden, um Informationen anzuzeigen. Der Bildschirm verfügt über zwei Zeilen, auf denen jeweils 16 Zeichen (Buchstaben, Zahlen und Sonderzeichen) dargestellt werden können. Zusätzlich lässt sich die Farbe der Hintergrundbeleuchtung steuern, um einen besonderen Effekt zu erzeugen. Der Bildschirm kann direkt oder mithilfe des Grove Shields an einen Arduino oder Raspberry Pi über die serielle Schnittstelle I2C angeschlossen werden.
 
+### Video
+
 @[youtube](https://www.youtube.com/watch?v=PWh7wkT2Dog)
 
 ### Aufbau
