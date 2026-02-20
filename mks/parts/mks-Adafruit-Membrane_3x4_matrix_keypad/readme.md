@@ -40,7 +40,7 @@ Tastenfelder sind überall. Digital in Handys, an Snackautomaten am Bahnhof oder
 ![connector-inside.jpeg](./connector-inside.jpeg)
 1. Biege vorsichtig einen der Pins zur Seite, sodass es etwa so aussieht. Im nächsten Schritt siehst du, warum es das braucht.  
 ![connector-bent](./connector-bent.jpeg)
-1. Stecke diesen Konnektor des Tastfelds in die Pin-Buchsen and der Seite des Arduinos (oder in des Grove-Shields, es geht beides) in die Pins `2` bis `8`.  
+1. Stecke diesen Konnektor des Tastfelds in die Pin-Buchsen and der Seite des Arduinos (oder in des Grove-Shields, es geht beides) in die Pins `2` bis `8`. Falls du vor hast viele andere Sachen an den Arduino anzuschließen, verwende z.B. stattdessen die Pins 7 - 13 und aktualisiere den Code. Damit bleiben die Grove Stecker unbelegt.
 ![connected](./connector-connected.jpeg)  
 Mit Kabeln würde es in etwa so aussehen:  
 ![cables-setup](./setup-cables.png)
