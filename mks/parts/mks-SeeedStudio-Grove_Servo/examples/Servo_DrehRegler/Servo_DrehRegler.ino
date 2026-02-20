@@ -1,4 +1,4 @@
-// schließe einen Servo an Pin D9 des Arduino / Grove Shield an
+// schließe einen Servo an Pin D5 des Arduino / Grove Shield an
 // schließe einen Dreh-Regler an Pin A0 des Arduino / Grove Shield an
 // lade den code auf den Arduino
 // nun kannst du die Position des Servos mit Hilfe des Dreh-Reglers einstellen
@@ -9,13 +9,11 @@
 #include <Servo.h>
 
 // erstellt ein Servo-Objekt, um einen Servomotor zu steuern
-Servo myservo;
+Servo meinServo;
 
 // Analog Pin, an dem das Potentiometer angeschlossen ist
-int potpin = A0;
-
-// Variable um den Wert des Analogen Pin zwischenzuspeichern
-int val;
+const int drehreglerPin = A0;
+const int servoPin = 5;
 
 void setup() {
     delay(500);
@@ -30,23 +28,27 @@ void setup() {
     Serial.println("Servo_DrehRegler.ino");
 
     // definiere den Pin des Dreh-Reglers als Eingang.
-    pinMode(potpin, INPUT);
-    // verknüpft den Servomotor an Pin 9 mit dem Servo-Objekt
-    myservo.attach(9);
+    pinMode(drehreglerPin, INPUT);
+    // verknüpft das meinServo Object mit dem Pin 5
+    meinServo.attach(servoPin);
 }
 
 void loop() {
     // liest das Potentiometer aus (Wert zwischen 0 und 1023)
-    val = analogRead(potpin);
-
+    // und speichert diesen in der Variable `valRoh`
+    int valRoh = analogRead(drehreglerPin);
     // rechnet den Wert in den Wertebereich des Servomotors um
-    val = map(val, 0, 1023, 0, 180);
+    // und speichert das Ergebnis in der Variablen `valServo`
+    int valServo = map(valRoh, 0, 1023, 0, 180);
 
-    // gibt den wert im Seriellen Monitor aus
-    Serial.println(val);
+    // gibt die Wert im Seriellen Monitor aus
+    Serial.print(valRoh);
+    Serial.print(" → ");
+    Serial.print(valServo);
+    Serial.println();
 
     // überträgt die Zielposition an den Servomotors
-    myservo.write(val);
+    meinServo.write(valServo);
 
     // lässt dem Servomotor Zeit, die Zielposition zu erreichen
     delay(100);

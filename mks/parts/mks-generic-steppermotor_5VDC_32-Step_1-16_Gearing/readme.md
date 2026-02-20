@@ -25,11 +25,15 @@ difficulty: 'advanced'
 ![Schrittmotor](./40_schrittmotor.png)
 
 ## Beschreibung
-Ein Schrittmotor wird immer mithilfe eines Motortreibers angesteuert. Er kann sehr genau positioniert werden, selbst ohne Sensoren, da er in einzelnen, unabhängig von äußeren Belastungen, immer gleichbleibenden Schritten weiterdreht (innerhalb der angegeben Belastungsgrenze). Praktisch bedeutet das: Der Mikrocontroller sendet an den Motortreiber die Richtung und die Anzahl an Schritten, die weitergedreht werden sollen. Solange man die Anfangsposition kennt und den Überblick der vorwärts und rückwärts gedrehten Schritten behält, ist die Position des Motors bekannt. Der Schrittmotor ist dadurch sehr präzise aber oftmals nicht so schnell wie ein einfacher DC-Motor.
+Ein Schrittmotor wird immer mithilfe eines Motortreibers angesteuert. 
+Er kann sehr genau positioniert werden, selbst ohne Sensoren, da er in einzelnen, unabhängig von äußeren Belastungen, immer gleichbleibenden Schritten weiterdreht (innerhalb der angegeben Belastungsgrenze). 
+Praktisch bedeutet das: Der Mikrocontroller sendet an den Motortreiber die Richtung und die Anzahl an Schritten, die weitergedreht werden sollen. 
+Solange man die Anfangsposition kennt und den Überblick der vorwärts und rückwärts gedrehten Schritten behält, ist die Position des Motors bekannt. 
+Der Schrittmotor ist dadurch sehr präzise, dafür relative langsam.
 
-Ein Schrittmotor kommt durch seine genaue und einfache Positionierbarkeit oftmals in der Bewegung von Maschinen oder Roboters zum Einsatz.
+Ein Schrittmotor kommt durch seine genaue und einfache Positionierbarkeit oft in der Bewegung von Maschinen oder Robotern zum Einsatz.
 
-Weitere Informationen bezüglich der Ansteuerung sind beim Motortreiber zusammengefasst.
+Weitere Informationen bezüglich der Ansteuerung sind beim [Motortreiber](/mks-welcome/part/mks-SeeedStudio-Grove_I2C_Motor_Driver_V1.3/) Beispiel `Stepper-Motor` zusammengefasst.
 
 ## Video
 

@@ -1,1 +1,1 @@
-// bitte schaue beim Motor-Treiber nach dem Beispiel für den DC-Motor!
+// bitte schaue beim Motortreiber nach dem Beispiel für den DC-Motor!

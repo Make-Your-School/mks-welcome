@@ -1,4 +1,4 @@
-// schließe einen Servo an Pin D9 des Arduino / Grove Shield an
+// schließe einen Servo an Pin D5 des Arduino / Grove Shield an
 // lade den code auf den Arduino
 // der Servo wird verschiedene Positionen anfahren.
 // Danach passiert nichts mehr bis du den Arduino neustartest.
@@ -7,23 +7,22 @@
 #include <Servo.h>
 
 // erstellt ein Servo-Objekt, um einen Servomotor zu steuern
-Servo myservo;
+Servo meinServo;
 
 void setup() {
-    // verknüpft den Servomotor an Pin 9 mit dem Servo-Objekt
-    myservo.attach(9);
+    // verknüpft das meinServo Object mit dem Pin 5
+    meinServo.attach(5);
     
     // fahre Servo zu Position 0 (Links Anschlag)
-    myservo.write(0);
-    delay(500);
+    meinServo.write(0);
+    delay(1000);
 
     // fahre Servo zu Position 180 (Rechts Anschlag)
-    myservo.write(180);
-    delay(500);
+    meinServo.write(180);
+    delay(1000);
     
     // fahre Servo zu Position 90 (genau die Mitte)
-    myservo.write(90);
-    delay(500);
+    meinServo.write(90);
 }
 
 void loop() {

@@ -15,12 +15,12 @@
 #include "rgb_lcd.h"
 
 rgb_lcd lcd;
-const int colorR = 50;
+const int colorR = 80;
 const int colorG = 0;
 const int colorB = 255;
 
-const int TEXT_ZEILEN = 65;
-const int ZEILE_MAXIMAL_LAENGE = 52;
+const int TEXT_ZEILEN = 136;
+const int ZEILE_MAXIMAL_LAENGE = 17;
 
 typedef struct {
     char description[ZEILE_MAXIMAL_LAENGE];
@@ -29,74 +29,143 @@ typedef struct {
 // Quelle des Textes:
 // https://de.wikisource.org/wiki/Alice_im_Wunderland
 const descriptionType derGanzeText[TEXT_ZEILEN] PROGMEM = {
-    {"Alice’s Abenteuer"},
+    {"Alice'sAbenteuer"},
     {"im Wunderland"},
-    {"von Lewis Carroll."},
+    {"von"},
+    {"Lewis Carroll."},
     {""},
-    {"O schoener, goldner Nachmittag,"},
-    {"Wo Flut und Himmel lacht!"},
-    {"Von schwacher Kindeshand bewegt,"},
-    {"Die Ruder plaetschern sacht –"},
-    {"Das Steuer haelt ein Kindesarm"},
-    {"Und lenket unsre Fahrt."},
+    {"O schoener,"},
+    {"goldner "},
+    {"Nachmittag,"},
+    {"Wo Flut und "},
+    {"Himmel lacht!"},
+    {"Von schwacher "},
+    {"Kindeshand "},
+    {"bewegt,"},
+    {"Die Ruder "},
+    {"plaetschern "},
+    {"sacht -"},
+    {"Das Steuer haelt"},
+    {" ein Kindesarm"},
+    {"Und lenket "},
+    {"unsre Fahrt."},
     {""},
-    {"So fuhren wir gemaechlich hin"},
-    {"Auf traeumerischen Wellen –"},
-    {"Doch ach! die drei vereinten sich,"},
-    {"Den mueden Freund zu quaelen –"},
-    {"Sie trieben ihn, sie draengten ihn,"},
-    {"Ein Maehrchen zu erzaehlen."},
+    {"So fuhren wir "},
+    {"gemaechlich hin"},
+    {"Auf "},
+    {"traeumerischen"},
+    {"Wellen - "},
+    {"Doch ach!"},
+    {"die drei"},
+    {"vereinten sich,"},
+    {"Den mueden "},
+    {"Freund zu"},
+    {"quaelen - "},
+    {"Sie trieben ihn,"},
+    {"sie draengten"},
+    {"ihn,"},
+    {"Ein Maehrchen"},
+    {"zu erzaehlen."},
     {""},
-    {"Die Erste gab’s Commandowort;"},
-    {"O schnell, o fange an!"},
-    {"Und mach’ es so, die Zweite bat,"},
-    {"Daß man recht lachen kann!"},
-    {"Die Dritte ließ ihm keine Ruh"},
-    {"Mit wie? und wo? und wann?"},
+    {"Die Erste gab's"},
+    {"Commandowort;"},
+    {"O schnell, "},
+    {"o fange an!"},
+    {"Und mach' es so,"},
+    {"die Zweite bat,"},
+    {"Daß man recht"},
+    {"lachen kann!"},
+    {"Die Dritte ließ"},
+    {"ihm keine Ruh"},
+    {"Mit wie? und wo?"},
+    {"und wann?"},
     {""},
-    {"Jetzt lauschen sie vom Zauberland"},
-    {"Der wunderbaren Maehr’;"},
-    {"Mit Thier und Vogel sind sie bald"},
-    {"In freundlichem Verkehr,"},
-    {"Und fuehlen sich so heimisch dort,"},
-    {"Als ob es Wahrheit waer’. –"},
+    {"Jetzt lauschen"},
+    {"sie vom"},
+    {"Zauberland"},
+    {"Der wunderbaren"},
+    {"Maehr';"},
+    {"Mit Thier"},
+    {"und Vogel"},
+    {"sind sie bald"},
+    {"In freundlichem"},
+    {"Verkehr,"},
+    {"Und fuehlen sich"},
+    {"so heimisch dort"},
+    {"Als ob es "},
+    {"Wahrheit waer'.-"},
     {""},
-    {"Und jedes Mal, wenn Fantasie"},
-    {"Dem Freunde ganz versiegt: –"},
-    {"„Das Übrige ein ander Mal!“"},
-    {"O nein, sie leiden’s nicht."},
-    {"„Es ist ja schon ein ander Mal!“ –"},
-    {"So rufen sie vergnuegt."},
+    {"Und jedes Mal,"},
+    {"wenn Fantasie"},
+    {"Dem Freunde"},
+    {"ganz versiegt: -"},
+    {"'Das Uebrige "},
+    {"ein ander Mal!'"},
+    {"O nein, sie"},
+    {"leiden's nicht."},
+    {"'Es ist ja schon"},
+    {"ein ander Mal!'"},
+    {"So rufen sie"},
+    {"vergnuegt."},
     {""},
-    {"So ward vom schoenen Wunderland"},
-    {"Das Maerchen ausgedacht,"},
-    {"So langsam Stueck fuer Stueck erzaehlt,"},
-    {"Beplaudert und belacht,"},
-    {"Und froh, als es zu Ende war,"},
-    {"Der Weg nach Haus gemacht."},
+    {"So ward vom "},
+    {"schoenen"},
+    {"Wunderland"},
+    {"Das Maerchen"},
+    {"ausgedacht,"},
+    {"So langsam"},
+    {"Stueck fuer"},
+    {"Stueck erzaehlt,"},
+    {"Beplaudert"},
+    {"und belacht, "},
+    {"Und froh, als "},
+    {"es zu Ende war,"},
+    {"Der Weg nach "},
+    {"Haus gemacht."},
     {""},
-    {"Alice! o nimm es freundlich an!"},
-    {"Leg’ es mit guet’ger Hand"},
-    {"Zum Strauße, den Erinnerung"},
-    {"Aus Kindheitstraeumen band,"},
-    {"Gleich welken Bluethen, mitgebracht"},
-    {"Aus liebem, fernen Land."},
+    {"Alice!"},
+    {"o nimm es"},
+    {"freundlich an!"},
+    {"Leg' es mit "},
+    {"guet'ger Hand "},
+    {"Zum Strauße, den"},
+    {"Erinnerung Aus "},
+    {"Kindheitstraeumen"},
+    {"band, "},
+    {"Gleich welken"},
+    {"Bluethen,"},
+    {"mitgebracht Aus"},
+    {"liebem, fernen"},
+    {"Land."},
     {""},
     {""},
     {"Erstes Kapitel."},
-    {"Hinunter in den Kaninchenbau."},
+    {"Hinunter in den"},
+    {"Kaninchenbau."},
     {""},
-    {"Alice fing an sich zu langweilen; "},
-    {"sie saß schon lange bei ihrer Schwester"},
-    {"am Ufer und hatte nichts zu thun. "},
-    {"Das Buch, das ihre Schwester las, gefiel ihr nicht;"},
-    {"denn es waren weder Bilder noch Gespraeche darin. "},
-    {"'Und was nuetzen Buecher,' dachte Alice,"},
-    {"'ohne Bilder und Gespraeche?' "},
+    {"Alice fing an"},
+    {"sich zu"},
+    {"langweilen;"},
+    {"sie saß schon"},
+    {"lange bei ihrer"},
+    {"Schwester am"},
+    {"Ufer und hatte "},
+    {"nichts zu thun."},
+    {"Das Buch, das"},
+    {"ihre Schwester"},
+    {"las, gefiel ihr"},
+    {"nicht;"},
+    {"denn es waren"},
+    {"weder Bilder"},
+    {"noch Gespraeche"},
+    {"darin."},
+    {"'Und was"},
+    {"nuetzen Buecher,'"},
+    {"dachte Alice,"},
+    {"'ohne Bilder"},
+    {"und Gespraeche?'"},
     {"..."},
 };
-
-
 
 void setup() {
     delay(500);
@@ -108,7 +177,12 @@ void setup() {
         1;
     }
     delay(500);
+    Serial.println("");
+    Serial.println("");
+    Serial.println("");
     Serial.println("Grove_LCD_RGB_Backlight_vielText.ino");
+    Serial.println("");
+    Serial.println("");
 
     lcd.begin(16, 2);
     lcd.setRGB(colorR, colorG, colorB);
@@ -120,23 +194,27 @@ void setup() {
 }
 
 void loop() {
-    for (int i = 0; i < TEXT_ZEILEN; i++) {
+    Serial.println("Zeige Text:");
+    for (int i = 0; i < TEXT_ZEILEN; i = i + 2) {
         showText(i);
-        delay(500);
+        delay(1100);
     }
+    Serial.println("");
+    delay(2000);
 }
 
 void showText(int textIndex) {
     lcd.clear();
+    // schreibe Zeile 1
+    lcd.setCursor(0, 0);
+    descriptionType zeileEins;
+    memcpy_P(&zeileEins, &derGanzeText[textIndex], sizeof zeileEins);
+    Serial.println(zeileEins.description);
+    lcd.print(zeileEins.description);
+    // schreibe Zeile 2
     lcd.setCursor(0, 1);
-    descriptionType eineZeileText;
-    memcpy_P(&eineZeileText, &derGanzeText[textIndex], sizeof eineZeileText);
-    Serial.println(eineZeileText.description);
-    lcd.print(eineZeileText.description);
-    int zeilenLaenge = strlen(eineZeileText.description);
-    for (int i = 0; i < zeilenLaenge; i++) {
-        // Schiebe den Inhalt des LCDs um ein Zeichen nach links
-        lcd.scrollDisplayLeft();
-        delay(100);
-    }
+    descriptionType zeileZwei;
+    memcpy_P(&zeileZwei, &derGanzeText[textIndex+1], sizeof zeileZwei);
+    Serial.println(zeileZwei.description);
+    lcd.print(zeileZwei.description);
 }
