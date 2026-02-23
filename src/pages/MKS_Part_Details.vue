@@ -21,6 +21,9 @@
             <div class="info">
                 <h2 class="material_number">{{ part.meta.material_number }}</h2>
                 <h1 class="title">{{ part.meta.title }}</h1>
+                <h2 class="part_description">{{ part_description }}</h2>
+                <!-- <h2 class="material_short_descr">{{ part.meta.material_short_descr }}</h2> -->
+                <!-- <h2 class="repo_part">{{ part.meta.repo_part }}</h2> -->
                 <!-- <h2 class="type">{{ part.meta.material_type }}</h2> -->
             </div>
             <img :src="coverImage" :alt="part.meta.title" />
@@ -63,6 +66,11 @@ const publicPath = process.env.publicPath
 const coverImage = `${publicPath}${part.path_base}/${part.meta.coverImage}`
 // console.log('part.path_base', part.path_base)
 // console.log('coverImage', coverImage)
+
+import { computed } from 'vue'
+const part_description = computed(() => {
+    return `${part.meta.repo_manufactur.replace(/([A-Z])/g, ' $1')} - ${part.meta.repo_name.replace('_', ' ')}`
+})
 
 import { useRouter } from 'vue-router'
 const router = useRouter()
@@ -136,6 +144,8 @@ header
             margin: 0
             text-align: center
             font-size: var(--display-large)
+        .material_short_descr
+            font-size: var(--display-small)
     img
         max-width: 100vw
         max-height: 35rem
