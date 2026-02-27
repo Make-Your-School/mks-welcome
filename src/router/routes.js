@@ -130,6 +130,10 @@ const routes = [
                 props: true,
             },
             {
+                path: 'part/',
+                redirect: '/',
+            },
+            {
                 path: 'tag/:tag_name?',
                 component: () => import('pages/MKS_Tag_Details.vue'),
                 props: true,
