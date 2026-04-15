@@ -4,7 +4,7 @@
     "description": "evolution of the material-website",
     "productName": "MYS MKS",
     "projectUrl": "https://github.com/Make-Your-School/mks-welcome/",
-    "previewUrl": "https://make-your-school.github.io/mks-welcome/",
+    "previewUrl": "https://materialkoffer.makeyourschool.de/",
     "author": "s-light <git@s-light.eu>",
     "type": "module",
     "private": true,
