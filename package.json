@@ -8,6 +8,7 @@
     "author": "s-light <git@s-light.eu>",
     "type": "module",
     "private": true,
+    "homepage": "https://materialkoffer.makeyourschool.de/",
     "scripts": {
         "lint": "eslint -c ./eslint.config.js \"./src*/**/*.{js,cjs,mjs,vue}\"",
         "format": "prettier --write \"**/*.{js,vue,scss,html,md,json}\" --ignore-path .gitignore",
