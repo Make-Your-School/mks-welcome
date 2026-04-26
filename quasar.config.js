@@ -92,12 +92,13 @@ export default defineConfig(() => {
             // vueDevtools: true,
             // vueOptionsAPI: false,
 
-            // publicPath: '/',
-            publicPath: '/mks-welcome/',
+            publicPath: '/',
+            // publicPath: '/mks-welcome/',
             // analyze: true,
             env: {
                 // just duplicate here for easy in-app access.
-                publicPath: '/mks-welcome/',
+                // publicPath: '/mks-welcome/',
+                publicPath: '/',
                 //https://forum.quasar-framework.org/topic/6853/auto-generate-a-build-number-in-spa/15?_=1653270667151
                 // https://quasar.dev/quasar-cli-webpack/handling-process-env#caveats
                 appinfo: {
