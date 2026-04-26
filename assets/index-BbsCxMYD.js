@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/i18n-DOxZLs_q.js","assets/vue.esm-bundler-DdwSdRj_.js","assets/chunk-C0u3WHrm.js","assets/dist-CQpZV_VD.js","assets/esm-Bd0DGz8U.js","assets/addressbar-color-OgW1OeJZ.js","assets/AddressbarColor-9tSKYTc9.js","assets/Platform-Cr5ll_X8.js","assets/inject-obj-prop-B-maADS4.js","assets/event-JAmtdkur.js","assets/register-global-components-B26UGtv2.js","assets/_plugin-vue_export-helper-CdNuS8Yy.js","assets/preload-helper-BSxhWxzj.js","assets/MyMarkdown-pEBs2rnp.js","assets/es-DZyqiENJ.js","assets/pinia-7ePOPY7m.js","assets/QBtn-BspsLx-t.js","assets/QIcon-DHY_8p3W.js","assets/render-BO3Z2Al6.js","assets/QSpinner-CI-HQPQw.js","assets/use-router-link-sQjPpcic.js","assets/Ripple-C0534Z-N.js","assets/QCard-CpXLxroZ.js","assets/use-dark-CUwkXsYa.js","assets/QCheckbox-BU4YITKa.js","assets/use-checkbox-e4Wi2w8Q.js","assets/QItemLabel-C18zJpfh.js","assets/private.use-form-Dsd0VQu5.js","assets/use-timeout-BD5EY5w4.js","assets/nodes-BpIwPEsi.js","assets/QExpansionItem-DVbIC5Rm.js","assets/QSeparator-fAtL9r5V.js","assets/use-id-CMlJV75a.js","assets/touch-Cjo0kgwv.js","assets/use-quasar-CtYl_u2C.js","assets/symbols-CTfU4lpL.js","assets/register-global-components-DjPDpffE.css","assets/markdown-load-css-CmS3QTyk.css"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/i18n-DOxZLs_q.js","assets/vue.esm-bundler-DdwSdRj_.js","assets/chunk-C0u3WHrm.js","assets/dist-CQpZV_VD.js","assets/esm-Bd0DGz8U.js","assets/addressbar-color-OgW1OeJZ.js","assets/AddressbarColor-9tSKYTc9.js","assets/Platform-Cr5ll_X8.js","assets/inject-obj-prop-B-maADS4.js","assets/event-JAmtdkur.js","assets/register-global-components-DiKUAgEb.js","assets/_plugin-vue_export-helper-CdNuS8Yy.js","assets/preload-helper-BsSQZHsL.js","assets/MyMarkdown-pEBs2rnp.js","assets/es-DZyqiENJ.js","assets/pinia-7ePOPY7m.js","assets/QBtn-BspsLx-t.js","assets/QIcon-DHY_8p3W.js","assets/render-BO3Z2Al6.js","assets/QSpinner-CI-HQPQw.js","assets/use-router-link-sQjPpcic.js","assets/Ripple-C0534Z-N.js","assets/QCard-CpXLxroZ.js","assets/use-dark-CUwkXsYa.js","assets/QCheckbox-BU4YITKa.js","assets/use-checkbox-e4Wi2w8Q.js","assets/QItemLabel-C18zJpfh.js","assets/private.use-form-Dsd0VQu5.js","assets/use-timeout-BD5EY5w4.js","assets/nodes-BpIwPEsi.js","assets/QExpansionItem-DVbIC5Rm.js","assets/QSeparator-fAtL9r5V.js","assets/use-id-CMlJV75a.js","assets/touch-Cjo0kgwv.js","assets/use-quasar-CtYl_u2C.js","assets/symbols-CTfU4lpL.js","assets/register-global-components-DjPDpffE.css","assets/markdown-load-css-CmS3QTyk.css"])))=>i.map(i=>d[i]);
 import { L as resolveComponent, N as openBlock, Q as ref, Y as markRaw, d as createBlock, l as computed, lt as process$1, n as TransitionGroup, r as createApp, y as h } from "./vue.esm-bundler-DdwSdRj_.js";
 import { n as injectProp } from "./inject-obj-prop-B-maADS4.js";
 import { n as client, r as isRuntimeSsrPreHydration, t as Platform } from "./Platform-Cr5ll_X8.js";
@@ -11,8 +11,8 @@ import { c as isRegexp, d as globalConfigIsFrozen, i as isDate, l as freezeGloba
 import { i as store, r as route, t as AddressbarColor_default } from "./AddressbarColor-9tSKYTc9.js";
 import { t as createPinia } from "./pinia-7ePOPY7m.js";
 import { i as createWebHistory, n as createRouter, r as createWebHashHistory, t as createMemoryHistory } from "./vue-router-rzPnJs0_.js";
-import { t as __vitePreload } from "./preload-helper-BSxhWxzj.js";
-import { n as routes } from "./routes-DfyvWjzX.js";
+import { t as __vitePreload } from "./preload-helper-BsSQZHsL.js";
+import { n as routes } from "./routes-CS8CDA5o.js";
 import { t as QSpinner_default } from "./QSpinner-CI-HQPQw.js";
 import { t as QBtn_default } from "./QBtn-BspsLx-t.js";
 //#region node_modules/quasar/src/plugins/screen/Screen.js
@@ -1226,7 +1226,7 @@ var quasar_user_options_default = {
 *
 * Boot files are your "main.js"
 **/
-var publicPath = `/mks-welcome/`;
+var publicPath = `/`;
 async function start({ app, router, store }, bootFiles) {
 	let hasRedirected = false;
 	const getRedirectUrl = (url) => {
@@ -1278,7 +1278,7 @@ app_default(createApp, quasar_user_options_default).then((app) => {
 	return Promise[method]([
 		__vitePreload(() => import("./i18n-DOxZLs_q.js"), __vite__mapDeps([0,1,2,3,4])),
 		__vitePreload(() => import("./addressbar-color-OgW1OeJZ.js"), __vite__mapDeps([5,6,7,1,2,3,8,9])),
-		__vitePreload(() => import("./register-global-components-B26UGtv2.js"), __vite__mapDeps([10,11,2,12,13,1,3,14,15,4,16,17,18,8,19,20,21,9,22,23,24,25,26,27,28,7,29,30,31,32,33,34,35,36])),
+		__vitePreload(() => import("./register-global-components-DiKUAgEb.js"), __vite__mapDeps([10,11,2,12,13,1,3,14,15,4,16,17,18,8,19,20,21,9,22,23,24,25,26,27,28,7,29,30,31,32,33,34,35,36])),
 		__vitePreload(() => Promise.resolve({}), __vite__mapDeps([37]))
 	]).then((bootFiles) => {
 		start(app, mapFn(bootFiles).filter((entry) => typeof entry === "function"));

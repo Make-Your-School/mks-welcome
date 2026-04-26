@@ -8,7 +8,7 @@ import { a as isKeyCode, s as shouldIgnoreKey, t as QIcon_default } from "./QIco
 import { a as tabsKey, t as emptyRenderFn } from "./symbols-CTfU4lpL.js";
 import { a as isDeepEqual } from "./nodes-BpIwPEsi.js";
 import { n as defineStore } from "./pinia-7ePOPY7m.js";
-import { t as __vitePreload } from "./preload-helper-BSxhWxzj.js";
+import { t as __vitePreload } from "./preload-helper-BsSQZHsL.js";
 import { i as getNormalizedVNodes } from "./use-router-link-sQjPpcic.js";
 import { t as Ripple_default } from "./Ripple-C0534Z-N.js";
 import { t as QBtn_default } from "./QBtn-BspsLx-t.js";

@@ -4,7 +4,7 @@ var scriptRel = /* @__PURE__ */ (function detectScriptRel() {
 	return relList && relList.supports && relList.supports("modulepreload") ? "modulepreload" : "preload";
 })();
 var assetsURL = function(dep) {
-	return "/mks-welcome/" + dep;
+	return "/" + dep;
 };
 var seen = {};
 var __vitePreload = function preload(baseModule, deps, importerUrl) {
