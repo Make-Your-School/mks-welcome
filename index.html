@@ -22,8 +22,8 @@
     <link rel="icon" type="image/ico" href="favicon.ico">
   </head>
   <body>
+      <!-- https://dev.to/quasar/publish-your-quasar-spa-on-github-io-with-history-mode-20h2 -->
       <script>
-        <!-- https://dev.to/quasar/publish-your-quasar-spa-on-github-io-with-history-mode-20h2 -->
         // this is no longer needed:
         // https://github.com/quasarframework/quasar/discussions/18226#discussioncomment-16233702
 
@@ -37,18 +37,18 @@
             // })();
 
         // we now use it to map the old url to the new one.
-        (function () {
-            console.log("recover redirect url");
-            let redirect = sessionStorage.redirect;
-            delete sessionStorage.redirect;
-            console.log("redirect", redirect);
-            if (redirect && redirect !== location.href) {
-                // we need to remove the mks-welcome part
-                redirect = redirect.replace("mks-welcome/", "")
-                console.log("redirect mod", redirect);
-                // history.replaceState(null, null, redirect);
-            }
-        })();
+        // (function () {
+        //     console.log("recover redirect url");
+        //     let redirect = sessionStorage.redirect;
+        //     delete sessionStorage.redirect;
+        //     console.log("redirect", redirect);
+        //     if (redirect && redirect !== location.href) {
+        //         // we need to remove the mks-welcome part
+        //         redirect = redirect.replace("mks-welcome/", "")
+        //         console.log("redirect mod", redirect);
+        //         // history.replaceState(null, null, redirect);
+        //     }
+        // })();
     </script>
     <!-- quasar:entry-point -->
   </body>
