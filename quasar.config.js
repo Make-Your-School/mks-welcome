@@ -25,6 +25,7 @@ import { defineConfig } from '#q-app/wrappers'
 // import { defineSsrRenderPreloadTag } from "#q-app/wrappers";
 
 import path from 'path'
+import fs from 'fs'
 // console.log("__dirname", __dirname);
 
 // required for the gray-matter plugin.
@@ -91,6 +92,11 @@ export default defineConfig(() => {
             // vueRouterBase,
             // vueDevtools: true,
             // vueOptionsAPI: false,
+
+            // https://github.com/quasarframework/quasar/discussions/18226#discussioncomment-16233702
+            afterBuild() {
+                fs.copyFileSync('dist/spa/index.html', 'dist/spa/404.html')
+            },
 
             publicPath: '/',
             // publicPath: '/mks-welcome/',
