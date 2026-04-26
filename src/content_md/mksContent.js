@@ -35,9 +35,12 @@ const mksAddPartsToTags = (mksContent) => {
 
 const mksAddURLToParts = (mksContent) => {
     console.groupCollapsed('mksAddURLToParts')
+    console.log('process.env.publicPath', process.env.publicPath)
+    console.log('process.env.submodules', process.env.submodules)
     const mksParts = mksContent.parts
     // const submodules = getsubmodules()
-    const submodules = JSON.parse(process.env.submodules)
+    // const submodules = JSON.parse(process.env.submodules)
+    const submodules = {}
     console.log(submodules)
     for (const [part_name, part] of Object.entries(mksParts)) {
         // console.log(`part '${part_name}':`, part.path_base)
