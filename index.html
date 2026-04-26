@@ -47,14 +47,17 @@
   <body>
       <script>
         <!-- https://dev.to/quasar/publish-your-quasar-spa-on-github-io-with-history-mode-20h2 -->
-        (function () {
-            console.log("history mode for github...");
-            let redirect = sessionStorage.redirect;
-            delete sessionStorage.redirect;
-            if (redirect && redirect !== location.href) {
-                history.replaceState(null, null, redirect);
-            }
-        })();
+        // this is no longer needed:
+        // https://github.com/quasarframework/quasar/discussions/18226#discussioncomment-16233702
+        
+        // (function () {
+        //     console.log("history mode for gitchub...");
+        //     let redirect = sessionStorage.redirect;
+        //     delete sessionStorage.redirect;
+        //     if (redirect && redirect !== location.href) {
+        //         history.replaceState(null, null, redirect);
+        //     }
+        // })();
     </script>
     <div id="q-app"></div>
   </body>
