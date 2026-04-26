@@ -14,7 +14,7 @@ material_number: '42'
 material_type: 'output'
 material_short_descr: '380:1 Micro Metal Gearmotor HPCB 6V'
 manufacture: 'Generic'
-repo_name: 'mks-generic-DCGearMotor'
+repo_name: 'generic-DCGearMotor'
 clone_url: 'https://github.com/Make-Your-School/mks-generic-DCGearMotor.git'
 repo_prefix: 'mks'
 repo_part: 'DCGearMotor'
@@ -43,7 +43,7 @@ Gleichzeitig steigt die Kraft der _Abgabe-Achse_.
 
 Die Steuerung erfolgt über ein einfaches Relais, einen Transistor, einen manuellen Schalter oder einen Motortreiber.
 
-Falls du den Motor vom Arduino nur Ein und Aus Schalten möchtest, nutze einfach das [Relay](/mks-welcome/part/mks-SeeedStudio-Grove_Relay/).
+Falls du den Motor vom Arduino nur ein- und ausschalten möchtest, nutze einfach das [Relay](/mks-welcome/part/mks-SeeedStudio-Grove_Relay/).
 Wenn eine Steuerung der Geschwindigkeit oder Drehrichtung nötig ist, verwendest du am besten den [Motortreiber](/mks-welcome/part/mks-SeeedStudio-Grove_I2C_Motor_Driver_V1.3/).
 Schaue dort nach dem Beispiel für `DC-Motor`.
 

@@ -2,14 +2,14 @@
 
 ![start-bild der animation](<mys animation m.jpg>)
 
-du benötigst keine externen Bauteile.
+Du benötigst keine externen Bauteile.
 
-- lade den Sketch hoch
-- öffne den Seriellen Monitor
-- dort wird alle sekunde die *aktuelle* Uhrzeit angezeigt.
-    aktuell nur wenn kurz vor dem hochladen im sketch auch die passende *Start-Zeit* eingetragen wurde.
-- immer wenn die Sekunden `0` sind wird der Alarm ausgelöst und die eingebaute LED (nahe pin 13) WEchselt den Zustand zwischen An/Aus
+- Lade den Sketch hoch.
+- Öffne den seriellen Monitor.
+- Dort wird jede Sekunde die *aktuelle* Uhrzeit angezeigt.
+  Das funktioniert aktuell nur, wenn die passende *Start-Zeit* kurz vor dem Hochladen des Sketches eingetragen wurde. 
+- Immer, wenn die Sekunden ´0´ sind, wird der Alarm ausgelöst und die eingebaute LED (nahe Pin 13) wechselt den Zustand zwischen Aus/Ein.
 
-## weitere Informationen
+## Weitere Informationen
 
-findest du unter https://docs.arduino.cc/tutorials/uno-r4-wifi/rtc
+Findest du unter: https://docs.arduino.cc/tutorials/uno-r4-wifi/rtc

@@ -1,35 +1,31 @@
 # Touch Sensor
 
-einige der Pins des R4 können als _Touch-Sensoren_ genutzt werden.
-Dieses Beispiel zeigt dir wie das geht.
+Einige der Pins des Arduino Uno R4 Wifi können als _Touch-Sensoren_ genutzt werden.
+Dieses Beispiel zeigt dir, wie das funktioniert.
 
-- baue dir aus einem Stück Kabel und etwas alu-folie einen Sensor (in etwa wie im Bild)
-    - im einfachsten Fall reicht schon ein Stück Kabel aus.
-- verbinde diesen mit Pin A1
-- installiere die folgende Library via dem Library-Manager
+- Baue dir aus einem Stück Kabel und etwas Alufolie einen Sensor (etwa wie im Bild).
+    - Im einfachsten Fall reicht auch nur ein Stück Kabel aus.
+- Verbinde diesen mit Pin A1.
+- Installiere die folgende Library über den Library-Manager:
     - `Arduino_CapacitiveTouch`
-- lade den Sketch hoch
-- öffne den Seriellen Monitor
-- dort wird der aktuell gelesene Wert des Sensors angezeigt.
-- wenn du den Sensor berührst wird der wert größer.
+- Lade den Sketch hoch.
+- Öffne den seriellen Monitor.
+- Dort wird der aktuell gelesene Wert des Sensors angezeigt.
+- Wenn du den Sensor berührst, wird der Wert größer.
 
 ## Aufgabe
 
-### Sensor Verhalten
+### Sensor Verhalten 
 
-- probiere aus wie sich die verschiedenen Eigenschaften des Sensor auf die Werte auswirken
+- Probiere aus, wie sich die verschiedenen Eigenschaften des Sensor auf die folgenden Werte auswirken:
     - Fläche
     - Form
-    - Materia
+    - Material
     - Abstände
 
 ### Mehrere Sensoren
 
-Schließe mehrere Sensor-Flächen an.
-
-## weitere Informationen
-
-findest du unter https://docs.arduino.cc/tutorials/uno-r4-wifi/touch/
+Schließe mehrere Sensorflächen an.
 
 ### Mögliche Pins
 
@@ -45,3 +41,9 @@ findest du unter https://docs.arduino.cc/tutorials/uno-r4-wifi/touch/
 - `A1` (D15)
 - `A2` (D16)
 - `LOVE_BUTTON`
+
+## Weitere Informationen
+
+Findest du unter: https://docs.arduino.cc/tutorials/uno-r4-wifi/touch/
+
+

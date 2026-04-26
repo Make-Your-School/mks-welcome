@@ -1,22 +1,23 @@
 # RTC NTP (Network Time Protokoll)
 
-diese Beispiel ist etwas komplexer.
-Der Arduino verbindet sich mit dem in `arduino_secrets.h` definierten WiFi.
-dann bezieht es über das Internet die aktuell Uhrzeit und setzt die RTC auf diese.
+Dieses Beispiel ist etwas komplexer.
+Der Arduino verbindet sich mit dem in `arduino_secrets.h` definierten WLAN.
+Anschließend bezieht er über das Internet die aktuelle Uhrzeit und setzt die RTC entsprechend.
 
-Die Aktuelle Uhrzeit wird dann auf der LED-Matrix angezeigt.
+Die aktuelle Uhrzeit wird dann auf der LED-Matrix angezeigt.
 
-du benötigst keine externen Bauteile.
+Du benötigst keine externen Bauteile.
 
-- installiere die folgenden zwei Libraries via dem Library-Manager
+- Installiere die folgenden zwei Libraries über den Library-Manager:
     - `NTPClient`
     - `ArduinoGraphics`
-- lade den Sketch hoch
-- öffne den Seriellen Monitor
-- dort wird angezeigt wann/ob sich der Arduino mit dem WiFi erfolgreiche Verbunden hat.
-- auf der LED-Matrix wird solange keine Verbindung zustande gekommen ist auch ein `??` angezeigt.
-- sobald die Uhrzeit erfolgreich aus dem Internet bezogen werden konnte wird diese angezeigt.
+- Lade den Sketch hoch.
+- Öffne den seriellen Monitor.
+- Dort wird angezeigt, wann bzw. ob sich der Arduino erfolgreich mit dem WLAN verbunden hat.
+- Auf der LED-Matrix wird, solange keine Verbindung zustande gekommen ist, `??` angezeigt.
+- Sobald die Uhrzeit erfolgreich aus dem Internet bezogen wurde, wird sie angezeigt.
 
-## weitere Informationen
+## Weitere Informationen
 
-findest du unter https://docs.arduino.cc/tutorials/uno-r4-wifi/rtc
+Findest du unter: 
+https://docs.arduino.cc/tutorials/uno-r4-wifi/rtc

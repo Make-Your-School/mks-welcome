@@ -3,13 +3,13 @@ title: 'Arduino UNO R4 WiFi'
 date: '2025-11-23T23:38:00.000Z'
 tags:
     - 'controller'
-coverImage: 'UNO_R4_WiFi.avif'
+coverImage: '1_Arduino_R4_Wifi.avif'
 material_number: '1'
 material_type: 'controller'
 material_short_descr: 'Arduino UNO R4 WiFi'
 manufacture: 'Arduino'
 manufacture_url: 'https://arduino.cc/'
-repo_name: 'mks-Arduino-UNO_R4_WiFi'
+repo_name: 'Arduino-UNO_R4_WiFi'
 repo_prefix: 'mks'
 repo_manufacture: 'Arduino'
 repo_part: 'UNO_R4_WiFi'
@@ -22,7 +22,7 @@ difficulty: 'recommend'
 
 # Arduino UNO R4 WiFi
 
-![Arduino UNO R4 WiFi](./UNO_R4_WiFi.avif)
+![Arduino UNO R4 WiFi](./1_Arduino_R4_Wifi.avif)
 
 ## Beschreibung
 
@@ -51,13 +51,13 @@ Sowohl Wissenschaftler\*innen als auch Studierende, Hobby-Bastler\*innen, DIY-Be
 
 ### UNO R4 WiFi
 
-Der `Arduino UNO R4 WiFi` ist in vielen punkten ein deutliches Upgraded zum bisher verfügbaren `Arduino UNO R3`.
+Der `Arduino UNO R4 WiFi` ist in vielen Punkten ein deutliches Upgrade gegenüber dem bisher verfügbaren `Arduino UNO R3`.
 
 - schnellerer Prozessor
 - mehr Speicher
-- 12x8 rote LEDs um einfache dinge anzuzeigen
+- 12x8 rote LEDs, um einfache Dinge anzuzeigen
 - WiFi (WLAN) direkt integriert
-- USB-HID (der Arduino kann so tun als ob er eine Tastatur oder Maus ist..)
+- USB-HID (der Arduino kann so tun, als wäre er eine Tastatur oder Maus)
 
 ### Videos
 

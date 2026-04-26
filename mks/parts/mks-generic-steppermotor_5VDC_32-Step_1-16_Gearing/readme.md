@@ -25,6 +25,7 @@ difficulty: 'advanced'
 ![Schrittmotor](./40_schrittmotor.png)
 
 ## Beschreibung
+
 Ein Schrittmotor wird immer mithilfe eines Motortreibers angesteuert. 
 Er kann sehr genau positioniert werden, selbst ohne Sensoren, da er in einzelnen, unabhängig von äußeren Belastungen, immer gleichbleibenden Schritten weiterdreht (innerhalb der angegeben Belastungsgrenze). 
 Praktisch bedeutet das: Der Mikrocontroller sendet an den Motortreiber die Richtung und die Anzahl an Schritten, die weitergedreht werden sollen. 
@@ -41,13 +42,13 @@ Weitere Informationen bezüglich der Ansteuerung sind beim [Motortreiber](/mks-w
 
 ## Aufbau
 
-1. Nehme einen [Motortreiber](/mks-welcome/part/mks-SeeedStudio-Grove_I2C_Motor_Driver_V1.3/) und schließe ihn mit einem Grove Kabel an einen `I2C` Schnittstelle des Arduinos an. 
-1. Verbinden den Schrittmotor mit dem Motortreiber wie auf dem Bild. Es gibt fünf Kabel, aber nur vier Pins. Stecke es so an, wie auf dem Bild, also das rote Kabel bleibt ohne Kontakt.  
+1. Nimm einen [Motortreiber](/mks-welcome/part/mks-SeeedStudio-Grove_I2C_Motor_Driver_V1.3/) und schließe ihn mit einem Grove-Kabel an eine `I2C`-Schnittstelle des Arduinos an. 
+1. Verbinde den Schrittmotor mit dem Motortreiber wie auf dem Bild dargestellt. Es gibt fünf Kabel, aber nur vier Pins. Stecke ihn so an wie auf dem Bild zu sehen ist, das rote Kabel bleibt dabei ohne Kontakt.
 ![Verbindung](./verbindung.jpeg)
-1. Schließe eine Batterie an den Motortreiber. Nehme dazu eine 9V Blockbatterie und einen Batterieklip. Es sollte in etwa so aussehen:  
+1. Schließe eine Batterie an den Motortreiber. Nimm dazu eine 9V-Blockbatterie und einen Batterieclip. Es sollte in etwa so aussehen:  
 ![Aufbau](./aufbau.jpeg)
-1. Gehe in die Arduino IDE und klicke am linken Rand der Arduino IDE auf den Knopf mit Büchersymbol (das ist der Bibliotheksverwalter) und suche nach `Grove I2C Motor Driver`, klicke anschließend auf installieren. Das ist eine Bibliothek mit Code, damit man das den Motor leicht bedienen kann.
-1. Nehme den Code von unten und lade ihn auf den Arduino. Er sollte sich jetzt abwechselnd hin- und herdrehen.
+1. Öffne die Arduino IDE und klicke am linken Rand auf das Symbol mit den Büchern (das ist der Bibliotheksverwalter). Suche nach `Grove I2C Motor Driver`und klicke anschließend auf Installieren. Das ist eine Bibliothek mit Code, mit der man den Motor leicht steuern kann.
+1. Nimm den untenstehenden Code und lade ihn auf den Arduino hoch. Der Motor sollte sich nun abwechselnd hin- und herdrehen.
 
 
 
@@ -63,7 +64,7 @@ Weitere Informationen bezüglich der Ansteuerung sind beim [Motortreiber](/mks-w
 
 ## Wichtige Links für die ersten Schritte:
 
-Alle weiteren Hintergrundinformationen, sowie ein Beispielaufbau und alle notwendigen Programmbibliotheken findet man über alle gängigen Suchmaschinen durch die Eingabe der genauen Komponentenbezeichnungen.
+Weitere Hintergrundinformationen, ein Beispielaufbau und alle benötigten Programmbibliotheken lassen sich über gängige Suchmaschinen finden, indem man die genauen Komponentenbezeichnungen eingibt.
 
 - [Adafruit Schrittmotor](https://www.adafruit.com/product/858)
 - [Seeed Studio Wiki – Motortreiber](http://wiki.seeedstudio.com/Grove-I2C_Motor_Driver_V1.3/)

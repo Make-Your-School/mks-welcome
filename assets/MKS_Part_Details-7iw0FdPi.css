@@ -1,0 +1,45 @@
+.part-detail-page[data-v-8180d0eb] {
+  padding: 1em;
+}
+.back[data-v-8180d0eb] {
+  display: block;
+  cursor: pointer;
+}
+header[data-v-8180d0eb] {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+  margin-top: 1em;
+}
+header .info[data-v-8180d0eb] {
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+header .info .material_number[data-v-8180d0eb] {
+  position: relative;
+  margin-bottom: 1em;
+}
+header .info .title[data-v-8180d0eb] {
+  margin: 0;
+  text-align: center;
+  font-size: var(--display-large);
+}
+header img[data-v-8180d0eb] {
+  max-width: 100vw;
+  max-height: 35rem;
+}.part-content > h1:first-of-type {
+  display: none;
+}
+.part-content > p:first-of-type > img {
+  display: none;
+}

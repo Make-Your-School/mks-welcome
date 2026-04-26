@@ -27,15 +27,13 @@ difficulty: 'recommend'
 
 # Motortreiber
 
-mks Nr 70
-
 ![Motortreiber](./70_motortreiber.png)
 
 ## Beschreibung
-Im Allgemeinen reichen die Stromstärken, die ein Mikrocontroller liefern kann, nicht aus, um einen Motor direkt anzusteuern. 
-Deshalb gibt es unterschiedliche Arten von sogenannten Motortreibern. 
-Diese werden eingangsseitig am Mikrocontroller und ausgangsseitig am Motor angeschlossen. 
-Sie übersetzen die Kommandos des Mikrocontrollers in die vom Motor benötigten Stromstärken. 
+Im Allgemeinen reichen die Stromstärken, die ein Mikrocontroller liefern kann, nicht aus, um einen Motor direkt anzusteuern.  
+Deshalb gibt es unterschiedliche Arten von sogenannten Motortreibern.  
+Diese werden eingangsseitig am Mikrocontroller und ausgangsseitig am Motor angeschlossen.  
+Sie übersetzen die Kommandos des Mikrocontrollers in die vom Motor benötigten Stromstärken.  
 Gleichzeitig wird der Mikrocontroller von etwaigen Kurzschlüssen oder Überspannungen, die seitens des Motors entstehen könnten, geschützt.
 
 <!-- more_details -->

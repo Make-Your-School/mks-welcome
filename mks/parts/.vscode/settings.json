@@ -1,0 +1,6 @@
+{
+    "git.closeDiffOnOperation": true,
+    "git.detectSubmodulesLimit": 80,
+    "git.followTagsWhenSync": true,
+    "git.mergeEditor": true
+}

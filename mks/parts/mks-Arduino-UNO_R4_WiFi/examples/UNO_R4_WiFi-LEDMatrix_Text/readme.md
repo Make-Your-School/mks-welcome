@@ -1,20 +1,21 @@
 # LEDMatrix - scrolling Text
 
-du benötigst keine externen Bauteile.
+Du benötigst keine externen Bauteile.
 
-lade einfach den Sketch hoch.
-dann sollte die LED Matrix den Text scrollend anzeigen wie in dem Video `text upload.avif`
+- Lade den Sketch hoch.
+- Dann sollte die LED-Matrix den Text scrollend anzeigen, wie hier im Video zu sehen: 
 
 ![](<./text_upload.avif>)
 
 ## Aufgabe
 
-### änder den Text ab
+### Ändere den Text
 
-Es gibt im Sketch zwei Stellen wo der Text definiert ist.
+Im Sketch gibt es zwei Stellen, an denen der Text definiert ist:
 eine im `setup` und eine in der `loop`.
-probiere was sich wie ändert.
+Probiere aus, wie sich Änderungen an den jeweiligen Stellen auswirken.
 
-## weitere Informationen
+## Weitere Informationen
 
-findest du unter https://docs.arduino.cc/tutorials/uno-r4-wifi/led-matrix/
+Findest du unter:
+https://docs.arduino.cc/tutorials/uno-r4-wifi/led-matrix/

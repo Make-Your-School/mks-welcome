@@ -2,26 +2,24 @@
 
 ![](<./mys_animation m.jpg>)
 
-du benötigst keine externen Bauteile.
+Du benötigst keine externen Bauteile.
 
-lade einfach den Sketch hoch.
-dann sollte die LED Matrix diese Animation anzeigen:
+- Lade den Sketch hoch.
+- Dann sollte die LED-Matrix diese Animation anzeigen:
 
 ![](./mys_animation.avif)
 
 ## Aufgabe
 
-### ändere die Animation
+### Ändere die Animation
 
-öffne den Animations Editor:
-https://ledmatrix-editor.arduino.cc/
+- Öffne den Animations-Editor: https://ledmatrix-editor.arduino.cc/
+- Lade die Animations-Datei `MYS.mpj` in den Editor (Button rechts oben).
+- Ändere die Animation.
+- Exportiere sie anschließend mit dem Namen `animation` und speichere sie im gleichen Ordner wie den Sketch (überschreibe z. B. die bereits vorhandene `animation.h`-Datei)
+- Lade danach den Sketch erneut hoch.
 
-dann lade die animations-datei `MYS.mpj` in den editor (button rechts oben).
-ändere die Animation ab.
-dann exportiere sie mit dem Namen `animation` und speichere sie im gleichen Ordner wie den Sketch.
-(überschreibe z.B. die vorhandene `animation.h` Datei)
-dann lade den sketch erneut hoch.
+## Weitere Informationen
 
-## weitere Informationen
-
-findest du unter https://docs.arduino.cc/tutorials/uno-r4-wifi/led-matrix/
+Findest du unter:
+https://docs.arduino.cc/tutorials/uno-r4-wifi/led-matrix/

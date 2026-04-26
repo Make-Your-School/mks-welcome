@@ -10,7 +10,7 @@ material_type: 'output'
 material_short_descr: 'DFR0534'
 manufacture: 'DFRobot'
 manufacture_url: 'https://dfrobot.com/'
-repo_name: 'mks-DFRobot-DFR0534'
+repo_name: 'DFRobot-DFR0534'
 repo_prefix: 'mks'
 repo_manufacture: 'DFRobot'
 repo_part: 'DFR0534'
@@ -59,27 +59,27 @@ Das Modul wird über die serielle Schnittstelle UART direkt oder mithilfe des Gr
 ### Anschließen
 
 > [!achtung]
-> die Pin-Belegung des Steckers im Modul sind anders als im Grove System:
+> Die Pin-Belegung des Steckers im Modul ist anders als im Grove-System: 
 > Plus und Minus sind vertauscht!
 
 #### Adapter Kabel
 
-schnell zusammen gesteckt..
+Schnell zusammen gesteckt:
 
 ![zusammen gesteckt](./adapter/20240503_123257.jpg)
 
-Bitte genau auf die Farb-Zuordnung Achten!!
+Bitte genau auf die Farbzuordnung achten!!
 
-##### Benötigtest Material
+##### Benötigtes Material
 
-- beim Modul ist ein Kabel mitgeliefert. (Rot Schwarz Blau Grün)
-- Kabel Grove auf Female-Pin-Header (Schwarz Rot Weiß Gelb)
+- Beim Modul wird ein Kabel mitgeliefert (Rot, Schwarz, Blau, Grün).
+- Kabel: Grove auf Female-Pin-Header (Schwarz, Rot, Weiß, Gelb)
 - 10K Widerstand
-- Draht-Stücke oder _Pin-Header_ die gut in die Buchsen reinpassen..
+- Drahtstücke oder _Pin-Header_, die gut in die Buchsen passen.
 
 ##### Vorgehen
 
-die Kabel einfach nach dieser Zuordnung (siehe auch das Foto) zusammen stecken:
+Stecke die Kabel entsprechend dieser Zuordnung zusammen (siehe Foto):
 
 ##### Zuordnung
 
@@ -95,7 +95,7 @@ die Kabel einfach nach dieser Zuordnung (siehe auch das Foto) zusammen stecken:
 - Grove Weiß auf 10k Widerstand auf Modul Blau
     - 10k Widerstand in Leitung die zum Modul RX (Receive = Empfangen = Eingang) führt
     - nötig da das Modul nur 3.3V **Signale** _mag_
-    - der Serien-Widerstand limitiert den möglichen Strom und schützt so das Modul
+    - der Serienwiderstand limitiert den möglichen Strom und schützt so das Modul.
 - Grove Gelb mit Modul Grün
 
 ![Adapterkabel - Lautsprecher1](./adapter/20240503_123257.jpg)
@@ -110,35 +110,35 @@ Das Modul wird über eine Micro-USB Kabel mit dem Laptop verbunden.
 Dann erscheint es als _Massenspeicher_ (_USB-Stick_) im Datei-Explorer.
 Über diesen können dann die Sounds im MP3 oder WAV Format auf das Modul kopiert werden.
 
-Bei den Dateien bitte darauf achten das diese
+Bei den Datei-Bezeichnungen bitte darauf achten, dass diese:
 
-- maximal 8 Zeichen
-- keine Sonderzeichen
+- maximal 8 Zeichen haben.
+- keine Sonderzeichen enthalten.
 - mit einer Nummer beginnen
 
-zum Beispiel:
+Zum Beispiel:
 
 - `01BELL.mp3`
 - `02DOOR.wav`
 - `03DOOR.mp3`
 
-es stehen maximal 8MB Speicherplatz zu Verfügung.
+Es stehen maximal 8MB Speicherplatz zu Verfügung.
 
 ![Datei Manager](<datei manager.png>)
 
-du findest [hier im Ordner DFR0534](https://github.com/Make-Your-School/mks-DFRobot-DFR0534/tree/main/sounds) ein paar Beispiel Sounds die auch im Beispiel-Code verwendet wurden.
+Du findest [hier im Ordner DFR0534](https://github.com/Make-Your-School/mks-DFRobot-DFR0534/tree/main/sounds) ein paar Beispiel-Sounds, die auch im Beispiel-Code verwendet wurden.
 
-eine große Auswahl an frei verfügbaren Sound-Effekten findest du auf
+Eine große Auswahl an frei verfügbaren Sound-Effekten findest du auf:
 [freesound.org](https://freesound.org)
 
-z.B.
+z. B.
 
 - [allgemeine suche nach _Tür-Glocke_](https://freesound.org/search/?q=door+bell&f=license%3A%22creative+commons+0%22)
-- [Klassische Tür-Klingel](https://freesound.org/people/Lynx_5969/sounds/422668/) (beispiel bell.mp3)
+- [Klassische Tür-Klingel](https://freesound.org/people/Lynx_5969/sounds/422668/) (Beispiel bell.mp3)
 
 ### Programmieren
 
-bitte die Library `DFR0534` via library manager installieren.
+Bitte die Library `DFR0534` über den Library-Manager installieren.
 
 ## Beispiele
 
@@ -150,8 +150,8 @@ bitte die Library `DFR0534` via library manager installieren.
 
 - [DFRobot Wiki](https://wiki.dfrobot.com/Voice_Module_SKU__DFR0534#target_0)
 - [library repository](https://github.com/codingABI/DFR0534)
-  hier findest du die Dokumentation zur Library
-  und auch viele weitere Informationen und Möglichkeiten...
+  Hier findest du die Dokumentation zur Library
+  und auch viele weitere Informationen und Möglichkeiten.
 - [Datenblatt (grobe übersetzung ins Englische) ](https://sparks.gogo.co.nz/assets/_site_/downloads/JQ8400_English.pdf)
 - [UART – Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)
 
