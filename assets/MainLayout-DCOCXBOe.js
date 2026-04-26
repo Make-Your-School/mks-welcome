@@ -4,7 +4,7 @@ import { i as hSlot, n as hMergeSlot, o as createComponent, s as createDirective
 import { a as listenOpts, c as prevent, d as stopAndPrevent, i as leftClick, l as preventDraggable, n as cleanEvt, o as noop, s as position, t as addEvt, u as stop } from "./event-JAmtdkur.js";
 import { t as QIcon_default } from "./QIcon-BIe_yU5L.js";
 import { i as pageContainerKey, r as layoutKey, t as emptyRenderFn } from "./symbols-CTfU4lpL.js";
-import { t as childrenCommon } from "./routes-sRIX3Obv.js";
+import { t as childrenCommon } from "./routes-BxaRO-ka.js";
 import { t as QBtn_default } from "./QBtn-DZW7z61w.js";
 import { t as useQuasar } from "./use-quasar-DjkpUp09.js";
 import { t as _plugin_vue_export_helper_default } from "./_plugin-vue_export-helper-Dl-_tC7C.js";
