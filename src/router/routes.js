@@ -138,6 +138,23 @@ const routes = [
                 component: () => import('pages/MKS_Tag_Details.vue'),
                 props: true,
             },
+            {
+                path: 'mks-welcome/:subPath*',
+                // redirect: '/',
+                // https://router.vuejs.org/guide/essentials/redirect-and-alias.html#Redirect
+                redirect: (to) => {
+                    console.log('to', to)
+                    // the function receives the target route as the argument
+                    // we return a redirect path/location here.
+                    // return {
+                    //     path: to.path.replace('mks-welcome/', ''),
+                    //     query: to.query,
+                    //     params: to.params,
+                    // }
+                    to.path = to.path.replace('mks-welcome/', '')
+                    return to
+                },
+            },
             // add children that with menu-entries
             ...childrenCommon,
             // ...childrenDebug,
