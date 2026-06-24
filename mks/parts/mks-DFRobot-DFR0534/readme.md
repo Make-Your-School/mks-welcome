@@ -59,7 +59,7 @@ Das Modul wird über die serielle Schnittstelle UART direkt oder mithilfe des Gr
 ### Anschließen
 
 > [!achtung]
-> Die Pin-Belegung des Steckers im Modul ist anders als im Grove-System: 
+> Die Pin-Belegung des Steckers im Modul ist anders als im Grove-System:
 > Plus und Minus sind vertauscht!
 
 #### Adapter Kabel
@@ -154,10 +154,3 @@ Bitte die Library `DFR0534` über den Library-Manager installieren.
   und auch viele weitere Informationen und Möglichkeiten.
 - [Datenblatt (grobe übersetzung ins Englische) ](https://sparks.gogo.co.nz/assets/_site_/downloads/JQ8400_English.pdf)
 - [UART – Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)
-
-<style>
-img {
-    max-height: 45vh;
-    max-width: 60vw;
-}
-</style>

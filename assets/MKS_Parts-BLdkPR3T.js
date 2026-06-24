@@ -7,7 +7,7 @@ import { r as useFormProps, t as useFormInject } from "./private.use-form-DoNiTC
 import { t as QCard_default } from "./QCard-BrwQdTtb.js";
 import { t as QPage_default } from "./QPage-HPiQh4dS.js";
 import { t as QCardSection_default } from "./QCardSection-BpCocpXo.js";
-import { t as useMDContentStore } from "./mdContent-Bl-UT33K.js";
+import { t as useMDContentStore } from "./mdContent-Cmd6XsWf.js";
 import { t as QInput_default } from "./QInput-BG03k-Fb.js";
 //#region node_modules/quasar/src/components/btn-group/QBtnGroup.js
 var QBtnGroup_default = createComponent({

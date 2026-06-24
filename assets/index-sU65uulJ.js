@@ -12,7 +12,7 @@ import { i as store, r as route, t as AddressbarColor_default } from "./Addressb
 import { t as createPinia } from "./pinia-BNAaAcy4.js";
 import { n as createWebHistory, t as createRouter } from "./vue-router-C1WeEvMh.js";
 import { t as __vitePreload } from "./preload-helper-Chyirnlg.js";
-import { n as routes } from "./routes-B46ORJfY.js";
+import { n as routes } from "./routes-BT0n8RWb.js";
 import { t as QSpinner_default } from "./QSpinner-C9TaWt0d.js";
 import { t as QBtn_default } from "./QBtn-DZW7z61w.js";
 //#region node_modules/quasar/src/plugins/screen/Screen.js
