@@ -34,7 +34,7 @@ Eine genaue Positionierung ist nur mit Hilfe von zusätzlichen Sensoren möglich
 
 <!-- more_details -->
 
-Der **Unterschied** zum einfachen [Gleichstrommotor](/mks-welcome/part/mks-SeeedStudio-Grove_Relay/):
+Der **Unterschied** zum einfachen [Gleichstrommotor](/mks-welcome/part/mks-generic-DCMotor_130/):
 Der Getriebemotor besteht aus einem Gleichstrommotor mit aufgesetztem Getriebe.
 Ein Getriebe verändert das _Verhältnis_ von Drehgeschwindigkeit zu verfügbarer Kraft.
 Im Materialkoffer sind Motoren mit zwei Getriebevarianten enthalten.
