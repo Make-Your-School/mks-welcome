@@ -4,7 +4,7 @@ import { t as QBtn_default } from "./QBtn-DZW7z61w.js";
 import { t as _sfc_main$1 } from "./MyMarkdown-CI4JPIWU.js";
 import { t as _plugin_vue_export_helper_default } from "./_plugin-vue_export-helper-Dl-_tC7C.js";
 import { t as QPage_default } from "./QPage-HPiQh4dS.js";
-import { t as useMDContentStore } from "./mdContent-DCbv5lwB.js";
+import { t as useMDContentStore } from "./mdContent-BQZHZs58.js";
 //#region src/pages/MKS_Part_SubMarkdownFile.vue
 var _hoisted_1 = ["href"];
 var MKS_Part_SubMarkdownFile_default = /* @__PURE__ */ _plugin_vue_export_helper_default({
@@ -24,7 +24,7 @@ var MKS_Part_SubMarkdownFile_default = /* @__PURE__ */ _plugin_vue_export_helper
 		const mysLink = location.href;
 		const urlWebSource = part.submodule.urlWeb + "/blob/main/" + props.pathMatch.join("/");
 		const appPartURL = ref(`/part/${props.part_name}`);
-		const mdFile = ref(`/mks-welcome/${part.path_base}${props.pathMatch.join("/")}`);
+		const mdFile = ref(`/${part.path_base}${props.pathMatch.join("/")}`);
 		const mdFileContent = ref("");
 		const router = useRouter();
 		async function backHandler() {
@@ -35,7 +35,7 @@ var MKS_Part_SubMarkdownFile_default = /* @__PURE__ */ _plugin_vue_export_helper
 			}
 		}
 		watchEffect(async () => {
-			mdFile.value = `/mks-welcome/${part.path_base}${props.pathMatch.join("/")}`;
+			mdFile.value = `/${part.path_base}${props.pathMatch.join("/")}`;
 			mdFileContent.value = await (await fetch(mdFile.value)).text();
 		});
 		return (_ctx, _cache) => {
@@ -67,6 +67,6 @@ var MKS_Part_SubMarkdownFile_default = /* @__PURE__ */ _plugin_vue_export_helper
 			});
 		};
 	}
-}, [["__scopeId", "data-v-065f418b"]]);
+}, [["__scopeId", "data-v-7c820366"]]);
 //#endregion
 export { MKS_Part_SubMarkdownFile_default as default };

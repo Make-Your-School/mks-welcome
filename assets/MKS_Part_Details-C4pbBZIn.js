@@ -3,7 +3,7 @@ import { i as onBeforeRouteUpdate, o as useRouter, r as onBeforeRouteLeave } fro
 import { t as QBtn_default } from "./QBtn-DZW7z61w.js";
 import { t as _plugin_vue_export_helper_default } from "./_plugin-vue_export-helper-Dl-_tC7C.js";
 import { t as QPage_default } from "./QPage-HPiQh4dS.js";
-import { t as useMDContentStore } from "./mdContent-DCbv5lwB.js";
+import { t as useMDContentStore } from "./mdContent-BQZHZs58.js";
 //#region src/pages/MKS_Part_Details.vue
 var _hoisted_1 = { class: "info" };
 var _hoisted_2 = { class: "material_number" };

@@ -3,7 +3,7 @@ import { o as createComponent } from "./render-AG-3FfQy.js";
 import { t as QIcon_default } from "./QIcon-BIe_yU5L.js";
 import { n as useCheckboxEmits, r as useCheckboxProps, t as useCheckbox } from "./use-checkbox-CqeGl3e8.js";
 import { t as QPage_default } from "./QPage-HPiQh4dS.js";
-import { t as useMDContentStore } from "./mdContent-DCbv5lwB.js";
+import { t as useMDContentStore } from "./mdContent-BQZHZs58.js";
 import { t as QSelect_default } from "./QSelect-Dd9iDzsc.js";
 //#region node_modules/quasar/src/components/toggle/QToggle.js
 var QToggle_default = createComponent({

@@ -1,6 +1,6 @@
 import { N as openBlock, U as withCtx, d as createBlock, g as createVNode, rt as unref, u as createBaseVNode } from "./vue.esm-bundler-DkjeOeAQ.js";
 import { t as QPage_default } from "./QPage-HPiQh4dS.js";
-import { n as readme_exports, t as _sfc_main$1 } from "./readme-DJ5bbZji.js";
+import { n as readme_exports, t as _sfc_main$1 } from "./readme-BfzvKcTW.js";
 //#region src/pages/dev/MDDev.vue
 var _hoisted_1 = { style: { "overflow": "scroll" } };
 var _sfc_main = {
