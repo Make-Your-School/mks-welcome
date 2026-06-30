@@ -38,7 +38,7 @@ export default function imgSrcAbs(md) {
                 // console.log(`process.cwd()`, process.cwd());
                 const fullPath = env.id
                 const projectRelPath = path.relative(process.cwd(), fullPath)
-                const basePath = path.dirname(projectRelPath).replace('public', '/mks-welcome')
+                const basePath = path.dirname(projectRelPath).replace('public', '')
                 // console.log("basePath", basePath);
                 const filePath = srcValue.replace('./', basePath + path.sep)
                 // console.log("filePath", filePath);

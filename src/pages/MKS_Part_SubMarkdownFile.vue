@@ -51,7 +51,7 @@ const mysLink = location.href
 const urlWebSource = part.submodule.urlWeb + '/blob/main/' + props.pathMatch.join('/')
 
 const appPartURL = ref(`/part/${props.part_name}`)
-const mdFile = ref(`/mks-welcome/${part.path_base}${props.pathMatch.join('/')}`)
+const mdFile = ref(`${process.env.publicPath}${part.path_base}${props.pathMatch.join('/')}`)
 const mdFileContent = ref('')
 
 // const route = useRoute()
@@ -70,7 +70,7 @@ async function backHandler() {
 }
 
 watchEffect(async () => {
-    mdFile.value = `/mks-welcome/${part.path_base}${props.pathMatch.join('/')}`
+    mdFile.value = `${process.env.publicPath}${part.path_base}${props.pathMatch.join('/')}`
     // console.log('mdFile.value', mdFile.value)
     // mks-welcome/mks/parts/mks-DFRobot-DFR0534/AdapterLoeten.md
     const response = await fetch(mdFile.value)

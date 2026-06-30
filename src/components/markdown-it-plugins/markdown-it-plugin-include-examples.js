@@ -46,7 +46,7 @@ export const loadExample = (example_path, dir_content, part_name) => {
     // https://github.com/Make-Your-School/part_name/tree/main/examples/Grove_125KHz_RFID_Reader_v1.0_minimal
     const part_url = `https://github.com/Make-Your-School/${part_name}`
     const example_url = `${part_url}/tree/main/examples/${path.basename(example_path)}`
-    const example_path_app = example_path.replace('public', '/mks-welcome') + '/'
+    const example_path_app = example_path.replace('public', '') + '/'
     // console.log('example_path_app', example_path_app)
     let example_files = {
         example_path: example_path,
@@ -101,7 +101,7 @@ export const loadExample = (example_path, dir_content, part_name) => {
         example_files.files[file_name] = {}
         example_files.files[file_name].file_url = file_url
         example_files.files[file_name].file_path = file_path
-        example_files.files[file_name].file_path_web = file_path.replace('public', '/mks-welcome')
+        example_files.files[file_name].file_path_web = file_path.replace('public', '')
         example_files.files[file_name].example_path_app = example_path_app
         example_files.files[file_name].file_name = file_name
         example_files.files[file_name].name = item_name
