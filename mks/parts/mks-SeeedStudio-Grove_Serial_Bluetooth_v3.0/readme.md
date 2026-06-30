@@ -72,17 +72,21 @@ Grundsätzlich:
 
 ### Bluetooth-Modul konfigurieren
 
-Das BT-Modul kann über sogenannte AT-Befehle konfiguriert werden. Diese können händisch in der Arduino IDE über den seriellen Monitor verschickt werden. 
+![Screenshot: Konfiguration der Arduino IDE zur Benutzung des Bluetooth Moduls](./assets/bluetooth-arduino-ide-config.png)
+
+Das BT-Modul kann über sogenannte AT-Befehle konfiguriert werden. Diese können händisch in der Arduino IDE über den seriellen Monitor verschickt werden (siehe Screenshot). 
 Dies muss nur einmalig gemacht werden. Das Modul speichert die Konfiguration dauerhaft.
 Damit das BT-Modul AT-Befehle korrekt verarbeitet müssen drei Bedingungen erfüllt sein:
 
-- Der Beispiel-Code (oder ein vergleichbarer Sketch) muss auf den Arduino aufgespielt sein.
-- Der serielle Monitor auf dem PC muss auf "No line ending" eingestellt sein.
+- Der Beispiel-Code (`Grove_Serial_Bluetooth_v3.0_config` oder ein vergleichbarer Sketch) muss auf den Arduino hochgeladen sein.
+- Der serielle Monitor auf dem PC muss auf "No line ending" eingestellt sein (siehe Screenshot).
 - Es darf keine aktive Bluetoothverbindung bestehen (LED muss blinken).
 
 Wenn alles korrekt funktioniert, antwortet das Bluetooth-Modul auf jeden AT-Befehl mit "OK".
 
-Liste der wichtigsten AT-Befehle (Optionen sind in [ ] angegeben (keine Leerzeichen einfügen!)):
+Liste der wichtigsten AT-Befehle:
+- Optionen sind in [ ] angegeben (keine Leerzeichen einfügen!)
+- Befehle mit Fragezeichen am Ende stellen eine Frage an das Bluetooth Modul. Dieses reagiert mit einer Antwort.
 
 | Befehl         | Funktion                                                                          |
 | -------------- | --------------------------------------------------------------------------------- |
@@ -90,7 +94,7 @@ Liste der wichtigsten AT-Befehle (Optionen sind in [ ] angegeben (keine Leerzeic
 | AT+DEFAULT     | Auf Werkszustand zurücksetzen                                                     |
 | AT+ROLE[S/M/?] | Slave oder Master aktivieren bzw. aktuelle Einstellung abfragen (Standard: Slave) |
 | AT+NAME[.../?] | Name einstellen/abfragen (Standard: HMSoft max. 12 Zeichen)                       |
-| AT+PIN[.../?]  | Pin einstellen/abfragen (Standard: 1234)                                          |
+| AT+PIN[.../?]  | Pin einstellen/abfragen (Standard: 1234) Nicht der PIN auf dem Grove Shield       |
 | AT+CLEAR       | Letzte Bluetooth-Verbindung löschen                                               |
 | AT+TEMP?       | Temperatur des BT-Moduls ausgeben                                                 |
 | AT+AUTH[0/1/?] | Authentifizierung einstellen bzw. abfragen (Standard: 0)                          |
@@ -103,6 +107,8 @@ Liste der wichtigsten AT-Befehle (Optionen sind in [ ] angegeben (keine Leerzeic
 - Namen abfragen `AT+NAME?`
     - modul antwortet mit `OK+NAME deraktuelle`
 - Namen setzen `AT+NAMEFrosch`
+- Rolle auf Slave setzen: `AT+ROLES`
+- Rolle auf Master setzen: `AT+ROLEM`
 
 ### Zwei Bluetooth-Module miteinander verbinden
 
