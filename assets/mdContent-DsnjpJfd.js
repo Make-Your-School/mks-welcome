@@ -8898,27 +8898,7 @@ var _sfc_main = {
 			"tags": ["welcome"]
 		} });
 		return (_ctx, _cache) => {
-			return openBlock(), createElementBlock("div", _hoisted_1, _cache[0] || (_cache[0] = [
-				createBaseVNode("h1", {
-					id: "materialien-aus-dem-materialkoffer-set-von-make-your-school",
-					tabindex: "-1"
-				}, [createBaseVNode("a", {
-					class: "header-anchor",
-					href: "#materialien-aus-dem-materialkoffer-set-von-make-your-school"
-				}, "Materialien aus dem Materialkoffer-Set von Make Your School")], -1),
-				createBaseVNode("p", null, [
-					createTextVNode("Als Mentor*in bei "),
-					createBaseVNode("em", null, "Make Your School"),
-					createTextVNode(" begleitest du Jugendliche dabei, kreative technische Lösungen für ihre Schulideen zu entwickeln. Damit du sie bestmöglich unterstützen kannst, findest du im Materialkoffer-Set eine umfangreiche Sammlung an Bauteilen und Komponenten, die während der Hackdays eingesetzt werden können.")
-				], -1),
-				createBaseVNode("p", null, "Jede digitale Materialkarte stellt dir ein Element aus dem Materialkoffer im Detail vor – mit Informationen zu Funktion und Einsatzmöglichkeiten sowie praktischen Anwendungsbeispielen. So kannst du schnell einschätzen, welche Materialien sich für bestimmte Projekte eignen und wie du die Teams beim Tüfteln und Experimentieren gezielt unterstützen kannst.", -1),
-				createBaseVNode("p", null, "Diese Datenbank lebt vom Wissen und der Erfahrung der Mentor*innen. Wenn du eigene Ergänzungen oder Korrekturen beisteuern möchtest, kannst du die Inhalte direkt im GitHub-Repository von Make Your School bearbeiten. Dort kannst du bestehende Beschreibungen verbessern oder aktualisieren und dein Know-how mit der Community teilen. Den Link findest du jeweils am Ende der Seite unter (edit source). So hilfst du mit, die digitalen Materialkarten ständig weiterzuentwickeln.", -1),
-				createBaseVNode("p", null, [
-					createTextVNode("Alle offiziellen Infos zum Materialkoffer-Set findest du unter "),
-					createBaseVNode("a", { href: "https://makeyourschool.de/materialkoffer/" }, "https://makeyourschool.de/materialkoffer/"),
-					createTextVNode(".")
-				], -1)
-			]));
+			return openBlock(), createElementBlock("div", _hoisted_1, _cache[0] || (_cache[0] = [createStaticVNode("<h1 id=\"materialien-aus-dem-materialkoffer-set-von-make-your-school\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#materialien-aus-dem-materialkoffer-set-von-make-your-school\">Materialien aus dem Materialkoffer-Set von Make Your School</a></h1><p>Als Mentor*in bei <em>Make Your School</em> begleitest du Jugendliche dabei, kreative technische Lösungen für ihre Schulideen zu entwickeln. Damit du sie bestmöglich unterstützen kannst, findest du im Materialkoffer-Set eine umfangreiche Sammlung an Bauteilen und Komponenten, die während der Hackdays eingesetzt werden können.</p><p>Jede digitale Materialkarte stellt dir ein Element aus dem Materialkoffer im Detail vor – mit Informationen zu Funktion und Einsatzmöglichkeiten sowie praktischen Anwendungsbeispielen. So kannst du schnell einschätzen, welche Materialien sich für bestimmte Projekte eignen und wie du die Teams beim Tüfteln und Experimentieren gezielt unterstützen kannst.</p><p>Diese Datenbank lebt vom Wissen und der Erfahrung der Mentor*innen. Wenn du eigene Ergänzungen oder Korrekturen beisteuern möchtest, kannst du die Inhalte direkt im GitHub-Repository von <em>Make Your School</em> bearbeiten. Dort kannst du bestehende Beschreibungen verbessern oder aktualisieren und dein Know-how mit der Community teilen. Den Link findest du jeweils am Ende der Seite unter (edit source). So hilfst du mit, die digitalen Materialkarten ständig weiterzuentwickeln.</p><p>Alle offiziellen Infos zum Materialkoffer-Set findest du unter <a href=\"https://makeyourschool.de/materialkoffer/\">https://makeyourschool.de/materialkoffer/</a>.</p>", 5)]));
 		};
 	}
 };

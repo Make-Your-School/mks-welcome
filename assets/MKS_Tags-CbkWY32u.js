@@ -3,7 +3,7 @@ import { t as _plugin_vue_export_helper_default } from "./_plugin-vue_export-hel
 import { t as QCard_default } from "./QCard-BrwQdTtb.js";
 import { t as QPage_default } from "./QPage-HPiQh4dS.js";
 import { t as QCardSection_default } from "./QCardSection-BpCocpXo.js";
-import { t as useMDContentStore } from "./mdContent-B-c5-btF.js";
+import { t as useMDContentStore } from "./mdContent-DsnjpJfd.js";
 import { t as QInput_default } from "./QInput-BG03k-Fb.js";
 import { t as TagBauteilListe_default } from "./TagBauteilListe-3-tWFmyW.js";
 //#region src/components/TagOverview.vue
