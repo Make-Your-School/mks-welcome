@@ -27,61 +27,45 @@ difficulty: 'advanced'
 
 ## Beschreibung
 
-Das MP3-Modul ermöglicht das Abspielen von Musik oder abgespeicherten Tönen.
+Das MP3-Modul ermöglicht das Abspielen von Audiodateien wie Musik oder anderen Tönen. Es ist z.B. möglich etwas mit dem Laptop oder Handy aufzunehmen und dann über das MP3-Modul abzuspielen.
 
 <!-- more_details -->
 
-Es integriert einen Speicherplatz von 8 MB, auf dem Musikdateien im mp3- oder wav-Format über einen Mikro-USB-Anschluss gespeichert werden können.
+Es hat einen Speicherplatz von 8 MB, auf dem Musikdateien im mp3- oder wav-Format über einen Mikro-USB-Anschluss gespeichert werden können.
 Um die Musik auszugeben, lässt sich ein Lautsprecher an den dafür vorgesehenen Steckplatz anschließen.
 
 Das Modul wird über die serielle Schnittstelle UART direkt oder mithilfe des Grove Shields an einen Mikrocontroller angeschlossen.
 
 ## Anschlüsse
 
-### Eingang
+Als Eingang ist UART und ein Mikro-USB-Anschluss vorhanden und als Ausgang kann man einen Lautsprecher per zwei Kabel anschließen. 
 
-- UART
-- USB
 
-### Ausgang
+## Anleitung zum Benutzen
 
-- Audio über Lautsprecher
-
-## Kurz-Datenblatt
-
-- Signal Eingang: 3.3V
-- Betriebsspannung: 5V
-- Modul-Bezeichnung `DFR0534`
-- Main Chip `JQ8400`
-
-## Benutzung / Erste Schritte
-
-### Anschließen
+### 1 Verkabeln
 
 > [!achtung]
-> Die Pin-Belegung des Steckers im Modul ist anders als im Grove-System:
-> Plus und Minus sind vertauscht!
+> Es ist einiges etwas unintuitiv bei dem MP3 Modul. Achte genau auf die folgenden Hinweise.
 
-#### Adapter Kabel
+1. Die Pin-Belegung des Steckers im Modul ist anders als im Grove-System. Plus und Minus sind vertauscht!
+2. Es muss unbedingt ein Widerstand vor dem MP3 Modul eingebaut werden (wie unten auf dem Bild), sonst geht der Arduino aus.
 
-Schnell zusammen gesteckt:
+Hier eine Übersicht wie man es zusammenschaltet:
 
-![zusammen gesteckt](./adapter/20240503_123257.jpg)
+<!-- Here is a HTML image tag, as otherwise the picture was way too huge -->
+<img src="./adapter/20240503_123257.jpg" width="100%" />
 
-Bitte genau auf die Farbzuordnung achten!!
+Bitte genau auf die Farbzuordnung achten! Wer es genauer anlöten möchte, findet hier eine 
+[Anleitung](./AdapterLoeten.md).
 
-##### Benötigtes Material
+#### Benötigtes Material
 
 - Beim Modul wird ein Kabel mitgeliefert (Rot, Schwarz, Blau, Grün).
 - Kabel: Grove auf Female-Pin-Header (Schwarz, Rot, Weiß, Gelb)
 - 10K Widerstand
 - Drahtstücke oder _Pin-Header_, die gut in die Buchsen passen.
 
-##### Vorgehen
-
-Stecke die Kabel entsprechend dieser Zuordnung zusammen (siehe Foto):
-
-##### Zuordnung
 
 | Grove   | Verbindung     | MP3-Modul |
 | :------ | :------------- | :-------- |
@@ -98,17 +82,15 @@ Stecke die Kabel entsprechend dieser Zuordnung zusammen (siehe Foto):
     - der Serienwiderstand limitiert den möglichen Strom und schützt so das Modul.
 - Grove Gelb mit Modul Grün
 
-![Adapterkabel - Lautsprecher1](./adapter/20240503_123257.jpg)
 
-#### Adapter Kabel löten
 
-[AdapterLoeten.md](./AdapterLoeten.md)
+### 2 Musik aufspielen
 
-### Musik aufspielen
-
-Das Modul wird über eine Micro-USB Kabel mit dem Laptop verbunden.
-Dann erscheint es als _Massenspeicher_ (_USB-Stick_) im Datei-Explorer.
+Das Modul wird über ein Micro-USB Kabel mit dem Laptop verbunden.
+Dann erscheint es wie ein USB-Stick (Massenspeicher) im Datei-Explorer.
 Über diesen können dann die Sounds im MP3 oder WAV Format auf das Modul kopiert werden.
+Es stehen maximal 8MB Speicherplatz zu Verfügung.
+
 
 Bei den Datei-Bezeichnungen bitte darauf achten, dass diese:
 
@@ -122,23 +104,18 @@ Zum Beispiel:
 - `02DOOR.wav`
 - `03DOOR.mp3`
 
-Es stehen maximal 8MB Speicherplatz zu Verfügung.
+Das sieht dann etwa so aus:
 
-![Datei Manager](<datei manager.png>)
+![Datei Manager](./datei-manager.png)
 
 Du findest [hier im Ordner DFR0534](https://github.com/Make-Your-School/mks-DFRobot-DFR0534/tree/main/sounds) ein paar Beispiel-Sounds, die auch im Beispiel-Code verwendet wurden.
 
 Eine große Auswahl an frei verfügbaren Sound-Effekten findest du auf:
-[freesound.org](https://freesound.org)
+[freesound.org](https://freesound.org), wie z.B. die [allgemeine suche nach _Tür-Glocke_](https://freesound.org/search/?q=door+bell&f=license%3A%22creative+commons+0%22) oder eine [Klassische Tür-Klingel](https://freesound.org/people/Lynx_5969/sounds/422668/) (Beispiel bell.mp3)
 
-z. B.
+### 3 Programmieren
 
-- [allgemeine suche nach _Tür-Glocke_](https://freesound.org/search/?q=door+bell&f=license%3A%22creative+commons+0%22)
-- [Klassische Tür-Klingel](https://freesound.org/people/Lynx_5969/sounds/422668/) (Beispiel bell.mp3)
-
-### Programmieren
-
-Bitte die Library `DFR0534` über den Library-Manager installieren.
+Bitte die Library `DFR0534` über den Library-Manager installieren. Das macht man in der Arduino IDE links bei dem Büchersymbol. Klicke dort oben auf die Suchleiste und gib dann DFR0534 ein. Dort findest du dann ein Ergebnis mit diesem Namen, welches du installieren kannst.
 
 ## Beispiele
 
@@ -148,6 +125,15 @@ Bitte die Library `DFR0534` über den Library-Manager installieren.
 
 ## Weiterführende Hintergrundinformationen
 
+
+### Kurz-Datenblatt
+
+- Signal Eingang: `3.3V`
+- Betriebsspannung: `5V`
+- Modul-Bezeichnung `DFR0534`
+- Main Chip `JQ8400`
+
+### Links
 - [DFRobot Wiki](https://wiki.dfrobot.com/Voice_Module_SKU__DFR0534#target_0)
 - [library repository](https://github.com/codingABI/DFR0534)
   Hier findest du die Dokumentation zur Library

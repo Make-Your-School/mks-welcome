@@ -186,7 +186,7 @@ var readme_exports$153 = /* @__PURE__ */ __exportAll({
 });
 var _hoisted_1$76 = { class: "markdown-body" };
 var _hoisted_2$21 = { href: "https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter" };
-var _hoisted_3$20 = { href: "https://de.wikipedia.org/wiki/I%C2%B2C" };
+var _hoisted_3$19 = { href: "https://de.wikipedia.org/wiki/I%C2%B2C" };
 var title$75 = "Inertialsensor";
 var date$75 = "2018-10-01T13:25:56.000Z";
 var tags$76 = ["sensor"];
@@ -270,7 +270,7 @@ var _sfc_main$76 = {
 						])),
 						_: 1
 					}), _cache[7] || (_cache[7] = createTextVNode(" – Wikipedia Artikel"))])]),
-					createBaseVNode("li", null, [createBaseVNode("a", _hoisted_3$20, [createVNode(_component_MDAbbr, null, {
+					createBaseVNode("li", null, [createBaseVNode("a", _hoisted_3$19, [createVNode(_component_MDAbbr, null, {
 						default: withCtx(() => _cache[8] || (_cache[8] = [createTextVNode("I2C")])),
 						abbrDescription: withCtx(() => _cache[9] || (_cache[9] = [
 							createBaseVNode("h1", null, "I²C", -1),
@@ -472,7 +472,7 @@ var readme_exports$151 = /* @__PURE__ */ __exportAll({
 });
 var _hoisted_1$74 = { class: "markdown-body" };
 var _hoisted_2$20 = { href: "https://de.wikipedia.org/wiki/I%C2%B2C" };
-var _hoisted_3$19 = { href: "https://de.wikipedia.org/wiki/Serial_Peripheral_Interface" };
+var _hoisted_3$18 = { href: "https://de.wikipedia.org/wiki/Serial_Peripheral_Interface" };
 var _hoisted_4$16 = { href: "https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter" };
 var title$73 = "Arduino UNO";
 var date$73 = "2018-08-16T19:55:36.000Z";
@@ -579,7 +579,7 @@ var _sfc_main$74 = {
 						])),
 						_: 1
 					}), _cache[3] || (_cache[3] = createTextVNode(" - Wikipedia Artikel"))])]),
-					createBaseVNode("li", null, [createBaseVNode("a", _hoisted_3$19, [createVNode(_component_MDAbbr, null, {
+					createBaseVNode("li", null, [createBaseVNode("a", _hoisted_3$18, [createVNode(_component_MDAbbr, null, {
 						default: withCtx(() => _cache[4] || (_cache[4] = [createTextVNode("SPI")])),
 						abbrDescription: withCtx(() => _cache[5] || (_cache[5] = [createBaseVNode("p", null, "Bei einer seriellen Datenübertragung werden die Bits (Informationen / Kommandos) nacheinander (seriell) über eine Leitung übertragen. Die wichtigsten seriellen Standards im Rahmen der Microcontroller sind I2C (Inter-Integrated Circuit), SPI (Serial Peripheral Interface) und UART (Universal Asynchronous Receiver Transmitter). Die genaue Funktionsweise ist für die reine Nutzung vorerst irrelevant. Es muss allerdings immer geprüft werden an welchen Pins oder an welchen Steckplätzen der jeweilige serielle Anschluss genutzt werden kann. Dies wird in den Datenblättern der Mikrocontroller normalerweise immer mit angegeben.", -1)])),
 						_: 1
@@ -753,7 +753,7 @@ var readme_exports$149 = /* @__PURE__ */ __exportAll({
 });
 var _hoisted_1$72 = { class: "markdown-body" };
 var _hoisted_2$19 = { href: "https://de.wikipedia.org/wiki/I%C2%B2C" };
-var _hoisted_3$18 = { href: "https://de.wikipedia.org/wiki/Serial_Peripheral_Interface" };
+var _hoisted_3$17 = { href: "https://de.wikipedia.org/wiki/Serial_Peripheral_Interface" };
 var _hoisted_4$15 = { href: "https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter" };
 var title$71 = "Calliope mini";
 var date$71 = "2018-08-28T23:44:25.000Z";
@@ -817,7 +817,7 @@ var _sfc_main$72 = {
 						])),
 						_: 1
 					}), _cache[3] || (_cache[3] = createTextVNode(" - Wikipedia Artikel"))])]),
-					createBaseVNode("li", null, [createBaseVNode("a", _hoisted_3$18, [createVNode(_component_MDAbbr, null, {
+					createBaseVNode("li", null, [createBaseVNode("a", _hoisted_3$17, [createVNode(_component_MDAbbr, null, {
 						default: withCtx(() => _cache[4] || (_cache[4] = [createTextVNode("SPI")])),
 						abbrDescription: withCtx(() => _cache[5] || (_cache[5] = [createBaseVNode("p", null, "Bei einer seriellen Datenübertragung werden die Bits (Informationen / Kommandos) nacheinander (seriell) über eine Leitung übertragen. Die wichtigsten seriellen Standards im Rahmen der Microcontroller sind I2C (Inter-Integrated Circuit), SPI (Serial Peripheral Interface) und UART (Universal Asynchronous Receiver Transmitter). Die genaue Funktionsweise ist für die reine Nutzung vorerst irrelevant. Es muss allerdings immer geprüft werden an welchen Pins oder an welchen Steckplätzen der jeweilige serielle Anschluss genutzt werden kann. Dies wird in den Datenblättern der Mikrocontroller normalerweise immer mit angegeben.", -1)])),
 						_: 1
@@ -936,8 +936,7 @@ var readme_exports$147 = /* @__PURE__ */ __exportAll({
 	title: () => title$69
 });
 var _hoisted_1$70 = { class: "markdown-body" };
-var _hoisted_2$18 = { class: "markdown-alert markdown-alert-achtung" };
-var _hoisted_3$17 = { href: "https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter" };
+var _hoisted_2$18 = { href: "https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter" };
 var title$69 = "MP3-Modul";
 var date$69 = "2018-10-01T15:20:08.000Z";
 var tags$70 = ["output", "audio"];
@@ -954,7 +953,7 @@ var clone_url$69 = "https://github.com/Make-Your-School/mks-DFRobot-DFR0534.git"
 var embedded_example_file$69 = "examples/DFR0534_minimal/DFR0534_minimal.ino";
 var status$69 = "active";
 var difficulty$69 = "advanced";
-var excerpt$70 = "<h1 id=\"mp3-modul\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#mp3-modul\">MP3-Modul</a></h1>\n<p><img src=\"/mks/parts/mks-DFRobot-DFR0534/68_mp3-modul_rz.png\" alt=\"MP3-Modul\"></p>\n<h2 id=\"beschreibung\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#beschreibung\">Beschreibung</a></h2>\n<p>Das MP3-Modul ermöglicht das Abspielen von Musik oder abgespeicherten Tönen.</p>\n";
+var excerpt$70 = "<h1 id=\"mp3-modul\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#mp3-modul\">MP3-Modul</a></h1>\n<p><img src=\"/mks/parts/mks-DFRobot-DFR0534/68_mp3-modul_rz.png\" alt=\"MP3-Modul\"></p>\n<h2 id=\"beschreibung\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#beschreibung\">Beschreibung</a></h2>\n<p>Das MP3-Modul ermöglicht das Abspielen von Audiodateien wie Musik oder anderen Tönen. Es ist z.B. möglich etwas mit dem Laptop oder Handy aufzunehmen und dann über das MP3-Modul abzuspielen.</p>\n";
 var _sfc_main$70 = {
 	__name: "readme",
 	setup(__props, { expose: __expose }) {
@@ -982,7 +981,7 @@ var _sfc_main$70 = {
 			const _component_MDAbbr = resolveComponent("MDAbbr");
 			const _component_MDExamples = resolveComponent("MDExamples");
 			return openBlock(), createElementBlock("div", _hoisted_1$70, [
-				_cache[30] || (_cache[30] = createStaticVNode("<h1 id=\"mp3-modul\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#mp3-modul\">MP3-Modul</a></h1><p><img src=\"/mks/parts/mks-DFRobot-DFR0534/68_mp3-modul_rz.png\" alt=\"MP3-Modul\"></p><h2 id=\"beschreibung\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#beschreibung\">Beschreibung</a></h2><p>Das MP3-Modul ermöglicht das Abspielen von Musik oder abgespeicherten Tönen.</p><p>Es integriert einen Speicherplatz von 8 MB, auf dem Musikdateien im mp3- oder wav-Format über einen Mikro-USB-Anschluss gespeichert werden können. Um die Musik auszugeben, lässt sich ein Lautsprecher an den dafür vorgesehenen Steckplatz anschließen.</p>", 5)),
+				_cache[31] || (_cache[31] = createStaticVNode("<h1 id=\"mp3-modul\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#mp3-modul\">MP3-Modul</a></h1><p><img src=\"/mks/parts/mks-DFRobot-DFR0534/68_mp3-modul_rz.png\" alt=\"MP3-Modul\"></p><h2 id=\"beschreibung\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#beschreibung\">Beschreibung</a></h2><p>Das MP3-Modul ermöglicht das Abspielen von Audiodateien wie Musik oder anderen Tönen. Es ist z.B. möglich etwas mit dem Laptop oder Handy aufzunehmen und dann über das MP3-Modul abzuspielen.</p><p>Es hat einen Speicherplatz von 8 MB, auf dem Musikdateien im mp3- oder wav-Format über einen Mikro-USB-Anschluss gespeichert werden können. Um die Musik auszugeben, lässt sich ein Lautsprecher an den dafür vorgesehenen Steckplatz anschließen.</p>", 5)),
 				createBaseVNode("p", null, [
 					_cache[2] || (_cache[2] = createTextVNode("Das Modul wird über die serielle Schnittstelle ")),
 					createVNode(_component_MDAbbr, null, {
@@ -996,90 +995,97 @@ var _sfc_main$70 = {
 					}),
 					_cache[3] || (_cache[3] = createTextVNode(" direkt oder mithilfe des Grove Shields an einen Mikrocontroller angeschlossen."))
 				]),
-				_cache[31] || (_cache[31] = createBaseVNode("h2", {
+				_cache[32] || (_cache[32] = createBaseVNode("h2", {
 					id: "anschl%C3%BCsse",
 					tabindex: "-1"
 				}, [createBaseVNode("a", {
 					class: "header-anchor",
 					href: "#anschl%C3%BCsse"
 				}, "Anschlüsse")], -1)),
-				_cache[32] || (_cache[32] = createBaseVNode("h3", {
-					id: "eingang",
-					tabindex: "-1"
-				}, [createBaseVNode("a", {
-					class: "header-anchor",
-					href: "#eingang"
-				}, "Eingang")], -1)),
-				createBaseVNode("ul", null, [createBaseVNode("li", null, [createVNode(_component_MDAbbr, null, {
-					default: withCtx(() => _cache[4] || (_cache[4] = [createTextVNode("UART")])),
-					abbrDescription: withCtx(() => _cache[5] || (_cache[5] = [
-						createBaseVNode("h1", null, "Serielle Schnittstelle", -1),
-						createBaseVNode("p", null, "UART = Universal Asynchronous Receiver Transmitter", -1),
-						createBaseVNode("p", null, "Bei einer seriellen Datenübertragung werden die Bits (Informationen/Kommandos) nacheinander (seriell) über eine Leitung übertragen. Die wichtigsten seriellen Standards im Rahmen der Mikrocontroller sind I2C (Inter-Integrated Circuit), SPI (Serial Peripheral Interface) und UART (Universal Asynchronous Receiver Transmitter). Die genaue Funktionsweise ist für die reine Nutzung vorerst irrelevant. Es muss allerdings immer geprüft werden an welchen Pins oder an welchen Steckplätzen der jeweilige serielle Anschluss genutzt werden kann. Dies wird in den Datenblättern der Mikrocontroller normalerweise mit angegeben.", -1)
-					])),
-					_: 1
-				})]), _cache[6] || (_cache[6] = createBaseVNode("li", null, "USB", -1))]),
-				_cache[33] || (_cache[33] = createStaticVNode("<h3 id=\"ausgang\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#ausgang\">Ausgang</a></h3><ul><li>Audio über Lautsprecher</li></ul><h2 id=\"kurz-datenblatt\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#kurz-datenblatt\">Kurz-Datenblatt</a></h2><ul><li>Signal Eingang: 3.3V</li><li>Betriebsspannung: 5V</li><li>Modul-Bezeichnung <code>DFR0534</code></li><li>Main Chip <code>JQ8400</code></li></ul><h2 id=\"benutzung-%2F-erste-schritte\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#benutzung-%2F-erste-schritte\">Benutzung / Erste Schritte</a></h2><h3 id=\"anschlie%C3%9Fen\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#anschlie%C3%9Fen\">Anschließen</a></h3>", 6)),
-				createBaseVNode("div", _hoisted_2$18, [_cache[11] || (_cache[11] = createBaseVNode("p", { class: "markdown-alert-title" }, "Achtung", -1)), createBaseVNode("p", null, [
-					_cache[9] || (_cache[9] = createTextVNode("Die ")),
+				createBaseVNode("p", null, [
+					_cache[6] || (_cache[6] = createTextVNode("Als Eingang ist ")),
 					createVNode(_component_MDAbbr, null, {
-						default: withCtx(() => _cache[7] || (_cache[7] = [createTextVNode("Pin")])),
-						abbrDescription: withCtx(() => _cache[8] || (_cache[8] = [createBaseVNode("p", null, "Die Mikrocontroller besitzen kleine metallische Kontakte, an die Komponenten, Shields oder andere Platinen angeschlossen werden können. Diese Kontakte werden Pins genannt und können oft als sogenannte GPIO’s (Allzweck Ein- und Ausgabe) eingesetzt werden. Dies bedeutet, dass diese Pins direkt über die Programmierung des Mikrocontrollers angesprochen werden können und hierbei sogar bestimmt werden kann, ob dieser Pin als Eingang (beispielsweise zum Auslesen eines Sensors) oder als Ausgang (beispielsweise zur Steuerung eines Motors) genutzt werden kann. Praktisches Beispiel: Wird am Arduino eine LED an Pin 1 angeschlossen, kann im Programm direkt der Pin 1 als „An” oder „Aus” definiert werden und damit die LED an- oder ausgeschaltet werden.", -1)])),
-						_: 1
-					}),
-					_cache[10] || (_cache[10] = createTextVNode("-Belegung des Steckers im Modul ist anders als im Grove-System: Plus und Minus sind vertauscht!"))
-				])]),
-				_cache[34] || (_cache[34] = createStaticVNode("<h4 id=\"adapter-kabel\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#adapter-kabel\">Adapter Kabel</a></h4><p>Schnell zusammen gesteckt:</p><p><img src=\"/mks/parts/mks-DFRobot-DFR0534/adapter/20240503_123257.jpg\" alt=\"zusammen gesteckt\"></p><p>Bitte genau auf die Farbzuordnung achten!!</p><h5 id=\"ben%C3%B6tigtes-material\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#ben%C3%B6tigtes-material\">Benötigtes Material</a></h5>", 5)),
-				createBaseVNode("ul", null, [
-					_cache[21] || (_cache[21] = createBaseVNode("li", null, "Beim Modul wird ein Kabel mitgeliefert (Rot, Schwarz, Blau, Grün).", -1)),
-					createBaseVNode("li", null, [
-						_cache[14] || (_cache[14] = createTextVNode("Kabel: Grove auf Female-")),
-						createVNode(_component_MDAbbr, null, {
-							default: withCtx(() => _cache[12] || (_cache[12] = [createTextVNode("Pin")])),
-							abbrDescription: withCtx(() => _cache[13] || (_cache[13] = [createBaseVNode("p", null, "Die Mikrocontroller besitzen kleine metallische Kontakte, an die Komponenten, Shields oder andere Platinen angeschlossen werden können. Diese Kontakte werden Pins genannt und können oft als sogenannte GPIO’s (Allzweck Ein- und Ausgabe) eingesetzt werden. Dies bedeutet, dass diese Pins direkt über die Programmierung des Mikrocontrollers angesprochen werden können und hierbei sogar bestimmt werden kann, ob dieser Pin als Eingang (beispielsweise zum Auslesen eines Sensors) oder als Ausgang (beispielsweise zur Steuerung eines Motors) genutzt werden kann. Praktisches Beispiel: Wird am Arduino eine LED an Pin 1 angeschlossen, kann im Programm direkt der Pin 1 als „An” oder „Aus” definiert werden und damit die LED an- oder ausgeschaltet werden.", -1)])),
-							_: 1
-						}),
-						_cache[15] || (_cache[15] = createTextVNode("-Header (Schwarz, Rot, Weiß, Gelb)"))
-					]),
-					_cache[22] || (_cache[22] = createBaseVNode("li", null, "10K Widerstand", -1)),
-					createBaseVNode("li", null, [
-						_cache[19] || (_cache[19] = createTextVNode("Drahtstücke oder ")),
-						createBaseVNode("em", null, [createVNode(_component_MDAbbr, null, {
-							default: withCtx(() => _cache[16] || (_cache[16] = [createTextVNode("Pin")])),
-							abbrDescription: withCtx(() => _cache[17] || (_cache[17] = [createBaseVNode("p", null, "Die Mikrocontroller besitzen kleine metallische Kontakte, an die Komponenten, Shields oder andere Platinen angeschlossen werden können. Diese Kontakte werden Pins genannt und können oft als sogenannte GPIO’s (Allzweck Ein- und Ausgabe) eingesetzt werden. Dies bedeutet, dass diese Pins direkt über die Programmierung des Mikrocontrollers angesprochen werden können und hierbei sogar bestimmt werden kann, ob dieser Pin als Eingang (beispielsweise zum Auslesen eines Sensors) oder als Ausgang (beispielsweise zur Steuerung eines Motors) genutzt werden kann. Praktisches Beispiel: Wird am Arduino eine LED an Pin 1 angeschlossen, kann im Programm direkt der Pin 1 als „An” oder „Aus” definiert werden und damit die LED an- oder ausgeschaltet werden.", -1)])),
-							_: 1
-						}), _cache[18] || (_cache[18] = createTextVNode("-Header"))]),
-						_cache[20] || (_cache[20] = createTextVNode(", die gut in die Buchsen passen."))
-					])
-				]),
-				_cache[35] || (_cache[35] = createStaticVNode("<h5 id=\"vorgehen\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#vorgehen\">Vorgehen</a></h5><p>Stecke die Kabel entsprechend dieser Zuordnung zusammen (siehe Foto):</p><h5 id=\"zuordnung\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#zuordnung\">Zuordnung</a></h5><table><thead><tr><th style=\"text-align:left;\">Grove</th><th style=\"text-align:left;\">Verbindung</th><th style=\"text-align:left;\">MP3-Modul</th></tr></thead><tbody><tr><td style=\"text-align:left;\">Rot</td><td style=\"text-align:left;\">Draht</td><td style=\"text-align:left;\">Rot</td></tr><tr><td style=\"text-align:left;\">Schwarz</td><td style=\"text-align:left;\">Draht</td><td style=\"text-align:left;\">Schwarz</td></tr><tr><td style=\"text-align:left;\">Weiß</td><td style=\"text-align:left;\">10K Widerstand</td><td style=\"text-align:left;\">Blau</td></tr><tr><td style=\"text-align:left;\">Gelb</td><td style=\"text-align:left;\">Draht</td><td style=\"text-align:left;\">Grün</td></tr></tbody></table><ul><li>Grove Rot mit Modul Rot</li><li>Grove Schwarz mit Modul Schwarz</li><li>Grove Weiß auf 10k Widerstand auf Modul Blau <ul><li>10k Widerstand in Leitung die zum Modul RX (Receive = Empfangen = Eingang) führt</li><li>nötig da das Modul nur 3.3V <strong>Signale</strong> <em>mag</em></li><li>der Serienwiderstand limitiert den möglichen Strom und schützt so das Modul.</li></ul></li><li>Grove Gelb mit Modul Grün</li></ul><p><img src=\"/mks/parts/mks-DFRobot-DFR0534/adapter/20240503_123257.jpg\" alt=\"Adapterkabel - Lautsprecher1\"></p><h4 id=\"adapter-kabel-l%C3%B6ten\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#adapter-kabel-l%C3%B6ten\">Adapter Kabel löten</a></h4><p><a href=\"./AdapterLoeten.md\">AdapterLoeten.md</a></p><h3 id=\"musik-aufspielen\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#musik-aufspielen\">Musik aufspielen</a></h3><p>Das Modul wird über eine Micro-USB Kabel mit dem Laptop verbunden. Dann erscheint es als <em>Massenspeicher</em> (<em>USB-Stick</em>) im Datei-Explorer. Über diesen können dann die Sounds im MP3 oder WAV Format auf das Modul kopiert werden.</p><p>Bei den Datei-Bezeichnungen bitte darauf achten, dass diese:</p><ul><li>maximal 8 Zeichen haben.</li><li>keine Sonderzeichen enthalten.</li><li>mit einer Nummer beginnen</li></ul><p>Zum Beispiel:</p><ul><li><code>01BELL.mp3</code></li><li><code>02DOOR.wav</code></li><li><code>03DOOR.mp3</code></li></ul><p>Es stehen maximal 8MB Speicherplatz zu Verfügung.</p><p><img src=\"datei%20manager.png\" alt=\"Datei Manager\"></p><p>Du findest <a href=\"https://github.com/Make-Your-School/mks-DFRobot-DFR0534/tree/main/sounds\">hier im Ordner DFR0534</a> ein paar Beispiel-Sounds, die auch im Beispiel-Code verwendet wurden.</p><p>Eine große Auswahl an frei verfügbaren Sound-Effekten findest du auf: <a href=\"https://freesound.org\">freesound.org</a></p><p>z. B.</p><ul><li><a href=\"https://freesound.org/search/?q=door+bell&amp;f=license%3A%22creative+commons+0%22\">allgemeine suche nach <em>Tür-Glocke</em></a></li><li><a href=\"https://freesound.org/people/Lynx_5969/sounds/422668/\">Klassische Tür-Klingel</a> (Beispiel bell.mp3)</li></ul><h3 id=\"programmieren\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#programmieren\">Programmieren</a></h3><p>Bitte die Library <code>DFR0534</code> über den Library-Manager installieren.</p><h2 id=\"beispiele\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#beispiele\">Beispiele</a></h2>", 23)),
-				createVNode(_component_MDExamples, {
-					pathRel: "./examples/",
-					basePath: "public/mks/parts/mks-DFRobot-DFR0534/examples/"
-				}, {
-					contentJSON: withCtx(() => _cache[23] || (_cache[23] = [createTextVNode("{ \"DFR0534_minimal\": { \"example_path\": \"public/mks/parts/mks-DFRobot-DFR0534/examples/DFR0534_minimal\", \"example_url\": \"https://github.com/Make-Your-School/mks-DFRobot-DFR0534/tree/main/examples/DFR0534_minimal\", \"example_path_app\": \"/mks/parts/mks-DFRobot-DFR0534/examples/DFR0534_minimal/\", \"files\": { \"DFR0534_minimal.ino\": { \"file_url\": \"https://github.com/Make-Your-School/mks-DFRobot-DFR0534/tree/main/examples/DFR0534_minimal/DFR0534_minimal.ino\", \"file_path\": \"public/mks/parts/mks-DFRobot-DFR0534/examples/DFR0534_minimal/DFR0534_minimal.ino\", \"file_path_web\": \"/mks/parts/mks-DFRobot-DFR0534/examples/DFR0534_minimal/DFR0534_minimal.ino\", \"example_path_app\": \"/mks/parts/mks-DFRobot-DFR0534/examples/DFR0534_minimal/\", \"file_name\": \"DFR0534_minimal.ino\", \"name\": \"DFR0534_minimal.\", \"file_ext\": \"ino\", \"content\": \"// Minimal Beispiel für das MP3 Modul DFR0534\\n\\n#include <DFR0534.h>\\n#include <SoftwareSerial.h>\\n\\n#define TX_PIN A1\\n#define RX_PIN A0\\nSoftwareSerial mp3_serial(RX_PIN, TX_PIN);\\nDFR0534 mp3_audio(mp3_serial);\\n\\nvoid setup() {\\n    // Serial für Informationen am Laptop\\n    Serial.begin(115200);\\n\\n    // Software serial für die Kommunikation mit dem MP3 Module (DFR0534)\\n    mp3_serial.begin(9600);\\n\\n    // Setze Lautstärke (0..30)\\n    mp3_audio.setVolume(18);\\n}\\n\\nvoid loop() {\\n\\n    // für die Dateinamen dieses format Verwenden:\\n    // \\\"/01BELL  MP3\\\"\\n    // \\\"/02DOOR*WAV\\\"\\n    // \\\"/03*MP3\\\"\\n    //\\n    // - falls der Dateiname weniger als 8 Zeichen hat \\n    //     die fehlenden Zeichen mit Leerzeichen füllen.\\n    // - oder zum füllen das * verwenden\\n    // - nur GROßBUCHSTABEN verwenden\\n    // - den Punkt weglassen\\n    // - der Datei-Typ (MP3 oder WAV) muss angegeben werden\\n\\n    Serial.println(\\\"play /BELL*MP3\\\");\\n    mp3_audio.playFileByName(\\\"/BELL*MP3\\\");\\n    delay(4000);\\n\\n    Serial.println(\\\"play /DOOR*WAV\\\");\\n    mp3_audio.playFileByName(\\\"/DOOR*WAV\\\");\\n    delay(4000);\\n\\n    Serial.println(\\\"play /03*MP3\\\");\\n    mp3_audio.playFileByName(\\\"/03*MP3\\\");\\n    delay(4000);\\n}\\n\" } } } }")])),
-					_: 1
-				}),
-				_cache[36] || (_cache[36] = createBaseVNode("h2", {
-					id: "weiterf%C3%BChrende-hintergrundinformationen",
-					tabindex: "-1"
-				}, [createBaseVNode("a", {
-					class: "header-anchor",
-					href: "#weiterf%C3%BChrende-hintergrundinformationen"
-				}, "Weiterführende Hintergrundinformationen")], -1)),
-				createBaseVNode("ul", null, [
-					_cache[27] || (_cache[27] = createBaseVNode("li", null, [createBaseVNode("a", { href: "https://wiki.dfrobot.com/Voice_Module_SKU__DFR0534#target_0" }, "DFRobot Wiki")], -1)),
-					_cache[28] || (_cache[28] = createBaseVNode("li", null, [createBaseVNode("a", { href: "https://github.com/codingABI/DFR0534" }, "library repository"), createTextVNode(" Hier findest du die Dokumentation zur Library und auch viele weitere Informationen und Möglichkeiten.")], -1)),
-					_cache[29] || (_cache[29] = createBaseVNode("li", null, [createBaseVNode("a", { href: "https://sparks.gogo.co.nz/assets/_site_/downloads/JQ8400_English.pdf" }, "Datenblatt (grobe übersetzung ins Englische) ")], -1)),
-					createBaseVNode("li", null, [createBaseVNode("a", _hoisted_3$17, [createVNode(_component_MDAbbr, null, {
-						default: withCtx(() => _cache[24] || (_cache[24] = [createTextVNode("UART")])),
-						abbrDescription: withCtx(() => _cache[25] || (_cache[25] = [
+						default: withCtx(() => _cache[4] || (_cache[4] = [createTextVNode("UART")])),
+						abbrDescription: withCtx(() => _cache[5] || (_cache[5] = [
 							createBaseVNode("h1", null, "Serielle Schnittstelle", -1),
 							createBaseVNode("p", null, "UART = Universal Asynchronous Receiver Transmitter", -1),
 							createBaseVNode("p", null, "Bei einer seriellen Datenübertragung werden die Bits (Informationen/Kommandos) nacheinander (seriell) über eine Leitung übertragen. Die wichtigsten seriellen Standards im Rahmen der Mikrocontroller sind I2C (Inter-Integrated Circuit), SPI (Serial Peripheral Interface) und UART (Universal Asynchronous Receiver Transmitter). Die genaue Funktionsweise ist für die reine Nutzung vorerst irrelevant. Es muss allerdings immer geprüft werden an welchen Pins oder an welchen Steckplätzen der jeweilige serielle Anschluss genutzt werden kann. Dies wird in den Datenblättern der Mikrocontroller normalerweise mit angegeben.", -1)
 						])),
 						_: 1
-					}), _cache[26] || (_cache[26] = createTextVNode(" – Wikipedia Artikel"))])])
+					}),
+					_cache[7] || (_cache[7] = createTextVNode(" und ein Mikro-USB-Anschluss vorhanden und als Ausgang kann man einen Lautsprecher per zwei Kabel anschließen."))
+				]),
+				_cache[33] || (_cache[33] = createStaticVNode("<h2 id=\"anleitung-zum-benutzen\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#anleitung-zum-benutzen\">Anleitung zum Benutzen</a></h2><h3 id=\"1-verkabeln\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#1-verkabeln\">1 Verkabeln</a></h3><div class=\"markdown-alert markdown-alert-achtung\"><p class=\"markdown-alert-title\">Achtung</p><p>Es ist einiges etwas unintuitiv bei dem MP3 Modul. Achte genau auf die folgenden Hinweise.</p></div>", 3)),
+				createBaseVNode("ol", null, [createBaseVNode("li", null, [
+					_cache[10] || (_cache[10] = createTextVNode("Die ")),
+					createVNode(_component_MDAbbr, null, {
+						default: withCtx(() => _cache[8] || (_cache[8] = [createTextVNode("Pin")])),
+						abbrDescription: withCtx(() => _cache[9] || (_cache[9] = [createBaseVNode("p", null, "Die Mikrocontroller besitzen kleine metallische Kontakte, an die Komponenten, Shields oder andere Platinen angeschlossen werden können. Diese Kontakte werden Pins genannt und können oft als sogenannte GPIO’s (Allzweck Ein- und Ausgabe) eingesetzt werden. Dies bedeutet, dass diese Pins direkt über die Programmierung des Mikrocontrollers angesprochen werden können und hierbei sogar bestimmt werden kann, ob dieser Pin als Eingang (beispielsweise zum Auslesen eines Sensors) oder als Ausgang (beispielsweise zur Steuerung eines Motors) genutzt werden kann. Praktisches Beispiel: Wird am Arduino eine LED an Pin 1 angeschlossen, kann im Programm direkt der Pin 1 als „An” oder „Aus” definiert werden und damit die LED an- oder ausgeschaltet werden.", -1)])),
+						_: 1
+					}),
+					_cache[11] || (_cache[11] = createTextVNode("-Belegung des Steckers im Modul ist anders als im Grove-System. Plus und Minus sind vertauscht!"))
+				]), _cache[12] || (_cache[12] = createBaseVNode("li", null, "Es muss unbedingt ein Widerstand vor dem MP3 Modul eingebaut werden (wie unten auf dem Bild), sonst geht der Arduino aus.", -1))]),
+				_cache[34] || (_cache[34] = createBaseVNode("p", null, "Hier eine Übersicht wie man es zusammenschaltet:", -1)),
+				_cache[35] || (_cache[35] = createBaseVNode("img", {
+					src: "/assets/20240503_123257-ByKg5xXt.jpg",
+					width: "100%"
+				}, null, -1)),
+				_cache[36] || (_cache[36] = createBaseVNode("p", null, [
+					createTextVNode("Bitte genau auf die Farbzuordnung achten! Wer es genauer anlöten möchte, findet hier eine "),
+					createBaseVNode("a", { href: "./AdapterLoeten.md" }, "Anleitung"),
+					createTextVNode(".")
+				], -1)),
+				_cache[37] || (_cache[37] = createBaseVNode("h4", {
+					id: "ben%C3%B6tigtes-material",
+					tabindex: "-1"
+				}, [createBaseVNode("a", {
+					class: "header-anchor",
+					href: "#ben%C3%B6tigtes-material"
+				}, "Benötigtes Material")], -1)),
+				createBaseVNode("ul", null, [
+					_cache[22] || (_cache[22] = createBaseVNode("li", null, "Beim Modul wird ein Kabel mitgeliefert (Rot, Schwarz, Blau, Grün).", -1)),
+					createBaseVNode("li", null, [
+						_cache[15] || (_cache[15] = createTextVNode("Kabel: Grove auf Female-")),
+						createVNode(_component_MDAbbr, null, {
+							default: withCtx(() => _cache[13] || (_cache[13] = [createTextVNode("Pin")])),
+							abbrDescription: withCtx(() => _cache[14] || (_cache[14] = [createBaseVNode("p", null, "Die Mikrocontroller besitzen kleine metallische Kontakte, an die Komponenten, Shields oder andere Platinen angeschlossen werden können. Diese Kontakte werden Pins genannt und können oft als sogenannte GPIO’s (Allzweck Ein- und Ausgabe) eingesetzt werden. Dies bedeutet, dass diese Pins direkt über die Programmierung des Mikrocontrollers angesprochen werden können und hierbei sogar bestimmt werden kann, ob dieser Pin als Eingang (beispielsweise zum Auslesen eines Sensors) oder als Ausgang (beispielsweise zur Steuerung eines Motors) genutzt werden kann. Praktisches Beispiel: Wird am Arduino eine LED an Pin 1 angeschlossen, kann im Programm direkt der Pin 1 als „An” oder „Aus” definiert werden und damit die LED an- oder ausgeschaltet werden.", -1)])),
+							_: 1
+						}),
+						_cache[16] || (_cache[16] = createTextVNode("-Header (Schwarz, Rot, Weiß, Gelb)"))
+					]),
+					_cache[23] || (_cache[23] = createBaseVNode("li", null, "10K Widerstand", -1)),
+					createBaseVNode("li", null, [
+						_cache[20] || (_cache[20] = createTextVNode("Drahtstücke oder ")),
+						createBaseVNode("em", null, [createVNode(_component_MDAbbr, null, {
+							default: withCtx(() => _cache[17] || (_cache[17] = [createTextVNode("Pin")])),
+							abbrDescription: withCtx(() => _cache[18] || (_cache[18] = [createBaseVNode("p", null, "Die Mikrocontroller besitzen kleine metallische Kontakte, an die Komponenten, Shields oder andere Platinen angeschlossen werden können. Diese Kontakte werden Pins genannt und können oft als sogenannte GPIO’s (Allzweck Ein- und Ausgabe) eingesetzt werden. Dies bedeutet, dass diese Pins direkt über die Programmierung des Mikrocontrollers angesprochen werden können und hierbei sogar bestimmt werden kann, ob dieser Pin als Eingang (beispielsweise zum Auslesen eines Sensors) oder als Ausgang (beispielsweise zur Steuerung eines Motors) genutzt werden kann. Praktisches Beispiel: Wird am Arduino eine LED an Pin 1 angeschlossen, kann im Programm direkt der Pin 1 als „An” oder „Aus” definiert werden und damit die LED an- oder ausgeschaltet werden.", -1)])),
+							_: 1
+						}), _cache[19] || (_cache[19] = createTextVNode("-Header"))]),
+						_cache[21] || (_cache[21] = createTextVNode(", die gut in die Buchsen passen."))
+					])
+				]),
+				_cache[38] || (_cache[38] = createStaticVNode("<table><thead><tr><th style=\"text-align:left;\">Grove</th><th style=\"text-align:left;\">Verbindung</th><th style=\"text-align:left;\">MP3-Modul</th></tr></thead><tbody><tr><td style=\"text-align:left;\">Rot</td><td style=\"text-align:left;\">Draht</td><td style=\"text-align:left;\">Rot</td></tr><tr><td style=\"text-align:left;\">Schwarz</td><td style=\"text-align:left;\">Draht</td><td style=\"text-align:left;\">Schwarz</td></tr><tr><td style=\"text-align:left;\">Weiß</td><td style=\"text-align:left;\">10K Widerstand</td><td style=\"text-align:left;\">Blau</td></tr><tr><td style=\"text-align:left;\">Gelb</td><td style=\"text-align:left;\">Draht</td><td style=\"text-align:left;\">Grün</td></tr></tbody></table><ul><li>Grove Rot mit Modul Rot</li><li>Grove Schwarz mit Modul Schwarz</li><li>Grove Weiß auf 10k Widerstand auf Modul Blau <ul><li>10k Widerstand in Leitung die zum Modul RX (Receive = Empfangen = Eingang) führt</li><li>nötig da das Modul nur 3.3V <strong>Signale</strong> <em>mag</em></li><li>der Serienwiderstand limitiert den möglichen Strom und schützt so das Modul.</li></ul></li><li>Grove Gelb mit Modul Grün</li></ul><h3 id=\"2-musik-aufspielen\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#2-musik-aufspielen\">2 Musik aufspielen</a></h3><p>Das Modul wird über ein Micro-USB Kabel mit dem Laptop verbunden. Dann erscheint es wie ein USB-Stick (Massenspeicher) im Datei-Explorer. Über diesen können dann die Sounds im MP3 oder WAV Format auf das Modul kopiert werden. Es stehen maximal 8MB Speicherplatz zu Verfügung.</p><p>Bei den Datei-Bezeichnungen bitte darauf achten, dass diese:</p><ul><li>maximal 8 Zeichen haben.</li><li>keine Sonderzeichen enthalten.</li><li>mit einer Nummer beginnen</li></ul><p>Zum Beispiel:</p><ul><li><code>01BELL.mp3</code></li><li><code>02DOOR.wav</code></li><li><code>03DOOR.mp3</code></li></ul><p>Das sieht dann etwa so aus:</p><p><img src=\"/mks/parts/mks-DFRobot-DFR0534/datei-manager.png\" alt=\"Datei Manager\"></p><p>Du findest <a href=\"https://github.com/Make-Your-School/mks-DFRobot-DFR0534/tree/main/sounds\">hier im Ordner DFR0534</a> ein paar Beispiel-Sounds, die auch im Beispiel-Code verwendet wurden.</p><p>Eine große Auswahl an frei verfügbaren Sound-Effekten findest du auf: <a href=\"https://freesound.org\">freesound.org</a>, wie z.B. die <a href=\"https://freesound.org/search/?q=door+bell&amp;f=license%3A%22creative+commons+0%22\">allgemeine suche nach <em>Tür-Glocke</em></a> oder eine <a href=\"https://freesound.org/people/Lynx_5969/sounds/422668/\">Klassische Tür-Klingel</a> (Beispiel bell.mp3)</p><h3 id=\"3-programmieren\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#3-programmieren\">3 Programmieren</a></h3><p>Bitte die Library <code>DFR0534</code> über den Library-Manager installieren. Das macht man in der Arduino IDE links bei dem Büchersymbol. Klicke dort oben auf die Suchleiste und gib dann DFR0534 ein. Dort findest du dann ein Ergebnis mit diesem Namen, welches du installieren kannst.</p><h2 id=\"beispiele\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#beispiele\">Beispiele</a></h2>", 15)),
+				createVNode(_component_MDExamples, {
+					pathRel: "./examples/",
+					basePath: "public/mks/parts/mks-DFRobot-DFR0534/examples/"
+				}, {
+					contentJSON: withCtx(() => _cache[24] || (_cache[24] = [createTextVNode("{ \"DFR0534_minimal\": { \"example_path\": \"public/mks/parts/mks-DFRobot-DFR0534/examples/DFR0534_minimal\", \"example_url\": \"https://github.com/Make-Your-School/mks-DFRobot-DFR0534/tree/main/examples/DFR0534_minimal\", \"example_path_app\": \"/mks/parts/mks-DFRobot-DFR0534/examples/DFR0534_minimal/\", \"files\": { \"DFR0534_minimal.ino\": { \"file_url\": \"https://github.com/Make-Your-School/mks-DFRobot-DFR0534/tree/main/examples/DFR0534_minimal/DFR0534_minimal.ino\", \"file_path\": \"public/mks/parts/mks-DFRobot-DFR0534/examples/DFR0534_minimal/DFR0534_minimal.ino\", \"file_path_web\": \"/mks/parts/mks-DFRobot-DFR0534/examples/DFR0534_minimal/DFR0534_minimal.ino\", \"example_path_app\": \"/mks/parts/mks-DFRobot-DFR0534/examples/DFR0534_minimal/\", \"file_name\": \"DFR0534_minimal.ino\", \"name\": \"DFR0534_minimal.\", \"file_ext\": \"ino\", \"content\": \"// Minimal Beispiel für das MP3 Modul DFR0534\\n\\n#include <DFR0534.h>\\n#include <SoftwareSerial.h>\\n\\n#define TX_PIN A1\\n#define RX_PIN A0\\nSoftwareSerial mp3_serial(RX_PIN, TX_PIN);\\nDFR0534 mp3_audio(mp3_serial);\\n\\nvoid setup() {\\n    // Serial für Informationen am Laptop\\n    Serial.begin(115200);\\n\\n    // Software serial für die Kommunikation mit dem MP3 Module (DFR0534)\\n    mp3_serial.begin(9600);\\n\\n    // Setze Lautstärke (0..30)\\n    mp3_audio.setVolume(18);\\n}\\n\\nvoid loop() {\\n\\n    // für die Dateinamen dieses format Verwenden:\\n    // \\\"/01BELL  MP3\\\"\\n    // \\\"/02DOOR*WAV\\\"\\n    // \\\"/03*MP3\\\"\\n    //\\n    // - falls der Dateiname weniger als 8 Zeichen hat \\n    //     die fehlenden Zeichen mit Leerzeichen füllen.\\n    // - oder zum füllen das * verwenden\\n    // - nur GROßBUCHSTABEN verwenden\\n    // - den Punkt weglassen\\n    // - der Datei-Typ (MP3 oder WAV) muss angegeben werden\\n\\n    Serial.println(\\\"play /BELL*MP3\\\");\\n    mp3_audio.playFileByName(\\\"/BELL*MP3\\\");\\n    delay(4000);\\n\\n    Serial.println(\\\"play /DOOR*WAV\\\");\\n    mp3_audio.playFileByName(\\\"/DOOR*WAV\\\");\\n    delay(4000);\\n\\n    Serial.println(\\\"play /03*MP3\\\");\\n    mp3_audio.playFileByName(\\\"/03*MP3\\\");\\n    delay(4000);\\n}\\n\" } } } }")])),
+					_: 1
+				}),
+				_cache[39] || (_cache[39] = createStaticVNode("<h2 id=\"weiterf%C3%BChrende-hintergrundinformationen\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#weiterf%C3%BChrende-hintergrundinformationen\">Weiterführende Hintergrundinformationen</a></h2><h3 id=\"kurz-datenblatt\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#kurz-datenblatt\">Kurz-Datenblatt</a></h3><ul><li>Signal Eingang: <code>3.3V</code></li><li>Betriebsspannung: <code>5V</code></li><li>Modul-Bezeichnung <code>DFR0534</code></li><li>Main Chip <code>JQ8400</code></li></ul><h3 id=\"links\" tabindex=\"-1\"><a class=\"header-anchor\" href=\"#links\">Links</a></h3>", 4)),
+				createBaseVNode("ul", null, [
+					_cache[28] || (_cache[28] = createBaseVNode("li", null, [createBaseVNode("a", { href: "https://wiki.dfrobot.com/Voice_Module_SKU__DFR0534#target_0" }, "DFRobot Wiki")], -1)),
+					_cache[29] || (_cache[29] = createBaseVNode("li", null, [createBaseVNode("a", { href: "https://github.com/codingABI/DFR0534" }, "library repository"), createTextVNode(" Hier findest du die Dokumentation zur Library und auch viele weitere Informationen und Möglichkeiten.")], -1)),
+					_cache[30] || (_cache[30] = createBaseVNode("li", null, [createBaseVNode("a", { href: "https://sparks.gogo.co.nz/assets/_site_/downloads/JQ8400_English.pdf" }, "Datenblatt (grobe übersetzung ins Englische) ")], -1)),
+					createBaseVNode("li", null, [createBaseVNode("a", _hoisted_2$18, [createVNode(_component_MDAbbr, null, {
+						default: withCtx(() => _cache[25] || (_cache[25] = [createTextVNode("UART")])),
+						abbrDescription: withCtx(() => _cache[26] || (_cache[26] = [
+							createBaseVNode("h1", null, "Serielle Schnittstelle", -1),
+							createBaseVNode("p", null, "UART = Universal Asynchronous Receiver Transmitter", -1),
+							createBaseVNode("p", null, "Bei einer seriellen Datenübertragung werden die Bits (Informationen/Kommandos) nacheinander (seriell) über eine Leitung übertragen. Die wichtigsten seriellen Standards im Rahmen der Mikrocontroller sind I2C (Inter-Integrated Circuit), SPI (Serial Peripheral Interface) und UART (Universal Asynchronous Receiver Transmitter). Die genaue Funktionsweise ist für die reine Nutzung vorerst irrelevant. Es muss allerdings immer geprüft werden an welchen Pins oder an welchen Steckplätzen der jeweilige serielle Anschluss genutzt werden kann. Dies wird in den Datenblättern der Mikrocontroller normalerweise mit angegeben.", -1)
+						])),
+						_: 1
+					}), _cache[27] || (_cache[27] = createTextVNode(" – Wikipedia Artikel"))])])
 				])
 			]);
 		};
@@ -8598,7 +8604,7 @@ var readme_default$71 = "---\ntitle: 'Calliope mini 3'\ndate: '2025-11-23T23:38:
 //#endregion
 //#region public/mks/parts/mks-DFRobot-DFR0534/readme.md?raw
 var readme_exports$71 = /* @__PURE__ */ __exportAll({ default: () => readme_default$70 });
-var readme_default$70 = "---\ntitle: 'MP3-Modul'\ndate: '2018-10-01T15:20:08.000Z'\ntags:\n    - 'output'\n    - 'audio'\ncoverImage: '68_mp3-modul_rz.png'\nmaterial_number: '68'\nmaterial_type: 'output'\nmaterial_short_descr: 'DFR0534'\nmanufacture: 'DFRobot'\nmanufacture_url: 'https://dfrobot.com/'\nrepo_name: 'DFRobot-DFR0534'\nrepo_prefix: 'mks'\nrepo_manufacture: 'DFRobot'\nrepo_part: 'DFR0534'\nproduct_url: 'https://wiki.dfrobot.com/Voice_Module_SKU__DFR0534#target_0'\nclone_url: 'https://github.com/Make-Your-School/mks-DFRobot-DFR0534.git'\nembedded_example_file: 'examples/DFR0534_minimal/DFR0534_minimal.ino'\nstatus: 'active'\ndifficulty: 'advanced'\n---\n\n# MP3-Modul\n\n![MP3-Modul](./68_mp3-modul_rz.png)\n\n## Beschreibung\n\nDas MP3-Modul ermöglicht das Abspielen von Musik oder abgespeicherten Tönen.\n\n<!-- more_details -->\n\nEs integriert einen Speicherplatz von 8 MB, auf dem Musikdateien im mp3- oder wav-Format über einen Mikro-USB-Anschluss gespeichert werden können.\nUm die Musik auszugeben, lässt sich ein Lautsprecher an den dafür vorgesehenen Steckplatz anschließen.\n\nDas Modul wird über die serielle Schnittstelle UART direkt oder mithilfe des Grove Shields an einen Mikrocontroller angeschlossen.\n\n## Anschlüsse\n\n### Eingang\n\n- UART\n- USB\n\n### Ausgang\n\n- Audio über Lautsprecher\n\n## Kurz-Datenblatt\n\n- Signal Eingang: 3.3V\n- Betriebsspannung: 5V\n- Modul-Bezeichnung `DFR0534`\n- Main Chip `JQ8400`\n\n## Benutzung / Erste Schritte\n\n### Anschließen\n\n> [!achtung]\n> Die Pin-Belegung des Steckers im Modul ist anders als im Grove-System:\n> Plus und Minus sind vertauscht!\n\n#### Adapter Kabel\n\nSchnell zusammen gesteckt:\n\n![zusammen gesteckt](./adapter/20240503_123257.jpg)\n\nBitte genau auf die Farbzuordnung achten!!\n\n##### Benötigtes Material\n\n- Beim Modul wird ein Kabel mitgeliefert (Rot, Schwarz, Blau, Grün).\n- Kabel: Grove auf Female-Pin-Header (Schwarz, Rot, Weiß, Gelb)\n- 10K Widerstand\n- Drahtstücke oder _Pin-Header_, die gut in die Buchsen passen.\n\n##### Vorgehen\n\nStecke die Kabel entsprechend dieser Zuordnung zusammen (siehe Foto):\n\n##### Zuordnung\n\n| Grove   | Verbindung     | MP3-Modul |\n| :------ | :------------- | :-------- |\n| Rot     | Draht          | Rot       |\n| Schwarz | Draht          | Schwarz   |\n| Weiß    | 10K Widerstand | Blau      |\n| Gelb    | Draht          | Grün      |\n\n- Grove Rot mit Modul Rot\n- Grove Schwarz mit Modul Schwarz\n- Grove Weiß auf 10k Widerstand auf Modul Blau\n    - 10k Widerstand in Leitung die zum Modul RX (Receive = Empfangen = Eingang) führt\n    - nötig da das Modul nur 3.3V **Signale** _mag_\n    - der Serienwiderstand limitiert den möglichen Strom und schützt so das Modul.\n- Grove Gelb mit Modul Grün\n\n![Adapterkabel - Lautsprecher1](./adapter/20240503_123257.jpg)\n\n#### Adapter Kabel löten\n\n[AdapterLoeten.md](./AdapterLoeten.md)\n\n### Musik aufspielen\n\nDas Modul wird über eine Micro-USB Kabel mit dem Laptop verbunden.\nDann erscheint es als _Massenspeicher_ (_USB-Stick_) im Datei-Explorer.\nÜber diesen können dann die Sounds im MP3 oder WAV Format auf das Modul kopiert werden.\n\nBei den Datei-Bezeichnungen bitte darauf achten, dass diese:\n\n- maximal 8 Zeichen haben.\n- keine Sonderzeichen enthalten.\n- mit einer Nummer beginnen\n\nZum Beispiel:\n\n- `01BELL.mp3`\n- `02DOOR.wav`\n- `03DOOR.mp3`\n\nEs stehen maximal 8MB Speicherplatz zu Verfügung.\n\n![Datei Manager](<datei manager.png>)\n\nDu findest [hier im Ordner DFR0534](https://github.com/Make-Your-School/mks-DFRobot-DFR0534/tree/main/sounds) ein paar Beispiel-Sounds, die auch im Beispiel-Code verwendet wurden.\n\nEine große Auswahl an frei verfügbaren Sound-Effekten findest du auf:\n[freesound.org](https://freesound.org)\n\nz. B.\n\n- [allgemeine suche nach _Tür-Glocke_](https://freesound.org/search/?q=door+bell&f=license%3A%22creative+commons+0%22)\n- [Klassische Tür-Klingel](https://freesound.org/people/Lynx_5969/sounds/422668/) (Beispiel bell.mp3)\n\n### Programmieren\n\nBitte die Library `DFR0534` über den Library-Manager installieren.\n\n## Beispiele\n\n!!!show-examples:./examples/\n\n<!-- infolist -->\n\n## Weiterführende Hintergrundinformationen\n\n- [DFRobot Wiki](https://wiki.dfrobot.com/Voice_Module_SKU__DFR0534#target_0)\n- [library repository](https://github.com/codingABI/DFR0534)\n  Hier findest du die Dokumentation zur Library\n  und auch viele weitere Informationen und Möglichkeiten.\n- [Datenblatt (grobe übersetzung ins Englische) ](https://sparks.gogo.co.nz/assets/_site_/downloads/JQ8400_English.pdf)\n- [UART – Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)\n";
+var readme_default$70 = "---\ntitle: 'MP3-Modul'\ndate: '2018-10-01T15:20:08.000Z'\ntags:\n    - 'output'\n    - 'audio'\ncoverImage: '68_mp3-modul_rz.png'\nmaterial_number: '68'\nmaterial_type: 'output'\nmaterial_short_descr: 'DFR0534'\nmanufacture: 'DFRobot'\nmanufacture_url: 'https://dfrobot.com/'\nrepo_name: 'DFRobot-DFR0534'\nrepo_prefix: 'mks'\nrepo_manufacture: 'DFRobot'\nrepo_part: 'DFR0534'\nproduct_url: 'https://wiki.dfrobot.com/Voice_Module_SKU__DFR0534#target_0'\nclone_url: 'https://github.com/Make-Your-School/mks-DFRobot-DFR0534.git'\nembedded_example_file: 'examples/DFR0534_minimal/DFR0534_minimal.ino'\nstatus: 'active'\ndifficulty: 'advanced'\n---\n\n# MP3-Modul\n\n![MP3-Modul](./68_mp3-modul_rz.png)\n\n## Beschreibung\n\nDas MP3-Modul ermöglicht das Abspielen von Audiodateien wie Musik oder anderen Tönen. Es ist z.B. möglich etwas mit dem Laptop oder Handy aufzunehmen und dann über das MP3-Modul abzuspielen.\n\n<!-- more_details -->\n\nEs hat einen Speicherplatz von 8 MB, auf dem Musikdateien im mp3- oder wav-Format über einen Mikro-USB-Anschluss gespeichert werden können.\nUm die Musik auszugeben, lässt sich ein Lautsprecher an den dafür vorgesehenen Steckplatz anschließen.\n\nDas Modul wird über die serielle Schnittstelle UART direkt oder mithilfe des Grove Shields an einen Mikrocontroller angeschlossen.\n\n## Anschlüsse\n\nAls Eingang ist UART und ein Mikro-USB-Anschluss vorhanden und als Ausgang kann man einen Lautsprecher per zwei Kabel anschließen. \n\n\n## Anleitung zum Benutzen\n\n### 1 Verkabeln\n\n> [!achtung]\n> Es ist einiges etwas unintuitiv bei dem MP3 Modul. Achte genau auf die folgenden Hinweise.\n\n1. Die Pin-Belegung des Steckers im Modul ist anders als im Grove-System. Plus und Minus sind vertauscht!\n2. Es muss unbedingt ein Widerstand vor dem MP3 Modul eingebaut werden (wie unten auf dem Bild), sonst geht der Arduino aus.\n\nHier eine Übersicht wie man es zusammenschaltet:\n\n<!-- Here is a HTML image tag, as otherwise the picture was way too huge -->\n<img src=\"./adapter/20240503_123257.jpg\" width=\"100%\" />\n\nBitte genau auf die Farbzuordnung achten! Wer es genauer anlöten möchte, findet hier eine \n[Anleitung](./AdapterLoeten.md).\n\n#### Benötigtes Material\n\n- Beim Modul wird ein Kabel mitgeliefert (Rot, Schwarz, Blau, Grün).\n- Kabel: Grove auf Female-Pin-Header (Schwarz, Rot, Weiß, Gelb)\n- 10K Widerstand\n- Drahtstücke oder _Pin-Header_, die gut in die Buchsen passen.\n\n\n| Grove   | Verbindung     | MP3-Modul |\n| :------ | :------------- | :-------- |\n| Rot     | Draht          | Rot       |\n| Schwarz | Draht          | Schwarz   |\n| Weiß    | 10K Widerstand | Blau      |\n| Gelb    | Draht          | Grün      |\n\n- Grove Rot mit Modul Rot\n- Grove Schwarz mit Modul Schwarz\n- Grove Weiß auf 10k Widerstand auf Modul Blau\n    - 10k Widerstand in Leitung die zum Modul RX (Receive = Empfangen = Eingang) führt\n    - nötig da das Modul nur 3.3V **Signale** _mag_\n    - der Serienwiderstand limitiert den möglichen Strom und schützt so das Modul.\n- Grove Gelb mit Modul Grün\n\n\n\n### 2 Musik aufspielen\n\nDas Modul wird über ein Micro-USB Kabel mit dem Laptop verbunden.\nDann erscheint es wie ein USB-Stick (Massenspeicher) im Datei-Explorer.\nÜber diesen können dann die Sounds im MP3 oder WAV Format auf das Modul kopiert werden.\nEs stehen maximal 8MB Speicherplatz zu Verfügung.\n\n\nBei den Datei-Bezeichnungen bitte darauf achten, dass diese:\n\n- maximal 8 Zeichen haben.\n- keine Sonderzeichen enthalten.\n- mit einer Nummer beginnen\n\nZum Beispiel:\n\n- `01BELL.mp3`\n- `02DOOR.wav`\n- `03DOOR.mp3`\n\nDas sieht dann etwa so aus:\n\n![Datei Manager](./datei-manager.png)\n\nDu findest [hier im Ordner DFR0534](https://github.com/Make-Your-School/mks-DFRobot-DFR0534/tree/main/sounds) ein paar Beispiel-Sounds, die auch im Beispiel-Code verwendet wurden.\n\nEine große Auswahl an frei verfügbaren Sound-Effekten findest du auf:\n[freesound.org](https://freesound.org), wie z.B. die [allgemeine suche nach _Tür-Glocke_](https://freesound.org/search/?q=door+bell&f=license%3A%22creative+commons+0%22) oder eine [Klassische Tür-Klingel](https://freesound.org/people/Lynx_5969/sounds/422668/) (Beispiel bell.mp3)\n\n### 3 Programmieren\n\nBitte die Library `DFR0534` über den Library-Manager installieren. Das macht man in der Arduino IDE links bei dem Büchersymbol. Klicke dort oben auf die Suchleiste und gib dann DFR0534 ein. Dort findest du dann ein Ergebnis mit diesem Namen, welches du installieren kannst.\n\n## Beispiele\n\n!!!show-examples:./examples/\n\n<!-- infolist -->\n\n## Weiterführende Hintergrundinformationen\n\n\n### Kurz-Datenblatt\n\n- Signal Eingang: `3.3V`\n- Betriebsspannung: `5V`\n- Modul-Bezeichnung `DFR0534`\n- Main Chip `JQ8400`\n\n### Links\n- [DFRobot Wiki](https://wiki.dfrobot.com/Voice_Module_SKU__DFR0534#target_0)\n- [library repository](https://github.com/codingABI/DFR0534)\n  Hier findest du die Dokumentation zur Library\n  und auch viele weitere Informationen und Möglichkeiten.\n- [Datenblatt (grobe übersetzung ins Englische) ](https://sparks.gogo.co.nz/assets/_site_/downloads/JQ8400_English.pdf)\n- [UART – Wikipedia Artikel](https://de.wikipedia.org/wiki/Universal_Asynchronous_Receiver_Transmitter)\n";
 //#endregion
 //#region public/mks/parts/mks-JoyLabz-MakeyMakey/readme.md?raw
 var readme_exports$70 = /* @__PURE__ */ __exportAll({ default: () => readme_default$69 });
